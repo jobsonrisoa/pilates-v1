@@ -1,10 +1,12 @@
 # =============================================
 # STAGE 1: Dependencies (dev-friendly)
 # =============================================
-FROM node:20-alpine AS deps
+FROM node:20-bookworm-slim AS deps
 
-# Prisma em Alpine (musl) pode precisar de libssl.so.1.1 dependendo do engine
-RUN apk add --no-cache curl openssl openssl1.1-compat
+# Prisma funciona melhor em imagens Debian/Ubuntu (glibc). Incluímos curl para healthchecks.
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends ca-certificates curl openssl \
+  && rm -rf /var/lib/apt/lists/*
 
 RUN corepack enable && corepack prepare pnpm@8 --activate
 
@@ -33,9 +35,11 @@ RUN pnpm --filter @pilates/api build
 # =============================================
 # STAGE 3: Production
 # =============================================
-FROM node:20-alpine AS runner
+FROM node:20-bookworm-slim AS runner
 
-RUN apk add --no-cache curl openssl openssl1.1-compat
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends ca-certificates curl openssl \
+  && rm -rf /var/lib/apt/lists/*
 
 RUN corepack enable && corepack prepare pnpm@8 --activate
 
