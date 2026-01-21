@@ -18,7 +18,7 @@ export class PrismaHealthIndicator extends HealthIndicator {
       // query simples e barata para validar a conexão
       await this.prisma.$queryRaw`SELECT 1`;
       return this.getStatus(key, true);
-    } catch (error) {
+    } catch (_error) {
       const result = this.getStatus(key, false, { error: 'db_unreachable' });
       throw new HealthCheckError('Prisma health check failed', result);
     }

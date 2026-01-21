@@ -1,5 +1,5 @@
-import { Entity, EntityProps } from '@/shared/domain/entity.base';
 import { DomainEvent } from '@/shared/domain/domain-event.base';
+import { Entity, EntityProps } from '@/shared/domain/entity.base';
 
 export abstract class AggregateRoot<T extends EntityProps> extends Entity<T> {
   private domainEvents: DomainEvent[] = [];
