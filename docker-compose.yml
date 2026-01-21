@@ -20,7 +20,6 @@ services:
       - ./apps/api/src:/app/apps/api/src:delegated
       - ./apps/api/prisma:/app/apps/api/prisma:delegated
       - ./apps/api/test:/app/apps/api/test:delegated
-      - api_node_modules:/app/apps/api/node_modules
     depends_on:
       mysql:
         condition: service_healthy
@@ -54,8 +53,6 @@ services:
       - ./apps/web/stores:/app/apps/web/stores:delegated
       - ./apps/web/types:/app/apps/web/types:delegated
       - ./apps/web/public:/app/apps/web/public:delegated
-      - web_node_modules:/app/apps/web/node_modules
-      - web_next:/app/apps/web/.next
     depends_on:
       - api
     networks:
@@ -183,11 +180,5 @@ volumes:
     name: pilates_prometheus_data
   grafana_data:
     name: pilates_grafana_data
-  api_node_modules:
-    name: pilates_api_node_modules
-  web_node_modules:
-    name: pilates_web_node_modules
-  web_next:
-    name: pilates_web_next
 
 
