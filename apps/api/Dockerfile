@@ -17,6 +17,7 @@ COPY pnpm-workspace.yaml package.json ./
 COPY apps/api/package.json ./apps/api/package.json
 
 # Instalar deps do workspace (inclui @pilates/api)
+ENV HUSKY=0
 RUN pnpm install --no-frozen-lockfile
 
 # Copiar o restante do repo (para dev e build)

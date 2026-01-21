@@ -12,12 +12,23 @@
     "test": "pnpm -r test",
     "test:cov": "pnpm -r test:cov",
     "lint": "pnpm -r lint",
-    "format": "pnpm -r format",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "typecheck": "pnpm -r typecheck",
-    "prepare": "husky install"
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
   },
   "devDependencies": {
-    "husky": "^9.0.0"
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@typescript-eslint/eslint-plugin": "^8.19.0",
+    "@typescript-eslint/parser": "^8.19.0",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "husky": "^9.0.0",
+    "lint-staged": "^15.3.0",
+    "prettier": "^3.4.2"
   },
   "engines": {
     "node": ">=20.0.0",

@@ -10,6 +10,7 @@ WORKDIR /app
 COPY pnpm-workspace.yaml package.json ./
 COPY apps/web/package.json ./apps/web/package.json
 
+ENV HUSKY=0
 RUN pnpm install --no-frozen-lockfile
 
 COPY . .
