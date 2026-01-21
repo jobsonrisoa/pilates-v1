@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# Docker data (dev)
+docker/mysql/data/
+docker/redis/data/
+docker/minio/data/
+docker/grafana/data/
+docker/prometheus/data/
+
+# Prisma (dev artifacts)
+apps/api/prisma/*.db
+apps/api/prisma/migrations/*_migration_lock.toml
+
+# Misc
+*.tgz
+.cache/
+
