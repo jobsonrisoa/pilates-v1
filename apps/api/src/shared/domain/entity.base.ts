@@ -10,7 +10,7 @@ export abstract class Entity<T extends EntityProps> {
   protected readonly _id: string;
   protected readonly _createdAt: Date;
   protected _updatedAt: Date;
-  protected props: T;
+  protected readonly props: T;
 
   constructor(props: T) {
     this._id = props.id ?? randomUUID();
