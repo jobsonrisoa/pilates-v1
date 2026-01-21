@@ -1,0 +1,58 @@
+version: "3.8"
+
+services:
+  api-test:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+      target: deps
+    environment:
+      NODE_ENV: test
+      APP_PORT: 3000
+      DATABASE_URL: mysql://root:test@mysql-test:3306/pilates_test
+      REDIS_URL: redis://redis-test:6379
+      JWT_SECRET: test-secret
+    depends_on:
+      mysql-test:
+        condition: service_healthy
+      redis-test:
+        condition: service_healthy
+    networks:
+      - test-network
+
+  mysql-test:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: pilates_test
+    tmpfs:
+      - /var/lib/mysql:rw
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    networks:
+      - test-network
+
+  redis-test:
+    image: redis:7-alpine
+    tmpfs:
+      - /data:rw
+    ports:
+      - "6380:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    driver: bridge
+
+
