@@ -9,7 +9,7 @@ services:
       context: .
       dockerfile: apps/api/Dockerfile
       target: deps
-    command: pnpm --filter @pilates/api dev
+    command: sh -c "pnpm --filter @pilates/api prisma generate && pnpm --filter @pilates/api dev"
     environment:
       NODE_ENV: development
       APP_PORT: 3000
