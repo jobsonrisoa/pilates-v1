@@ -1,0 +1,193 @@
+version: "3.8"
+
+services:
+  # =============================================
+  # APLICAÇÕES
+  # =============================================
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+      target: deps
+    command: pnpm --filter @pilates/api dev
+    environment:
+      NODE_ENV: development
+      APP_PORT: 3000
+      DATABASE_URL: mysql://pilates:pilates@mysql:3306/pilates_dev
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./apps/api/src:/app/apps/api/src:delegated
+      - ./apps/api/prisma:/app/apps/api/prisma:delegated
+      - ./apps/api/test:/app/apps/api/test:delegated
+      - api_node_modules:/app/apps/api/node_modules
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - pilates-network
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      target: deps
+    command: pnpm --filter @pilates/web dev
+    environment:
+      NODE_ENV: development
+      NEXT_PUBLIC_API_URL: http://localhost:3001
+      WATCHPACK_POLLING: "true"
+      NEXT_TELEMETRY_DISABLED: "1"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./apps/web/app:/app/apps/web/app:delegated
+      - ./apps/web/components:/app/apps/web/components:delegated
+      - ./apps/web/lib:/app/apps/web/lib:delegated
+      - ./apps/web/hooks:/app/apps/web/hooks:delegated
+      - ./apps/web/stores:/app/apps/web/stores:delegated
+      - ./apps/web/types:/app/apps/web/types:delegated
+      - ./apps/web/public:/app/apps/web/public:delegated
+      - web_node_modules:/app/apps/web/node_modules
+      - web_next:/app/apps/web/.next
+    depends_on:
+      - api
+    networks:
+      - pilates-network
+
+  # =============================================
+  # BANCO DE DADOS / CACHE
+  # =============================================
+  mysql:
+    image: mysql:8.0
+    command:
+      - --default-authentication-plugin=mysql_native_password
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: pilates_dev
+      MYSQL_USER: pilates
+      MYSQL_PASSWORD: pilates
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d:ro
+    networks:
+      - pilates-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - pilates-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # =============================================
+  # SERVIÇOS AUXILIARES
+  # =============================================
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      - pilates-network
+
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    networks:
+      - pilates-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  # =============================================
+  # OBSERVABILIDADE (profile: monitoring)
+  # =============================================
+  prometheus:
+    image: prom/prometheus:v2.48.0
+    volumes:
+      - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    ports:
+      - "9090:9090"
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+    networks:
+      - pilates-network
+    profiles:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana:10.2.0
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./docker/grafana/provisioning:/etc/grafana/provisioning:ro
+    ports:
+      - "3002:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    networks:
+      - pilates-network
+    profiles:
+      - monitoring
+
+networks:
+  pilates-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+    name: pilates_mysql_data
+  redis_data:
+    name: pilates_redis_data
+  minio_data:
+    name: pilates_minio_data
+  prometheus_data:
+    name: pilates_prometheus_data
+  grafana_data:
+    name: pilates_grafana_data
+  api_node_modules:
+    name: pilates_api_node_modules
+  web_node_modules:
+    name: pilates_web_node_modules
+  web_next:
+    name: pilates_web_next
+
+
