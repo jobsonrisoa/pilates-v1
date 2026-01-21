@@ -24,7 +24,7 @@ FROM deps AS builder
 
 WORKDIR /app
 
-RUN pnpm --filter @pilates/api prisma generate
+RUN pnpm --filter @pilates/api prisma:generate
 RUN pnpm --filter @pilates/api build
 
 # =============================================
