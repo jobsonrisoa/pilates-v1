@@ -49,6 +49,24 @@ make down
 make clean
 ```
 
+## 📈 Monitoring (opcional)
+
+Suba Prometheus + Grafana com:
+
+```bash
+docker compose --profile monitoring up
+```
+
+### Acessos (dev)
+
+- Web: `http://localhost:3000`
+- API: `http://localhost:3001`
+- Swagger: `http://localhost:3001/api`
+- MailHog: `http://localhost:8025`
+- MinIO Console: `http://localhost:9001`
+- Prometheus (profile monitoring): `http://localhost:9090`
+- Grafana (profile monitoring): `http://localhost:3002` (admin/admin)
+
 ## ✅ Princípios do Projeto
 
 - **DDD** (Bounded Contexts, Shared Kernel)
