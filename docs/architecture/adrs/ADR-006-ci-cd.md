@@ -591,48 +591,48 @@ coverage:
 
 ### Checklist of Merge
 
-| Verification         | Bloqueante | Description             |
-| ------------------- | ---------- | --------------------- |
-| Lint Pass           |  Sim     | Zero errors of ESLint  |
-| Type Check          |  Sim     | Zero errors TypeScript |
-| Unit Tests          |  Sim     | 100% passando         |
-| Coverage ≥ 80%      |  Sim     | Linhas and functions      |
-| Integration Tests   |  Sim     | 100% passando         |
-| E2E Tests (main)    |  Sim     | Fluxos critical       |
-| Performnce (main)  |  Warning | P95 < 500ms           |
-| PR Size < 500 lines |  Warning | Rewithendaction          |
+| Verification        | Bloqueante | Description            |
+| ------------------- | ---------- | ---------------------- |
+| Lint Pass           | Sim        | Zero errors of ESLint  |
+| Type Check          | Sim        | Zero errors TypeScript |
+| Unit Tests          | Sim        | 100% passando          |
+| Coverage ≥ 80%      | Sim        | Linhas and functions   |
+| Integration Tests   | Sim        | 100% passando          |
+| E2E Tests (main)    | Sim        | Fluxos critical        |
+| Performnce (main)   | Warning    | P95 < 500ms            |
+| PR Size < 500 lines | Warning    | Rewithendaction        |
 
 ### Tests por Ambiente
 
 | Ambiente | Unit | Integration | E2E | Performnce |
-| -------- | ---- | ----------- | --- | ----------- |
-| PR       |    |           |   |           |
-| develop  |    |           |   |           |
-| main     |    |           |   |           |
+| -------- | ---- | ----------- | --- | ---------- |
+| PR       |      |             |     |            |
+| develop  |      |             |     |            |
+| main     |      |             |     |            |
 
 ## Costs
 
-| Service         | Limite Gratuito        | Usage Esperado |
-| --------------- | ---------------------- | ------------ |
+| Service         | Limite Gratuito          | Usage Esperado |
+| --------------- | ------------------------ | -------------- |
 | GitHub Actions  | 2000 min/month (private) | ~800 min/month |
-| GitHub Packages | 500MB storage          | ~200MB       |
-| Codecov         | Gratuito open source   | ✓            |
-| **Total**       |                        | **$0**       |
+| GitHub Packages | 500MB storage            | ~200MB         |
+| Codecov         | Gratuito open source     | ✓              |
+| **Total**       |                          | **$0**         |
 
 ## Consequences
 
 ### Positive
 
--  Pipeline complete of CI/CD
--  Tests automateds requireds
--  Deploy zero-downtime
--  Custo zero with GitHub
--  Images otimizadas (multi-stage)
+- Pipeline complete of CI/CD
+- Tests automateds requireds
+- Deploy zero-downtime
+- Custo zero with GitHub
+- Images otimizadas (multi-stage)
 
 ### Negative
 
--  Pipeline can be lento (~10min)
--  Dependência of the GitHub
+- Pipeline can be lento (~10min)
+- Dependência of the GitHub
 
 ## References
 

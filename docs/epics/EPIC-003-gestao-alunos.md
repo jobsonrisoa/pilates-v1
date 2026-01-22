@@ -1,20 +1,20 @@
 # EPIC-003: Management of Students
 
-##  General Information
+## General Information
 
-| Field            | Value                   |
-| ---------------- | ----------------------- |
-| **ID**           | EPIC-003                |
-| **Title**       | Management of Students        |
-| **Phase**         | 1 - MVP                 |
-| **Priority**   | Critical              |
-| **Estimate**   | 1.5 weeks             |
+| Field            | Value                     |
+| ---------------- | ------------------------- |
+| **ID**           | EPIC-003                  |
+| **Title**        | Management of Students    |
+| **Phase**        | 1 - MVP                   |
+| **Priority**     | Critical                  |
+| **Estimate**     | 1.5 weeks                 |
 | **Dependencies** | EPIC-002 (Authentication) |
-| **Status**       | Backlog              |
+| **Status**       | Backlog                   |
 
 ---
 
-##  Description
+## Description
 
 Implement module complete of management of students including:
 
@@ -26,7 +26,7 @@ Implement module complete of management of students including:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Full CRUD of students with validations
 2. Inhaveface intuitiva of eachstro and editing
@@ -36,7 +36,7 @@ Implement module complete of management of students including:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-003-001: Regishave Student
 
@@ -143,7 +143,7 @@ Implement module complete of management of students including:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -387,7 +387,7 @@ Implement module complete of management of students including:
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 ### Registration
 
@@ -428,7 +428,7 @@ Implement module complete of management of students including:
 
 ---
 
-##  Definition of Done of the Epic
+## Definition of Done of the Epic
 
 - [ ] Todas as tasks completed
 - [ ] Tests passando (≥80% coverage)
@@ -445,7 +445,7 @@ Implement module complete of management of students including:
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 ```
 Semana 1:

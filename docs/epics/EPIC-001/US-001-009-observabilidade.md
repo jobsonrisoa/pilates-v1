@@ -1,20 +1,20 @@
 # US-001-009: Logging and Metrics
 
-##  Information
+## Information
 
-| Field            | Value              |
-| ---------------- | ------------------ |
-| **ID**           | US-001-009         |
-| **Epic**        | EPIC-001           |
-| **Title**       | Logging and Metrics |
-| **Estimate**   | 3 hours            |
-| **Priority**   | 🟡 Medium           |
-| **Dependencies** | US-001-002         |
-| **Status**       | Backlog         |
+| Field            | Value               |
+| ---------------- | ------------------- |
+| **ID**           | US-001-009          |
+| **Epic**         | EPIC-001            |
+| **Title**        | Logging and Metrics |
+| **Estimate**     | 3 hours             |
+| **Priority**     | 🟡 Medium           |
+| **Dependencies** | US-001-002          |
+| **Status**       | Backlog             |
 
 ---
 
-##  Ube Story
+## Ube Story
 
 **Como** desenvolvedor/ops  
 **I want to** logging structured and metrics  
@@ -22,7 +22,7 @@
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Configurar Pino for logs structureds
 2. Configurar endpoint /metrics (Prometheus)
@@ -31,7 +31,7 @@
 
 ---
 
-##  Acceptance Criteria
+## Acceptance Criteria
 
 - [ ] Logs in JSON in production
 - [ ] Logs pretty in development
@@ -41,7 +41,7 @@
 
 ---
 
-##  Prompt for Implementation
+## Prompt for Implementation
 
 ```markdown
 ## Context
@@ -76,7 +76,7 @@ Configure:
 
 ---
 
-##  Implementation
+## Implementation
 
 ### Pino Logger Module
 
@@ -154,7 +154,7 @@ export class MetricsModule {}
 
 ---
 
-##  Checklist of Verification
+## Checklist of Verification
 
 - [ ] Logs aparecem formatados
 - [ ] /metrics retorna metrics
@@ -162,6 +162,6 @@ export class MetricsModule {}
 
 ---
 
-##  Next Ube Story
+## Next Ube Story
 
 → [US-001-010: Documentation and Seed](./US-001-010-documentacto.md)

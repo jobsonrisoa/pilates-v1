@@ -1,20 +1,20 @@
 # EPIC-007: Enrollments Basic
 
-##  General Information
+## General Information
 
-| Field            | Value                               |
-| ---------------- | ----------------------------------- |
-| **ID**           | EPIC-007                            |
-| **Title**       | Enrollments Basic                  |
-| **Phase**         | 1 - MVP                             |
-| **Priority**   | High                             |
-| **Estimate**   | 1 week                            |
+| Field            | Value                                   |
+| ---------------- | --------------------------------------- |
+| **ID**           | EPIC-007                                |
+| **Title**        | Enrollments Basic                       |
+| **Phase**        | 1 - MVP                                 |
+| **Priority**     | High                                    |
+| **Estimate**     | 1 week                                  |
 | **Dependencies** | EPIC-003 (Students), EPIC-005 (Classes) |
-| **Status**       | Backlog                          |
+| **Status**       | Backlog                                 |
 
 ---
 
-##  Description
+## Description
 
 Implement system basic of enrollments for o MVP:
 
@@ -27,7 +27,7 @@ Implement system basic of enrollments for o MVP:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Processo of enrollment functional
 2. Linking aluno + plan + schedules
@@ -36,7 +36,7 @@ Implement system basic of enrollments for o MVP:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-007-001: Create Enrollment
 
@@ -97,7 +97,7 @@ Implement system basic of enrollments for o MVP:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -203,7 +203,7 @@ model Plan {
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] Processo of enrollment complete
 - [ ] Plans configurable
@@ -214,13 +214,13 @@ model Plan {
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~23 hours (~1 week)
 
 ---
 
-##  Nexts Epics Relacionados
+## Nexts Epics Relacionados
 
 - **EPIC-008:** System of Plans and Prices
 - **EPIC-009:** Integration Sicoob

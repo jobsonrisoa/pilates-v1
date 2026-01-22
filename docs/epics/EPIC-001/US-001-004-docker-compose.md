@@ -1,20 +1,20 @@
 # US-001-004: Docker Compose Completo
 
-##  Information
+## Information
 
 | Field            | Value                   |
 | ---------------- | ----------------------- |
 | **ID**           | US-001-004              |
-| **Epic**        | EPIC-001                |
-| **Title**       | Docker Compose Completo |
-| **Estimate**   | 4 hours                 |
-| **Priority**   | Critical              |
+| **Epic**         | EPIC-001                |
+| **Title**        | Docker Compose Completo |
+| **Estimate**     | 4 hours                 |
+| **Priority**     | Critical                |
 | **Dependencies** | US-001-002, US-001-003  |
-| **Status**       | Backlog              |
+| **Status**       | Backlog                 |
 
 ---
 
-##  Ube Story
+## Ube Story
 
 **Como** desenvolvedor  
 **I want to** a environment Docker Compose complete  
@@ -22,7 +22,7 @@
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Create docker-compose.yml for development
 2. Create docker-compose.test.yml for tests
@@ -32,7 +32,7 @@
 
 ---
 
-##  Acceptance Criteria
+## Acceptance Criteria
 
 - [ ] `docker compose up` sobe entire environment
 - [ ] API with hot reload working
@@ -108,7 +108,7 @@ Database Dev Strategy
 
 ---
 
-##  Prompt for Implementation
+## Prompt for Implementation
 
 ```markdown
 ## Context
@@ -183,7 +183,7 @@ Services:
 
 ---
 
-##  Files Completos
+## Files Completos
 
 ### docker-compose.yml
 
@@ -499,7 +499,7 @@ FLUSH PRIVILEGES;
 
 ---
 
-##  Checklist of Verification
+## Checklist of Verification
 
 - [ ] `docker compose up` sobe without errors
 - [ ] API respwhere in http://localhost:3001/health
@@ -514,6 +514,6 @@ FLUSH PRIVILEGES;
 
 ---
 
-##  Next Ube Story
+## Next Ube Story
 
 → [US-001-005: Quality of Code](./US-001-005-quality-codigo.md)

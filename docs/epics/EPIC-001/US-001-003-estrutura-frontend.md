@@ -1,20 +1,20 @@
 # US-001-003: Frontend Structure (Next.js)
 
-##  Information
+## Information
 
-| Field            | Value                           |
-| ---------------- | ------------------------------- |
-| **ID**           | US-001-003                      |
-| **Epic**        | EPIC-001                        |
-| **Title**       | Frontend Structure (Next.js) |
-| **Estimate**   | 5 hours                         |
-| **Priority**   | Critical                      |
-| **Dependencies** | US-001-001                      |
+| Field            | Value                        |
+| ---------------- | ---------------------------- |
+| **ID**           | US-001-003                   |
+| **Epic**         | EPIC-001                     |
+| **Title**        | Frontend Structure (Next.js) |
+| **Estimate**     | 5 hours                      |
+| **Priority**     | Critical                     |
+| **Dependencies** | US-001-001                   |
 | **Status**       | Backlog                      |
 
 ---
 
-##  Ube Story
+## Ube Story
 
 **Como** desenvolvedor frontend  
 **I want to** a estrutura Next.js 14 with App Rouhave  
@@ -22,7 +22,7 @@
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Create project Next.js 14 with App Rouhave
 2. Configurar TailwindCSS
@@ -34,7 +34,7 @@
 
 ---
 
-##  Acceptance Criteria
+## Acceptance Criteria
 
 - [ ] Projeto Next.js criado in apps/web
 - [ ] App Rouhave configured
@@ -123,7 +123,7 @@ Data Fetching
 
 ---
 
-##  Structure Esperada
+## Structure Esperada
 
 ```
 apps/web/
@@ -187,7 +187,7 @@ apps/web/
 
 ---
 
-##  Prompt for Implementation
+## Prompt for Implementation
 
 ```markdown
 ## Context
@@ -293,7 +293,7 @@ Para each file, mostre:
 
 ---
 
-##  Files Principais
+## Files Principais
 
 ### 1. package.json (apps/web)
 
@@ -650,7 +650,7 @@ CMD ["node", "bever.js"]
 
 ---
 
-##  TDD Workflow
+## TDD Workflow
 
 ### Teste of Componente
 
@@ -690,7 +690,7 @@ describe('Button', () => {
 
 ---
 
-##  Checklist of Verification
+## Checklist of Verification
 
 - [ ] Next.js rodando in http://localhost:3000
 - [ ] TailwindCSS working
@@ -704,7 +704,7 @@ describe('Button', () => {
 
 ---
 
-##  Next Ube Story
+## Next Ube Story
 
 → [US-001-004: Docker Compose Completo](./US-001-004-docker-compose.md)
 

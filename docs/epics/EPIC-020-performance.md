@@ -1,20 +1,20 @@
 # EPIC-020: Optimizations of Performnce
 
-##  General Information
+## General Information
 
-| Field            | Value                      |
-| ---------------- | -------------------------- |
-| **ID**           | EPIC-020                   |
-| **Title**       | Optimizations of Performnce |
-| **Phase**         | 4 - Refinamento            |
-| **Priority**   | 🟡 Medium                   |
-| **Estimate**   | 1 week                   |
-| **Dependencies** | Todos os epics previous |
-| **Status**       | Backlog                 |
+| Field            | Value                       |
+| ---------------- | --------------------------- |
+| **ID**           | EPIC-020                    |
+| **Title**        | Optimizations of Performnce |
+| **Phase**        | 4 - Refinamento             |
+| **Priority**     | 🟡 Medium                   |
+| **Estimate**     | 1 week                      |
+| **Dependencies** | Todos os epics previous     |
+| **Status**       | Backlog                     |
 
 ---
 
-##  Description
+## Description
 
 Optimize performance of the system:
 
@@ -26,7 +26,7 @@ Optimize performance of the system:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. P95 < 500ms for all as routes
 2. Reduce load time of the frontend
@@ -35,7 +35,7 @@ Optimize performance of the system:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-020-001: Improve Tempo of Resposta of the API
 
@@ -79,7 +79,7 @@ Optimize performance of the system:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -186,7 +186,7 @@ Optimize performance of the system:
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] P95 API < 500ms
 - [ ] Core Web Vitals green
@@ -197,6 +197,6 @@ Optimize performance of the system:
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~28 hours (~1 week)

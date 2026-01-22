@@ -1,20 +1,20 @@
 # EPIC-014: Contracts Digitais
 
-##  General Information
+## General Information
 
-| Field            | Value                 |
-| ---------------- | --------------------- |
-| **ID**           | EPIC-014              |
-| **Title**       | Contracts Digitais    |
-| **Phase**         | 3 - Operacional       |
-| **Priority**   | High               |
-| **Estimate**   | 1.5 weeks           |
+| Field            | Value                  |
+| ---------------- | ---------------------- |
+| **ID**           | EPIC-014               |
+| **Title**        | Contracts Digitais     |
+| **Phase**        | 3 - Operacional        |
+| **Priority**     | High                   |
+| **Estimate**     | 1.5 weeks              |
 | **Dependencies** | EPIC-007 (Enrollments) |
-| **Status**       | Backlog            |
+| **Status**       | Backlog                |
 
 ---
 
-##  Description
+## Description
 
 Implement system of contracts digital:
 
@@ -26,7 +26,7 @@ Implement system of contracts digital:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Generate contracts automaticamente
 2. Signature digital segura
@@ -35,7 +35,7 @@ Implement system of contracts digital:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-014-001: Generate Contract of the Enrollment
 
@@ -111,7 +111,7 @@ Implement system of contracts digital:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -227,7 +227,7 @@ enum ContractStatus {
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] PDF gerado correctly
 - [ ] Integration with provider working
@@ -239,6 +239,6 @@ enum ContractStatus {
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~29 hours (~1.5 weeks)

@@ -1,20 +1,20 @@
 # US-001-006: Configuration of Tests Backend
 
-##  Information
+## Information
 
 | Field            | Value                          |
 | ---------------- | ------------------------------ |
 | **ID**           | US-001-006                     |
-| **Epic**        | EPIC-001                       |
-| **Title**       | Configuration of Tests Backend |
-| **Estimate**   | 4 hours                        |
-| **Priority**   | Critical                     |
+| **Epic**         | EPIC-001                       |
+| **Title**        | Configuration of Tests Backend |
+| **Estimate**     | 4 hours                        |
+| **Priority**     | Critical                       |
 | **Dependencies** | US-001-002                     |
-| **Status**       | Backlog                     |
+| **Status**       | Backlog                        |
 
 ---
 
-##  Ube Story
+## Ube Story
 
 **Como** desenvolvedor backend  
 **I want to** environment of tests configured  
@@ -22,7 +22,7 @@
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Configurar Jest for tests unit
 2. Configurar Jest for tests of integration
@@ -32,7 +32,7 @@
 
 ---
 
-##  Acceptance Criteria
+## Acceptance Criteria
 
 - [ ] Jest configured for unit
 - [ ] Jest configured for integration
@@ -43,7 +43,7 @@
 
 ---
 
-##  Prompt for Implementation
+## Prompt for Implementation
 
 ```markdown
 ## Context
@@ -103,7 +103,7 @@ Configure os tests:
 
 ---
 
-##  Files of Configuration
+## Files of Configuration
 
 ### jest.config.ts
 
@@ -178,7 +178,7 @@ export const createMockPrismaClient = (): MockPrismaClient => {
 
 ---
 
-##  Example TDD
+## Example TDD
 
 ### RED: Teste that falha
 
@@ -252,7 +252,7 @@ export abstract class ValueObject<T> {
 
 ---
 
-##  Checklist of Verification
+## Checklist of Verification
 
 - [ ] `pnpm --filter @pilates/api test` passa
 - [ ] `pnpm --filter @pilates/api test:cov` mostra ≥80%
@@ -261,6 +261,6 @@ export abstract class ValueObject<T> {
 
 ---
 
-##  Next Ube Story
+## Next Ube Story
 
 → [US-001-007: Configuration of Tests Frontend](./US-001-007-tests-frontend.md)

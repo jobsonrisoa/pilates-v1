@@ -1,20 +1,20 @@
 # EPIC-019: Dashboard Analytical
 
-##  General Information
+## General Information
 
-| Field            | Value                           |
-| ---------------- | ------------------------------- |
-| **ID**           | EPIC-019                        |
-| **Title**       | Dashboard Analytical             |
-| **Phase**         | 4 - Refinamento                 |
-| **Priority**   | 🟡 Medium                        |
-| **Estimate**   | 1.5 weeks                     |
+| Field            | Value                        |
+| ---------------- | ---------------------------- |
+| **ID**           | EPIC-019                     |
+| **Title**        | Dashboard Analytical         |
+| **Phase**        | 4 - Refinamento              |
+| **Priority**     | 🟡 Medium                    |
+| **Estimate**     | 1.5 weeks                    |
 | **Dependencies** | EPIC-012, EPIC-016 (Reports) |
 | **Status**       | Backlog                      |
 
 ---
 
-##  Description
+## Description
 
 Create dashboard analytical unificado:
 
@@ -26,7 +26,7 @@ Create dashboard analytical unificado:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. View executiva of the business
 2. Metrics in time real
@@ -35,7 +35,7 @@ Create dashboard analytical unificado:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-019-001: Ver KPIs Principais
 
@@ -125,7 +125,7 @@ Create dashboard analytical unificado:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -230,7 +230,7 @@ Create dashboard analytical unificado:
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] KPIs principais visible
 - [ ] Charts working
@@ -243,6 +243,6 @@ Create dashboard analytical unificado:
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~36 hours (~1.5 weeks)

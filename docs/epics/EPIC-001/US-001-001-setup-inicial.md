@@ -1,20 +1,20 @@
 # US-001-001: Initial Project Setup
 
-##  Information
+## Information
 
-| Field            | Value                    |
-| ---------------- | ------------------------ |
-| **ID**           | US-001-001               |
-| **Epic**        | EPIC-001                 |
-| **Title**       | Initial Project Setup |
-| **Estimate**   | 4 hours                  |
-| **Priority**   | Critical               |
+| Field            | Value                 |
+| ---------------- | --------------------- |
+| **ID**           | US-001-001            |
+| **Epic**         | EPIC-001              |
+| **Title**        | Initial Project Setup |
+| **Estimate**     | 4 hours               |
+| **Priority**     | Critical              |
 | **Dependencies** | None                  |
 | **Status**       | Backlog               |
 
 ---
 
-##  Ube Story
+## Ube Story
 
 **Como** desenvolvedor  
 **I want to** a estrutura of monorepo configurada  
@@ -22,7 +22,7 @@
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Create estrutura of folders of the monorepo
 2. Configurar pnpm workspaces
@@ -31,7 +31,7 @@
 
 ---
 
-##  Acceptance Criteria
+## Acceptance Criteria
 
 - [ ] Structure of folders criada conforme especificado
 - [ ] pnpm workspace configured and working
@@ -94,7 +94,7 @@ Motivo: Simplicidade, can evolve for Turborepo
 
 ---
 
-##  Structure Esperada
+## Structure Esperada
 
 ```
 pilates/
@@ -137,7 +137,7 @@ pilates/
 
 ---
 
-##  Prompt for Implementation
+## Prompt for Implementation
 
 ```markdown
 ## Context
@@ -193,7 +193,7 @@ Siga o formato: name of the file → content
 
 ---
 
-##  Files a Create
+## Files a Create
 
 ### 1. pnpm-workspace.yaml
 
@@ -483,11 +483,11 @@ deploy-prod: ## Deploy for production
 ### 6. README.md (root)
 
 ````markdown
-#  Management System - Pilates & Physiotherapy
+# Management System - Pilates & Physiotherapy
 
 System complete of management for academia of Pilates and Physiotherapy.
 
-##  Quick Start
+## Quick Start
 
 ### Requirements
 
@@ -552,7 +552,7 @@ make lint         # Verifica code
 make format       # Formata code
 ```
 
-##  Project Structure
+## Project Structure
 
 ```
 ├── apps/
@@ -564,7 +564,7 @@ make format       # Formata code
 └── .github/          # CI/CD
 ```
 
-##  Tecnologias
+## Tecnologias
 
 - **Backend:** NestJS, TypeScript, Prisma, MySQL
 - **Frontend:** Next.js 14, React, TailwindCSS
@@ -577,14 +577,14 @@ make format       # Formata code
 - [Arquitetura](./docs/architecture/)
 - [Epics](./docs/epics/)
 
-##  Contribuição
+## Contribuição
 
 1. Crie a branch: `git checkout -b feature/name`
 2. Faça commits: `git commit -m 'feat: description'`
 3. Push: `git push origin feature/name`
 4. Abra a Pull Request
 
-##  Licença
+## Licença
 
 Privado - Todos os direitos rebevados.
 

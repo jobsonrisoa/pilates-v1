@@ -38,12 +38,12 @@ O project segue meentirelogia TDD (Test-Driven Development) with ciclo Red-Green
 ### Metrics of Quality Obrigatórias
 
 | Metric             | Backend   | Frontend  | Bloqueante |
-| ------------------- | --------- | --------- | ---------- |
-| Coverage Linhas     | ≥ 80%     | ≥ 80%     |  Sim     |
-| Coverage Branches   | ≥ 75%     | ≥ 75%     |  Sim     |
-| Coverage Functions  | ≥ 80%     | ≥ 80%     |  Sim     |
-| Tests E2E critical | 100% pass | 100% pass |  Sim     |
-| Performnce P95     | < 500ms   | -         |  Warning |
+| ------------------ | --------- | --------- | ---------- |
+| Coverage Linhas    | ≥ 80%     | ≥ 80%     | Sim        |
+| Coverage Branches  | ≥ 75%     | ≥ 75%     | Sim        |
+| Coverage Functions | ≥ 80%     | ≥ 80%     | Sim        |
+| Tests E2E critical | 100% pass | 100% pass | Sim        |
+| Performnce P95     | < 500ms   | -         | Warning    |
 
 ---
 
@@ -1602,29 +1602,29 @@ jobs:
 
 ## Resumo of the Strategy
 
-| Tipo            | Ferramenta        | Cobertura          | Frequency            |
+| Tipo            | Ferramenta        | Cobertura          | Frequency             |
 | --------------- | ----------------- | ------------------ | --------------------- |
 | Unit (Backend)  | Jest              | ≥ 80%              | Cada PR               |
 | Unit (Frontend) | Jest + RTL        | ≥ 80%              | Cada PR               |
-| Integration      | Supertest + MySQL | Endpoints critical | Cada PR               |
+| Integration     | Supertest + MySQL | Endpoints critical | Cada PR               |
 | E2E             | Playwright        | Fluxos critical    | Merge in develop/main |
-| Performnce     | k6                | Load/Stress/Spike  | Merge in main         |
+| Performnce      | k6                | Load/Stress/Spike  | Merge in main         |
 
 ## Consequences
 
 ### Positive
 
--  Cobertura garantida of 80%+
--  Bugs encontrados cedo (shift-left)
--  Documentation viva via tests
--  Refactoring seguro
--  Metrics of quality objetivas
+- Cobertura garantida of 80%+
+- Bugs encontrados cedo (shift-left)
+- Documentation viva via tests
+- Refactoring seguro
+- Metrics of quality objetivas
 
 ### Negative
 
--  Tempo of CI aumentado (~15-20min)
--  Manutenção of tests
--  Learning curve TDD
+- Tempo of CI aumentado (~15-20min)
+- Manutenção of tests
+- Learning curve TDD
 
 ### Mitigations
 

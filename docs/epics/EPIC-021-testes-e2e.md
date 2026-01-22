@@ -1,20 +1,20 @@
 # EPIC-021: Tests E2E and Performnce
 
-##  General Information
+## General Information
 
-| Field            | Value                      |
-| ---------------- | -------------------------- |
-| **ID**           | EPIC-021                   |
-| **Title**       | Tests E2E and Performnce   |
-| **Phase**         | 4 - Refinamento            |
-| **Priority**   | High                    |
-| **Estimate**   | 1 week                   |
+| Field            | Value                     |
+| ---------------- | ------------------------- |
+| **ID**           | EPIC-021                  |
+| **Title**        | Tests E2E and Performnce  |
+| **Phase**        | 4 - Refinamento           |
+| **Priority**     | High                      |
+| **Estimate**     | 1 week                    |
 | **Dependencies** | Todos os epics funcionais |
-| **Status**       | Backlog                 |
+| **Status**       | Backlog                   |
 
 ---
 
-##  Description
+## Description
 
 Implement suite complete of tests:
 
@@ -25,7 +25,7 @@ Implement suite complete of tests:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. E2E for fluxos principais
 2. Garantir performance sob carga
@@ -34,7 +34,7 @@ Implement suite complete of tests:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-021-001: Tests E2E of Authentication
 
@@ -110,7 +110,7 @@ Implement suite complete of tests:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### E2E Tests
 
@@ -218,7 +218,7 @@ Implement suite complete of tests:
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] E2E cobrindo fluxos critical
 - [ ] Todos os tests passando
@@ -229,6 +229,6 @@ Implement suite complete of tests:
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~26 hours (~1 week)

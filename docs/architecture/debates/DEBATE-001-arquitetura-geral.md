@@ -4,11 +4,11 @@
 **Participbefore:**
 
 - 🏗️ **Dr. Carlos Mendes** - Arquiteto of Software Sênior (15 years of experience)
--  **Ana Rodrigues** - Especialist in DevOps and Infrastructure
--  **Roberto Silva** - Especialist in Costs and Otimizaction Cloud
--  **Marina Costa** - Especialist in Quality and Tests
--  **Felipe Santos** - Especialist in Security
--  **Juliana Oliveira** - Especialist in Observability
+- **Ana Rodrigues** - Especialist in DevOps and Infrastructure
+- **Roberto Silva** - Especialist in Costs and Otimizaction Cloud
+- **Marina Costa** - Especialist in Quality and Tests
+- **Felipe Santos** - Especialist in Security
+- **Juliana Oliveira** - Especialist in Observability
 
 ---
 
@@ -61,7 +61,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 >
 > Cada module is isoside, with seu own domain, mas withpartilha o same deploy. When needsrmos scale, cyears extract modules for bevices separados."
 
-###  Ana Rodrigues (DevOps):
+### Ana Rodrigues (DevOps):
 
 > "Concordo fully, Carlos. Microbevices trariam withplexity operational enorme:
 >
@@ -79,7 +79,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 >
 > Minha sumanagement is usar **Docker Compose** for development and a single Dockerfile optimized for production."
 
-###  Roberto Silva (Costs):
+### Roberto Silva (Costs):
 
 > "Do point of vista financial, a diferença is brutal:
 >
@@ -98,7 +98,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 >
 > A economia is of 80-90% starting with monolito!"
 
-###  Marina Costa (Quality):
+### Marina Costa (Quality):
 
 > "Para TDD, o monolito modular also is more vantajoso:
 >
@@ -130,7 +130,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 >
 > When (e se) migrarmos for microbevices, each service can have seu own schema or database."
 
-###  Ana Rodrigues:
+### Ana Rodrigues:
 
 > "Para ORM, sugiro **Prisma** to invés of TypeORM:
 >
@@ -142,7 +142,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 >
 > O Prisma also facilita very o TDD because gera a client type-safe."
 
-###  Roberto Silva:
+### Roberto Silva:
 
 > "MySQL gerenciado in cloud:
 >
@@ -153,7 +153,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 >
 > Para start, **Railway or PlanetScale** are ótimas options custo-benefit."
 
-###  Felipe Santos (Security):
+### Felipe Santos (Security):
 
 > "Independente of the escolha, needsmos garantir:
 >
@@ -169,7 +169,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 
 ## Topic 3: Hosting and Infrastructure
 
-###  Roberto Silva:
+### Roberto Silva:
 
 > "Vamos analisar as options of hospedagem for baixo custo:
 >
@@ -192,7 +192,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 >
 > Minha recommendation: **Railway for development/staging and Hetzner/DigitalOcean for production**."
 
-###  Ana Rodrigues:
+### Ana Rodrigues:
 
 > "Para maintain tudo in Docker and simplificar deploy, sugiro:
 >
@@ -231,7 +231,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 
 ## Topic 4: Observability
 
-###  Juliana Oliveira:
+### Juliana Oliveira:
 
 > "Observability is crítica, mas needs be proporcional to tamanho of the system. Para a monolito inicial, sugiro o stack more simple possible:
 >
@@ -256,7 +256,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 > - New Relic (free tier generoso)
 > - Sentry for errors (free tier)"
 
-###  Ana Rodrigues:
+### Ana Rodrigues:
 
 > "Concordo with a Juliana. Minha stack of observabilidade rewithendada:
 >
@@ -276,7 +276,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 > - OpenTelemetry
 > - Distributed tracing"
 
-###  Roberto Silva:
+### Roberto Silva:
 
 > "Costs of observabilidade:
 >
@@ -300,7 +300,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 
 ## Topic 5: CI/CD
 
-###  Ana Rodrigues:
+### Ana Rodrigues:
 
 > "CI/CD needs be simple mas robusto. Minha recommendation:
 >
@@ -327,7 +327,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 > - Ou Webhook for Watchtower
 > - Zero-downtime with health checks"
 
-###  Marina Costa:
+### Marina Costa:
 
 > "Para TDD work in the CI, needsmos de:
 >
@@ -345,7 +345,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 > ```"
 > ````
 
-###  Felipe Santos:
+### Felipe Santos:
 
 > "Security in the CI/CD:
 >
@@ -391,7 +391,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 > ```"
 > ````
 
-###  Roberto Silva:
+### Roberto Silva:
 
 > "Deploy of the Next.js:
 >
@@ -401,7 +401,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 >
 > Rewithendo **self-hosted** together with o backend for simplificar and economizar."
 
-###  Ana Rodrigues:
+### Ana Rodrigues:
 
 > "Para development local with Docker:
 >
@@ -453,7 +453,7 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 > - Files in S3/MinIO
 > - Cache distribuído"
 
-###  Ana Rodrigues:
+### Ana Rodrigues:
 
 > "Infrastructure preparada for scale:
 >
@@ -482,22 +482,22 @@ Management system for academia of Pilates and Physiotherapy with modules de:
 
 ## Resumo of the Decisions
 
-| Topic             | Decision                        |
+| Topic              | Decision                       |
 | ------------------ | ------------------------------ |
-| Arquitetura        | Monolito Modular with DDD       |
-| Backend            | NestJS with modules isosides    |
-| Frontend           | Next.js App Rouhave             |
-| Database     | MySQL + Prisma ORM             |
-| Hosting Dev     | Railway / Docker Compose local |
-| Hosting Prod    | Hetzner Cloud / DigitalOcean   |
+| Arquitetura        | Monolito Modular with DDD      |
+| Backend            | NestJS with modules isosides   |
+| Frontend           | Next.js App Rouhave            |
+| Database           | MySQL + Prisma ORM             |
+| Hosting Dev        | Railway / Docker Compose local |
+| Hosting Prod       | Hetzner Cloud / DigitalOcean   |
 | CI/CD              | GitHub Actions                 |
 | Container Registry | GitHub Container Registry      |
-| Logs               | Pino (structured)             |
+| Logs               | Pino (structured)              |
 | Erros              | Sentry (free tier)             |
-| Metrics           | Prometheus + Grafana           |
+| Metrics            | Prometheus + Grafana           |
 | Cache/Sessions     | Redis                          |
 | Reverse Proxy      | Traefik                        |
-| Files           | MinIO (dev) / S3 (prod)        |
+| Files              | MinIO (dev) / S3 (prod)        |
 
 ---
 

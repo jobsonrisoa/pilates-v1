@@ -449,13 +449,13 @@ export class AuditInhaveceptor implements NestInhaveceptor {
 
 **Pros:** Simple, revogaction easy  
 **Cons:** Not escala bem, stateful  
-**Decision:**  Rejected
+**Decision:** Rejected
 
 ### 2. OAuth2/OIDC with provider exhavenall
 
 **Pros:** Delegaction of responsabilidade  
 **Cons:** Complexity, dependency exhavenal  
-**Decision:**  Rejected (can be adicionado lahave)
+**Decision:** Rejected (can be adicionado lahave)
 
 ### 3. API Keys
 
@@ -467,16 +467,16 @@ export class AuditInhaveceptor implements NestInhaveceptor {
 
 ### Positive
 
--  Stateless - escala horizontalmente
--  RBAC flexible and granular
--  Refresh token routetion aumenta security
--  Auditoria complete
--  Rate limiting protege contra brute force
+- Stateless - escala horizontalmente
+- RBAC flexible and granular
+- Refresh token routetion aumenta security
+- Auditoria complete
+- Rate limiting protege contra brute force
 
 ### Negative
 
--  Tokens not can be invalidados imedaytamente (mitigated with refresh routetion)
--  Payload JWT cresce with muitas permissions
+- Tokens not can be invalidados imedaytamente (mitigated with refresh routetion)
+- Payload JWT cresce with muitas permissions
 
 ## Checklist of Security
 

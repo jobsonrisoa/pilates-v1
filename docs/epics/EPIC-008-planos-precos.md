@@ -1,20 +1,20 @@
 # EPIC-008: System of Plans and Prices
 
-##  General Information
+## General Information
 
 | Field            | Value                      |
 | ---------------- | -------------------------- |
 | **ID**           | EPIC-008                   |
-| **Title**       | System of Plans and Prices |
-| **Phase**         | 2 - Financial             |
-| **Priority**   | Critical                 |
-| **Estimate**   | 1 week                   |
-| **Dependencies** | EPIC-007 (Enrollments)      |
-| **Status**       | Backlog                 |
+| **Title**        | System of Plans and Prices |
+| **Phase**        | 2 - Financial              |
+| **Priority**     | Critical                   |
+| **Estimate**     | 1 week                     |
+| **Dependencies** | EPIC-007 (Enrollments)     |
+| **Status**       | Backlog                    |
 
 ---
 
-##  Description
+## Description
 
 Expandir o system of plans with:
 
@@ -25,7 +25,7 @@ Expandir o system of plans with:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Tabela of prices flexible
 2. Regras of desconto
@@ -34,7 +34,7 @@ Expandir o system of plans with:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-008-001: Configurar Price Table
 
@@ -79,7 +79,7 @@ Expandir o system of plans with:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### TASK-008-001: Schema of Prices
 
@@ -146,7 +146,7 @@ model Discount {
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] Tabela of prices functional
 - [ ] Discounts configurable
@@ -156,6 +156,6 @@ model Discount {
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~19 hours (~1 week)

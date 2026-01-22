@@ -1,20 +1,20 @@
 # EPIC-018: Granular Permissions
 
-##  General Information
+## General Information
 
-| Field            | Value                   |
-| ---------------- | ----------------------- |
-| **ID**           | EPIC-018                |
-| **Title**       | Granular Permissions   |
-| **Phase**         | 4 - Refinamento         |
-| **Priority**   | 🟡 Medium                |
-| **Estimate**   | 1 week                |
+| Field            | Value                     |
+| ---------------- | ------------------------- |
+| **ID**           | EPIC-018                  |
+| **Title**        | Granular Permissions      |
+| **Phase**        | 4 - Refinamento           |
+| **Priority**     | 🟡 Medium                 |
+| **Estimate**     | 1 week                    |
 | **Dependencies** | EPIC-002 (Authentication) |
-| **Status**       | Backlog              |
+| **Status**       | Backlog                   |
 
 ---
 
-##  Description
+## Description
 
 Expandir o system RBAC with:
 
@@ -26,7 +26,7 @@ Expandir o system RBAC with:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Flexibilidade total in permissions
 2. Perfis customizable
@@ -35,7 +35,7 @@ Expandir o system RBAC with:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-018-001: Create Profile Customizado
 
@@ -108,7 +108,7 @@ Expandir o system RBAC with:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -180,7 +180,7 @@ Expandir o system RBAC with:
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] Perfis customizable
 - [ ] Inhaveface intuitiva
@@ -191,6 +191,6 @@ Expandir o system RBAC with:
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~22 hours (~1 week)

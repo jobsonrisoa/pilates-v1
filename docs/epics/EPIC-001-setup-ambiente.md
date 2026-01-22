@@ -1,23 +1,23 @@
 # EPIC-001: Setup of the Development Environment
 
->  **Ube Stories detailed:** [EPIC-001/](./EPIC-001/)  
+> **Ube Stories detailed:** [EPIC-001/](./EPIC-001/)  
 > Each US has AI-powered prompts with Chain of Thought and TDD workflow
 
-##  General Information
+## General Information
 
 | Field            | Value                                |
 | ---------------- | ------------------------------------ |
 | **ID**           | EPIC-001                             |
-| **Title**       | Setup of the Development Environment |
-| **Phase**         | 1 - MVP                              |
-| **Priority**   | Critical                           |
-| **Estimate**   | 2 weeks                            |
-| **Dependencies** | None (initial epic)              |
-| **Status**       | Backlog                           |
+| **Title**        | Setup of the Development Environment |
+| **Phase**        | 1 - MVP                              |
+| **Priority**     | Critical                             |
+| **Estimate**     | 2 weeks                              |
+| **Dependencies** | None (initial epic)                  |
+| **Status**       | Backlog                              |
 
 ---
 
-##  Description
+## Description
 
 Configurar all a infrastructure of development of the project, including:
 
@@ -34,7 +34,7 @@ Configurar all a infrastructure of development of the project, including:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Create base structure of the project following standards of DDD
 2. Configure environment Docker complete for development
@@ -45,7 +45,7 @@ Configurar all a infrastructure of development of the project, including:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-001-001: Initial Project Setup
 
@@ -127,7 +127,7 @@ Configurar all a infrastructure of development of the project, including:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Project Structure
 
@@ -629,7 +629,7 @@ seed         # popular database
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 ### Development Environment
 
@@ -668,7 +668,7 @@ seed         # popular database
 
 ---
 
-##  Definition of Done of the Epic
+## Definition of Done of the Epic
 
 - [ ] Todas as tasks completed
 - [ ] Zero errors of lint
@@ -689,7 +689,7 @@ seed         # popular database
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 ```
 Semana 1:

@@ -1,20 +1,20 @@
 # EPIC-013: System of Reschedulings
 
-##  General Information
+## General Information
 
-| Field            | Value                 |
-| ---------------- | --------------------- |
-| **ID**           | EPIC-013              |
-| **Title**       | System of Reschedulings |
-| **Phase**         | 3 - Operacional       |
-| **Priority**   | High               |
-| **Estimate**   | 1.5 weeks           |
+| Field            | Value                   |
+| ---------------- | ----------------------- |
+| **ID**           | EPIC-013                |
+| **Title**        | System of Reschedulings |
+| **Phase**        | 3 - Operacional         |
+| **Priority**     | High                    |
+| **Estimate**     | 1.5 weeks               |
 | **Dependencies** | EPIC-006 (Schedule)     |
-| **Status**       | Backlog            |
+| **Status**       | Backlog                 |
 
 ---
 
-##  Description
+## Description
 
 Implement system complete of reschedulings of classs:
 
@@ -25,7 +25,7 @@ Implement system complete of reschedulings of classs:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Generate credits automaticamente
 2. Controlar validade
@@ -34,7 +34,7 @@ Implement system complete of reschedulings of classs:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-013-001: Generate Crédito of Rescheduling
 
@@ -109,7 +109,7 @@ Implement system complete of reschedulings of classs:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -226,7 +226,7 @@ enum ReschedulingStatus {
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] Credits gerados automaticamente
 - [ ] Validade of 90 days
@@ -238,6 +238,6 @@ enum ReschedulingStatus {
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~27 hours (~1.5 weeks)

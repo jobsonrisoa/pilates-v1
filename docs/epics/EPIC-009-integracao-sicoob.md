@@ -1,20 +1,20 @@
 # EPIC-009: Banking Integration Sicoob
 
-##  General Information
+## General Information
 
-| Field            | Value                      |
-| ---------------- | -------------------------- |
-| **ID**           | EPIC-009                   |
-| **Title**       | Banking Integration Sicoob |
-| **Phase**         | 2 - Financial             |
-| **Priority**   | Critical                 |
-| **Estimate**   | 2 weeks                  |
+| Field            | Value                       |
+| ---------------- | --------------------------- |
+| **ID**           | EPIC-009                    |
+| **Title**        | Banking Integration Sicoob  |
+| **Phase**        | 2 - Financial               |
+| **Priority**     | Critical                    |
+| **Estimate**     | 2 weeks                     |
 | **Dependencies** | EPIC-008 (Plans and Prices) |
-| **Status**       | Backlog                 |
+| **Status**       | Backlog                     |
 
 ---
 
-##  Description
+## Description
 
 Implement integration complete with API of the Sicoob para:
 
@@ -26,7 +26,7 @@ Implement integration complete with API of the Sicoob para:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Generate boletos automaticamente
 2. Generate PIX QR Code
@@ -35,7 +35,7 @@ Implement integration complete with API of the Sicoob para:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-009-001: Generate Boleto
 
@@ -97,7 +97,7 @@ Implement integration complete with API of the Sicoob para:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -212,7 +212,7 @@ SICOOB_WEBHOOK_SECRET=
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] Boletos gerados correctly
 - [ ] PIX working
@@ -232,7 +232,7 @@ SICOOB_WEBHOOK_SECRET=
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 ```
 Semana 1:

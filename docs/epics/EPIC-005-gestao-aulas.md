@@ -1,20 +1,20 @@
 # EPIC-005: Management of Classes and Schedules
 
-##  General Information
+## General Information
 
-| Field            | Value                      |
-| ---------------- | -------------------------- |
-| **ID**           | EPIC-005                   |
-| **Title**       | Management of Classes and Schedules |
-| **Phase**         | 1 - MVP                    |
-| **Priority**   | High                    |
-| **Estimate**   | 1.5 weeks                |
-| **Dependencies** | EPIC-004 (Instructores)     |
-| **Status**       | Backlog                 |
+| Field            | Value                               |
+| ---------------- | ----------------------------------- |
+| **ID**           | EPIC-005                            |
+| **Title**        | Management of Classes and Schedules |
+| **Phase**        | 1 - MVP                             |
+| **Priority**     | High                                |
+| **Estimate**     | 1.5 weeks                           |
+| **Dependencies** | EPIC-004 (Instructores)             |
+| **Status**       | Backlog                             |
 
 ---
 
-##  Description
+## Description
 
 Implement management of modalities, types of class and grade of schedules:
 
@@ -25,7 +25,7 @@ Implement management of modalities, types of class and grade of schedules:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Configurar modalities available
 2. Set types of class and capacidades
@@ -34,7 +34,7 @@ Implement management of modalities, types of class and grade of schedules:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-005-001: Gerenciar Modalities
 
@@ -96,7 +96,7 @@ Implement management of modalities, types of class and grade of schedules:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -201,7 +201,7 @@ model Schedule {
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] Modalities configurable
 - [ ] Tipos of class with capacidade
@@ -212,6 +212,6 @@ model Schedule {
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~27 hours (~1.5 weeks)

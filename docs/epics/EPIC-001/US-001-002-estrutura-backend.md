@@ -1,20 +1,20 @@
 # US-001-002: Backend Structure (NestJS + DDD)
 
-##  Information
+## Information
 
-| Field            | Value                               |
-| ---------------- | ----------------------------------- |
-| **ID**           | US-001-002                          |
-| **Epic**        | EPIC-001                            |
-| **Title**       | Backend Structure (NestJS + DDD) |
-| **Estimate**   | 6 hours                             |
-| **Priority**   | Critical                          |
-| **Dependencies** | US-001-001                          |
+| Field            | Value                            |
+| ---------------- | -------------------------------- |
+| **ID**           | US-001-002                       |
+| **Epic**         | EPIC-001                         |
+| **Title**        | Backend Structure (NestJS + DDD) |
+| **Estimate**     | 6 hours                          |
+| **Priority**     | Critical                         |
+| **Dependencies** | US-001-001                       |
 | **Status**       | Backlog                          |
 
 ---
 
-##  Ube Story
+## Ube Story
 
 **Como** desenvolvedor backend  
 **I want to** a estrutura NestJS organizada with DDD  
@@ -22,7 +22,7 @@
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Create project NestJS with TypeScript
 2. Structurer seguindo Domain-Driven Design
@@ -33,7 +33,7 @@
 
 ---
 
-##  Acceptance Criteria
+## Acceptance Criteria
 
 - [ ] Projeto NestJS criado in apps/api
 - [ ] Structure DDD with layers separadas
@@ -124,7 +124,7 @@ ORM Choice
 
 ---
 
-##  Structure Esperada
+## Structure Esperada
 
 ```
 apps/api/
@@ -188,7 +188,7 @@ apps/api/
 
 ---
 
-##  Prompt for Implementation
+## Prompt for Implementation
 
 ```markdown
 ## Context
@@ -286,7 +286,7 @@ Para each file, mostre:
 
 ---
 
-##  Files Principais
+## Files Principais
 
 ### 1. package.json (apps/api)
 
@@ -567,7 +567,7 @@ export class HealthController {
 
 ---
 
-##  TDD Workflow
+## TDD Workflow
 
 ### RED: Write test first
 
@@ -632,7 +632,7 @@ Implemente a class Entity conforme mostrado above.
 
 ---
 
-##  Checklist of Verification
+## Checklist of Verification
 
 - [ ] NestJS iniciando correctly
 - [ ] Structure DDD implementada
@@ -646,7 +646,7 @@ Implemente a class Entity conforme mostrado above.
 
 ---
 
-##  Next Ube Story
+## Next Ube Story
 
 → [US-001-003: Frontend Structure](./US-001-003-estrutura-frontend.md)
 

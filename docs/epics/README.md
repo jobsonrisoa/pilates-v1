@@ -1,13 +1,13 @@
 # Epics of the Projeto
 
->  **AI-Powered Development:** Cada epic possui Ube Stories with prompts optimizeds  
+> **AI-Powered Development:** Cada epic possui Ube Stories with prompts optimizeds  
 > for development assistido por AI usando **Chain of Thought** and **Tree of Thought**
 
 ## Management System for Pilates and Physiotherapy Studio
 
 ---
 
-##  Overview of the Epics
+## Overview of the Epics
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -57,99 +57,99 @@
 
 ---
 
-##  Lista of Epics
+## Lista of Epics
 
 ### Phase 1 - MVP
 
-| ID                                           | Epic                                                     | Priority | Estimate  | Status     |
-| -------------------------------------------- | --------------------------------------------------------- | ---------- | ----------- | ---------- |
-| [EPIC-001](./EPIC-001-setup-environment.md)     | Setup Development Environment [(10 USs)](./EPIC-001/) | Critical | 2 weeks   | Backlog |
-| [EPIC-002](./EPIC-002-autenticacao.md)       | Authentication and Authorization                                | Critical | 2 weeks   | Backlog |
-| [EPIC-003](./EPIC-003-gestto-students.md)      | Management of Students                                          | Critical | 1.5 weeks | Backlog |
-| [EPIC-004](./EPIC-004-gestto-instructores.md) | Management of Instructores                                     | High    | 1 week    | Backlog |
-| [EPIC-005](./EPIC-005-gestto-classs.md)       | Management of Classes and Schedules                                | High    | 1.5 weeks | Backlog |
-| [EPIC-006](./EPIC-006-schedule.md)             | Schedule and Schedulemento                                      | High    | 1.5 weeks | Backlog |
-| [EPIC-007](./EPIC-007-matriculas.md)         | Enrollments Basic                                        | High    | 1 week    | Backlog |
+| ID                                            | Epic                                                  | Priority | Estimate  | Status  |
+| --------------------------------------------- | ----------------------------------------------------- | -------- | --------- | ------- |
+| [EPIC-001](./EPIC-001-setup-environment.md)   | Setup Development Environment [(10 USs)](./EPIC-001/) | Critical | 2 weeks   | Backlog |
+| [EPIC-002](./EPIC-002-autenticacao.md)        | Authentication and Authorization                      | Critical | 2 weeks   | Backlog |
+| [EPIC-003](./EPIC-003-gestto-students.md)     | Management of Students                                | Critical | 1.5 weeks | Backlog |
+| [EPIC-004](./EPIC-004-gestto-instructores.md) | Management of Instructores                            | High     | 1 week    | Backlog |
+| [EPIC-005](./EPIC-005-gestto-classs.md)       | Management of Classes and Schedules                   | High     | 1.5 weeks | Backlog |
+| [EPIC-006](./EPIC-006-schedule.md)            | Schedule and Schedulemento                            | High     | 1.5 weeks | Backlog |
+| [EPIC-007](./EPIC-007-matriculas.md)          | Enrollments Basic                                     | High     | 1 week    | Backlog |
 
 ### Phase 2 - Financial
 
-| ID                                               | Epic                      | Priority | Estimate  | Status     |
-| ------------------------------------------------ | -------------------------- | ---------- | ----------- | ---------- |
-| [EPIC-008](./EPIC-008-plans-precos.md)          | System of Plans and Prices | Critical | 1 week    | Backlog |
-| [EPIC-009](./EPIC-009-integracao-sicoob.md)      | Banking Integration Sicoob | Critical | 2 weeks   | Backlog |
-| [EPIC-010](./EPIC-010-payments.md)             | Payment Control     | Critical | 1.5 weeks | Backlog |
-| [EPIC-011](./EPIC-011-withissoes.md)              | Commissions of Instructores   | 🟡 Medium   | 1 week    | Backlog |
-| [EPIC-012](./EPIC-012-relatorios-financial.md) | Reports Financials     | High    | 1 week    | Backlog |
+| ID                                             | Epic                        | Priority  | Estimate  | Status  |
+| ---------------------------------------------- | --------------------------- | --------- | --------- | ------- |
+| [EPIC-008](./EPIC-008-plans-precos.md)         | System of Plans and Prices  | Critical  | 1 week    | Backlog |
+| [EPIC-009](./EPIC-009-integracao-sicoob.md)    | Banking Integration Sicoob  | Critical  | 2 weeks   | Backlog |
+| [EPIC-010](./EPIC-010-payments.md)             | Payment Control             | Critical  | 1.5 weeks | Backlog |
+| [EPIC-011](./EPIC-011-withissoes.md)           | Commissions of Instructores | 🟡 Medium | 1 week    | Backlog |
+| [EPIC-012](./EPIC-012-relatorios-financial.md) | Reports Financials          | High      | 1 week    | Backlog |
 
 ### Phase 3 - Operacional
 
-| ID                                                | Epic                   | Priority | Estimate  | Status     |
-| ------------------------------------------------- | ----------------------- | ---------- | ----------- | ---------- |
-| [EPIC-013](./EPIC-013-reposicoes.md)              | System of Reschedulings   | High    | 1.5 weeks | Backlog |
-| [EPIC-014](./EPIC-014-contracts.md)               | Contracts Digitais      | High    | 1.5 weeks | Backlog |
-| [EPIC-015](./EPIC-015-inventory.md)                 | Management of Inventory       | 🟡 Medium   | 1.5 weeks | Backlog |
-| [EPIC-016](./EPIC-016-relatorios-operacionais.md) | Reports Operacionais | 🟡 Medium   | 1 week    | Backlog |
-| [EPIC-017](./EPIC-017-upload-documentos.md)       | Upload of Documentos    | 🟡 Medium   | 1 week    | Backlog |
+| ID                                                | Epic                    | Priority  | Estimate  | Status  |
+| ------------------------------------------------- | ----------------------- | --------- | --------- | ------- |
+| [EPIC-013](./EPIC-013-reposicoes.md)              | System of Reschedulings | High      | 1.5 weeks | Backlog |
+| [EPIC-014](./EPIC-014-contracts.md)               | Contracts Digitais      | High      | 1.5 weeks | Backlog |
+| [EPIC-015](./EPIC-015-inventory.md)               | Management of Inventory | 🟡 Medium | 1.5 weeks | Backlog |
+| [EPIC-016](./EPIC-016-relatorios-operacionais.md) | Reports Operacionais    | 🟡 Medium | 1 week    | Backlog |
+| [EPIC-017](./EPIC-017-upload-documentos.md)       | Upload of Documentos    | 🟡 Medium | 1 week    | Backlog |
 
 ### Phase 4 - Refinamento
 
-| ID                                              | Epic                          | Priority | Estimate  | Status     |
-| ----------------------------------------------- | ------------------------------ | ---------- | ----------- | ---------- |
-| [EPIC-018](./EPIC-018-permissions-granular.md) | Granular Permissions          | 🟡 Medium   | 1 week    | Backlog |
-| [EPIC-019](./EPIC-019-dashboard.md)             | Dashboard Analytical            | 🟡 Medium   | 1.5 weeks | Backlog |
-| [EPIC-020](./EPIC-020-performance.md)           | Optimizations of Performnce     | 🟡 Medium   | 1 week    | Backlog |
-| [EPIC-021](./EPIC-021-tests-e2e.md)            | Tests E2E and Performnce       | High    | 1 week    | Backlog |
-| [EPIC-022](./EPIC-022-deploy-producto.md)       | Documentation and Deploy Production | Critical | 1 week    | Backlog |
+| ID                                             | Epic                                | Priority  | Estimate  | Status  |
+| ---------------------------------------------- | ----------------------------------- | --------- | --------- | ------- |
+| [EPIC-018](./EPIC-018-permissions-granular.md) | Granular Permissions                | 🟡 Medium | 1 week    | Backlog |
+| [EPIC-019](./EPIC-019-dashboard.md)            | Dashboard Analytical                | 🟡 Medium | 1.5 weeks | Backlog |
+| [EPIC-020](./EPIC-020-performance.md)          | Optimizations of Performnce         | 🟡 Medium | 1 week    | Backlog |
+| [EPIC-021](./EPIC-021-tests-e2e.md)            | Tests E2E and Performnce            | High      | 1 week    | Backlog |
+| [EPIC-022](./EPIC-022-deploy-producto.md)      | Documentation and Deploy Production | Critical  | 1 week    | Backlog |
 
 ---
 
-##  Resumo por Phase
+## Resumo por Phase
 
-| Phase                     | Epics | Tasks    | Estimate      |
-| ------------------------ | ------ | -------- | --------------- |
+| Phase                     | Epics  | Tasks    | Estimate      |
+| ------------------------- | ------ | -------- | ------------- |
 | **Phase 1 - MVP**         | 7      | ~81      | 10.5 weeks    |
-| **Phase 2 - Financial**  | 5      | ~54      | 6.5 weeks     |
+| **Phase 2 - Financial**   | 5      | ~54      | 6.5 weeks     |
 | **Phase 3 - Operacional** | 5      | ~52      | 6.5 weeks     |
 | **Phase 4 - Refinamento** | 5      | ~49      | 5.5 weeks     |
-| **TOTAL**                | **22** | **~236** | **~29 weeks** |
+| **TOTAL**                 | **22** | **~236** | **~29 weeks** |
 
 ---
 
-##  Metrics of the Projeto
+## Metrics of the Projeto
 
 ### Estimate Total
 
-| Phase                 | Epics | Estimate      |
-| -------------------- | ------ | --------------- |
+| Phase                 | Epics  | Estimate      |
+| --------------------- | ------ | ------------- |
 | Phase 1 - MVP         | 7      | 10.5 weeks    |
-| Phase 2 - Financial  | 5      | 6.5 weeks     |
+| Phase 2 - Financial   | 5      | 6.5 weeks     |
 | Phase 3 - Operacional | 5      | 6.5 weeks     |
 | Phase 4 - Refinamento | 5      | 5.5 weeks     |
-| **Total**            | **22** | **~29 weeks** |
+| **Total**             | **22** | **~29 weeks** |
 
 ### Legenda of Status
 
-| Ícone | Status       |
-| ----- | ------------ |
-|     | Backlog      |
-|     | In Progress |
-| 👀    | Em Review    |
-|     | Completed    |
-| ⏸️    | Pausado      |
-|     | Cancelled    |
+| Ícone | Status      |
+| ----- | ----------- |
+|       | Backlog     |
+|       | In Progress |
+| 👀    | Em Review   |
+|       | Completed   |
+| ⏸️    | Pausado     |
+|       | Cancelled   |
 
 ### Legenda of Priority
 
 | Ícone | Priority |
-| ----- | ---------- |
-|     | Critical    |
-|     | High       |
-| 🟡    | Medium      |
-|     | Low      |
+| ----- | -------- |
+|       | Critical |
+|       | High     |
+| 🟡    | Medium   |
+|       | Low      |
 
 ---
 
-##  Dependencies between Epics
+## Dependencies between Epics
 
 ```
 EPIC-001 (Setup)
@@ -185,7 +185,7 @@ EPIC-001 (Setup)
 
 ---
 
-##  Template of Epic
+## Template of Epic
 
 Cada epic segue o hasplate:
 

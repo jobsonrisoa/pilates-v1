@@ -1,20 +1,20 @@
 # EPIC-002: Authentication and Authorization
 
-##  General Information
+## General Information
 
-| Field            | Value                      |
-| ---------------- | -------------------------- |
-| **ID**           | EPIC-002                   |
-| **Title**       | Authentication and Authorization |
-| **Phase**         | 1 - MVP                    |
-| **Priority**   | Critical                 |
-| **Estimate**   | 2 weeks                  |
-| **Dependencies** | EPIC-001 (Setup Ambiente)  |
-| **Status**       | Backlog                 |
+| Field            | Value                            |
+| ---------------- | -------------------------------- |
+| **ID**           | EPIC-002                         |
+| **Title**        | Authentication and Authorization |
+| **Phase**        | 1 - MVP                          |
+| **Priority**     | Critical                         |
+| **Estimate**     | 2 weeks                          |
+| **Dependencies** | EPIC-001 (Setup Ambiente)        |
+| **Status**       | Backlog                          |
 
 ---
 
-##  Description
+## Description
 
 Implement system complete of authentication and authorization including:
 
@@ -27,7 +27,7 @@ Implement system complete of authentication and authorization including:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Authentication segura with JWT and refresh tokens
 2. System of permissions granular por perfil
@@ -37,7 +37,7 @@ Implement system complete of authentication and authorization including:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-002-001: Login of Ube
 
@@ -130,7 +130,7 @@ Implement system complete of authentication and authorization including:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -475,7 +475,7 @@ const PERMISSIONS = {
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 ### Authentication
 
@@ -519,7 +519,7 @@ const PERMISSIONS = {
 
 ---
 
-##  Definition of Done of the Epic
+## Definition of Done of the Epic
 
 - [ ] Todas as tasks completed
 - [ ] Zero vulnerabilities conhecidas
@@ -537,7 +537,7 @@ const PERMISSIONS = {
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 ```
 Semana 1 (Backend):

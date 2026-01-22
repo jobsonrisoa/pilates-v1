@@ -1,20 +1,20 @@
 # US-001-005: Quality of Code (Lint, Format, Hooks)
 
-##  Information
+## Information
 
 | Field            | Value                  |
 | ---------------- | ---------------------- |
 | **ID**           | US-001-005             |
-| **Epic**        | EPIC-001               |
-| **Title**       | Quality of Code    |
-| **Estimate**   | 3 hours                |
-| **Priority**   | High                |
+| **Epic**         | EPIC-001               |
+| **Title**        | Quality of Code        |
+| **Estimate**     | 3 hours                |
+| **Priority**     | High                   |
 | **Dependencies** | US-001-002, US-001-003 |
-| **Status**       | Backlog             |
+| **Status**       | Backlog                |
 
 ---
 
-##  Ube Story
+## Ube Story
 
 **Como** desenvolvedor  
 **I want to** tools of quality of code configuradas  
@@ -22,7 +22,7 @@
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Configurar ESLint for TypeScript
 2. Configurar Prettier
@@ -32,7 +32,7 @@
 
 ---
 
-##  Acceptance Criteria
+## Acceptance Criteria
 
 - [ ] ESLint configured in the backend and frontend
 - [ ] Prettier formatando code
@@ -44,7 +44,7 @@
 
 ---
 
-##  Prompt for Implementation
+## Prompt for Implementation
 
 ```markdown
 ## Context
@@ -106,7 +106,7 @@ Configure as tools of quality:
 
 ---
 
-##  Files of Configuration
+## Files of Configuration
 
 ### .eslintrc.js (root)
 
@@ -220,7 +220,7 @@ npx --no -- commitlint --edit ${1}
 
 ---
 
-##  Checklist of Verification
+## Checklist of Verification
 
 - [ ] `pnpm lint` funciona
 - [ ] `pnpm format` formata
@@ -230,6 +230,6 @@ npx --no -- commitlint --edit ${1}
 
 ---
 
-##  Next Ube Story
+## Next Ube Story
 
 → [US-001-006: Configuration of Tests Backend](./US-001-006-tests-backend.md)

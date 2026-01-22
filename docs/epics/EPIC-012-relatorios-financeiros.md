@@ -1,20 +1,20 @@
 # EPIC-012: Reports Financials
 
-##  General Information
+## General Information
 
 | Field            | Value                                       |
 | ---------------- | ------------------------------------------- |
 | **ID**           | EPIC-012                                    |
-| **Title**       | Reports Financials                      |
-| **Phase**         | 2 - Financial                              |
-| **Priority**   | High                                     |
-| **Estimate**   | 1 week                                    |
+| **Title**        | Reports Financials                          |
+| **Phase**        | 2 - Financial                               |
+| **Priority**     | High                                        |
+| **Estimate**     | 1 week                                      |
 | **Dependencies** | EPIC-010 (Payments), EPIC-011 (Commissions) |
-| **Status**       | Backlog                                  |
+| **Status**       | Backlog                                     |
 
 ---
 
-##  Description
+## Description
 
 Implement reports financial completes:
 
@@ -25,7 +25,7 @@ Implement reports financial completes:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. View clara of the receitas
 2. Controle of delinquency
@@ -34,7 +34,7 @@ Implement reports financial completes:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-012-001: Report of Revenue por Period
 
@@ -124,7 +124,7 @@ Implement reports financial completes:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -211,7 +211,7 @@ Implement reports financial completes:
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] All reports working
 - [ ] Charts informctives
@@ -222,6 +222,6 @@ Implement reports financial completes:
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~33 hours (~1 week)

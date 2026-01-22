@@ -1,20 +1,20 @@
 # EPIC-010: Payment Control
 
-##  General Information
+## General Information
 
-| Field            | Value                        |
-| ---------------- | ---------------------------- |
-| **ID**           | EPIC-010                     |
-| **Title**       | Payment Control       |
-| **Phase**         | 2 - Financial               |
-| **Priority**   | Critical                   |
-| **Estimate**   | 1.5 weeks                  |
+| Field            | Value                         |
+| ---------------- | ----------------------------- |
+| **ID**           | EPIC-010                      |
+| **Title**        | Payment Control               |
+| **Phase**        | 2 - Financial                 |
+| **Priority**     | Critical                      |
+| **Estimate**     | 1.5 weeks                     |
 | **Dependencies** | EPIC-009 (Integration Sicoob) |
-| **Status**       | Backlog                   |
+| **Status**       | Backlog                       |
 
 ---
 
-##  Description
+## Description
 
 Implement control complete of payments:
 
@@ -26,7 +26,7 @@ Implement control complete of payments:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Generate billing automaticamente
 2. Controlar delinquency
@@ -35,7 +35,7 @@ Implement control complete of payments:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-010-001: Generate Billing Mensal
 
@@ -125,7 +125,7 @@ Implement control complete of payments:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -238,7 +238,7 @@ enum PaymentStatus {
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] Billings geradas automaticamente
 - [ ] Status currentizados correctly
@@ -250,6 +250,6 @@ enum PaymentStatus {
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~30 hours (~1.5 weeks)

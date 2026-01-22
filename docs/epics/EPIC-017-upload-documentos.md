@@ -1,20 +1,20 @@
 # EPIC-017: Upload of Documentos
 
-##  General Information
+## General Information
 
 | Field            | Value                |
 | ---------------- | -------------------- |
 | **ID**           | EPIC-017             |
-| **Title**       | Upload of Documentos |
-| **Phase**         | 3 - Operacional      |
-| **Priority**   | 🟡 Medium             |
-| **Estimate**   | 1 week             |
+| **Title**        | Upload of Documentos |
+| **Phase**        | 3 - Operacional      |
+| **Priority**     | 🟡 Medium            |
+| **Estimate**     | 1 week               |
 | **Dependencies** | EPIC-001 (Setup)     |
-| **Status**       | Backlog           |
+| **Status**       | Backlog              |
 
 ---
 
-##  Description
+## Description
 
 Implement system complete of upload and management of documentos:
 
@@ -26,7 +26,7 @@ Implement system complete of upload and management of documentos:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Upload seguro and organized
 2. Multiple types of file
@@ -35,7 +35,7 @@ Implement system complete of upload and management of documentos:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-017-001: Upload of Documento of the Student
 
@@ -93,7 +93,7 @@ Implement system complete of upload and management of documentos:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -194,7 +194,7 @@ model Document {
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] Upload working for S3/MinIO
 - [ ] Validations of type and tamanho
@@ -206,6 +206,6 @@ model Document {
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~22 hours (~1 week)

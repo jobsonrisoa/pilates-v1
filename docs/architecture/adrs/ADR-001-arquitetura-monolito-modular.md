@@ -142,26 +142,26 @@ async handlePaymentConfirmed(event: PaymentConfirmedEvent) {
 
 ### Positive
 
--  **Low cost**: Deploy on simple VPS (~$20/month)
--  **Simple operation**: One accountiner, one deploy
--  **Easy debugging**: Unified stack traces
--  **ACID transactions**: Single database
--  **Easier TDD**: Less network mocks
--  **Ready to evolve**: Modules extractable
+- **Low cost**: Deploy on simple VPS (~$20/month)
+- **Simple operation**: One accountiner, one deploy
+- **Easy debugging**: Unified stack traces
+- **ACID transactions**: Single database
+- **Easier TDD**: Less network mocks
+- **Ready to evolve**: Modules extractable
 
 ### Negative
 
--  Single deploy (entire system together)
--  Vertical before horizontal scaling
--  Discipline required to maintain isolation
+- Single deploy (entire system together)
+- Vertical before horizontal scaling
+- Discipline required to maintain isolation
 
 ### Risks and Mitigations
 
-| Risk                     | Mitigation                             |
-| ------------------------- | ------------------------------------- |
+| Risk                     | Mitigation                        |
+| ------------------------ | --------------------------------- |
 | Coupling between modules | Code review + lint rules          |
-| Limited scaling           | Redis + read replicas when needed |
-| Single point of failure   | Health checks + automatic rbet    |
+| Limited scaling          | Redis + read replicas when needed |
+| Single point of failure  | Health checks + automatic rbet    |
 
 ## Migration Criteria
 

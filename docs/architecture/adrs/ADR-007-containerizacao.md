@@ -468,18 +468,18 @@ docker compose exec api sh
 
 ### Positive
 
--  Zero instalaction local required
--  Ambiente consistente between devs
--  Onboarding in minutes
--  Services auxiliares includeds (mail, storage)
--  Hot reload working
--  Fácil limpar and restart
+- Zero instalaction local required
+- Ambiente consistente between devs
+- Onboarding in minutes
+- Services auxiliares includeds (mail, storage)
+- Hot reload working
+- Fácil limpar and restart
 
 ### Negative
 
--  Docker required (consumo of resources)
--  Primeira inicializaction lenta
--  Debugging can be more withplexo
+- Docker required (consumo of resources)
+- Primeira inicializaction lenta
+- Debugging can be more withplexo
 
 ### Mitigations
 

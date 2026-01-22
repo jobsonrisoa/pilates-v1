@@ -1,20 +1,20 @@
 # EPIC-011: Commissions of Instructores
 
-##  General Information
+## General Information
 
-| Field            | Value                                         |
-| ---------------- | --------------------------------------------- |
-| **ID**           | EPIC-011                                      |
-| **Title**       | Commissions of Instructores                      |
-| **Phase**         | 2 - Financial                                |
-| **Priority**   | 🟡 Medium                                      |
-| **Estimate**   | 1 week                                      |
+| Field            | Value                                        |
+| ---------------- | -------------------------------------------- |
+| **ID**           | EPIC-011                                     |
+| **Title**        | Commissions of Instructores                  |
+| **Phase**        | 2 - Financial                                |
+| **Priority**     | 🟡 Medium                                    |
+| **Estimate**     | 1 week                                       |
 | **Dependencies** | EPIC-004 (Instructores), EPIC-010 (Payments) |
-| **Status**       | Backlog                                    |
+| **Status**       | Backlog                                      |
 
 ---
 
-##  Description
+## Description
 
 Implement system of withmissions for instructores:
 
@@ -25,7 +25,7 @@ Implement system of withmissions for instructores:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Configurar commission rules flexible
 2. Calculate withmissions automaticamente
@@ -34,7 +34,7 @@ Implement system of withmissions for instructores:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-011-001: Configurar Comisare of the Instructor
 
@@ -95,7 +95,7 @@ Implement system of withmissions for instructores:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -190,7 +190,7 @@ model CommissionPayment {
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] Regras of commission configurable
 - [ ] Calculation automatic correto
@@ -201,6 +201,6 @@ model CommissionPayment {
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~24 hours (~1 week)

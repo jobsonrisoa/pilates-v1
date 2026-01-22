@@ -658,16 +658,16 @@ mysqldump -u $DB_USER -p$DB_PASSWORD \
 
 ### Positive
 
--  Schema type-safe with Prisma
--  Migrations versioned
--  Modelo of dados normalizado
--  Suporte complete a LGPD (audit logs)
--  Performnce otimizada with indexes
+- Schema type-safe with Prisma
+- Migrations versioned
+- Modelo of dados normalizado
+- Suporte complete a LGPD (audit logs)
+- Performnce otimizada with indexes
 
 ### Negative
 
--  Prisma has overhead in queries very withplexas
--  Schema grande for maintain
+- Prisma has overhead in queries very withplexas
+- Schema grande for maintain
 
 ## LGPD Compliance
 

@@ -50,10 +50,10 @@ docs/
 
 ### Testing
 
-| Document                           | Description                     |
-| ---------------------------------- | ------------------------------- |
-| [README](./testing/README.md)      | Index and test status           |
-| [TESTING.md](./testing/TESTING.md) | Complete testing documentation  |
+| Document                           | Description                    |
+| ---------------------------------- | ------------------------------ |
+| [README](./testing/README.md)      | Index and test status          |
+| [TESTING.md](./testing/TESTING.md) | Complete testing documentation |
 
 ### PRD (Product Requirements Document)
 
@@ -70,25 +70,25 @@ The [PRD](./PRD.md) is the main document that consolidates all system requiremen
 
 ### Architectural Debates
 
-| Document                                                             | Description                                   |
-| -------------------------------------------------------------------- | --------------------------------------------- |
+| Document                                                                | Description                                        |
+| ----------------------------------------------------------------------- | -------------------------------------------------- |
 | [DEBATE-001](./architecture/debates/DEBATE-001-general-architecture.md) | Debate between specialists on general architecture |
 
 ---
 
 ### ADRs (Architecture Decision Records)
 
-| ADR                                                                      | Title                                     | Status   |
-| ------------------------------------------------------------------------ | ----------------------------------------- | -------- |
-| [ADR-001](./architecture/adrs/ADR-001-modular-monolith-architecture.md)  | Modular Monolith Architecture             | Accepted |
-| [ADR-002](./architecture/adrs/ADR-002-technology-stack.md)               | Technology Stack                          | Accepted |
-| [ADR-003](./architecture/adrs/ADR-003-database.md)                       | Database (MySQL + Prisma)                 | Accepted |
-| [ADR-004](./architecture/adrs/ADR-004-authentication-authorization.md)   | Authentication and Authorization (JWT + RBAC) | Accepted |
-| [ADR-005](./architecture/adrs/ADR-005-observability.md)                  | Observability (Logs, Metrics, Errors)     | Accepted |
-| [ADR-006](./architecture/adrs/ADR-006-ci-cd.md)                          | CI/CD (GitHub Actions)                    | Accepted |
-| [ADR-007](./architecture/adrs/ADR-007-accountinerization.md)               | Containerization (Docker)                 | Accepted |
-| [ADR-008](./architecture/adrs/ADR-008-sicoob-integration.md)             | Banking Integration (Sicoob)              | Accepted |
-| [ADR-009](./architecture/adrs/ADR-009-testing-strategy.md)               | Testing Strategy (TDD, 80% coverage)      | Accepted |
+| ADR                                                                     | Title                                         | Status   |
+| ----------------------------------------------------------------------- | --------------------------------------------- | -------- |
+| [ADR-001](./architecture/adrs/ADR-001-modular-monolith-architecture.md) | Modular Monolith Architecture                 | Accepted |
+| [ADR-002](./architecture/adrs/ADR-002-technology-stack.md)              | Technology Stack                              | Accepted |
+| [ADR-003](./architecture/adrs/ADR-003-database.md)                      | Database (MySQL + Prisma)                     | Accepted |
+| [ADR-004](./architecture/adrs/ADR-004-authentication-authorization.md)  | Authentication and Authorization (JWT + RBAC) | Accepted |
+| [ADR-005](./architecture/adrs/ADR-005-observability.md)                 | Observability (Logs, Metrics, Errors)         | Accepted |
+| [ADR-006](./architecture/adrs/ADR-006-ci-cd.md)                         | CI/CD (GitHub Actions)                        | Accepted |
+| [ADR-007](./architecture/adrs/ADR-007-accountinerization.md)            | Containerization (Docker)                     | Accepted |
+| [ADR-008](./architecture/adrs/ADR-008-sicoob-integration.md)            | Banking Integration (Sicoob)                  | Accepted |
+| [ADR-009](./architecture/adrs/ADR-009-testing-strategy.md)              | Testing Strategy (TDD, 80% coverage)          | Accepted |
 
 ---
 
@@ -147,12 +147,12 @@ docker compose up
 
 ## Roadmap
 
-| Phase                    | Scope                          | Duration    |
-| ------------------------ | ------------------------------ | ----------- |
-| **Phase 1 - MVP**        | Auth, Records, Schedule        | 8-10 weeks  |
-| **Phase 2 - Financial**  | Plans, Sicoob, Payments        | 6-8 weeks   |
-| **Phase 3 - Operations** | Rescheduling, Contracts, Stock | 6-8 weeks   |
-| **Phase 4 - Refinement** | Permissions, Performnce, Docs | 4-6 weeks   |
+| Phase                    | Scope                          | Duration   |
+| ------------------------ | ------------------------------ | ---------- |
+| **Phase 1 - MVP**        | Auth, Records, Schedule        | 8-10 weeks |
+| **Phase 2 - Financial**  | Plans, Sicoob, Payments        | 6-8 weeks  |
+| **Phase 3 - Operations** | Rescheduling, Contracts, Stock | 6-8 weeks  |
+| **Phase 4 - Refinement** | Permissions, Performnce, Docs  | 4-6 weeks  |
 
 ---
 

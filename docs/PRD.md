@@ -8,7 +8,7 @@
 
 ---
 
-##  Index
+## Index
 
 1. [Overview](#1-view-geral)
 2. [Objectives](#2-objetivos)
@@ -32,14 +32,14 @@ System complete of management for fitness center, covering Pilates, Physiotherap
 
 ### 1.2 Target Audience
 
-| Profile            | Description                     | Main Features        |
-| ----------------- | ----------------------------- | --------------------------------- |
-| **Super Admin**   | Owner/Main manager | Full system access           |
-| **Admin**         | Administrator                 | Ube management, settings |
-| **Manager**       | Coordinator operational       | Reports, class management       |
-| **Receptionist** | Customer Service                   | Records, schedules           |
-| **Instructor**     | Instructor                     | Schedule, attendance, students          |
-| **Financial**    | Financial control           | Payments, reports            |
+| Profile          | Description             | Main Features                  |
+| ---------------- | ----------------------- | ------------------------------ |
+| **Super Admin**  | Owner/Main manager      | Full system access             |
+| **Admin**        | Administrator           | Ube management, settings       |
+| **Manager**      | Coordinator operational | Reports, class management      |
+| **Receptionist** | Customer Service        | Records, schedules             |
+| **Instructor**   | Instructor              | Schedule, attendance, students |
+| **Financial**    | Financial control       | Payments, reports              |
 
 ### 1.3 Scope
 
@@ -66,23 +66,23 @@ System complete of management for fitness center, covering Pilates, Physiotherap
 
 ### 2.1 Business Objectives
 
-| Objective              | Metric                      | Target     |
-| --------------------- | ---------------------------- | -------- |
-| Reduce delinquency | Rate of delinquency        | < 5%     |
-| Optimize occupancy     | Schedule occupancy rate | > 85%    |
-| Speed up records    | Average enrollment time     | < 10 min |
-| Automate billing | % of automatic billing   | 100%     |
-| Reduce absences        | Rate of no-show              | < 10%    |
+| Objective          | Metric                  | Target   |
+| ------------------ | ----------------------- | -------- |
+| Reduce delinquency | Rate of delinquency     | < 5%     |
+| Optimize occupancy | Schedule occupancy rate | > 85%    |
+| Speed up records   | Average enrollment time | < 10 min |
+| Automate billing   | % of automatic billing  | 100%     |
+| Reduce absences    | Rate of no-show         | < 10%    |
 
 ### 2.2 Technical Objectives
 
-| Objective         | Metric                   | Target    |
-| ---------------- | ------------------------- | ------- |
-| Availability  | Uptime                    | ≥ 99.5% |
-| Performnce      | Response time P95     | < 500ms |
-| Quality        | Test coverage       | ≥ 80%   |
+| Objective       | Metric                   | Target  |
+| --------------- | ------------------------ | ------- |
+| Availability    | Uptime                   | ≥ 99.5% |
+| Performnce      | Response time P95        | < 500ms |
+| Quality         | Test coverage            | ≥ 80%   |
 | Security        | Critical vulnerabilities | 0       |
-| Maintainability | Technical debt            | Baixo   |
+| Maintainability | Technical debt           | Baixo   |
 
 ---
 
@@ -90,49 +90,49 @@ System complete of management for fitness center, covering Pilates, Physiotherap
 
 ### 3.1 Backend
 
-| Tecnologia     | Version | Purpose         |
-| -------------- | ------ | ----------------- |
-| **Node.js**    | 20 LTS | Runtime           |
-| **NestJS**     | 10.x   | Backend framework |
-| **TypeScript** | 5.x    | Language         |
-| **Prisma**     | 5.x    | ORM               |
-| **MySQL**      | 8.0    | Database    |
-| **Redis**      | 7.x    | Cache and sessions  |
-| **Jest**       | 29.x   | Tests            |
+| Tecnologia     | Version | Purpose            |
+| -------------- | ------- | ------------------ |
+| **Node.js**    | 20 LTS  | Runtime            |
+| **NestJS**     | 10.x    | Backend framework  |
+| **TypeScript** | 5.x     | Language           |
+| **Prisma**     | 5.x     | ORM                |
+| **MySQL**      | 8.0     | Database           |
+| **Redis**      | 7.x     | Cache and sessions |
+| **Jest**       | 29.x    | Tests              |
 
 ### 3.2 Frontend
 
-| Tecnologia          | Version | Purpose          |
-| ------------------- | ------ | ------------------ |
-| **Next.js**         | 14.x   | Framework frontend |
-| **React**           | 18.x   | UI Library         |
-| **TypeScript**      | 5.x    | Language          |
-| **TailwindCSS**     | 3.x    | Styling        |
-| **shadcn/ui**       | Latest | Components        |
-| **React Query**     | 5.x    | Data fetching      |
-| **Zustand**         | 4.x    | Global state      |
-| **React Hook Form** | 7.x    | Forms        |
-| **Zod**             | 3.x    | Validation          |
+| Tecnologia          | Version | Purpose            |
+| ------------------- | ------- | ------------------ |
+| **Next.js**         | 14.x    | Framework frontend |
+| **React**           | 18.x    | UI Library         |
+| **TypeScript**      | 5.x     | Language           |
+| **TailwindCSS**     | 3.x     | Styling            |
+| **shadcn/ui**       | Latest  | Components         |
+| **React Query**     | 5.x     | Data fetching      |
+| **Zustand**         | 4.x     | Global state       |
+| **React Hook Form** | 7.x     | Forms              |
+| **Zod**             | 3.x     | Validation         |
 
 ### 3.3 Infrastructure
 
-| Tecnologia               | Purpose           |
+| Tecnologia               | Purpose             |
 | ------------------------ | ------------------- |
-| **Docker**               | Containerization     |
-| **Docker Compose**       | Local orchestration  |
+| **Docker**               | Containerization    |
+| **Docker Compose**       | Local orchestration |
 | **Traefik**              | Reverse proxy       |
 | **GitHub Actions**       | CI/CD               |
-| **Hetzner/DigitalOcean** | Production hosting |
-| **Railway**              | Staging hosting  |
+| **Hetzner/DigitalOcean** | Production hosting  |
+| **Railway**              | Staging hosting     |
 
 ### 3.4 Observability
 
-| Tecnologia     | Purpose           |
-| -------------- | ------------------- |
+| Tecnologia     | Purpose            |
+| -------------- | ------------------ |
 | **Pino**       | Structured logging |
 | **Prometheus** | Metrics            |
-| **Grafana**    | Dashboards          |
-| **Sentry**     | Error tracking      |
+| **Grafana**    | Dashboards         |
+| **Sentry**     | Error tracking     |
 
 > **📖 Reference:** [ADR-002: Technology Stack](./architecture/adrs/ADR-002-stack-tecnologica.md)
 
@@ -179,12 +179,12 @@ System complete of management for fitness center, covering Pilates, Physiotherap
 
 ### 4.2 Architectural Pathavens
 
-| Pattern           | Application                             |
-| ---------------- | ------------------------------------- |
-| **DDD**          | Domain-Driven Design for modeling   |
-| **CQRS Light**   | Separation of commands and queries       |
+| Pattern          | Application                             |
+| ---------------- | --------------------------------------- |
+| **DDD**          | Domain-Driven Design for modeling       |
+| **CQRS Light**   | Separation of commands and queries      |
 | **Event-Driven** | Inhave-module withmunication via events |
-| **Repository**   | Abstraction of persistence             |
+| **Repository**   | Abstraction of persistence              |
 | **Use Cases**    | Logic of application isolated           |
 
 ### 4.3 Module Structure
@@ -239,15 +239,15 @@ src/
 
 #### Perfis and Permissions
 
-| Recurso     | Super Admin | Admin | Manager | Reception | Instructor | Financial |
-| ----------- | :---------: | :---: | :-----: | :------: | :-------: | :--------: |
-| Ubes    |    CRUD     |  CRU  |    R    |    -     |     -     |     -      |
-| Students      |    CRUD     | CRUD  |  CRUD   |   CRU    |     R     |     R      |
-| Instructores |    CRUD     | CRUD  |   CRU   |    R     |     R     |     R      |
-| Classes       |    CRUD     | CRUD  |  CRUD   |    RU    |    RU     |     R      |
-| Financial  |    CRUD     | CRUD  |    R    |    -     |     -     |    CRUD    |
-| Reports  |      ✓      |   ✓   |    ✓    |    -     |     -     |     ✓      |
-| Config      |      ✓      |   ✓   |    -    |    -     |     -     |     -      |
+| Recurso      | Super Admin | Admin | Manager | Reception | Instructor | Financial |
+| ------------ | :---------: | :---: | :-----: | :-------: | :--------: | :-------: |
+| Ubes         |    CRUD     |  CRU  |    R    |     -     |     -      |     -     |
+| Students     |    CRUD     | CRUD  |  CRUD   |    CRU    |     R      |     R     |
+| Instructores |    CRUD     | CRUD  |   CRU   |     R     |     R      |     R     |
+| Classes      |    CRUD     | CRUD  |  CRUD   |    RU     |     RU     |     R     |
+| Financial    |    CRUD     | CRUD  |    R    |     -     |     -      |   CRUD    |
+| Reports      |      ✓      |   ✓   |    ✓    |     -     |     -      |     ✓     |
+| Config       |      ✓      |   ✓   |    -    |     -     |     -      |     -     |
 
 > **📖 Reference:** [ADR-004: Authentication and Authorization](./architecture/adrs/ADR-004-autenticacao-autorizacao.md)
 
@@ -310,11 +310,11 @@ src/
 
 #### Class Types
 
-| Tipo       | Capacity   | Duration |
-| ---------- | ------------ | ------- |
-| Individual | 1 aluno      | 50 min  |
-| Duo      | 2 students     | 50 min  |
-| Group      | until 6 students | 50 min  |
+| Tipo       | Capacity         | Duration |
+| ---------- | ---------------- | -------- |
+| Individual | 1 aluno          | 50 min   |
+| Duo        | 2 students       | 50 min   |
+| Group      | until 6 students | 50 min   |
 
 #### Features
 
@@ -342,13 +342,13 @@ Cancellation:
 
 #### Available Plans
 
-| Plan     | Frequency | Description    |
-| --------- | ---------- | ------------ |
-| Single class    | -          | Single class   |
-| 1x/week | Weekly    | 4 classs/month  |
-| 2x/week | Weekly    | 8 classs/month  |
-| 3x/week | Weekly    | 12 classs/month |
-| 4x/week | Weekly    | 16 classs/month |
+| Plan         | Frequency | Description     |
+| ------------ | --------- | --------------- |
+| Single class | -         | Single class    |
+| 1x/week      | Weekly    | 4 classs/month  |
+| 2x/week      | Weekly    | 8 classs/month  |
+| 3x/week      | Weekly    | 12 classs/month |
+| 4x/week      | Weekly    | 16 classs/month |
 
 #### Enrollment Process
 
@@ -500,16 +500,16 @@ Cancellation:
 
 ### 6.1 Performnce
 
-| Metric               | Requisito   |
-| --------------------- | ----------- |
+| Metric            | Requisito   |
+| ----------------- | ----------- |
 | Response time P95 | < 500ms     |
 | Response time P99 | < 1000ms    |
-| Throughput            | > 100 req/s |
+| Throughput        | > 100 req/s |
 | Startup time      | < 30s       |
 
 ### 6.2 Availability
 
-| Metric                        | Requisito  |
+| Metric                         | Requisito  |
 | ------------------------------ | ---------- |
 | Uptime                         | ≥ 99.5%    |
 | RTO (Recovery Time Objective)  | < 1 hour   |
@@ -549,11 +549,11 @@ Cancellation:
 
 ### 7.1 Sicoob (Banking)
 
-| Funcionalidade       | Endpoint                      |
-| -------------------- | ----------------------------- |
-| Boleto generation   | POST /cobranca/v2/boletos     |
-| Generation of PIX       | PUT /pix/v2/cob/{txid}        |
-| Query of status   | GET /cobranca/v2/boletos/{id} |
+| Funcionalidade     | Endpoint                      |
+| ------------------ | ----------------------------- |
+| Boleto generation  | POST /cobranca/v2/boletos     |
+| Generation of PIX  | PUT /pix/v2/cob/{txid}        |
+| Query of status    | GET /cobranca/v2/boletos/{id} |
 | Webhook of payment | POST /webhooks/sicoob         |
 
 ### 7.2 Signature Digital
@@ -561,16 +561,16 @@ Cancellation:
 | Provider           | Funcionalidade                 |
 | ------------------ | ------------------------------ |
 | D4Sign / Clicksign | Envio of documento             |
-|                    | Webhook of signature          |
+|                    | Webhook of signature           |
 |                    | Download of documento assinado |
 
 ### 7.3 Email (Opcional)
 
-| Provider | Usage              |
+| Provider | Usage            |
 | -------- | ---------------- |
 | SendGrid | Envio of boletos |
 | AWS SES  | Contracts        |
-| Mailgun  | Notifications     |
+| Mailgun  | Notifications    |
 
 ---
 
@@ -629,12 +629,12 @@ bevices:
 ### 8.3 Estimated Costs
 
 | Ihas               | Dev/Staging | Production |
-| ------------------ | ----------- | -------- |
-| VPS (Hetzner CX21) | €5/month      | €10/month  |
+| ------------------ | ----------- | ---------- |
+| VPS (Hetzner CX21) | €5/month    | €10/month  |
 | MySQL (Managed)    | -           | €15/month  |
 | Backup Storage     | -           | €5/month   |
-| Domain + SSL       | -           | €10/year  |
-| **Total**          | ~€5/month     | ~€30/month |
+| Domain + SSL       | -           | €10/year   |
+| **Total**          | ~€5/month   | ~€30/month |
 
 > **📖 Reference:** [ADR-007: Containerization](./architecture/adrs/ADR-007-containerizacao.md)
 
@@ -674,23 +674,23 @@ RED → GREEN → REFACTOR
 
 ### 9.3 Metrics of Quality
 
-| Metric                | Backend   | Frontend  | Bloqueante |
+| Metric                 | Backend   | Frontend  | Bloqueante |
 | ---------------------- | --------- | --------- | ---------- |
-| **Coverage Linhas**    | ≥ 80%     | ≥ 80%     |  Sim     |
-| **Coverage Branches**  | ≥ 75%     | ≥ 75%     |  Sim     |
-| **Coverage Functions** | ≥ 80%     | ≥ 80%     |  Sim     |
-| **Tests E2E**         | 100% pass | 100% pass |  Sim     |
-| **Performnce P95**    | < 500ms   | -         |  Warning |
+| **Coverage Linhas**    | ≥ 80%     | ≥ 80%     | Sim        |
+| **Coverage Branches**  | ≥ 75%     | ≥ 75%     | Sim        |
+| **Coverage Functions** | ≥ 80%     | ≥ 80%     | Sim        |
+| **Tests E2E**          | 100% pass | 100% pass | Sim        |
+| **Performnce P95**     | < 500ms   | -         | Warning    |
 
 ### 9.4 Tools
 
-| Tipo            | Backend                     | Frontend               |
-| --------------- | --------------------------- | ---------------------- |
-| **Unit**        | Jest                        | Jest + Testing Library |
-| **Integration**  | Supertest + MySQL accountiner | MSW                    |
-| **E2E**         | -                           | Playwright             |
-| **Performnce** | k6                          | k6                     |
-| **Coverage**    | Istanbul/c8                 | Istanbul/c8            |
+| Tipo            | Backend                       | Frontend               |
+| --------------- | ----------------------------- | ---------------------- |
+| **Unit**        | Jest                          | Jest + Testing Library |
+| **Integration** | Supertest + MySQL accountiner | MSW                    |
+| **E2E**         | -                             | Playwright             |
+| **Performnce**  | k6                            | k6                     |
+| **Coverage**    | Istanbul/c8                   | Istanbul/c8            |
 
 ### 9.5 CI Pipeline
 
@@ -797,17 +797,17 @@ main: ├── ... (entires above)
 
 ### Index of ADRs
 
-| ADR                                                                    | Title                       | Status    |
-| ---------------------------------------------------------------------- | ---------------------------- | --------- |
-| [ADR-001](./architecture/adrs/ADR-001-arquitetura-monolito-modular.md) | Modular Monolith Architecture | Accepted |
-| [ADR-002](./architecture/adrs/ADR-002-stack-tecnologica.md)            | Technology Stack            | Accepted |
-| [ADR-003](./architecture/adrs/ADR-003-database-de-dados.md)               | Database               | Accepted |
-| [ADR-004](./architecture/adrs/ADR-004-autenticacao-autorizacao.md)     | Authentication and Authorization   | Accepted |
-| [ADR-005](./architecture/adrs/ADR-005-observabilidade.md)              | Observability              | Accepted |
-| [ADR-006](./architecture/adrs/ADR-006-ci-cd.md)                        | CI/CD                        | Accepted |
-| [ADR-007](./architecture/adrs/ADR-007-containerizacao.md)              | Containerization              | Accepted |
-| [ADR-008](./architecture/adrs/ADR-008-integracao-sicoob.md)            | Integration Sicoob            | Accepted |
-| [ADR-009](./architecture/adrs/ADR-009-estrategia-tests.md)            | Testing Strategy         | Accepted |
+| ADR                                                                    | Title                            | Status   |
+| ---------------------------------------------------------------------- | -------------------------------- | -------- |
+| [ADR-001](./architecture/adrs/ADR-001-arquitetura-monolito-modular.md) | Modular Monolith Architecture    | Accepted |
+| [ADR-002](./architecture/adrs/ADR-002-stack-tecnologica.md)            | Technology Stack                 | Accepted |
+| [ADR-003](./architecture/adrs/ADR-003-database-de-dados.md)            | Database                         | Accepted |
+| [ADR-004](./architecture/adrs/ADR-004-autenticacao-autorizacao.md)     | Authentication and Authorization | Accepted |
+| [ADR-005](./architecture/adrs/ADR-005-observabilidade.md)              | Observability                    | Accepted |
+| [ADR-006](./architecture/adrs/ADR-006-ci-cd.md)                        | CI/CD                            | Accepted |
+| [ADR-007](./architecture/adrs/ADR-007-containerizacao.md)              | Containerization                 | Accepted |
+| [ADR-008](./architecture/adrs/ADR-008-integracao-sicoob.md)            | Integration Sicoob               | Accepted |
+| [ADR-009](./architecture/adrs/ADR-009-estrategia-tests.md)             | Testing Strategy                 | Accepted |
 
 ### Architectural Debate
 
@@ -819,15 +819,15 @@ main: ├── ... (entires above)
 
 ### A. Glossary
 
-| Term    | Definition                                                        |
-| -------- | ---------------------------------------------------------------- |
-| **ADR**  | Architecture Decision Record - record of architectural decision  |
-| **DDD**  | Domain-Driven Design - domain-oriented design               |
-| **TDD**  | Test-Driven Development - test-driven development      |
-| **RBAC** | Role-Based Access Control - role-based access control |
-| **CQRS** | Command Query Responsibility Segregation                         |
-| **JWT**  | JSON Web Token                                                   |
-| **PIX**  | Instant Brazilian payment system                      |
+| Term     | Definition                                                      |
+| -------- | --------------------------------------------------------------- |
+| **ADR**  | Architecture Decision Record - record of architectural decision |
+| **DDD**  | Domain-Driven Design - domain-oriented design                   |
+| **TDD**  | Test-Driven Development - test-driven development               |
+| **RBAC** | Role-Based Access Control - role-based access control           |
+| **CQRS** | Command Query Responsibility Segregation                        |
+| **JWT**  | JSON Web Token                                                  |
+| **PIX**  | Instant Brazilian payment system                                |
 
 ### B. References
 

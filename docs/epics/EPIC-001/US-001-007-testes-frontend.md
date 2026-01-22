@@ -1,20 +1,20 @@
 # US-001-007: Configuration of Tests Frontend
 
-##  Information
+## Information
 
 | Field            | Value                           |
 | ---------------- | ------------------------------- |
 | **ID**           | US-001-007                      |
-| **Epic**        | EPIC-001                        |
-| **Title**       | Configuration of Tests Frontend |
-| **Estimate**   | 4 hours                         |
-| **Priority**   | Critical                      |
+| **Epic**         | EPIC-001                        |
+| **Title**        | Configuration of Tests Frontend |
+| **Estimate**     | 4 hours                         |
+| **Priority**     | Critical                        |
 | **Dependencies** | US-001-003                      |
-| **Status**       | Backlog                      |
+| **Status**       | Backlog                         |
 
 ---
 
-##  Ube Story
+## Ube Story
 
 **Como** desenvolvedor frontend  
 **I want to** environment of tests configured  
@@ -22,7 +22,7 @@
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Configurar Jest + Testing Library
 2. Configurar MSW for mocks of API
@@ -32,7 +32,7 @@
 
 ---
 
-##  Acceptance Criteria
+## Acceptance Criteria
 
 - [ ] Jest + Testing Library configureds
 - [ ] MSW mockando API
@@ -42,7 +42,7 @@
 
 ---
 
-##  Prompt for Implementation
+## Prompt for Implementation
 
 ```markdown
 ## Context
@@ -83,7 +83,7 @@ Configure:
 
 ---
 
-##  Files of Configuration
+## Files of Configuration
 
 ### jest.config.ts (apps/web)
 
@@ -214,7 +214,7 @@ export default defineConfig({
 
 ---
 
-##  Example TDD - Componente
+## Example TDD - Componente
 
 ### RED: Teste that falha
 
@@ -247,7 +247,7 @@ describe('Button', () => {
 
 ---
 
-##  Checklist of Verification
+## Checklist of Verification
 
 - [ ] `pnpm --filter @pilates/web test` passa
 - [ ] `pnpm --filter @pilates/web test:cov` mostra ≥80%
@@ -256,6 +256,6 @@ describe('Button', () => {
 
 ---
 
-##  Next Ube Story
+## Next Ube Story
 
 → [US-001-008: Pipeline CI/CD](./US-001-008-ci-cd.md)

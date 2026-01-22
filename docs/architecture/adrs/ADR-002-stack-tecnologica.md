@@ -239,54 +239,54 @@ describe('StudentForm', () => {
 
 ### Backend
 
-| Option        | Pros                   | Cons                           | Decision |
-| ------------ | ---------------------- | --------------------------------- | ------- |
-| Express puro | Simple, lightweight          | No structure, more manual code |       |
-| NestJS       | Structured, Native DI | Learning curve              |       |
-| Fastify      | Very fast           | Smaller ecosystem                 |       |
+| Option       | Pros                  | Cons                           | Decision |
+| ------------ | --------------------- | ------------------------------ | -------- |
+| Express puro | Simple, lightweight   | No structure, more manual code |          |
+| NestJS       | Structured, Native DI | Learning curve                 |          |
+| Fastify      | Very fast             | Smaller ecosystem              |          |
 
 ### ORM
 
-| Option   | Pros                  | Cons                             | Decision |
-| ------- | --------------------- | ----------------------------------- | ------- |
-| TypeORM | Mature, Active Record | Bugs, weak types                  |       |
-| Prisma  | Type-safe, modern    | Fewer flexible in withplex queries |       |
-| Knex    | Flexible              | Query builder only                |       |
+| Option  | Pros                  | Cons                               | Decision |
+| ------- | --------------------- | ---------------------------------- | -------- |
+| TypeORM | Mature, Active Record | Bugs, weak types                   |          |
+| Prisma  | Type-safe, modern     | Fewer flexible in withplex queries |          |
+| Knex    | Flexible              | Query builder only                 |          |
 
 ### Frontend State
 
-| Option   | Pros          | Cons               | Decision |
-| ------- | ------------- | --------------------- | ------- |
-| Redux   | Powerful      | Excessive boilerplate |       |
-| Zustand | Simple, lightweight | Fewer features        |       |
-| Jotai   | Atomic       | Learning curve  |       |
+| Option  | Pros                | Cons                  | Decision |
+| ------- | ------------------- | --------------------- | -------- |
+| Redux   | Powerful            | Excessive boilerplate |          |
+| Zustand | Simple, lightweight | Fewer features        |          |
+| Jotai   | Atomic              | Learning curve        |          |
 
 ## Consequences
 
 ### Positive
 
--  Type-safety end-to-end
--  Ecosystem mature and stable
--  Excellent DX (Developer Experience)
--  Good documentation
--  Community active
+- Type-safety end-to-end
+- Ecosystem mature and stable
+- Excellent DX (Developer Experience)
+- Good documentation
+- Community active
 
 ### Negative
 
--  Bundle size of the Next.js may grow
--  Prisma has overhead in withplex queries
--  Node.js single-threaded (mitigated with clushaveing)
+- Bundle size of the Next.js may grow
+- Prisma has overhead in withplex queries
+- Node.js single-threaded (mitigated with clushaveing)
 
 ## Compatibility with TDD
 
 A stack foi escolhida with foco in testabilidade:
 
-| Tecnologia  | Ease TDD | Tools                    |
-| ----------- | -------------- | ------------------------------ |
-| NestJS      | ⭐⭐⭐⭐⭐     | @nestjs/testing, mocks nactives |
-| Prisma      | ⭐⭐⭐⭐⭐     | prisma mock, transactions      |
-| Next.js     | ⭐⭐⭐⭐       | Testing Library, MSW           |
-| React Query | ⭐⭐⭐⭐⭐     | queryClient mock               |
+| Tecnologia  | Ease TDD   | Tools                           |
+| ----------- | ---------- | ------------------------------- |
+| NestJS      | ⭐⭐⭐⭐⭐ | @nestjs/testing, mocks nactives |
+| Prisma      | ⭐⭐⭐⭐⭐ | prisma mock, transactions       |
+| Next.js     | ⭐⭐⭐⭐   | Testing Library, MSW            |
+| React Query | ⭐⭐⭐⭐⭐ | queryClient mock                |
 
 ## Minimum Versions
 

@@ -437,29 +437,29 @@ scrape_configs:
 
 ## Estimated Costs
 
-| Service     | Tier        | Custo             |
-| ----------- | ----------- | ----------------- |
+| Service     | Tier        | Custo                |
+| ----------- | ----------- | -------------------- |
 | Sentry      | Free        | $0 (5K errors/month) |
-| UptimeRobot | Free        | $0 (50 monitors)  |
-| Prometheus  | Self-hosted | $0 (~100MB RAM)   |
-| Grafana     | Self-hosted | $0 (~100MB RAM)   |
-| Logtail     | Free        | $0 (1GB/month)      |
-| **Total**   |             | **$0**            |
+| UptimeRobot | Free        | $0 (50 monitors)     |
+| Prometheus  | Self-hosted | $0 (~100MB RAM)      |
+| Grafana     | Self-hosted | $0 (~100MB RAM)      |
+| Logtail     | Free        | $0 (1GB/month)       |
+| **Total**   |             | **$0**               |
 
 ## Consequences
 
 ### Positive
 
--  Custo zero with free tiers
--  Setup simple for monolito
--  Logs structureds facilitam debug
--  Metrics of business from the start
--  Alerts of errors automatics (Sentry)
+- Custo zero with free tiers
+- Setup simple for monolito
+- Logs structureds facilitam debug
+- Metrics of business from the start
+- Alerts of errors automatics (Sentry)
 
 ### Negative
 
--  Sem distributed tracing (acceptable for monolito)
--  Grafana needs configuration manual inicial
+- Sem distributed tracing (acceptable for monolito)
+- Grafana needs configuration manual inicial
 
 ## Alerts Rewithendados
 

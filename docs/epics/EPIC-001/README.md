@@ -1,6 +1,6 @@
 # EPIC-001: Setup of the Development Environment
 
-##  Overview
+## Overview
 
 Este epic configura all a infrastructure of development of the project seguindo os principles:
 
@@ -14,22 +14,22 @@ Este epic configura all a infrastructure of development of the project seguindo 
 
 ## 🗂️ Ube Stories
 
-| ID                                               | Title                                    | Estimate | Status     |
-| ------------------------------------------------ | ----------------------------------------- | ---------- | ---------- |
-| [US-001-001](./US-001-001-setup-inicial.md)      | Initial Project Setup                  | 4h         | Backlog |
-| [US-001-002](./US-001-002-estrutura-backend.md)  | Backend Structure (NestJS + DDD)       | 6h         | Backlog |
-| [US-001-003](./US-001-003-estrutura-frontend.md) | Frontend Structure (Next.js)           | 5h         | Backlog |
-| [US-001-004](./US-001-004-docker-compose.md)     | Docker Compose Completo                   | 4h         | Backlog |
-| [US-001-005](./US-001-005-quality-codigo.md)   | Quality of Code (Lint, Format, Hooks) | 3h         | Backlog |
-| [US-001-006](./US-001-006-tests-backend.md)     | Configuration of Tests Backend            | 4h         | Backlog |
-| [US-001-007](./US-001-007-tests-frontend.md)    | Configuration of Tests Frontend           | 4h         | Backlog |
-| [US-001-008](./US-001-008-ci-cd.md)              | Pipeline CI/CD (GitHub Actions)           | 5h         | Backlog |
-| [US-001-009](./US-001-009-observabilidade.md)    | Logging and Metrics                        | 3h         | Backlog |
-| [US-001-010](./US-001-010-documentacto.md)       | Documentation and Seed                       | 3h         | Backlog |
+| ID                                               | Title                                 | Estimate | Status  |
+| ------------------------------------------------ | ------------------------------------- | -------- | ------- |
+| [US-001-001](./US-001-001-setup-inicial.md)      | Initial Project Setup                 | 4h       | Backlog |
+| [US-001-002](./US-001-002-estrutura-backend.md)  | Backend Structure (NestJS + DDD)      | 6h       | Backlog |
+| [US-001-003](./US-001-003-estrutura-frontend.md) | Frontend Structure (Next.js)          | 5h       | Backlog |
+| [US-001-004](./US-001-004-docker-compose.md)     | Docker Compose Completo               | 4h       | Backlog |
+| [US-001-005](./US-001-005-quality-codigo.md)     | Quality of Code (Lint, Format, Hooks) | 3h       | Backlog |
+| [US-001-006](./US-001-006-tests-backend.md)      | Configuration of Tests Backend        | 4h       | Backlog |
+| [US-001-007](./US-001-007-tests-frontend.md)     | Configuration of Tests Frontend       | 4h       | Backlog |
+| [US-001-008](./US-001-008-ci-cd.md)              | Pipeline CI/CD (GitHub Actions)       | 5h       | Backlog |
+| [US-001-009](./US-001-009-observabilidade.md)    | Logging and Metrics                   | 3h       | Backlog |
+| [US-001-010](./US-001-010-documentacto.md)       | Documentation and Seed                | 3h       | Backlog |
 
 ---
 
-##  Order of Implementation
+## Order of Implementation
 
 ```
 US-001-001 (Initial Setup)
@@ -55,7 +55,7 @@ US-001-001 (Initial Setup)
 
 ---
 
-##  Methodology of Implementation
+## Methodology of Implementation
 
 ### Cada Ube Story segue:
 
@@ -80,7 +80,7 @@ Cada US accountins:
 
 ---
 
-##  Definition of Done of the Epic
+## Definition of Done of the Epic
 
 - [ ] Todas as Ube Stories completed
 - [ ] `docker compose up` funciona
@@ -92,7 +92,7 @@ Cada US accountins:
 
 ---
 
-##  Como Começar
+## Como Começar
 
 1. **Leia** a [US-001-001](./US-001-001-setup-inicial.md) complete
 2. **Copie** o prompt for o AI

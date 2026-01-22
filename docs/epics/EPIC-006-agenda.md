@@ -1,20 +1,20 @@
 # EPIC-006: Schedule and Schedulemento
 
-##  General Information
+## General Information
 
-| Field            | Value                       |
-| ---------------- | --------------------------- |
-| **ID**           | EPIC-006                    |
-| **Title**       | Schedule and Schedulemento        |
-| **Phase**         | 1 - MVP                     |
-| **Priority**   | High                     |
-| **Estimate**   | 1.5 weeks                 |
+| Field            | Value                            |
+| ---------------- | -------------------------------- |
+| **ID**           | EPIC-006                         |
+| **Title**        | Schedule and Schedulemento       |
+| **Phase**        | 1 - MVP                          |
+| **Priority**     | High                             |
+| **Estimate**     | 1.5 weeks                        |
 | **Dependencies** | EPIC-005 (Classes and Schedules) |
-| **Status**       | Backlog                  |
+| **Status**       | Backlog                          |
 
 ---
 
-##  Description
+## Description
 
 Implement system of schedule visual and schedulemento of classs:
 
@@ -26,7 +26,7 @@ Implement system of schedule visual and schedulemento of classs:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Schedule visual intuitiva
 2. Schedulemento fast of students
@@ -35,7 +35,7 @@ Implement system of schedule visual and schedulemento of classs:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-006-001: Visualizar Schedule
 
@@ -111,7 +111,7 @@ Implement system of schedule visual and schedulemento of classs:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -230,7 +230,7 @@ model Attendance {
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] Visual calendar working
 - [ ] Três visualizactions (day, week, month)
@@ -242,6 +242,6 @@ model Attendance {
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~33 hours (~1.5 weeks)

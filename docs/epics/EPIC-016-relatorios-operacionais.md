@@ -1,20 +1,20 @@
 # EPIC-016: Reports Operacionais
 
-##  General Information
+## General Information
 
-| Field            | Value                                    |
-| ---------------- | ---------------------------------------- |
-| **ID**           | EPIC-016                                 |
-| **Title**       | Reports Operacionais                  |
-| **Phase**         | 3 - Operacional                          |
-| **Priority**   | 🟡 Medium                                 |
-| **Estimate**   | 1 week                                 |
+| Field            | Value                                         |
+| ---------------- | --------------------------------------------- |
+| **ID**           | EPIC-016                                      |
+| **Title**        | Reports Operacionais                          |
+| **Phase**        | 3 - Operacional                               |
+| **Priority**     | 🟡 Medium                                     |
+| **Estimate**     | 1 week                                        |
 | **Dependencies** | EPIC-006 (Schedule), EPIC-013 (Reschedulings) |
-| **Status**       | Backlog                               |
+| **Status**       | Backlog                                       |
 
 ---
 
-##  Description
+## Description
 
 Implement reports operacionais:
 
@@ -27,7 +27,7 @@ Implement reports operacionais:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. View operational clara
 2. Metrics of occupancy
@@ -36,7 +36,7 @@ Implement reports operacionais:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-016-001: Report of Students por Status
 
@@ -124,7 +124,7 @@ Implement reports operacionais:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -187,7 +187,7 @@ Implement reports operacionais:
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] All reports working
 - [ ] Charts informctives
@@ -198,6 +198,6 @@ Implement reports operacionais:
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~26 hours (~1 week)

@@ -1,20 +1,20 @@
 # US-001-010: Documentation and Seed
 
-##  Information
+## Information
 
-| Field            | Value               |
-| ---------------- | ------------------- |
-| **ID**           | US-001-010          |
-| **Epic**        | EPIC-001            |
-| **Title**       | Documentation and Seed |
-| **Estimate**   | 3 hours             |
-| **Priority**   | 🟡 Medium            |
-| **Dependencies** | Todas previous    |
-| **Status**       | Backlog          |
+| Field            | Value                  |
+| ---------------- | ---------------------- |
+| **ID**           | US-001-010             |
+| **Epic**         | EPIC-001               |
+| **Title**        | Documentation and Seed |
+| **Estimate**     | 3 hours                |
+| **Priority**     | 🟡 Medium              |
+| **Dependencies** | Todas previous         |
+| **Status**       | Backlog                |
 
 ---
 
-##  Ube Story
+## Ube Story
 
 **Como** desenvolvedor  
 **I want to** documentation and dados of test  
@@ -22,7 +22,7 @@
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Update README main
 2. Create seed of dados of development
@@ -31,7 +31,7 @@
 
 ---
 
-##  Acceptance Criteria
+## Acceptance Criteria
 
 - [ ] README with quick start
 - [ ] Seed working (admin ube)
@@ -40,7 +40,7 @@
 
 ---
 
-##  Prompt for Implementation
+## Prompt for Implementation
 
 ```markdown
 ## Context
@@ -81,7 +81,7 @@ Create:
 
 ---
 
-##  Seed of Givens
+## Seed of Givens
 
 ### prisma/seed.ts
 
@@ -165,7 +165,7 @@ main()
 
 ---
 
-##  CONTRIBUTING.md
+## CONTRIBUTING.md
 
 ````markdown
 # Guia of Contribuição

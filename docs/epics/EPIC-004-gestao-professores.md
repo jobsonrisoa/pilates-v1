@@ -1,20 +1,20 @@
 # EPIC-004: Management of Instructores
 
-##  General Information
+## General Information
 
-| Field            | Value                   |
-| ---------------- | ----------------------- |
-| **ID**           | EPIC-004                |
-| **Title**       | Management of Instructores   |
-| **Phase**         | 1 - MVP                 |
-| **Priority**   | High                 |
-| **Estimate**   | 1 week                |
-| **Dependencies** | EPIC-002 (Authentication) |
-| **Status**       | Backlog              |
+| Field            | Value                      |
+| ---------------- | -------------------------- |
+| **ID**           | EPIC-004                   |
+| **Title**        | Management of Instructores |
+| **Phase**        | 1 - MVP                    |
+| **Priority**     | High                       |
+| **Estimate**     | 1 week                     |
+| **Dependencies** | EPIC-002 (Authentication)  |
+| **Status**       | Backlog                    |
 
 ---
 
-##  Description
+## Description
 
 Implement module of management of instructores including:
 
@@ -26,7 +26,7 @@ Implement module of management of instructores including:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Full CRUD of instructores
 2. Management of specialties
@@ -35,7 +35,7 @@ Implement module of management of instructores including:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-004-001: Regishave Instructor
 
@@ -94,7 +94,7 @@ Implement module of management of instructores including:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -185,7 +185,7 @@ Implement module of management of instructores including:
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] Full CRUD working
 - [ ] Specialties configurable
@@ -195,7 +195,7 @@ Implement module of management of instructores including:
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 ```
 Semana 1:

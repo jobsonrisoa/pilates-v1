@@ -49,12 +49,12 @@ docker compose run --rm tools pnpm --filter @pilates/web test
 
 #### Code Quality
 
-| Tool           | Status | Notes                    |
-| -------------- | ------ | ------------------------ |
-| **ESLint**     | Pass   | No errors or warnings    |
-| **Prettier**   | Pass   | All files formatted      |
-| **TypeScript** | Pass   | No type errors           |
-| **Commitlint** | Pass   | Validation working       |
+| Tool           | Status | Notes                 |
+| -------------- | ------ | --------------------- |
+| **ESLint**     | Pass   | No errors or warnings |
+| **Prettier**   | Pass   | All files formatted   |
+| **TypeScript** | Pass   | No type errors        |
+| **Commitlint** | Pass   | Validation working    |
 
 #### Docker Services
 

@@ -1,20 +1,20 @@
 # EPIC-015: Management of Inventory
 
-##  General Information
+## General Information
 
-| Field            | Value             |
-| ---------------- | ----------------- |
-| **ID**           | EPIC-015          |
-| **Title**       | Management of Inventory |
-| **Phase**         | 3 - Operacional   |
-| **Priority**   | 🟡 Medium          |
-| **Estimate**   | 1.5 weeks       |
-| **Dependencies** | EPIC-001 (Setup)  |
-| **Status**       | Backlog        |
+| Field            | Value                   |
+| ---------------- | ----------------------- |
+| **ID**           | EPIC-015                |
+| **Title**        | Management of Inventory |
+| **Phase**        | 3 - Operacional         |
+| **Priority**     | 🟡 Medium               |
+| **Estimate**     | 1.5 weeks               |
+| **Dependencies** | EPIC-001 (Setup)        |
+| **Status**       | Backlog                 |
 
 ---
 
-##  Description
+## Description
 
 Implement control of inventory and sales:
 
@@ -26,7 +26,7 @@ Implement control of inventory and sales:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Controle of products
 2. Movements rastreadas
@@ -35,7 +35,7 @@ Implement control of inventory and sales:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-015-001: Regishave Produto
 
@@ -126,7 +126,7 @@ Implement control of inventory and sales:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Backend
 
@@ -259,7 +259,7 @@ model SaleIhas {
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] CRUD of products working
 - [ ] Movements rastreadas
@@ -271,6 +271,6 @@ model SaleIhas {
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 **Total estimado:** ~31 hours (~1.5 weeks)

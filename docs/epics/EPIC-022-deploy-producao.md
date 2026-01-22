@@ -1,20 +1,20 @@
 # EPIC-022: Documentation and Deploy Production
 
-##  General Information
+## General Information
 
-| Field            | Value                          |
-| ---------------- | ------------------------------ |
-| **ID**           | EPIC-022                       |
-| **Title**       | Documentation and Deploy Production |
-| **Phase**         | 4 - Refinamento                |
-| **Priority**   | Critical                     |
-| **Estimate**   | 1 week                       |
-| **Dependencies** | Todos os epics previous     |
-| **Status**       | Backlog                     |
+| Field            | Value                               |
+| ---------------- | ----------------------------------- |
+| **ID**           | EPIC-022                            |
+| **Title**        | Documentation and Deploy Production |
+| **Phase**        | 4 - Refinamento                     |
+| **Priority**     | Critical                            |
+| **Estimate**     | 1 week                              |
+| **Dependencies** | Todos os epics previous             |
+| **Status**       | Backlog                             |
 
 ---
 
-##  Description
+## Description
 
 Finalizar documentation and preparar deploy in production:
 
@@ -26,7 +26,7 @@ Finalizar documentation and preparar deploy in production:
 
 ---
 
-##  Objectives
+## Objectives
 
 1. Complete documentation
 2. Production environment seguro
@@ -35,7 +35,7 @@ Finalizar documentation and preparar deploy in production:
 
 ---
 
-##  Ube Stories
+## Ube Stories
 
 ### US-022-001: Documentation Technical
 
@@ -129,7 +129,7 @@ Finalizar documentation and preparar deploy in production:
 
 ---
 
-##  Tasks Technical
+## Tasks Technical
 
 ### Documentation
 
@@ -300,7 +300,7 @@ Finalizar documentation and preparar deploy in production:
 
 ---
 
-##  Acceptance Criteria of the Epic
+## Acceptance Criteria of the Epic
 
 - [ ] Complete documentation
 - [ ] Production configurada
@@ -313,7 +313,7 @@ Finalizar documentation and preparar deploy in production:
 
 ---
 
-##  Timeline Sugerido
+## Timeline Sugerido
 
 ```
 Semana 1:
@@ -328,7 +328,7 @@ Semana 1:
 
 ---
 
-##  Checklist of Go-Live
+## Checklist of Go-Live
 
 ### Pre-Deploy
 
