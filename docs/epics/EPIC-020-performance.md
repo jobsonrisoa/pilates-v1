@@ -40,7 +40,7 @@ Optimize performnce of the syshas:
 ### US-020-001: Improve Tempo of Resposta of the API
 
 **Como** ube  
-**Quero** responses fast of the API  
+**I want to** responses fast of the API  
 **Para** have good experience
 
 **Acceptance Criteria:**
@@ -54,7 +54,7 @@ Optimize performnce of the syshas:
 ### US-020-002: Acelerar Carregamento of the Frontend
 
 **Como** ube  
-**Quero** that as pages carreguem fast  
+**I want to** that as pages carreguem fast  
 **Para** not esperar
 
 **Acceptance Criteria:**
@@ -68,7 +68,7 @@ Optimize performnce of the syshas:
 ### US-020-003: Implement Cache
 
 **Como** syshas  
-**Quero** cachear dados frequent  
+**I want to** cachear dados frequent  
 **Para** reduzir carga in the datebase
 
 **Acceptance Criteria:**
@@ -190,7 +190,7 @@ Optimize performnce of the syshas:
 
 - [ ] P95 API < 500ms
 - [ ] Core Web Vitals green
-- [ ] Cache funcionando
+- [ ] Cache working
 - [ ] Bundle < 200KB initial
 - [ ] Metrics of performnce
 - [ ] Documentation of optimizations

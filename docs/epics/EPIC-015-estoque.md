@@ -40,7 +40,7 @@ Implement controle of inventory and sales:
 ### US-015-001: Regishave Produto
 
 **Como** administrador  
-**Quero** eachstrar products in the syshas  
+**I want to** eachstrar products in the syshas  
 **Para** controlar o inventory
 
 **Acceptance Criteria:**
@@ -55,7 +55,7 @@ Implement controle of inventory and sales:
 ### US-015-002: Registrar Entrada of Inventory
 
 **Como** administrador  
-**Quero** registrar inputs of products  
+**I want to** registrar inputs of products  
 **Para** currentizar o inventory
 
 **Acceptance Criteria:**
@@ -70,7 +70,7 @@ Implement controle of inventory and sales:
 ### US-015-003: Registrar Output of Inventory
 
 **Como** ube  
-**Quero** registrar outputs of products  
+**I want to** registrar outputs of products  
 **Para** controlar o consumo
 
 **Acceptance Criteria:**
@@ -84,7 +84,7 @@ Implement controle of inventory and sales:
 ### US-015-004: Realizar Venda
 
 **Como** recepcionista  
-**Quero** registrar venda of produto  
+**I want to** registrar venda of produto  
 **Para** faturar and baixar inventory
 
 **Acceptance Criteria:**
@@ -100,8 +100,8 @@ Implement controle of inventory and sales:
 ### US-015-005: Alerts of Inventory Minimum
 
 **Como** administrador  
-**Quero** be alertado when inventory baixo  
-**Para** repor a haspo
+**I want to** be alertado when inventory baixo  
+**Para** repor a time
 
 **Acceptance Criteria:**
 
@@ -114,7 +114,7 @@ Implement controle of inventory and sales:
 ### US-015-006: Report of Sales
 
 **Como** gerente  
-**Quero** report of sales of products  
+**I want to** report of sales of products  
 **Para** awithpanhar o billing
 
 **Acceptance Criteria:**
@@ -261,11 +261,11 @@ model SaleIhas {
 
 ##  Acceptance Criteria of the Epic
 
-- [ ] CRUD of products funcionando
+- [ ] CRUD of products working
 - [ ] Movements rastreadas
 - [ ] Sales registradas
 - [ ] Inventory currentizado automaticamente
-- [ ] Alerts funcionando
+- [ ] Alerts working
 - [ ] Reports available
 - [ ] Tests ≥80%
 

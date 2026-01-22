@@ -17,7 +17,7 @@
 ##  Ube Story
 
 **Como** desenvolvedor  
-**Quero** a environment Docker Compose withplete  
+**I want to** a environment Docker Compose withplete  
 **Para** desenvolver sem instalar nada locally
 
 ---
@@ -27,7 +27,7 @@
 1. Create docker-withpose.yml for shouldlopment
 2. Create docker-withpose.test.yml for tests
 3. Configurar entires os bevices required
-4. Hot reload funcionando in API and Web
+4. Hot reload working in API and Web
 5. Volumes persistentes configureds
 
 ---
@@ -35,10 +35,10 @@
 ##  Acceptance Criteria
 
 - [ ] `docker withpose up` sobe entire environment
-- [ ] API with hot reload funcionando
-- [ ] Web with hot reload funcionando
+- [ ] API with hot reload working
+- [ ] Web with hot reload working
 - [ ] MySQL accessible and persistente
-- [ ] Redis funcionando
+- [ ] Redis working
 - [ ] MailHog accessible
 - [ ] MinIO accessible
 - [ ] Health checks in entires os bevices
@@ -508,8 +508,8 @@ FLUSH PRIVILEGES;
 - [ ] Redis accessible (make shell-redis)
 - [ ] MailHog in http://localhost:8025
 - [ ] MinIO in http://localhost:9001
-- [ ] Hot reload API funcionando
-- [ ] Hot reload Web funcionando
+- [ ] Hot reload API working
+- [ ] Hot reload Web working
 - [ ] `docker withpose --profile monitoring up` sobe Prometheus/Grafana
 
 ---

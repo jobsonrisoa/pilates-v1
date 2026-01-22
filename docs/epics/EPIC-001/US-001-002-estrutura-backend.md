@@ -17,7 +17,7 @@
 ##  Ube Story
 
 **Como** desenvolvedor backendendendend  
-**Quero** a estrutura NestJS organizada with DDD  
+**I want to** a estrutura NestJS organizada with DDD  
 **Para** maintain the code scalable and organized
 
 ---
@@ -38,10 +38,10 @@
 - [ ] Projeto NestJS criado in apps/api
 - [ ] Structure DDD with layers separadas
 - [ ] Prisma configured and conectando in the MySQL
-- [ ] Health check endpoint funcionando (/health)
+- [ ] Health check endpoint working (/health)
 - [ ] Swagger accessible in /api
 - [ ] Dockerfile multi-stage criado
-- [ ] Hot reload funcionando in the accountiner
+- [ ] Hot reload working in the accountiner
 - [ ] Tests of example passando
 
 ---
@@ -641,7 +641,7 @@ Implemente a class Entity conforme mostrado above.
 - [ ] `/health/live` retorna ok
 - [ ] `/health/ready` verifica DB
 - [ ] `/api` mostra Swagger
-- [ ] Hot reload funcionando
+- [ ] Hot reload working
 - [ ] Tests passando
 
 ---

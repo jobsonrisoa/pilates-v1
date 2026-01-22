@@ -208,7 +208,7 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 > - Traefik witho reverse proxy (SSL automatic)
 > - Watchtower for currentizactions automatics
 >
-> **Evolução future:**
+> **Evolution future:**
 >
 > - When needsr scale: Kubernetes or Docker Swarm
 > - Ou maintain simple with multiple VPS + Load Balancer"
@@ -418,7 +418,7 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 >       - NEXT_PUBLIC_API_URL=http://backendendendend:3001
 > ```
 >
-> Hot-reload funcionando, sem instalar Node.js locally."
+> Hot-reload working, sem instalar Node.js locally."
 
 ** DECISÃO: Next.js App Rouhave, self-hosted together with backendendendend**
 

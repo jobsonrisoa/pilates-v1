@@ -320,7 +320,7 @@ src/
 
 - [x] Schedule grid per day/week
 - [x] Schedule visual (day, week, month)
-- [x] Controle of attendance/fhigh
+- [x] Controle of attendance/absence
 - [x] Rescheduling syshas (credits 90 days)
 - [x] Waiting list
 - [x] Cancellation with rules

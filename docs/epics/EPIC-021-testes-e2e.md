@@ -39,7 +39,7 @@ Implement suite withpleta of tests:
 ### US-021-001: Tests E2E of Authentication
 
 **Como** QA  
-**Quero** tests automateds of login  
+**I want to** tests automateds of login  
 **Para** garantir that funciona
 
 **Acceptance Criteria:**
@@ -55,7 +55,7 @@ Implement suite withpleta of tests:
 ### US-021-002: Tests E2E of Records
 
 **Como** QA  
-**Quero** tests of CRUD  
+**I want to** tests of CRUD  
 **Para** garantir integridade
 
 **Acceptance Criteria:**
@@ -70,7 +70,7 @@ Implement suite withpleta of tests:
 ### US-021-003: Tests E2E of Fluxo of Enrollment
 
 **Como** QA  
-**Quero** tbe o fluxo withplete  
+**I want to** tbe o fluxo withplete  
 **Para** garantir operation
 
 **Acceptance Criteria:**
@@ -85,7 +85,7 @@ Implement suite withpleta of tests:
 ### US-021-004: Tests of Carga
 
 **Como** DevOps  
-**Quero** tbe sob carga  
+**I want to** tbe sob carga  
 **Para** garantir escalabilidade
 
 **Acceptance Criteria:**
@@ -99,7 +99,7 @@ Implement suite withpleta of tests:
 ### US-021-005: Tests of Stress
 
 **Como** DevOps  
-**Quero** encontrar o limite  
+**I want to** encontrar o limite  
 **Para** conhecer a capacidade
 
 **Acceptance Criteria:**

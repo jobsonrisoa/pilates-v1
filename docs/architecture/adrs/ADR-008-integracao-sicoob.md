@@ -510,7 +510,7 @@ export class SicoobMockService implements ISicoobService {
 - [x] HTTPS required
 - [x] Rate limiting in endpoints of webhook
 - [x] Logs of all as transactions
-- [x] Retry automatic in failures hasporárias
+- [x] Retry automatic in failures timerárias
 - [x] Timeout configured (30s)
 
 ### Webhook Security

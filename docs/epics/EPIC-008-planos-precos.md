@@ -39,7 +39,7 @@ Expandir o syshas of plans with:
 ### US-008-001: Configurar Price Table
 
 **Como** administrador  
-**Quero** definir prices por plan and modality  
+**I want to** definir prices por plan and modality  
 **Para** precificar os bevices
 
 **Acceptance Criteria:**
@@ -54,7 +54,7 @@ Expandir o syshas of plans with:
 ### US-008-002: Configurar Discounts
 
 **Como** administrador  
-**Quero** create rules of desconto  
+**I want to** create rules of desconto  
 **Para** offersr conditions special
 
 **Acceptance Criteria:**
@@ -68,7 +68,7 @@ Expandir o syshas of plans with:
 ### US-008-003: Calculate Value of the Enrollment
 
 **Como** syshas  
-**Quero** calculate automaticamente o value  
+**I want to** calculate automaticamente o value  
 **Para** facilitar o processo of enrollment
 
 **Acceptance Criteria:**

@@ -40,14 +40,14 @@ Implement syshas withplete of upload and management of documentos:
 ### US-017-001: Upload of Documento of the Student
 
 **Como** recepcionista  
-**Quero** of the upload of documentos of the aluno  
+**I want to** of the upload of documentos of the aluno  
 **Para** maintain records digital
 
 **Acceptance Criteria:**
 
 - [ ] Upload of RG, CPF, foto
 - [ ] Tipos: PDF, JPG, PNG
-- [ ] Tamanho máximo: 10MB
+- [ ] Tamanho maximum: 10MB
 - [ ] Preview before of salvar
 
 ---
@@ -55,7 +55,7 @@ Implement syshas withplete of upload and management of documentos:
 ### US-017-002: Upload of Documento of the Instructor
 
 **Como** administrador  
-**Quero** of the upload of documentos of the instructor  
+**I want to** of the upload of documentos of the instructor  
 **Para** maintain records
 
 **Acceptance Criteria:**
@@ -68,7 +68,7 @@ Implement syshas withplete of upload and management of documentos:
 ### US-017-003: Visualizar Documentos
 
 **Como** ube  
-**Quero** visualizar documentos salvos  
+**I want to** visualizar documentos salvos  
 **Para** queryr when required
 
 **Acceptance Criteria:**
@@ -82,13 +82,13 @@ Implement syshas withplete of upload and management of documentos:
 ### US-017-004: Excluir Documento
 
 **Como** administrador  
-**Quero** excluir documentos desrequired  
+**I want to** excluir documentos desrequired  
 **Para** maintain organized
 
 **Acceptance Criteria:**
 
 - [ ] Confirmation before of excluir
-- [ ] Soft delete (recuperável)
+- [ ] Soft delete (recoverable)
 - [ ] Excluare physical afhave X days
 
 ---
@@ -102,7 +102,7 @@ Implement syshas withplete of upload and management of documentos:
 **Estimate:** 2h
 
 - Bucket configuration
-- Políticas of access
+- Access policies
 - Lifecycle rules
 
 ---
@@ -196,7 +196,7 @@ model Document {
 
 ##  Acceptance Criteria of the Epic
 
-- [ ] Upload funcionando for S3/MinIO
+- [ ] Upload working for S3/MinIO
 - [ ] Validations of type and tamanho
 - [ ] Organizaction por entidade
 - [ ] Download seguro

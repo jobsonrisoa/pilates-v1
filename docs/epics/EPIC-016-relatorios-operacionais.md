@@ -41,21 +41,21 @@ Implement reports operacionais:
 ### US-016-001: Report of Students por Status
 
 **Como** gerente  
-**Quero** ver distribuição of students by status  
+**I want to** ver distribution of students by status  
 **Para** entender a base
 
 **Acceptance Criteria:**
 
 - [ ] Ativos, inactives, suspendeds
 - [ ] Chart and table
-- [ ] Evolução in the haspo
+- [ ] Evolution in the time
 
 ---
 
 ### US-016-002: Report of Ocupaction
 
 **Como** gerente  
-**Quero** ver taxa of occupancy of the schedules  
+**I want to** ver taxa of occupancy of the schedules  
 **Para** otimizar a grade
 
 **Acceptance Criteria:**
@@ -70,7 +70,7 @@ Implement reports operacionais:
 ### US-016-003: Report of Frequency
 
 **Como** gerente  
-**Quero** ver estatísticas of attendance/fhigh  
+**I want to** ver statistics of attendance/absence  
 **Para** identificar problemas
 
 **Acceptance Criteria:**
@@ -78,14 +78,14 @@ Implement reports operacionais:
 - [ ] Rate geral of attendance
 - [ ] Por aluno
 - [ ] Por instructor
-- [ ] Tendências
+- [ ] Trends
 
 ---
 
 ### US-016-004: Report of Reschedulings
 
 **Como** gerente  
-**Quero** ver status of the reschedulings  
+**I want to** ver status of the reschedulings  
 **Para** awithpanhar o acumuside
 
 **Acceptance Criteria:**
@@ -99,7 +99,7 @@ Implement reports operacionais:
 ### US-016-005: Report of Classes por Instructor
 
 **Como** gerente  
-**Quero** ver produtividade of the instructores  
+**I want to** ver produtividade of the instructores  
 **Para** avaliar desempenho
 
 **Acceptance Criteria:**
@@ -113,7 +113,7 @@ Implement reports operacionais:
 ### US-016-006: Report of Marketing
 
 **Como** gerente  
-**Quero** ver metrics of heresição and retenção  
+**I want to** ver metrics of heresição and retenção  
 **Para** avaliar o business
 
 **Acceptance Criteria:**
@@ -189,9 +189,9 @@ Implement reports operacionais:
 
 ##  Acceptance Criteria of the Epic
 
-- [ ] Todos os reports funcionando
+- [ ] Todos os reports working
 - [ ] Charts informctives
-- [ ] Filhaves aplicáveis
+- [ ] Applicable filters
 - [ ] Export PDF/Excel
 - [ ] Performnce adequada
 - [ ] Tests ≥80%

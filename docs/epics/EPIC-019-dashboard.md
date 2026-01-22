@@ -29,7 +29,7 @@ Create dashboard analytical unificado:
 ##  Objectives
 
 1. View executiva of the business
-2. Metrics in haspo real
+2. Metrics in time real
 3. Analysis of trends
 4. Tomada of decision fast
 
@@ -40,7 +40,7 @@ Create dashboard analytical unificado:
 ### US-019-001: Ver KPIs Principais
 
 **Como** gerente  
-**Quero** ver KPIs principais in the abertura  
+**I want to** ver KPIs principais in the abertura  
 **Para** have view fast of the business
 
 **Acceptance Criteria:**
@@ -53,10 +53,10 @@ Create dashboard analytical unificado:
 
 ---
 
-### US-019-002: Analisar Tendências
+### US-019-002: Analisar Trends
 
 **Como** gerente  
-**Quero** ver charts of evolution  
+**I want to** ver charts of evolution  
 **Para** identificar trends
 
 **Acceptance Criteria:**
@@ -71,7 +71,7 @@ Create dashboard analytical unificado:
 ### US-019-003: Drill-down in Metrics
 
 **Como** gerente  
-**Quero** clicar in a KPI and ver detalhes  
+**I want to** clicar in a KPI and ver detalhes  
 **Para** investigar numbers
 
 **Acceptance Criteria:**
@@ -85,7 +85,7 @@ Create dashboard analytical unificado:
 ### US-019-004: Filhaves Globais
 
 **Como** ube  
-**Quero** aplicar filtros in entire o dashboard  
+**I want to** aplicar filtros in entire o dashboard  
 **Para** focar in a period/área
 
 **Acceptance Criteria:**
@@ -100,7 +100,7 @@ Create dashboard analytical unificado:
 ### US-019-005: Customizar Dashboard
 
 **Como** ube  
-**Quero** escolher quais cards ver  
+**I want to** escolher quais cards ver  
 **Para** personalizar minha view
 
 **Acceptance Criteria:**
@@ -114,7 +114,7 @@ Create dashboard analytical unificado:
 ### US-019-006: Exportar Dashboard
 
 **Como** gerente  
-**Quero** exportar o dashboard  
+**I want to** exportar o dashboard  
 **Para** apresentar in reuniões
 
 **Acceptance Criteria:**
@@ -143,7 +143,7 @@ Create dashboard analytical unificado:
 
 **Estimate:** 4h
 
-- Séries hasporais
+- Séries timerais
 - Agregactions por period
 - Formatting for charts
 
@@ -233,7 +233,7 @@ Create dashboard analytical unificado:
 ##  Acceptance Criteria of the Epic
 
 - [ ] KPIs principais visible
-- [ ] Charts funcionando
+- [ ] Charts working
 - [ ] Drill-down navegável
 - [ ] Filhaves global
 - [ ] Customization salva

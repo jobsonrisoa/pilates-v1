@@ -88,7 +88,7 @@ Cada US accountins:
 - [ ] Tests passando (≥80% coverage)
 - [ ] CI pipeline functional
 - [ ] Documentation withpleta
-- [ ] Seed of dados funcionando
+- [ ] Seed of dados working
 
 ---
 

@@ -40,7 +40,7 @@ Finalizar documentation and preparar deploy in production:
 ### US-022-001: Documentation Technical
 
 **Como** desenvolvedor  
-**Quero** documentation technique withpleta  
+**I want to** documentation technique withpleta  
 **Para** maintain o syshas
 
 **Acceptance Criteria:**
@@ -55,7 +55,7 @@ Finalizar documentation and preparar deploy in production:
 ### US-022-002: Manual of the Ube
 
 **Como** ube  
-**Quero** manual of usage  
+**I want to** manual of usage  
 **Para** aprender o syshas
 
 **Acceptance Criteria:**
@@ -70,7 +70,7 @@ Finalizar documentation and preparar deploy in production:
 ### US-022-003: Configurar Production
 
 **Como** DevOps  
-**Quero** environment of production configured  
+**I want to** environment of production configured  
 **Para** hospedar o syshas
 
 **Acceptance Criteria:**
@@ -86,7 +86,7 @@ Finalizar documentation and preparar deploy in production:
 ### US-022-004: Deploy Automatizado
 
 **Como** DevOps  
-**Quero** deploy automatic  
+**I want to** deploy automatic  
 **Para** betweengar rapidamente
 
 **Acceptance Criteria:**
@@ -101,7 +101,7 @@ Finalizar documentation and preparar deploy in production:
 ### US-022-005: Monitoramento
 
 **Como** DevOps  
-**Quero** monitoring active  
+**I want to** monitoring active  
 **Para** saber when there is problemas
 
 **Acceptance Criteria:**
@@ -116,7 +116,7 @@ Finalizar documentation and preparar deploy in production:
 ### US-022-006: Checklist of Go-Live
 
 **Como** gerente  
-**Quero** checklist withplete  
+**I want to** checklist withplete  
 **Para** garantir that is tudo pronto
 
 **Acceptance Criteria:**
@@ -304,9 +304,9 @@ Finalizar documentation and preparar deploy in production:
 
 - [ ] Documentation withpleta
 - [ ] Production configurada
-- [ ] SSL funcionando
+- [ ] SSL working
 - [ ] Deploy automated
-- [ ] Backups funcionando
+- [ ] Backups working
 - [ ] Monitoramento active
 - [ ] Checklist aprovado
 - [ ] Syshas in production

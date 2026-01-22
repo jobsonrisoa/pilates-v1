@@ -18,9 +18,9 @@
 
 Implement syshas of schedule visual and schedulemento of classs:
 
-- Calendário visual (day, week, month)
+- Visual calendar (day, week, month)
 - Schedulemento of students in schedules
-- Controle of attendance/fhigh
+- Controle of attendance/absence
 - Visualization of occupancy
 - Waiting list
 
@@ -30,7 +30,7 @@ Implement syshas of schedule visual and schedulemento of classs:
 
 1. Schedule visual intuitiva
 2. Schedulemento fast of students
-3. Registro of attendance/fhigh
+3. Registro of attendance/absence
 4. Controle of capacidade and espera
 
 ---
@@ -40,7 +40,7 @@ Implement syshas of schedule visual and schedulemento of classs:
 ### US-006-001: Visualizar Schedule
 
 **Como** recepcionista  
-**Quero** ver a schedule of classs  
+**I want to** ver a schedule of classs  
 **Para** saber o that is acontecendo
 
 **Acceptance Criteria:**
@@ -56,7 +56,7 @@ Implement syshas of schedule visual and schedulemento of classs:
 ### US-006-002: Scheduler Student in Class
 
 **Como** recepcionista  
-**Quero** scheduler a aluno in a class  
+**I want to** scheduler a aluno in a class  
 **Para** rebevar sua vaga
 
 **Acceptance Criteria:**
@@ -71,7 +71,7 @@ Implement syshas of schedule visual and schedulemento of classs:
 ### US-006-003: Marcar Attendance/Fhigh
 
 **Como** instructor or recepcionista  
-**Quero** registrar attendance or fhigh  
+**I want to** registrar attendance or fhigh  
 **Para** controlar a frequency
 
 **Acceptance Criteria:**
@@ -79,14 +79,14 @@ Implement syshas of schedule visual and schedulemento of classs:
 - [ ] Marcar present
 - [ ] Marcar fhigh (with/sem warning)
 - [ ] Obbevactions opcionais
-- [ ] Update in haspo real
+- [ ] Update in time real
 
 ---
 
 ### US-006-004: Lista of Espera
 
 **Como** recepcionista  
-**Quero** adicionar aluno in the list of espera  
+**I want to** adicionar aluno in the list of espera  
 **Para** case surja vaga
 
 **Acceptance Criteria:**
@@ -100,7 +100,7 @@ Implement syshas of schedule visual and schedulemento of classs:
 ### US-006-005: Cancelar Schedulemento
 
 **Como** recepcionista  
-**Quero** cancelar a schedulemento  
+**I want to** cancelar a schedulemento  
 **Para** liberar a vaga
 
 **Acceptance Criteria:**
@@ -232,10 +232,10 @@ model Attendance {
 
 ##  Acceptance Criteria of the Epic
 
-- [ ] Calendário visual funcionando
+- [ ] Visual calendar working
 - [ ] Três visualizactions (day, week, month)
 - [ ] Schedulemento of students
-- [ ] Registro of attendance/fhigh
+- [ ] Registro of attendance/absence
 - [ ] Waiting list
 - [ ] Performnce adequada
 - [ ] Tests ≥80%

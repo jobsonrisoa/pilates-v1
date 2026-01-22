@@ -17,7 +17,7 @@
 ##  Ube Story
 
 **Como** desenvolvedor backendendendend  
-**Quero** environment of tests configured  
+**I want to** environment of tests configured  
 **Para** praticar TDD with confiança
 
 ---
@@ -36,7 +36,7 @@
 
 - [ ] Jest configured for unit
 - [ ] Jest configured for integration
-- [ ] Mock of the Prisma funcionando
+- [ ] Mock of the Prisma working
 - [ ] Coverage threshold of 80%
 - [ ] Tests rodam via Docker
 - [ ] Tests of example passando

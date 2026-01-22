@@ -17,7 +17,7 @@
 ##  Ube Story
 
 **Como** desenvolvedor  
-**Quero** tools of quality of code configuradas  
+**I want to** tools of quality of code configuradas  
 **Para** maintain consistência and evitar errorrs
 
 ---

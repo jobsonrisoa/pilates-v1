@@ -39,7 +39,7 @@ Implement management of modalities, types of class and grade of schedules:
 ### US-005-001: Gerenciar Modalities
 
 **Como** administrador  
-**Quero** eachstrar modalities of class  
+**I want to** eachstrar modalities of class  
 **Para** definir o that a academia offers
 
 **Acceptance Criteria:**
@@ -53,13 +53,13 @@ Implement management of modalities, types of class and grade of schedules:
 ### US-005-002: Gerenciar Class Types
 
 **Como** administrador  
-**Quero** definir types of class por modality  
+**I want to** definir types of class por modality  
 **Para** configurar capacidades and duractions
 
 **Acceptance Criteria:**
 
 - [ ] Tipos: Individual, Duo, Group
-- [ ] Capacity máxima
+- [ ] Maximum capacity
 - [ ] Duration in minutes
 - [ ] Vincuside a modality
 
@@ -68,14 +68,14 @@ Implement management of modalities, types of class and grade of schedules:
 ### US-005-003: Create Grade of Schedules
 
 **Como** gerente  
-**Quero** definir a grade weekl of classs  
+**I want to** definir a grade weekl of classs  
 **Para** organizar os schedules available
 
 **Acceptance Criteria:**
 
 - [ ] Select day of the week
-- [ ] Horário start/end
-- [ ] Instructor responsável
+- [ ] Schedule start/end
+- [ ] Responsible instructor
 - [ ] Modalidade and type
 - [ ] Capacity
 
@@ -84,7 +84,7 @@ Implement management of modalities, types of class and grade of schedules:
 ### US-005-004: Visualizar Grade Weekly
 
 **Como** ube of the syshas  
-**Quero** ver a grade of schedules of the week  
+**I want to** ver a grade of schedules of the week  
 **Para** entender a disponibilidade
 
 **Acceptance Criteria:**

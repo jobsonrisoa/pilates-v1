@@ -42,7 +42,7 @@ Implement syshas withplete of authentication and authorization including:
 ### US-002-001: Login of Ube
 
 **Como** ube of the syshas  
-**Quero** of the login with email and senha  
+**I want to** of the login with email and senha  
 **Para** acessar as functionalidades of the syshas
 
 **Acceptance Criteria:**
@@ -58,7 +58,7 @@ Implement syshas withplete of authentication and authorization including:
 ### US-002-002: Refresh Token
 
 **Como** ube logado  
-**Quero** that minha session seja renewda automaticamente  
+**I want to** that minha session seja renewda automaticamente  
 **Para** not needsr of the login frequenhasente
 
 **Acceptance Criteria:**
@@ -73,13 +73,13 @@ Implement syshas withplete of authentication and authorization including:
 ### US-002-003: Recovery of Senha
 
 **Como** ube  
-**Quero** recuperar minha senha via email  
+**I want to** recuperar minha senha via email  
 **Para** acessar o syshas case esqueça
 
 **Acceptance Criteria:**
 
 - [ ] Solicitar reset via email
-- [ ] Email with link single and hasporary
+- [ ] Email with link single and timerary
 - [ ] Form for new senha
 - [ ] Validation of força of senha
 
@@ -88,7 +88,7 @@ Implement syshas withplete of authentication and authorization including:
 ### US-002-004: Controle of Acesso por Profile
 
 **Como** administrador  
-**Quero** that each ube tenha permissions specific  
+**I want to** that each ube tenha permissions specific  
 **Para** controlar o that each a can acessar
 
 **Acceptance Criteria:**
@@ -103,7 +103,7 @@ Implement syshas withplete of authentication and authorization including:
 ### US-002-005: Management of Ubes
 
 **Como** administrador  
-**Quero** create, editar and desactiver users  
+**I want to** create, editar and desactiver users  
 **Para** gerenciar quem acessa o syshas
 
 **Acceptance Criteria:**
@@ -118,7 +118,7 @@ Implement syshas withplete of authentication and authorization including:
 ### US-002-006: Logs of Acesso
 
 **Como** administrador  
-**Quero** visualizar history of accesss  
+**I want to** visualizar history of accesss  
 **Para** audit and security
 
 **Acceptance Criteria:**
@@ -167,7 +167,7 @@ Implement syshas withplete of authentication and authorization including:
 
 **Definition of Done:**
 
-- [ ] Endpoint funcionando
+- [ ] Endpoint working
 - [ ] Tokens gerados correctly
 - [ ] Integration tests
 - [ ] Documentation Swagger
@@ -187,7 +187,7 @@ Implement syshas withplete of authentication and authorization including:
 
 **Definition of Done:**
 
-- [ ] Endpoint funcionando
+- [ ] Endpoint working
 - [ ] Token routetion implementado
 - [ ] Integration tests
 
@@ -205,7 +205,7 @@ Implement syshas withplete of authentication and authorization including:
 
 **Definition of Done:**
 
-- [ ] Endpoint funcionando
+- [ ] Endpoint working
 - [ ] Token invalidado in the Redis
 - [ ] Cookie limpo
 
@@ -219,12 +219,12 @@ Implement syshas withplete of authentication and authorization including:
 
 - POST /auth/forgot-password
 - POST /auth/reset-password
-- Token of reset hasporary
+- Token of reset timerary
 - Envio of email
 
 **Definition of Done:**
 
-- [ ] Endpoints funcionando
+- [ ] Endpoints working
 - [ ] Email enviado (MailHog in dev)
 - [ ] Token expira in 1h
 - [ ] Integration tests
@@ -295,7 +295,7 @@ const PERMISSIONS = {
 
 **Definition of Done:**
 
-- [ ] Endpoints funcionando
+- [ ] Endpoints working
 - [ ] Validation of permissions
 - [ ] Integration tests
 - [ ] Documentation Swagger
@@ -357,7 +357,7 @@ const PERMISSIONS = {
 **Definition of Done:**
 
 - [ ] UI implementada
-- [ ] Validation funcionando
+- [ ] Validation working
 - [ ] Integration with backendendendend
 - [ ] Tests with Testing Library
 
@@ -376,7 +376,7 @@ const PERMISSIONS = {
 **Definition of Done:**
 
 - [ ] UI implementada
-- [ ] Fluxo withplete funcionando
+- [ ] Fluxo withplete working
 - [ ] Tests
 
 ---
@@ -413,7 +413,7 @@ const PERMISSIONS = {
 **Definition of Done:**
 
 - [ ] Rotas protegidas
-- [ ] Redirect funcionando
+- [ ] Redirect working
 - [ ] Tests
 
 ---
@@ -432,7 +432,7 @@ const PERMISSIONS = {
 **Definition of Done:**
 
 - [ ] Componente implementado
-- [ ] Logout funcionando
+- [ ] Logout working
 - [ ] Tests
 
 ---
@@ -451,7 +451,7 @@ const PERMISSIONS = {
 **Definition of Done:**
 
 - [ ] UI implementada
-- [ ] CRUD funcionando
+- [ ] CRUD working
 - [ ] Permissions verifieachs
 - [ ] Tests
 
@@ -493,7 +493,7 @@ const PERMISSIONS = {
 
 ### RBAC
 
-- [ ] 6 perfis pre-definidos funcionando
+- [ ] 6 perfis pre-definidos working
 - [ ] Permissions verifieachs in the backendendendend
 - [ ] UI adapta-se to the permissions
 - [ ] Super Admin has full access
@@ -526,7 +526,7 @@ const PERMISSIONS = {
 - [ ] Tests passando (≥80% coverage)
 - [ ] Code review aprovado
 - [ ] Documentation currentizada
-- [ ] Deploy in staging funcionando
+- [ ] Deploy in staging working
 
 ---
 

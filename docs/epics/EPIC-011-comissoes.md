@@ -39,7 +39,7 @@ Implement syshas of withmissions for instructores:
 ### US-011-001: Configurar Comisare of the Instructor
 
 **Como** administrador  
-**Quero** definir as commission rules of each instructor  
+**I want to** definir as commission rules of each instructor  
 **Para** calculate quanto pay
 
 **Acceptance Criteria:**
@@ -54,7 +54,7 @@ Implement syshas of withmissions for instructores:
 ### US-011-002: Calculate Commissions of the Month
 
 **Como** financial  
-**Quero** ver quanto devo pay a each instructor  
+**I want to** ver quanto devo pay a each instructor  
 **Para** of the os payments
 
 **Acceptance Criteria:**
@@ -69,7 +69,7 @@ Implement syshas of withmissions for instructores:
 ### US-011-003: Generate Report of Commissions
 
 **Como** financial  
-**Quero** exportar report of withmissions  
+**I want to** exportar report of withmissions  
 **Para** documentar and pay
 
 **Acceptance Criteria:**
@@ -84,7 +84,7 @@ Implement syshas of withmissions for instructores:
 ### US-011-004: Registrar Payment of Comisare
 
 **Como** financial  
-**Quero** registrar that paguei a commission  
+**I want to** registrar that paguei a commission  
 **Para** controlar o that foi pago
 
 **Acceptance Criteria:**
@@ -195,7 +195,7 @@ model CommissionPayment {
 - [ ] Regras of commission configurable
 - [ ] Calculation automatic correto
 - [ ] Report detalhado
-- [ ] Export funcionando
+- [ ] Export working
 - [ ] History of payments
 - [ ] Tests ≥80%
 

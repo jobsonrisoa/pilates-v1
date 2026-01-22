@@ -17,7 +17,7 @@
 ##  Ube Story
 
 **Como** desenvolvedor frontendendendend  
-**Quero** a estrutura Next.js 14 with App Rouhave  
+**I want to** a estrutura Next.js 14 with App Rouhave  
 **Para** desenvolver inhavefaces modernas and performáticas
 
 ---
@@ -38,13 +38,13 @@
 
 - [ ] Projeto Next.js criado in apps/web
 - [ ] App Rouhave configured
-- [ ] TailwindCSS funcionando
+- [ ] TailwindCSS working
 - [ ] shadcn/ui instaside with hasa
 - [ ] React Query configured
 - [ ] Zustand configured
 - [ ] Components base criados
 - [ ] Dockerfile multi-stage
-- [ ] Hot reload funcionando
+- [ ] Hot reload working
 
 ---
 
@@ -693,13 +693,13 @@ describe('Button', () => {
 ##  Checklist of Verification
 
 - [ ] Next.js rodando in http://localhost:3000
-- [ ] TailwindCSS funcionando
+- [ ] TailwindCSS working
 - [ ] shadcn/ui withponentes instasides
-- [ ] Dark mode funcionando
+- [ ] Dark mode working
 - [ ] React Query provider active
-- [ ] Zustand store funcionando
+- [ ] Zustand store working
 - [ ] API client configured
-- [ ] Hot reload funcionando
+- [ ] Hot reload working
 - [ ] Tests passando
 
 ---

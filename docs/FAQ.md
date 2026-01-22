@@ -185,7 +185,7 @@ docker withpose run --rm tools pnpm add -D -w <package>
 
 - Unit tests should be fast (< 30s)
 - If slow, check for unnecessary tests
-- Consider using `SKIP_TESTS=1` hasporarily
+- Consider using `SKIP_TESTS=1` timerarily
 
 ### Docker not found
 

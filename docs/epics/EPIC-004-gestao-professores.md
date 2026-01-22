@@ -40,7 +40,7 @@ Implement module of management of instructores including:
 ### US-004-001: Regishave Instructor
 
 **Como** administrador  
-**Quero** eachstrar a new instructor  
+**I want to** eachstrar a new instructor  
 **Para** that ele possa dar classs
 
 **Acceptance Criteria:**
@@ -56,7 +56,7 @@ Implement module of management of instructores including:
 ### US-004-002: Listar Instructores
 
 **Como** ube of the syshas  
-**Quero** ver a list of instructores  
+**I want to** ver a list of instructores  
 **Para** encontrar quem preciso
 
 **Acceptance Criteria:**
@@ -70,7 +70,7 @@ Implement module of management of instructores including:
 ### US-004-003: Vincular Instructor a Ube
 
 **Como** administrador  
-**Quero** create login for o instructor  
+**I want to** create login for o instructor  
 **Para** that ele acesse o syshas
 
 **Acceptance Criteria:**
@@ -84,7 +84,7 @@ Implement module of management of instructores including:
 ### US-004-004: Gerenciar Specialties
 
 **Como** administrador  
-**Quero** definir as specialties of the instructor  
+**I want to** definir as specialties of the instructor  
 **Para** saber quais classs ele can dar
 
 **Acceptance Criteria:**
@@ -128,7 +128,7 @@ Implement module of management of instructores including:
 
 **Definition of Done:**
 
-- [ ] Endpoints CRUD funcionando
+- [ ] Endpoints CRUD working
 - [ ] Validations
 - [ ] Integration tests
 
@@ -155,7 +155,7 @@ Implement module of management of instructores including:
 **Definition of Done:**
 
 - [ ] DataTable implementada
-- [ ] Filhaves funcionando
+- [ ] Filhaves working
 - [ ] Tests
 
 ---
@@ -187,7 +187,7 @@ Implement module of management of instructores including:
 
 ##  Acceptance Criteria of the Epic
 
-- [ ] Full CRUD funcionando
+- [ ] Full CRUD working
 - [ ] Specialties configurable
 - [ ] Bank details salvos (criptografados)
 - [ ] Linking with ube functional

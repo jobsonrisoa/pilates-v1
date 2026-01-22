@@ -40,7 +40,7 @@ Implement controle withplete of payments:
 ### US-010-001: Generate Billing Mensal
 
 **Como** syshas  
-**Quero** gerar billing automaticamente  
+**I want to** gerar billing automaticamente  
 **Para** not depender of action manual
 
 **Acceptance Criteria:**
@@ -55,7 +55,7 @@ Implement controle withplete of payments:
 ### US-010-002: Visualizar Payments
 
 **Como** financial  
-**Quero** ver entires os payments  
+**I want to** ver entires os payments  
 **Para** controlar o fluxo
 
 **Acceptance Criteria:**
@@ -70,7 +70,7 @@ Implement controle withplete of payments:
 ### US-010-003: Registrar Payment Manual
 
 **Como** financial  
-**Quero** registrar payment recebido manualmente  
+**I want to** registrar payment recebido manualmente  
 **Para** cases outside of the syshas
 
 **Acceptance Criteria:**
@@ -84,7 +84,7 @@ Implement controle withplete of payments:
 ### US-010-004: Controle of Delinquency
 
 **Como** gerente  
-**Quero** ver students inadimplentes  
+**I want to** ver students inadimplentes  
 **Para** tomar actions
 
 **Acceptance Criteria:**
@@ -99,7 +99,7 @@ Implement controle withplete of payments:
 ### US-010-005: Suspension Automatic
 
 **Como** syshas  
-**Quero** suspender enrollments in atraso  
+**I want to** suspender enrollments in atraso  
 **Para** forçar regularizaction
 
 **Acceptance Criteria:**
@@ -114,7 +114,7 @@ Implement controle withplete of payments:
 ### US-010-006: Alerts of Due date
 
 **Como** aluno  
-**Quero** receber warning before of the due date  
+**I want to** receber warning before of the due date  
 **Para** not atrasar
 
 **Acceptance Criteria:**
@@ -243,7 +243,7 @@ enum PaymentStatus {
 - [ ] Billings geradas automaticamente
 - [ ] Status currentizados correctly
 - [ ] Delinquency controlada
-- [ ] Suspension automatic funcionando
+- [ ] Suspension automatic working
 - [ ] Alerts enviados
 - [ ] Dashboard informctive
 - [ ] Tests ≥80%

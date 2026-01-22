@@ -39,7 +39,7 @@ Implement syshas withplete of reschedulings of classs:
 ### US-013-001: Generate Crédito of Rescheduling
 
 **Como** syshas  
-**Quero** gerar credit when aluno fhigh with warning  
+**I want to** gerar credit when aluno fhigh with warning  
 **Para** permitir rescheduling
 
 **Acceptance Criteria:**
@@ -54,7 +54,7 @@ Implement syshas withplete of reschedulings of classs:
 ### US-013-002: Ver Credits Dispolevels
 
 **Como** aluno or recepcionista  
-**Quero** ver credits of rescheduling available  
+**I want to** ver credits of rescheduling available  
 **Para** saber o that posso usar
 
 **Acceptance Criteria:**
@@ -68,7 +68,7 @@ Implement syshas withplete of reschedulings of classs:
 ### US-013-003: Scheduler Rescheduling
 
 **Como** recepcionista  
-**Quero** scheduler a class of rescheduling  
+**I want to** scheduler a class of rescheduling  
 **Para** usar o credit of the aluno
 
 **Acceptance Criteria:**
@@ -83,7 +83,7 @@ Implement syshas withplete of reschedulings of classs:
 ### US-013-004: Alertar Credits Expirando
 
 **Como** syshas  
-**Quero** alertar about credits next of the due date  
+**I want to** alertar about credits next of the due date  
 **Para** evitar perda
 
 **Acceptance Criteria:**
@@ -97,7 +97,7 @@ Implement syshas withplete of reschedulings of classs:
 ### US-013-005: Report of Reschedulings
 
 **Como** gerente  
-**Quero** report of reschedulings  
+**I want to** report of reschedulings  
 **Para** awithpanhar o volume
 
 **Acceptance Criteria:**

@@ -17,7 +17,7 @@
 ##  Ube Story
 
 **Como** desenvolvedor  
-**Quero** documentation and dados of test  
+**I want to** documentation and dados of test  
 **Para** start a desenvolver rapidamente
 
 ---
@@ -34,7 +34,7 @@
 ##  Acceptance Criteria
 
 - [ ] README with quick start
-- [ ] Seed funcionando (admin ube)
+- [ ] Seed working (admin ube)
 - [ ] Variables documentadas
 - [ ] CONTRIBUTING.md criado
 
@@ -226,11 +226,11 @@ main()
 - [ ] Monorepo configured
 - [ ] Backend NestJS with DDD
 - [ ] Frontend Next.js configured
-- [ ] Docker Compose funcionando
+- [ ] Docker Compose working
 - [ ] Hot reload active
 - [ ] Lint and formt configureds
 - [ ] Tests configureds (≥80%)
-- [ ] CI/CD funcionando
+- [ ] CI/CD working
 - [ ] Logging and metrics
 - [ ] Seed and documentation
 

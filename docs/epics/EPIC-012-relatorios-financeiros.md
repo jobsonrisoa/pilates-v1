@@ -29,7 +29,7 @@ Implement reports financial withpletes:
 
 1. View clara of the receitas
 2. Controle of delinquency
-3. Analysis por diferentes dimensões
+3. Analysis by different dimensions
 4. Export for accountbilidade
 
 ---
@@ -39,7 +39,7 @@ Implement reports financial withpletes:
 ### US-012-001: Report of Revenue por Period
 
 **Como** gerente  
-**Quero** ver receitas per day/week/month/year  
+**I want to** ver receitas per day/week/month/year  
 **Para** awithpanhar o billing
 
 **Acceptance Criteria:**
@@ -54,7 +54,7 @@ Implement reports financial withpletes:
 ### US-012-002: Report of Revenue por Modalidade
 
 **Como** gerente  
-**Quero** ver receitas por modality  
+**I want to** ver receitas por modality  
 **Para** saber o that more fatura
 
 **Acceptance Criteria:**
@@ -68,12 +68,12 @@ Implement reports financial withpletes:
 ### US-012-003: Report of Revenue por Forma of Payment
 
 **Como** financial  
-**Quero** ver receitas por payment method  
+**I want to** ver receitas por payment method  
 **Para** entender witho recebemos
 
 **Acceptance Criteria:**
 
-- [ ] Boleto, PIX, Cartão, Dinheiro
+- [ ] Boleto, PIX, Card, Cash
 - [ ] Totais por form
 - [ ] Rates aplieachs (se houver)
 
@@ -82,7 +82,7 @@ Implement reports financial withpletes:
 ### US-012-004: Report of Delinquency
 
 **Como** gerente  
-**Quero** report detalhado of delinquency  
+**I want to** report detalhado of delinquency  
 **Para** tomar actions
 
 **Acceptance Criteria:**
@@ -97,7 +97,7 @@ Implement reports financial withpletes:
 ### US-012-005: Fluxo of Caixa
 
 **Como** financial  
-**Quero** ver o fluxo of caixa  
+**I want to** ver o fluxo of caixa  
 **Para** planejar financeiramente
 
 **Acceptance Criteria:**
@@ -105,14 +105,14 @@ Implement reports financial withpletes:
 - [ ] Entradas (receitas)
 - [ ] Outputs (withmissions)
 - [ ] Saldo por period
-- [ ] Projeção future
+- [ ] Projection future
 
 ---
 
 ### US-012-006: Exportar Reports
 
 **Como** financial  
-**Quero** exportar reports  
+**I want to** exportar reports  
 **Para** enviar to the accountbilidade
 
 **Acceptance Criteria:**
@@ -213,7 +213,7 @@ Implement reports financial withpletes:
 
 ##  Acceptance Criteria of the Epic
 
-- [ ] Todos os reports funcionando
+- [ ] Todos os reports working
 - [ ] Charts informctives
 - [ ] Export PDF/Excel
 - [ ] Performnce adequada

@@ -41,7 +41,7 @@ Implement module withplete of management of students including:
 ### US-003-001: Regishave Student
 
 **Como** recepcionista  
-**Quero** eachstrar a new aluno in the syshas  
+**I want to** eachstrar a new aluno in the syshas  
 **Para** that ele possa be matricuside in classs
 
 **Acceptance Criteria:**
@@ -57,7 +57,7 @@ Implement module withplete of management of students including:
 ### US-003-002: Listar Students
 
 **Como** ube of the syshas  
-**Quero** ver a list of students eachstrados  
+**I want to** ver a list of students eachstrados  
 **Para** encontrar rapidamente quem preciso
 
 **Acceptance Criteria:**
@@ -73,7 +73,7 @@ Implement module withplete of management of students including:
 ### US-003-003: Editar Student
 
 **Como** recepcionista  
-**Quero** editar dados of a aluno  
+**I want to** editar dados of a aluno  
 **Para** maintain as informtion currentizadas
 
 **Acceptance Criteria:**
@@ -88,7 +88,7 @@ Implement module withplete of management of students including:
 ### US-003-004: Visualizar Detalhes of the Student
 
 **Como** ube of the syshas  
-**Quero** ver entires os dados of a aluno  
+**I want to** ver entires os dados of a aluno  
 **Para** have view withpleta of the eachstro
 
 **Acceptance Criteria:**
@@ -102,7 +102,7 @@ Implement module withplete of management of students including:
 ### US-003-005: Gerenciar Status of the Student
 
 **Como** gerente  
-**Quero** activer, inativer or suspender students  
+**I want to** activer, inativer or suspender students  
 **Para** controlar quem is active in the syshas
 
 **Acceptance Criteria:**
@@ -117,7 +117,7 @@ Implement module withplete of management of students including:
 ### US-003-006: Regishave Exams of the Student
 
 **Como** instructor or recepcionista  
-**Quero** registrar exams and avaliactions of the aluno  
+**I want to** registrar exams and avaliactions of the aluno  
 **Para** maintain medical/physical history
 
 **Acceptance Criteria:**
@@ -132,7 +132,7 @@ Implement module withplete of management of students including:
 ### US-003-007: Exportar Givens of the Student (LGPD)
 
 **Como** aluno  
-**Quero** exportar entires os meus dados  
+**I want to** exportar entires os meus dados  
 **Para** exercer meu direito by the LGPD
 
 **Acceptance Criteria:**
@@ -199,7 +199,7 @@ Implement module withplete of management of students including:
 
 **Definition of Done:**
 
-- [ ] Endpoints funcionando
+- [ ] Endpoints working
 - [ ] Validations implementadas
 - [ ] Permissions verifieachs
 - [ ] Integration tests
@@ -240,7 +240,7 @@ Implement module withplete of management of students including:
 
 **Definition of Done:**
 
-- [ ] Endpoints funcionando
+- [ ] Endpoints working
 - [ ] Validations
 - [ ] Tests
 
@@ -259,7 +259,7 @@ Implement module withplete of management of students including:
 
 **Definition of Done:**
 
-- [ ] Upload funcionando
+- [ ] Upload working
 - [ ] Files salvos in the storage
 - [ ] URL of access gerada
 - [ ] Tests
@@ -278,7 +278,7 @@ Implement module withplete of management of students including:
 
 **Definition of Done:**
 
-- [ ] Endpoint funcionando
+- [ ] Endpoint working
 - [ ] Todos os dados includeds
 - [ ] Formato readable
 
@@ -315,14 +315,14 @@ Implement module withplete of management of students including:
 - Form multi-step or abas
 - Personal date
 - Contact
-- Emergência
+- Emergency
 - Medical date
 - Validation with Zod
 
 **Definition of Done:**
 
 - [ ] Form withplete
-- [ ] Validations funcionando
+- [ ] Validations working
 - [ ] Máscara of CPF, phone
 - [ ] Tests
 
@@ -344,7 +344,7 @@ Implement module withplete of management of students including:
 
 - [ ] UI implementada
 - [ ] Navegaction between abas
-- [ ] Actions funcionando
+- [ ] Actions working
 - [ ] Tests
 
 ---
@@ -363,7 +363,7 @@ Implement module withplete of management of students including:
 **Definition of Done:**
 
 - [ ] Modal implementado
-- [ ] Upload funcionando
+- [ ] Upload working
 - [ ] Tests
 
 ---
@@ -394,11 +394,11 @@ Implement module withplete of management of students including:
 - [ ] Form with entires os fields
 - [ ] CPF single validado
 - [ ] Fields requireds enforced
-- [ ] Máscaras of input funcionando
+- [ ] Input masks working
 
 ### Listagem
 
-- [ ] Paginaction funcionando
+- [ ] Paginaction working
 - [ ] Busca por name/CPF/email
 - [ ] Filhaves by status
 - [ ] Performnce adequada (< 500ms)
@@ -407,11 +407,11 @@ Implement module withplete of management of students including:
 
 - [ ] Todas as informtion visible
 - [ ] Abas organizadas
-- [ ] Actions of editing acessíveis
+- [ ] Editing actions accessible
 
 ### Exams
 
-- [ ] CRUD of exams funcionando
+- [ ] CRUD of exams working
 - [ ] Upload of files until 10MB
 - [ ] Visualization of files
 
@@ -441,7 +441,7 @@ Implement module withplete of management of students including:
 ## 📎 References
 
 - [ADR-003: Database](../architecture/adrs/ADR-003-datebase-de-dados.md)
-- [PRD - Seção 5.2](../PRD.md#52-management-de-students)
+- [PRD - Section 5.2](../PRD.md#52-student-management)
 
 ---
 

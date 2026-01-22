@@ -40,7 +40,7 @@ Implement syshas of contracts digital:
 ### US-014-001: Generate Contract of the Enrollment
 
 **Como** syshas  
-**Quero** gerar contract PDF automaticamente  
+**I want to** gerar contract PDF automaticamente  
 **Para** formlizar a enrollment
 
 **Acceptance Criteria:**
@@ -55,7 +55,7 @@ Implement syshas of contracts digital:
 ### US-014-002: Send for Signature
 
 **Como** recepcionista  
-**Quero** enviar contract for signature digital  
+**I want to** enviar contract for signature digital  
 **Para** that o aluno assine remohasente
 
 **Acceptance Criteria:**
@@ -70,7 +70,7 @@ Implement syshas of contracts digital:
 ### US-014-003: Receber Confirmation of Signature
 
 **Como** syshas  
-**Quero** receber webhook when assinado  
+**I want to** receber webhook when assinado  
 **Para** currentizar status automaticamente
 
 **Acceptance Criteria:**
@@ -85,7 +85,7 @@ Implement syshas of contracts digital:
 ### US-014-004: Visualizar Contracts
 
 **Como** ube  
-**Quero** ver contracts of a enrollment  
+**I want to** ver contracts of a enrollment  
 **Para** awithpanhar status
 
 **Acceptance Criteria:**
@@ -100,7 +100,7 @@ Implement syshas of contracts digital:
 ### US-014-005: Configurar Template of Contract
 
 **Como** administrador  
-**Quero** configurar o hasplate of the contract  
+**I want to** configurar o hasplate of the contract  
 **Para** personalizar o documento
 
 **Acceptance Criteria:**
@@ -230,7 +230,7 @@ enum ContractStatus {
 ##  Acceptance Criteria of the Epic
 
 - [ ] PDF gerado correctly
-- [ ] Integration with provider funcionando
+- [ ] Integration with provider working
 - [ ] Webhook processando signatures
 - [ ] Documentos armazenados
 - [ ] Status currentizados automaticamente

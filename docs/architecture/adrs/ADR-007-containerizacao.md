@@ -376,7 +376,7 @@ lint: ## Roda linhave
 
 ### Hot Reload
 
-Para garantir hot reload funcionando in the Docker:
+Para garantir hot reload working in the Docker:
 
 ```yaml
 # Para API (NestJS)
@@ -472,7 +472,7 @@ docker withpose exec api sh
 -  Ambiente consistente between devs
 -  Onboarding in minutes
 -  Services auxiliares includeds (mail, storage)
--  Hot reload funcionando
+-  Hot reload working
 -  Fácil limpar and restart
 
 ### Negative

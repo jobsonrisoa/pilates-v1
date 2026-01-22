@@ -50,13 +50,13 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 ### US-001-001: Initial Project Setup
 
 **Como** desenvolvedor  
-**Quero** clonar o repository and subir o environment with a single withando  
+**I want to** clonar o repository and subir o environment with a single withando  
 **Para** start a desenvolver rapidamente sem settings manuais
 
 **Acceptance Criteria:**
 
 - [ ] `docker withpose up` inicia entire o environment
-- [ ] Hot reload funcionando for backendendendend and frontendendendend
+- [ ] Hot reload working for backendendendend and frontendendendend
 - [ ] Database accessible and with migrations aplieachs
 - [ ] Documentation of onboarding withpleta
 
@@ -65,7 +65,7 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 ### US-001-002: Backend Structure
 
 **Como** desenvolvedor backendendendend  
-**Quero** a estrutura of project NestJS organizada with DDD  
+**I want to** a estrutura of project NestJS organizada with DDD  
 **Para** maintain the code organized and scalable
 
 **Acceptance Criteria:**
@@ -81,7 +81,7 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 ### US-001-003: Frontend Structure
 
 **Como** desenvolvedor frontendendendend  
-**Quero** a estrutura Next.js 14 with withponentes base  
+**I want to** a estrutura Next.js 14 with withponentes base  
 **Para** desenvolver inhavefaces consistentes
 
 **Acceptance Criteria:**
@@ -98,7 +98,7 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 ### US-001-004: Pipeline of CI/CD
 
 **Como** desenvolvedor  
-**Quero** that meu code seja validado automaticamente  
+**I want to** that meu code seja validado automaticamente  
 **Para** garantir quality before of the merge
 
 **Acceptance Criteria:**
@@ -106,7 +106,7 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 - [ ] Lint and type check in each PR
 - [ ] Unit tests with coverage ≥80%
 - [ ] Integration tests passando
-- [ ] Build of Docker funcionando
+- [ ] Build of Docker working
 - [ ] Deploy automatic for staging
 
 ---
@@ -114,7 +114,7 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 ### US-001-005: Ambiente of Tests
 
 **Como** desenvolvedor  
-**Quero** executar tests facilmente  
+**I want to** executar tests facilmente  
 **Para** seguir a meentirelogia TDD
 
 **Acceptance Criteria:**
@@ -122,7 +122,7 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 - [ ] Jest configured for backendendendend and frontendendendend
 - [ ] Coverage thresholds configureds (80%)
 - [ ] Containers of test isosides
-- [ ] Watch mode funcionando
+- [ ] Watch mode working
 - [ ] Tests can be executeds via Docker
 
 ---
@@ -206,9 +206,9 @@ apps/api/
 
 - [ ] NestJS rodando in accountiner
 - [ ] Prisma conectando in the MySQL
-- [ ] `/health` endpoint funcionando
+- [ ] `/health` endpoint working
 - [ ] `/api` (Swagger) accessible
-- [ ] Hot reload funcionando
+- [ ] Hot reload working
 
 ---
 
@@ -258,10 +258,10 @@ apps/web/
 **Definition of Done:**
 
 - [ ] Next.js rodando in accountiner
-- [ ] TailwindCSS funcionando
+- [ ] TailwindCSS working
 - [ ] Components shadcn instasides
 - [ ] Login page basic (placeholder)
-- [ ] Hot reload funcionando
+- [ ] Hot reload working
 
 ---
 
@@ -290,7 +290,7 @@ apps/web/
 - [ ] Volumes persistentes configureds
 - [ ] Health checks in entires os bevices
 - [ ] Network isolated
-- [ ] Hot reload funcionando in api and web
+- [ ] Hot reload working in api and web
 - [ ] `.env.example` documentado
 
 ---
@@ -402,7 +402,7 @@ apps/api/
 - [ ] `pnpm --filhave api test` funciona
 - [ ] Coverage report gerado
 - [ ] Threshold of 80% configured
-- [ ] Watch mode funcionando
+- [ ] Watch mode working
 - [ ] Teste of example passando
 
 ---
@@ -491,9 +491,9 @@ apps/web/
 **Definition of Done:**
 
 - [ ] CI roda in each PR
-- [ ] Tests paralelos funcionando
+- [ ] Tests paralelos working
 - [ ] Coverage enviado for Codecov
-- [ ] Build of images funcionando
+- [ ] Build of images working
 - [ ] Status checks requireds
 
 ---
@@ -542,7 +542,7 @@ seed         # popular datebase
 
 **Definition of Done:**
 
-- [ ] Todos os commands funcionando
+- [ ] Todos os commands working
 - [ ] `make help` documenta commands
 - [ ] README referencia Makefile
 
@@ -604,7 +604,7 @@ seed         # popular datebase
 
 **Definition of Done:**
 
-- [ ] Logs structureds funcionando
+- [ ] Logs structureds working
 - [ ] Request/response logging
 - [ ] Givens sensitive redactados
 - [ ] Configuration via env vars
@@ -643,7 +643,7 @@ seed         # popular datebase
 ### Quality of Code
 
 - [ ] ESLint + Prettier configureds
-- [ ] Husky + lint-staged funcionando
+- [ ] Husky + lint-staged working
 - [ ] Conventional commits enforced
 
 ### Tests

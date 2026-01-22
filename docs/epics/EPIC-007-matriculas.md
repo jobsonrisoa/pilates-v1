@@ -41,7 +41,7 @@ Implement syshas basic of enrollments for o MVP:
 ### US-007-001: Create Enrollment
 
 **Como** recepcionista  
-**Quero** matricular a aluno in a plan  
+**I want to** matricular a aluno in a plan  
 **Para** that ele withece as classs
 
 **Acceptance Criteria:**
@@ -57,7 +57,7 @@ Implement syshas basic of enrollments for o MVP:
 ### US-007-002: Listar Enrollments
 
 **Como** ube of the syshas  
-**Quero** ver all as enrollments  
+**I want to** ver all as enrollments  
 **Para** have view geral
 
 **Acceptance Criteria:**
@@ -71,7 +71,7 @@ Implement syshas basic of enrollments for o MVP:
 ### US-007-003: Gerenciar Status
 
 **Como** gerente  
-**Quero** alhavear status of enrollments  
+**I want to** alhavear status of enrollments  
 **Para** controlar situaction of the students
 
 **Acceptance Criteria:**
@@ -86,7 +86,7 @@ Implement syshas basic of enrollments for o MVP:
 ### US-007-004: Ver Enrollments of the Student
 
 **Como** recepcionista  
-**Quero** ver enrollments of a aluno  
+**I want to** ver enrollments of a aluno  
 **Para** entender sua situaction
 
 **Acceptance Criteria:**

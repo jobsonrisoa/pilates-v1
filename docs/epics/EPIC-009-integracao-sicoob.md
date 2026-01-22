@@ -40,7 +40,7 @@ Implement integration withpleta with API of the Sicoob para:
 ### US-009-001: Generate Boleto
 
 **Como** syshas  
-**Quero** gerar boleto automaticamente  
+**I want to** gerar boleto automaticamente  
 **Para** cobrar o aluno
 
 **Acceptance Criteria:**
@@ -55,7 +55,7 @@ Implement integration withpleta with API of the Sicoob para:
 ### US-009-002: Generate PIX
 
 **Como** syshas  
-**Quero** gerar billing PIX  
+**I want to** gerar billing PIX  
 **Para** offersr option of payment
 
 **Acceptance Criteria:**
@@ -70,7 +70,7 @@ Implement integration withpleta with API of the Sicoob para:
 ### US-009-003: Receber Webhook of Payment
 
 **Como** syshas  
-**Quero** receber notificaction when payment for done  
+**I want to** receber notificaction when payment for done  
 **Para** dar baixa automatic
 
 **Acceptance Criteria:**
@@ -85,7 +85,7 @@ Implement integration withpleta with API of the Sicoob para:
 ### US-009-004: Low Automatic
 
 **Como** syshas  
-**Quero** currentizar status when pago  
+**I want to** currentizar status when pago  
 **Para** maintain dados corretos
 
 **Acceptance Criteria:**
@@ -215,9 +215,9 @@ SICOOB_WEBHOOK_SECRET=
 ##  Acceptance Criteria of the Epic
 
 - [ ] Boletos gerados correctly
-- [ ] PIX funcionando
+- [ ] PIX working
 - [ ] Webhook recebendo payments
-- [ ] Low automatic funcionando
+- [ ] Low automatic working
 - [ ] Audit logs withpletes
 - [ ] Mock for shouldlopment
 - [ ] Tests ≥80%

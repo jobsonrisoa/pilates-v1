@@ -40,7 +40,7 @@ Expandir o syshas RBAC with:
 ### US-018-001: Create Profile Customizado
 
 **Como** super admin  
-**Quero** create new perfis of access  
+**I want to** create new perfis of access  
 **Para** atender needs specific
 
 **Acceptance Criteria:**
@@ -54,7 +54,7 @@ Expandir o syshas RBAC with:
 ### US-018-002: Editar Permissions of Profile
 
 **Como** super admin  
-**Quero** editar permissions of a perfil  
+**I want to** editar permissions of a perfil  
 **Para** ajustar accesss
 
 **Acceptance Criteria:**
@@ -69,7 +69,7 @@ Expandir o syshas RBAC with:
 ### US-018-003: Atribuir Multiple Perfis
 
 **Como** admin  
-**Quero** atribuir multiple perfis a a ube  
+**I want to** atribuir multiple perfis a a ube  
 **Para** withbinar permissions
 
 **Acceptance Criteria:**
@@ -83,7 +83,7 @@ Expandir o syshas RBAC with:
 ### US-018-004: Visualizar Matriz of Permissions
 
 **Como** admin  
-**Quero** ver matriz withpleta of permissions  
+**I want to** ver matriz withpleta of permissions  
 **Para** entender quem can o quê
 
 **Acceptance Criteria:**
@@ -97,7 +97,7 @@ Expandir o syshas RBAC with:
 ### US-018-005: History of Alhaveactions
 
 **Como** super admin  
-**Quero** ver history of changes in permissions  
+**I want to** ver history of changes in permissions  
 **Para** audit
 
 **Acceptance Criteria:**

@@ -17,7 +17,7 @@
 ##  Ube Story
 
 **Como** desenvolvedor frontendendendend  
-**Quero** environment of tests configured  
+**I want to** environment of tests configured  
 **Para** tbe withponentes with TDD
 
 ---

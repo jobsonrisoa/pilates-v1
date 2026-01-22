@@ -17,7 +17,7 @@
 ##  Ube Story
 
 **Como** desenvolvedor  
-**Quero** a estrutura of monorepo configurada  
+**I want to** a estrutura of monorepo configurada  
 **Para** start o shouldlopment with standards definidos
 
 ---
@@ -34,7 +34,7 @@
 ##  Acceptance Criteria
 
 - [ ] Structure of folders criada conforme especificado
-- [ ] pnpm workspace configured and funcionando
+- [ ] pnpm workspace configured and working
 - [ ] package.json root with scripts basics
 - [ ] .gitignore configured
 - [ ] .env.example with variables documentadas

@@ -17,7 +17,7 @@
 ##  Ube Story
 
 **Como** desenvolvedor/ops  
-**Quero** logging structured and metrics  
+**I want to** logging structured and metrics  
 **Para** debugar and monitorar o syshas
 
 ---
@@ -35,7 +35,7 @@
 
 - [ ] Logs in JSON in production
 - [ ] Logs pretty in shouldlopment
-- [ ] /metrics endpoint funcionando
+- [ ] /metrics endpoint working
 - [ ] Givens sensitive redactados
 - [ ] Sentry capturando errorrs (prod)
 
