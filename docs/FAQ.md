@@ -1,129 +1,129 @@
-# ❓ FAQ - Perguntas Frequentes
+# FAQ - Frequently Asked Questions
 
-## 📦 Por que temos múltiplas pastas `node_modules`?
+## Why do we have multiple `node_modules` folders?
 
-Em um **monorepo com pnpm workspaces**, é normal ter múltiplas pastas `node_modules`:
+In a **monorepo with pnpm workspaces**, it's normal to have multiple `node_modules` folders:
 
 ```
 pilates/
-├── node_modules/          # Dependências do root (husky, prettier, etc)
+├── node_modules/          # Root dependencies (husky, prettier, etc)
 ├── apps/
 │   ├── api/
-│   │   └── node_modules/  # Dependências específicas do backend
+│   │   └── node_modules/  # Backend-specific dependencies
 │   └── web/
-│       └── node_modules/  # Dependências específicas do frontend
+│       └── node_modules/  # Frontend-specific dependencies
 ```
 
-### Por que isso acontece?
+### Why does this happen?
 
-1. **Isolamento**: Cada workspace pode ter suas próprias dependências
-2. **pnpm workspaces**: O pnpm cria links simbólicos entre workspaces
-3. **Otimização**: Dependências compartilhadas são linkadas, não duplicadas
+1. **Isolation**: Each workspace can have its own dependencies
+2. **pnpm workspaces**: pnpm creates symbolic links between workspaces
+3. **Optimization**: Shared dependencies are linked, not duplicated
 
-### Está correto?
+### Is this correct?
 
-✅ **Sim!** Isso é esperado e está correto. As pastas `node_modules` estão no `.gitignore` e **não são versionadas**.
+**Yes!** This is expected and correct. The `node_modules` folders are in `.gitignore` and **are not versioned**.
 
-### Como funciona?
+### How does it work?
 
-- **Root `node_modules/`**: Ferramentas de desenvolvimento (husky, prettier, eslint)
-- **`apps/api/node_modules/`**: Dependências do NestJS (prisma, @nestjs/\*)
-- **`apps/web/node_modules/`**: Dependências do Next.js (next, react, tailwindcss)
+- **Root `node_modules/`**: Development tools (husky, prettier, eslint)
+- **`apps/api/node_modules/`**: NestJS dependencies (prisma, @nestjs/\*)
+- **`apps/web/node_modules/`**: Next.js dependencies (next, react, tailwindcss)
 
-O pnpm usa **links simbólicos** para compartilhar dependências comuns entre workspaces, evitando duplicação desnecessária.
+pnpm uses **symbolic links** to share common dependencies between workspaces, avoiding unnecessary duplication.
 
 ---
 
-## 🧪 Como pular testes no pre-commit?
+## How to skip tests in pre-commit?
 
-Se você precisar fazer um commit rápido sem rodar testes:
-
-```bash
-SKIP_TESTS=1 git commit -m "fix: correção urgente"
-```
-
-Ou use `--no-verify` (não recomendado, pula todos os hooks):
+If you need to make a quick commit without running tests:
 
 ```bash
-git commit --no-verify -m "fix: correção urgente"
+SKIP_TESTS=1 git commit -m "fix: urgent fix"
 ```
 
-**⚠️ Atenção**: Use apenas em casos excepcionais. Testes devem passar antes de fazer merge.
+Or use `--no-verify` (not recommended, skips all hooks):
+
+```bash
+git commit --no-verify -m "fix: urgent fix"
+```
+
+**Warning**: Use only in exceptional cases. Tests should pass before merging.
 
 ---
 
-## 🐳 Por que usar Docker para tudo?
+## Why use Docker for everything?
 
-O projeto segue uma abordagem **Docker-first**:
+The project follows a **Docker-first** approach:
 
-- ✅ **Consistência**: Mesmo ambiente em dev, CI e produção
-- ✅ **Isolamento**: Não polui o sistema local
-- ✅ **Reprodutibilidade**: Qualquer desenvolvedor pode rodar o projeto
-- ✅ **Zero setup**: Não precisa instalar Node.js, pnpm, MySQL, etc localmente
+- **Consistency**: Same environment in dev, CI, and production
+- **Isolation**: Doesn't pollute the local system
+- **Reproducibility**: Any developer can run the project
+- **Zero setup**: No need to install Node.js, pnpm, MySQL, etc locally
 
-### Como funciona?
+### How does it work?
 
-Todos os comandos rodam via `docker compose run --rm tools`:
+All commands run via `docker compose run --rm tools`:
 
 ```bash
-# Ao invés de:
+# Instead of:
 pnpm test
 
-# Usamos:
+# We use:
 docker compose run --rm tools pnpm test
 ```
 
 ---
 
-## 🔄 Como funciona o CI/CD?
+## How does CI/CD work?
 
-O GitHub Actions roda automaticamente em:
+GitHub Actions runs automatically on:
 
-- **Push para `main` ou `develop`**: Roda todos os testes e builds
-- **Pull Requests**: Valida código antes de merge
+- **Push to `main` or `develop`**: Runs all tests and builds
+- **Pull Requests**: Validates code before merge
 
-### Jobs do CI
+### CI Jobs
 
 1. **lint**: ESLint + Prettier + TypeScript check
-2. **test-api**: Testes unitários do backend (com coverage)
-3. **test-web**: Testes unitários do frontend (com coverage)
-4. **test-integration**: Testes de integração (com MySQL/Redis)
-5. **build**: Build das imagens Docker
+2. **test-api**: Backend unit tests (with coverage)
+3. **test-web**: Frontend unit tests (with coverage)
+4. **test-integration**: Integration tests (with MySQL/Redis)
+5. **build**: Docker image builds
 
-### Coverage mínimo
+### Minimum coverage
 
-- **Requisito**: ≥80% de cobertura
-- **Validação**: Automática no CI
-- **Relatórios**: Disponíveis como artifacts
+- **Requirement**: >=80% coverage
+- **Validation**: Automatic in CI
+- **Reports**: Available as artifacts
 
 ---
 
-## 🚀 Como rodar testes localmente?
+## How to run tests locally?
 
-### Todos os testes
+### All tests
 
 ```bash
-# Via Docker (recomendado)
+# Via Docker (recommended)
 docker compose run --rm tools pnpm test
 
-# Ou use o script
+# Or use the script
 ./scripts/test-all.sh
 ```
 
-### Testes específicos
+### Specific tests
 
 ```bash
-# Apenas backend
+# Backend only
 docker compose run --rm tools pnpm --filter @pilates/api test
 
-# Apenas frontend
+# Frontend only
 docker compose run --rm tools pnpm --filter @pilates/web test
 
-# Com coverage
+# With coverage
 docker compose run --rm tools pnpm test:cov
 ```
 
-### Modo watch (desenvolvimento)
+### Watch mode (development)
 
 ```bash
 docker compose run --rm tools pnpm --filter @pilates/api test:watch
@@ -131,27 +131,27 @@ docker compose run --rm tools pnpm --filter @pilates/api test:watch
 
 ---
 
-## 📝 Como funciona o pre-commit hook?
+## How does the pre-commit hook work?
 
-O hook do Husky executa automaticamente antes de cada commit:
+The Husky hook runs automatically before each commit:
 
-1. **lint-staged**: Formata e valida apenas arquivos staged
-2. **Testes unitários**: Roda todos os testes (rápido)
+1. **lint-staged**: Formats and validates only staged files
+2. **Unit tests**: Runs all tests (fast)
 
-### O que acontece se falhar?
+### What happens if it fails?
 
-- ❌ Commit é bloqueado
-- ✅ Você precisa corrigir os erros antes de commitar
+- Commit is blocked
+- You need to fix errors before committing
 
-### Como pular?
+### How to skip?
 
 ```bash
-SKIP_TESTS=1 git commit -m "fix: correção"
+SKIP_TESTS=1 git commit -m "fix: correction"
 ```
 
 ---
 
-## 🔧 Como adicionar novas dependências?
+## How to add new dependencies?
 
 ### Backend
 
@@ -173,26 +173,26 @@ docker compose run --rm tools pnpm add -D -w <package>
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
-### Testes falhando no CI mas passam localmente
+### Tests failing in CI but pass locally
 
-1. Verificar versões do Node.js/pnpm
-2. Verificar variáveis de ambiente
-3. Verificar se containers estão prontos
+1. Check Node.js/pnpm versions
+2. Check environment variables
+3. Check if containers are ready
 
-### Pre-commit muito lento
+### Pre-commit too slow
 
-- Testes unitários devem ser rápidos (< 30s)
-- Se estiver lento, verificar se há testes desnecessários
-- Considere usar `SKIP_TESTS=1` temporariamente
+- Unit tests should be fast (< 30s)
+- If slow, check for unnecessary tests
+- Consider using `SKIP_TESTS=1` temporarily
 
-### Docker não encontrado
+### Docker not found
 
-- Instalar Docker e Docker Compose
-- Verificar se `docker compose ps` funciona
-- Verificar permissões do usuário
+- Install Docker and Docker Compose
+- Check if `docker compose ps` works
+- Check user permissions
 
 ---
 
-**Última atualização**: 2026-01-22
+**Last updated**: 2026-01-22

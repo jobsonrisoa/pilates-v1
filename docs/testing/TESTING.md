@@ -1,65 +1,65 @@
-# 🧪 Documentação de Testes
+# Testing Documentation
 
-## 📋 Visão Geral
+## Overview
 
-Este documento descreve a estratégia de testes do projeto, como executá-los e como contribuir com novos testes.
+This document describes the project's testing strategy, how to run tests, and how to contribute new tests.
 
-### Princípios
+### Principles
 
-- **TDD (Test-Driven Development)**: Red → Green → Refactor
-- **Coverage mínimo**: 80% para testes unitários
-- **Docker-first**: Todos os testes rodam em containers isolados
-- **Isolamento**: Cada teste é independente e pode rodar em paralelo
+- **TDD (Test-Driven Development)**: Red -> Green -> Refactor
+- **Minimum coverage**: 80% for unit tests
+- **Docker-first**: All tests run in isolated containers
+- **Isolation**: Each test is independent and can run in parallel
 
 ---
 
-## 🚀 Como Executar Testes
+## How to Run Tests
 
-### Pré-requisitos
+### Prerequisites
 
-- Docker e Docker Compose instalados
-- Nenhuma dependência local necessária (100% Docker)
+- Docker and Docker Compose installed
+- No local dependencies required (100% Docker)
 
-### Comandos Principais
+### Main Commands
 
-#### Testes Unitários
+#### Unit Tests
 
 ```bash
-# Todos os testes unitários (API + Web)
+# All unit tests (API + Web)
 docker compose run --rm tools pnpm test
 
-# Apenas backend
+# Backend only
 docker compose run --rm tools pnpm --filter @pilates/api test
 
-# Apenas frontend
+# Frontend only
 docker compose run --rm tools pnpm --filter @pilates/web test
 
-# Com coverage
+# With coverage
 docker compose run --rm tools pnpm test:cov
 
-# Watch mode (desenvolvimento)
+# Watch mode (development)
 docker compose run --rm tools pnpm --filter @pilates/api test:watch
 ```
 
-#### Testes de Integração
+#### Integration Tests
 
 ```bash
-# Backend (requer MySQL e Redis rodando)
+# Backend (requires MySQL and Redis running)
 docker compose up -d mysql redis
 docker compose run --rm tools pnpm --filter @pilates/api test:integration
 ```
 
-#### Testes E2E (Playwright)
+#### E2E Tests (Playwright)
 
 ```bash
-# Iniciar stack completa
+# Start full stack
 docker compose up -d
 
-# Rodar testes E2E
+# Run E2E tests
 docker compose run --rm tools pnpm --filter @pilates/web test:e2e
 ```
 
-#### Qualidade de Código
+#### Code Quality
 
 ```bash
 # Lint
@@ -77,24 +77,24 @@ docker compose run --rm tools pnpm typecheck
 
 ---
 
-## 📁 Estrutura de Testes
+## Test Structure
 
 ### Backend (`apps/api`)
 
 ```
 apps/api/
 ├── test/
-│   ├── shared/              # Testes de código compartilhado
+│   ├── shared/              # Shared code tests
 │   │   └── domain/
 │   │       └── entity.base.spec.ts
-│   ├── integration/         # Testes de integração
+│   ├── integration/         # Integration tests
 │   │   ├── health.e2e-spec.ts
 │   │   └── setup.ts
-│   ├── mocks/               # Mocks compartilhados
+│   ├── mocks/               # Shared mocks
 │   │   └── prisma.mock.ts
-│   └── setup.ts             # Setup global
-├── jest.config.ts           # Config unitários
-└── jest.integration.config.ts # Config integração
+│   └── setup.ts             # Global setup
+├── jest.config.ts           # Unit config
+└── jest.integration.config.ts # Integration config
 ```
 
 ### Frontend (`apps/web`)
@@ -105,7 +105,7 @@ apps/web/
 │   └── ui/
 │       └── __tests__/
 │           └── button.test.tsx
-├── e2e/                     # Testes Playwright
+├── e2e/                     # Playwright tests
 │   └── login.spec.ts
 ├── test/
 │   ├── mocks/               # MSW handlers
@@ -117,18 +117,18 @@ apps/web/
 
 ---
 
-## 🎯 Tipos de Testes
+## Test Types
 
-### 1. Testes Unitários
+### 1. Unit Tests
 
-**Objetivo**: Testar unidades isoladas de código (funções, classes, componentes).
+**Objective**: Test isolated units of code (functions, classes, components).
 
-**Ferramentas**:
+**Tools**:
 
 - **Backend**: Jest + jest-mock-extended
 - **Frontend**: Jest + Testing Library
 
-**Exemplo (Backend)**:
+**Example (Backend)**:
 
 ```typescript
 // test/shared/domain/entity.base.spec.ts
@@ -143,7 +143,7 @@ describe('Entity Base', () => {
 });
 ```
 
-**Exemplo (Frontend)**:
+**Example (Frontend)**:
 
 ```typescript
 // components/ui/__tests__/button.test.tsx
@@ -158,16 +158,16 @@ describe('Button', () => {
 });
 ```
 
-### 2. Testes de Integração
+### 2. Integration Tests
 
-**Objetivo**: Testar interação entre componentes (API + DB, componentes + hooks).
+**Objective**: Test interaction between components (API + DB, components + hooks).
 
-**Ferramentas**:
+**Tools**:
 
 - **Backend**: Jest + Supertest + MySQL container
 - **Frontend**: Jest + MSW (Mock Service Worker)
 
-**Exemplo (Backend)**:
+**Example (Backend)**:
 
 ```typescript
 // test/integration/health.e2e-spec.ts
@@ -199,13 +199,13 @@ describe('Health (e2e)', () => {
 });
 ```
 
-### 3. Testes E2E (End-to-End)
+### 3. E2E Tests (End-to-End)
 
-**Objetivo**: Testar fluxos completos do usuário.
+**Objective**: Test complete user flows.
 
-**Ferramentas**: Playwright
+**Tools**: Playwright
 
-**Exemplo**:
+**Example**:
 
 ```typescript
 // e2e/login.spec.ts
@@ -220,13 +220,13 @@ test('user can login', async ({ page }) => {
 });
 ```
 
-### 4. Testes de Performance
+### 4. Performance Tests
 
-**Objetivo**: Validar performance e carga do sistema.
+**Objective**: Validate system performance and load.
 
-**Ferramentas**: k6
+**Tools**: k6
 
-**Exemplo**:
+**Example**:
 
 ```javascript
 // tests/performance/health-load.js
@@ -249,14 +249,14 @@ export default function () {
 
 ---
 
-## 📊 Coverage
+## Coverage
 
-### Requisitos
+### Requirements
 
-- **Mínimo**: 80% de cobertura (linhas, branches, functions)
+- **Minimum**: 80% coverage (lines, branches, functions)
 - **Ideal**: 90%+
 
-### Verificar Coverage
+### Check Coverage
 
 ```bash
 # Backend
@@ -265,20 +265,20 @@ docker compose run --rm tools pnpm --filter @pilates/api test:cov
 # Frontend
 docker compose run --rm tools pnpm --filter @pilates/web test:cov
 
-# Todos
+# All
 docker compose run --rm tools pnpm test:cov
 ```
 
-### Relatórios
+### Reports
 
-Os relatórios são gerados em:
+Reports are generated in:
 
 - `apps/api/coverage/`
 - `apps/web/coverage/`
 
-Abra `coverage/lcov-report/index.html` no navegador para visualizar.
+Open `coverage/lcov-report/index.html` in a browser to view.
 
-### Thresholds Configurados
+### Configured Thresholds
 
 ```typescript
 // jest.config.ts
@@ -294,11 +294,11 @@ coverageThreshold: {
 
 ---
 
-## 🔧 Configuração
+## Configuration
 
 ### Jest (Backend)
 
-**Arquivo**: `apps/api/jest.config.ts`
+**File**: `apps/api/jest.config.ts`
 
 ```typescript
 export default {
@@ -321,7 +321,7 @@ export default {
 
 ### Jest (Frontend)
 
-**Arquivo**: `apps/web/jest.config.ts`
+**File**: `apps/web/jest.config.ts`
 
 ```typescript
 import nextJest from 'next/jest';
@@ -342,7 +342,7 @@ export default createJestConfig({
 
 ### Playwright
 
-**Arquivo**: `apps/web/playwright.config.ts`
+**File**: `apps/web/playwright.config.ts`
 
 ```typescript
 import { defineConfig } from '@playwright/test';
@@ -372,64 +372,64 @@ export default defineConfig({
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
-### Testes falhando no CI
+### Tests failing in CI
 
-**Problema**: Testes passam localmente mas falham no CI.
+**Problem**: Tests pass locally but fail in CI.
 
-**Soluções**:
+**Solutions**:
 
-1. Verificar timeouts (aumentar se necessário)
-2. Garantir que containers estão prontos antes dos testes
-3. Verificar variáveis de ambiente
+1. Check timeouts (increase if necessary)
+2. Ensure containers are ready before tests
+3. Check environment variables
 
-### Coverage abaixo do threshold
+### Coverage below threshold
 
-**Problema**: Coverage abaixo de 80%.
+**Problem**: Coverage below 80%.
 
-**Soluções**:
+**Solutions**:
 
-1. Adicionar testes para casos não cobertos
-2. Verificar `collectCoverageFrom` no `jest.config.ts`
-3. Revisar arquivos excluídos (`.module.ts`, `.dto.ts`)
+1. Add tests for uncovered cases
+2. Check `collectCoverageFrom` in `jest.config.ts`
+3. Review excluded files (`.module.ts`, `.dto.ts`)
 
-### Testes lentos
+### Slow tests
 
-**Problema**: Testes demoram muito para executar.
+**Problem**: Tests take too long to run.
 
-**Soluções**:
+**Solutions**:
 
-1. Usar `--maxWorkers` para paralelizar
-2. Otimizar mocks (evitar I/O real)
-3. Usar `jest.setTimeout()` apenas quando necessário
+1. Use `--maxWorkers` for parallelization
+2. Optimize mocks (avoid real I/O)
+3. Use `jest.setTimeout()` only when necessary
 
-### Erro "Cannot find module"
+### "Cannot find module" error
 
-**Problema**: Jest não encontra módulos com path aliases.
+**Problem**: Jest can't find modules with path aliases.
 
-**Soluções**:
+**Solutions**:
 
-1. Verificar `moduleNameMapper` no `jest.config.ts`
-2. Garantir que `tsconfig.json` tem os paths corretos
-3. Reiniciar Jest (cache pode estar desatualizado)
+1. Check `moduleNameMapper` in `jest.config.ts`
+2. Ensure `tsconfig.json` has correct paths
+3. Restart Jest (cache may be outdated)
 
 ---
 
-## 🔄 CI/CD
+## CI/CD
 
 ### GitHub Actions
 
-Os testes são executados automaticamente em:
+Tests run automatically on:
 
-- **Pull Requests**: Todos os testes (unit, integration, e2e)
-- **Push para main**: Testes + coverage report
-- **Cron diário**: Testes completos + performance
+- **Pull Requests**: All tests (unit, integration, e2e)
+- **Push to main**: Tests + coverage report
+- **Daily cron**: Full tests + performance
 
-**Workflow**: `.github/workflows/test.yml`
+**Workflow**: `.github/workflows/ci.yml`
 
 ```yaml
-name: Tests
+name: CI
 
 on:
   pull_request:
@@ -448,41 +448,41 @@ jobs:
 
 ---
 
-## 📚 Boas Práticas
+## Best Practices
 
-### 1. Nomenclatura
+### 1. Naming
 
-- **Arquivos de teste**: `*.spec.ts` (backend) ou `*.test.tsx` (frontend)
-- **Descrever comportamentos**: Use `describe` e `it` descritivos
-- **AAA Pattern**: Arrange → Act → Assert
+- **Test files**: `*.spec.ts` (backend) or `*.test.tsx` (frontend)
+- **Describe behaviors**: Use descriptive `describe` and `it`
+- **AAA Pattern**: Arrange -> Act -> Assert
 
-### 2. Isolamento
+### 2. Isolation
 
-- Cada teste deve ser independente
-- Limpar estado entre testes (`beforeEach`, `afterEach`)
-- Usar mocks para dependências externas
+- Each test should be independent
+- Clean state between tests (`beforeEach`, `afterEach`)
+- Use mocks for external dependencies
 
 ### 3. TDD Workflow
 
-1. **RED**: Escrever teste que falha
-2. **GREEN**: Implementar código mínimo para passar
-3. **REFACTOR**: Melhorar código mantendo testes verdes
+1. **RED**: Write a failing test
+2. **GREEN**: Implement minimum code to pass
+3. **REFACTOR**: Improve code while keeping tests green
 
-### 4. Testes Significativos
+### 4. Meaningful Tests
 
-- Teste comportamentos, não implementação
-- Evite testes triviais (getters/setters simples)
-- Foque em casos de borda e erros
+- Test behaviors, not implementation
+- Avoid trivial tests (simple getters/setters)
+- Focus on edge cases and errors
 
 ### 5. Performance
 
-- Testes unitários devem ser rápidos (< 100ms cada)
-- Testes de integração podem ser mais lentos (< 1s)
-- E2E são os mais lentos (aceitável < 5s)
+- Unit tests should be fast (< 100ms each)
+- Integration tests can be slower (< 1s)
+- E2E are the slowest (acceptable < 5s)
 
 ---
 
-## 📖 Referências
+## References
 
 - [Jest Documentation](https://jestjs.io/)
 - [Testing Library](https://testing-library.com/)
@@ -492,19 +492,19 @@ jobs:
 
 ---
 
-## ✅ Checklist de Validação
+## Validation Checklist
 
-Antes de fazer merge, certifique-se de:
+Before merging, make sure:
 
-- [ ] Todos os testes passando (`pnpm test`)
-- [ ] Coverage acima de 80% (`pnpm test:cov`)
-- [ ] Lint sem erros (`pnpm lint`)
-- [ ] Formatação correta (`pnpm format:check`)
-- [ ] Type check passando (`pnpm typecheck`)
-- [ ] Testes E2E passando (se aplicável)
-- [ ] Documentação atualizada
+- [ ] All tests passing (`pnpm test`)
+- [ ] Coverage above 80% (`pnpm test:cov`)
+- [ ] Lint without errors (`pnpm lint`)
+- [ ] Correct formatting (`pnpm format:check`)
+- [ ] Type check passing (`pnpm typecheck`)
+- [ ] E2E tests passing (if applicable)
+- [ ] Documentation updated
 
 ---
 
-**Última atualização**: 2026-01-22  
-**Mantido por**: Equipe de Desenvolvimento
+**Last updated**: 2026-01-22
+**Maintained by**: Development Team

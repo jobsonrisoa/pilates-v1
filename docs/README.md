@@ -1,104 +1,104 @@
-# Documentação do Projeto
+# Project Documentation
 
-## Sistema de Gestão para Academia de Pilates e Fisioterapia
+## Pilates & Physiotherapy Management System
 
 ---
 
-## 📚 Estrutura da Documentação
+## Documentation Structure
 
 ```
 docs/
-├── README.md                    # Este arquivo
+├── README.md                    # This file
 ├── PRD.md                       # Product Requirements Document
 │
-├── epics/                       # Épicos do Jira
-│   ├── README.md                # Índice e roadmap
-│   ├── EPIC-001-setup-ambiente.md
-│   ├── EPIC-002-autenticacao.md
-│   ├── EPIC-003-gestao-alunos.md
-│   ├── EPIC-004-gestao-professores.md
-│   ├── EPIC-005-gestao-aulas.md
-│   ├── EPIC-006-agenda.md
-│   ├── EPIC-007-matriculas.md
-│   ├── EPIC-008-planos-precos.md
-│   ├── EPIC-009-integracao-sicoob.md
-│   └── EPIC-010-pagamentos.md
+├── epics/                       # Jira Epics
+│   ├── README.md                # Index and roadmap
+│   ├── EPIC-001-environment-setup.md
+│   ├── EPIC-002-authentication.md
+│   ├── EPIC-003-student-management.md
+│   ├── EPIC-004-instructor-management.md
+│   ├── EPIC-005-class-management.md
+│   ├── EPIC-006-schedule.md
+│   ├── EPIC-007-enrollments.md
+│   ├── EPIC-008-pricing-plans.md
+│   ├── EPIC-009-sicoob-integration.md
+│   └── EPIC-010-payments.md
 │
-├── testing/                      # Documentação de testes
-│   ├── README.md                # Índice e status dos testes
-│   └── TESTING.md               # Documentação completa de testes
+├── testing/                      # Testing documentation
+│   ├── README.md                # Index and test status
+│   └── TESTING.md               # Complete testing documentation
 │
 └── architecture/
     ├── debates/
-    │   └── DEBATE-001-arquitetura-geral.md
+    │   └── DEBATE-001-general-architecture.md
     │
     └── adrs/
-        ├── ADR-001-arquitetura-monolito-modular.md
-        ├── ADR-002-stack-tecnologica.md
-        ├── ADR-003-banco-de-dados.md
-        ├── ADR-004-autenticacao-autorizacao.md
-        ├── ADR-005-observabilidade.md
+        ├── ADR-001-modular-monolith-architecture.md
+        ├── ADR-002-technology-stack.md
+        ├── ADR-003-database.md
+        ├── ADR-004-authentication-authorization.md
+        ├── ADR-005-observability.md
         ├── ADR-006-ci-cd.md
-        ├── ADR-007-containerizacao.md
-        ├── ADR-008-integracao-sicoob.md
-        └── ADR-009-estrategia-testes.md
+        ├── ADR-007-containerization.md
+        ├── ADR-008-sicoob-integration.md
+        └── ADR-009-testing-strategy.md
 ```
 
 ---
 
-## 📋 Documentos
+## Documents
 
-### Testes
+### Testing
 
-| Documento                          | Descrição                       |
+| Document                           | Description                     |
 | ---------------------------------- | ------------------------------- |
-| [README](./testing/README.md)      | Índice e status dos testes      |
-| [TESTING.md](./testing/TESTING.md) | Documentação completa de testes |
+| [README](./testing/README.md)      | Index and test status           |
+| [TESTING.md](./testing/TESTING.md) | Complete testing documentation  |
 
 ### PRD (Product Requirements Document)
 
-O [PRD](./PRD.md) é o documento principal que consolida todos os requisitos do sistema:
+The [PRD](./PRD.md) is the main document that consolidates all system requirements:
 
-- Visão geral e objetivos
-- Stack tecnológica
-- Arquitetura
-- Módulos funcionais detalhados
-- Requisitos não-funcionais
-- Fases de desenvolvimento
+- Overview and objectives
+- Technology stack
+- Architecture
+- Detailed functional modules
+- Non-functional requirements
+- Development phases
 
 ---
 
-### Debates Arquiteturais
+### Architectural Debates
 
-| Documento                                                            | Descrição                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------- |
-| [DEBATE-001](./architecture/debates/DEBATE-001-arquitetura-geral.md) | Debate entre especialistas sobre arquitetura geral |
+| Document                                                             | Description                                   |
+| -------------------------------------------------------------------- | --------------------------------------------- |
+| [DEBATE-001](./architecture/debates/DEBATE-001-general-architecture.md) | Debate between specialists on general architecture |
 
 ---
 
 ### ADRs (Architecture Decision Records)
 
-| ADR                                                                    | Título                                   | Status    |
-| ---------------------------------------------------------------------- | ---------------------------------------- | --------- |
-| [ADR-001](./architecture/adrs/ADR-001-arquitetura-monolito-modular.md) | Arquitetura Monolito Modular             | ✅ Aceito |
-| [ADR-002](./architecture/adrs/ADR-002-stack-tecnologica.md)            | Stack Tecnológica                        | ✅ Aceito |
-| [ADR-003](./architecture/adrs/ADR-003-banco-de-dados.md)               | Banco de Dados (MySQL + Prisma)          | ✅ Aceito |
-| [ADR-004](./architecture/adrs/ADR-004-autenticacao-autorizacao.md)     | Autenticação e Autorização (JWT + RBAC)  | ✅ Aceito |
-| [ADR-005](./architecture/adrs/ADR-005-observabilidade.md)              | Observabilidade (Logs, Métricas, Erros)  | ✅ Aceito |
-| [ADR-006](./architecture/adrs/ADR-006-ci-cd.md)                        | CI/CD (GitHub Actions)                   | ✅ Aceito |
-| [ADR-007](./architecture/adrs/ADR-007-containerizacao.md)              | Containerização (Docker)                 | ✅ Aceito |
-| [ADR-008](./architecture/adrs/ADR-008-integracao-sicoob.md)            | Integração Bancária (Sicoob)             | ✅ Aceito |
-| [ADR-009](./architecture/adrs/ADR-009-estrategia-testes.md)            | Estratégia de Testes (TDD, 80% coverage) | ✅ Aceito |
+| ADR                                                                      | Title                                     | Status   |
+| ------------------------------------------------------------------------ | ----------------------------------------- | -------- |
+| [ADR-001](./architecture/adrs/ADR-001-modular-monolith-architecture.md)  | Modular Monolith Architecture             | Accepted |
+| [ADR-002](./architecture/adrs/ADR-002-technology-stack.md)               | Technology Stack                          | Accepted |
+| [ADR-003](./architecture/adrs/ADR-003-database.md)                       | Database (MySQL + Prisma)                 | Accepted |
+| [ADR-004](./architecture/adrs/ADR-004-authentication-authorization.md)   | Authentication and Authorization (JWT + RBAC) | Accepted |
+| [ADR-005](./architecture/adrs/ADR-005-observability.md)                  | Observability (Logs, Metrics, Errors)     | Accepted |
+| [ADR-006](./architecture/adrs/ADR-006-ci-cd.md)                          | CI/CD (GitHub Actions)                    | Accepted |
+| [ADR-007](./architecture/adrs/ADR-007-containerization.md)               | Containerization (Docker)                 | Accepted |
+| [ADR-008](./architecture/adrs/ADR-008-sicoob-integration.md)             | Banking Integration (Sicoob)              | Accepted |
+| [ADR-009](./architecture/adrs/ADR-009-testing-strategy.md)               | Testing Strategy (TDD, 80% coverage)      | Accepted |
 
 ---
 
-## 🎯 Decisões Principais
+## Key Decisions
 
-### Arquitetura
+### Architecture
 
-- **Monolito Modular** com DDD (Domain-Driven Design)
-- Preparado para evoluir para microserviços
-- Comunicação entre módulos via eventos de domínio
+- **Modular Monolith** with DDD (Domain-Driven Design)
+- Prepared to evolve to microservices
+- Inter-module communication via domain events
 
 ### Stack
 
@@ -107,37 +107,37 @@ O [PRD](./PRD.md) é o documento principal que consolida todos os requisitos do 
 - **Cache:** Redis
 - **Storage:** MinIO (dev) / S3 (prod)
 
-### Qualidade
+### Quality
 
 - **TDD** (Red-Green-Refactor)
-- **Cobertura mínima:** 80% (unitários)
-- **Testes de integração** com containers isolados
-- **E2E** com Playwright
-- **Performance** com k6
+- **Minimum coverage:** 80% (unit tests)
+- **Integration tests** with isolated containers
+- **E2E** with Playwright
+- **Performance** with k6
 
-### Infraestrutura
+### Infrastructure
 
-- **100% Docker** (nada instalado localmente)
+- **100% Docker** (nothing installed locally)
 - **CI/CD:** GitHub Actions
-- **Hospedagem:** Hetzner/DigitalOcean (baixo custo)
-- **Observabilidade:** Pino + Prometheus + Grafana + Sentry
+- **Hosting:** Hetzner/DigitalOcean (low cost)
+- **Observability:** Pino + Prometheus + Grafana + Sentry
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
-# 1. Clonar repositório
+# 1. Clone repository
 git clone <repo-url>
 cd pilates-system
 
-# 2. Copiar variáveis de ambiente
+# 2. Copy environment variables
 cp .env.example .env
 
-# 3. Subir ambiente de desenvolvimento
+# 3. Start development environment
 docker compose up
 
-# 4. Acessar
+# 4. Access
 # Frontend: http://localhost:3000
 # API: http://localhost:3001
 # API Docs: http://localhost:3001/api
@@ -145,45 +145,45 @@ docker compose up
 
 ---
 
-## 📅 Roadmap
+## Roadmap
 
-| Fase                     | Escopo                         | Duração      |
-| ------------------------ | ------------------------------ | ------------ |
-| **Fase 1 - MVP**         | Auth, Cadastros, Agenda        | 8-10 semanas |
-| **Fase 2 - Financeiro**  | Planos, Sicoob, Pagamentos     | 6-8 semanas  |
-| **Fase 3 - Operacional** | Reposições, Contratos, Estoque | 6-8 semanas  |
-| **Fase 4 - Refinamento** | Permissões, Performance, Docs  | 4-6 semanas  |
+| Phase                    | Scope                          | Duration    |
+| ------------------------ | ------------------------------ | ----------- |
+| **Phase 1 - MVP**        | Auth, Records, Schedule        | 8-10 weeks  |
+| **Phase 2 - Financial**  | Plans, Sicoob, Payments        | 6-8 weeks   |
+| **Phase 3 - Operations** | Rescheduling, Contracts, Stock | 6-8 weeks   |
+| **Phase 4 - Refinement** | Permissions, Performance, Docs | 4-6 weeks   |
 
 ---
 
-## 📝 Convenções
+## Conventions
 
 ### Commits
 
 ```
-feat: adiciona cadastro de alunos
-fix: corrige validação de CPF
-docs: atualiza README
-test: adiciona testes para StudentService
-refactor: extrai validação para value object
+feat: add student registration
+fix: correct CPF validation
+docs: update README
+test: add tests for StudentService
+refactor: extract validation to value object
 ```
 
 ### Branches
 
 ```
-main        → produção
-develop     → staging
-feature/*   → novas features
-bugfix/*    → correções
-hotfix/*    → correções urgentes em prod
+main        -> production
+develop     -> staging
+feature/*   -> new features
+bugfix/*    -> fixes
+hotfix/*    -> urgent fixes in prod
 ```
 
 ---
 
-## 🤝 Contribuição
+## Contributing
 
-1. Criar branch a partir de `develop`
-2. Implementar com TDD (testes primeiro!)
-3. Garantir coverage ≥ 80%
-4. Abrir PR para `develop`
-5. Aguardar review e CI passar
+1. Create branch from `develop`
+2. Implement with TDD (tests first!)
+3. Ensure coverage >= 80%
+4. Open PR to `develop`
+5. Wait for review and CI to pass

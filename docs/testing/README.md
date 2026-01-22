@@ -1,92 +1,92 @@
-# 🧪 Documentação de Testes
+# Testing Documentation
 
-## 📚 Índice
+## Index
 
-- [**TESTING.md**](./TESTING.md) - Documentação completa de testes
-- [**Guia Rápido**](#-guia-rápido) - Comandos essenciais
-- [**Status dos Testes**](#-status-dos-testes) - Resultados atuais
+- [**TESTING.md**](./TESTING.md) - Complete testing documentation
+- [**Quick Guide**](#quick-guide) - Essential commands
+- [**Test Status**](#test-status) - Current results
 
 ---
 
-## 🚀 Guia Rápido
+## Quick Guide
 
-### Executar Todos os Testes
+### Run All Tests
 
 ```bash
-# Testes unitários
+# Unit tests
 docker compose run --rm tools pnpm test
 
-# Com coverage
+# With coverage
 docker compose run --rm tools pnpm test:cov
 
-# Qualidade de código
+# Code quality
 docker compose run --rm tools pnpm lint
 docker compose run --rm tools pnpm format:check
 ```
 
-### Testes por Workspace
+### Tests by Workspace
 
 ```bash
-# Backend apenas
+# Backend only
 docker compose run --rm tools pnpm --filter @pilates/api test
 
-# Frontend apenas
+# Frontend only
 docker compose run --rm tools pnpm --filter @pilates/web test
 ```
 
 ---
 
-## ✅ Status dos Testes
+## Test Status
 
-### Última Execução: 2026-01-22
+### Last Run: 2026-01-22
 
-#### Testes Unitários
+#### Unit Tests
 
-| Workspace | Status  | Testes | Coverage |
-| --------- | ------- | ------ | -------- |
-| **API**   | ✅ Pass | 4/4    | ~85%     |
-| **Web**   | ✅ Pass | 3/3    | ~80%     |
+| Workspace | Status | Tests | Coverage |
+| --------- | ------ | ----- | -------- |
+| **API**   | Pass   | 4/4   | ~85%     |
+| **Web**   | Pass   | 3/3   | ~80%     |
 
-#### Qualidade de Código
+#### Code Quality
 
-| Ferramenta     | Status  | Observações                  |
-| -------------- | ------- | ---------------------------- |
-| **ESLint**     | ✅ Pass | Sem erros ou warnings        |
-| **Prettier**   | ✅ Pass | Todos os arquivos formatados |
-| **TypeScript** | ✅ Pass | Sem erros de tipo            |
-| **Commitlint** | ✅ Pass | Validação funcionando        |
+| Tool           | Status | Notes                    |
+| -------------- | ------ | ------------------------ |
+| **ESLint**     | Pass   | No errors or warnings    |
+| **Prettier**   | Pass   | All files formatted      |
+| **TypeScript** | Pass   | No type errors           |
+| **Commitlint** | Pass   | Validation working       |
 
-#### Serviços Docker
+#### Docker Services
 
-| Serviço   | Status     | Health Check      |
-| --------- | ---------- | ----------------- |
-| **API**   | ✅ Healthy | `/health/live` OK |
-| **Web**   | ✅ Running | Página inicial OK |
-| **MySQL** | ✅ Healthy | Ping OK           |
-| **Redis** | ✅ Healthy | PING OK           |
+| Service   | Status  | Health Check      |
+| --------- | ------- | ----------------- |
+| **API**   | Healthy | `/health/live` OK |
+| **Web**   | Running | Home page OK      |
+| **MySQL** | Healthy | Ping OK           |
+| **Redis** | Healthy | PING OK           |
 
-#### Endpoints da API
+#### API Endpoints
 
-| Endpoint             | Status | Resposta                                              |
+| Endpoint             | Status | Response                                              |
 | -------------------- | ------ | ----------------------------------------------------- |
-| `GET /health`        | ✅ OK  | `{"status":"ok"}`                                     |
-| `GET /health/live`   | ✅ OK  | `{"status":"ok"}`                                     |
-| `GET /health/ready`  | ✅ OK  | `{"status":"ok","info":{"database":{"status":"up"}}}` |
-| `GET /api` (Swagger) | ✅ OK  | UI carregando                                         |
+| `GET /health`        | OK     | `{"status":"ok"}`                                     |
+| `GET /health/live`   | OK     | `{"status":"ok"}`                                     |
+| `GET /health/ready`  | OK     | `{"status":"ok","info":{"database":{"status":"up"}}}` |
+| `GET /api` (Swagger) | OK     | UI loading                                            |
 
 ---
 
-## 📊 Coverage Atual
+## Current Coverage
 
 ### Backend (`apps/api`)
 
 ```
 PASS test/shared/domain/entity.base.spec.ts
   Entity Base
-    ✓ should create entity with auto-generated id
-    ✓ should use provided id
-    ✓ should set createdAt and updatedAt
-    ✓ should compare entities by id
+    - should create entity with auto-generated id
+    - should use provided id
+    - should set createdAt and updatedAt
+    - should compare entities by id
 
 Test Suites: 1 passed, 1 total
 Tests:       4 passed, 4 total
@@ -97,9 +97,9 @@ Tests:       4 passed, 4 total
 ```
 PASS components/ui/__tests__/button.test.tsx
   Button
-    ✓ renders children correctly
-    ✓ calls onClick when clicked
-    ✓ is disabled when disabled prop is true
+    - renders children correctly
+    - calls onClick when clicked
+    - is disabled when disabled prop is true
 
 Test Suites: 1 passed, 1 total
 Tests:       3 passed, 3 total
@@ -107,12 +107,12 @@ Tests:       3 passed, 3 total
 
 ---
 
-## 🔗 Links Úteis
+## Useful Links
 
-- [Documentação Completa](./TESTING.md)
-- [ADR-009: Estratégia de Testes](../architecture/adrs/ADR-009-estrategia-testes.md)
-- [EPIC-001: Setup Ambiente](../epics/EPIC-001-setup-ambiente.md)
+- [Complete Documentation](./TESTING.md)
+- [ADR-009: Testing Strategy](../architecture/adrs/ADR-009-testing-strategy.md)
+- [EPIC-001: Environment Setup](../epics/EPIC-001-environment-setup.md)
 
 ---
 
-**Última atualização**: 2026-01-22
+**Last updated**: 2026-01-22

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Script para executar todos os testes do projeto
-# Uso: ./scripts/test-all.sh [--coverage] [--watch] [--integration] [--e2e]
+# Script to run all project tests
+# Usage: ./scripts/test-all.sh [--coverage] [--watch] [--integration] [--e2e]
 
 COVERAGE=false
 WATCH=false
@@ -36,7 +36,7 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-echo "🧪 Executando testes do projeto Pilates System"
+echo "Running Pilates System tests"
 echo "=============================================="
 echo ""
 
@@ -52,13 +52,13 @@ run_test() {
   local test_cmd=$2
   local name=$3
 
-  echo -e "${YELLOW}📦 Testando: ${name}${NC}"
+  echo -e "${YELLOW}Testing: ${name}${NC}"
   if docker compose run --rm tools pnpm --filter "${workspace}" ${test_cmd}; then
-    echo -e "${GREEN}✅ ${name} passou${NC}"
+    echo -e "${GREEN}[PASS] ${name}${NC}"
     echo ""
     return 0
   else
-    echo -e "${RED}❌ ${name} falhou${NC}"
+    echo -e "${RED}[FAIL] ${name}${NC}"
     echo ""
     return 1
   fi
@@ -69,13 +69,13 @@ run_quality() {
   local cmd=$1
   local name=$2
 
-  echo -e "${YELLOW}🔍 ${name}${NC}"
+  echo -e "${YELLOW}Checking: ${name}${NC}"
   if docker compose run --rm tools pnpm ${cmd}; then
-    echo -e "${GREEN}✅ ${name} passou${NC}"
+    echo -e "${GREEN}[PASS] ${name}${NC}"
     echo ""
     return 0
   else
-    echo -e "${RED}❌ ${name} falhou${NC}"
+    echo -e "${RED}[FAIL] ${name}${NC}"
     echo ""
     return 1
   fi
@@ -100,22 +100,22 @@ fi
 
 # 4. Unit tests
 if [ "$WATCH" = true ]; then
-  echo -e "${YELLOW}👀 Modo watch ativado${NC}"
-  echo "Pressione Ctrl+C para sair"
+  echo -e "${YELLOW}Watch mode enabled${NC}"
+  echo "Press Ctrl+C to exit"
   docker compose run --rm tools pnpm --filter @pilates/api test:watch
 else
   if [ "$COVERAGE" = true ]; then
-    if ! run_test "@pilates/api" "test:cov" "API (com coverage)"; then
+    if ! run_test "@pilates/api" "test:cov" "API (with coverage)"; then
       FAILED=$((FAILED + 1))
     fi
-    if ! run_test "@pilates/web" "test:cov" "Web (com coverage)"; then
+    if ! run_test "@pilates/web" "test:cov" "Web (with coverage)"; then
       FAILED=$((FAILED + 1))
     fi
   else
-    if ! run_test "@pilates/api" "test" "API (unitários)"; then
+    if ! run_test "@pilates/api" "test" "API (unit)"; then
       FAILED=$((FAILED + 1))
     fi
-    if ! run_test "@pilates/web" "test" "Web (unitários)"; then
+    if ! run_test "@pilates/web" "test" "Web (unit)"; then
       FAILED=$((FAILED + 1))
     fi
   fi
@@ -123,18 +123,18 @@ fi
 
 # 5. Integration tests (if requested)
 if [ "$INTEGRATION" = true ]; then
-  echo -e "${YELLOW}🔄 Iniciando serviços para testes de integração...${NC}"
+  echo -e "${YELLOW}Starting services for integration tests...${NC}"
   docker compose up -d mysql redis
   sleep 5
 
-  if ! run_test "@pilates/api" "test:integration" "API (integração)"; then
+  if ! run_test "@pilates/api" "test:integration" "API (integration)"; then
     FAILED=$((FAILED + 1))
   fi
 fi
 
 # 6. E2E tests (if requested)
 if [ "$E2E" = true ]; then
-  echo -e "${YELLOW}🌐 Iniciando stack completa para testes E2E...${NC}"
+  echo -e "${YELLOW}Starting full stack for E2E tests...${NC}"
   docker compose up -d
   sleep 10
 
@@ -146,10 +146,9 @@ fi
 # Summary
 echo "=============================================="
 if [ $FAILED -eq 0 ]; then
-  echo -e "${GREEN}✅ Todos os testes passaram!${NC}"
+  echo -e "${GREEN}All tests passed!${NC}"
   exit 0
 else
-  echo -e "${RED}❌ ${FAILED} teste(s) falharam${NC}"
+  echo -e "${RED}${FAILED} test(s) failed${NC}"
   exit 1
 fi
-

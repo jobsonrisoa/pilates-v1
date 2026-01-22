@@ -1,18 +1,18 @@
-# 🏋️ Sistema de Gestão - Pilates & Fisioterapia
+# Pilates & Physiotherapy Management System
 
-Sistema de gestão para academia de Pilates e Fisioterapia.
+Management system for Pilates and Physiotherapy studios.
 
-## 🚀 Quick Start (100% Docker)
+## Quick Start (100% Docker)
 
-### Requisitos
+### Requirements
 
 - Docker 24+
 - Docker Compose 2+
 - Git
 
-> **Nota:** não é necessário instalar Node.js, pnpm ou banco de dados localmente.
+> **Note:** No need to install Node.js, pnpm, or databases locally.
 
-### Instalação
+### Installation
 
 ```bash
 git clone <repo-url>
@@ -21,26 +21,28 @@ cp .env.example .env
 make dev
 ```
 
-## 📁 Estrutura do Projeto
+## Project Structure
 
 ```
 ├── apps/
-│   ├── api/          # Backend (NestJS) - a ser implementado
-│   └── web/          # Frontend (Next.js) - a ser implementado
+│   ├── api/          # Backend (NestJS)
+│   └── web/          # Frontend (Next.js)
 ├── packages/         # Shared packages
-├── docker/           # Configurações Docker (infra local)
-├── docs/             # Documentação (PRD, ADRs, Épicos)
+├── docker/           # Docker configs (local infra)
+├── docs/             # Documentation (PRD, ADRs, Epics)
 └── .github/          # CI/CD
 ```
 
-## 🧭 Documentação
+## Documentation
 
 - **PRD**: `docs/PRD.md`
-- **Arquitetura/ADRs**: `docs/architecture/`
-- **Épicos**: `docs/epics/`
-- **EPIC-001 (USs)**: `docs/epics/EPIC-001/`
+- **Architecture/ADRs**: `docs/architecture/`
+- **Epics**: `docs/epics/`
+- **EPIC-001 (User Stories)**: `docs/epics/EPIC-001/`
+- **Testing**: `docs/testing/README.md`
+- **FAQ**: `docs/FAQ.md`
 
-## 🛠️ Comandos Úteis
+## Useful Commands
 
 ```bash
 make help
@@ -49,27 +51,27 @@ make down
 make clean
 ```
 
-## 📈 Monitoring (opcional)
+## Monitoring (optional)
 
-Suba Prometheus + Grafana com:
+Start Prometheus + Grafana with:
 
 ```bash
 docker compose --profile monitoring up
 ```
 
-### Acessos (dev)
+### Access URLs (dev)
 
 - Web: `http://localhost:3000`
 - API: `http://localhost:3001`
 - Swagger: `http://localhost:3001/api`
 - MailHog: `http://localhost:8025`
 - MinIO Console: `http://localhost:9001`
-- Prometheus (profile monitoring): `http://localhost:9090`
-- Grafana (profile monitoring): `http://localhost:3002` (admin/admin)
+- Prometheus (monitoring profile): `http://localhost:9090`
+- Grafana (monitoring profile): `http://localhost:3002` (admin/admin)
 
-## ✅ Princípios do Projeto
+## Project Principles
 
 - **DDD** (Bounded Contexts, Shared Kernel)
-- **TDD** (Red → Green → Refactor)
-- **Cobertura mínima**: 80% (front e back)
-- **Docker-first**: ambiente local totalmente containerizado
+- **TDD** (Red -> Green -> Refactor)
+- **Minimum coverage**: 80% (frontend and backend)
+- **Docker-first**: fully containerized local environment

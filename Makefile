@@ -4,109 +4,108 @@
 	test test-watch test-cov test-e2e test-int \
 	lint format typecheck
 
-# Cores para output
+# Colors for output
 CYAN := \033[36m
 RESET := \033[0m
 
-help: ## Mostra esta ajuda
-	@echo "$(CYAN)Comandos disponíveis:$(RESET)"
+help: ## Show this help
+	@echo "$(CYAN)Available commands:$(RESET)"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  $(CYAN)%-15s$(RESET) %s\n", $$1, $$2}'
 
 # =============================================
-# DESENVOLVIMENTO
+# DEVELOPMENT
 # =============================================
 
-dev: ## Inicia ambiente de desenvolvimento
+dev: ## Start development environment
 	docker compose up
 
-dev-build: ## Inicia ambiente com rebuild das imagens
+dev-build: ## Start environment with image rebuild
 	docker compose up --build
 
-down: ## Para todos os containers
+down: ## Stop all containers
 	docker compose down
 
-clean: ## Remove containers, volumes e imagens não utilizadas
+clean: ## Remove containers, volumes and unused images
 	docker compose down -v --remove-orphans
 	docker system prune -f
 
-logs: ## Mostra logs de todos os serviços
+logs: ## Show logs from all services
 	docker compose logs -f
 
-logs-api: ## Mostra logs da API
+logs-api: ## Show API logs
 	docker compose logs -f api
 
-logs-web: ## Mostra logs do Web
+logs-web: ## Show Web logs
 	docker compose logs -f web
 
 # =============================================
 # SHELLS
 # =============================================
 
-shell-api: ## Acessa shell do container da API
+shell-api: ## Access API container shell
 	docker compose exec api sh
 
-shell-web: ## Acessa shell do container Web
+shell-web: ## Access Web container shell
 	docker compose exec web sh
 
-shell-mysql: ## Acessa MySQL CLI
+shell-mysql: ## Access MySQL CLI
 	docker compose exec mysql mysql -u pilates -ppilates pilates_dev
 
-shell-redis: ## Acessa Redis CLI
+shell-redis: ## Access Redis CLI
 	docker compose exec redis redis-cli
 
 # =============================================
-# BANCO DE DADOS (quando o backend estiver implementado)
+# DATABASE
 # =============================================
 
-migrate: ## Roda migrations do Prisma
+migrate: ## Run Prisma migrations (dev)
 	docker compose exec api pnpm prisma migrate dev
 
-migrate-prod: ## Roda migrations em produção
+migrate-prod: ## Run Prisma migrations (production)
 	docker compose exec api pnpm prisma migrate deploy
 
-seed: ## Popula banco com dados de desenvolvimento
+seed: ## Populate database with development data
 	docker compose exec api pnpm prisma db seed
 
-db-reset: ## Reseta banco de dados (CUIDADO!)
+db-reset: ## Reset database (CAUTION!)
 	docker compose exec api pnpm prisma migrate reset --force
 
-db-studio: ## Abre Prisma Studio
+db-studio: ## Open Prisma Studio
 	docker compose exec api pnpm prisma studio
 
 # =============================================
-# TESTES
+# TESTS
 # =============================================
 
-test: ## Roda todos os testes
+test: ## Run all tests
 	docker compose exec api pnpm test
 	docker compose exec web pnpm test
 
-test-watch: ## Roda testes em modo watch (api)
+test-watch: ## Run tests in watch mode (api)
 	docker compose exec api pnpm test:watch
 
-test-cov: ## Roda testes com cobertura
+test-cov: ## Run tests with coverage
 	docker compose exec api pnpm test:cov
 	docker compose exec web pnpm test:cov
 
-test-e2e: ## Roda testes E2E (web)
+test-e2e: ## Run E2E tests (web)
 	docker compose exec web pnpm test:e2e
 
-test-int: ## Roda testes de integração (api)
+test-int: ## Run integration tests (api)
 	docker compose exec api pnpm test:integration
 
 # =============================================
-# QUALIDADE
+# QUALITY
 # =============================================
 
-lint: ## Roda linter em todos os projetos
+lint: ## Run linter on all projects
 	docker compose exec api pnpm lint
 	docker compose exec web pnpm lint
 
-format: ## Formata código em todos os projetos
+format: ## Format code in all projects
 	docker compose exec api pnpm format
 	docker compose exec web pnpm format
 
-typecheck: ## Verifica tipos TypeScript
+typecheck: ## Check TypeScript types
 	docker compose exec api pnpm typecheck
 	docker compose exec web pnpm typecheck
-

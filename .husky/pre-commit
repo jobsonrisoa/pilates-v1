@@ -1,31 +1,31 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# 1. Lint-staged (formatação e lint em arquivos staged)
+# 1. Lint-staged (format and lint staged files)
 pnpm lint-staged
 
-# 2. Testes unitários rápidos
-# Skip se SKIP_TESTS estiver definido ou se estiver em modo --no-verify
+# 2. Quick unit tests
+# Skip if SKIP_TESTS is set or in --no-verify mode
 if [ -z "${SKIP_TESTS:-}" ] && [ "$HUSKY" != "0" ]; then
   echo ""
-  echo "🧪 Rodando testes unitários..."
+  echo "Running unit tests..."
   
-  # Tentar rodar testes via Docker (se disponível) ou pnpm local
+  # Try to run tests via Docker (if available) or local pnpm
   if command -v docker &> /dev/null && docker compose ps &> /dev/null 2>&1; then
-    # Docker-first: usar container tools
+    # Docker-first: use tools container
     docker compose run --rm -T tools pnpm test || {
       echo ""
-      echo "❌ Testes falharam. Para pular testes, use: SKIP_TESTS=1 git commit"
+      echo "Tests failed. To skip tests, use: SKIP_TESTS=1 git commit"
       exit 1
     }
   elif command -v pnpm &> /dev/null; then
-    # Fallback: pnpm local
+    # Fallback: local pnpm
     pnpm test || {
       echo ""
-      echo "❌ Testes falharam. Para pular testes, use: SKIP_TESTS=1 git commit"
+      echo "Tests failed. To skip tests, use: SKIP_TESTS=1 git commit"
       exit 1
     }
   else
-    echo "⚠️  Docker e pnpm não disponíveis. Pulando testes."
+    echo "Warning: Docker and pnpm not available. Skipping tests."
   fi
 fi

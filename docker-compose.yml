@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   # =============================================
-  # APLICAÇÕES
+  # APPLICATIONS
   # =============================================
   tools:
     build:
@@ -70,7 +70,7 @@ services:
       - pilates-network
 
   # =============================================
-  # BANCO DE DADOS / CACHE
+  # DATABASE / CACHE
   # =============================================
   mysql:
     image: mysql:8.0
@@ -113,7 +113,7 @@ services:
       retries: 5
 
   # =============================================
-  # SERVIÇOS AUXILIARES
+  # AUXILIARY SERVICES
   # =============================================
   mailhog:
     image: mailhog/mailhog:latest
@@ -143,7 +143,7 @@ services:
       retries: 3
 
   # =============================================
-  # OBSERVABILIDADE (profile: monitoring)
+  # OBSERVABILITY (profile: monitoring)
   # =============================================
   prometheus:
     image: prom/prometheus:v2.48.0
