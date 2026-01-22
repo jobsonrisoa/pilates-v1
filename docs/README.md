@@ -24,6 +24,10 @@ docs/
 │   ├── EPIC-009-integracao-sicoob.md
 │   └── EPIC-010-pagamentos.md
 │
+├── testing/                      # Documentação de testes
+│   ├── README.md                # Índice e status dos testes
+│   └── TESTING.md               # Documentação completa de testes
+│
 └── architecture/
     ├── debates/
     │   └── DEBATE-001-arquitetura-geral.md
@@ -43,6 +47,13 @@ docs/
 ---
 
 ## 📋 Documentos
+
+### Testes
+
+| Documento                          | Descrição                       |
+| ---------------------------------- | ------------------------------- |
+| [README](./testing/README.md)      | Índice e status dos testes      |
+| [TESTING.md](./testing/TESTING.md) | Documentação completa de testes |
 
 ### PRD (Product Requirements Document)
 
