@@ -5,7 +5,7 @@
 | Field            | Value                  |
 | ---------------- | ---------------------- |
 | **ID**           | US-001-005             |
-| **Épico**        | EPIC-001               |
+| **Epic**        | EPIC-001               |
 | **Title**       | Quality of Code    |
 | **Estimate**   | 3 hours                |
 | **Priority**   | High                |
@@ -28,11 +28,11 @@
 2. Configurar Prettier
 3. Configurar Husky for git hooks
 4. Configurar lint-staged
-5. Configurar withmitlint (conventional withmits)
+5. Configurar withmitlint (conventional commits)
 
 ---
 
-##  Acceptance Crihaveia
+##  Acceptance Criteria
 
 - [ ] ESLint configured in the backendendendend and frontendendendend
 - [ ] Prettier formtando code
@@ -80,7 +80,7 @@ Configure as tools of quality:
 
 ### 4. Commitlint
 
-- Conventional withmits
+- Conventional commits
 - Tipos: feat, fix, docs, style, refactor, test, chore
 - Scope optional
 

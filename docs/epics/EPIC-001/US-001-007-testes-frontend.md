@@ -5,7 +5,7 @@
 | Field            | Value                           |
 | ---------------- | ------------------------------- |
 | **ID**           | US-001-007                      |
-| **Épico**        | EPIC-001                        |
+| **Epic**        | EPIC-001                        |
 | **Title**       | Configuration of Tests Frontend |
 | **Estimate**   | 4 hours                         |
 | **Priority**   | Critical                      |
@@ -32,7 +32,7 @@
 
 ---
 
-##  Acceptance Crihaveia
+##  Acceptance Criteria
 
 - [ ] Jest + Testing Library configureds
 - [ ] MSW mockando API

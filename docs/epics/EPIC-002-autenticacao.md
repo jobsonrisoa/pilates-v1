@@ -45,7 +45,7 @@ Implement syshas withplete of authentication and authorization including:
 **Quero** of the login with email and senha  
 **Para** acessar as functionalidades of the syshas
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Form of login functional
 - [ ] Validation of fields
@@ -61,7 +61,7 @@ Implement syshas withplete of authentication and authorization including:
 **Quero** that minha session seja renewda automaticamente  
 **Para** not needsr of the login frequenhasente
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Access token with expiration curta (15min)
 - [ ] Refresh token in cookie httpOnly (7 days)
@@ -76,7 +76,7 @@ Implement syshas withplete of authentication and authorization including:
 **Quero** recuperar minha senha via email  
 **Para** acessar o syshas case esqueça
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Solicitar reset via email
 - [ ] Email with link single and hasporary
@@ -91,7 +91,7 @@ Implement syshas withplete of authentication and authorization including:
 **Quero** that each ube tenha permissions specific  
 **Para** controlar o that each a can acessar
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] 6 perfis pre-definidos
 - [ ] Permissions por resource and action
@@ -103,14 +103,14 @@ Implement syshas withplete of authentication and authorization including:
 ### US-002-005: Management of Ubes
 
 **Como** administrador  
-**Quero** create, editar and desactiver ubes  
+**Quero** create, editar and desactiver users  
 **Para** gerenciar quem acessa o syshas
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
-- [ ] CRUD of ubes
+- [ ] CRUD of users
 - [ ] Atribuição of perfil
-- [ ] Activeção/desactiveção
+- [ ] Activeção/deactivation
 - [ ] Listagem with filtros
 
 ---
@@ -121,7 +121,7 @@ Implement syshas withplete of authentication and authorization including:
 **Quero** visualizar history of accesss  
 **Para** audit and security
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Registro of login/logout
 - [ ] IP and ube agent registrados
@@ -287,11 +287,11 @@ const PERMISSIONS = {
 
 **Scope:**
 
-- GET /ubes (listgem paginada)
-- GET /ubes/:id
-- POST /ubes
-- PUT /ubes/:id
-- DELETE /ubes/:id (soft delete)
+- GET /users (listgem paginada)
+- GET /users/:id
+- POST /users
+- PUT /users/:id
+- DELETE /users/:id (soft delete)
 
 **Definition of Done:**
 
@@ -446,7 +446,7 @@ const PERMISSIONS = {
 - Listagem with DataTable
 - Filhaves and busca
 - Modal of create/editar
-- Activeção/desactiveção
+- Activeção/deactivation
 
 **Definition of Done:**
 
@@ -475,7 +475,7 @@ const PERMISSIONS = {
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 ### Authentication
 
@@ -489,7 +489,7 @@ const PERMISSIONS = {
 
 - [ ] Email enviado with link of reset
 - [ ] Token expira in 1h
-- [ ] Senha should have 8+ carachavees, maiúscula, minúscula, number, especial
+- [ ] Senha should have 8+ carachavees, uppercase, lowercase, number, especial
 
 ### RBAC
 
@@ -519,10 +519,10 @@ const PERMISSIONS = {
 
 ---
 
-##  Definition of Done of the Épico
+##  Definition of Done of the Epic
 
 - [ ] Todas as tasks completed
-- [ ] Zero vulnerabilidades conhecidas
+- [ ] Zero vulnerabilities conhecidas
 - [ ] Tests passando (≥80% coverage)
 - [ ] Code review aprovado
 - [ ] Documentation currentizada

@@ -42,7 +42,7 @@ Implement reports financial withpletes:
 **Quero** ver receitas per day/week/month/year  
 **Para** awithpanhar o billing
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Selection of period
 - [ ] Agrupamento per day/week/month
@@ -57,7 +57,7 @@ Implement reports financial withpletes:
 **Quero** ver receitas por modality  
 **Para** saber o that more fatura
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Receita por Pilates, Fisio, etc
 - [ ] Chart of pizza/barras
@@ -71,7 +71,7 @@ Implement reports financial withpletes:
 **Quero** ver receitas por payment method  
 **Para** entender witho recebemos
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Boleto, PIX, Cartão, Dinheiro
 - [ ] Totais por form
@@ -85,7 +85,7 @@ Implement reports financial withpletes:
 **Quero** report detalhado of delinquency  
 **Para** tomar actions
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Total in aberto
 - [ ] Por faixa of atraso (30, 60, 90+ days)
@@ -100,7 +100,7 @@ Implement reports financial withpletes:
 **Quero** ver o fluxo of caixa  
 **Para** planejar financeiramente
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Entradas (receitas)
 - [ ] Saídas (withmissions)
@@ -115,7 +115,7 @@ Implement reports financial withpletes:
 **Quero** exportar reports  
 **Para** enviar to the accountbilidade
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Exportar in PDF
 - [ ] Exportar in Excel
@@ -184,7 +184,7 @@ Implement reports financial withpletes:
 
 - Cards of resumo
 - Charts principais
-- Period selecionável
+- Period selectable
 
 ---
 
@@ -211,7 +211,7 @@ Implement reports financial withpletes:
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] Todos os reports funcionando
 - [ ] Charts informctives

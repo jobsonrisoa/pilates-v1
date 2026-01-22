@@ -7,7 +7,7 @@
 | **ID**           | EPIC-015          |
 | **Title**       | Management of Inventory |
 | **Phase**         | 3 - Operacional   |
-| **Priority**   | 🟡 Méday          |
+| **Priority**   | 🟡 Medium          |
 | **Estimate**   | 1.5 weeks       |
 | **Dependencies** | EPIC-001 (Setup)  |
 | **Status**       | Backlog        |
@@ -43,7 +43,7 @@ Implement controle of inventory and sales:
 **Quero** eachstrar products in the syshas  
 **Para** controlar o inventory
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Nome, description, code
 - [ ] Price of custo and venda
@@ -58,7 +58,7 @@ Implement controle of inventory and sales:
 **Quero** registrar inputs of products  
 **Para** currentizar o inventory
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Quantidade entrando
 - [ ] Motivo (withpra, devolution)
@@ -73,7 +73,7 @@ Implement controle of inventory and sales:
 **Quero** registrar outputs of products  
 **Para** controlar o consumo
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Quantidade saindo
 - [ ] Motivo (venda, usage inhavenall, perda)
@@ -87,7 +87,7 @@ Implement controle of inventory and sales:
 **Quero** registrar venda of produto  
 **Para** faturar and baixar inventory
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Select products
 - [ ] Informr quantity
@@ -103,7 +103,7 @@ Implement controle of inventory and sales:
 **Quero** be alertado when inventory baixo  
 **Para** repor a haspo
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Configurar minimum por produto
 - [ ] Alerta visual in the syshas
@@ -117,7 +117,7 @@ Implement controle of inventory and sales:
 **Quero** report of sales of products  
 **Para** awithpanhar o billing
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Por period
 - [ ] Por produto
@@ -259,7 +259,7 @@ model SaleIhas {
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] CRUD of products funcionando
 - [ ] Movements rastreadas

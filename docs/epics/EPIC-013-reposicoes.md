@@ -42,7 +42,7 @@ Implement syshas withplete of reschedulings of classs:
 **Quero** gerar credit when aluno fhigh with warning  
 **Para** permitir rescheduling
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Fhigh with warning ≥24h gera credit
 - [ ] Validade of 90 days
@@ -57,7 +57,7 @@ Implement syshas withplete of reschedulings of classs:
 **Quero** ver credits of rescheduling available  
 **Para** saber o that posso usar
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Lista of credits
 - [ ] Data of expiration
@@ -71,7 +71,7 @@ Implement syshas withplete of reschedulings of classs:
 **Quero** scheduler a class of rescheduling  
 **Para** usar o credit of the aluno
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Select credit available
 - [ ] Choose schedule with vaga
@@ -86,7 +86,7 @@ Implement syshas withplete of reschedulings of classs:
 **Quero** alertar about credits next of the due date  
 **Para** evitar perda
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Email 7 days before
 - [ ] Lista in the reception
@@ -100,7 +100,7 @@ Implement syshas withplete of reschedulings of classs:
 **Quero** report of reschedulings  
 **Para** awithpanhar o volume
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Credits gerados
 - [ ] Credits usados
@@ -226,7 +226,7 @@ enum ReschedulingStatus {
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] Credits gerados automaticamente
 - [ ] Validade of 90 days

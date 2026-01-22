@@ -43,7 +43,7 @@ Implement module of management of instructores including:
 **Quero** eachstrar a new instructor  
 **Para** that ele possa dar classs
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Form with personal date
 - [ ] Givens profissionais (CREF/CREFITO)
@@ -59,7 +59,7 @@ Implement module of management of instructores including:
 **Quero** ver a list of instructores  
 **Para** encontrar quem preciso
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Listagem paginada
 - [ ] Filtro by status and especialidade
@@ -73,7 +73,7 @@ Implement module of management of instructores including:
 **Quero** create login for o instructor  
 **Para** that ele acesse o syshas
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Button for create ube vincuside
 - [ ] Email of the instructor usado witho login
@@ -87,7 +87,7 @@ Implement module of management of instructores including:
 **Quero** definir as specialties of the instructor  
 **Para** saber quais classs ele can dar
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Multi-select of specialties
 - [ ] Modalities: Pilates, Fisiohaveapia, etc.
@@ -185,7 +185,7 @@ Implement module of management of instructores including:
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] Full CRUD funcionando
 - [ ] Specialties configurable

@@ -43,7 +43,7 @@ Finalizar documentation and preparar deploy in production:
 **Quero** documentation technique withpleta  
 **Para** maintain o syshas
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Arquitetura documentada
 - [ ] API documentada (Swagger)
@@ -58,7 +58,7 @@ Finalizar documentation and preparar deploy in production:
 **Quero** manual of usage  
 **Para** aprender o syshas
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Guia of first passos
 - [ ] Documentation per module
@@ -73,7 +73,7 @@ Finalizar documentation and preparar deploy in production:
 **Quero** environment of production configured  
 **Para** hospedar o syshas
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] VPS provisionada
 - [ ] Docker configured
@@ -89,7 +89,7 @@ Finalizar documentation and preparar deploy in production:
 **Quero** deploy automatic  
 **Para** betweengar rapidamente
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Push in main → deploy prod
 - [ ] Push in shouldlop → deploy staging
@@ -102,9 +102,9 @@ Finalizar documentation and preparar deploy in production:
 
 **Como** DevOps  
 **Quero** monitoring active  
-**Para** saber when há problemas
+**Para** saber when there is problemas
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Uptime monitoring
 - [ ] Alerts of error (Sentry)
@@ -119,7 +119,7 @@ Finalizar documentation and preparar deploy in production:
 **Quero** checklist withplete  
 **Para** garantir that is tudo pronto
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Security revisada
 - [ ] Backups testados
@@ -300,7 +300,7 @@ Finalizar documentation and preparar deploy in production:
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] Documentation withpleta
 - [ ] Production configurada
@@ -375,4 +375,4 @@ Semana 1:
 - [ ] DNS configured
 - [ ] Deploy executed
 - [ ] Validation pós-deploy
-- [ ] Communication tos ubes
+- [ ] Communication tos users

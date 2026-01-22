@@ -42,7 +42,7 @@ Implement management of modalities, types of class and grade of schedules:
 **Quero** eachstrar modalities of class  
 **Para** definir o that a academia offers
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] CRUD of modalities
 - [ ] Nome and description
@@ -56,7 +56,7 @@ Implement management of modalities, types of class and grade of schedules:
 **Quero** definir types of class por modality  
 **Para** configurar capacidades and duractions
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Tipos: Individual, Duo, Group
 - [ ] Capacity máxima
@@ -71,7 +71,7 @@ Implement management of modalities, types of class and grade of schedules:
 **Quero** definir a grade weekl of classs  
 **Para** organizar os schedules available
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Select day of the week
 - [ ] Horário start/fim
@@ -87,7 +87,7 @@ Implement management of modalities, types of class and grade of schedules:
 **Quero** ver a grade of schedules of the week  
 **Para** entender a disponibilidade
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Visualization in grade (table)
 - [ ] Filtro por instructor
@@ -201,7 +201,7 @@ model Schedule {
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] Modalities configurable
 - [ ] Tipos of class with capacidade

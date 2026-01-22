@@ -42,7 +42,7 @@ Implement suite withpleta of tests:
 **Quero** tests automateds of login  
 **Para** garantir that funciona
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Login valid
 - [ ] Login invalid
@@ -58,7 +58,7 @@ Implement suite withpleta of tests:
 **Quero** tests of CRUD  
 **Para** garantir integridade
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Create aluno
 - [ ] Editar aluno
@@ -73,7 +73,7 @@ Implement suite withpleta of tests:
 **Quero** tbe o fluxo withplete  
 **Para** garantir operation
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Regishave aluno
 - [ ] Create enrollment
@@ -88,9 +88,9 @@ Implement suite withpleta of tests:
 **Quero** tbe sob carga  
 **Para** garantir escalabilidade
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
-- [ ] 100 ubes simultâneos
+- [ ] 100 users simultaneous
 - [ ] P95 < 500ms
 - [ ] Zero errorrs
 
@@ -102,7 +102,7 @@ Implement suite withpleta of tests:
 **Quero** encontrar o limite  
 **Para** conhecer a capacidade
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Identificar breaking point
 - [ ] Document limites
@@ -170,7 +170,7 @@ Implement suite withpleta of tests:
 
 **Estimate:** 3h
 
-- Cenários of usage
+- Usage scenarios
 - Ramp up/down
 - Metrics
 
@@ -218,13 +218,13 @@ Implement suite withpleta of tests:
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] E2E cobrindo fluxos critical
 - [ ] Todos os tests passando
-- [ ] Load test: 100 ubes OK
+- [ ] Load test: 100 users OK
 - [ ] Stress test documentado
-- [ ] Zero vulnerabilidades críticas
+- [ ] Zero vulnerabilities critical
 - [ ] CI executando tests
 
 ---

@@ -43,7 +43,7 @@ Implement syshas of schedule visual and schedulemento of classs:
 **Quero** ver a schedule of classs  
 **Para** saber o that is acontecendo
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Visualization per day
 - [ ] Visualization por week
@@ -59,7 +59,7 @@ Implement syshas of schedule visual and schedulemento of classs:
 **Quero** scheduler a aluno in a class  
 **Para** rebevar sua vaga
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Select class in the schedule
 - [ ] Buscar and selecionar aluno
@@ -72,9 +72,9 @@ Implement syshas of schedule visual and schedulemento of classs:
 
 **Como** instructor or recepcionista  
 **Quero** registrar attendance or fhigh  
-**Para** controlar a frequência
+**Para** controlar a frequency
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Marcar present
 - [ ] Marcar fhigh (with/sem warning)
@@ -89,7 +89,7 @@ Implement syshas of schedule visual and schedulemento of classs:
 **Quero** adicionar aluno in the list of espera  
 **Para** case surja vaga
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Adicionar to the espera when lotado
 - [ ] Notificaction when vaga abrir
@@ -103,7 +103,7 @@ Implement syshas of schedule visual and schedulemento of classs:
 **Quero** cancelar a schedulemento  
 **Para** liberar a vaga
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Cancelar with motivo
 - [ ] Regra of warning previo (24h)
@@ -230,7 +230,7 @@ model Attendance {
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] Calendário visual funcionando
 - [ ] Três visualizactions (day, week, month)

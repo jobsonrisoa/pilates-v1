@@ -43,7 +43,7 @@ Implement controle withplete of payments:
 **Quero** gerar billing automaticamente  
 **Para** not depender of action manual
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Job daily verifica due dates
 - [ ] Gera boleto/PIX 5 days before
@@ -58,7 +58,7 @@ Implement controle withplete of payments:
 **Quero** ver entires os payments  
 **Para** controlar o fluxo
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Listagem paginada
 - [ ] Filhaves by status, date, aluno
@@ -73,7 +73,7 @@ Implement controle withplete of payments:
 **Quero** registrar payment recebido manualmente  
 **Para** cases outside of the syshas
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Select payment pendente
 - [ ] Informr value, date, form
@@ -87,12 +87,12 @@ Implement controle withplete of payments:
 **Quero** ver students inadimplentes  
 **Para** tomar actions
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Lista of inadimplentes
 - [ ] Dias of atraso
 - [ ] Value devido
-- [ ] Actions (accountto, suspensão)
+- [ ] Actions (accountto, suspension)
 
 ---
 
@@ -102,7 +102,7 @@ Implement controle withplete of payments:
 **Quero** suspender enrollments in atraso  
 **Para** forçar regularizaction
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Configurar days of tolerance
 - [ ] Suspender afhave X days
@@ -117,7 +117,7 @@ Implement controle withplete of payments:
 **Quero** receber warning before of the due date  
 **Para** not atrasar
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Email 3 days before
 - [ ] Link for payment
@@ -238,7 +238,7 @@ enum PaymentStatus {
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] Billings geradas automaticamente
 - [ ] Status currentizados correctly

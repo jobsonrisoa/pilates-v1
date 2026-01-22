@@ -16,7 +16,7 @@ O syshas of management for academia of Pilates and Physiotherapy needs suportar 
 
 ## Decision
 
-**Adotar arquitetura of Monolito Modular seguindo princípios of DDD (Domain-Driven Design).**
+**Adotar arquitetura of Monolito Modular seguindo principles of DDD (Domain-Driven Design).**
 
 ### Module Structure
 
@@ -30,7 +30,7 @@ src/
 │   │   │   ├── events/
 │   │   │   └── repositories/
 │   │   ├── application/
-│   │   │   ├── withmands/
+│   │   │   ├── commands/
 │   │   │   ├── queries/
 │   │   │   └── bevices/
 │   │   ├── infrastructure/
@@ -163,7 +163,7 @@ async handlePaymentConfirmed(event: PaymentConfirmedEvent) {
 | Limited scaling           | Redis + read replicas when needed |
 | Single point of failure   | Health checks + automatic rbet    |
 
-## Migration Crihaveia
+## Migration Criteria
 
 Consider migration to microbevices when:
 

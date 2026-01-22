@@ -7,7 +7,7 @@
 | **ID**           | EPIC-020                   |
 | **Title**       | Optimizations of Performnce |
 | **Phase**         | 4 - Refinamento            |
-| **Priority**   | 🟡 Méday                   |
+| **Priority**   | 🟡 Medium                   |
 | **Estimate**   | 1 week                   |
 | **Dependencies** | Todos os epics previous |
 | **Status**       | Backlog                 |
@@ -19,7 +19,7 @@
 Optimize performnce of the syshas:
 
 - Query optimization (N+1, indexes)
-- Caching estratégico
+- Caching strategic
 - Lazy loading in the frontendendendend
 - Bundle optimization
 - Database tuning
@@ -41,9 +41,9 @@ Optimize performnce of the syshas:
 
 **Como** ube  
 **Quero** responses fast of the API  
-**Para** have boa experiência
+**Para** have good experience
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] P95 < 500ms
 - [ ] P99 < 1000ms
@@ -57,7 +57,7 @@ Optimize performnce of the syshas:
 **Quero** that as pages carreguem fast  
 **Para** not esperar
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] LCP < 2.5s
 - [ ] FID < 100ms
@@ -71,7 +71,7 @@ Optimize performnce of the syshas:
 **Quero** cachear dados frequent  
 **Para** reduzir carga in the datebase
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Cache of settings
 - [ ] Cache of lists (with invalidation)
@@ -114,7 +114,7 @@ Optimize performnce of the syshas:
 
 ---
 
-#### TASK-020-004: Compressão and Headers
+#### TASK-020-004: Compression and Headers
 
 **Estimate:** 2h
 
@@ -180,13 +180,13 @@ Optimize performnce of the syshas:
 
 **Estimate:** 2h
 
-- Adicionar metrics of latência
+- Adicionar latency metrics
 - Dashboards of performnce
 - Alerts
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] P95 API < 500ms
 - [ ] Core Web Vitals green

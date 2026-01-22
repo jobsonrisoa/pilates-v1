@@ -3,7 +3,7 @@
 **Date:** 21/01/2026  
 **Participbefore:**
 
-- 🏗️ **Dr. Carlos Mendes** - Arquiteto of Software Sênior (15 years of experiência)
+- 🏗️ **Dr. Carlos Mendes** - Arquiteto of Software Sênior (15 years of experience)
 -  **Ana Rodrigues** - Especialist in DevOps and Infrastructure
 -  **Roberto Silva** - Especialist in Costs and Otimizaction Cloud
 -  **Marina Costa** - Especialist in Quality and Tests
@@ -119,7 +119,7 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 
 > "O requisito menciona MySQL, o that is adequado. Para DDD, sugiro usar o standard Repository with Prisma or TypeORM.
 >
-> Porém, há a decision importante: **um datebase single or datebase por bounded context?**
+> Porém, there is a decision importante: **um datebase single or datebase por bounded context?**
 >
 > Minha recommendation: **datebase single with schemas/prefixos lógicos**. Isso facilita:
 >
@@ -332,7 +332,7 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 > "Para TDD work in the CI, needsmos de:
 >
 > 1. **Tests fasts** - shouldm rodar in < 5 minutes
-> 2. **Banco of test** - accountiner MySQL efêmero
+> 2. **Banco of test** - accountiner MySQL ephemeral
 > 3. **Coverage required** - minimum 80%
 > 4. **Tests in paralelo** - Jest with workers
 >
@@ -341,7 +341,7 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 > ````
 > [Push] → Lint → Unit Tests (paralelo) → Integration Tests → Build
 >           ↓           ↓                      ↓
->        Fail fast   Coverage ≥ 80%      Banco efêmero
+>        Fail fast   Coverage ≥ 80%      Banco ephemeral
 > ```"
 > ````
 
@@ -351,7 +351,7 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 >
 > - Secrets in the GitHub Secrets
 > - Scan of vulnerabilidades (Snyk, Trivy)
-> - Analysis estática (ESLint security rules)
+> - Analysis istica (ESLint security rules)
 > - SAST basic
 > - Dependabot activedo"
 
@@ -438,7 +438,7 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 >
 > **2. CQRS Light:**
 >
-> - Separar queries of withmands
+> - Separar queries of commands
 > - Read models specific for reports
 > - Facilita optimization of leitura lahave
 >

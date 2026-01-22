@@ -43,11 +43,11 @@ Implement integration withpleta with API of the Sicoob para:
 **Quero** gerar boleto automaticamente  
 **Para** cobrar o aluno
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Boleto gerado via API Sicoob
 - [ ] Code of barras valid
-- [ ] PDF for download/impressão
+- [ ] PDF for download/print
 - [ ] Envio por email
 
 ---
@@ -58,11 +58,11 @@ Implement integration withpleta with API of the Sicoob para:
 **Quero** gerar billing PIX  
 **Para** offersr option of payment
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] QR Code gerado
 - [ ] Code copia and cola
-- [ ] Expiration configurável
+- [ ] Expiration configurable
 - [ ] Value correto
 
 ---
@@ -73,7 +73,7 @@ Implement integration withpleta with API of the Sicoob para:
 **Quero** receber notificaction when payment for done  
 **Para** dar baixa automatic
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Endpoint of webhook seguro
 - [ ] Validation of signature
@@ -88,7 +88,7 @@ Implement integration withpleta with API of the Sicoob para:
 **Quero** currentizar status when pago  
 **Para** maintain dados corretos
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Status currentizado for PAID
 - [ ] Data of payment registrada
@@ -149,7 +149,7 @@ Implement integration withpleta with API of the Sicoob para:
 - Endpoint POST /webhooks/sicoob
 - Validation of signature
 - Processmento of events
-- Idempotência
+- Idempotency
 - Audit logs
 
 ---
@@ -208,11 +208,11 @@ SICOOB_WEBHOOK_SECRET=
 
 - Tests with mock
 - Tests of webhook
-- Cenários of error
+- Error scenarios
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] Boletos gerados correctly
 - [ ] PIX funcionando

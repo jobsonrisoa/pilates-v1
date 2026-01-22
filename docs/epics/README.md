@@ -61,7 +61,7 @@
 
 ### Phase 1 - MVP
 
-| ID                                           | Épico                                                     | Priority | Estimate  | Status     |
+| ID                                           | Epic                                                     | Priority | Estimate  | Status     |
 | -------------------------------------------- | --------------------------------------------------------- | ---------- | ----------- | ---------- |
 | [EPIC-001](./EPIC-001-setup-environment.md)     | Setup Development Environment [(10 USs)](./EPIC-001/) | Critical | 2 weeks   | Backlog |
 | [EPIC-002](./EPIC-002-autenticacto.md)       | Authentication and Authorization                                | Critical | 2 weeks   | Backlog |
@@ -73,31 +73,31 @@
 
 ### Phase 2 - Financial
 
-| ID                                               | Épico                      | Priority | Estimate  | Status     |
+| ID                                               | Epic                      | Priority | Estimate  | Status     |
 | ------------------------------------------------ | -------------------------- | ---------- | ----------- | ---------- |
 | [EPIC-008](./EPIC-008-plans-precos.md)          | Syshas of Plans and Prices | Critical | 1 week    | Backlog |
 | [EPIC-009](./EPIC-009-integracto-sicoob.md)      | Banking Integration Sicoob | Critical | 2 weeks   | Backlog |
 | [EPIC-010](./EPIC-010-payments.md)             | Payment Control     | Critical | 1.5 weeks | Backlog |
-| [EPIC-011](./EPIC-011-withissoes.md)              | Commissions of Instructores   | 🟡 Méday   | 1 week    | Backlog |
+| [EPIC-011](./EPIC-011-withissoes.md)              | Commissions of Instructores   | 🟡 Medium   | 1 week    | Backlog |
 | [EPIC-012](./EPIC-012-relatorios-financial.md) | Reports Financials     | High    | 1 week    | Backlog |
 
 ### Phase 3 - Operacional
 
-| ID                                                | Épico                   | Priority | Estimate  | Status     |
+| ID                                                | Epic                   | Priority | Estimate  | Status     |
 | ------------------------------------------------- | ----------------------- | ---------- | ----------- | ---------- |
 | [EPIC-013](./EPIC-013-reposicoes.md)              | Syshas of Reschedulings   | High    | 1.5 weeks | Backlog |
 | [EPIC-014](./EPIC-014-contracts.md)               | Contracts Digitais      | High    | 1.5 weeks | Backlog |
-| [EPIC-015](./EPIC-015-inventory.md)                 | Management of Inventory       | 🟡 Méday   | 1.5 weeks | Backlog |
-| [EPIC-016](./EPIC-016-relatorios-operacionais.md) | Reports Operacionais | 🟡 Méday   | 1 week    | Backlog |
-| [EPIC-017](./EPIC-017-upload-documentos.md)       | Upload of Documentos    | 🟡 Méday   | 1 week    | Backlog |
+| [EPIC-015](./EPIC-015-inventory.md)                 | Management of Inventory       | 🟡 Medium   | 1.5 weeks | Backlog |
+| [EPIC-016](./EPIC-016-relatorios-operacionais.md) | Reports Operacionais | 🟡 Medium   | 1 week    | Backlog |
+| [EPIC-017](./EPIC-017-upload-documentos.md)       | Upload of Documentos    | 🟡 Medium   | 1 week    | Backlog |
 
 ### Phase 4 - Refinamento
 
-| ID                                              | Épico                          | Priority | Estimate  | Status     |
+| ID                                              | Epic                          | Priority | Estimate  | Status     |
 | ----------------------------------------------- | ------------------------------ | ---------- | ----------- | ---------- |
-| [EPIC-018](./EPIC-018-permissoes-granulares.md) | Permissions Granulares          | 🟡 Méday   | 1 week    | Backlog |
-| [EPIC-019](./EPIC-019-dashboard.md)             | Dashboard Analytical            | 🟡 Méday   | 1.5 weeks | Backlog |
-| [EPIC-020](./EPIC-020-performnce.md)           | Optimizations of Performnce     | 🟡 Méday   | 1 week    | Backlog |
+| [EPIC-018](./EPIC-018-permissoes-granulares.md) | Permissions Granulares          | 🟡 Medium   | 1 week    | Backlog |
+| [EPIC-019](./EPIC-019-dashboard.md)             | Dashboard Analytical            | 🟡 Medium   | 1.5 weeks | Backlog |
+| [EPIC-020](./EPIC-020-performnce.md)           | Optimizations of Performnce     | 🟡 Medium   | 1 week    | Backlog |
 | [EPIC-021](./EPIC-021-tests-e2e.md)            | Tests E2E and Performnce       | High    | 1 week    | Backlog |
 | [EPIC-022](./EPIC-022-deploy-producto.md)       | Documentation and Deploy Production | Critical | 1 week    | Backlog |
 
@@ -144,7 +144,7 @@
 | ----- | ---------- |
 |     | Critical    |
 |     | High       |
-| 🟡    | Méday      |
+| 🟡    | Medium      |
 |     | Low      |
 
 ---
@@ -185,12 +185,12 @@ EPIC-001 (Setup)
 
 ---
 
-##  Template of Épico
+##  Template of Epic
 
 Cada epic segue o hasplate:
 
 ```markdown
-# EPIC-XXX: Title of the Épico
+# EPIC-XXX: Title of the Epic
 
 ## General Informtion
 
@@ -219,7 +219,7 @@ Description detalhada of the epic...
 - [ ] TASK-XXX-001: Description
 - [ ] TASK-XXX-002: ...
 
-## Acceptance Crihaveia
+## Acceptance Criteria
 
 - [ ] Critério 1
 - [ ] Critério 2

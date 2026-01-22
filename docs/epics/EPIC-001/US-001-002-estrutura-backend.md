@@ -5,7 +5,7 @@
 | Field            | Value                               |
 | ---------------- | ----------------------------------- |
 | **ID**           | US-001-002                          |
-| **Épico**        | EPIC-001                            |
+| **Epic**        | EPIC-001                            |
 | **Title**       | Backend Structure (NestJS + DDD) |
 | **Estimate**   | 6 hours                             |
 | **Priority**   | Critical                          |
@@ -18,7 +18,7 @@
 
 **Como** desenvolvedor backendendendend  
 **Quero** a estrutura NestJS organizada with DDD  
-**Para** maintain o code escalável and organizado
+**Para** maintain the code scalable and organized
 
 ---
 
@@ -33,7 +33,7 @@
 
 ---
 
-##  Acceptance Crihaveia
+##  Acceptance Criteria
 
 - [ ] Projeto NestJS criado in apps/api
 - [ ] Structure DDD with layers separadas
@@ -101,7 +101,7 @@ Structure of Pastas DDD
 │   ├── modules/students/domain/
 │   ├── modules/students/application/
 │   └── modules/students/infrastructure/
-│   └── Pros: Isolation, escalável
+│   └── Pros: Isolation, scalable
 │
 ├── Option B: Por layer
 │   ├── domain/students/
@@ -266,7 +266,7 @@ Implemente:
 ### 8. Tests
 
 - Jest configured
-- Example of test unitário
+- Example of test unit
 - Mock of the Prisma
 
 ## Formato of Output
@@ -274,7 +274,7 @@ Implemente:
 Para each file, mostre:
 
 1. Path withplete
-2. Conteúdo withplete
+2. Content withplete
 3. Breve explicaction of the porquê
 
 ## Importante
@@ -558,7 +558,7 @@ export class HealthController {
 
   @Get('ready')
   @HealthCheck()
-  @ApiOperation({ summary: 'Readiness probe - pronto for receber tráfego?' })
+  @ApiOperation({ summary: 'Readiness probe - pronto for receber traffic?' })
   ready() {
     return this.health.check([() => this.prisma.pingCheck('datebase', this.prismaService)]);
   }

@@ -17,7 +17,7 @@ O project segue meentirelogia TDD (Test-Driven Development) with ciclo Red-Green
 
 ## Decision
 
-### Pirâmide of Tests
+### Pyramid of Tests
 
 ```
                     ┌───────────┐

@@ -53,7 +53,7 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 **Quero** clonar o repository and subir o environment with a single withando  
 **Para** start a desenvolver rapidamente sem settings manuais
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] `docker withpose up` inicia entire o environment
 - [ ] Hot reload funcionando for backendendendend and frontendendendend
@@ -66,9 +66,9 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 
 **Como** desenvolvedor backendendendend  
 **Quero** a estrutura of project NestJS organizada with DDD  
-**Para** maintain o code organizado and escalável
+**Para** maintain the code organized and scalable
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Structure of modules seguindo bounded contexts
 - [ ] Camadas separadas (domain, application, infrastructure)
@@ -84,7 +84,7 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 **Quero** a estrutura Next.js 14 with withponentes base  
 **Para** desenvolver inhavefaces consistentes
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] App Rouhave configured
 - [ ] TailwindCSS + shadcn/ui instasides
@@ -101,7 +101,7 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 **Quero** that meu code seja validado automaticamente  
 **Para** garantir quality before of the merge
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Lint and type check in each PR
 - [ ] Unit tests with coverage ≥80%
@@ -117,7 +117,7 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 **Quero** executar tests facilmente  
 **Para** seguir a meentirelogia TDD
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Jest configured for backendendendend and frontendendendend
 - [ ] Coverage thresholds configureds (80%)
@@ -260,7 +260,7 @@ apps/web/
 - [ ] Next.js rodando in accountiner
 - [ ] TailwindCSS funcionando
 - [ ] Components shadcn instasides
-- [ ] Page of login básica (placeholder)
+- [ ] Login page basic (placeholder)
 - [ ] Hot reload funcionando
 
 ---
@@ -335,7 +335,7 @@ apps/web/
 - Husky for git hooks
 - lint-staged for validation pre-withmit
 - Commitlint for messages of withmit
-- Conventional withmits
+- Conventional commits
 
 **Hooks:**
 
@@ -344,7 +344,7 @@ pre-withmit:
   - lint-staged (lint + formt + typecheck)
 
 withmit-msg:
-  - withmitlint (conventional withmits)
+  - withmitlint (conventional commits)
 
 pre-push:
   - pnpm test (only tests unit fasts)
@@ -352,7 +352,7 @@ pre-push:
 
 **Definition of Done:**
 
-- [ ] Commits seguem conventional withmits
+- [ ] Commits seguem conventional commits
 - [ ] Lint roda before of each withmit
 - [ ] Tests rodam before of push
 
@@ -542,8 +542,8 @@ seed         # popular datebase
 
 **Definition of Done:**
 
-- [ ] Todos os withmands funcionando
-- [ ] `make help` documenta withmands
+- [ ] Todos os commands funcionando
+- [ ] `make help` documenta commands
 - [ ] README referencia Makefile
 
 ---
@@ -552,20 +552,20 @@ seed         # popular datebase
 
 **Estimate:** 2h
 
-**Conteúdo:**
+**Content:**
 
 - README main of the project
 - Requirements (Docker)
 - Quick start
 - Arquitetura overview
-- Convenções of code
+- Conventions of code
 - Fluxo of shouldlopment
 - Troubleshooting
 
 **Definition of Done:**
 
 - [ ] README withplete
-- [ ] Quick start in less of 5 withmands
+- [ ] Quick start in less of 5 commands
 - [ ] Screenshots of the inhavefaces
 - [ ] FAQ with problemas withuns
 
@@ -629,7 +629,7 @@ seed         # popular datebase
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 ### Development Environment
 
@@ -644,7 +644,7 @@ seed         # popular datebase
 
 - [ ] ESLint + Prettier configureds
 - [ ] Husky + lint-staged funcionando
-- [ ] Conventional withmits enforçados
+- [ ] Conventional commits enforced
 
 ### Tests
 
@@ -663,12 +663,12 @@ seed         # popular datebase
 ### Documentation
 
 - [ ] README with quick start
-- [ ] Makefile with withmands úteis
+- [ ] Makefile with commands useful
 - [ ] Arquitetura documentada
 
 ---
 
-##  Definition of Done of the Épico
+##  Definition of Done of the Epic
 
 - [ ] Todas as tasks completed
 - [ ] Zero errorrs of lint

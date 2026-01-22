@@ -5,10 +5,10 @@
 | Field            | Value               |
 | ---------------- | ------------------- |
 | **ID**           | US-001-010          |
-| **Épico**        | EPIC-001            |
+| **Epic**        | EPIC-001            |
 | **Title**       | Documentation and Seed |
 | **Estimate**   | 3 hours             |
-| **Priority**   | 🟡 Méday            |
+| **Priority**   | 🟡 Medium            |
 | **Dependencies** | Todas previous    |
 | **Status**       | Backlog          |
 
@@ -31,7 +31,7 @@
 
 ---
 
-##  Acceptance Crihaveia
+##  Acceptance Criteria
 
 - [ ] README with quick start
 - [ ] Seed funcionando (admin ube)
@@ -69,7 +69,7 @@ Create:
 ### 3. CONTRIBUTING.md
 
 - Fluxo of trabalho
-- Conventional withmits
+- Conventional commits
 - Code review
 - TDD workflow
 

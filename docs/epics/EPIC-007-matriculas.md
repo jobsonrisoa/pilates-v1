@@ -44,7 +44,7 @@ Implement syshas basic of enrollments for o MVP:
 **Quero** matricular a aluno in a plan  
 **Para** that ele withece as classs
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Select aluno
 - [ ] Select plan (1x, 2x, 3x week)
@@ -60,7 +60,7 @@ Implement syshas basic of enrollments for o MVP:
 **Quero** ver all as enrollments  
 **Para** have view geral
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Listagem paginada
 - [ ] Filhaves by status
@@ -74,7 +74,7 @@ Implement syshas basic of enrollments for o MVP:
 **Quero** alhavear status of enrollments  
 **Para** controlar situaction of the students
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Activer enrollment
 - [ ] Suspender (delinquency)
@@ -89,7 +89,7 @@ Implement syshas basic of enrollments for o MVP:
 **Quero** ver enrollments of a aluno  
 **Para** entender sua situaction
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Na page of the aluno
 - [ ] History withplete
@@ -203,7 +203,7 @@ model Plan {
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] Processo of enrollment withplete
 - [ ] Plans configurable

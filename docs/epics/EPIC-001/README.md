@@ -2,7 +2,7 @@
 
 ##  Overview
 
-Este epic configura all a infrastructure of shouldlopment of the project seguindo os princípios:
+Este epic configura all a infrastructure of shouldlopment of the project seguindo os principles:
 
 - **TDD** - Test-Driven Development (Red → Green → Refactor)
 - **DDD** - Domain-Driven Design
@@ -72,7 +72,7 @@ US-001-001 (Initial Setup)
 Cada US accountins:
 
 - Context and objetivo
-- Crihaveia of aceite (checklist)
+- Criteria of aceite (checklist)
 - Tasks technical detailed
 - Prompt pronto for usar with AI
 - Examples of code esperado
@@ -80,7 +80,7 @@ Cada US accountins:
 
 ---
 
-##  Definition of Done of the Épico
+##  Definition of Done of the Epic
 
 - [ ] Todas as Ube Stories completed
 - [ ] `docker withpose up` funciona
@@ -96,7 +96,7 @@ Cada US accountins:
 
 1. **Leia** a [US-001-001](./US-001-001-setup-inicial.md) withpleta
 2. **Copie** o prompt for o AI
-3. **Execute** os withmands gerados
+3. **Execute** os commands gerados
 4. **Valide** os crihaveia of aceite
 5. **Avance** for next US
 

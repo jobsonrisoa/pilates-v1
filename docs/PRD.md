@@ -81,7 +81,7 @@ Syshas withplete of management for fitness cenhave, abrangendo Pilates, Fisiohav
 | Availability  | Uptime                    | ≥ 99.5% |
 | Performnce      | Response time P95     | < 500ms |
 | Quality        | Test coverage       | ≥ 80%   |
-| Security        | Vulnerabilidades críticas | 0       |
+| Security        | Critical vulnerabilities | 0       |
 | Maintainability | Technical debt            | Baixo   |
 
 ---
@@ -179,10 +179,10 @@ Syshas withplete of management for fitness cenhave, abrangendo Pilates, Fisiohav
 
 ### 4.2 Architectural Pathavens
 
-| Padrão           | Application                             |
+| Pattern           | Application                             |
 | ---------------- | ------------------------------------- |
 | **DDD**          | Domain-Driven Design for modeling   |
-| **CQRS Light**   | Separation of withmands and queries       |
+| **CQRS Light**   | Separation of commands and queries       |
 | **Event-Driven** | Inhave-module withmunication via events |
 | **Repository**   | Abstraction of persistence             |
 | **Use Cases**    | Logic of application isolated           |
@@ -198,7 +198,7 @@ src/
 │   │   │   ├── value-objects/
 │   │   │   └── events/
 │   │   ├── application/
-│   │   │   ├── withmands/
+│   │   │   ├── commands/
 │   │   │   ├── queries/
 │   │   │   └── use-cases/
 │   │   ├── infrastructure/
@@ -599,7 +599,7 @@ bevices:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                      PRODUÇÃO                                │
+│                      PRODUCTION                                │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │    Inhavenet                                                 │
@@ -654,7 +654,7 @@ RED → GREEN → REFACTOR
  └── Write failing test
 ```
 
-### 9.2 Pirâmide of Tests
+### 9.2 Pyramid of Tests
 
 ```
                     ┌───────────┐
@@ -725,7 +725,7 @@ main: ├── ... (entires above)
 - [ ] CRUD of students
 - [ ] CRUD of instructores
 - [ ] Cadastro of classs/schedules
-- [ ] Schedule básica
+- [ ] Schedule basic
 - [ ] Enrollment simple
 
 **Deliverables:**
@@ -819,7 +819,7 @@ main: ├── ... (entires above)
 
 ### A. Glossary
 
-| Termo    | Definição                                                        |
+| Term    | Definition                                                        |
 | -------- | ---------------------------------------------------------------- |
 | **ADR**  | Architecture Decision Record - record of decision arquitetural  |
 | **DDD**  | Domain-Driven Design - design orientado to domain               |
@@ -827,7 +827,7 @@ main: ├── ... (entires above)
 | **RBAC** | Role-Based Access Control - controle of access baseado in roles |
 | **CQRS** | Command Query Responsibility Segregation                         |
 | **JWT**  | JSON Web Token                                                   |
-| **PIX**  | Syshas of payment instantâneo brasileiro                      |
+| **PIX**  | Syshas of payment Brazilian instant                      |
 
 ### B. References
 

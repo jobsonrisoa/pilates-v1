@@ -7,7 +7,7 @@
 | **ID**           | EPIC-019                        |
 | **Title**       | Dashboard Analytical             |
 | **Phase**         | 4 - Refinamento                 |
-| **Priority**   | 🟡 Méday                        |
+| **Priority**   | 🟡 Medium                        |
 | **Estimate**   | 1.5 weeks                     |
 | **Dependencies** | EPIC-012, EPIC-016 (Reports) |
 | **Status**       | Backlog                      |
@@ -43,7 +43,7 @@ Create dashboard analytical unificado:
 **Quero** ver KPIs principais in the abertura  
 **Para** have view fast of the business
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Students actives
 - [ ] Receita of the month
@@ -59,12 +59,12 @@ Create dashboard analytical unificado:
 **Quero** ver charts of evolution  
 **Para** identificar trends
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Chart of receitas (line)
 - [ ] Chart of students (line)
 - [ ] Chart of occupancy (barras)
-- [ ] Period selecionável
+- [ ] Period selectable
 
 ---
 
@@ -74,7 +74,7 @@ Create dashboard analytical unificado:
 **Quero** clicar in a KPI and ver detalhes  
 **Para** investigar numbers
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Clique in card abre detalhes
 - [ ] Givens filtrados
@@ -88,7 +88,7 @@ Create dashboard analytical unificado:
 **Quero** aplicar filtros in entire o dashboard  
 **Para** focar in a period/área
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Filtro of period
 - [ ] Filtro of modality
@@ -103,7 +103,7 @@ Create dashboard analytical unificado:
 **Quero** escolher quais cards ver  
 **Para** personalizar minha view
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Mostrar/ocultar cards
 - [ ] Reordenar cards
@@ -117,10 +117,10 @@ Create dashboard analytical unificado:
 **Quero** exportar o dashboard  
 **Para** apresentar in reuniões
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Exportar witho PDF
-- [ ] Layout of impressão
+- [ ] Layout of print
 - [ ] Data of generation
 
 ---
@@ -226,11 +226,11 @@ Create dashboard analytical unificado:
 **Estimate:** 3h
 
 - html2canvas or similar
-- Layout of impressão
+- Layout of print
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] KPIs principais visible
 - [ ] Charts funcionando

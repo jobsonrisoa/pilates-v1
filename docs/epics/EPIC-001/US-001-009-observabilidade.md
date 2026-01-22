@@ -5,10 +5,10 @@
 | Field            | Value              |
 | ---------------- | ------------------ |
 | **ID**           | US-001-009         |
-| **Épico**        | EPIC-001           |
+| **Epic**        | EPIC-001           |
 | **Title**       | Logging and Metrics |
 | **Estimate**   | 3 hours            |
-| **Priority**   | 🟡 Méday           |
+| **Priority**   | 🟡 Medium           |
 | **Dependencies** | US-001-002         |
 | **Status**       | Backlog         |
 
@@ -31,7 +31,7 @@
 
 ---
 
-##  Acceptance Crihaveia
+##  Acceptance Criteria
 
 - [ ] Logs in JSON in production
 - [ ] Logs pretty in shouldlopment
@@ -46,7 +46,7 @@
 ```markdown
 ## Context
 
-Backend NestJS. Preciso of obbevabilidade básica para
+Backend NestJS. Preciso of obbevabilidade basic para
 shouldlopment and production.
 
 ## Tarefa

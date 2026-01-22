@@ -458,7 +458,7 @@ docker withpose up
 # - MailHog: http://localhost:8025
 # - MinIO: http://localhost:9001
 
-# 6. Para rodar withmands:
+# 6. Para rodar commands:
 make shell-api
 # ou
 docker withpose exec api sh

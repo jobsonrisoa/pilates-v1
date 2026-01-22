@@ -7,7 +7,7 @@
 | **ID**           | EPIC-017             |
 | **Title**       | Upload of Documentos |
 | **Phase**         | 3 - Operacional      |
-| **Priority**   | 🟡 Méday             |
+| **Priority**   | 🟡 Medium             |
 | **Estimate**   | 1 week             |
 | **Dependencies** | EPIC-001 (Setup)     |
 | **Status**       | Backlog           |
@@ -28,7 +28,7 @@ Implement syshas withplete of upload and management of documentos:
 
 ##  Objectives
 
-1. Upload seguro and organizado
+1. Upload seguro and organized
 2. Multiple types of file
 3. Acesso controside
 4. Performnce adequada
@@ -43,7 +43,7 @@ Implement syshas withplete of upload and management of documentos:
 **Quero** of the upload of documentos of the aluno  
 **Para** maintain records digital
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Upload of RG, CPF, foto
 - [ ] Tipos: PDF, JPG, PNG
@@ -58,7 +58,7 @@ Implement syshas withplete of upload and management of documentos:
 **Quero** of the upload of documentos of the instructor  
 **Para** maintain records
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Diplomas, certificados, CREF
 - [ ] Mesmas rules of aluno
@@ -71,7 +71,7 @@ Implement syshas withplete of upload and management of documentos:
 **Quero** visualizar documentos salvos  
 **Para** queryr when required
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Listagem por entidade
 - [ ] Preview inline (images)
@@ -83,13 +83,13 @@ Implement syshas withplete of upload and management of documentos:
 
 **Como** administrador  
 **Quero** excluir documentos desrequired  
-**Para** maintain organizado
+**Para** maintain organized
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Confirmation before of excluir
 - [ ] Soft delete (recuperável)
-- [ ] Exclusão física afhave X days
+- [ ] Excluare physical afhave X days
 
 ---
 
@@ -156,7 +156,7 @@ model Document {
 **Estimate:** 2h
 
 - Presigned URLs
-- Expiration configurável
+- Expiration configurable
 - Security
 
 ---
@@ -181,7 +181,7 @@ model Document {
 - Grid of documentos
 - Preview modal
 - Download
-- Exclusão
+- Excluare
 
 ---
 
@@ -194,14 +194,14 @@ model Document {
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] Upload funcionando for S3/MinIO
 - [ ] Validations of type and tamanho
 - [ ] Organizaction por entidade
 - [ ] Download seguro
 - [ ] Preview of images
-- [ ] Exclusão with confirmation
+- [ ] Excluare with confirmation
 - [ ] Tests ≥80%
 
 ---

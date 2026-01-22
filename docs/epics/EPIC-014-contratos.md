@@ -30,7 +30,7 @@ Implement syshas of contracts digital:
 
 1. Generate contracts automaticamente
 2. Signature digital segura
-3. Storage organizado
+3. Storage organized
 4. Fluxo automated
 
 ---
@@ -43,10 +43,10 @@ Implement syshas of contracts digital:
 **Quero** gerar contract PDF automaticamente  
 **Para** formlizar a enrollment
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] PDF gerado with dados of the enrollment
-- [ ] Template configurável
+- [ ] Template configurable
 - [ ] Givens of the aluno, plan, values
 - [ ] Preview before of enviar
 
@@ -58,7 +58,7 @@ Implement syshas of contracts digital:
 **Quero** enviar contract for signature digital  
 **Para** that o aluno assine remohasente
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Integration with provider (D4Sign)
 - [ ] Email enviado to aluno
@@ -73,7 +73,7 @@ Implement syshas of contracts digital:
 **Quero** receber webhook when assinado  
 **Para** currentizar status automaticamente
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Webhook configured
 - [ ] Status of the contract currentizado
@@ -88,7 +88,7 @@ Implement syshas of contracts digital:
 **Quero** ver contracts of a enrollment  
 **Para** awithpanhar status
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Lista of contracts
 - [ ] Status visual
@@ -103,7 +103,7 @@ Implement syshas of contracts digital:
 **Quero** configurar o hasplate of the contract  
 **Para** personalizar o documento
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Editor of hasplate
 - [ ] Variables dinâmicas
@@ -227,7 +227,7 @@ enum ContractStatus {
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] PDF gerado correctly
 - [ ] Integration with provider funcionando

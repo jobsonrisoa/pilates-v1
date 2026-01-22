@@ -5,7 +5,7 @@
 | Field            | Value                           |
 | ---------------- | ------------------------------- |
 | **ID**           | US-001-003                      |
-| **Épico**        | EPIC-001                        |
+| **Epic**        | EPIC-001                        |
 | **Title**       | Frontend Structure (Next.js) |
 | **Estimate**   | 5 hours                         |
 | **Priority**   | Critical                      |
@@ -34,7 +34,7 @@
 
 ---
 
-##  Acceptance Crihaveia
+##  Acceptance Criteria
 
 - [ ] Projeto Next.js criado in apps/web
 - [ ] App Rouhave configured
@@ -281,7 +281,7 @@ Crie a estrutura of the frontendendendend Next.js in apps/web:
 Para each file, mostre:
 
 1. Path withplete
-2. Conteúdo withplete
+2. Content withplete
 3. Explicaction breve
 
 ## Importante

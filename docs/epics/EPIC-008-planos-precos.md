@@ -42,7 +42,7 @@ Expandir o syshas of plans with:
 **Quero** definir prices por plan and modality  
 **Para** precificar os bevices
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Price por plan
 - [ ] Price por type of class (individual/group)
@@ -57,7 +57,7 @@ Expandir o syshas of plans with:
 **Quero** create rules of desconto  
 **Para** offersr conditions special
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Desconto por categoria (estudante, idoso)
 - [ ] Desconto percentual or fixed value
@@ -71,7 +71,7 @@ Expandir o syshas of plans with:
 **Quero** calcular automaticamente o value  
 **Para** facilitar o processo of enrollment
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Busca price vigente
 - [ ] Aplica descontos
@@ -146,7 +146,7 @@ model Discount {
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] Tabela of prices functional
 - [ ] Discounts configurable

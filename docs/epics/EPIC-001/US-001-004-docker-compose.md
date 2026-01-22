@@ -5,7 +5,7 @@
 | Field            | Value                   |
 | ---------------- | ----------------------- |
 | **ID**           | US-001-004              |
-| **Épico**        | EPIC-001                |
+| **Epic**        | EPIC-001                |
 | **Title**       | Docker Compose Completo |
 | **Estimate**   | 4 hours                 |
 | **Priority**   | Critical              |
@@ -32,7 +32,7 @@
 
 ---
 
-##  Acceptance Crihaveia
+##  Acceptance Criteria
 
 - [ ] `docker withpose up` sobe entire environment
 - [ ] API with hot reload funcionando

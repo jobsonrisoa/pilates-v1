@@ -5,7 +5,7 @@
 | Field            | Value                    |
 | ---------------- | ------------------------ |
 | **ID**           | US-001-001               |
-| **Épico**        | EPIC-001                 |
+| **Epic**        | EPIC-001                 |
 | **Title**       | Initial Project Setup |
 | **Estimate**   | 4 hours                  |
 | **Priority**   | Critical               |
@@ -31,14 +31,14 @@
 
 ---
 
-##  Acceptance Crihaveia
+##  Acceptance Criteria
 
 - [ ] Structure of folders criada conforme especificado
 - [ ] pnpm workspace configured and funcionando
 - [ ] package.json root with scripts basics
 - [ ] .gitignore configured
 - [ ] .env.example with variables documentadas
-- [ ] README.md with instruções basic
+- [ ] README.md with instructions basic
 
 ---
 
@@ -168,8 +168,8 @@ Crie a estrutura inicial of the monorepo with:
    - package.json (root with scripts)
    - .gitignore (Node, Docker, IDE)
    - .env.example (documentado)
-   - Makefile (withmands úteis)
-   - README.md (instruções)
+   - Makefile (commands useful)
+   - README.md (instructions)
 
 3. **Scripts in the package.json root:**
    - dev: subir environment
@@ -183,7 +183,7 @@ Crie a estrutura inicial of the monorepo with:
 - Use pnpm workspaces
 - Prepare for Docker (apps haveão Dockerfiles)
 - Documente variables of environment
-- Inclua withmands in the Makefile
+- Inclua commands in the Makefile
 
 ## Output Esperado
 
@@ -467,7 +467,7 @@ typecheck: ## Verifica types TypeScript
 	docker withpose exec web pnpm typecheck
 
 # =============================================
-# PRODUÇÃO
+# PRODUCTION
 # =============================================
 
 build: ## Build of production
@@ -529,7 +529,7 @@ docker withpose up
 ### Useful Commands
 
 ```bash
-# Ver entires os withmands
+# Ver entires os commands
 make help
 
 # Development
@@ -580,7 +580,7 @@ make formt       # Formata code
 ##  Contribuição
 
 1. Crie a branch: `git checkout -b feature/name`
-2. Faça withmits: `git withmit -m 'feat: description'`
+2. Faça commits: `git withmit -m 'feat: description'`
 3. Push: `git push origin feature/name`
 4. Abra a Pull Request
 
@@ -599,7 +599,7 @@ Após implement, verifique:
 - [ ] Structure of folders criada correctly
 - [ ] `pnpm install` funciona in the root
 - [ ] `.env.example` is documentado
-- [ ] `make help` mostra os withmands
+- [ ] `make help` mostra os commands
 - [ ] README is claro and útil
 - [ ] Git inicializado with .gitignore
 

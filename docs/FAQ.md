@@ -63,7 +63,7 @@ The project follows a **Docker-first** approach:
 
 ### How does it work?
 
-All withmands run via `docker withpose run --rm tools`:
+All commands run via `docker withpose run --rm tools`:
 
 ```bash
 # Instead of:

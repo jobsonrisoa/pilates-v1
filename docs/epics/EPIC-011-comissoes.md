@@ -7,7 +7,7 @@
 | **ID**           | EPIC-011                                      |
 | **Title**       | Commissions of Instructores                      |
 | **Phase**         | 2 - Financial                                |
-| **Priority**   | 🟡 Méday                                      |
+| **Priority**   | 🟡 Medium                                      |
 | **Estimate**   | 1 week                                      |
 | **Dependencies** | EPIC-004 (Instructores), EPIC-010 (Payments) |
 | **Status**       | Backlog                                    |
@@ -36,13 +36,13 @@ Implement syshas of withmissions for instructores:
 
 ##  Ube Stories
 
-### US-011-001: Configurar Comissão of the Instructor
+### US-011-001: Configurar Comisare of the Instructor
 
 **Como** administrador  
 **Quero** definir as rules of commission of each instructor  
 **Para** calcular quanto pay
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Set por percentual or fixed value
 - [ ] Diferenciar por modality
@@ -57,7 +57,7 @@ Implement syshas of withmissions for instructores:
 **Quero** ver quanto devo pay a each instructor  
 **Para** of the os payments
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Listar classs ministradas in the period
 - [ ] Aplicar rules of commission
@@ -72,7 +72,7 @@ Implement syshas of withmissions for instructores:
 **Quero** exportar report of withmissions  
 **Para** documentar and pay
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Filtro por period
 - [ ] Filtro por instructor
@@ -81,13 +81,13 @@ Implement syshas of withmissions for instructores:
 
 ---
 
-### US-011-004: Registrar Payment of Comissão
+### US-011-004: Registrar Payment of Comisare
 
 **Como** financial  
 **Quero** registrar that paguei a commission  
 **Para** controlar o that foi pago
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Marcar witho pago
 - [ ] Data and payment method
@@ -129,7 +129,7 @@ model CommissionPayment {
 
 ---
 
-#### TASK-011-002: CRUD of Regras of Comissão
+#### TASK-011-002: CRUD of Regras of Comisare
 
 **Estimate:** 3h
 
@@ -190,7 +190,7 @@ model CommissionPayment {
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] Regras of commission configurable
 - [ ] Calculation automatic correto

@@ -5,7 +5,7 @@
 | Field            | Value                          |
 | ---------------- | ------------------------------ |
 | **ID**           | US-001-006                     |
-| **Épico**        | EPIC-001                       |
+| **Epic**        | EPIC-001                       |
 | **Title**       | Configuration of Tests Backend |
 | **Estimate**   | 4 hours                        |
 | **Priority**   | Critical                     |
@@ -32,7 +32,7 @@
 
 ---
 
-##  Acceptance Crihaveia
+##  Acceptance Criteria
 
 - [ ] Jest configured for unit
 - [ ] Jest configured for integration
@@ -89,8 +89,8 @@ Configure os tests:
 
 ### 5. Examples of Teste
 
-- Teste unitário of Entity base
-- Teste unitário of Value Object
+- Teste unit of Entity base
+- Teste unit of Value Object
 - Teste of integration of Health endpoint
 
 ### 6. Scripts

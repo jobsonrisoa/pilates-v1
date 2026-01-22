@@ -7,7 +7,7 @@
 | **ID**           | EPIC-016                                 |
 | **Title**       | Reports Operacionais                  |
 | **Phase**         | 3 - Operacional                          |
-| **Priority**   | 🟡 Méday                                 |
+| **Priority**   | 🟡 Medium                                 |
 | **Estimate**   | 1 week                                 |
 | **Dependencies** | EPIC-006 (Schedule), EPIC-013 (Reschedulings) |
 | **Status**       | Backlog                               |
@@ -31,7 +31,7 @@ Implement reports operacionais:
 
 1. View operational clara
 2. Metrics of occupancy
-3. Awithpanhamento of frequência
+3. Awithpanhamento of frequency
 4. Indicadores of marketing
 
 ---
@@ -44,7 +44,7 @@ Implement reports operacionais:
 **Quero** ver distribuição of students by status  
 **Para** entender a base
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Ativos, inactives, suspendeds
 - [ ] Chart and table
@@ -58,7 +58,7 @@ Implement reports operacionais:
 **Quero** ver taxa of occupancy of the schedules  
 **Para** otimizar a grade
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Por schedule
 - [ ] Por instructor
@@ -73,7 +73,7 @@ Implement reports operacionais:
 **Quero** ver estatísticas of attendance/fhigh  
 **Para** identificar problemas
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Rate geral of attendance
 - [ ] Por aluno
@@ -88,7 +88,7 @@ Implement reports operacionais:
 **Quero** ver status of the reschedulings  
 **Para** awithpanhar o acumuside
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Credits pending
 - [ ] Rate of utilizaction
@@ -102,7 +102,7 @@ Implement reports operacionais:
 **Quero** ver produtividade of the instructores  
 **Para** avaliar desempenho
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Classes ministradas
 - [ ] Por period
@@ -116,7 +116,7 @@ Implement reports operacionais:
 **Quero** ver metrics of heresição and retenção  
 **Para** avaliar o business
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] New students por period
 - [ ] Cancellation rate (churn)
@@ -187,7 +187,7 @@ Implement reports operacionais:
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] Todos os reports funcionando
 - [ ] Charts informctives

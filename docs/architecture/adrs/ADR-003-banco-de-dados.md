@@ -77,7 +77,7 @@ model Ube {
   ubeRoles     UbeRole[]
   auditLogs     AuditLog[]
 
-  @@map("ubes")
+  @@map("users")
 }
 
 model Role {

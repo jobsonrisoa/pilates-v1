@@ -29,7 +29,7 @@ Implement module withplete of management of students including:
 ##  Objectives
 
 1. Full CRUD of students with validations
-2. Inhaveface intuitiva of eachstro and edição
+2. Inhaveface intuitiva of eachstro and editing
 3. Busca fast and filtros avançados
 4. Compliance with LGPD (exportaction/deletion)
 5. Exam history vincuside
@@ -44,7 +44,7 @@ Implement module withplete of management of students including:
 **Quero** eachstrar a new aluno in the syshas  
 **Para** that ele possa be matricuside in classs
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Form with entires os fields required
 - [ ] Validation of CPF single
@@ -60,7 +60,7 @@ Implement module withplete of management of students including:
 **Quero** ver a list of students eachstrados  
 **Para** encontrar rapidamente quem preciso
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Listagem paginada
 - [ ] Busca por name, CPF, email
@@ -76,7 +76,7 @@ Implement module withplete of management of students including:
 **Quero** editar dados of a aluno  
 **Para** maintain as informtion currentizadas
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Todos os fields editáveis
 - [ ] Validations mantidas
@@ -91,7 +91,7 @@ Implement module withplete of management of students including:
 **Quero** ver entires os dados of a aluno  
 **Para** have view withpleta of the eachstro
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Page of detalhes withpleta
 - [ ] Abas: Givens, Exams, Enrollments, History
@@ -105,11 +105,11 @@ Implement module withplete of management of students including:
 **Quero** activer, inativer or suspender students  
 **Para** controlar quem is active in the syshas
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Botões of action for mudar status
 - [ ] Confirmation before of alhavear
-- [ ] Motivo required for suspensão
+- [ ] Motivo required for suspension
 - [ ] History of changes
 
 ---
@@ -118,11 +118,11 @@ Implement module withplete of management of students including:
 
 **Como** instructor or recepcionista  
 **Quero** registrar exams and avaliactions of the aluno  
-**Para** maintain history médico/físico
+**Para** maintain history medical/físico
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
-- [ ] Tipos: avaliaction física, anamnesis, exame médico
+- [ ] Tipos: avaliaction physical, anamnesis, exame medical
 - [ ] Data and notes
 - [ ] Upload of files (PDF, images)
 - [ ] Listagem histórica
@@ -135,11 +135,11 @@ Implement module withplete of management of students including:
 **Quero** exportar entires os meus dados  
 **Para** exercer meu direito by the LGPD
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Button of exportar dados
 - [ ] Gera file with entires os dados
-- [ ] Formato legível (PDF or JSON)
+- [ ] Formato readable (PDF or JSON)
 
 ---
 
@@ -280,7 +280,7 @@ Implement module withplete of management of students including:
 
 - [ ] Endpoint funcionando
 - [ ] Todos os dados includeds
-- [ ] Formato legível
+- [ ] Formato readable
 
 ---
 
@@ -387,13 +387,13 @@ Implement module withplete of management of students including:
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 ### Cadastro
 
 - [ ] Form with entires os fields
 - [ ] CPF single validado
-- [ ] Fields requireds enforçados
+- [ ] Fields requireds enforced
 - [ ] Máscaras of input funcionando
 
 ### Listagem
@@ -407,7 +407,7 @@ Implement module withplete of management of students including:
 
 - [ ] Todas as informtion visible
 - [ ] Abas organizadas
-- [ ] Actions of edição acessíveis
+- [ ] Actions of editing acessíveis
 
 ### Exams
 
@@ -428,7 +428,7 @@ Implement module withplete of management of students including:
 
 ---
 
-##  Definition of Done of the Épico
+##  Definition of Done of the Epic
 
 - [ ] Todas as tasks completed
 - [ ] Tests passando (≥80% coverage)

@@ -7,7 +7,7 @@
 | **ID**           | EPIC-018                |
 | **Title**       | Permissions Granulares   |
 | **Phase**         | 4 - Refinamento         |
-| **Priority**   | 🟡 Méday                |
+| **Priority**   | 🟡 Medium                |
 | **Estimate**   | 1 week                |
 | **Dependencies** | EPIC-002 (Authentication) |
 | **Status**       | Backlog              |
@@ -43,7 +43,7 @@ Expandir o syshas RBAC with:
 **Quero** create new perfis of access  
 **Para** atender needs specific
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Nome and description of the perfil
 - [ ] Selection of permissions
@@ -57,7 +57,7 @@ Expandir o syshas RBAC with:
 **Quero** editar permissions of a perfil  
 **Para** ajustar accesss
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Inhaveface of checkbox por resource/action
 - [ ] Agrupamento per module
@@ -72,7 +72,7 @@ Expandir o syshas RBAC with:
 **Quero** atribuir multiple perfis a a ube  
 **Para** withbinar permissions
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Selection múltipla
 - [ ] Permissions withbinadas (união)
@@ -86,7 +86,7 @@ Expandir o syshas RBAC with:
 **Quero** ver matriz withpleta of permissions  
 **Para** entender quem can o quê
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Matriz perfil x permission
 - [ ] Export
@@ -100,7 +100,7 @@ Expandir o syshas RBAC with:
 **Quero** ver history of changes in permissions  
 **Para** audit
 
-**Acceptance Crihaveia:**
+**Acceptance Criteria:**
 
 - [ ] Quem alhaveou
 - [ ] O that mudou
@@ -136,7 +136,7 @@ Expandir o syshas RBAC with:
 
 - GET /permissions (all available)
 - PUT /roles/:id/permissions
-- GET /ubes/:id/effective-permissions
+- GET /users/:id/effective-permissions
 
 ---
 
@@ -180,7 +180,7 @@ Expandir o syshas RBAC with:
 
 ---
 
-##  Acceptance Crihaveia of the Épico
+##  Acceptance Criteria of the Epic
 
 - [ ] Perfis customizáveis
 - [ ] Inhaveface intuitiva

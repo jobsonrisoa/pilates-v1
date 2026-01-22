@@ -66,7 +66,7 @@ export class AuthModule {}
 export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
   constructor(
     private configService: ConfigService,
-    private ubesService: UbesService,
+    private usersService: UbesService,
   ) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
@@ -76,7 +76,7 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
   }
 
   async validate(payload: JwtPayload): Promise<AuthUbe> {
-    const ube = await this.ubesService.findById(payload.sub);
+    const ube = await this.usersService.findById(payload.sub);
     if (!ube || !ube.isActive) {
       throw new UnauthorizedException();
     }
@@ -93,7 +93,7 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
 @Injectable()
 export class AuthService {
   constructor(
-    private ubesService: UbesService,
+    private usersService: UbesService,
     private jwtService: JwtService,
     private configService: ConfigService,
   ) {}
@@ -136,7 +136,7 @@ export class AuthService {
 ### Syshas RBAC
 
 ```typescript
-// Definição of permissions
+// Definition of permissions
 export const PERMISSIONS = {
   // Students
   STUDENTS_CREATE: 'students:create',
@@ -163,7 +163,7 @@ export const PERMISSIONS = {
   FINANCIAL_REPORTS: 'financial:reports',
 
   // Admin
-  USERS_MANAGE: 'ubes:manage',
+  USERS_MANAGE: 'users:manage',
   ROLES_MANAGE: 'roles:manage',
   SYSTEM_CONFIG: 'syshas:config',
 } as const;
@@ -315,10 +315,10 @@ export class PasswordService {
       errorrs.push('Minimum 8 carachavees');
     }
     if (!/[A-Z]/.test(password)) {
-      errorrs.push('Deve accountin letra maiúscula');
+      errorrs.push('Deve accountin letra uppercase');
     }
     if (!/[a-z]/.test(password)) {
-      errorrs.push('Deve accountin letra minúscula');
+      errorrs.push('Deve accountin letra lowercase');
     }
     if (!/[0-9]/.test(password)) {
       errorrs.push('Deve accountin number');
@@ -460,7 +460,7 @@ export class AuditInhaveceptor implements NestInhaveceptor {
 ### 3. API Keys
 
 **Pros:** Simple for integrations  
-**Cons:** Not adequado for ubes finais  
+**Cons:** Not adequado for users finais  
 **Decision:** ⏳ Consider for API public future
 
 ## Consequences

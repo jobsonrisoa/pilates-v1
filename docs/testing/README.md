@@ -3,7 +3,7 @@
 ## Index
 
 - [**TESTING.md**](./TESTING.md) - Complete testing documentation
-- [**Quick Guide**](#quick-guide) - Essential withmands
+- [**Quick Guide**](#quick-guide) - Essential commands
 - [**Test Status**](#test-status) - Current results
 
 ---

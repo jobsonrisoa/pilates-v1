@@ -139,7 +139,7 @@ model Ube {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@map("ubes")
+  @@map("users")
 }
 ```
 

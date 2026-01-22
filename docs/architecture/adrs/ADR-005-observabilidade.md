@@ -228,7 +228,7 @@ export class MetricsInhaveceptor implements NestInhaveceptor {
 
 **Dashboards Grafana sugeridos:**
 
-- Overview: requests/s, latência p99, errorrs
+- Overview: requests/s, latency p99, errorrs
 - Negócio: new students, classs scheduledas, payments
 - Infrastructure: CPU, memory, connections DB
 
@@ -324,7 +324,7 @@ export class HealthController {
     return this.health.check([]);
   }
 
-  // Readiness - bevidor can receber tráfego?
+  // Readiness - bevidor can receber traffic?
   @Get('ready')
   @HealthCheck()
   ready() {
