@@ -1,6 +1,6 @@
 # EPIC-017: Upload de Documentos
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                |
 | ---------------- | -------------------- |
@@ -10,11 +10,11 @@
 | **Prioridade**   | 🟡 Média             |
 | **Estimativa**   | 1 semana             |
 | **Dependências** | EPIC-001 (Setup)     |
-| **Status**       | 📋 Backlog           |
+| **Status**       | Backlog           |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar sistema completo de upload e gestão de documentos:
 
@@ -26,7 +26,7 @@ Implementar sistema completo de upload e gestão de documentos:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Upload seguro e organizado
 2. Múltiplos tipos de arquivo
@@ -35,7 +35,7 @@ Implementar sistema completo de upload e gestão de documentos:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-017-001: Upload de Documento do Aluno
 
@@ -93,7 +93,7 @@ Implementar sistema completo de upload e gestão de documentos:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -194,7 +194,7 @@ model Document {
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] Upload funcionando para S3/MinIO
 - [ ] Validações de tipo e tamanho
@@ -206,6 +206,6 @@ model Document {
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~22 horas (~1 semana)

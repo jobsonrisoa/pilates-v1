@@ -344,7 +344,7 @@ jobs:
         run: |
           ADDITIONS=$(git diff --numstat origin/${{ github.base_ref }}...HEAD | awk '{s+=$1} END {print s}')
           if [ "$ADDITIONS" -gt 500 ]; then
-            echo "⚠️ PR muito grande ($ADDITIONS linhas adicionadas). Considere dividir."
+            echo " PR muito grande ($ADDITIONS linhas adicionadas). Considere dividir."
             exit 1
           fi
 
@@ -358,7 +358,7 @@ jobs:
           # Verifica se coverage está acima de 80%
           COVERAGE=$(cat coverage/coverage-summary.json | jq '.total.lines.pct')
           if (( $(echo "$COVERAGE < 80" | bc -l) )); then
-            echo "❌ Coverage abaixo de 80% ($COVERAGE%)"
+            echo " Coverage abaixo de 80% ($COVERAGE%)"
             exit 1
           fi
 ```
@@ -593,22 +593,22 @@ coverage:
 
 | Verificação         | Bloqueante | Descrição             |
 | ------------------- | ---------- | --------------------- |
-| Lint Pass           | ✅ Sim     | Zero erros de ESLint  |
-| Type Check          | ✅ Sim     | Zero erros TypeScript |
-| Unit Tests          | ✅ Sim     | 100% passando         |
-| Coverage ≥ 80%      | ✅ Sim     | Linhas e funções      |
-| Integration Tests   | ✅ Sim     | 100% passando         |
-| E2E Tests (main)    | ✅ Sim     | Fluxos críticos       |
-| Performance (main)  | ⚠️ Warning | P95 < 500ms           |
-| PR Size < 500 lines | ⚠️ Warning | Recomendação          |
+| Lint Pass           |  Sim     | Zero erros de ESLint  |
+| Type Check          |  Sim     | Zero erros TypeScript |
+| Unit Tests          |  Sim     | 100% passando         |
+| Coverage ≥ 80%      |  Sim     | Linhas e funções      |
+| Integration Tests   |  Sim     | 100% passando         |
+| E2E Tests (main)    |  Sim     | Fluxos críticos       |
+| Performance (main)  |  Warning | P95 < 500ms           |
+| PR Size < 500 lines |  Warning | Recomendação          |
 
 ### Testes por Ambiente
 
 | Ambiente | Unit | Integration | E2E | Performance |
 | -------- | ---- | ----------- | --- | ----------- |
-| PR       | ✅   | ✅          | ❌  | ❌          |
-| develop  | ✅   | ✅          | ✅  | ❌          |
-| main     | ✅   | ✅          | ✅  | ✅          |
+| PR       |    |           |   |           |
+| develop  |    |           |   |           |
+| main     |    |           |   |           |
 
 ## Custos
 
@@ -623,16 +623,16 @@ coverage:
 
 ### Positivas
 
-- ✅ Pipeline completo de CI/CD
-- ✅ Testes automatizados obrigatórios
-- ✅ Deploy zero-downtime
-- ✅ Custo zero com GitHub
-- ✅ Images otimizadas (multi-stage)
+-  Pipeline completo de CI/CD
+-  Testes automatizados obrigatórios
+-  Deploy zero-downtime
+-  Custo zero com GitHub
+-  Images otimizadas (multi-stage)
 
 ### Negativas
 
-- ⚠️ Pipeline pode ser lento (~10min)
-- ⚠️ Dependência do GitHub
+-  Pipeline pode ser lento (~10min)
+-  Dependência do GitHub
 
 ## Referências
 

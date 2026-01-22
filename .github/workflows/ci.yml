@@ -216,8 +216,8 @@ jobs:
              [ "${{ needs.test-api.result }}" != "success" ] || \
              [ "${{ needs.test-web.result }}" != "success" ] || \
              [ "${{ needs.test-integration.result }}" != "success" ]; then
-            echo "❌ CI failed"
+            echo "CI failed"
             exit 1
           else
-            echo "✅ CI passed"
+            echo "CI passed"
           fi

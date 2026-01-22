@@ -1,6 +1,6 @@
 # US-001-009: Logging e Métricas
 
-## 📋 Informações
+##  Informações
 
 | Campo            | Valor              |
 | ---------------- | ------------------ |
@@ -10,11 +10,11 @@
 | **Estimativa**   | 3 horas            |
 | **Prioridade**   | 🟡 Média           |
 | **Dependências** | US-001-002         |
-| **Status**       | 📋 Backlog         |
+| **Status**       | Backlog         |
 
 ---
 
-## 📝 User Story
+##  User Story
 
 **Como** desenvolvedor/ops  
 **Quero** logging estruturado e métricas  
@@ -22,7 +22,7 @@
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Configurar Pino para logs estruturados
 2. Configurar endpoint /metrics (Prometheus)
@@ -31,7 +31,7 @@
 
 ---
 
-## ✅ Critérios de Aceite
+##  Critérios de Aceite
 
 - [ ] Logs em JSON em produção
 - [ ] Logs pretty em desenvolvimento
@@ -41,7 +41,7 @@
 
 ---
 
-## 🤖 Prompt para Implementação
+##  Prompt para Implementação
 
 ```markdown
 ## Contexto
@@ -76,7 +76,7 @@ Configure:
 
 ---
 
-## 📝 Implementação
+##  Implementação
 
 ### Pino Logger Module
 
@@ -154,7 +154,7 @@ export class MetricsModule {}
 
 ---
 
-## ✅ Checklist de Verificação
+##  Checklist de Verificação
 
 - [ ] Logs aparecem formatados
 - [ ] /metrics retorna métricas
@@ -162,6 +162,6 @@ export class MetricsModule {}
 
 ---
 
-## 🔗 Próxima User Story
+##  Próxima User Story
 
 → [US-001-010: Documentação e Seed](./US-001-010-documentacao.md)

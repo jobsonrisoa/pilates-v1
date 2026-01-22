@@ -1,20 +1,20 @@
 # EPIC-010: Controle de Pagamentos
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                        |
 | ---------------- | ---------------------------- |
 | **ID**           | EPIC-010                     |
 | **Título**       | Controle de Pagamentos       |
 | **Fase**         | 2 - Financeiro               |
-| **Prioridade**   | 🔴 Crítica                   |
+| **Prioridade**   | Critical                   |
 | **Estimativa**   | 1.5 semanas                  |
 | **Dependências** | EPIC-009 (Integração Sicoob) |
-| **Status**       | 📋 Backlog                   |
+| **Status**       | Backlog                   |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar controle completo de pagamentos:
 
@@ -26,7 +26,7 @@ Implementar controle completo de pagamentos:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Gerar cobranças automaticamente
 2. Controlar inadimplência
@@ -35,7 +35,7 @@ Implementar controle completo de pagamentos:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-010-001: Gerar Cobrança Mensal
 
@@ -125,7 +125,7 @@ Implementar controle completo de pagamentos:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -238,7 +238,7 @@ enum PaymentStatus {
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] Cobranças geradas automaticamente
 - [ ] Status atualizados corretamente
@@ -250,6 +250,6 @@ enum PaymentStatus {
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~30 horas (~1.5 semanas)

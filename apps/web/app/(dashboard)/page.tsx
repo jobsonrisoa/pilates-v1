@@ -2,7 +2,7 @@ export default function DashboardPage() {
   return (
     <main style={{ padding: 24 }}>
       <h1>Dashboard</h1>
-      <p>Placeholder do dashboard.</p>
+      <p>Dashboard placeholder.</p>
     </main>
   );
 }

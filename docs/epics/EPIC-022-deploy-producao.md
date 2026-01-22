@@ -1,20 +1,20 @@
 # EPIC-022: Documentação e Deploy Produção
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                          |
 | ---------------- | ------------------------------ |
 | **ID**           | EPIC-022                       |
 | **Título**       | Documentação e Deploy Produção |
 | **Fase**         | 4 - Refinamento                |
-| **Prioridade**   | 🔴 Crítica                     |
+| **Prioridade**   | Critical                     |
 | **Estimativa**   | 1 semana                       |
 | **Dependências** | Todos os épicos anteriores     |
-| **Status**       | 📋 Backlog                     |
+| **Status**       | Backlog                     |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Finalizar documentação e preparar deploy em produção:
 
@@ -26,7 +26,7 @@ Finalizar documentação e preparar deploy em produção:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Documentação completa
 2. Ambiente de produção seguro
@@ -35,7 +35,7 @@ Finalizar documentação e preparar deploy em produção:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-022-001: Documentação Técnica
 
@@ -129,7 +129,7 @@ Finalizar documentação e preparar deploy em produção:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Documentação
 
@@ -300,7 +300,7 @@ Finalizar documentação e preparar deploy em produção:
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] Documentação completa
 - [ ] Produção configurada
@@ -313,7 +313,7 @@ Finalizar documentação e preparar deploy em produção:
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 ```
 Semana 1:
@@ -328,7 +328,7 @@ Semana 1:
 
 ---
 
-## 🚀 Checklist de Go-Live
+##  Checklist de Go-Live
 
 ### Pré-Deploy
 

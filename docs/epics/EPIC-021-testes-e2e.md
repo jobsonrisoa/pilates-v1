@@ -1,20 +1,20 @@
 # EPIC-021: Testes E2E e Performance
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                      |
 | ---------------- | -------------------------- |
 | **ID**           | EPIC-021                   |
 | **Título**       | Testes E2E e Performance   |
 | **Fase**         | 4 - Refinamento            |
-| **Prioridade**   | 🟠 Alta                    |
+| **Prioridade**   | High                    |
 | **Estimativa**   | 1 semana                   |
 | **Dependências** | Todos os épicos funcionais |
-| **Status**       | 📋 Backlog                 |
+| **Status**       | Backlog                 |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar suite completa de testes:
 
@@ -25,7 +25,7 @@ Implementar suite completa de testes:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. E2E para fluxos principais
 2. Garantir performance sob carga
@@ -34,7 +34,7 @@ Implementar suite completa de testes:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-021-001: Testes E2E de Autenticação
 
@@ -110,7 +110,7 @@ Implementar suite completa de testes:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### E2E Tests
 
@@ -218,7 +218,7 @@ Implementar suite completa de testes:
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] E2E cobrindo fluxos críticos
 - [ ] Todos os testes passando
@@ -229,6 +229,6 @@ Implementar suite completa de testes:
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~26 horas (~1 semana)

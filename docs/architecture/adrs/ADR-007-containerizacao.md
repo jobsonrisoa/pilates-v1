@@ -468,18 +468,18 @@ docker compose exec api sh
 
 ### Positivas
 
-- ✅ Zero instalação local necessária
-- ✅ Ambiente consistente entre devs
-- ✅ Onboarding em minutos
-- ✅ Serviços auxiliares incluídos (mail, storage)
-- ✅ Hot reload funcionando
-- ✅ Fácil limpar e recomeçar
+-  Zero instalação local necessária
+-  Ambiente consistente entre devs
+-  Onboarding em minutos
+-  Serviços auxiliares incluídos (mail, storage)
+-  Hot reload funcionando
+-  Fácil limpar e recomeçar
 
 ### Negativas
 
-- ⚠️ Docker necessário (consumo de recursos)
-- ⚠️ Primeira inicialização lenta
-- ⚠️ Debugging pode ser mais complexo
+-  Docker necessário (consumo de recursos)
+-  Primeira inicialização lenta
+-  Debugging pode ser mais complexo
 
 ### Mitigações
 

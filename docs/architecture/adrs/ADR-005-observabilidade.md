@@ -450,16 +450,16 @@ scrape_configs:
 
 ### Positivas
 
-- ✅ Custo zero com free tiers
-- ✅ Setup simples para monolito
-- ✅ Logs estruturados facilitam debug
-- ✅ Métricas de negócio desde o início
-- ✅ Alertas de erros automáticos (Sentry)
+-  Custo zero com free tiers
+-  Setup simples para monolito
+-  Logs estruturados facilitam debug
+-  Métricas de negócio desde o início
+-  Alertas de erros automáticos (Sentry)
 
 ### Negativas
 
-- ⚠️ Sem distributed tracing (aceitável para monolito)
-- ⚠️ Grafana precisa configuração manual inicial
+-  Sem distributed tracing (aceitável para monolito)
+-  Grafana precisa configuração manual inicial
 
 ## Alertas Recomendados
 

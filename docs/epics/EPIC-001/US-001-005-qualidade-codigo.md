@@ -1,6 +1,6 @@
 # US-001-005: Qualidade de Código (Lint, Format, Hooks)
 
-## 📋 Informações
+##  Informações
 
 | Campo            | Valor                  |
 | ---------------- | ---------------------- |
@@ -8,13 +8,13 @@
 | **Épico**        | EPIC-001               |
 | **Título**       | Qualidade de Código    |
 | **Estimativa**   | 3 horas                |
-| **Prioridade**   | 🟠 Alta                |
+| **Prioridade**   | High                |
 | **Dependências** | US-001-002, US-001-003 |
-| **Status**       | 📋 Backlog             |
+| **Status**       | Backlog             |
 
 ---
 
-## 📝 User Story
+##  User Story
 
 **Como** desenvolvedor  
 **Quero** ferramentas de qualidade de código configuradas  
@@ -22,7 +22,7 @@
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Configurar ESLint para TypeScript
 2. Configurar Prettier
@@ -32,7 +32,7 @@
 
 ---
 
-## ✅ Critérios de Aceite
+##  Critérios de Aceite
 
 - [ ] ESLint configurado no backend e frontend
 - [ ] Prettier formatando código
@@ -44,7 +44,7 @@
 
 ---
 
-## 🤖 Prompt para Implementação
+##  Prompt para Implementação
 
 ```markdown
 ## Contexto
@@ -106,7 +106,7 @@ Configure as ferramentas de qualidade:
 
 ---
 
-## 📝 Arquivos de Configuração
+##  Arquivos de Configuração
 
 ### .eslintrc.js (root)
 
@@ -220,7 +220,7 @@ npx --no -- commitlint --edit ${1}
 
 ---
 
-## ✅ Checklist de Verificação
+##  Checklist de Verificação
 
 - [ ] `pnpm lint` funciona
 - [ ] `pnpm format` formata
@@ -230,6 +230,6 @@ npx --no -- commitlint --edit ${1}
 
 ---
 
-## 🔗 Próxima User Story
+##  Próxima User Story
 
 → [US-001-006: Configuração de Testes Backend](./US-001-006-testes-backend.md)

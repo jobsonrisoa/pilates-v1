@@ -142,18 +142,18 @@ async handlePaymentConfirmed(event: PaymentConfirmedEvent) {
 
 ### Positivas
 
-- ✅ **Custo baixo**: Deploy em VPS simples (~$20/mês)
-- ✅ **Operação simples**: Um container, um deploy
-- ✅ **Debug fácil**: Stack traces unificados
-- ✅ **Transações ACID**: Banco único
-- ✅ **TDD facilitado**: Menos mocks de rede
-- ✅ **Preparado para evoluir**: Módulos extraíveis
+-  **Custo baixo**: Deploy em VPS simples (~$20/mês)
+-  **Operação simples**: Um container, um deploy
+-  **Debug fácil**: Stack traces unificados
+-  **Transações ACID**: Banco único
+-  **TDD facilitado**: Menos mocks de rede
+-  **Preparado para evoluir**: Módulos extraíveis
 
 ### Negativas
 
-- ⚠️ Deploy único (todo sistema junto)
-- ⚠️ Escala vertical antes de horizontal
-- ⚠️ Disciplina necessária para manter isolamento
+-  Deploy único (todo sistema junto)
+-  Escala vertical antes de horizontal
+-  Disciplina necessária para manter isolamento
 
 ### Riscos e Mitigações
 

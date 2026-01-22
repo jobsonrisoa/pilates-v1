@@ -6,12 +6,12 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Pilates System',
-  description: 'Sistema de gestão para Pilates & Fisioterapia',
+  description: 'Management system for Pilates & Physiotherapy',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body>
         <Providers>{children}</Providers>
       </body>

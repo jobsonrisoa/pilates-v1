@@ -1,6 +1,6 @@
 # EPIC-018: Permissões Granulares
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                   |
 | ---------------- | ----------------------- |
@@ -10,11 +10,11 @@
 | **Prioridade**   | 🟡 Média                |
 | **Estimativa**   | 1 semana                |
 | **Dependências** | EPIC-002 (Autenticação) |
-| **Status**       | 📋 Backlog              |
+| **Status**       | Backlog              |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Expandir o sistema RBAC com:
 
@@ -26,7 +26,7 @@ Expandir o sistema RBAC com:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Flexibilidade total em permissões
 2. Perfis customizáveis
@@ -35,7 +35,7 @@ Expandir o sistema RBAC com:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-018-001: Criar Perfil Customizado
 
@@ -108,7 +108,7 @@ Expandir o sistema RBAC com:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -180,7 +180,7 @@ Expandir o sistema RBAC com:
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] Perfis customizáveis
 - [ ] Interface intuitiva
@@ -191,6 +191,6 @@ Expandir o sistema RBAC com:
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~22 horas (~1 semana)

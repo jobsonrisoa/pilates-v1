@@ -1,20 +1,20 @@
 # EPIC-009: Integração Bancária Sicoob
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                      |
 | ---------------- | -------------------------- |
 | **ID**           | EPIC-009                   |
 | **Título**       | Integração Bancária Sicoob |
 | **Fase**         | 2 - Financeiro             |
-| **Prioridade**   | 🔴 Crítica                 |
+| **Prioridade**   | Critical                 |
 | **Estimativa**   | 2 semanas                  |
 | **Dependências** | EPIC-008 (Planos e Preços) |
-| **Status**       | 📋 Backlog                 |
+| **Status**       | Backlog                 |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar integração completa com API do Sicoob para:
 
@@ -26,7 +26,7 @@ Implementar integração completa com API do Sicoob para:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Gerar boletos automaticamente
 2. Gerar QR Code PIX
@@ -35,7 +35,7 @@ Implementar integração completa com API do Sicoob para:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-009-001: Gerar Boleto
 
@@ -97,7 +97,7 @@ Implementar integração completa com API do Sicoob para:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -212,7 +212,7 @@ SICOOB_WEBHOOK_SECRET=
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] Boletos gerados corretamente
 - [ ] PIX funcionando
@@ -232,7 +232,7 @@ SICOOB_WEBHOOK_SECRET=
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 ```
 Semana 1:

@@ -1,20 +1,20 @@
 # EPIC-004: Gestão de Professores
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                   |
 | ---------------- | ----------------------- |
 | **ID**           | EPIC-004                |
 | **Título**       | Gestão de Professores   |
 | **Fase**         | 1 - MVP                 |
-| **Prioridade**   | 🟠 Alta                 |
+| **Prioridade**   | High                 |
 | **Estimativa**   | 1 semana                |
 | **Dependências** | EPIC-002 (Autenticação) |
-| **Status**       | 📋 Backlog              |
+| **Status**       | Backlog              |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar módulo de gestão de professores incluindo:
 
@@ -26,7 +26,7 @@ Implementar módulo de gestão de professores incluindo:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. CRUD completo de professores
 2. Gestão de especialidades
@@ -35,7 +35,7 @@ Implementar módulo de gestão de professores incluindo:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-004-001: Cadastrar Professor
 
@@ -94,7 +94,7 @@ Implementar módulo de gestão de professores incluindo:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -185,7 +185,7 @@ Implementar módulo de gestão de professores incluindo:
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] CRUD completo funcionando
 - [ ] Especialidades configuráveis
@@ -195,7 +195,7 @@ Implementar módulo de gestão de professores incluindo:
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 ```
 Semana 1:

@@ -1,20 +1,20 @@
 # EPIC-008: Sistema de Planos e Preços
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                      |
 | ---------------- | -------------------------- |
 | **ID**           | EPIC-008                   |
 | **Título**       | Sistema de Planos e Preços |
 | **Fase**         | 2 - Financeiro             |
-| **Prioridade**   | 🔴 Crítica                 |
+| **Prioridade**   | Critical                 |
 | **Estimativa**   | 1 semana                   |
 | **Dependências** | EPIC-007 (Matrículas)      |
-| **Status**       | 📋 Backlog                 |
+| **Status**       | Backlog                 |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Expandir o sistema de planos com:
 
@@ -25,7 +25,7 @@ Expandir o sistema de planos com:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Tabela de preços flexível
 2. Regras de desconto
@@ -34,7 +34,7 @@ Expandir o sistema de planos com:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-008-001: Configurar Tabela de Preços
 
@@ -79,7 +79,7 @@ Expandir o sistema de planos com:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### TASK-008-001: Schema de Preços
 
@@ -146,7 +146,7 @@ model Discount {
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] Tabela de preços funcional
 - [ ] Descontos configuráveis
@@ -156,6 +156,6 @@ model Discount {
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~19 horas (~1 semana)

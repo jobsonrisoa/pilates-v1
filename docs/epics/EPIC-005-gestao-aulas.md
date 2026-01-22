@@ -1,20 +1,20 @@
 # EPIC-005: Gestão de Aulas e Horários
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                      |
 | ---------------- | -------------------------- |
 | **ID**           | EPIC-005                   |
 | **Título**       | Gestão de Aulas e Horários |
 | **Fase**         | 1 - MVP                    |
-| **Prioridade**   | 🟠 Alta                    |
+| **Prioridade**   | High                    |
 | **Estimativa**   | 1.5 semanas                |
 | **Dependências** | EPIC-004 (Professores)     |
-| **Status**       | 📋 Backlog                 |
+| **Status**       | Backlog                 |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar gestão de modalidades, tipos de aula e grade de horários:
 
@@ -25,7 +25,7 @@ Implementar gestão de modalidades, tipos de aula e grade de horários:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Configurar modalidades disponíveis
 2. Definir tipos de aula e capacidades
@@ -34,7 +34,7 @@ Implementar gestão de modalidades, tipos de aula e grade de horários:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-005-001: Gerenciar Modalidades
 
@@ -96,7 +96,7 @@ Implementar gestão de modalidades, tipos de aula e grade de horários:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -201,7 +201,7 @@ model Schedule {
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] Modalidades configuráveis
 - [ ] Tipos de aula com capacidade
@@ -212,6 +212,6 @@ model Schedule {
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~27 horas (~1.5 semanas)

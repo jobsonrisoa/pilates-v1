@@ -1,6 +1,6 @@
 # EPIC-019: Dashboard Analítico
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                           |
 | ---------------- | ------------------------------- |
@@ -10,11 +10,11 @@
 | **Prioridade**   | 🟡 Média                        |
 | **Estimativa**   | 1.5 semanas                     |
 | **Dependências** | EPIC-012, EPIC-016 (Relatórios) |
-| **Status**       | 📋 Backlog                      |
+| **Status**       | Backlog                      |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Criar dashboard analítico unificado:
 
@@ -26,7 +26,7 @@ Criar dashboard analítico unificado:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Visão executiva do negócio
 2. Métricas em tempo real
@@ -35,7 +35,7 @@ Criar dashboard analítico unificado:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-019-001: Ver KPIs Principais
 
@@ -125,7 +125,7 @@ Criar dashboard analítico unificado:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -230,7 +230,7 @@ Criar dashboard analítico unificado:
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] KPIs principais visíveis
 - [ ] Gráficos funcionando
@@ -243,6 +243,6 @@ Criar dashboard analítico unificado:
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~36 horas (~1.5 semanas)

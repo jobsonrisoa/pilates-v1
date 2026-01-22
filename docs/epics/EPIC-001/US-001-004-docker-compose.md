@@ -1,6 +1,6 @@
 # US-001-004: Docker Compose Completo
 
-## 📋 Informações
+##  Informações
 
 | Campo            | Valor                   |
 | ---------------- | ----------------------- |
@@ -8,13 +8,13 @@
 | **Épico**        | EPIC-001                |
 | **Título**       | Docker Compose Completo |
 | **Estimativa**   | 4 horas                 |
-| **Prioridade**   | 🔴 Crítica              |
+| **Prioridade**   | Critical              |
 | **Dependências** | US-001-002, US-001-003  |
-| **Status**       | 📋 Backlog              |
+| **Status**       | Backlog              |
 
 ---
 
-## 📝 User Story
+##  User Story
 
 **Como** desenvolvedor  
 **Quero** um ambiente Docker Compose completo  
@@ -22,7 +22,7 @@
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Criar docker-compose.yml para desenvolvimento
 2. Criar docker-compose.test.yml para testes
@@ -32,7 +32,7 @@
 
 ---
 
-## ✅ Critérios de Aceite
+##  Critérios de Aceite
 
 - [ ] `docker compose up` sobe todo ambiente
 - [ ] API com hot reload funcionando
@@ -87,7 +87,7 @@ PASSO 4: Definir volumes persistentes
 
 ```
 Hot Reload Strategy
-├── Bind mounts + polling ✅ (escolhido)
+├── Bind mounts + polling  (escolhido)
 │   ├── Prós: Simples, funciona em todos OS
 │   └── Contras: Usa mais CPU
 │
@@ -98,7 +98,7 @@ Hot Reload Strategy
     └── Contras: Complexo de configurar
 
 Database Dev Strategy
-├── Container local ✅ (escolhido)
+├── Container local  (escolhido)
 │   ├── Prós: Rápido, zero custo
 │   └── Contras: Sem backup automático
 │
@@ -108,7 +108,7 @@ Database Dev Strategy
 
 ---
 
-## 🤖 Prompt para Implementação
+##  Prompt para Implementação
 
 ```markdown
 ## Contexto
@@ -183,7 +183,7 @@ Serviços:
 
 ---
 
-## 📝 Arquivos Completos
+##  Arquivos Completos
 
 ### docker-compose.yml
 
@@ -499,7 +499,7 @@ FLUSH PRIVILEGES;
 
 ---
 
-## ✅ Checklist de Verificação
+##  Checklist de Verificação
 
 - [ ] `docker compose up` sobe sem erros
 - [ ] API responde em http://localhost:3001/health
@@ -514,6 +514,6 @@ FLUSH PRIVILEGES;
 
 ---
 
-## 🔗 Próxima User Story
+##  Próxima User Story
 
 → [US-001-005: Qualidade de Código](./US-001-005-qualidade-codigo.md)

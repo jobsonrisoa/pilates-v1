@@ -1,23 +1,23 @@
 # EPIC-001: Setup do Ambiente de Desenvolvimento
 
-> 📂 **User Stories detalhadas:** [EPIC-001/](./EPIC-001/)  
+>  **User Stories detalhadas:** [EPIC-001/](./EPIC-001/)  
 > Cada US possui prompts AI-powered com Chain of Thought e TDD workflow
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                                |
 | ---------------- | ------------------------------------ |
 | **ID**           | EPIC-001                             |
 | **Título**       | Setup do Ambiente de Desenvolvimento |
 | **Fase**         | 1 - MVP                              |
-| **Prioridade**   | 🔴 Crítica                           |
+| **Prioridade**   | Critical                           |
 | **Estimativa**   | 2 semanas                            |
 | **Dependências** | Nenhuma (épico inicial)              |
-| **Status**       | 📋 Backlog                           |
+| **Status**       | Backlog                           |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Configurar toda a infraestrutura de desenvolvimento do projeto, incluindo:
 
@@ -34,7 +34,7 @@ Configurar toda a infraestrutura de desenvolvimento do projeto, incluindo:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Criar estrutura base do projeto seguindo padrões de DDD
 2. Configurar ambiente Docker completo para desenvolvimento
@@ -45,7 +45,7 @@ Configurar toda a infraestrutura de desenvolvimento do projeto, incluindo:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-001-001: Setup Inicial do Projeto
 
@@ -127,7 +127,7 @@ Configurar toda a infraestrutura de desenvolvimento do projeto, incluindo:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Estrutura do Projeto
 
@@ -629,7 +629,7 @@ seed         # popular banco
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 ### Ambiente de Desenvolvimento
 
@@ -668,7 +668,7 @@ seed         # popular banco
 
 ---
 
-## 📊 Definition of Done do Épico
+##  Definition of Done do Épico
 
 - [ ] Todas as tasks concluídas
 - [ ] Zero erros de lint
@@ -689,7 +689,7 @@ seed         # popular banco
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 ```
 Semana 1:

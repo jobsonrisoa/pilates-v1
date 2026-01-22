@@ -1,20 +1,20 @@
 # EPIC-003: Gestão de Alunos
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                   |
 | ---------------- | ----------------------- |
 | **ID**           | EPIC-003                |
 | **Título**       | Gestão de Alunos        |
 | **Fase**         | 1 - MVP                 |
-| **Prioridade**   | 🔴 Crítica              |
+| **Prioridade**   | Critical              |
 | **Estimativa**   | 1.5 semanas             |
 | **Dependências** | EPIC-002 (Autenticação) |
-| **Status**       | 📋 Backlog              |
+| **Status**       | Backlog              |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar módulo completo de gestão de alunos incluindo:
 
@@ -26,7 +26,7 @@ Implementar módulo completo de gestão de alunos incluindo:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. CRUD completo de alunos com validações
 2. Interface intuitiva de cadastro e edição
@@ -36,7 +36,7 @@ Implementar módulo completo de gestão de alunos incluindo:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-003-001: Cadastrar Aluno
 
@@ -143,7 +143,7 @@ Implementar módulo completo de gestão de alunos incluindo:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -387,7 +387,7 @@ Implementar módulo completo de gestão de alunos incluindo:
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 ### Cadastro
 
@@ -428,7 +428,7 @@ Implementar módulo completo de gestão de alunos incluindo:
 
 ---
 
-## 📊 Definition of Done do Épico
+##  Definition of Done do Épico
 
 - [ ] Todas as tasks concluídas
 - [ ] Testes passando (≥80% coverage)
@@ -445,7 +445,7 @@ Implementar módulo completo de gestão de alunos incluindo:
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 ```
 Semana 1:

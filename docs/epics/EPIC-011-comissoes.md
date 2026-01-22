@@ -1,6 +1,6 @@
 # EPIC-011: Comissões de Professores
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                                         |
 | ---------------- | --------------------------------------------- |
@@ -10,11 +10,11 @@
 | **Prioridade**   | 🟡 Média                                      |
 | **Estimativa**   | 1 semana                                      |
 | **Dependências** | EPIC-004 (Professores), EPIC-010 (Pagamentos) |
-| **Status**       | 📋 Backlog                                    |
+| **Status**       | Backlog                                    |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar sistema de comissões para professores:
 
@@ -25,7 +25,7 @@ Implementar sistema de comissões para professores:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Configurar regras de comissão flexíveis
 2. Calcular comissões automaticamente
@@ -34,7 +34,7 @@ Implementar sistema de comissões para professores:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-011-001: Configurar Comissão do Professor
 
@@ -95,7 +95,7 @@ Implementar sistema de comissões para professores:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -190,7 +190,7 @@ model CommissionPayment {
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] Regras de comissão configuráveis
 - [ ] Cálculo automático correto
@@ -201,6 +201,6 @@ model CommissionPayment {
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~24 horas (~1 semana)

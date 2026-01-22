@@ -1,6 +1,6 @@
 # US-001-010: Documentação e Seed
 
-## 📋 Informações
+##  Informações
 
 | Campo            | Valor               |
 | ---------------- | ------------------- |
@@ -10,11 +10,11 @@
 | **Estimativa**   | 3 horas             |
 | **Prioridade**   | 🟡 Média            |
 | **Dependências** | Todas anteriores    |
-| **Status**       | 📋 Backlog          |
+| **Status**       | Backlog          |
 
 ---
 
-## 📝 User Story
+##  User Story
 
 **Como** desenvolvedor  
 **Quero** documentação e dados de teste  
@@ -22,7 +22,7 @@
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Atualizar README principal
 2. Criar seed de dados de desenvolvimento
@@ -31,7 +31,7 @@
 
 ---
 
-## ✅ Critérios de Aceite
+##  Critérios de Aceite
 
 - [ ] README com quick start
 - [ ] Seed funcionando (admin user)
@@ -40,7 +40,7 @@
 
 ---
 
-## 🤖 Prompt para Implementação
+##  Prompt para Implementação
 
 ```markdown
 ## Contexto
@@ -81,7 +81,7 @@ Criar:
 
 ---
 
-## 📝 Seed de Dados
+##  Seed de Dados
 
 ### prisma/seed.ts
 
@@ -111,7 +111,7 @@ async function main() {
       create: role,
     });
   }
-  console.log('✅ Roles created');
+  console.log(' Roles created');
 
   // Criar admin user
   const passwordHash = await bcrypt.hash('Admin@123', 12);
@@ -146,7 +146,7 @@ async function main() {
       },
     });
   }
-  console.log('✅ Admin user created');
+  console.log(' Admin user created');
   console.log('   Email: admin@pilates.com');
   console.log('   Password: Admin@123');
 
@@ -155,7 +155,7 @@ async function main() {
 
 main()
   .catch((e) => {
-    console.error('❌ Seed failed:', e);
+    console.error(' Seed failed:', e);
     process.exit(1);
   })
   .finally(async () => {
@@ -165,7 +165,7 @@ main()
 
 ---
 
-## 📝 CONTRIBUTING.md
+##  CONTRIBUTING.md
 
 ````markdown
 # Guia de Contribuição
@@ -221,7 +221,7 @@ main()
 
 ---
 
-## ✅ Checklist Final do EPIC-001
+##  Checklist Final do EPIC-001
 
 - [ ] Monorepo configurado
 - [ ] Backend NestJS com DDD

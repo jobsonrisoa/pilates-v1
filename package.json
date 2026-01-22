@@ -2,7 +2,7 @@
   "name": "pilates-system",
   "version": "0.0.1",
   "private": true,
-  "description": "Sistema de Gestão para Academia de Pilates e Fisioterapia",
+  "description": "Management System for Pilates and Physiotherapy Studios",
   "scripts": {
     "dev": "docker compose up",
     "dev:build": "docker compose up --build",

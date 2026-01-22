@@ -1,6 +1,6 @@
 # US-001-007: Configuração de Testes Frontend
 
-## 📋 Informações
+##  Informações
 
 | Campo            | Valor                           |
 | ---------------- | ------------------------------- |
@@ -8,13 +8,13 @@
 | **Épico**        | EPIC-001                        |
 | **Título**       | Configuração de Testes Frontend |
 | **Estimativa**   | 4 horas                         |
-| **Prioridade**   | 🔴 Crítica                      |
+| **Prioridade**   | Critical                      |
 | **Dependências** | US-001-003                      |
-| **Status**       | 📋 Backlog                      |
+| **Status**       | Backlog                      |
 
 ---
 
-## 📝 User Story
+##  User Story
 
 **Como** desenvolvedor frontend  
 **Quero** ambiente de testes configurado  
@@ -22,7 +22,7 @@
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Configurar Jest + Testing Library
 2. Configurar MSW para mocks de API
@@ -32,7 +32,7 @@
 
 ---
 
-## ✅ Critérios de Aceite
+##  Critérios de Aceite
 
 - [ ] Jest + Testing Library configurados
 - [ ] MSW mockando API
@@ -42,7 +42,7 @@
 
 ---
 
-## 🤖 Prompt para Implementação
+##  Prompt para Implementação
 
 ```markdown
 ## Contexto
@@ -83,7 +83,7 @@ Configure:
 
 ---
 
-## 📝 Arquivos de Configuração
+##  Arquivos de Configuração
 
 ### jest.config.ts (apps/web)
 
@@ -214,7 +214,7 @@ export default defineConfig({
 
 ---
 
-## 🔴🟢🔵 Exemplo TDD - Componente
+##  Exemplo TDD - Componente
 
 ### RED: Teste que falha
 
@@ -247,7 +247,7 @@ describe('Button', () => {
 
 ---
 
-## ✅ Checklist de Verificação
+##  Checklist de Verificação
 
 - [ ] `pnpm --filter @pilates/web test` passa
 - [ ] `pnpm --filter @pilates/web test:cov` mostra ≥80%
@@ -256,6 +256,6 @@ describe('Button', () => {
 
 ---
 
-## 🔗 Próxima User Story
+##  Próxima User Story
 
 → [US-001-008: Pipeline CI/CD](./US-001-008-ci-cd.md)

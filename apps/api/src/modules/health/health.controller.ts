@@ -21,7 +21,7 @@ export class HealthController {
 
   @Get()
   @HealthCheck()
-  @ApiOperation({ summary: 'Health check completo' })
+  @ApiOperation({ summary: 'Full health check' })
   check() {
     return this.health.check([
       () => this.prisma.isHealthy('database'),
@@ -31,14 +31,14 @@ export class HealthController {
   }
 
   @Get('live')
-  @ApiOperation({ summary: 'Liveness probe - servidor está rodando?' })
+  @ApiOperation({ summary: 'Liveness probe - is server running?' })
   live() {
     return { status: 'ok' };
   }
 
   @Get('ready')
   @HealthCheck()
-  @ApiOperation({ summary: 'Readiness probe - pronto para receber tráfego?' })
+  @ApiOperation({ summary: 'Readiness probe - ready to receive traffic?' })
   ready() {
     return this.health.check([() => this.prisma.isHealthy('database')]);
   }

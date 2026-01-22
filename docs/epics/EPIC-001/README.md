@@ -1,6 +1,6 @@
 # EPIC-001: Setup do Ambiente de Desenvolvimento
 
-## 📋 Visão Geral
+##  Visão Geral
 
 Este épico configura toda a infraestrutura de desenvolvimento do projeto seguindo os princípios:
 
@@ -16,20 +16,20 @@ Este épico configura toda a infraestrutura de desenvolvimento do projeto seguin
 
 | ID                                               | Título                                    | Estimativa | Status     |
 | ------------------------------------------------ | ----------------------------------------- | ---------- | ---------- |
-| [US-001-001](./US-001-001-setup-inicial.md)      | Setup Inicial do Projeto                  | 4h         | 📋 Backlog |
-| [US-001-002](./US-001-002-estrutura-backend.md)  | Estrutura do Backend (NestJS + DDD)       | 6h         | 📋 Backlog |
-| [US-001-003](./US-001-003-estrutura-frontend.md) | Estrutura do Frontend (Next.js)           | 5h         | 📋 Backlog |
-| [US-001-004](./US-001-004-docker-compose.md)     | Docker Compose Completo                   | 4h         | 📋 Backlog |
-| [US-001-005](./US-001-005-qualidade-codigo.md)   | Qualidade de Código (Lint, Format, Hooks) | 3h         | 📋 Backlog |
-| [US-001-006](./US-001-006-testes-backend.md)     | Configuração de Testes Backend            | 4h         | 📋 Backlog |
-| [US-001-007](./US-001-007-testes-frontend.md)    | Configuração de Testes Frontend           | 4h         | 📋 Backlog |
-| [US-001-008](./US-001-008-ci-cd.md)              | Pipeline CI/CD (GitHub Actions)           | 5h         | 📋 Backlog |
-| [US-001-009](./US-001-009-observabilidade.md)    | Logging e Métricas                        | 3h         | 📋 Backlog |
-| [US-001-010](./US-001-010-documentacao.md)       | Documentação e Seed                       | 3h         | 📋 Backlog |
+| [US-001-001](./US-001-001-setup-inicial.md)      | Setup Inicial do Projeto                  | 4h         | Backlog |
+| [US-001-002](./US-001-002-estrutura-backend.md)  | Estrutura do Backend (NestJS + DDD)       | 6h         | Backlog |
+| [US-001-003](./US-001-003-estrutura-frontend.md) | Estrutura do Frontend (Next.js)           | 5h         | Backlog |
+| [US-001-004](./US-001-004-docker-compose.md)     | Docker Compose Completo                   | 4h         | Backlog |
+| [US-001-005](./US-001-005-qualidade-codigo.md)   | Qualidade de Código (Lint, Format, Hooks) | 3h         | Backlog |
+| [US-001-006](./US-001-006-testes-backend.md)     | Configuração de Testes Backend            | 4h         | Backlog |
+| [US-001-007](./US-001-007-testes-frontend.md)    | Configuração de Testes Frontend           | 4h         | Backlog |
+| [US-001-008](./US-001-008-ci-cd.md)              | Pipeline CI/CD (GitHub Actions)           | 5h         | Backlog |
+| [US-001-009](./US-001-009-observabilidade.md)    | Logging e Métricas                        | 3h         | Backlog |
+| [US-001-010](./US-001-010-documentacao.md)       | Documentação e Seed                       | 3h         | Backlog |
 
 ---
 
-## 🔄 Ordem de Implementação
+##  Ordem de Implementação
 
 ```
 US-001-001 (Setup Inicial)
@@ -55,17 +55,17 @@ US-001-001 (Setup Inicial)
 
 ---
 
-## 🎯 Metodologia de Implementação
+##  Metodologia de Implementação
 
 ### Cada User Story segue:
 
 1. **📖 Leitura do Prompt** - Entender contexto e objetivos
 2. **🧠 Chain of Thought** - Raciocínio passo a passo
 3. **🌳 Tree of Thought** - Explorar alternativas
-4. **🔴 RED** - Escrever teste que falha
-5. **🟢 GREEN** - Implementar código mínimo
-6. **🔵 REFACTOR** - Melhorar mantendo testes verdes
-7. **✅ Verificação** - Validar critérios de aceite
+4. ** RED** - Escrever teste que falha
+5. ** GREEN** - Implementar código mínimo
+6. ** REFACTOR** - Melhorar mantendo testes verdes
+7. ** Verificação** - Validar critérios de aceite
 
 ### Formato dos Prompts
 
@@ -80,7 +80,7 @@ Cada US contém:
 
 ---
 
-## 📊 Definition of Done do Épico
+##  Definition of Done do Épico
 
 - [ ] Todas as User Stories concluídas
 - [ ] `docker compose up` funciona
@@ -92,7 +92,7 @@ Cada US contém:
 
 ---
 
-## 🚀 Como Começar
+##  Como Começar
 
 1. **Leia** a [US-001-001](./US-001-001-setup-inicial.md) completa
 2. **Copie** o prompt para o AI

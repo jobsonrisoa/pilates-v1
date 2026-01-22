@@ -449,13 +449,13 @@ export class AuditInterceptor implements NestInterceptor {
 
 **Prós:** Simples, revogação fácil  
 **Contras:** Não escala bem, stateful  
-**Decisão:** ❌ Rejeitado
+**Decisão:**  Rejeitado
 
 ### 2. OAuth2/OIDC com provider externo
 
 **Prós:** Delegação de responsabilidade  
 **Contras:** Complexidade, dependência externa  
-**Decisão:** ❌ Rejeitado (pode ser adicionado depois)
+**Decisão:**  Rejeitado (pode ser adicionado depois)
 
 ### 3. API Keys
 
@@ -467,16 +467,16 @@ export class AuditInterceptor implements NestInterceptor {
 
 ### Positivas
 
-- ✅ Stateless - escala horizontalmente
-- ✅ RBAC flexível e granular
-- ✅ Refresh token rotation aumenta segurança
-- ✅ Auditoria completa
-- ✅ Rate limiting protege contra brute force
+-  Stateless - escala horizontalmente
+-  RBAC flexível e granular
+-  Refresh token rotation aumenta segurança
+-  Auditoria completa
+-  Rate limiting protege contra brute force
 
 ### Negativas
 
-- ⚠️ Tokens não podem ser invalidados imediatamente (mitigado com refresh rotation)
-- ⚠️ Payload JWT cresce com muitas permissões
+-  Tokens não podem ser invalidados imediatamente (mitigado com refresh rotation)
+-  Payload JWT cresce com muitas permissões
 
 ## Checklist de Segurança
 

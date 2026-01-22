@@ -8,7 +8,7 @@
 
 ---
 
-## 📋 Índice
+##  Índice
 
 1. [Visão Geral](#1-visão-geral)
 2. [Objetivos](#2-objetivos)
@@ -676,11 +676,11 @@ RED → GREEN → REFACTOR
 
 | Métrica                | Backend   | Frontend  | Bloqueante |
 | ---------------------- | --------- | --------- | ---------- |
-| **Coverage Linhas**    | ≥ 80%     | ≥ 80%     | ✅ Sim     |
-| **Coverage Branches**  | ≥ 75%     | ≥ 75%     | ✅ Sim     |
-| **Coverage Functions** | ≥ 80%     | ≥ 80%     | ✅ Sim     |
-| **Testes E2E**         | 100% pass | 100% pass | ✅ Sim     |
-| **Performance P95**    | < 500ms   | -         | ⚠️ Warning |
+| **Coverage Linhas**    | ≥ 80%     | ≥ 80%     |  Sim     |
+| **Coverage Branches**  | ≥ 75%     | ≥ 75%     |  Sim     |
+| **Coverage Functions** | ≥ 80%     | ≥ 80%     |  Sim     |
+| **Testes E2E**         | 100% pass | 100% pass |  Sim     |
+| **Performance P95**    | < 500ms   | -         |  Warning |
 
 ### 9.4 Ferramentas
 
@@ -799,15 +799,15 @@ main: ├── ... (todos acima)
 
 | ADR                                                                    | Título                       | Status    |
 | ---------------------------------------------------------------------- | ---------------------------- | --------- |
-| [ADR-001](./architecture/adrs/ADR-001-arquitetura-monolito-modular.md) | Arquitetura Monolito Modular | ✅ Aceito |
-| [ADR-002](./architecture/adrs/ADR-002-stack-tecnologica.md)            | Stack Tecnológica            | ✅ Aceito |
-| [ADR-003](./architecture/adrs/ADR-003-banco-de-dados.md)               | Banco de Dados               | ✅ Aceito |
-| [ADR-004](./architecture/adrs/ADR-004-autenticacao-autorizacao.md)     | Autenticação e Autorização   | ✅ Aceito |
-| [ADR-005](./architecture/adrs/ADR-005-observabilidade.md)              | Observabilidade              | ✅ Aceito |
-| [ADR-006](./architecture/adrs/ADR-006-ci-cd.md)                        | CI/CD                        | ✅ Aceito |
-| [ADR-007](./architecture/adrs/ADR-007-containerizacao.md)              | Containerização              | ✅ Aceito |
-| [ADR-008](./architecture/adrs/ADR-008-integracao-sicoob.md)            | Integração Sicoob            | ✅ Aceito |
-| [ADR-009](./architecture/adrs/ADR-009-estrategia-testes.md)            | Estratégia de Testes         | ✅ Aceito |
+| [ADR-001](./architecture/adrs/ADR-001-arquitetura-monolito-modular.md) | Arquitetura Monolito Modular | Accepted |
+| [ADR-002](./architecture/adrs/ADR-002-stack-tecnologica.md)            | Stack Tecnológica            | Accepted |
+| [ADR-003](./architecture/adrs/ADR-003-banco-de-dados.md)               | Banco de Dados               | Accepted |
+| [ADR-004](./architecture/adrs/ADR-004-autenticacao-autorizacao.md)     | Autenticação e Autorização   | Accepted |
+| [ADR-005](./architecture/adrs/ADR-005-observabilidade.md)              | Observabilidade              | Accepted |
+| [ADR-006](./architecture/adrs/ADR-006-ci-cd.md)                        | CI/CD                        | Accepted |
+| [ADR-007](./architecture/adrs/ADR-007-containerizacao.md)              | Containerização              | Accepted |
+| [ADR-008](./architecture/adrs/ADR-008-integracao-sicoob.md)            | Integração Sicoob            | Accepted |
+| [ADR-009](./architecture/adrs/ADR-009-estrategia-testes.md)            | Estratégia de Testes         | Accepted |
 
 ### Debate Arquitetural
 

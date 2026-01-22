@@ -4,13 +4,13 @@ export default function HomePage() {
   return (
     <main style={{ padding: 24 }}>
       <h1>Pilates System</h1>
-      <p>Projeto inicial (App Router).</p>
+      <p>Initial project (App Router).</p>
       <ul>
         <li>
-          <Link href="/login">Ir para login</Link>
+          <Link href="/login">Go to login</Link>
         </li>
         <li>
-          <Link href="/dashboard">Ir para dashboard</Link>
+          <Link href="/dashboard">Go to dashboard</Link>
         </li>
       </ul>
     </main>

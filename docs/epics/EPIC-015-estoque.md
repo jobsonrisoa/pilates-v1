@@ -1,6 +1,6 @@
 # EPIC-015: Gestão de Estoque
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor             |
 | ---------------- | ----------------- |
@@ -10,11 +10,11 @@
 | **Prioridade**   | 🟡 Média          |
 | **Estimativa**   | 1.5 semanas       |
 | **Dependências** | EPIC-001 (Setup)  |
-| **Status**       | 📋 Backlog        |
+| **Status**       | Backlog        |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar controle de estoque e vendas:
 
@@ -26,7 +26,7 @@ Implementar controle de estoque e vendas:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Controle de produtos
 2. Movimentações rastreadas
@@ -35,7 +35,7 @@ Implementar controle de estoque e vendas:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-015-001: Cadastrar Produto
 
@@ -126,7 +126,7 @@ Implementar controle de estoque e vendas:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -259,7 +259,7 @@ model SaleItem {
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] CRUD de produtos funcionando
 - [ ] Movimentações rastreadas
@@ -271,6 +271,6 @@ model SaleItem {
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~31 horas (~1.5 semanas)

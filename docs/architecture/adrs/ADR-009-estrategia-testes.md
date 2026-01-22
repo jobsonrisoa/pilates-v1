@@ -39,11 +39,11 @@ O projeto segue metodologia TDD (Test-Driven Development) com ciclo Red-Green-Re
 
 | Métrica             | Backend   | Frontend  | Bloqueante |
 | ------------------- | --------- | --------- | ---------- |
-| Coverage Linhas     | ≥ 80%     | ≥ 80%     | ✅ Sim     |
-| Coverage Branches   | ≥ 75%     | ≥ 75%     | ✅ Sim     |
-| Coverage Functions  | ≥ 80%     | ≥ 80%     | ✅ Sim     |
-| Testes E2E críticos | 100% pass | 100% pass | ✅ Sim     |
-| Performance P95     | < 500ms   | -         | ⚠️ Warning |
+| Coverage Linhas     | ≥ 80%     | ≥ 80%     |  Sim     |
+| Coverage Branches   | ≥ 75%     | ≥ 75%     |  Sim     |
+| Coverage Functions  | ≥ 80%     | ≥ 80%     |  Sim     |
+| Testes E2E críticos | 100% pass | 100% pass |  Sim     |
+| Performance P95     | < 500ms   | -         |  Warning |
 
 ---
 
@@ -716,7 +716,7 @@ export default async () => {
   await new Promise((resolve) => setTimeout(resolve, 10000));
 
   // Rodar migrations
-  console.log('📦 Running migrations...');
+  console.log(' Running migrations...');
   execSync('npx prisma migrate deploy', {
     stdio: 'inherit',
     env: {
@@ -725,7 +725,7 @@ export default async () => {
     },
   });
 
-  console.log('✅ Test environment ready!\n');
+  console.log(' Test environment ready!\n');
 };
 
 // test/integration/global-teardown.ts
@@ -1459,10 +1459,10 @@ jobs:
         run: |
           COVERAGE=$(cat apps/${{ matrix.app }}/coverage/coverage-summary.json | jq '.total.lines.pct')
           if (( $(echo "$COVERAGE < 80" | bc -l) )); then
-            echo "❌ Coverage ($COVERAGE%) is below 80%"
+            echo " Coverage ($COVERAGE%) is below 80%"
             exit 1
           fi
-          echo "✅ Coverage: $COVERAGE%"
+          echo " Coverage: $COVERAGE%"
 
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v3
@@ -1614,17 +1614,17 @@ jobs:
 
 ### Positivas
 
-- ✅ Cobertura garantida de 80%+
-- ✅ Bugs encontrados cedo (shift-left)
-- ✅ Documentação viva via testes
-- ✅ Refactoring seguro
-- ✅ Métricas de qualidade objetivas
+-  Cobertura garantida de 80%+
+-  Bugs encontrados cedo (shift-left)
+-  Documentação viva via testes
+-  Refactoring seguro
+-  Métricas de qualidade objetivas
 
 ### Negativas
 
-- ⚠️ Tempo de CI aumentado (~15-20min)
-- ⚠️ Manutenção de testes
-- ⚠️ Curva de aprendizado TDD
+-  Tempo de CI aumentado (~15-20min)
+-  Manutenção de testes
+-  Curva de aprendizado TDD
 
 ### Mitigações
 

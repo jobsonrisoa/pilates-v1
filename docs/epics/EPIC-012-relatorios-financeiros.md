@@ -1,20 +1,20 @@
 # EPIC-012: Relatórios Financeiros
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                                       |
 | ---------------- | ------------------------------------------- |
 | **ID**           | EPIC-012                                    |
 | **Título**       | Relatórios Financeiros                      |
 | **Fase**         | 2 - Financeiro                              |
-| **Prioridade**   | 🟠 Alta                                     |
+| **Prioridade**   | High                                     |
 | **Estimativa**   | 1 semana                                    |
 | **Dependências** | EPIC-010 (Pagamentos), EPIC-011 (Comissões) |
-| **Status**       | 📋 Backlog                                  |
+| **Status**       | Backlog                                  |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar relatórios financeiros completos:
 
@@ -25,7 +25,7 @@ Implementar relatórios financeiros completos:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Visão clara das receitas
 2. Controle de inadimplência
@@ -34,7 +34,7 @@ Implementar relatórios financeiros completos:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-012-001: Relatório de Receitas por Período
 
@@ -124,7 +124,7 @@ Implementar relatórios financeiros completos:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -211,7 +211,7 @@ Implementar relatórios financeiros completos:
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] Todos os relatórios funcionando
 - [ ] Gráficos informativos
@@ -222,6 +222,6 @@ Implementar relatórios financeiros completos:
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~33 horas (~1 semana)

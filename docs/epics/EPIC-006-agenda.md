@@ -1,20 +1,20 @@
 # EPIC-006: Agenda e Agendamento
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                       |
 | ---------------- | --------------------------- |
 | **ID**           | EPIC-006                    |
 | **Título**       | Agenda e Agendamento        |
 | **Fase**         | 1 - MVP                     |
-| **Prioridade**   | 🟠 Alta                     |
+| **Prioridade**   | High                     |
 | **Estimativa**   | 1.5 semanas                 |
 | **Dependências** | EPIC-005 (Aulas e Horários) |
-| **Status**       | 📋 Backlog                  |
+| **Status**       | Backlog                  |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar sistema de agenda visual e agendamento de aulas:
 
@@ -26,7 +26,7 @@ Implementar sistema de agenda visual e agendamento de aulas:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Agenda visual intuitiva
 2. Agendamento rápido de alunos
@@ -35,7 +35,7 @@ Implementar sistema de agenda visual e agendamento de aulas:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-006-001: Visualizar Agenda
 
@@ -111,7 +111,7 @@ Implementar sistema de agenda visual e agendamento de aulas:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -230,7 +230,7 @@ model Attendance {
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] Calendário visual funcionando
 - [ ] Três visualizações (dia, semana, mês)
@@ -242,6 +242,6 @@ model Attendance {
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~33 horas (~1.5 semanas)

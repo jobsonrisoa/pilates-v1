@@ -1,6 +1,6 @@
 # EPIC-020: Otimizações de Performance
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                      |
 | ---------------- | -------------------------- |
@@ -10,11 +10,11 @@
 | **Prioridade**   | 🟡 Média                   |
 | **Estimativa**   | 1 semana                   |
 | **Dependências** | Todos os épicos anteriores |
-| **Status**       | 📋 Backlog                 |
+| **Status**       | Backlog                 |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Otimizar performance do sistema:
 
@@ -26,7 +26,7 @@ Otimizar performance do sistema:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. P95 < 500ms para todas as rotas
 2. Reduzir load time do frontend
@@ -35,7 +35,7 @@ Otimizar performance do sistema:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-020-001: Melhorar Tempo de Resposta da API
 
@@ -79,7 +79,7 @@ Otimizar performance do sistema:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -186,7 +186,7 @@ Otimizar performance do sistema:
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] P95 API < 500ms
 - [ ] Core Web Vitals verdes
@@ -197,6 +197,6 @@ Otimizar performance do sistema:
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~28 horas (~1 semana)

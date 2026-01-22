@@ -4,11 +4,11 @@
 **Participantes:**
 
 - 🏗️ **Dr. Carlos Mendes** - Arquiteto de Software Sênior (15 anos de experiência)
-- 🔧 **Ana Rodrigues** - Especialista em DevOps e Infraestrutura
-- 💰 **Roberto Silva** - Especialista em Custos e Otimização Cloud
-- 🧪 **Marina Costa** - Especialista em Qualidade e Testes
-- 🔒 **Felipe Santos** - Especialista em Segurança
-- 📊 **Juliana Oliveira** - Especialista em Observabilidade
+-  **Ana Rodrigues** - Especialista em DevOps e Infraestrutura
+-  **Roberto Silva** - Especialista em Custos e Otimização Cloud
+-  **Marina Costa** - Especialista em Qualidade e Testes
+-  **Felipe Santos** - Especialista em Segurança
+-  **Juliana Oliveira** - Especialista em Observabilidade
 
 ---
 
@@ -61,7 +61,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >
 > Cada módulo é isolado, com seu próprio domínio, mas compartilha o mesmo deploy. Quando precisarmos escalar, podemos extrair módulos para serviços separados."
 
-### 🔧 Ana Rodrigues (DevOps):
+###  Ana Rodrigues (DevOps):
 
 > "Concordo totalmente, Carlos. Microserviços trariam complexidade operacional enorme:
 >
@@ -79,7 +79,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >
 > Minha sugestão é usar **Docker Compose** para desenvolvimento e um único Dockerfile otimizado para produção."
 
-### 💰 Roberto Silva (Custos):
+###  Roberto Silva (Custos):
 
 > "Do ponto de vista financeiro, a diferença é brutal:
 >
@@ -98,7 +98,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >
 > A economia é de 80-90% começando com monolito!"
 
-### 🧪 Marina Costa (Qualidade):
+###  Marina Costa (Qualidade):
 
 > "Para TDD, o monolito modular também é mais vantajoso:
 >
@@ -109,7 +109,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >
 > Podemos ter testes unitários por módulo e testes de integração que validam a comunicação entre módulos, tudo no mesmo processo."
 
-**✅ DECISÃO: Monolito Modular com DDD**
+** DECISÃO: Monolito Modular com DDD**
 
 ---
 
@@ -130,7 +130,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >
 > Quando (e se) migrarmos para microserviços, cada serviço pode ter seu próprio schema ou banco."
 
-### 🔧 Ana Rodrigues:
+###  Ana Rodrigues:
 
 > "Para ORM, sugiro **Prisma** ao invés de TypeORM:
 >
@@ -142,7 +142,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >
 > O Prisma também facilita muito o TDD porque gera um client type-safe."
 
-### 💰 Roberto Silva:
+###  Roberto Silva:
 
 > "MySQL gerenciado em cloud:
 >
@@ -153,7 +153,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >
 > Para início, **Railway ou PlanetScale** são ótimas opções custo-benefício."
 
-### 🔒 Felipe Santos (Segurança):
+###  Felipe Santos (Segurança):
 
 > "Independente da escolha, precisamos garantir:
 >
@@ -163,13 +163,13 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 > - Backup automático diário
 > - Audit logs para operações sensíveis (LGPD)"
 
-**✅ DECISÃO: MySQL único com Prisma ORM**
+** DECISÃO: MySQL único com Prisma ORM**
 
 ---
 
 ## Tópico 3: Hospedagem e Infraestrutura
 
-### 💰 Roberto Silva:
+###  Roberto Silva:
 
 > "Vamos analisar as opções de hospedagem para baixo custo:
 >
@@ -192,7 +192,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >
 > Minha recomendação: **Railway para desenvolvimento/staging e Hetzner/DigitalOcean para produção**."
 
-### 🔧 Ana Rodrigues:
+###  Ana Rodrigues:
 
 > "Para manter tudo em Docker e simplificar deploy, sugiro:
 >
@@ -225,13 +225,13 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >
 > Isso permite migrar para qualquer cloud depois sem reescrever código."
 
-**✅ DECISÃO: Railway (dev/staging) + Hetzner Cloud (produção) com Docker Compose**
+** DECISÃO: Railway (dev/staging) + Hetzner Cloud (produção) com Docker Compose**
 
 ---
 
 ## Tópico 4: Observabilidade
 
-### 📊 Juliana Oliveira:
+###  Juliana Oliveira:
 
 > "Observabilidade é crítica, mas precisa ser proporcional ao tamanho do sistema. Para um monolito inicial, sugiro o stack mais simples possível:
 >
@@ -256,7 +256,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 > - New Relic (free tier generoso)
 > - Sentry para erros (free tier)"
 
-### 🔧 Ana Rodrigues:
+###  Ana Rodrigues:
 
 > "Concordo com a Juliana. Minha stack de observabilidade recomendada:
 >
@@ -276,7 +276,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 > - OpenTelemetry
 > - Distributed tracing"
 
-### 💰 Roberto Silva:
+###  Roberto Silva:
 
 > "Custos de observabilidade:
 >
@@ -294,13 +294,13 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >
 > Recomendo começar 100% gratuito e evoluir conforme necessidade."
 
-**✅ DECISÃO: Sentry (erros) + Pino (logs) + Prometheus/Grafana (métricas) - tudo gratuito/self-hosted**
+** DECISÃO: Sentry (erros) + Pino (logs) + Prometheus/Grafana (métricas) - tudo gratuito/self-hosted**
 
 ---
 
 ## Tópico 5: CI/CD
 
-### 🔧 Ana Rodrigues:
+###  Ana Rodrigues:
 
 > "CI/CD precisa ser simples mas robusto. Minha recomendação:
 >
@@ -327,7 +327,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 > - Ou Webhook para Watchtower
 > - Zero-downtime com health checks"
 
-### 🧪 Marina Costa:
+###  Marina Costa:
 
 > "Para TDD funcionar no CI, precisamos de:
 >
@@ -345,7 +345,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 > ```"
 > ````
 
-### 🔒 Felipe Santos:
+###  Felipe Santos:
 
 > "Segurança no CI/CD:
 >
@@ -355,7 +355,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 > - SAST básico
 > - Dependabot ativado"
 
-**✅ DECISÃO: GitHub Actions + GitHub Container Registry + Deploy via SSH**
+** DECISÃO: GitHub Actions + GitHub Container Registry + Deploy via SSH**
 
 ---
 
@@ -391,7 +391,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 > ```"
 > ````
 
-### 💰 Roberto Silva:
+###  Roberto Silva:
 
 > "Deploy do Next.js:
 >
@@ -401,7 +401,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >
 > Recomendo **self-hosted** junto com o backend para simplificar e economizar."
 
-### 🔧 Ana Rodrigues:
+###  Ana Rodrigues:
 
 > "Para desenvolvimento local com Docker:
 >
@@ -420,7 +420,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >
 > Hot-reload funcionando, sem instalar Node.js localmente."
 
-**✅ DECISÃO: Next.js App Router, self-hosted junto com backend**
+** DECISÃO: Next.js App Router, self-hosted junto com backend**
 
 ---
 
@@ -453,7 +453,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 > - Arquivos em S3/MinIO
 > - Cache distribuído"
 
-### 🔧 Ana Rodrigues:
+###  Ana Rodrigues:
 
 > "Infraestrutura preparada para escalar:
 >
@@ -476,7 +476,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >
 > Mesma imagem Docker, só escalar horizontalmente."
 
-**✅ DECISÃO: Eventos de domínio + Stateless + Redis desde o início**
+** DECISÃO: Eventos de domínio + Stateless + Redis desde o início**
 
 ---
 
@@ -503,11 +503,11 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 
 ## Próximos Passos
 
-1. ✅ Criar ADRs para cada decisão
-2. ✅ Criar PRD consolidado
-3. 📋 Definir estrutura de pastas do projeto
-4. 📋 Criar docker-compose.yml base
-5. 📋 Iniciar desenvolvimento do MVP
+1.  Criar ADRs para cada decisão
+2.  Criar PRD consolidado
+3.  Definir estrutura de pastas do projeto
+4.  Criar docker-compose.yml base
+5.  Iniciar desenvolvimento do MVP
 
 ---
 

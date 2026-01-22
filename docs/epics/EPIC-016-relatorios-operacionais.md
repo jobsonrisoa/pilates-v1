@@ -1,6 +1,6 @@
 # EPIC-016: Relatórios Operacionais
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                                    |
 | ---------------- | ---------------------------------------- |
@@ -10,11 +10,11 @@
 | **Prioridade**   | 🟡 Média                                 |
 | **Estimativa**   | 1 semana                                 |
 | **Dependências** | EPIC-006 (Agenda), EPIC-013 (Reposições) |
-| **Status**       | 📋 Backlog                               |
+| **Status**       | Backlog                               |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar relatórios operacionais:
 
@@ -27,7 +27,7 @@ Implementar relatórios operacionais:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Visão operacional clara
 2. Métricas de ocupação
@@ -36,7 +36,7 @@ Implementar relatórios operacionais:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-016-001: Relatório de Alunos por Status
 
@@ -124,7 +124,7 @@ Implementar relatórios operacionais:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -187,7 +187,7 @@ Implementar relatórios operacionais:
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] Todos os relatórios funcionando
 - [ ] Gráficos informativos
@@ -198,6 +198,6 @@ Implementar relatórios operacionais:
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~26 horas (~1 semana)

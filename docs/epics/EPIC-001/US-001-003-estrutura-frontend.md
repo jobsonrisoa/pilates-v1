@@ -1,6 +1,6 @@
 # US-001-003: Estrutura do Frontend (Next.js)
 
-## 📋 Informações
+##  Informações
 
 | Campo            | Valor                           |
 | ---------------- | ------------------------------- |
@@ -8,13 +8,13 @@
 | **Épico**        | EPIC-001                        |
 | **Título**       | Estrutura do Frontend (Next.js) |
 | **Estimativa**   | 5 horas                         |
-| **Prioridade**   | 🔴 Crítica                      |
+| **Prioridade**   | Critical                      |
 | **Dependências** | US-001-001                      |
-| **Status**       | 📋 Backlog                      |
+| **Status**       | Backlog                      |
 
 ---
 
-## 📝 User Story
+##  User Story
 
 **Como** desenvolvedor frontend  
 **Quero** uma estrutura Next.js 14 com App Router  
@@ -22,7 +22,7 @@
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Criar projeto Next.js 14 com App Router
 2. Configurar TailwindCSS
@@ -34,7 +34,7 @@
 
 ---
 
-## ✅ Critérios de Aceite
+##  Critérios de Aceite
 
 - [ ] Projeto Next.js criado em apps/web
 - [ ] App Router configurado
@@ -91,7 +91,7 @@ PASSO 5: Componentes base
 
 ```
 Styling Solution
-├── TailwindCSS + shadcn/ui ✅ (escolhido)
+├── TailwindCSS + shadcn/ui  (escolhido)
 │   ├── Prós: Produtividade, customizável
 │   └── Contras: Curva de aprendizado
 │
@@ -102,7 +102,7 @@ Styling Solution
     └── Contras: Menos produtivo
 
 State Management
-├── Zustand ✅ (escolhido)
+├── Zustand  (escolhido)
 │   ├── Prós: Simples, leve, TypeScript
 │   └── Contras: Menos features
 │
@@ -113,7 +113,7 @@ State Management
     └── Contras: Paradigma diferente
 
 Data Fetching
-├── React Query ✅ (escolhido)
+├── React Query  (escolhido)
 │   ├── Prós: Cache, refetch, devtools
 │   └── Contras: Mais uma dependência
 │
@@ -123,7 +123,7 @@ Data Fetching
 
 ---
 
-## 📁 Estrutura Esperada
+##  Estrutura Esperada
 
 ```
 apps/web/
@@ -187,7 +187,7 @@ apps/web/
 
 ---
 
-## 🤖 Prompt para Implementação
+##  Prompt para Implementação
 
 ```markdown
 ## Contexto
@@ -293,7 +293,7 @@ Para cada arquivo, mostre:
 
 ---
 
-## 📝 Arquivos Principais
+##  Arquivos Principais
 
 ### 1. package.json (apps/web)
 
@@ -650,7 +650,7 @@ CMD ["node", "server.js"]
 
 ---
 
-## 🔴🟢🔵 TDD Workflow
+##  TDD Workflow
 
 ### Teste de Componente
 
@@ -690,7 +690,7 @@ describe('Button', () => {
 
 ---
 
-## ✅ Checklist de Verificação
+##  Checklist de Verificação
 
 - [ ] Next.js rodando em http://localhost:3000
 - [ ] TailwindCSS funcionando
@@ -704,7 +704,7 @@ describe('Button', () => {
 
 ---
 
-## 🔗 Próxima User Story
+##  Próxima User Story
 
 → [US-001-004: Docker Compose Completo](./US-001-004-docker-compose.md)
 

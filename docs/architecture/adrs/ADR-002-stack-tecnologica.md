@@ -241,41 +241,41 @@ describe('StudentForm', () => {
 
 | Opção        | Prós                   | Contras                           | Decisão |
 | ------------ | ---------------------- | --------------------------------- | ------- |
-| Express puro | Simples, leve          | Sem estrutura, mais código manual | ❌      |
-| NestJS       | Estruturado, DI nativa | Curva de aprendizado              | ✅      |
-| Fastify      | Muito rápido           | Menos ecossistema                 | ❌      |
+| Express puro | Simples, leve          | Sem estrutura, mais código manual |       |
+| NestJS       | Estruturado, DI nativa | Curva de aprendizado              |       |
+| Fastify      | Muito rápido           | Menos ecossistema                 |       |
 
 ### ORM
 
 | Opção   | Prós                  | Contras                             | Decisão |
 | ------- | --------------------- | ----------------------------------- | ------- |
-| TypeORM | Maduro, Active Record | Bugs, tipos fracos                  | ❌      |
-| Prisma  | Type-safe, moderno    | Menos flexível em queries complexas | ✅      |
-| Knex    | Flexível              | Query builder apenas                | ❌      |
+| TypeORM | Maduro, Active Record | Bugs, tipos fracos                  |       |
+| Prisma  | Type-safe, moderno    | Menos flexível em queries complexas |       |
+| Knex    | Flexível              | Query builder apenas                |       |
 
 ### Frontend State
 
 | Opção   | Prós          | Contras               | Decisão |
 | ------- | ------------- | --------------------- | ------- |
-| Redux   | Poderoso      | Boilerplate excessivo | ❌      |
-| Zustand | Simples, leve | Menos features        | ✅      |
-| Jotai   | Atômico       | Curva de aprendizado  | ❌      |
+| Redux   | Poderoso      | Boilerplate excessivo |       |
+| Zustand | Simples, leve | Menos features        |       |
+| Jotai   | Atômico       | Curva de aprendizado  |       |
 
 ## Consequências
 
 ### Positivas
 
-- ✅ Type-safety end-to-end
-- ✅ Ecossistema maduro e estável
-- ✅ Excelente DX (Developer Experience)
-- ✅ Boa documentação
-- ✅ Comunidade ativa
+-  Type-safety end-to-end
+-  Ecossistema maduro e estável
+-  Excelente DX (Developer Experience)
+-  Boa documentação
+-  Comunidade ativa
 
 ### Negativas
 
-- ⚠️ Bundle size do Next.js pode crescer
-- ⚠️ Prisma tem overhead em queries complexas
-- ⚠️ Node.js single-threaded (mitigado com clustering)
+-  Bundle size do Next.js pode crescer
+-  Prisma tem overhead em queries complexas
+-  Node.js single-threaded (mitigado com clustering)
 
 ## Compatibilidade com TDD
 

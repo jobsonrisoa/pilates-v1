@@ -1,20 +1,20 @@
 # EPIC-013: Sistema de Reposições
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                 |
 | ---------------- | --------------------- |
 | **ID**           | EPIC-013              |
 | **Título**       | Sistema de Reposições |
 | **Fase**         | 3 - Operacional       |
-| **Prioridade**   | 🟠 Alta               |
+| **Prioridade**   | High               |
 | **Estimativa**   | 1.5 semanas           |
 | **Dependências** | EPIC-006 (Agenda)     |
-| **Status**       | 📋 Backlog            |
+| **Status**       | Backlog            |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar sistema completo de reposições de aulas:
 
@@ -25,7 +25,7 @@ Implementar sistema completo de reposições de aulas:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Gerar créditos automaticamente
 2. Controlar validade
@@ -34,7 +34,7 @@ Implementar sistema completo de reposições de aulas:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-013-001: Gerar Crédito de Reposição
 
@@ -109,7 +109,7 @@ Implementar sistema completo de reposições de aulas:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -226,7 +226,7 @@ enum ReschedulingStatus {
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] Créditos gerados automaticamente
 - [ ] Validade de 90 dias
@@ -238,6 +238,6 @@ enum ReschedulingStatus {
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~27 horas (~1.5 semanas)

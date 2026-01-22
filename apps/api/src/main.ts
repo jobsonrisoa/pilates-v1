@@ -15,7 +15,7 @@ async function bootstrap() {
 
   const swaggerConfig = new DocumentBuilder()
     .setTitle('Pilates System API')
-    .setDescription('API do sistema de gestão (NestJS)')
+    .setDescription('Management system API (NestJS)')
     .setVersion('0.0.1')
     .build();
   const document = SwaggerModule.createDocument(app, swaggerConfig);

@@ -1,20 +1,20 @@
 # EPIC-014: Contratos Digitais
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                 |
 | ---------------- | --------------------- |
 | **ID**           | EPIC-014              |
 | **Título**       | Contratos Digitais    |
 | **Fase**         | 3 - Operacional       |
-| **Prioridade**   | 🟠 Alta               |
+| **Prioridade**   | High               |
 | **Estimativa**   | 1.5 semanas           |
 | **Dependências** | EPIC-007 (Matrículas) |
-| **Status**       | 📋 Backlog            |
+| **Status**       | Backlog            |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar sistema de contratos digitais:
 
@@ -26,7 +26,7 @@ Implementar sistema de contratos digitais:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Gerar contratos automaticamente
 2. Assinatura digital segura
@@ -35,7 +35,7 @@ Implementar sistema de contratos digitais:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-014-001: Gerar Contrato da Matrícula
 
@@ -111,7 +111,7 @@ Implementar sistema de contratos digitais:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -227,7 +227,7 @@ enum ContractStatus {
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] PDF gerado corretamente
 - [ ] Integração com provider funcionando
@@ -239,6 +239,6 @@ enum ContractStatus {
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~29 horas (~1.5 semanas)

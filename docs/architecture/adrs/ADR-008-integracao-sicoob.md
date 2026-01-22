@@ -539,16 +539,16 @@ export class SicoobIpGuard implements CanActivate {
 
 ### Positivas
 
-- ✅ Automação completa de pagamentos
-- ✅ Baixa automática via webhook
-- ✅ Suporte a boleto e PIX
-- ✅ Eventos de domínio para desacoplamento
+-  Automação completa de pagamentos
+-  Baixa automática via webhook
+-  Suporte a boleto e PIX
+-  Eventos de domínio para desacoplamento
 
 ### Negativas
 
-- ⚠️ Dependência de API externa
-- ⚠️ Necessidade de conta no Sicoob
-- ⚠️ Sandbox limitado do Sicoob
+-  Dependência de API externa
+-  Necessidade de conta no Sicoob
+-  Sandbox limitado do Sicoob
 
 ## Referências
 

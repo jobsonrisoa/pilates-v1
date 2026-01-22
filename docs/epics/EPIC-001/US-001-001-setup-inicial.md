@@ -1,6 +1,6 @@
 # US-001-001: Setup Inicial do Projeto
 
-## 📋 Informações
+##  Informações
 
 | Campo            | Valor                    |
 | ---------------- | ------------------------ |
@@ -8,13 +8,13 @@
 | **Épico**        | EPIC-001                 |
 | **Título**       | Setup Inicial do Projeto |
 | **Estimativa**   | 4 horas                  |
-| **Prioridade**   | 🔴 Crítica               |
+| **Prioridade**   | Critical               |
 | **Dependências** | Nenhuma                  |
-| **Status**       | 📋 Backlog               |
+| **Status**       | Backlog               |
 
 ---
 
-## 📝 User Story
+##  User Story
 
 **Como** desenvolvedor  
 **Quero** uma estrutura de monorepo configurada  
@@ -22,7 +22,7 @@
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Criar estrutura de pastas do monorepo
 2. Configurar pnpm workspaces
@@ -31,7 +31,7 @@
 
 ---
 
-## ✅ Critérios de Aceite
+##  Critérios de Aceite
 
 - [ ] Estrutura de pastas criada conforme especificado
 - [ ] pnpm workspace configurado e funcionando
@@ -80,7 +80,7 @@ Estrutura do Monorepo
 │   ├── Prós: Cache, parallelismo
 │   └── Contras: Complexidade adicional
 │
-├── Opção B: pnpm workspaces simples ✅ (MVP)
+├── Opção B: pnpm workspaces simples  (MVP)
 │   ├── Prós: Simples, nativo
 │   └── Contras: Menos features
 │
@@ -94,7 +94,7 @@ Motivo: Simplicidade, pode evoluir para Turborepo
 
 ---
 
-## 📁 Estrutura Esperada
+##  Estrutura Esperada
 
 ```
 pilates/
@@ -137,7 +137,7 @@ pilates/
 
 ---
 
-## 🤖 Prompt para Implementação
+##  Prompt para Implementação
 
 ```markdown
 ## Contexto
@@ -193,7 +193,7 @@ Siga o formato: nome do arquivo → conteúdo
 
 ---
 
-## 📝 Arquivos a Criar
+##  Arquivos a Criar
 
 ### 1. pnpm-workspace.yaml
 
@@ -483,11 +483,11 @@ deploy-prod: ## Deploy para produção
 ### 6. README.md (root)
 
 ````markdown
-# 🏋️ Sistema de Gestão - Pilates & Fisioterapia
+#  Sistema de Gestão - Pilates & Fisioterapia
 
 Sistema completo de gestão para academia de Pilates e Fisioterapia.
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Requisitos
 
@@ -552,7 +552,7 @@ make lint         # Verifica código
 make format       # Formata código
 ```
 
-## 📁 Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```
 ├── apps/
@@ -564,7 +564,7 @@ make format       # Formata código
 └── .github/          # CI/CD
 ```
 
-## 🛠️ Tecnologias
+##  Tecnologias
 
 - **Backend:** NestJS, TypeScript, Prisma, MySQL
 - **Frontend:** Next.js 14, React, TailwindCSS
@@ -577,14 +577,14 @@ make format       # Formata código
 - [Arquitetura](./docs/architecture/)
 - [Épicos](./docs/epics/)
 
-## 🤝 Contribuição
+##  Contribuição
 
 1. Crie uma branch: `git checkout -b feature/nome`
 2. Faça commits: `git commit -m 'feat: descrição'`
 3. Push: `git push origin feature/nome`
 4. Abra um Pull Request
 
-## 📄 Licença
+##  Licença
 
 Privado - Todos os direitos reservados.
 
@@ -592,7 +592,7 @@ Privado - Todos os direitos reservados.
 
 ---
 
-## ✅ Checklist de Verificação
+##  Checklist de Verificação
 
 Após implementar, verifique:
 
@@ -605,7 +605,7 @@ Após implementar, verifique:
 
 ---
 
-## 🔗 Próxima User Story
+##  Próxima User Story
 
 Após concluir esta US, prossiga para:
 → [US-001-002: Estrutura do Backend](./US-001-002-estrutura-backend.md)

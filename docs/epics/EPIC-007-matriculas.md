@@ -1,20 +1,20 @@
 # EPIC-007: Matrículas Básicas
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                               |
 | ---------------- | ----------------------------------- |
 | **ID**           | EPIC-007                            |
 | **Título**       | Matrículas Básicas                  |
 | **Fase**         | 1 - MVP                             |
-| **Prioridade**   | 🟠 Alta                             |
+| **Prioridade**   | High                             |
 | **Estimativa**   | 1 semana                            |
 | **Dependências** | EPIC-003 (Alunos), EPIC-005 (Aulas) |
-| **Status**       | 📋 Backlog                          |
+| **Status**       | Backlog                          |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar sistema básico de matrículas para o MVP:
 
@@ -27,7 +27,7 @@ Implementar sistema básico de matrículas para o MVP:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Processo de matrícula funcional
 2. Vinculação aluno + plano + horários
@@ -36,7 +36,7 @@ Implementar sistema básico de matrículas para o MVP:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-007-001: Criar Matrícula
 
@@ -97,7 +97,7 @@ Implementar sistema básico de matrículas para o MVP:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -203,7 +203,7 @@ model Plan {
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 - [ ] Processo de matrícula completo
 - [ ] Planos configuráveis
@@ -214,13 +214,13 @@ model Plan {
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 **Total estimado:** ~23 horas (~1 semana)
 
 ---
 
-## 🔗 Próximos Épicos Relacionados
+##  Próximos Épicos Relacionados
 
 - **EPIC-008:** Sistema de Planos e Preços
 - **EPIC-009:** Integração Sicoob

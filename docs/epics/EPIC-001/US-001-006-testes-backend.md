@@ -1,6 +1,6 @@
 # US-001-006: Configuração de Testes Backend
 
-## 📋 Informações
+##  Informações
 
 | Campo            | Valor                          |
 | ---------------- | ------------------------------ |
@@ -8,13 +8,13 @@
 | **Épico**        | EPIC-001                       |
 | **Título**       | Configuração de Testes Backend |
 | **Estimativa**   | 4 horas                        |
-| **Prioridade**   | 🔴 Crítica                     |
+| **Prioridade**   | Critical                     |
 | **Dependências** | US-001-002                     |
-| **Status**       | 📋 Backlog                     |
+| **Status**       | Backlog                     |
 
 ---
 
-## 📝 User Story
+##  User Story
 
 **Como** desenvolvedor backend  
 **Quero** ambiente de testes configurado  
@@ -22,7 +22,7 @@
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Configurar Jest para testes unitários
 2. Configurar Jest para testes de integração
@@ -32,7 +32,7 @@
 
 ---
 
-## ✅ Critérios de Aceite
+##  Critérios de Aceite
 
 - [ ] Jest configurado para unitários
 - [ ] Jest configurado para integração
@@ -43,7 +43,7 @@
 
 ---
 
-## 🤖 Prompt para Implementação
+##  Prompt para Implementação
 
 ```markdown
 ## Contexto
@@ -103,7 +103,7 @@ Configure os testes:
 
 ---
 
-## 📝 Arquivos de Configuração
+##  Arquivos de Configuração
 
 ### jest.config.ts
 
@@ -178,7 +178,7 @@ export const createMockPrismaClient = (): MockPrismaClient => {
 
 ---
 
-## 🔴🟢🔵 Exemplo TDD
+##  Exemplo TDD
 
 ### RED: Teste que falha
 
@@ -252,7 +252,7 @@ export abstract class ValueObject<T> {
 
 ---
 
-## ✅ Checklist de Verificação
+##  Checklist de Verificação
 
 - [ ] `pnpm --filter @pilates/api test` passa
 - [ ] `pnpm --filter @pilates/api test:cov` mostra ≥80%
@@ -261,6 +261,6 @@ export abstract class ValueObject<T> {
 
 ---
 
-## 🔗 Próxima User Story
+##  Próxima User Story
 
 → [US-001-007: Configuração de Testes Frontend](./US-001-007-testes-frontend.md)

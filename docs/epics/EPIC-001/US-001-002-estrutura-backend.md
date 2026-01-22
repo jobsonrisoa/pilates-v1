@@ -1,6 +1,6 @@
 # US-001-002: Estrutura do Backend (NestJS + DDD)
 
-## 📋 Informações
+##  Informações
 
 | Campo            | Valor                               |
 | ---------------- | ----------------------------------- |
@@ -8,13 +8,13 @@
 | **Épico**        | EPIC-001                            |
 | **Título**       | Estrutura do Backend (NestJS + DDD) |
 | **Estimativa**   | 6 horas                             |
-| **Prioridade**   | 🔴 Crítica                          |
+| **Prioridade**   | Critical                          |
 | **Dependências** | US-001-001                          |
-| **Status**       | 📋 Backlog                          |
+| **Status**       | Backlog                          |
 
 ---
 
-## 📝 User Story
+##  User Story
 
 **Como** desenvolvedor backend  
 **Quero** uma estrutura NestJS organizada com DDD  
@@ -22,7 +22,7 @@
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Criar projeto NestJS com TypeScript
 2. Estruturar seguindo Domain-Driven Design
@@ -33,7 +33,7 @@
 
 ---
 
-## ✅ Critérios de Aceite
+##  Critérios de Aceite
 
 - [ ] Projeto NestJS criado em apps/api
 - [ ] Estrutura DDD com camadas separadas
@@ -97,7 +97,7 @@ PASSO 6: Criar Dockerfile
 
 ```
 Estrutura de Pastas DDD
-├── Opção A: Por feature/módulo ✅ (escolhida)
+├── Opção A: Por feature/módulo  (escolhida)
 │   ├── modules/students/domain/
 │   ├── modules/students/application/
 │   └── modules/students/infrastructure/
@@ -113,7 +113,7 @@ Estrutura de Pastas DDD
     └── Contras: Não escala
 
 ORM Choice
-├── Prisma ✅ (escolhido)
+├── Prisma  (escolhido)
 │   ├── Prós: Type-safe, DX excelente
 │   └── Contras: Menos flexível
 │
@@ -124,7 +124,7 @@ ORM Choice
 
 ---
 
-## 📁 Estrutura Esperada
+##  Estrutura Esperada
 
 ```
 apps/api/
@@ -188,7 +188,7 @@ apps/api/
 
 ---
 
-## 🤖 Prompt para Implementação
+##  Prompt para Implementação
 
 ```markdown
 ## Contexto
@@ -286,7 +286,7 @@ Para cada arquivo, mostre:
 
 ---
 
-## 📝 Arquivos Principais
+##  Arquivos Principais
 
 ### 1. package.json (apps/api)
 
@@ -567,7 +567,7 @@ export class HealthController {
 
 ---
 
-## 🔴🟢🔵 TDD Workflow
+##  TDD Workflow
 
 ### RED: Escrever teste primeiro
 
@@ -632,7 +632,7 @@ Implemente a classe Entity conforme mostrado acima.
 
 ---
 
-## ✅ Checklist de Verificação
+##  Checklist de Verificação
 
 - [ ] NestJS iniciando corretamente
 - [ ] Estrutura DDD implementada
@@ -646,7 +646,7 @@ Implemente a classe Entity conforme mostrado acima.
 
 ---
 
-## 🔗 Próxima User Story
+##  Próxima User Story
 
 → [US-001-003: Estrutura do Frontend](./US-001-003-estrutura-frontend.md)
 

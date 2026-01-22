@@ -1,20 +1,20 @@
 # EPIC-002: Autenticação e Autorização
 
-## 📋 Informações Gerais
+##  Informações Gerais
 
 | Campo            | Valor                      |
 | ---------------- | -------------------------- |
 | **ID**           | EPIC-002                   |
 | **Título**       | Autenticação e Autorização |
 | **Fase**         | 1 - MVP                    |
-| **Prioridade**   | 🔴 Crítica                 |
+| **Prioridade**   | Critical                 |
 | **Estimativa**   | 2 semanas                  |
 | **Dependências** | EPIC-001 (Setup Ambiente)  |
-| **Status**       | 📋 Backlog                 |
+| **Status**       | Backlog                 |
 
 ---
 
-## 📝 Descrição
+##  Descrição
 
 Implementar sistema completo de autenticação e autorização incluindo:
 
@@ -27,7 +27,7 @@ Implementar sistema completo de autenticação e autorização incluindo:
 
 ---
 
-## 🎯 Objetivos
+##  Objetivos
 
 1. Autenticação segura com JWT e refresh tokens
 2. Sistema de permissões granulares por perfil
@@ -37,7 +37,7 @@ Implementar sistema completo de autenticação e autorização incluindo:
 
 ---
 
-## 👤 User Stories
+##  User Stories
 
 ### US-002-001: Login de Usuário
 
@@ -130,7 +130,7 @@ Implementar sistema completo de autenticação e autorização incluindo:
 
 ---
 
-## 🔧 Tasks Técnicas
+##  Tasks Técnicas
 
 ### Backend
 
@@ -475,7 +475,7 @@ const PERMISSIONS = {
 
 ---
 
-## ✅ Critérios de Aceite do Épico
+##  Critérios de Aceite do Épico
 
 ### Autenticação
 
@@ -519,7 +519,7 @@ const PERMISSIONS = {
 
 ---
 
-## 📊 Definition of Done do Épico
+##  Definition of Done do Épico
 
 - [ ] Todas as tasks concluídas
 - [ ] Zero vulnerabilidades conhecidas
@@ -537,7 +537,7 @@ const PERMISSIONS = {
 
 ---
 
-## 📅 Timeline Sugerido
+##  Timeline Sugerido
 
 ```
 Semana 1 (Backend):
