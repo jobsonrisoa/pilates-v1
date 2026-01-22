@@ -1,100 +1,100 @@
-# US-001-001: Setup Inicial do Projeto
+# US-001-001: Initial Project Setup
 
-##  Informações
+##  Informtion
 
-| Campo            | Valor                    |
+| Field            | Value                    |
 | ---------------- | ------------------------ |
 | **ID**           | US-001-001               |
 | **Épico**        | EPIC-001                 |
-| **Título**       | Setup Inicial do Projeto |
-| **Estimativa**   | 4 horas                  |
-| **Prioridade**   | Critical               |
-| **Dependências** | Nenhuma                  |
+| **Title**       | Initial Project Setup |
+| **Estimate**   | 4 hours                  |
+| **Priority**   | Critical               |
+| **Dependencies** | None                  |
 | **Status**       | Backlog               |
 
 ---
 
-##  User Story
+##  Ube Story
 
 **Como** desenvolvedor  
-**Quero** uma estrutura de monorepo configurada  
-**Para** começar o desenvolvimento com padrões definidos
+**Quero** a estrutura of monorepo configurada  
+**Para** start o shouldlopment with standards definidos
 
 ---
 
-##  Objetivos
+##  Objectives
 
-1. Criar estrutura de pastas do monorepo
+1. Create estrutura of folders of the monorepo
 2. Configurar pnpm workspaces
-3. Criar arquivos de configuração base
-4. Preparar estrutura para Docker
+3. Create files of configuration base
+4. Preparar estrutura for Docker
 
 ---
 
-##  Critérios de Aceite
+##  Acceptance Crihaveia
 
-- [ ] Estrutura de pastas criada conforme especificado
-- [ ] pnpm workspace configurado e funcionando
-- [ ] package.json root com scripts básicos
-- [ ] .gitignore configurado
-- [ ] .env.example com variáveis documentadas
-- [ ] README.md com instruções básicas
+- [ ] Structure of folders criada conforme especificado
+- [ ] pnpm workspace configured and funcionando
+- [ ] package.json root with scripts basics
+- [ ] .gitignore configured
+- [ ] .env.example with variables documentadas
+- [ ] README.md with instruções basic
 
 ---
 
-## 🧠 Chain of Thought (Raciocínio)
+## 🧠 Chain of Thought (Reasoning)
 
 ```
-PASSO 1: Analisar a estrutura necessária
-├── Monorepo com pnpm workspaces
-├── Apps: api (NestJS) e web (Next.js)
-├── Packages: shared (futuro)
-├── Docker: configurações
-└── Docs: documentação
+PASSO 1: Analisar a estrutura required
+├── Monorepo with pnpm workspaces
+├── Apps: api (NestJS) and web (Next.js)
+├── Packages: shared (future)
+├── Docker: settings
+└── Docs: documentation
 
-PASSO 2: Definir a ordem de criação
-├── 1. Criar diretórios
+PASSO 2: Set a ordem of criaction
+├── 1. Create directories
 ├── 2. Inicializar pnpm
 ├── 3. Configurar workspaces
-├── 4. Criar arquivos de config
-└── 5. Documentar
+├── 4. Create files of config
+└── 5. Document
 
-PASSO 3: Identificar dependências
-├── pnpm (gerenciador de pacotes)
+PASSO 3: Identificar dependencys
+├── pnpm (gerenciador of pacotes)
 ├── Node.js 20 (via Docker)
 └── Git (versionamento)
 
 PASSO 4: Validar resultado
 ├── pnpm install funciona
-├── Estrutura está correta
+├── Structure is correta
 └── Git inicializado
 ```
 
 ---
 
-## 🌳 Tree of Thought (Alternativas)
+## 🌳 Tree of Thought (Alhavenatives)
 
 ```
-Estrutura do Monorepo
-├── Opção A: Turborepo ⭐ (escolhida futuramente)
-│   ├── Prós: Cache, parallelismo
-│   └── Contras: Complexidade adicional
+Structure of the Monorepo
+├── Option A: Turborepo ⭐ (escolhida futuremente)
+│   ├── Pros: Cache, parallelismo
+│   └── Cons: Complexity adicional
 │
-├── Opção B: pnpm workspaces simples  (MVP)
-│   ├── Prós: Simples, nativo
-│   └── Contras: Menos features
+├── Option B: pnpm workspaces simple  (MVP)
+│   ├── Pros: Simple, nactive
+│   └── Cons: Fewer features
 │
-└── Opção C: Lerna
-    ├── Prós: Maduro
-    └── Contras: Abandonado, complexo
+└── Option C: Lerna
+    ├── Pros: Mature
+    └── Cons: Abandonado, withplexo
 
-Decisão: pnpm workspaces simples para MVP
-Motivo: Simplicidade, pode evoluir para Turborepo
+Decision: pnpm workspaces simple for MVP
+Motivo: Simplicidade, can evolve for Turborepo
 ```
 
 ---
 
-##  Estrutura Esperada
+##  Structure Esperada
 
 ```
 pilates/
@@ -107,26 +107,26 @@ pilates/
 │   │
 │   └── web/                    # Next.js Frontend
 │       ├── app/
-│       ├── components/
+│       ├── withponents/
 │       ├── lib/
 │       └── package.json
 │
-├── packages/                   # Shared packages (futuro)
+├── packages/                   # Shared packages (future)
 │   └── .gitkeep
 │
-├── docker/                     # Configurações Docker
+├── docker/                     # Settings Docker
 │   ├── mysql/
 │   ├── prometheus/
 │   └── grafana/
 │
-├── docs/                       # Documentação (já existe)
+├── docs/                       # Documentation (já existe)
 │
 ├── .github/                    # GitHub Actions
 │   └── workflows/
 │
-├── docker-compose.yml
-├── docker-compose.dev.yml
-├── docker-compose.test.yml
+├── docker-withpose.yml
+├── docker-withpose.dev.yml
+├── docker-withpose.test.yml
 ├── pnpm-workspace.yaml
 ├── package.json
 ├── .gitignore
@@ -137,63 +137,63 @@ pilates/
 
 ---
 
-##  Prompt para Implementação
+##  Prompt for Implementation
 
 ```markdown
-## Contexto
+## Context
 
-Estou criando um sistema de gestão para academia de Pilates/Fisioterapia.
-Preciso configurar a estrutura inicial do monorepo.
+Estou criando a syshas of management for academia of Pilates/Fisiohaveapia.
+Preciso configurar a estrutura inicial of the monorepo.
 
-## Princípios
+## Principles
 
 - TDD (Test-Driven Development)
 - DDD (Domain-Driven Design)
-- 100% Docker (nada instalado localmente)
-- pnpm como gerenciador de pacotes
+- 100% Docker (nada instaside locally)
+- pnpm witho gerenciador of pacotes
 
 ## Tarefa
 
-Crie a estrutura inicial do monorepo com:
+Crie a estrutura inicial of the monorepo with:
 
-1. **Estrutura de pastas:**
-   - apps/api (backend NestJS - vazio por enquanto)
-   - apps/web (frontend Next.js - vazio por enquanto)
-   - packages/ (shared - futuro)
-   - docker/ (configurações)
+1. **Structure of folders:**
+   - apps/api (backendendendend NestJS - vazio por enquanto)
+   - apps/web (frontendendendend Next.js - vazio por enquanto)
+   - packages/ (shared - future)
+   - docker/ (settings)
    - .github/workflows/
 
-2. **Arquivos de configuração:**
+2. **Files of configuration:**
    - pnpm-workspace.yaml
-   - package.json (root com scripts)
+   - package.json (root with scripts)
    - .gitignore (Node, Docker, IDE)
    - .env.example (documentado)
-   - Makefile (comandos úteis)
+   - Makefile (withmands úteis)
    - README.md (instruções)
 
-3. **Scripts no package.json root:**
-   - dev: subir ambiente
-   - build: build de produção
-   - test: rodar testes
-   - lint: verificar código
-   - format: formatar código
+3. **Scripts in the package.json root:**
+   - dev: subir environment
+   - build: build of production
+   - test: rodar tests
+   - lint: verificar code
+   - formt: formtar code
 
-## Requisitos
+## Requirements
 
 - Use pnpm workspaces
-- Prepare para Docker (apps terão Dockerfiles)
-- Documente variáveis de ambiente
-- Inclua comandos no Makefile
+- Prepare for Docker (apps haveão Dockerfiles)
+- Documente variables of environment
+- Inclua withmands in the Makefile
 
 ## Output Esperado
 
-Forneça os arquivos completos com explicações.
-Siga o formato: nome do arquivo → conteúdo
+Forneça os files withpletes with explicactions.
+Siga o formto: name of the file → content
 ```
 
 ---
 
-##  Arquivos a Criar
+##  Files a Create
 
 ### 1. pnpm-workspace.yaml
 
@@ -207,20 +207,20 @@ packages:
 
 ```json
 {
-  "name": "pilates-system",
+  "name": "pilates-syshas",
   "version": "0.0.1",
   "private": true,
-  "description": "Sistema de Gestão para Academia de Pilates e Fisioterapia",
+  "description": "Management Syshas for Pilates and Physiotherapy Studio",
   "scripts": {
-    "dev": "docker compose up",
-    "dev:build": "docker compose up --build",
-    "dev:down": "docker compose down",
-    "dev:clean": "docker compose down -v --remove-orphans",
+    "dev": "docker withpose up",
+    "dev:build": "docker withpose up --build",
+    "dev:down": "docker withpose down",
+    "dev:clean": "docker withpose down -v --remove-orphans",
     "build": "pnpm -r build",
     "test": "pnpm -r test",
     "test:cov": "pnpm -r test:cov",
     "lint": "pnpm -r lint",
-    "format": "pnpm -r format",
+    "formt": "pnpm -r formt",
     "prepare": "husky install"
   },
   "devDependencies": {
@@ -273,9 +273,9 @@ coverage/
 .nyc_output/
 
 # Docker
-docker/mysql/data/
-docker/redis/data/
-docker/minio/data/
+docker/mysql/date/
+docker/redis/date/
+docker/minio/date/
 
 # Prisma
 apps/api/prisma/*.db
@@ -292,17 +292,17 @@ apps/api/prisma/migrations/*_migration_lock.toml
 # =============================================
 # AMBIENTE DE DESENVOLVIMENTO
 # =============================================
-# Copie este arquivo para .env e ajuste os valores
+# Copie este file for .env and ajuste os values
 
 # ---------------------------------------------
-# Aplicação
+# Application
 # ---------------------------------------------
-NODE_ENV=development
+NODE_ENV=shouldlopment
 APP_PORT=3001
 WEB_PORT=3000
 
 # ---------------------------------------------
-# Banco de Dados (MySQL)
+# Database (MySQL)
 # ---------------------------------------------
 DATABASE_URL=mysql://pilates:pilates@mysql:3306/pilates_dev
 MYSQL_ROOT_PASSWORD=root
@@ -318,12 +318,12 @@ REDIS_URL=redis://redis:6379
 # ---------------------------------------------
 # JWT
 # ---------------------------------------------
-JWT_SECRET=sua-chave-secreta-mude-em-producao
+JWT_SECRET=sua-key-secreta-mude-em-producto
 JWT_EXPIRES_IN=15m
 REFRESH_TOKEN_EXPIRES_IN=7d
 
 # ---------------------------------------------
-# Email (MailHog em dev)
+# Email (MailHog in dev)
 # ---------------------------------------------
 SMTP_HOST=mailhog
 SMTP_PORT=1025
@@ -331,7 +331,7 @@ SMTP_USER=
 SMTP_PASS=
 
 # ---------------------------------------------
-# Storage (MinIO em dev, S3 em prod)
+# Storage (MinIO in dev, S3 in prod)
 # ---------------------------------------------
 S3_ENDPOINT=http://minio:9000
 S3_ACCESS_KEY=minioadmin
@@ -340,15 +340,15 @@ S3_BUCKET=pilates-dev
 S3_REGION=us-east-1
 
 # ---------------------------------------------
-# Observabilidade (opcional em dev)
+# Obbevability (optional in dev)
 # ---------------------------------------------
 SENTRY_DSN=
 LOG_LEVEL=debug
 
 # ---------------------------------------------
-# Sicoob (produção apenas)
+# Sicoob (production only)
 # ---------------------------------------------
-SICOOB_API_URL=https://api.sicoob.com.br
+SICOOB_API_URL=https://api.sicoob.with.br
 SICOOB_CLIENT_ID=
 SICOOB_CLIENT_SECRET=
 SICOOB_CONVENIO=
@@ -360,163 +360,163 @@ SICOOB_WEBHOOK_SECRET=
 ```makefile
 .PHONY: help dev dev-build down clean logs test lint shell-api shell-web shell-mysql migrate seed
 
-# Cores para output
+# Cores for output
 CYAN := \033[36m
 RESET := \033[0m
 
 help: ## Mostra esta ajuda
-	@echo "$(CYAN)Comandos disponíveis:$(RESET)"
+	@echo "$(CYAN)Comandos available:$(RESET)"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "  $(CYAN)%-15s$(RESET) %s\n", $$1, $$2}'
 
 # =============================================
 # DESENVOLVIMENTO
 # =============================================
 
-dev: ## Inicia ambiente de desenvolvimento
-	docker compose up
+dev: ## Inicia environment of shouldlopment
+	docker withpose up
 
-dev-build: ## Inicia ambiente com rebuild das imagens
-	docker compose up --build
+dev-build: ## Inicia environment with rebuild of the images
+	docker withpose up --build
 
-down: ## Para todos os containers
-	docker compose down
+down: ## Para entires os accountiners
+	docker withpose down
 
-clean: ## Remove containers, volumes e imagens não utilizadas
-	docker compose down -v --remove-orphans
-	docker system prune -f
+clean: ## Remove accountiners, volumes and images not utilizadas
+	docker withpose down -v --remove-orphans
+	docker syshas prune -f
 
-logs: ## Mostra logs de todos os serviços
-	docker compose logs -f
+logs: ## Mostra logs of entires os bevices
+	docker withpose logs -f
 
-logs-api: ## Mostra logs da API
-	docker compose logs -f api
+logs-api: ## Mostra logs of the API
+	docker withpose logs -f api
 
-logs-web: ## Mostra logs do Web
-	docker compose logs -f web
+logs-web: ## Mostra logs of the Web
+	docker withpose logs -f web
 
 # =============================================
 # SHELLS
 # =============================================
 
-shell-api: ## Acessa shell do container da API
-	docker compose exec api sh
+shell-api: ## Acessa shell of the accountiner of the API
+	docker withpose exec api sh
 
-shell-web: ## Acessa shell do container Web
-	docker compose exec web sh
+shell-web: ## Acessa shell of the accountiner Web
+	docker withpose exec web sh
 
 shell-mysql: ## Acessa MySQL CLI
-	docker compose exec mysql mysql -u pilates -ppilates pilates_dev
+	docker withpose exec mysql mysql -u pilates -ppilates pilates_dev
 
 shell-redis: ## Acessa Redis CLI
-	docker compose exec redis redis-cli
+	docker withpose exec redis redis-cli
 
 # =============================================
 # BANCO DE DADOS
 # =============================================
 
-migrate: ## Roda migrations do Prisma
-	docker compose exec api pnpm prisma migrate dev
+migrate: ## Roda migrations of the Prisma
+	docker withpose exec api pnpm prisma migrate dev
 
-migrate-prod: ## Roda migrations em produção
-	docker compose exec api pnpm prisma migrate deploy
+migrate-prod: ## Roda migrations in production
+	docker withpose exec api pnpm prisma migrate deploy
 
-seed: ## Popula banco com dados de desenvolvimento
-	docker compose exec api pnpm prisma db seed
+seed: ## Popula datebase with dados of shouldlopment
+	docker withpose exec api pnpm prisma db seed
 
-db-reset: ## Reseta banco de dados (CUIDADO!)
-	docker compose exec api pnpm prisma migrate reset --force
+db-reset: ## Reseta datebase of dados (CUIDADO!)
+	docker withpose exec api pnpm prisma migrate reset --force
 
 db-studio: ## Abre Prisma Studio
-	docker compose exec api pnpm prisma studio
+	docker withpose exec api pnpm prisma studio
 
 # =============================================
 # TESTES
 # =============================================
 
-test: ## Roda todos os testes
-	docker compose exec api pnpm test
-	docker compose exec web pnpm test
+test: ## Roda entires os tests
+	docker withpose exec api pnpm test
+	docker withpose exec web pnpm test
 
-test-watch: ## Roda testes em modo watch
-	docker compose exec api pnpm test:watch
+test-watch: ## Roda tests in mode watch
+	docker withpose exec api pnpm test:watch
 
-test-cov: ## Roda testes com cobertura
-	docker compose exec api pnpm test:cov
-	docker compose exec web pnpm test:cov
+test-cov: ## Roda tests with cobertura
+	docker withpose exec api pnpm test:cov
+	docker withpose exec web pnpm test:cov
 
-test-e2e: ## Roda testes E2E
-	docker compose exec web pnpm test:e2e
+test-e2e: ## Roda tests E2E
+	docker withpose exec web pnpm test:e2e
 
-test-int: ## Roda testes de integração
-	docker compose exec api pnpm test:integration
+test-int: ## Roda tests of integration
+	docker withpose exec api pnpm test:integration
 
 # =============================================
 # QUALIDADE
 # =============================================
 
-lint: ## Roda linter em todos os projetos
-	docker compose exec api pnpm lint
-	docker compose exec web pnpm lint
+lint: ## Roda linhave in entires os projects
+	docker withpose exec api pnpm lint
+	docker withpose exec web pnpm lint
 
-format: ## Formata código em todos os projetos
-	docker compose exec api pnpm format
-	docker compose exec web pnpm format
+formt: ## Formata code in entires os projects
+	docker withpose exec api pnpm formt
+	docker withpose exec web pnpm formt
 
-typecheck: ## Verifica tipos TypeScript
-	docker compose exec api pnpm typecheck
-	docker compose exec web pnpm typecheck
+typecheck: ## Verifica types TypeScript
+	docker withpose exec api pnpm typecheck
+	docker withpose exec web pnpm typecheck
 
 # =============================================
 # PRODUÇÃO
 # =============================================
 
-build: ## Build de produção
-	docker compose -f docker-compose.prod.yml build
+build: ## Build of production
+	docker withpose -f docker-withpose.prod.yml build
 
-deploy-staging: ## Deploy para staging
-	@echo "Deploy para staging..."
+deploy-staging: ## Deploy for staging
+	@echo "Deploy for staging..."
 
-deploy-prod: ## Deploy para produção
-	@echo "Deploy para produção..."
+deploy-prod: ## Deploy for production
+	@echo "Deploy for production..."
 ```
 
 ### 6. README.md (root)
 
 ````markdown
-#  Sistema de Gestão - Pilates & Fisioterapia
+#  Management Syshas - Pilates & Fisiohaveapia
 
-Sistema completo de gestão para academia de Pilates e Fisioterapia.
+Syshas withplete of management for academia of Pilates and Physiotherapy.
 
 ##  Quick Start
 
-### Requisitos
+### Requirements
 
 - Docker 24+
 - Docker Compose 2+
 - Git
 
-> **Nota:** Não é necessário instalar Node.js, pnpm ou qualquer outra dependência localmente. Todo o ambiente roda em Docker.
+> **Nota:** Not is required instalar Node.js, pnpm or qualquer other dependency locally. The entire environment roda in Docker.
 
-### Instalação
+### Instalaction
 
 ```bash
-# 1. Clone o repositório
+# 1. Clone o repository
 git clone <repo-url>
-cd pilates-system
+cd pilates-syshas
 
-# 2. Copie as variáveis de ambiente
+# 2. Copie as variables of environment
 cp .env.example .env
 
-# 3. Suba o ambiente
+# 3. Start o environment
 make dev
 # ou
-docker compose up
+docker withpose up
 ```
 ````
 
-### Acessos
+### Access URLs
 
-| Serviço            | URL                       |
+| Service            | URL                       |
 | ------------------ | ------------------------- |
 | Frontend           | http://localhost:3000     |
 | API                | http://localhost:3001     |
@@ -526,41 +526,41 @@ docker compose up
 | Prometheus         | http://localhost:9090     |
 | Grafana            | http://localhost:3002     |
 
-### Comandos Úteis
+### Useful Commands
 
 ```bash
-# Ver todos os comandos
+# Ver entires os withmands
 make help
 
-# Desenvolvimento
-make dev          # Inicia ambiente
-make down         # Para ambiente
+# Development
+make dev          # Inicia environment
+make down         # Para environment
 make clean        # Limpa tudo
 
-# Banco de Dados
+# Database
 make migrate      # Roda migrations
-make seed         # Popula dados de teste
+make seed         # Popula dados of test
 make shell-mysql  # Acessa MySQL
 
-# Testes
-make test         # Roda todos os testes
-make test-cov     # Testes com cobertura
-make test-e2e     # Testes E2E
+# Tests
+make test         # Roda entires os tests
+make test-cov     # Tests with cobertura
+make test-e2e     # Tests E2E
 
-# Qualidade
-make lint         # Verifica código
-make format       # Formata código
+# Quality
+make lint         # Verifica code
+make formt       # Formata code
 ```
 
-##  Estrutura do Projeto
+##  Project Structure
 
 ```
 ├── apps/
 │   ├── api/          # Backend NestJS
 │   └── web/          # Frontend Next.js
 ├── packages/         # Shared packages
-├── docker/           # Configurações Docker
-├── docs/             # Documentação
+├── docker/           # Settings Docker
+├── docs/             # Documentation
 └── .github/          # CI/CD
 ```
 
@@ -569,50 +569,50 @@ make format       # Formata código
 - **Backend:** NestJS, TypeScript, Prisma, MySQL
 - **Frontend:** Next.js 14, React, TailwindCSS
 - **Infra:** Docker, GitHub Actions
-- **Testes:** Jest, Testing Library, Playwright
+- **Tests:** Jest, Testing Library, Playwright
 
-## 📖 Documentação
+## 📖 Documentation
 
 - [PRD](./docs/PRD.md)
 - [Arquitetura](./docs/architecture/)
-- [Épicos](./docs/epics/)
+- [Epics](./docs/epics/)
 
 ##  Contribuição
 
-1. Crie uma branch: `git checkout -b feature/nome`
-2. Faça commits: `git commit -m 'feat: descrição'`
-3. Push: `git push origin feature/nome`
-4. Abra um Pull Request
+1. Crie a branch: `git checkout -b feature/name`
+2. Faça withmits: `git withmit -m 'feat: description'`
+3. Push: `git push origin feature/name`
+4. Abra a Pull Request
 
 ##  Licença
 
-Privado - Todos os direitos reservados.
+Privado - Todos os direitos rebevados.
 
 ```
 
 ---
 
-##  Checklist de Verificação
+##  Checklist of Verification
 
-Após implementar, verifique:
+Após implement, verifique:
 
-- [ ] Estrutura de pastas criada corretamente
-- [ ] `pnpm install` funciona no root
-- [ ] `.env.example` está documentado
-- [ ] `make help` mostra os comandos
-- [ ] README está claro e útil
-- [ ] Git inicializado com .gitignore
+- [ ] Structure of folders criada correctly
+- [ ] `pnpm install` funciona in the root
+- [ ] `.env.example` is documentado
+- [ ] `make help` mostra os withmands
+- [ ] README is claro and útil
+- [ ] Git inicializado with .gitignore
 
 ---
 
-##  Próxima User Story
+##  Next Ube Story
 
 Após concluir esta US, prossiga para:
-→ [US-001-002: Estrutura do Backend](./US-001-002-estrutura-backend.md)
+→ [US-001-002: Backend Structure](./US-001-002-estrutura-backendendendend.md)
 
 ---
 
-## 📎 Referências
+## 📎 References
 
 - [pnpm Workspaces](https://pnpm.io/workspaces)
 - [Monorepo Best Practices](https://monorepo.tools/)

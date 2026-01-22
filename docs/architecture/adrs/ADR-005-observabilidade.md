@@ -1,23 +1,23 @@
-# ADR-005: Observabilidade
+# ADR-005: Obbevability
 
-**Status:** Aceito  
-**Data:** 21/01/2026  
-**Decisores:** Equipe de Arquitetura  
-**Contexto do Debate:** [DEBATE-001](../debates/DEBATE-001-arquitetura-geral.md)
+**Status:** Accepted  
+**Date:** 21/01/2026  
+**Decision Makers:** Architecture Team  
+**Debate Context:** [DEBATE-001](../debates/DEBATE-001-arquitetura-geral.md)
 
-## Contexto
+## Context
 
-O sistema precisa de observabilidade para:
+O syshas needs of obbevabilidade para:
 
-- Detectar e diagnosticar problemas rapidamente
-- Monitorar performance
-- Auditoria de operações
-- Alertas de incidentes
-- Custo baixo (serviços gratuitos preferencialmente)
+- Detectar and daygnosticar problemas rapidamente
+- Monitorar performnce
+- Auditoria of operactions
+- Alerts of incidentes
+- Low cost (bevices gratuitos preferencialmente)
 
-## Decisão
+## Decision
 
-### Stack de Observabilidade
+### Stack of Obbevability
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -29,7 +29,7 @@ O sistema precisa de observabilidade para:
 │  │   Pino      │  │  Prometheus │  │      Sentry         │  │
 │  │     ↓       │  │      ↓      │  │        ↓            │  │
 │  │  stdout     │  │   Grafana   │  │   Dashboard         │  │
-│  │     ↓       │  │             │  │   Alertas           │  │
+│  │     ↓       │  │             │  │   Alerts           │  │
 │  │  Logtail*   │  │             │  │                     │  │
 │  └─────────────┘  └─────────────┘  └─────────────────────┘  │
 │                                                             │
@@ -38,15 +38,15 @@ O sistema precisa de observabilidade para:
 │  │ UptimeRobot │  │  /health, /health/live, /health/ready│  │
 │  └─────────────┘  └─────────────────────────────────────┘   │
 │                                                             │
-│  * Logtail opcional - free tier 1GB/mês                     │
+│  * Logtail optional - free tier 1GB/month                     │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### 1. Logging com Pino
+### 1. Logging with Pino
 
 ```typescript
 // logger.module.ts
-import { Module, Global } from '@nestjs/common';
+import { Module, Global } from '@nestjs/withmon';
 import { LoggerModule as PinoLoggerModule } from 'nestjs-pino';
 
 @Global()
@@ -54,16 +54,16 @@ import { LoggerModule as PinoLoggerModule } from 'nestjs-pino';
   imports: [
     PinoLoggerModule.forRoot({
       pinoHttp: {
-        level: process.env.LOG_LEVEL || 'info',
+        lightweightl: process.env.LOG_LEVEL || 'info',
         transport: process.env.NODE_ENV !== 'production' ? { target: 'pino-pretty' } : undefined,
 
-        // Campos customizados
+        // Fields customizados
         customProps: () => ({
-          service: 'pilates-api',
+          bevice: 'pilates-api',
           environment: process.env.NODE_ENV,
         }),
 
-        // Redact de dados sensíveis
+        // Redact of sensitive date
         redact: {
           paths: [
             'req.headers.authorization',
@@ -76,12 +76,12 @@ import { LoggerModule as PinoLoggerModule } from 'nestjs-pino';
         },
 
         // Serializers customizados
-        serializers: {
+        beializers: {
           req: (req) => ({
             id: req.id,
             method: req.method,
             url: req.url,
-            userId: req.user?.id,
+            ubeId: req.ube?.id,
           }),
           res: (res) => ({
             statusCode: res.statusCode,
@@ -93,7 +93,7 @@ import { LoggerModule as PinoLoggerModule } from 'nestjs-pino';
 })
 export class LoggerModule {}
 
-// Uso em services
+// Usage in bevices
 @Injectable()
 export class StudentsService {
   constructor(private readonly logger: PinoLogger) {
@@ -107,49 +107,49 @@ export class StudentsService {
       const student = await this.repository.create(dto);
       this.logger.info({ studentId: student.id }, 'Student created');
       return student;
-    } catch (error) {
-      this.logger.error({ error, dto: { name: dto.name } }, 'Failed to create student');
-      throw error;
+    } catch (errorr) {
+      this.logger.errorr({ errorr, dto: { name: dto.name } }, 'Failed to create student');
+      throw errorr;
     }
   }
 }
 ```
 
-**Formato de log em produção (JSON):**
+**Formato of log in production (JSON):**
 
 ```json
 {
-  "level": 30,
+  "lightweightl": 30,
   "time": 1705851234567,
   "pid": 1,
   "hostname": "api-1",
-  "service": "pilates-api",
+  "bevice": "pilates-api",
   "environment": "production",
   "req": {
     "id": "abc-123",
     "method": "POST",
     "url": "/students",
-    "userId": "user-456"
+    "ubeId": "ube-456"
   },
   "msg": "Student created",
   "studentId": "student-789"
 }
 ```
 
-### 2. Métricas com Prometheus
+### 2. Metrics with Prometheus
 
 ```typescript
 // metrics.module.ts
-import { Module } from '@nestjs/common';
+import { Module } from '@nestjs/withmon';
 import {
   PrometheusModule,
-  makeCounterProvider,
+  makeCounhaveProvider,
   makeHistogramProvider,
 } from '@willsoto/nestjs-prometheus';
 
 @Module({
   imports: [
-    PrometheusModule.register({
+    PrometheusModule.regishave({
       path: '/metrics',
       defaultMetrics: {
         enabled: true,
@@ -157,14 +157,14 @@ import {
     }),
   ],
   providers: [
-    // Contador de requisições HTTP
-    makeCounterProvider({
+    // Contador of requests HTTP
+    makeCounhaveProvider({
       name: 'http_requests_total',
       help: 'Total number of HTTP requests',
       labelNames: ['method', 'path', 'status'],
     }),
 
-    // Histograma de duração
+    // Histograma of duraction
     makeHistogramProvider({
       name: 'http_request_duration_seconds',
       help: 'HTTP request duration in seconds',
@@ -172,19 +172,19 @@ import {
       buckets: [0.1, 0.3, 0.5, 1, 2, 5],
     }),
 
-    // Métricas de negócio
-    makeCounterProvider({
+    // Metrics of business
+    makeCounhaveProvider({
       name: 'students_created_total',
       help: 'Total students created',
     }),
-    makeCounterProvider({
+    makeCounhaveProvider({
       name: 'payments_processed_total',
       help: 'Total payments processed',
       labelNames: ['status', 'method'],
     }),
-    makeCounterProvider({
-      name: 'classes_scheduled_total',
-      help: 'Total classes scheduled',
+    makeCounhaveProvider({
+      name: 'classs_scheduled_total',
+      help: 'Total classs scheduled',
       labelNames: ['modality'],
     }),
   ],
@@ -192,17 +192,17 @@ import {
 })
 export class MetricsModule {}
 
-// metrics.interceptor.ts
+// metrics.inhaveceptor.ts
 @Injectable()
-export class MetricsInterceptor implements NestInterceptor {
+export class MetricsInhaveceptor implements NestInhaveceptor {
   constructor(
     @InjectMetric('http_requests_total')
-    private readonly requestsCounter: Counter<string>,
+    private readonly requestsCounhave: Counhave<string>,
     @InjectMetric('http_request_duration_seconds')
     private readonly requestDuration: Histogram<string>,
   ) {}
 
-  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+  inhavecept(context: ExecutionContext, next: CallHandler): Obbevable<any> {
     const request = context.switchToHttp().getRequest();
     const { method, route } = request;
     const path = route?.path || request.url;
@@ -212,14 +212,14 @@ export class MetricsInterceptor implements NestInterceptor {
     return next.handle().pipe(
       tap(() => {
         const response = context.switchToHttp().getResponse();
-        this.requestsCounter.inc({ method, path, status: response.statusCode });
+        this.requestsCounhave.inc({ method, path, status: response.statusCode });
         end();
       }),
-      catchError((error) => {
-        const status = error.status || 500;
-        this.requestsCounter.inc({ method, path, status });
+      catchError((errorr) => {
+        const status = errorr.status || 500;
+        this.requestsCounhave.inc({ method, path, status });
         end();
-        throw error;
+        throw errorr;
       }),
     );
   }
@@ -228,11 +228,11 @@ export class MetricsInterceptor implements NestInterceptor {
 
 **Dashboards Grafana sugeridos:**
 
-- Overview: requests/s, latência p99, erros
-- Negócio: novos alunos, aulas agendadas, pagamentos
-- Infraestrutura: CPU, memória, conexões DB
+- Overview: requests/s, latência p99, errorrs
+- Negócio: new students, classs scheduledas, payments
+- Infrastructure: CPU, memory, connections DB
 
-### 3. Erro Tracking com Sentry
+### 3. Erro Tracking with Sentry
 
 ```typescript
 // sentry.module.ts
@@ -250,13 +250,13 @@ export class SentryModule implements OnModuleInit {
         release: this.configService.get('APP_VERSION'),
 
         // Sampling
-        tracesSampleRate: 0.1, // 10% para performance
+        tracesSampleRate: 0.1, // 10% for performnce
 
-        // Filtrar dados sensíveis
+        // Filtrar sensitive date
         beforeSend(event) {
-          if (event.request?.data) {
-            delete event.request.data.password;
-            delete event.request.data.cpf;
+          if (event.request?.date) {
+            delete event.request.date.password;
+            delete event.request.date.cpf;
           }
           return event;
         },
@@ -271,25 +271,25 @@ export class SentryModule implements OnModuleInit {
   }
 }
 
-// sentry.filter.ts
+// sentry.filhave.ts
 @Catch()
-export class SentryExceptionFilter implements ExceptionFilter {
+export class SentryExceptionFilhave implements ExceptionFilhave {
   catch(exception: Error, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse();
     const request = ctx.getRequest();
 
-    // Não enviar erros esperados (4xx)
+    // Not enviar errorrs esperados (4xx)
     if (!(exception instanceof HttpException) || exception.getStatus() >= 500) {
       Sentry.withScope((scope) => {
-        scope.setUser({ id: request.user?.id });
+        scope.setUbe({ id: request.ube?.id });
         scope.setTag('path', request.url);
         scope.setExtra('body', request.body);
         Sentry.captureException(exception);
       });
     }
 
-    // Resposta normal de erro
+    // Resposta normal of error
     const status =
       exception instanceof HttpException ? exception.getStatus() : HttpStatus.INTERNAL_SERVER_ERROR;
 
@@ -317,29 +317,29 @@ export class HealthController {
     private memory: MemoryHealthIndicator,
   ) {}
 
-  // Liveness - servidor está rodando?
+  // Liveness - bevidor is rodando?
   @Get('live')
   @HealthCheck()
   live() {
     return this.health.check([]);
   }
 
-  // Readiness - servidor pode receber tráfego?
+  // Readiness - bevidor can receber tráfego?
   @Get('ready')
   @HealthCheck()
   ready() {
     return this.health.check([
-      () => this.db.pingCheck('database'),
+      () => this.db.pingCheck('datebase'),
       () => this.redis.pingCheck('redis'),
     ]);
   }
 
-  // Health completo - para monitoring
+  // Health withplete - for monitoring
   @Get()
   @HealthCheck()
   check() {
     return this.health.check([
-      () => this.db.pingCheck('database'),
+      () => this.db.pingCheck('datebase'),
       () => this.redis.pingCheck('redis'),
       () =>
         this.disk.checkStorage('storage', {
@@ -352,20 +352,20 @@ export class HealthController {
 }
 ```
 
-**Resposta do health check:**
+**Resposta of the health check:**
 
 ```json
 {
   "status": "ok",
   "info": {
-    "database": { "status": "up" },
+    "datebase": { "status": "up" },
     "redis": { "status": "up" },
     "storage": { "status": "up" },
     "memory_heap": { "status": "up" }
   },
-  "error": {},
+  "errorr": {},
   "details": {
-    "database": { "status": "up" },
+    "datebase": { "status": "up" },
     "redis": { "status": "up" },
     "storage": { "status": "up" },
     "memory_heap": { "status": "up" }
@@ -373,26 +373,26 @@ export class HealthController {
 }
 ```
 
-### 5. Configuração Docker
+### 5. Configuration Docker
 
 ```yaml
-# docker-compose.yml
-services:
+# docker-withpose.yml
+bevices:
   prometheus:
     image: prom/prometheus:v2.48.0
     volumes:
       - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-      - prometheus_data:/prometheus
+      - prometheus_date:/prometheus
     ports:
       - '9090:9090'
-    command:
+    withmand:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.retention.time=15d'
 
   grafana:
     image: grafana/grafana:10.2.0
     volumes:
-      - grafana_data:/var/lib/grafana
+      - grafana_date:/var/lib/grafana
       - ./docker/grafana/provisioning:/etc/grafana/provisioning
     ports:
       - '3001:3000'
@@ -404,8 +404,8 @@ services:
 ```yaml
 # docker/prometheus/prometheus.yml
 global:
-  scrape_interval: 15s
-  evaluation_interval: 15s
+  scrape_inhaveval: 15s
+  evaluation_inhaveval: 15s
 
 scrape_configs:
   - job_name: 'pilates-api'
@@ -414,54 +414,54 @@ scrape_configs:
     metrics_path: '/metrics'
 ```
 
-## Fases de Implementação
+## Implementation Phases
 
-### Fase 1 - MVP (Custo Zero)
+### Phase 1 - MVP (Custo Zero)
 
-- [x] Logs estruturados (Pino → stdout)
-- [x] Health checks básicos
-- [x] Sentry (free tier: 5K erros/mês)
+- [x] Logs structureds (Pino → stdout)
+- [x] Health checks basics
+- [x] Sentry (free tier: 5K errorrs/month)
 - [x] UptimeRobot (free: 50 monitors)
 
-### Fase 2 - Métricas
+### Phase 2 - Metrics
 
 - [ ] Prometheus + Grafana (self-hosted)
-- [ ] Dashboards de negócio
-- [ ] Alertas básicos
+- [ ] Dashboards of business
+- [ ] Alerts basics
 
-### Fase 3 - Avançado (se necessário)
+### Phase 3 - Avançado (se required)
 
-- [ ] Logtail para logs centralizados
-- [ ] OpenTelemetry para tracing
-- [ ] APM completo
+- [ ] Logtail for logs centralizados
+- [ ] OpenTelemetry for tracing
+- [ ] APM withplete
 
-## Custos Estimados
+## Estimated Costs
 
-| Serviço     | Tier        | Custo             |
+| Service     | Tier        | Custo             |
 | ----------- | ----------- | ----------------- |
-| Sentry      | Free        | $0 (5K erros/mês) |
+| Sentry      | Free        | $0 (5K errorrs/month) |
 | UptimeRobot | Free        | $0 (50 monitors)  |
 | Prometheus  | Self-hosted | $0 (~100MB RAM)   |
 | Grafana     | Self-hosted | $0 (~100MB RAM)   |
-| Logtail     | Free        | $0 (1GB/mês)      |
+| Logtail     | Free        | $0 (1GB/month)      |
 | **Total**   |             | **$0**            |
 
-## Consequências
+## Consequences
 
-### Positivas
+### Positive
 
--  Custo zero com free tiers
--  Setup simples para monolito
--  Logs estruturados facilitam debug
--  Métricas de negócio desde o início
--  Alertas de erros automáticos (Sentry)
+-  Custo zero with free tiers
+-  Setup simple for monolito
+-  Logs structureds facilitam debug
+-  Metrics of business from the start
+-  Alerts of errorrs automatics (Sentry)
 
-### Negativas
+### Negative
 
--  Sem distributed tracing (aceitável para monolito)
--  Grafana precisa configuração manual inicial
+-  Sem distributed tracing (aceitável for monolito)
+-  Grafana needs configuration manual inicial
 
-## Alertas Recomendados
+## Alerts Rewithendados
 
 ```yaml
 # Críticos
@@ -488,9 +488,9 @@ scrape_configs:
   severity: info
 ```
 
-## Referências
+## References
 
-- [Pino Logger](https://github.com/pinojs/pino)
+- [Pino Logger](https://github.with/pinojs/pino)
 - [Prometheus Best Practices](https://prometheus.io/docs/practices/naming/)
 - [Sentry for Node.js](https://docs.sentry.io/platforms/node/)
-- [NestJS Health Checks](https://docs.nestjs.com/recipes/terminus)
+- [NestJS Health Checks](https://docs.nestjs.with/recipes/haveminus)

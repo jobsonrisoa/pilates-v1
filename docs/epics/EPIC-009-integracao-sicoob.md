@@ -1,184 +1,184 @@
-# EPIC-009: Integração Bancária Sicoob
+# EPIC-009: Banking Integration Sicoob
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                      |
+| Field            | Value                      |
 | ---------------- | -------------------------- |
 | **ID**           | EPIC-009                   |
-| **Título**       | Integração Bancária Sicoob |
-| **Fase**         | 2 - Financeiro             |
-| **Prioridade**   | Critical                 |
-| **Estimativa**   | 2 semanas                  |
-| **Dependências** | EPIC-008 (Planos e Preços) |
+| **Title**       | Banking Integration Sicoob |
+| **Phase**         | 2 - Financial             |
+| **Priority**   | Critical                 |
+| **Estimate**   | 2 weeks                  |
+| **Dependencies** | EPIC-008 (Plans and Prices) |
 | **Status**       | Backlog                 |
 
 ---
 
-##  Descrição
+##  Description
 
-Implementar integração completa com API do Sicoob para:
+Implement integration withpleta with API of the Sicoob para:
 
-- Autenticação OAuth2
-- Geração de boletos bancários
-- Geração de cobranças PIX
-- Webhooks de confirmação de pagamento
-- Baixa automática
-
----
-
-##  Objetivos
-
-1. Gerar boletos automaticamente
-2. Gerar QR Code PIX
-3. Receber notificações de pagamento
-4. Baixa automática de mensalidades
+- Authentication OAuth2
+- Boleto generation banking
+- Generation of billing PIX
+- Webhooks of confirmation of payment
+- Low automatic
 
 ---
 
-##  User Stories
+##  Objectives
 
-### US-009-001: Gerar Boleto
+1. Generate boletos automaticamente
+2. Generate PIX QR Code
+3. Receber notifications of payment
+4. Low automatic of monthlyidades
 
-**Como** sistema  
+---
+
+##  Ube Stories
+
+### US-009-001: Generate Boleto
+
+**Como** syshas  
 **Quero** gerar boleto automaticamente  
 **Para** cobrar o aluno
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Boleto gerado via API Sicoob
-- [ ] Código de barras válido
-- [ ] PDF para download/impressão
+- [ ] Code of barras valid
+- [ ] PDF for download/impressão
 - [ ] Envio por email
 
 ---
 
-### US-009-002: Gerar PIX
+### US-009-002: Generate PIX
 
-**Como** sistema  
-**Quero** gerar cobrança PIX  
-**Para** oferecer opção de pagamento
+**Como** syshas  
+**Quero** gerar billing PIX  
+**Para** offersr option of payment
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] QR Code gerado
-- [ ] Código copia e cola
-- [ ] Expiração configurável
-- [ ] Valor correto
+- [ ] Code copia and cola
+- [ ] Expiration configurável
+- [ ] Value correto
 
 ---
 
-### US-009-003: Receber Webhook de Pagamento
+### US-009-003: Receber Webhook of Payment
 
-**Como** sistema  
-**Quero** receber notificação quando pagamento for feito  
-**Para** dar baixa automática
+**Como** syshas  
+**Quero** receber notificaction when payment for done  
+**Para** dar baixa automatic
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Endpoint de webhook seguro
-- [ ] Validação de assinatura
-- [ ] Atualização do status
-- [ ] Log da transação
-
----
-
-### US-009-004: Baixa Automática
-
-**Como** sistema  
-**Quero** atualizar status quando pago  
-**Para** manter dados corretos
-
-**Critérios de Aceite:**
-
-- [ ] Status atualizado para PAID
-- [ ] Data de pagamento registrada
-- [ ] Matrícula mantida ativa
-- [ ] Notificação ao aluno
+- [ ] Endpoint of webhook seguro
+- [ ] Validation of signature
+- [ ] Update of the status
+- [ ] Log of the transaction
 
 ---
 
-##  Tasks Técnicas
+### US-009-004: Low Automatic
+
+**Como** syshas  
+**Quero** currentizar status when pago  
+**Para** maintain dados corretos
+
+**Acceptance Crihaveia:**
+
+- [ ] Status currentizado for PAID
+- [ ] Data of payment registrada
+- [ ] Enrollment mantida active
+- [ ] Notificaction to aluno
+
+---
+
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-009-001: Módulo de Integração Sicoob
+#### TASK-009-001: Module of Integration Sicoob
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Estrutura do módulo
-- Configurações
-- Interfaces
-
----
-
-#### TASK-009-002: Autenticação OAuth2 Sicoob
-
-**Estimativa:** 4h
-
-- Obter access token
-- Refresh automático
-- Armazenamento seguro
+- Structure of the module
+- Settings
+- Inhavefaces
 
 ---
 
-#### TASK-009-003: Serviço de Geração de Boletos
+#### TASK-009-002: Authentication OAuth2 Sicoob
 
-**Estimativa:** 6h
+**Estimate:** 4h
 
-- Integração com API /cobranca/v2/boletos
-- Mapeamento de dados
-- Tratamento de erros
-- Mock para desenvolvimento
+- Obhave access token
+- Refresh automatic
+- Storage seguro
 
 ---
 
-#### TASK-009-004: Serviço de Geração de PIX
+#### TASK-009-003: Service of Generation of Boletos
 
-**Estimativa:** 4h
+**Estimate:** 6h
 
-- Integração com API /pix/v2/cob
-- Geração de QR Code
-- Mock para desenvolvimento
+- Integration with API /cobranca/v2/boletos
+- Mapeamento of dados
+- Tratamento of errorrs
+- Mock for shouldlopment
+
+---
+
+#### TASK-009-004: Service of Generation of PIX
+
+**Estimate:** 4h
+
+- Integration with API /pix/v2/cob
+- Generation of QR Code
+- Mock for shouldlopment
 
 ---
 
 #### TASK-009-005: Webhook Handler
 
-**Estimativa:** 6h
+**Estimate:** 6h
 
 - Endpoint POST /webhooks/sicoob
-- Validação de assinatura
-- Processamento de eventos
+- Validation of signature
+- Processmento of events
 - Idempotência
-- Logs de auditoria
+- Audit logs
 
 ---
 
-#### TASK-009-006: Eventos de Domínio
+#### TASK-009-006: Events of Domain
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
 - PaymentConfirmedEvent
-- Listeners para atualizar matrícula
-- Notificações
+- Listeners for currentizar enrollment
+- Notifications
 
 ---
 
-#### TASK-009-007: Mock Service para Dev
+#### TASK-009-007: Mock Service for Dev
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Simular geração de boleto
-- Simular geração de PIX
-- Endpoint para simular pagamento
+- Simular generation of boleto
+- Simular generation of PIX
+- Endpoint for simular payment
 
 ---
 
-### Configuração
+### Configuration
 
-#### TASK-009-008: Variáveis de Ambiente
+#### TASK-009-008: Variables of Ambiente
 
-**Estimativa:** 1h
+**Estimate:** 1h
 
 ```env
 SICOOB_API_URL=
@@ -190,45 +190,45 @@ SICOOB_WEBHOOK_SECRET=
 
 ---
 
-#### TASK-009-009: Documentação de Integração
+#### TASK-009-009: Documentation of Integration
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Fluxo de integração
-- Configuração de webhooks
+- Fluxo of integration
+- Configuration of webhooks
 - Troubleshooting
 
 ---
 
-### Testes
+### Tests
 
-#### TASK-009-010: Testes de Integração
+#### TASK-009-010: Tests of Integration
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-- Testes com mock
-- Testes de webhook
-- Cenários de erro
+- Tests with mock
+- Tests of webhook
+- Cenários of error
 
 ---
 
-##  Critérios de Aceite do Épico
+##  Acceptance Crihaveia of the Épico
 
-- [ ] Boletos gerados corretamente
+- [ ] Boletos gerados correctly
 - [ ] PIX funcionando
-- [ ] Webhook recebendo pagamentos
-- [ ] Baixa automática funcionando
-- [ ] Logs de auditoria completos
-- [ ] Mock para desenvolvimento
-- [ ] Testes ≥80%
-- [ ] Documentação completa
+- [ ] Webhook recebendo payments
+- [ ] Low automatic funcionando
+- [ ] Audit logs withpletes
+- [ ] Mock for shouldlopment
+- [ ] Tests ≥80%
+- [ ] Documentation withpleta
 
 ---
 
-## 📎 Referências
+## 📎 References
 
-- [ADR-008: Integração Sicoob](../architecture/adrs/ADR-008-integracao-sicoob.md)
-- [Sicoob API Docs](https://developers.sicoob.com.br/)
+- [ADR-008: Integration Sicoob](../architecture/adrs/ADR-008-integracto-sicoob.md)
+- [Sicoob API Docs](https://shouldlopers.sicoob.with.br/)
 
 ---
 
@@ -236,7 +236,7 @@ SICOOB_WEBHOOK_SECRET=
 
 ```
 Semana 1:
-├── TASK-009-001: Módulo (2h)
+├── TASK-009-001: Module (2h)
 ├── TASK-009-002: OAuth2 (4h)
 ├── TASK-009-003: Boletos (6h)
 ├── TASK-009-004: PIX (4h)
@@ -245,9 +245,9 @@ Semana 1:
 
 Semana 2:
 ├── TASK-009-005: Webhook (6h)
-├── TASK-009-006: Eventos (3h)
-├── TASK-009-009: Documentação (2h)
-└── TASK-009-010: Testes (4h)
+├── TASK-009-006: Events (3h)
+├── TASK-009-009: Documentation (2h)
+└── TASK-009-010: Tests (4h)
 ```
 
-**Total estimado:** ~35 horas (~2 semanas)
+**Total estimado:** ~35 hours (~2 weeks)

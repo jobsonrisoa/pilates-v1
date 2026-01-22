@@ -1,166 +1,166 @@
-# EPIC-016: Relatórios Operacionais
+# EPIC-016: Reports Operacionais
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                                    |
+| Field            | Value                                    |
 | ---------------- | ---------------------------------------- |
 | **ID**           | EPIC-016                                 |
-| **Título**       | Relatórios Operacionais                  |
-| **Fase**         | 3 - Operacional                          |
-| **Prioridade**   | 🟡 Média                                 |
-| **Estimativa**   | 1 semana                                 |
-| **Dependências** | EPIC-006 (Agenda), EPIC-013 (Reposições) |
+| **Title**       | Reports Operacionais                  |
+| **Phase**         | 3 - Operacional                          |
+| **Priority**   | 🟡 Méday                                 |
+| **Estimate**   | 1 week                                 |
+| **Dependencies** | EPIC-006 (Schedule), EPIC-013 (Reschedulings) |
 | **Status**       | Backlog                               |
 
 ---
 
-##  Descrição
+##  Description
 
-Implementar relatórios operacionais:
+Implement reports operacionais:
 
-- Alunos por status
-- Taxa de ocupação por horário
-- Faltas e presenças
-- Reposições pendentes
-- Aulas por professor
-- Relatórios de marketing (novos alunos, churn)
-
----
-
-##  Objetivos
-
-1. Visão operacional clara
-2. Métricas de ocupação
-3. Acompanhamento de frequência
-4. Indicadores de marketing
+- Students by status
+- Occupancy rate por schedule
+- Absences and attendances
+- Pending reschedulings
+- Classes per instructor
+- Reports of marketing (new students, churn)
 
 ---
 
-##  User Stories
+##  Objectives
 
-### US-016-001: Relatório de Alunos por Status
+1. View operational clara
+2. Metrics of occupancy
+3. Awithpanhamento of frequência
+4. Indicadores of marketing
+
+---
+
+##  Ube Stories
+
+### US-016-001: Report of Students por Status
 
 **Como** gerente  
-**Quero** ver distribuição de alunos por status  
+**Quero** ver distribuição of students by status  
 **Para** entender a base
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Ativos, inativos, suspensos
-- [ ] Gráfico e tabela
-- [ ] Evolução no tempo
+- [ ] Ativos, inactives, suspendeds
+- [ ] Chart and table
+- [ ] Evolução in the haspo
 
 ---
 
-### US-016-002: Relatório de Ocupação
+### US-016-002: Report of Ocupaction
 
 **Como** gerente  
-**Quero** ver taxa de ocupação dos horários  
+**Quero** ver taxa of occupancy of the schedules  
 **Para** otimizar a grade
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Por horário
-- [ ] Por professor
-- [ ] Por modalidade
-- [ ] Heat map semanal
+- [ ] Por schedule
+- [ ] Por instructor
+- [ ] Por modality
+- [ ] Heat map weekl
 
 ---
 
-### US-016-003: Relatório de Frequência
+### US-016-003: Report of Frequency
 
 **Como** gerente  
-**Quero** ver estatísticas de presença/falta  
+**Quero** ver estatísticas of attendance/fhigh  
 **Para** identificar problemas
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Taxa geral de presença
+- [ ] Rate geral of attendance
 - [ ] Por aluno
-- [ ] Por professor
+- [ ] Por instructor
 - [ ] Tendências
 
 ---
 
-### US-016-004: Relatório de Reposições
+### US-016-004: Report of Reschedulings
 
 **Como** gerente  
-**Quero** ver status das reposições  
-**Para** acompanhar o acumulado
+**Quero** ver status of the reschedulings  
+**Para** awithpanhar o acumuside
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Créditos pendentes
-- [ ] Taxa de utilização
+- [ ] Credits pending
+- [ ] Rate of utilizaction
 - [ ] Expirados
 
 ---
 
-### US-016-005: Relatório de Aulas por Professor
+### US-016-005: Report of Classes por Instructor
 
 **Como** gerente  
-**Quero** ver produtividade dos professores  
+**Quero** ver produtividade of the instructores  
 **Para** avaliar desempenho
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Aulas ministradas
-- [ ] Por período
-- [ ] Taxa de presença dos alunos
+- [ ] Classes ministradas
+- [ ] Por period
+- [ ] Rate of attendance of the students
 
 ---
 
-### US-016-006: Relatório de Marketing
+### US-016-006: Report of Marketing
 
 **Como** gerente  
-**Quero** ver métricas de aquisição e retenção  
-**Para** avaliar o negócio
+**Quero** ver metrics of heresição and retenção  
+**Para** avaliar o business
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Novos alunos por período
-- [ ] Taxa de cancelamento (churn)
-- [ ] Origem dos alunos (futuro)
+- [ ] New students por period
+- [ ] Cancellation rate (churn)
+- [ ] Source of the students (future)
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-016-001: API de Relatório de Alunos
+#### TASK-016-001: API of Report of Students
 
-**Estimativa:** 2h
-
----
-
-#### TASK-016-002: API de Ocupação
-
-**Estimativa:** 3h
+**Estimate:** 2h
 
 ---
 
-#### TASK-016-003: API de Frequência
+#### TASK-016-002: API of Ocupaction
 
-**Estimativa:** 3h
-
----
-
-#### TASK-016-004: API de Reposições
-
-**Estimativa:** 2h
+**Estimate:** 3h
 
 ---
 
-#### TASK-016-005: API de Aulas por Professor
+#### TASK-016-003: API of Frequency
 
-**Estimativa:** 2h
+**Estimate:** 3h
 
 ---
 
-#### TASK-016-006: API de Marketing
+#### TASK-016-004: API of Reschedulings
 
-**Estimativa:** 3h
+**Estimate:** 2h
+
+---
+
+#### TASK-016-005: API of Classes por Instructor
+
+**Estimate:** 2h
+
+---
+
+#### TASK-016-006: API of Marketing
+
+**Estimate:** 3h
 
 ---
 
@@ -168,36 +168,36 @@ Implementar relatórios operacionais:
 
 #### TASK-016-007: Dashboard Operacional
 
-**Estimativa:** 5h
+**Estimate:** 5h
 
 - KPIs principais
-- Gráficos resumidos
-- Links para detalhes
+- Charts resumidos
+- Links for detalhes
 
 ---
 
-#### TASK-016-008: Páginas de Relatórios
+#### TASK-016-008: Pages of Reports
 
-**Estimativa:** 6h
+**Estimate:** 6h
 
-- Uma página por relatório
-- Filtros
-- Gráficos
-- Exportação
+- Uma page por report
+- Filhaves
+- Charts
+- Export
 
 ---
 
-##  Critérios de Aceite do Épico
+##  Acceptance Crihaveia of the Épico
 
-- [ ] Todos os relatórios funcionando
-- [ ] Gráficos informativos
-- [ ] Filtros aplicáveis
-- [ ] Exportação PDF/Excel
-- [ ] Performance adequada
-- [ ] Testes ≥80%
+- [ ] Todos os reports funcionando
+- [ ] Charts informctives
+- [ ] Filhaves aplicáveis
+- [ ] Export PDF/Excel
+- [ ] Performnce adequada
+- [ ] Tests ≥80%
 
 ---
 
 ##  Timeline Sugerido
 
-**Total estimado:** ~26 horas (~1 semana)
+**Total estimado:** ~26 hours (~1 week)

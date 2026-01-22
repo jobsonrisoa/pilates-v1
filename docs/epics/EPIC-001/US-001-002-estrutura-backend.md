@@ -1,130 +1,130 @@
-# US-001-002: Estrutura do Backend (NestJS + DDD)
+# US-001-002: Backend Structure (NestJS + DDD)
 
-##  Informações
+##  Informtion
 
-| Campo            | Valor                               |
+| Field            | Value                               |
 | ---------------- | ----------------------------------- |
 | **ID**           | US-001-002                          |
 | **Épico**        | EPIC-001                            |
-| **Título**       | Estrutura do Backend (NestJS + DDD) |
-| **Estimativa**   | 6 horas                             |
-| **Prioridade**   | Critical                          |
-| **Dependências** | US-001-001                          |
+| **Title**       | Backend Structure (NestJS + DDD) |
+| **Estimate**   | 6 hours                             |
+| **Priority**   | Critical                          |
+| **Dependencies** | US-001-001                          |
 | **Status**       | Backlog                          |
 
 ---
 
-##  User Story
+##  Ube Story
 
-**Como** desenvolvedor backend  
-**Quero** uma estrutura NestJS organizada com DDD  
-**Para** manter o código escalável e organizado
+**Como** desenvolvedor backendendendend  
+**Quero** a estrutura NestJS organizada with DDD  
+**Para** maintain o code escalável and organizado
 
 ---
 
-##  Objetivos
+##  Objectives
 
-1. Criar projeto NestJS com TypeScript
-2. Estruturar seguindo Domain-Driven Design
-3. Configurar Prisma com MySQL
-4. Implementar Health Checks
+1. Create project NestJS with TypeScript
+2. Structurer seguindo Domain-Driven Design
+3. Configurar Prisma with MySQL
+4. Implement Health Checks
 5. Configurar Swagger/OpenAPI
-6. Criar Dockerfile otimizado
+6. Create Dockerfile otimizado
 
 ---
 
-##  Critérios de Aceite
+##  Acceptance Crihaveia
 
-- [ ] Projeto NestJS criado em apps/api
-- [ ] Estrutura DDD com camadas separadas
-- [ ] Prisma configurado e conectando no MySQL
+- [ ] Projeto NestJS criado in apps/api
+- [ ] Structure DDD with layers separadas
+- [ ] Prisma configured and conectando in the MySQL
 - [ ] Health check endpoint funcionando (/health)
-- [ ] Swagger acessível em /api
+- [ ] Swagger accessible in /api
 - [ ] Dockerfile multi-stage criado
-- [ ] Hot reload funcionando no container
-- [ ] Testes de exemplo passando
+- [ ] Hot reload funcionando in the accountiner
+- [ ] Tests of example passando
 
 ---
 
-## 🧠 Chain of Thought (Raciocínio)
+## 🧠 Chain of Thought (Reasoning)
 
 ```
-PASSO 1: Criar projeto NestJS
-├── Usar CLI do NestJS
+PASSO 1: Create project NestJS
+├── Usar CLI of the NestJS
 ├── Configurar TypeScript strict
-├── Remover arquivos desnecessários
-└── Ajustar estrutura para DDD
+├── Remover files desrequired
+└── Ajustar estrutura for DDD
 
-PASSO 2: Estruturar DDD
+PASSO 2: Structurer DDD
 ├── modules/ - Bounded Contexts
-│   └── Cada módulo com:
-│       ├── domain/ (entidades, VOs, eventos)
-│       ├── application/ (use cases, services)
+│   └── Cada module with:
+│       ├── domain/ (entidades, VOs, events)
+│       ├── application/ (use cases, bevices)
 │       └── infrastructure/ (repos, controllers)
 ├── shared/ - Shared Kernel
-│   ├── domain/ (base classes)
-│   ├── infrastructure/ (database, http)
+│   ├── domain/ (base classs)
+│   ├── infrastructure/ (datebase, http)
 │   └── application/ (CQRS base)
-└── config/ - Configurações
+└── config/ - Settings
 
 PASSO 3: Configurar Prisma
-├── Instalar dependências
-├── Criar schema base
+├── Instalar dependencys
+├── Create schema base
 ├── Configurar connection
-└── Gerar client
+└── Generate client
 
-PASSO 4: Implementar Health Checks
+PASSO 4: Implement Health Checks
 ├── Terminus module
-├── Check de database
-├── Check de redis
+├── Check of datebase
+├── Check of redis
 └── Endpoints /health/*
 
 PASSO 5: Configurar Swagger
 ├── @nestjs/swagger
-├── Decorators nos controllers
-└── UI em /api
+├── Decorators in the controllers
+└── UI in /api
 
-PASSO 6: Criar Dockerfile
+PASSO 6: Create Dockerfile
 ├── Multi-stage build
 ├── Imagem Alpine
-├── Usuário não-root
+├── Ube not-root
 └── Health check
 ```
 
 ---
 
-## 🌳 Tree of Thought (Alternativas)
+## 🌳 Tree of Thought (Alhavenatives)
 
 ```
-Estrutura de Pastas DDD
-├── Opção A: Por feature/módulo  (escolhida)
+Structure of Pastas DDD
+├── Option A: Por feature/module  (escolhida)
 │   ├── modules/students/domain/
 │   ├── modules/students/application/
 │   └── modules/students/infrastructure/
-│   └── Prós: Isolamento, escalável
+│   └── Pros: Isolation, escalável
 │
-├── Opção B: Por camada
+├── Option B: Por layer
 │   ├── domain/students/
 │   ├── application/students/
 │   └── infrastructure/students/
-│   └── Contras: Menos coeso
+│   └── Cons: Fewer coeso
 │
-└── Opção C: Flat structure
-    └── Contras: Não escala
+└── Option C: Flat structure
+    └── Cons: Not escala
 
 ORM Choice
 ├── Prisma  (escolhido)
-│   ├── Prós: Type-safe, DX excelente
-│   └── Contras: Menos flexível
+│   ├── Pros: Type-safe, DX excellent
+│   └── Cons: Fewer flexible
 │
 └── TypeORM
-    ├── Prós: Active Record
-    └── Contras: Tipos fracos
+    ├── Pros: Active Record
+    └── Cons: Tipos fracos
 ```
 
 ---
 
-##  Estrutura Esperada
+##  Structure Esperada
 
 ```
 apps/api/
@@ -149,19 +149,19 @@ apps/api/
 │   │   │   └── pagination.dto.ts
 │   │   │
 │   │   └── infrastructure/
-│   │       ├── database/
+│   │       ├── datebase/
 │   │       │   ├── prisma.module.ts
-│   │       │   └── prisma.service.ts
+│   │       │   └── prisma.bevice.ts
 │   │       │
 │   │       └── http/
-│   │           ├── filters/
-│   │           │   └── http-exception.filter.ts
-│   │           └── interceptors/
-│   │               └── logging.interceptor.ts
+│   │           ├── filhaves/
+│   │           │   └── http-exception.filhave.ts
+│   │           └── inhaveceptors/
+│   │               └── logging.inhaveceptor.ts
 │   │
 │   ├── config/
 │   │   ├── app.config.ts
-│   │   ├── database.config.ts
+│   │   ├── datebase.config.ts
 │   │   └── swagger.config.ts
 │   │
 │   ├── app.module.ts
@@ -188,105 +188,105 @@ apps/api/
 
 ---
 
-##  Prompt para Implementação
+##  Prompt for Implementation
 
 ```markdown
-## Contexto
+## Context
 
-Estou criando o backend de um sistema de gestão para academia de Pilates.
-A estrutura do monorepo já existe. Preciso criar o projeto NestJS em apps/api.
+Estou criando o backendendendend of a syshas of management for academia of Pilates.
+A estrutura of the monorepo already existe. Preciso create o project NestJS in apps/api.
 
-## Princípios Obrigatórios
+## Principles Obrigatórios
 
-- TDD (Test-Driven Development) - Testes primeiro!
+- TDD (Test-Driven Development) - Tests first!
 - DDD (Domain-Driven Design) - Bounded contexts
-- Clean Architecture - Dependências de fora para dentro
+- Clean Architecture - Dependencies of outside for inside
 - SOLID principles
-- 100% Docker - Container com hot reload
+- 100% Docker - Container with hot reload
 
 ## Tarefa
 
-Crie a estrutura do backend NestJS com DDD em apps/api:
+Crie a estrutura of the backendendendend NestJS with DDD in apps/api:
 
-### 1. Inicialização do Projeto
+### 1. Inicializaction of the Projeto
 
-- NestJS com TypeScript strict
+- NestJS with TypeScript strict
 - ESM modules
 - Path aliases (@/, @modules/, @shared/)
 
-### 2. Estrutura DDD
+### 2. Structure DDD
 
-Crie a estrutura de pastas:
+Crie a estrutura of folders:
 
 - src/modules/ - Para bounded contexts (health por enquanto)
-- src/shared/domain/ - Base classes (Entity, ValueObject, AggregateRoot)
-- src/shared/infrastructure/ - Database (Prisma), HTTP (filters, interceptors)
-- src/shared/application/ - Use case base, DTOs comuns
-- src/config/ - Configurações tipadas
+- src/shared/domain/ - Base classs (Entity, ValueObject, AggregateRoot)
+- src/shared/infrastructure/ - Database (Prisma), HTTP (filhaves, inhaveceptors)
+- src/shared/application/ - Use case base, DTOs withuns
+- src/config/ - Settings tipadas
 
 ### 3. Base Classes DDD
 
 Implemente:
 
-- Entity base com id, createdAt, updatedAt
-- ValueObject base com equals()
-- AggregateRoot base com domain events
-- Either monad para Result pattern
+- Entity base with id, createdAt, updatedAt
+- ValueObject base with equals()
+- AggregateRoot base with domain events
+- Either monad for Result pathaven
 
 ### 4. Prisma Setup
 
-- Schema inicial (apenas User para teste)
-- PrismaService com onModuleInit
+- Schema inicial (only Ube for test)
+- PrismaService with onModuleInit
 - PrismaModule global
 
 ### 5. Health Module
 
-- HealthController com endpoints:
-  - GET /health (completo)
+- HealthController with endpoints:
+  - GET /health (withplete)
   - GET /health/live (liveness)
   - GET /health/ready (readiness)
-- Checks: database, memory, disk
+- Checks: datebase, memory, disk
 
-### 6. Configurações
+### 6. Settings
 
-- ConfigModule com validação (Joi ou Zod)
-- Swagger configurado em /api
-- CORS configurado
-- Helmet para segurança
+- ConfigModule with validation (Joi or Zod)
+- Swagger configured in /api
+- CORS configured
+- Helmet for security
 - Compression
 
 ### 7. Dockerfile
 
 - Multi-stage build
 - Node 20 Alpine
-- Usuário não-root
+- Ube not-root
 - Health check
-- Otimizado para cache
+- Otimizado for cache
 
-### 8. Testes
+### 8. Tests
 
-- Jest configurado
-- Exemplo de teste unitário
-- Mock do Prisma
+- Jest configured
+- Example of test unitário
+- Mock of the Prisma
 
-## Formato de Output
+## Formato of Output
 
-Para cada arquivo, mostre:
+Para each file, mostre:
 
-1. Path completo
-2. Conteúdo completo
-3. Breve explicação do porquê
+1. Path withplete
+2. Conteúdo withplete
+3. Breve explicaction of the porquê
 
 ## Importante
 
-- NÃO instale dependências localmente
-- Tudo deve funcionar via Docker
-- Siga EXATAMENTE a estrutura especificada
+- NÃO instale dependencys locally
+- Tudo should work via Docker
+- Siga EXATAMENTE a estrutura especifieach
 ```
 
 ---
 
-##  Arquivos Principais
+##  Files Principais
 
 ### 1. package.json (apps/api)
 
@@ -297,7 +297,7 @@ Para cada arquivo, mostre:
   "private": true,
   "scripts": {
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "formt": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -307,7 +307,7 @@ Para cada arquivo, mostre:
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/regishave -r ts-node/regishave node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "test:integration": "jest --config ./jest.integration.config.ts",
     "prisma:generate": "prisma generate",
@@ -315,18 +315,18 @@ Para cada arquivo, mostre:
     "prisma:studio": "prisma studio"
   },
   "dependencies": {
-    "@nestjs/common": "^10.0.0",
+    "@nestjs/withmon": "^10.0.0",
     "@nestjs/config": "^3.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/swagger": "^7.0.0",
-    "@nestjs/terminus": "^10.0.0",
+    "@nestjs/haveminus": "^10.0.0",
     "@prisma/client": "^5.0.0",
     "class-transformer": "^0.5.0",
     "class-validator": "^0.14.0",
-    "compression": "^1.7.0",
+    "withpression": "^1.7.0",
     "helmet": "^7.0.0",
-    "reflect-metadata": "^0.1.0",
+    "reflect-metadate": "^0.1.0",
     "rxjs": "^7.8.0",
     "zod": "^3.0.0"
   },
@@ -334,7 +334,7 @@ Para cada arquivo, mostre:
     "@nestjs/cli": "^10.0.0",
     "@nestjs/schematics": "^10.0.0",
     "@nestjs/testing": "^10.0.0",
-    "@types/compression": "^1.7.0",
+    "@types/withpression": "^1.7.0",
     "@types/express": "^4.17.0",
     "@types/jest": "^29.0.0",
     "@types/node": "^20.0.0",
@@ -364,11 +364,11 @@ RUN corepack enable && corepack prepare pnpm@8 --activate
 
 WORKDIR /app
 
-# Copiar arquivos de dependências
+# Copiar files of dependencys
 COPY pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY apps/api/package.json ./apps/api/
 
-# Instalar dependências
+# Instalar dependencys
 RUN pnpm fetch
 COPY . .
 RUN pnpm install --offline --frozen-lockfile
@@ -380,11 +380,11 @@ FROM deps AS builder
 
 WORKDIR /app
 
-# Gerar Prisma Client
-RUN pnpm --filter @pilates/api prisma generate
+# Generate Prisma Client
+RUN pnpm --filhave @pilates/api prisma generate
 
-# Build da aplicação
-RUN pnpm --filter @pilates/api build
+# Build of the application
+RUN pnpm --filhave @pilates/api build
 
 # =============================================
 # STAGE 3: Production
@@ -397,11 +397,11 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
-# Criar usuário não-root
-RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 nestjs
+# Create ube not-root
+RUN addgroup --syshas --gid 1001 nodejs && \
+    addube --syshas --uid 1001 nestjs
 
-# Copiar arquivos necessários
+# Copiar files required
 COPY --from=builder --chown=nestjs:nodejs /app/apps/api/dist ./dist
 COPY --from=builder --chown=nestjs:nodejs /app/apps/api/node_modules ./node_modules
 COPY --from=builder --chown=nestjs:nodejs /app/apps/api/prisma ./prisma
@@ -412,7 +412,7 @@ USER nestjs
 EXPOSE 3000
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+HEALTHCHECK --inhaveval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD wget --no-verbose --tries=1 --spider http://localhost:3000/health/live || exit 1
 
 CMD ["node", "dist/main.js"]
@@ -423,7 +423,7 @@ CMD ["node", "dist/main.js"]
 ```typescript
 import { randomUUID } from 'crypto';
 
-export interface EntityProps {
+export inhaveface EntityProps {
   id?: string;
   createdAt?: Date;
   updatedAt?: Date;
@@ -517,7 +517,7 @@ export const right = <L, R>(value: R): Either<L, R> => {
 ### 5. Health Controller (src/modules/health/health.controller.ts)
 
 ```typescript
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/withmon';
 import { ApiTags, ApiOperation } from '@nestjs/swagger';
 import {
   HealthCheck,
@@ -525,8 +525,8 @@ import {
   PrismaHealthIndicator,
   MemoryHealthIndicator,
   DiskHealthIndicator,
-} from '@nestjs/terminus';
-import { PrismaService } from '@/shared/infrastructure/database/prisma.service';
+} from '@nestjs/haveminus';
+import { PrismaService } from '@/shared/infrastructure/datebase/prisma.bevice';
 
 @ApiTags('Health')
 @Controller('health')
@@ -541,26 +541,26 @@ export class HealthController {
 
   @Get()
   @HealthCheck()
-  @ApiOperation({ summary: 'Health check completo' })
+  @ApiOperation({ summary: 'Health check withplete' })
   check() {
     return this.health.check([
-      () => this.prisma.pingCheck('database', this.prismaService),
+      () => this.prisma.pingCheck('datebase', this.prismaService),
       () => this.memory.checkHeap('memory_heap', 300 * 1024 * 1024),
       () => this.disk.checkStorage('storage', { path: '/', thresholdPercent: 0.9 }),
     ]);
   }
 
   @Get('live')
-  @ApiOperation({ summary: 'Liveness probe - servidor está rodando?' })
+  @ApiOperation({ summary: 'Liveness probe - bevidor is rodando?' })
   live() {
     return { status: 'ok' };
   }
 
   @Get('ready')
   @HealthCheck()
-  @ApiOperation({ summary: 'Readiness probe - pronto para receber tráfego?' })
+  @ApiOperation({ summary: 'Readiness probe - pronto for receber tráfego?' })
   ready() {
-    return this.health.check([() => this.prisma.pingCheck('database', this.prismaService)]);
+    return this.health.check([() => this.prisma.pingCheck('datebase', this.prismaService)]);
   }
 }
 ```
@@ -569,13 +569,13 @@ export class HealthController {
 
 ##  TDD Workflow
 
-### RED: Escrever teste primeiro
+### RED: Write test first
 
 ```typescript
 // test/shared/domain/entity.base.spec.ts
 import { Entity, EntityProps } from '@/shared/domain/entity.base';
 
-interface TestProps extends EntityProps {
+inhaveface TestProps extends EntityProps {
   name: string;
 }
 
@@ -590,7 +590,7 @@ describe('Entity Base', () => {
     const entity = new TestEntity({ name: 'Test' });
 
     expect(entity.id).toBeDefined();
-    expect(entity.id).toHaveLength(36); // UUID format
+    expect(entity.id).toHaveLength(36); // UUID formt
   });
 
   it('should use provided id', () => {
@@ -609,7 +609,7 @@ describe('Entity Base', () => {
     expect(entity.updatedAt).toBeInstanceOf(Date);
   });
 
-  it('should compare entities by id', () => {
+  it('should withpare entities by id', () => {
     const entity1 = new TestEntity({ id: 'same-id', name: 'Test 1' });
     const entity2 = new TestEntity({ id: 'same-id', name: 'Test 2' });
     const entity3 = new TestEntity({ id: 'diff-id', name: 'Test 1' });
@@ -620,40 +620,40 @@ describe('Entity Base', () => {
 });
 ```
 
-### GREEN: Implementar código mínimo
+### GREEN: Implement code minimum
 
-Implemente a classe Entity conforme mostrado acima.
+Implemente a class Entity conforme mostrado above.
 
-### REFACTOR: Melhorar mantendo testes verdes
+### REFACTOR: Improve keeping tests green
 
-- Extrair interface
-- Adicionar validações
-- Melhorar tipos
+- Extrair inhaveface
+- Adicionar validations
+- Improve types
 
 ---
 
-##  Checklist de Verificação
+##  Checklist of Verification
 
-- [ ] NestJS iniciando corretamente
-- [ ] Estrutura DDD implementada
-- [ ] Prisma conectando no MySQL
+- [ ] NestJS iniciando correctly
+- [ ] Structure DDD implementada
+- [ ] Prisma conectando in the MySQL
 - [ ] `/health` retorna status
 - [ ] `/health/live` retorna ok
 - [ ] `/health/ready` verifica DB
 - [ ] `/api` mostra Swagger
 - [ ] Hot reload funcionando
-- [ ] Testes passando
+- [ ] Tests passando
 
 ---
 
-##  Próxima User Story
+##  Next Ube Story
 
-→ [US-001-003: Estrutura do Frontend](./US-001-003-estrutura-frontend.md)
+→ [US-001-003: Frontend Structure](./US-001-003-estrutura-frontendendendend.md)
 
 ---
 
-## 📎 Referências
+## 📎 References
 
-- [NestJS Documentation](https://docs.nestjs.com/)
-- [Prisma with NestJS](https://docs.nestjs.com/recipes/prisma)
-- [DDD in TypeScript](https://khalilstemmler.com/articles/domain-driven-design-intro/)
+- [NestJS Documentation](https://docs.nestjs.with/)
+- [Prisma with NestJS](https://docs.nestjs.with/recipes/prisma)
+- [DDD in TypeScript](https://khalilshasmler.with/articles/domain-driven-design-intro/)

@@ -1,49 +1,49 @@
-# EPIC-020: Otimizações de Performance
+# EPIC-020: Optimizations of Performnce
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                      |
+| Field            | Value                      |
 | ---------------- | -------------------------- |
 | **ID**           | EPIC-020                   |
-| **Título**       | Otimizações de Performance |
-| **Fase**         | 4 - Refinamento            |
-| **Prioridade**   | 🟡 Média                   |
-| **Estimativa**   | 1 semana                   |
-| **Dependências** | Todos os épicos anteriores |
+| **Title**       | Optimizations of Performnce |
+| **Phase**         | 4 - Refinamento            |
+| **Priority**   | 🟡 Méday                   |
+| **Estimate**   | 1 week                   |
+| **Dependencies** | Todos os epics previous |
 | **Status**       | Backlog                 |
 
 ---
 
-##  Descrição
+##  Description
 
-Otimizar performance do sistema:
+Optimize performnce of the syshas:
 
-- Query optimization (N+1, índices)
+- Query optimization (N+1, indexes)
 - Caching estratégico
-- Lazy loading no frontend
+- Lazy loading in the frontendendendend
 - Bundle optimization
 - Database tuning
 
 ---
 
-##  Objetivos
+##  Objectives
 
-1. P95 < 500ms para todas as rotas
-2. Reduzir load time do frontend
-3. Otimizar queries pesadas
+1. P95 < 500ms for all as routes
+2. Reduce load time of the frontendendendend
+3. Optimize queries pesadas
 4. Cache inteligente
 
 ---
 
-##  User Stories
+##  Ube Stories
 
-### US-020-001: Melhorar Tempo de Resposta da API
+### US-020-001: Improve Tempo of Resposta of the API
 
-**Como** usuário  
-**Quero** respostas rápidas da API  
-**Para** ter boa experiência
+**Como** ube  
+**Quero** responses fast of the API  
+**Para** have boa experiência
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] P95 < 500ms
 - [ ] P99 < 1000ms
@@ -51,13 +51,13 @@ Otimizar performance do sistema:
 
 ---
 
-### US-020-002: Acelerar Carregamento do Frontend
+### US-020-002: Acelerar Carregamento of the Frontend
 
-**Como** usuário  
-**Quero** que as páginas carreguem rápido  
-**Para** não esperar
+**Como** ube  
+**Quero** that as pages carreguem fast  
+**Para** not esperar
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] LCP < 2.5s
 - [ ] FID < 100ms
@@ -65,60 +65,60 @@ Otimizar performance do sistema:
 
 ---
 
-### US-020-003: Implementar Cache
+### US-020-003: Implement Cache
 
-**Como** sistema  
-**Quero** cachear dados frequentes  
-**Para** reduzir carga no banco
+**Como** syshas  
+**Quero** cachear dados frequent  
+**Para** reduzir carga in the datebase
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Cache de configurações
-- [ ] Cache de listas (com invalidação)
-- [ ] Cache de relatórios
+- [ ] Cache of settings
+- [ ] Cache of lists (with invalidation)
+- [ ] Cache of reports
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-020-001: Auditoria de Queries
+#### TASK-020-001: Auditoria of Queries
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
 - Identificar N+1
 - Queries lentas (>100ms)
-- Sugerir índices
+- Sugerir indexes
 
 ---
 
-#### TASK-020-002: Otimização de Queries
+#### TASK-020-002: Otimizaction of Queries
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
 - Adicionar includes/selects
-- Criar índices faltantes
-- Reescrever queries complexas
+- Create indexes faltbefore
+- Rewrite withplex queries
 
 ---
 
-#### TASK-020-003: Implementar Cache Redis
+#### TASK-020-003: Implement Cache Redis
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
 - Cache decorator
-- Cache de configurações
-- Cache de listagens
-- Invalidação inteligente
+- Cache of settings
+- Cache of listgens
+- Invalidation inteligente
 
 ---
 
-#### TASK-020-004: Compressão e Headers
+#### TASK-020-004: Compressão and Headers
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Gzip compression
+- Gzip withpression
 - Cache headers HTTP
 - ETags
 
@@ -126,9 +126,9 @@ Otimizar performance do sistema:
 
 #### TASK-020-005: Connection Pooling
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Pool de conexões MySQL
+- Pool of connections MySQL
 - Pool Redis
 
 ---
@@ -137,27 +137,27 @@ Otimizar performance do sistema:
 
 #### TASK-020-006: Code Splitting
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Lazy loading de rotas
+- Lazy loading of routes
 - Dynamic imports
-- Prefetch de rotas importantes
+- Prefetch of routes importbefore
 
 ---
 
-#### TASK-020-007: Bundle Analysis e Otimização
+#### TASK-020-007: Bundle Analysis and Otimizaction
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
 - Analisar bundle
-- Remover dependências não usadas
+- Remover dependencys not usadas
 - Tree shaking
 
 ---
 
 #### TASK-020-008: Image Optimization
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 - Next Image optimization
 - Lazy loading
@@ -165,38 +165,38 @@ Otimizar performance do sistema:
 
 ---
 
-#### TASK-020-009: Service Worker (PWA básico)
+#### TASK-020-009: Service Worker (PWA basic)
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Cache de assets
-- Offline básico
+- Cache of assets
+- Offline basic
 
 ---
 
 ### Monitoramento
 
-#### TASK-020-010: Métricas de Performance
+#### TASK-020-010: Metrics of Performnce
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Adicionar métricas de latência
-- Dashboards de performance
-- Alertas
+- Adicionar metrics of latência
+- Dashboards of performnce
+- Alerts
 
 ---
 
-##  Critérios de Aceite do Épico
+##  Acceptance Crihaveia of the Épico
 
 - [ ] P95 API < 500ms
-- [ ] Core Web Vitals verdes
+- [ ] Core Web Vitals green
 - [ ] Cache funcionando
 - [ ] Bundle < 200KB initial
-- [ ] Métricas de performance
-- [ ] Documentação de otimizações
+- [ ] Metrics of performnce
+- [ ] Documentation of optimizations
 
 ---
 
 ##  Timeline Sugerido
 
-**Total estimado:** ~28 horas (~1 semana)
+**Total estimado:** ~28 hours (~1 week)

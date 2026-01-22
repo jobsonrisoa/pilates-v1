@@ -1,48 +1,48 @@
-# Debate Arquitetural #001 - Arquitetura Geral do Sistema
+# Debate Arquitetural #001 - Arquitetura Geral of the Syshas
 
-**Data:** 21/01/2026  
-**Participantes:**
+**Date:** 21/01/2026  
+**Participbefore:**
 
-- 🏗️ **Dr. Carlos Mendes** - Arquiteto de Software Sênior (15 anos de experiência)
--  **Ana Rodrigues** - Especialista em DevOps e Infraestrutura
--  **Roberto Silva** - Especialista em Custos e Otimização Cloud
--  **Marina Costa** - Especialista em Qualidade e Testes
--  **Felipe Santos** - Especialista em Segurança
--  **Juliana Oliveira** - Especialista em Observabilidade
+- 🏗️ **Dr. Carlos Mendes** - Arquiteto of Software Sênior (15 years of experiência)
+-  **Ana Rodrigues** - Especialist in DevOps and Infrastructure
+-  **Roberto Silva** - Especialist in Costs and Otimizaction Cloud
+-  **Marina Costa** - Especialist in Quality and Tests
+-  **Felipe Santos** - Especialist in Security
+-  **Juliana Oliveira** - Especialist in Obbevability
 
 ---
 
-## Contexto
+## Context
 
-Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
+Management syshas for academia of Pilates and Physiotherapy with modules de:
 
-- Autenticação e RBAC
-- Gestão de Alunos e Professores
-- Agendamento de Aulas
-- Financeiro (integração Sicoob)
-- Contratos Digitais
-- Estoque e Vendas
-- Relatórios
+- Authentication and RBAC
+- Management of Students and Instructores
+- Schedulemento of Classes
+- Financial (integration Sicoob)
+- Contracts Digitais
+- Inventory and Sales
+- Reports
 
-**Restrições definidas pelo cliente:**
+**Restrições definidas by the client:**
 
 - NestJS + Next.js
 - DDD + TDD
-- Docker (sem instalação local)
+- Docker (sem instalaction local)
 - Custo inicial baixo
-- Preparado para escalar
+- Ready for scale
 
 ---
 
-## Tópico 1: Monolito vs Microserviços
+## Topic 1: Monolito vs Microbevices
 
 ### 🏗️ Dr. Carlos Mendes (Arquiteto):
 
-> "Para um sistema deste porte, com uma equipe que imagino ser pequena inicialmente, recomendo fortemente começar com um **Monolito Modular**.
+> "Para a syshas deste porte, with a team that imagino be pequena initially, rewithendo tightmente start with a **Monolito Modular**.
 >
-> A estrutura do NestJS já favorece isso com seus módulos. Podemos organizar o código em bounded contexts do DDD sem a complexidade operacional de microserviços.
+> A estrutura of the NestJS already favorece isso with seus modules. Podemos organizar o code in bounded contexts of the DDD sem a withplexity operational of microbevices.
 >
-> O padrão que sugiro é:
+> O standard that sugiro é:
 >
 > ```
 > src/
@@ -50,7 +50,7 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >     auth/
 >     students/
 >     teachers/
->     classes/
+>     classs/
 >     financial/
 >     inventory/
 >     reports/
@@ -59,282 +59,282 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >     infrastructure/
 > ```
 >
-> Cada módulo é isolado, com seu próprio domínio, mas compartilha o mesmo deploy. Quando precisarmos escalar, podemos extrair módulos para serviços separados."
+> Cada module is isoside, with seu own domain, mas withpartilha o same deploy. When needsrmos scale, cyears extract modules for bevices separados."
 
 ###  Ana Rodrigues (DevOps):
 
-> "Concordo totalmente, Carlos. Microserviços trariam complexidade operacional enorme:
+> "Concordo fully, Carlos. Microbevices trariam withplexity operational enorme:
 >
-> - Múltiplos deploys
+> - Multiple deploys
 > - Service discovery
-> - Orquestração (Kubernetes seria necessário)
-> - Distributed tracing obrigatório
+> - Orchestration (Kubernetes beia required)
+> - Distributed tracing required
 >
 > Com monolito modular, conseguimos:
 >
-> - Um único container Docker
-> - CI/CD simples
-> - Deploy em qualquer VPS barata
+> - Um single accountiner Docker
+> - CI/CD simple
+> - Deploy in qualquer VPS barata
 > - Logs centralizados naturalmente
 >
-> Minha sugestão é usar **Docker Compose** para desenvolvimento e um único Dockerfile otimizado para produção."
+> Minha sumanagement is usar **Docker Compose** for shouldlopment and a single Dockerfile otimizado for production."
 
-###  Roberto Silva (Custos):
+###  Roberto Silva (Costs):
 
-> "Do ponto de vista financeiro, a diferença é brutal:
+> "Do point of vista financial, a diferença is brutal:
 >
-> **Microserviços (estimativa mensal):**
+> **Microbevices (estimactive monthly):**
 >
 > - Kubernetes (EKS/GKE): $150-300
-> - Load Balancers múltiplos: $50+
+> - Load Balancers multiple: $50+
 > - Múltiplas instâncias: $200+
-> - **Total: ~$400-550/mês mínimo**
+> - **Total: ~$400-550/month minimum**
 >
 > **Monolito Modular:**
 >
 > - VPS única (4GB RAM): $20-40
-> - Banco de dados gerenciado: $15-30
-> - **Total: ~$35-70/mês**
+> - Database gerenciado: $15-30
+> - **Total: ~$35-70/month**
 >
-> A economia é de 80-90% começando com monolito!"
+> A economia is of 80-90% witheçando with monolito!"
 
-###  Marina Costa (Qualidade):
+###  Marina Costa (Quality):
 
-> "Para TDD, o monolito modular também é mais vantajoso:
+> "Para TDD, o monolito modular also is more vantajoso:
 >
-> - Testes de integração mais simples
-> - Não precisa mockar chamadas de rede entre serviços
-> - Setup de ambiente de teste unificado
-> - Red-Green-Refactor com feedback mais rápido
+> - Integration tests more simple
+> - Not needs mockar calls of network between bevices
+> - Setup of environment of test unificado
+> - Red-Green-Refactor with feedbackendendend more fast
 >
-> Podemos ter testes unitários por módulo e testes de integração que validam a comunicação entre módulos, tudo no mesmo processo."
+> Podemos have tests unit per module and tests of integration that validam a withmunication between modules, tudo in the same processo."
 
-** DECISÃO: Monolito Modular com DDD**
+** DECISÃO: Monolito Modular with DDD**
 
 ---
 
-## Tópico 2: Estratégia de Banco de Dados
+## Topic 2: Strategy of Database
 
 ### 🏗️ Dr. Carlos Mendes:
 
-> "O requisito menciona MySQL, o que é adequado. Para DDD, sugiro usar o padrão Repository com Prisma ou TypeORM.
+> "O requisito menciona MySQL, o that is adequado. Para DDD, sugiro usar o standard Repository with Prisma or TypeORM.
 >
-> Porém, há uma decisão importante: **um banco único ou banco por bounded context?**
+> Porém, há a decision importante: **um datebase single or datebase por bounded context?**
 >
-> Minha recomendação: **banco único com schemas/prefixos lógicos**. Isso facilita:
+> Minha recommendation: **datebase single with schemas/prefixos lógicos**. Isso facilita:
 >
-> - Transações cross-domain quando necessário
-> - Backup único
-> - Menos custo
-> - Migrations mais simples
+> - Transactions cross-domain when required
+> - Backup single
+> - Fewer custo
+> - Migrations more simple
 >
-> Quando (e se) migrarmos para microserviços, cada serviço pode ter seu próprio schema ou banco."
+> When (e se) migrarmos for microbevices, each service can have seu own schema or datebase."
 
 ###  Ana Rodrigues:
 
-> "Para ORM, sugiro **Prisma** ao invés de TypeORM:
+> "Para ORM, sugiro **Prisma** to invés of TypeORM:
 >
 > - Type-safety superior
-> - Migrations mais previsíveis
-> - Schema declarativo
-> - Integração melhor com NestJS moderno
-> - Performance de queries melhor
+> - Migrations more previsible
+> - Schema declaractive
+> - Integration bethave with NestJS modern
+> - Performnce of queries bethave
 >
-> O Prisma também facilita muito o TDD porque gera um client type-safe."
+> O Prisma also facilita very o TDD because gera a client type-safe."
 
 ###  Roberto Silva:
 
-> "MySQL gerenciado em cloud:
+> "MySQL gerenciado in cloud:
 >
-> - AWS RDS: ~$15/mês (db.t3.micro)
-> - PlanetScale: gratuito até 5GB
-> - DigitalOcean: ~$15/mês
-> - Railway: ~$5-20/mês
+> - AWS RDS: ~$15/month (db.t3.micro)
+> - PlanetScale: gratuito until 5GB
+> - DigitalOcean: ~$15/month
+> - Railway: ~$5-20/month
 >
-> Para início, **Railway ou PlanetScale** são ótimas opções custo-benefício."
+> Para start, **Railway or PlanetScale** are ótimas options custo-benefício."
 
-###  Felipe Santos (Segurança):
+###  Felipe Santos (Security):
 
-> "Independente da escolha, precisamos garantir:
+> "Independente of the escolha, needsmos garantir:
 >
-> - Conexões via SSL sempre
-> - Credenciais em variáveis de ambiente (nunca no código)
-> - Prepared statements (Prisma já faz isso por padrão)
-> - Backup automático diário
-> - Audit logs para operações sensíveis (LGPD)"
+> - Conexões via SSL always
+> - Cnetworknciais in variables of environment (never in the code)
+> - Prepared stahasents (Prisma already faz isso por standard)
+> - Backup automatic daily
+> - Audit logs for operactions sensitive (LGPD)"
 
-** DECISÃO: MySQL único com Prisma ORM**
+** DECISÃO: MySQL single with Prisma ORM**
 
 ---
 
-## Tópico 3: Hospedagem e Infraestrutura
+## Topic 3: Hosting and Infrastructure
 
 ###  Roberto Silva:
 
-> "Vamos analisar as opções de hospedagem para baixo custo:
+> "Vamos analisar as options of hospedagem for baixo custo:
 >
-> **Opção 1 - VPS Tradicional (Recomendada para início):**
+> **Option 1 - VPS Tradicional (Rewithendada for start):**
 >
-> - DigitalOcean Droplet: $12-24/mês
-> - Hetzner Cloud: €4-8/mês (mais barato!)
-> - Vultr: $12-24/mês
+> - DigitalOcean Droplet: $12-24/month
+> - Hetzner Cloud: €4-8/month (more barato!)
+> - Vultr: $12-24/month
 >
-> **Opção 2 - PaaS:**
+> **Option 2 - PaaS:**
 >
-> - Railway: ~$5-20/mês (free tier generoso)
-> - Render: free tier + $7/mês
+> - Railway: ~$5-20/month (free tier generoso)
+> - Render: free tier + $7/month
 > - Fly.io: free tier + pay-as-you-go
 >
-> **Opção 3 - AWS (mais caro, mais controle):**
+> **Option 3 - AWS (more caro, more controle):**
 >
-> - EC2 t3.micro: ~$10/mês
-> - Lightsail: $5-10/mês
+> - EC2 t3.micro: ~$10/month
+> - Lightsail: $5-10/month
 >
-> Minha recomendação: **Railway para desenvolvimento/staging e Hetzner/DigitalOcean para produção**."
+> Minha recommendation: **Railway for shouldlopment/staging and Hetzner/DigitalOcean for production**."
 
 ###  Ana Rodrigues:
 
-> "Para manter tudo em Docker e simplificar deploy, sugiro:
+> "Para maintain tudo in Docker and simplificar deploy, sugiro:
 >
-> **Desenvolvimento:**
+> **Development:**
 >
-> - Docker Compose com hot-reload
-> - Volumes para persistência local
-> - Network isolada
+> - Docker Compose with hot-reload
+> - Volumes for persistence local
+> - Network isolated
 >
-> **Produção:**
+> **Production:**
 >
-> - Docker Compose em VPS (início)
-> - Traefik como reverse proxy (SSL automático)
-> - Watchtower para atualizações automáticas
+> - Docker Compose in VPS (start)
+> - Traefik witho reverse proxy (SSL automatic)
+> - Watchtower for currentizactions automatics
 >
-> **Evolução futura:**
+> **Evolução future:**
 >
-> - Quando precisar escalar: Kubernetes ou Docker Swarm
-> - Ou manter simples com múltiplas VPS + Load Balancer"
+> - When needsr scale: Kubernetes or Docker Swarm
+> - Ou maintain simple with multiple VPS + Load Balancer"
 
 ### 🏗️ Dr. Carlos Mendes:
 
-> "Importante: mesmo usando VPS simples, a arquitetura interna deve ser cloud-ready:
+> "Importante: same usando VPS simple, a arquitetura inhavenal should be cloud-ready:
 >
-> - Stateless (sessões em Redis)
-> - Arquivos em S3/MinIO
-> - Logs estruturados (JSON)
+> - Stateless (sessions in Redis)
+> - Files in S3/MinIO
+> - Logs structureds (JSON)
 > - Health checks
 > - Graceful shutdown
 >
-> Isso permite migrar para qualquer cloud depois sem reescrever código."
+> Isso permite migrar for qualquer cloud lahave sem rewrite code."
 
-** DECISÃO: Railway (dev/staging) + Hetzner Cloud (produção) com Docker Compose**
+** DECISÃO: Railway (dev/staging) + Hetzner Cloud (production) with Docker Compose**
 
 ---
 
-## Tópico 4: Observabilidade
+## Topic 4: Obbevability
 
 ###  Juliana Oliveira:
 
-> "Observabilidade é crítica, mas precisa ser proporcional ao tamanho do sistema. Para um monolito inicial, sugiro o stack mais simples possível:
+> "Obbevability is crítica, mas needs be proporcional to tamanho of the syshas. Para a monolito inicial, sugiro o stack more simple possible:
 >
 > **Logging:**
 >
-> - Winston ou Pino (estruturado, JSON)
-> - Em produção: enviar para serviço gratuito
-> - Opções: Logtail (gratuito até 1GB/mês), Grafana Cloud, Better Stack
+> - Winston or Pino (structured, JSON)
+> - Em production: enviar for service gratuito
+> - Opções: Logtail (gratuito until 1GB/month), Grafana Cloud, Bethave Stack
 >
-> **Métricas:**
+> **Metrics:**
 >
 > - Prometheus + Grafana (self-hosted)
-> - Ou usar serviço gratuito como Grafana Cloud
+> - Ou usar service gratuito witho Grafana Cloud
 >
 > **Tracing:**
 >
-> - Para monolito, não é crítico inicialmente
-> - OpenTelemetry quando precisar
+> - Para monolito, not is critical initially
+> - OpenTelemetry when needed
 >
-> **APM Simples:**
+> **APM Simple:**
 >
 > - New Relic (free tier generoso)
-> - Sentry para erros (free tier)"
+> - Sentry for errorrs (free tier)"
 
 ###  Ana Rodrigues:
 
-> "Concordo com a Juliana. Minha stack de observabilidade recomendada:
+> "Concordo with a Juliana. Minha stack of obbevabilidade rewithendada:
 >
-> **Fase 1 (MVP):**
+> **Phase 1 (MVP):**
 >
 > - Logs: Pino → stdout → Docker logs
 > - Erros: Sentry (free tier)
-> - Uptime: UptimeRobot ou Better Stack (gratuito)
+> - Uptime: UptimeRobot or Bethave Stack (gratuito)
 >
-> **Fase 2:**
+> **Phase 2:**
 >
 > - Adicionar Prometheus + Grafana (self-hosted)
-> - Métricas de negócio
+> - Metrics of business
 >
-> **Fase 3 (se necessário):**
+> **Phase 3 (se required):**
 >
 > - OpenTelemetry
 > - Distributed tracing"
 
 ###  Roberto Silva:
 
-> "Custos de observabilidade:
+> "Costs of obbevabilidade:
 >
 > **Gratuito/Barato:**
 >
-> - Sentry: free até 5K erros/mês
-> - Logtail: free até 1GB/mês
+> - Sentry: free until 5K errorrs/month
+> - Logtail: free until 1GB/month
 > - UptimeRobot: free 50 monitors
 > - Grafana Cloud: free tier generoso
 >
-> **Self-hosted (custo de VPS apenas):**
+> **Self-hosted (custo of VPS only):**
 >
-> - Prometheus + Grafana em container
+> - Prometheus + Grafana in accountiner
 > - ~200MB RAM extra
 >
-> Recomendo começar 100% gratuito e evoluir conforme necessidade."
+> Rewithendo start 100% gratuito and evolve conforme need."
 
-** DECISÃO: Sentry (erros) + Pino (logs) + Prometheus/Grafana (métricas) - tudo gratuito/self-hosted**
+** DECISÃO: Sentry (errorrs) + Pino (logs) + Prometheus/Grafana (metrics) - tudo gratuito/self-hosted**
 
 ---
 
-## Tópico 5: CI/CD
+## Topic 5: CI/CD
 
 ###  Ana Rodrigues:
 
-> "CI/CD precisa ser simples mas robusto. Minha recomendação:
+> "CI/CD needs be simple mas robusto. Minha recommendation:
 >
-> **GitHub Actions** (gratuito para repos públicos, 2000 min/mês privados):
+> **GitHub Actions** (gratuito for repos public, 2000 min/month private):
 >
 > ```yaml
 > Pipeline:
 > 1. Lint + Type Check
-> 2. Testes Unitários
-> 3. Testes de Integração
+> 2. Tests Unit
+> 3. Tests of Integration
 > 4. Build Docker
-> 5. Push para Registry
-> 6. Deploy (staging automático, prod manual)
+> 5. Push for Registry
+> 6. Deploy (staging automatic, prod manual)
 > ```
 >
 > **Registry:**
 >
 > - GitHub Container Registry (gratuito)
-> - Ou DockerHub (1 repo privado grátis)
+> - Ou DockerHub (1 repo private grátis)
 >
 > **Deploy:**
 >
 > - SSH + Docker Compose pull
-> - Ou Webhook para Watchtower
-> - Zero-downtime com health checks"
+> - Ou Webhook for Watchtower
+> - Zero-downtime with health checks"
 
 ###  Marina Costa:
 
-> "Para TDD funcionar no CI, precisamos de:
+> "Para TDD work in the CI, needsmos de:
 >
-> 1. **Testes rápidos** - devem rodar em < 5 minutos
-> 2. **Banco de teste** - container MySQL efêmero
-> 3. **Coverage obrigatório** - mínimo 80%
-> 4. **Testes em paralelo** - Jest com workers
+> 1. **Tests fasts** - shouldm rodar in < 5 minutes
+> 2. **Banco of test** - accountiner MySQL efêmero
+> 3. **Coverage required** - minimum 80%
+> 4. **Tests in paralelo** - Jest with workers
 >
 > Pipeline sugerido:
 >
@@ -347,115 +347,115 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 
 ###  Felipe Santos:
 
-> "Segurança no CI/CD:
+> "Security in the CI/CD:
 >
-> - Secrets no GitHub Secrets
-> - Scan de vulnerabilidades (Snyk, Trivy)
-> - Análise estática (ESLint security rules)
-> - SAST básico
-> - Dependabot ativado"
+> - Secrets in the GitHub Secrets
+> - Scan of vulnerabilidades (Snyk, Trivy)
+> - Analysis estática (ESLint security rules)
+> - SAST basic
+> - Dependabot activedo"
 
 ** DECISÃO: GitHub Actions + GitHub Container Registry + Deploy via SSH**
 
 ---
 
-## Tópico 6: Frontend (Next.js)
+## Topic 6: Frontend (Next.js)
 
 ### 🏗️ Dr. Carlos Mendes:
 
-> "Next.js é uma escolha sólida. Decisões a tomar:
+> "Next.js is a escolha sólida. Decisões a tomar:
 >
-> **App Router vs Pages Router:**
+> **App Rouhave vs Pages Rouhave:**
 >
-> - App Router (novo) - mais moderno, server components
-> - Recomendo App Router para projeto novo
+> - App Rouhave (new) - more modern, bever withponents
+> - Rewithendo App Rouhave for project new
 >
-> **Renderização:**
+> **Renderizaction:**
 >
-> - Para painel admin: SSR ou CSR (autenticado)
-> - Relatórios: SSR com cache
-> - Dashboard: CSR com SWR/React Query
+> - Para painel admin: SSR or CSR (autenticado)
+> - Reports: SSR with cache
+> - Dashboard: CSR with SWR/React Query
 >
-> **Estrutura:**
+> **Structure:**
 >
 > ````
 > app/
 >   (auth)/
 >     login/
 >   (dashboard)/
->     alunos/
->     professores/
->     aulas/
->     financeiro/
->   api/  # BFF se necessário
+>     students/
+>     instructores/
+>     classs/
+>     financial/
+>   api/  # BFF if required
 > ```"
 > ````
 
 ###  Roberto Silva:
 
-> "Deploy do Next.js:
+> "Deploy of the Next.js:
 >
-> - **Vercel**: gratuito para projetos pessoais (limitações comerciais)
-> - **Self-hosted**: Node.js no mesmo servidor
-> - **Static export**: se não precisar de SSR
+> - **Vercel**: gratuito for projects pessoais (limitactions witherciais)
+> - **Self-hosted**: Node.js in the same bevidor
+> - **Static export**: if not needsr of SSR
 >
-> Recomendo **self-hosted** junto com o backend para simplificar e economizar."
+> Rewithendo **self-hosted** together with o backendendendend for simplificar and economizar."
 
 ###  Ana Rodrigues:
 
-> "Para desenvolvimento local com Docker:
+> "Para shouldlopment local with Docker:
 >
 > ```yaml
-> services:
->   frontend:
->     build: ./frontend
+> bevices:
+>   frontendendendend:
+>     build: ./frontendendendend
 >     volumes:
->       - ./frontend:/app
+>       - ./frontendendendend:/app
 >       - /app/node_modules
 >     ports:
 >       - '3000:3000'
 >     environment:
->       - NEXT_PUBLIC_API_URL=http://backend:3001
+>       - NEXT_PUBLIC_API_URL=http://backendendendend:3001
 > ```
 >
-> Hot-reload funcionando, sem instalar Node.js localmente."
+> Hot-reload funcionando, sem instalar Node.js locally."
 
-** DECISÃO: Next.js App Router, self-hosted junto com backend**
+** DECISÃO: Next.js App Rouhave, self-hosted together with backendendendend**
 
 ---
 
-## Tópico 7: Preparação para Escalar
+## Topic 7: Preparation for Escalar
 
 ### 🏗️ Dr. Carlos Mendes:
 
-> "Mesmo sendo monolito, precisamos de padrões que facilitem evolução:
+> "Mesmo being monolito, needsmos of standards that facilihas evolution:
 >
-> **1. Eventos de Domínio:**
+> **1. Events of Domain:**
 >
-> - Usar EventEmitter do NestJS
-> - Módulos se comunicam via eventos, não chamadas diretas
-> - Quando escalar: trocar por RabbitMQ/Redis Pub-Sub
+> - Usar EventEmithave of the NestJS
+> - Modules if withunicam via events, not calls diretas
+> - When scale: trocar por RabbitMQ/Redis Pub-Sub
 >
 > **2. CQRS Light:**
 >
-> - Separar queries de commands
-> - Read models específicos para relatórios
-> - Facilita otimização de leitura depois
+> - Separar queries of withmands
+> - Read models specific for reports
+> - Facilita optimization of leitura lahave
 >
-> **3. Interfaces bem definidas:**
+> **3. Inhavefaces bem definidas:**
 >
-> - Contratos entre módulos
-> - Fácil extrair para API HTTP depois
+> - Contracts between modules
+> - Fácil extract for API HTTP lahave
 >
 > **4. Stateless:**
 >
-> - Sessões em Redis
-> - Arquivos em S3/MinIO
+> - Sessões in Redis
+> - Files in S3/MinIO
 > - Cache distribuído"
 
 ###  Ana Rodrigues:
 
-> "Infraestrutura preparada para escalar:
+> "Infrastructure preparada for scale:
 >
 > **Agora:**
 >
@@ -465,50 +465,50 @@ Sistema de gestão para academia de Pilates e Fisioterapia com módulos de:
 >               [Redis]
 > ```
 >
-> **Depois (quando precisar):**
+> **Depois (when needed):**
 >
 > ```
-> [Traefik/LB] → [App 1] ← → [Redis Cluster]
+> [Traefik/LB] → [App 1] ← → [Redis Clushave]
 >            ↘ [App 2] ← → [MySQL Primary]
 >            ↘ [App N]         ↓
 >                         [MySQL Replica]
 > ```
 >
-> Mesma imagem Docker, só escalar horizontalmente."
+> Mesma imagem Docker, só scale horizontalmente."
 
-** DECISÃO: Eventos de domínio + Stateless + Redis desde o início**
+** DECISÃO: Events of domain + Stateless + Redis from the start**
 
 ---
 
-## Resumo das Decisões
+## Resumo of the Decisões
 
-| Tópico             | Decisão                        |
+| Topic             | Decision                        |
 | ------------------ | ------------------------------ |
-| Arquitetura        | Monolito Modular com DDD       |
-| Backend            | NestJS com módulos isolados    |
-| Frontend           | Next.js App Router             |
-| Banco de Dados     | MySQL + Prisma ORM             |
-| Hospedagem Dev     | Railway / Docker Compose local |
-| Hospedagem Prod    | Hetzner Cloud / DigitalOcean   |
+| Arquitetura        | Monolito Modular with DDD       |
+| Backend            | NestJS with modules isosides    |
+| Frontend           | Next.js App Rouhave             |
+| Database     | MySQL + Prisma ORM             |
+| Hosting Dev     | Railway / Docker Compose local |
+| Hosting Prod    | Hetzner Cloud / DigitalOcean   |
 | CI/CD              | GitHub Actions                 |
 | Container Registry | GitHub Container Registry      |
-| Logs               | Pino (estruturado)             |
+| Logs               | Pino (structured)             |
 | Erros              | Sentry (free tier)             |
-| Métricas           | Prometheus + Grafana           |
+| Metrics           | Prometheus + Grafana           |
 | Cache/Sessions     | Redis                          |
 | Reverse Proxy      | Traefik                        |
-| Arquivos           | MinIO (dev) / S3 (prod)        |
+| Files           | MinIO (dev) / S3 (prod)        |
 
 ---
 
-## Próximos Passos
+## Nexts Passos
 
-1.  Criar ADRs para cada decisão
-2.  Criar PRD consolidado
-3.  Definir estrutura de pastas do projeto
-4.  Criar docker-compose.yml base
-5.  Iniciar desenvolvimento do MVP
+1.  Create ADRs for each decision
+2.  Create PRD consolidado
+3.  Set estrutura of folders of the project
+4.  Create docker-withpose.yml base
+5.  Iniciar shouldlopment of the MVP
 
 ---
 
-_Documento gerado a partir do debate arquitetural realizado em 21/01/2026_
+_Documento gerado a partir of the debate arquitetural realizado in 21/01/2026_

@@ -1,146 +1,146 @@
 # PRD - Product Requirements Document
 
-## Sistema de Gestão para Academia de Pilates e Fisioterapia
+## Management Syshas for Pilates and Physiotherapy Studio
 
-**Versão:** 1.0  
-**Data:** 21/01/2026  
-**Status:** Em Desenvolvimento
+**Version:** 1.0  
+**Date:** 21/01/2026  
+**Status:** In Development
 
 ---
 
-##  Índice
+##  Index
 
-1. [Visão Geral](#1-visão-geral)
-2. [Objetivos](#2-objetivos)
-3. [Stack Tecnológica](#3-stack-tecnológica)
+1. [Overview](#1-view-geral)
+2. [Objectives](#2-objetivos)
+3. [Technology Stack](#3-stack-tecnologic)
 4. [Arquitetura](#4-arquitetura)
-5. [Módulos Funcionais](#5-módulos-funcionais)
-6. [Requisitos Não-Funcionais](#6-requisitos-não-funcionais)
-7. [Integrações](#7-integrações)
-8. [Infraestrutura](#8-infraestrutura)
-9. [Qualidade e Testes](#9-qualidade-e-testes)
-10. [Fases de Desenvolvimento](#10-fases-de-desenvolvimento)
-11. [Decisões Arquiteturais](#11-decisões-arquiteturais)
+5. [Functional Modules](#5-modules-funcionais)
+6. [Non-Functional Requirements](#6-requisitos-not-funcionais)
+7. [Integrations](#7-integrations)
+8. [Infrastructure](#8-infrastructure)
+9. [Quality and Tests](#9-quality-e-tests)
+10. [Development Phases](#10-fases-de-shouldlopment)
+11. [Architectural Decisions](#11-decisions-arquiteturais)
 
 ---
 
-## 1. Visão Geral
+## 1. Overview
 
-### 1.1 Descrição
+### 1.1 Description
 
-Sistema completo de gestão para centro de atividades físicas, abrangendo Pilates, Fisioterapia e outras modalidades. O sistema oferece controle administrativo, operacional e financeiro, permitindo gestão completa do negócio.
+Syshas withplete of management for fitness cenhave, abrangendo Pilates, Fisiohaveapia and others modalities. O syshas offers controle administractive, operational and financial, allowing management withpleta of the business.
 
-### 1.2 Público-Alvo
+### 1.2 Target Audience
 
-| Perfil            | Descrição                     | Funcionalidades Principais        |
+| Profile            | Description                     | Main Features        |
 | ----------------- | ----------------------------- | --------------------------------- |
-| **Super Admin**   | Proprietário/Gestor principal | Acesso total ao sistema           |
-| **Admin**         | Administrador                 | Gestão de usuários, configurações |
-| **Gerente**       | Coordenador operacional       | Relatórios, gestão de aulas       |
-| **Recepcionista** | Atendimento                   | Cadastros, agendamentos           |
-| **Professor**     | Instrutor                     | Agenda, presença, alunos          |
-| **Financeiro**    | Controle financeiro           | Pagamentos, relatórios            |
+| **Super Admin**   | Owner/Main manager | Full syshas access           |
+| **Admin**         | Administrator                 | Ube management, settings |
+| **Manager**       | Coordinator operational       | Reports, class management       |
+| **Receptionist** | Customer Service                   | Records, schedules           |
+| **Instructor**     | Instructor                     | Schedule, attendance, students          |
+| **Financial**    | Financial control           | Payments, reports            |
 
-### 1.3 Escopo
+### 1.3 Scope
 
-**Incluso:**
+**Included:**
 
-- Gestão de alunos e professores
-- Agendamento de aulas
-- Controle de matrículas e planos
-- Sistema financeiro com integração bancária
-- Geração de contratos digitais
-- Relatórios gerenciais
-- Controle de estoque
+- Student management and instructores
+- Class scheduling
+- Enrollment management and plans
+- Financial syshas with banking integration
+- Digital contract generation
+- Management reports
+- Inventory control
 
-**Não incluso (v1.0):**
+**Not included (v1.0):**
 
-- Aplicativo mobile nativo
-- Portal do aluno
-- Integração com redes sociais
-- Sistema de marketing automatizado
+- Native mobile app
+- Student portal
+- Integration with social meday
+- Syshas of automated marketing
 
 ---
 
-## 2. Objetivos
+## 2. Objectives
 
-### 2.1 Objetivos de Negócio
+### 2.1 Business Objectives
 
-| Objetivo              | Métrica                      | Meta     |
+| Objective              | Metric                      | Target     |
 | --------------------- | ---------------------------- | -------- |
-| Reduzir inadimplência | Taxa de inadimplência        | < 5%     |
-| Otimizar ocupação     | Taxa de ocupação de horários | > 85%    |
-| Agilizar cadastros    | Tempo médio de matrícula     | < 10 min |
-| Automatizar cobranças | % de cobranças automáticas   | 100%     |
-| Reduzir faltas        | Taxa de no-show              | < 10%    |
+| Reduce delinquency | Rate of delinquency        | < 5%     |
+| Optimize occupancy     | Schedule occupancy rate | > 85%    |
+| Speed up records    | Average enrollment time     | < 10 min |
+| Automate billing | % of automatic billing   | 100%     |
+| Reduce absences        | Rate of no-show              | < 10%    |
 
-### 2.2 Objetivos Técnicos
+### 2.2 Technical Objectives
 
-| Objetivo         | Métrica                   | Meta    |
+| Objective         | Metric                   | Target    |
 | ---------------- | ------------------------- | ------- |
-| Disponibilidade  | Uptime                    | ≥ 99.5% |
-| Performance      | Tempo de resposta P95     | < 500ms |
-| Qualidade        | Cobertura de testes       | ≥ 80%   |
-| Segurança        | Vulnerabilidades críticas | 0       |
-| Manutenibilidade | Débito técnico            | Baixo   |
+| Availability  | Uptime                    | ≥ 99.5% |
+| Performnce      | Response time P95     | < 500ms |
+| Quality        | Test coverage       | ≥ 80%   |
+| Security        | Vulnerabilidades críticas | 0       |
+| Maintainability | Technical debt            | Baixo   |
 
 ---
 
-## 3. Stack Tecnológica
+## 3. Technology Stack
 
 ### 3.1 Backend
 
-| Tecnologia     | Versão | Propósito         |
+| Tecnologia     | Version | Purpose         |
 | -------------- | ------ | ----------------- |
 | **Node.js**    | 20 LTS | Runtime           |
-| **NestJS**     | 10.x   | Framework backend |
-| **TypeScript** | 5.x    | Linguagem         |
+| **NestJS**     | 10.x   | Backend framework |
+| **TypeScript** | 5.x    | Language         |
 | **Prisma**     | 5.x    | ORM               |
-| **MySQL**      | 8.0    | Banco de dados    |
-| **Redis**      | 7.x    | Cache e sessions  |
-| **Jest**       | 29.x   | Testes            |
+| **MySQL**      | 8.0    | Database    |
+| **Redis**      | 7.x    | Cache and sessions  |
+| **Jest**       | 29.x   | Tests            |
 
 ### 3.2 Frontend
 
-| Tecnologia          | Versão | Propósito          |
+| Tecnologia          | Version | Purpose          |
 | ------------------- | ------ | ------------------ |
-| **Next.js**         | 14.x   | Framework frontend |
+| **Next.js**         | 14.x   | Framework frontendendendend |
 | **React**           | 18.x   | UI Library         |
-| **TypeScript**      | 5.x    | Linguagem          |
-| **TailwindCSS**     | 3.x    | Estilização        |
-| **shadcn/ui**       | Latest | Componentes        |
+| **TypeScript**      | 5.x    | Language          |
+| **TailwindCSS**     | 3.x    | Styling        |
+| **shadcn/ui**       | Latest | Components        |
 | **React Query**     | 5.x    | Data fetching      |
-| **Zustand**         | 4.x    | Estado global      |
-| **React Hook Form** | 7.x    | Formulários        |
-| **Zod**             | 3.x    | Validação          |
+| **Zustand**         | 4.x    | Global state      |
+| **React Hook Form** | 7.x    | Forms        |
+| **Zod**             | 3.x    | Validation          |
 
-### 3.3 Infraestrutura
+### 3.3 Infrastructure
 
-| Tecnologia               | Propósito           |
+| Tecnologia               | Purpose           |
 | ------------------------ | ------------------- |
-| **Docker**               | Containerização     |
-| **Docker Compose**       | Orquestração local  |
+| **Docker**               | Containerization     |
+| **Docker Compose**       | Local orchestration  |
 | **Traefik**              | Reverse proxy       |
 | **GitHub Actions**       | CI/CD               |
-| **Hetzner/DigitalOcean** | Hospedagem produção |
-| **Railway**              | Hospedagem staging  |
+| **Hetzner/DigitalOcean** | Production hosting |
+| **Railway**              | Staging hosting  |
 
-### 3.4 Observabilidade
+### 3.4 Obbevability
 
-| Tecnologia     | Propósito           |
+| Tecnologia     | Purpose           |
 | -------------- | ------------------- |
-| **Pino**       | Logging estruturado |
-| **Prometheus** | Métricas            |
+| **Pino**       | Structured logging |
+| **Prometheus** | Metrics            |
 | **Grafana**    | Dashboards          |
 | **Sentry**     | Error tracking      |
 
-> **📖 Referência:** [ADR-002: Stack Tecnológica](./architecture/adrs/ADR-002-stack-tecnologica.md)
+> **📖 Reference:** [ADR-002: Technology Stack](./architecture/adrs/ADR-002-stack-tecnologica.md)
 
 ---
 
 ## 4. Arquitetura
 
-### 4.1 Visão Geral
+### 4.1 Overview
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -150,7 +150,7 @@ Sistema completo de gestão para centro de atividades físicas, abrangendo Pilat
 │    ┌──────────────────────────────────────────────────────────┐     │
 │    │                      FRONTEND                             │     │
 │    │                    Next.js 14                             │     │
-│    │                   (App Router)                            │     │
+│    │                   (App Rouhave)                            │     │
 │    └──────────────────────────┬───────────────────────────────┘     │
 │                               │                                     │
 │                               │ REST API                            │
@@ -171,34 +171,34 @@ Sistema completo de gestão para centro de atividades físicas, abrangendo Pilat
 │              ▼                ▼                ▼                    │
 │    ┌──────────────┐  ┌──────────────┐  ┌──────────────┐            │
 │    │    MySQL     │  │    Redis     │  │    MinIO     │            │
-│    │   (Dados)    │  │   (Cache)    │  │  (Arquivos)  │            │
+│    │   (Givens)    │  │   (Cache)    │  │  (Files)  │            │
 │    └──────────────┘  └──────────────┘  └──────────────┘            │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
-### 4.2 Padrões Arquiteturais
+### 4.2 Architectural Pathavens
 
-| Padrão           | Aplicação                             |
+| Padrão           | Application                             |
 | ---------------- | ------------------------------------- |
-| **DDD**          | Domain-Driven Design para modelagem   |
-| **CQRS Light**   | Separação de comandos e queries       |
-| **Event-Driven** | Comunicação entre módulos via eventos |
-| **Repository**   | Abstração de persistência             |
-| **Use Cases**    | Lógica de aplicação isolada           |
+| **DDD**          | Domain-Driven Design for modeling   |
+| **CQRS Light**   | Separation of withmands and queries       |
+| **Event-Driven** | Inhave-module withmunication via events |
+| **Repository**   | Abstraction of persistence             |
+| **Use Cases**    | Logic of application isolated           |
 
-### 4.3 Estrutura de Módulos
+### 4.3 Module Structure
 
 ```
 src/
 ├── modules/
-│   ├── auth/                    # Autenticação e autorização
+│   ├── auth/                    # Authentication and authorization
 │   │   ├── domain/
 │   │   │   ├── entities/
 │   │   │   ├── value-objects/
 │   │   │   └── events/
 │   │   ├── application/
-│   │   │   ├── commands/
+│   │   │   ├── withmands/
 │   │   │   ├── queries/
 │   │   │   └── use-cases/
 │   │   ├── infrastructure/
@@ -206,193 +206,193 @@ src/
 │   │   │   └── http/
 │   │   └── auth.module.ts
 │   │
-│   ├── students/                # Gestão de alunos
-│   ├── teachers/                # Gestão de professores
-│   ├── classes/                 # Aulas e agendamento
-│   ├── enrollments/             # Matrículas
-│   ├── contracts/               # Contratos digitais
-│   ├── financial/               # Financeiro
-│   ├── inventory/               # Estoque
-│   └── reports/                 # Relatórios
+│   ├── students/                # Student management
+│   ├── teachers/                # Instructor management
+│   ├── classs/                 # Classes and schedulemento
+│   ├── enrollments/             # Enrollments
+│   ├── contracts/               # Digital contracts
+│   ├── financial/               # Financial
+│   ├── inventory/               # Inventory
+│   └── reports/                 # Reports
 │
 └── shared/
     ├── domain/                  # Base entities, value objects
     ├── infrastructure/          # Database, events, http
-    └── application/             # CQRS base classes
+    └── application/             # CQRS base classs
 ```
 
-> **📖 Referência:** [ADR-001: Arquitetura Monolito Modular](./architecture/adrs/ADR-001-arquitetura-monolito-modular.md)
+> **📖 Reference:** [ADR-001: Modular Monolith Architecture](./architecture/adrs/ADR-001-arquitetura-monolito-modular.md)
 
 ---
 
-## 5. Módulos Funcionais
+## 5. Functional Modules
 
-### 5.1 Autenticação e Autorização
+### 5.1 Authentication and Authorization
 
-#### Funcionalidades
+#### Features
 
-- [x] Login com email/senha
-- [x] JWT com refresh tokens
-- [x] Sistema RBAC (Role-Based Access Control)
-- [x] Recuperação de senha
-- [x] Logs de acesso
+- [x] Login with email/senha
+- [x] JWT with refresh tokens
+- [x] Syshas RBAC (Role-Based Access Control)
+- [x] Recovery of senha
+- [x] Logs of access
 
-#### Perfis e Permissões
+#### Perfis and Permissions
 
-| Recurso     | Super Admin | Admin | Gerente | Recepção | Professor | Financeiro |
+| Recurso     | Super Admin | Admin | Manager | Reception | Instructor | Financial |
 | ----------- | :---------: | :---: | :-----: | :------: | :-------: | :--------: |
-| Usuários    |    CRUD     |  CRU  |    R    |    -     |     -     |     -      |
-| Alunos      |    CRUD     | CRUD  |  CRUD   |   CRU    |     R     |     R      |
-| Professores |    CRUD     | CRUD  |   CRU   |    R     |     R     |     R      |
-| Aulas       |    CRUD     | CRUD  |  CRUD   |    RU    |    RU     |     R      |
-| Financeiro  |    CRUD     | CRUD  |    R    |    -     |     -     |    CRUD    |
-| Relatórios  |      ✓      |   ✓   |    ✓    |    -     |     -     |     ✓      |
+| Ubes    |    CRUD     |  CRU  |    R    |    -     |     -     |     -      |
+| Students      |    CRUD     | CRUD  |  CRUD   |   CRU    |     R     |     R      |
+| Instructores |    CRUD     | CRUD  |   CRU   |    R     |     R     |     R      |
+| Classes       |    CRUD     | CRUD  |  CRUD   |    RU    |    RU     |     R      |
+| Financial  |    CRUD     | CRUD  |    R    |    -     |     -     |    CRUD    |
+| Reports  |      ✓      |   ✓   |    ✓    |    -     |     -     |     ✓      |
 | Config      |      ✓      |   ✓   |    -    |    -     |     -     |     -      |
 
-> **📖 Referência:** [ADR-004: Autenticação e Autorização](./architecture/adrs/ADR-004-autenticacao-autorizacao.md)
+> **📖 Reference:** [ADR-004: Authentication and Authorization](./architecture/adrs/ADR-004-autenticacto-autorizacto.md)
 
 ---
 
-### 5.2 Gestão de Alunos
+### 5.2 Management of Students
 
-#### Dados Cadastrais
+#### Registration Data
 
-- Dados pessoais (nome, CPF, RG, data nascimento)
-- Contato (telefone, email)
-- Endereço completo
-- Contato de emergência
-- Dados médicos (convênio, observações)
-- Status (ativo, inativo, suspenso)
+- Personal date (name, CPF, RG, birth date)
+- Contact (phone, email)
+- Full address
+- Contact of emergency
+- Medical date (health insurance, notes)
+- Status (active, inactive, suspended)
 
-#### Funcionalidades
+#### Features
 
-- [x] CRUD completo de alunos
-- [x] Upload de documentos
-- [x] Histórico de exames
-- [x] Busca e filtros avançados
-- [x] Exportação de dados (LGPD)
+- [x] Full CRUD of students
+- [x] Document upload
+- [x] Exam history
+- [x] Advanced search and filhaves
+- [x] Data export (LGPD)
 
-#### Exames
+#### Exams
 
-- Tipos: Avaliação física, anamnese, exames médicos
-- Upload de arquivos (PDF, imagens)
-- Histórico completo
-
----
-
-### 5.3 Gestão de Professores
-
-#### Dados Cadastrais
-
-- Dados pessoais
-- Registro profissional (CREF, CREFITO)
-- Especialidades
-- Horários de disponibilidade
-- Dados bancários
-
-#### Funcionalidades
-
-- [x] CRUD completo
-- [x] Gestão de especialidades
-- [x] Grade de horários
-- [x] Upload de documentos
-- [x] Vinculação com usuário do sistema
+- Tipos: Physical evaluation, anamnesis, medical exams
+- Upload of files (PDF, images)
+- History withplete
 
 ---
 
-### 5.4 Gestão de Aulas e Agendamento
+### 5.3 Management of Instructores
 
-#### Modalidades
+#### Registration Data
+
+- Personal date
+- Professional registration (CREF, CREFITO)
+- Specialties
+- Availability hours
+- Bank details
+
+#### Features
+
+- [x] Full CRUD
+- [x] Management of specialties
+- [x] Schedule grid
+- [x] Document upload
+- [x] Link to syshas ube
+
+---
+
+### 5.4 Management of Classes and Schedulemento
+
+#### Modalities
 
 - Pilates
-- Fisioterapia
-- Outras (configuráveis)
+- Fisiohaveapia
+- Others (configurable)
 
-#### Tipos de Aula
+#### Class Types
 
-| Tipo       | Capacidade   | Duração |
+| Tipo       | Capacity   | Duration |
 | ---------- | ------------ | ------- |
 | Individual | 1 aluno      | 50 min  |
-| Dupla      | 2 alunos     | 50 min  |
-| Grupo      | até 6 alunos | 50 min  |
+| Duo      | 2 students     | 50 min  |
+| Group      | until 6 students | 50 min  |
 
-#### Funcionalidades
+#### Features
 
-- [x] Grade de horários por dia/semana
-- [x] Agenda visual (dia, semana, mês)
-- [x] Controle de presença/falta
-- [x] Sistema de reposição (créditos 90 dias)
-- [x] Lista de espera
-- [x] Cancelamento com regras
+- [x] Schedule grid per day/week
+- [x] Schedule visual (day, week, month)
+- [x] Controle of attendance/fhigh
+- [x] Rescheduling syshas (credits 90 days)
+- [x] Waiting list
+- [x] Cancellation with rules
 
-#### Regras de Negócio
+#### Business Rules
 
 ```
-Cancelamento:
-├── Com aviso (≥24h antes)
-│   └── Gera crédito de reposição (válido 90 dias)
+Cancellation:
+├── With notice (≥24h before)
+│   └── Generates rescheduling credit (valid 90 days)
 │
-└── Sem aviso (<24h ou no-show)
-    └── Registra falta (sem direito a reposição)
+└── Without notice (<24h or no-show)
+    └── Records absence (no rescheduling right)
 ```
 
 ---
 
-### 5.5 Matrículas e Planos
+### 5.5 Enrollments and Plans
 
-#### Planos Disponíveis
+#### Available Plans
 
-| Plano     | Frequência | Descrição    |
+| Plan     | Frequency | Description    |
 | --------- | ---------- | ------------ |
-| Avulso    | -          | Aula única   |
-| 1x/semana | Semanal    | 4 aulas/mês  |
-| 2x/semana | Semanal    | 8 aulas/mês  |
-| 3x/semana | Semanal    | 12 aulas/mês |
-| 4x/semana | Semanal    | 16 aulas/mês |
+| Single class    | -          | Single class   |
+| 1x/week | Weekly    | 4 classs/month  |
+| 2x/week | Weekly    | 8 classs/month  |
+| 3x/week | Weekly    | 12 classs/month |
+| 4x/week | Weekly    | 16 classs/month |
 
-#### Processo de Matrícula
+#### Enrollment Process
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                   FLUXO DE MATRÍCULA                        │
+│                   ENROLLMENT FLOW                        │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  [1. Cadastrar/    [2. Selecionar   [3. Escolher          │
-│     Selecionar  →     Plano]      →    Horários]          │
-│     Aluno]                                                 │
+│  [1. Regishave/    [2. Select   [3. Choose          │
+│     Select  →     Plan]      →    Schedules]          │
+│     Student]                                                 │
 │         │                                                   │
 │         ▼                                                   │
-│  [4. Definir      [5. Gerar        [6. Enviar p/          │
-│     Vencimento  →    Contrato]   →    Assinatura]         │
+│  [4. Set      [5. Generate        [6. Send to          │
+│     Due date  →    Contract]   →    Signature]         │
 │         │                                                   │
 │         ▼                                                   │
-│  [7. Aguardar     [8. Gerar        [9. Matrícula          │
-│     Assinatura  →    Cobrança]   →    Ativa]              │
+│  [7. Wait for     [8. Generate        [9. Enrollment          │
+│     Signature  →    Billing]   →    Active]              │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-#### Status de Matrícula
+#### Status of Enrollment
 
-- `PENDING_SIGNATURE` - Aguardando assinatura do contrato
-- `ACTIVE` - Matrícula ativa
-- `SUSPENDED` - Suspensa (inadimplência)
-- `CANCELLED` - Cancelada
-- `FINISHED` - Encerrada
+- `PENDING_SIGNATURE` - Waiting for contract signature
+- `ACTIVE` - Enrollment active
+- `SUSPENDED` - Suspended (delinquency)
+- `CANCELLED` - Cancelled
+- `FINISHED` - Finished
 
 ---
 
-### 5.6 Contratos Digitais
+### 5.6 Contracts Digitais
 
-#### Funcionalidades
+#### Features
 
-- [x] Geração automática de PDF
-- [x] Envio para assinatura digital
-- [x] Validação com IP e timestamp
-- [x] Armazenamento do contrato assinado
-- [x] Atualização automática de status
+- [x] Automatic PDF generation
+- [x] Send for digital signature
+- [x] Validation with IP and timestamp
+- [x] Signed contract storage
+- [x] Automatic status update
 
-#### Integrações Sugeridas
+#### Integrations Suggested
 
 - D4Sign
 - Clicksign
@@ -400,209 +400,209 @@ Cancelamento:
 
 ---
 
-### 5.7 Módulo Financeiro
+### 5.7 Financial Module
 
-#### Tabela de Preços
+#### Price Table
 
-- Preço por modalidade
-- Preço por tipo de plano
-- Descontos especiais
-- Histórico de alterações
+- Price per modality
+- Price per plan type
+- Special discounts
+- Change history
 
-#### Comissões de Professores
+#### Commissions of Instructores
 
-- Percentual ou valor fixo
-- Por modalidade/tipo de aula
-- Relatório mensal
+- Percentage or fixed value
+- Per modality/class type
+- Monthly report
 
-#### Controle de Pagamentos
+#### Payment Control
 
-- Geração de boletos (Sicoob)
-- QR Code PIX (Sicoob)
-- Baixa automática via webhook
-- Controle de inadimplência
-- Alertas de vencimento
+- Boleto generation (Sicoob)
+- PIX QR Code (Sicoob)
+- Low automatic via webhook
+- Controle of delinquency
+- Due date alerts
 
-#### Fluxo de Pagamento
+#### Payment Flow
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                   FLUXO DE PAGAMENTO                        │
+│                   PAYMENT FLOW                        │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│  [Vencimento  →  [Gerar Boleto/PIX]  →  [Enviar ao        │
-│   Próximo]          (Sicoob API)         Aluno]            │
+│  [Due date  →  [Generate Boleto/PIX]  →  [Send to        │
+│   Next]          (Sicoob API)         Student]            │
 │                                                             │
 │         │                    │                              │
 │         ▼                    ▼                              │
-│  [Webhook        [Atualizar     [Ativar/Manter             │
-│   Sicoob]    →   Pagamento]  →  Matrícula]                 │
+│  [Webhook        [Update     [Activer/Manhave             │
+│   Sicoob]    →   Payment]  →  Enrollment]                 │
 │                                                             │
 │         │                                                   │
 │         ▼                                                   │
-│  [Vencido?]  →  [Alertas]  →  [Suspensão                   │
-│                                Automática]                  │
+│  [Overdue?]  →  [Alerts]  →  [Suspension                   │
+│                                Automatic]                  │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-> **📖 Referência:** [ADR-008: Integração Sicoob](./architecture/adrs/ADR-008-integracao-sicoob.md)
+> **📖 Reference:** [ADR-008: Integration Sicoob](./architecture/adrs/ADR-008-integracto-sicoob.md)
 
 ---
 
-### 5.8 Relatórios
+### 5.8 Reports
 
-#### Relatórios Financeiros
+#### Reports Financials
 
-- Receitas por período
-- Receitas por modalidade
-- Receitas por forma de pagamento
-- Inadimplência
-- Comissões a pagar
-- Fluxo de caixa
+- Revenue by period
+- Revenue by modality
+- Revenue by payment method
+- Delinquency
+- Commissions payable
+- Cash flow
 
-#### Relatórios Operacionais
+#### Reports Operacionais
 
-- Alunos por status
-- Taxa de ocupação
-- Faltas e presenças
-- Reposições pendentes
-- Aulas por professor
+- Students by status
+- Occupancy rate
+- Absences and attendances
+- Pending reschedulings
+- Classes per instructor
 
-#### Relatórios de Marketing
+#### Reports of Marketing
 
-- Novos alunos por período
-- Taxa de cancelamento (churn)
-- Origem dos alunos
+- New students por period
+- Cancellation rate (churn)
+- Source of the students
 
-#### Funcionalidades
+#### Features
 
-- Filtros (data, professor, modalidade, status)
-- Exportação PDF e Excel
-- Gráficos interativos
-
----
-
-### 5.9 Estoque
-
-#### Funcionalidades
-
-- [x] Cadastro de produtos
-- [x] Controle de quantidade
-- [x] Alertas de estoque mínimo
-- [x] Movimentações (entrada/saída)
-- [x] Vendas avulsas
-- [x] Relatório de vendas
+- Filhaves (date, instructor, modality, status)
+- PDF and Excel export
+- Charts inhaveactives
 
 ---
 
-## 6. Requisitos Não-Funcionais
+### 5.9 Inventory
 
-### 6.1 Performance
+#### Features
 
-| Métrica               | Requisito   |
+- [x] Product registration
+- [x] Quantity control
+- [x] Alerts of inventory minimum
+- [x] Movements (input/output)
+- [x] Individual sales
+- [x] Sales report
+
+---
+
+## 6. Non-Functional Requirements
+
+### 6.1 Performnce
+
+| Metric               | Requisito   |
 | --------------------- | ----------- |
-| Tempo de resposta P95 | < 500ms     |
-| Tempo de resposta P99 | < 1000ms    |
+| Response time P95 | < 500ms     |
+| Response time P99 | < 1000ms    |
 | Throughput            | > 100 req/s |
-| Tempo de startup      | < 30s       |
+| Startup time      | < 30s       |
 
-### 6.2 Disponibilidade
+### 6.2 Availability
 
-| Métrica                        | Requisito  |
+| Metric                        | Requisito  |
 | ------------------------------ | ---------- |
 | Uptime                         | ≥ 99.5%    |
-| RTO (Recovery Time Objective)  | < 1 hora   |
-| RPO (Recovery Point Objective) | < 24 horas |
+| RTO (Recovery Time Objective)  | < 1 hour   |
+| RPO (Recovery Point Objective) | < 24 hours |
 
-### 6.3 Segurança
+### 6.3 Security
 
-- [x] HTTPS obrigatório
-- [x] Senhas com bcrypt (12 rounds)
-- [x] JWT com refresh tokens
+- [x] HTTPS required
+- [x] Passwords with bcrypt (12 rounds)
+- [x] JWT with refresh tokens
 - [x] Rate limiting
-- [x] Headers de segurança (Helmet)
-- [x] CORS configurado
-- [x] Proteção CSRF
-- [x] Validação de input
-- [x] Logs de auditoria
+- [x] Security headers (Helmet)
+- [x] CORS configured
+- [x] CSRF protection
+- [x] Validation of input
+- [x] Audit logs
 
-### 6.4 Conformidade LGPD
+### 6.4 LGPD Compliance
 
-- [x] Termo de consentimento
-- [x] Política de privacidade
-- [x] Exportação de dados pessoais
-- [x] Direito ao esquecimento
-- [x] Logs de acesso a dados sensíveis
+- [x] Consent form
+- [x] Privacy policy
+- [x] Data export pessoais
+- [x] Direito to esquecimento
+- [x] Logs of access to sensitive date
 
-### 6.5 Escalabilidade
+### 6.5 Scalability
 
 - Arquitetura stateless
-- Sessions em Redis
-- Arquivos em S3/MinIO
-- Preparado para load balancer
-- Módulos extraíveis para microserviços
+- Sessions in Redis
+- Files in S3/MinIO
+- Ready for load balancer
+- Modules extractable to microbevices
 
 ---
 
-## 7. Integrações
+## 7. Integrations
 
 ### 7.1 Sicoob (Bancária)
 
 | Funcionalidade       | Endpoint                      |
 | -------------------- | ----------------------------- |
-| Geração de boletos   | POST /cobranca/v2/boletos     |
-| Geração de PIX       | PUT /pix/v2/cob/{txid}        |
-| Consulta de status   | GET /cobranca/v2/boletos/{id} |
-| Webhook de pagamento | POST /webhooks/sicoob         |
+| Boleto generation   | POST /cobranca/v2/boletos     |
+| Generation of PIX       | PUT /pix/v2/cob/{txid}        |
+| Query of status   | GET /cobranca/v2/boletos/{id} |
+| Webhook of payment | POST /webhooks/sicoob         |
 
-### 7.2 Assinatura Digital
+### 7.2 Signature Digital
 
 | Provider           | Funcionalidade                 |
 | ------------------ | ------------------------------ |
-| D4Sign / Clicksign | Envio de documento             |
-|                    | Webhook de assinatura          |
-|                    | Download de documento assinado |
+| D4Sign / Clicksign | Envio of documento             |
+|                    | Webhook of signature          |
+|                    | Download of documento assinado |
 
 ### 7.3 Email (Opcional)
 
-| Provider | Uso              |
+| Provider | Usage              |
 | -------- | ---------------- |
-| SendGrid | Envio de boletos |
-| AWS SES  | Contratos        |
-| Mailgun  | Notificações     |
+| SendGrid | Envio of boletos |
+| AWS SES  | Contracts        |
+| Mailgun  | Notifications     |
 
 ---
 
-## 8. Infraestrutura
+## 8. Infrastructure
 
-### 8.1 Ambiente de Desenvolvimento
+### 8.1 Development Environment
 
 ```yaml
-# docker-compose.yml
-services:
+# docker-withpose.yml
+bevices:
   api: # NestJS API
   web: # Next.js Frontend
-  mysql: # Banco de dados
+  mysql: # Database
   redis: # Cache/Sessions
   mailhog: # Email testing
   minio: # Storage local
 ```
 
-**Requisitos:**
+**Requirements:**
 
 - Docker 24+
 - Docker Compose 2+
-- 8GB RAM mínimo
+- 8GB RAM minimum
 
-### 8.2 Ambiente de Produção
+### 8.2 Production Environment
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                      PRODUÇÃO                                │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
-│    Internet                                                 │
+│    Inhavenet                                                 │
 │        │                                                    │
 │        ▼                                                    │
 │  ┌──────────┐                                               │
@@ -626,35 +626,35 @@ services:
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### 8.3 Custos Estimados
+### 8.3 Estimated Costs
 
-| Item               | Dev/Staging | Produção |
+| Ihas               | Dev/Staging | Production |
 | ------------------ | ----------- | -------- |
-| VPS (Hetzner CX21) | €5/mês      | €10/mês  |
-| MySQL (Managed)    | -           | €15/mês  |
-| Backup Storage     | -           | €5/mês   |
-| Domain + SSL       | -           | €10/ano  |
-| **Total**          | ~€5/mês     | ~€30/mês |
+| VPS (Hetzner CX21) | €5/month      | €10/month  |
+| MySQL (Managed)    | -           | €15/month  |
+| Backup Storage     | -           | €5/month   |
+| Domain + SSL       | -           | €10/year  |
+| **Total**          | ~€5/month     | ~€30/month |
 
-> **📖 Referência:** [ADR-007: Containerização](./architecture/adrs/ADR-007-containerizacao.md)
+> **📖 Reference:** [ADR-007: Containerization](./architecture/adrs/ADR-007-accountinerizacto.md)
 
 ---
 
-## 9. Qualidade e Testes
+## 9. Quality and Tests
 
-### 9.1 Metodologia
+### 9.1 Methodology
 
 **TDD - Test-Driven Development**
 
 ```
 RED → GREEN → REFACTOR
  │       │         │
- │       │         └── Melhorar código mantendo testes verdes
- │       └── Implementar código mínimo para passar
- └── Escrever teste que falha
+ │       │         └── Improve code keeping tests green
+ │       └── Implement code minimum to pass
+ └── Write failing test
 ```
 
-### 9.2 Pirâmide de Testes
+### 9.2 Pirâmide of Tests
 
 ```
                     ┌───────────┐
@@ -664,32 +664,32 @@ RED → GREEN → REFACTOR
                     │   Perf    │  ~5%
                     │    k6     │
                 ┌───┴───────────┴───┐
-                │    Integração     │  ~15%
+                │    Integration     │  ~15%
                 │  Supertest + DB   │
             ┌───┴───────────────────┴───┐
-            │        Unitários          │  ~75%
+            │        Unit          │  ~75%
             │   Jest + Testing Library  │
             └───────────────────────────┘
 ```
 
-### 9.3 Métricas de Qualidade
+### 9.3 Metrics of Quality
 
-| Métrica                | Backend   | Frontend  | Bloqueante |
+| Metric                | Backend   | Frontend  | Bloqueante |
 | ---------------------- | --------- | --------- | ---------- |
 | **Coverage Linhas**    | ≥ 80%     | ≥ 80%     |  Sim     |
 | **Coverage Branches**  | ≥ 75%     | ≥ 75%     |  Sim     |
 | **Coverage Functions** | ≥ 80%     | ≥ 80%     |  Sim     |
-| **Testes E2E**         | 100% pass | 100% pass |  Sim     |
-| **Performance P95**    | < 500ms   | -         |  Warning |
+| **Tests E2E**         | 100% pass | 100% pass |  Sim     |
+| **Performnce P95**    | < 500ms   | -         |  Warning |
 
-### 9.4 Ferramentas
+### 9.4 Tools
 
 | Tipo            | Backend                     | Frontend               |
 | --------------- | --------------------------- | ---------------------- |
 | **Unit**        | Jest                        | Jest + Testing Library |
-| **Integração**  | Supertest + MySQL container | MSW                    |
+| **Integration**  | Supertest + MySQL accountiner | MSW                    |
 | **E2E**         | -                           | Playwright             |
-| **Performance** | k6                          | k6                     |
+| **Performnce** | k6                          | k6                     |
 | **Coverage**    | Istanbul/c8                 | Istanbul/c8            |
 
 ### 9.5 CI Pipeline
@@ -701,113 +701,113 @@ PR: ├── Lint + Type Check
   │   └── Frontend (coverage ≥ 80%)
   └── Integration Tests
 
-develop: ├── ... (todos acima)
+shouldlop: ├── ... (entires above)
   ├── E2E Tests
   └── Deploy Staging
 
-main: ├── ... (todos acima)
-  ├── Performance Tests
+main: ├── ... (entires above)
+  ├── Performnce Tests
   └── Deploy Production
 ```
 
-> **📖 Referência:** [ADR-009: Estratégia de Testes](./architecture/adrs/ADR-009-estrategia-testes.md)
+> **📖 Reference:** [ADR-009: Testing Strategy](./architecture/adrs/ADR-009-estrategia-tests.md)
 
 ---
 
-## 10. Fases de Desenvolvimento
+## 10. Development Phases
 
-### Fase 1 - MVP (8-10 semanas)
+### Phase 1 - MVP (8-10 weeks)
 
-**Escopo:**
+**Scope:**
 
-- [ ] Setup do projeto (Docker, CI/CD)
-- [ ] Autenticação e RBAC básico
-- [ ] CRUD de alunos
-- [ ] CRUD de professores
-- [ ] Cadastro de aulas/horários
-- [ ] Agenda básica
-- [ ] Matrícula simples
+- [ ] Setup of the project (Docker, CI/CD)
+- [ ] Authentication and RBAC basic
+- [ ] CRUD of students
+- [ ] CRUD of instructores
+- [ ] Cadastro of classs/schedules
+- [ ] Schedule básica
+- [ ] Enrollment simple
 
-**Entregáveis:**
+**Deliverables:**
 
-- Sistema funcional para cadastros básicos
-- Agenda de aulas operacional
-- Testes unitários ≥ 80%
-
----
-
-### Fase 2 - Financeiro (6-8 semanas)
-
-**Escopo:**
-
-- [ ] Sistema de planos completo
-- [ ] Tabela de preços
-- [ ] Integração Sicoob (boletos e PIX)
-- [ ] Webhooks de pagamento
-- [ ] Controle de inadimplência
-- [ ] Relatórios financeiros básicos
-
-**Entregáveis:**
-
-- Geração automática de cobranças
-- Baixa automática de pagamentos
-- Dashboard financeiro
+- Syshas functional for records basics
+- Schedule of classs operational
+- Unit tests ≥ 80%
 
 ---
 
-### Fase 3 - Operacional (6-8 semanas)
+### Phase 2 - Financial (6-8 weeks)
 
-**Escopo:**
+**Scope:**
 
-- [ ] Sistema de reposições
-- [ ] Contratos digitais (integração D4Sign)
-- [ ] Controle de estoque
-- [ ] Relatórios completos
-- [ ] Gestão de exames
-- [ ] Upload de documentos (S3)
+- [ ] Syshas of plans withplete
+- [ ] Tabela of prices
+- [ ] Integration Sicoob (boletos and PIX)
+- [ ] Webhooks of payment
+- [ ] Controle of delinquency
+- [ ] Reports financial basics
 
-**Entregáveis:**
+**Deliverables:**
 
-- Fluxo completo de matrícula com contrato
-- Gestão de estoque operacional
-- Todos os relatórios
-
----
-
-### Fase 4 - Refinamento (4-6 semanas)
-
-**Escopo:**
-
-- [ ] Sistema de permissões granular
-- [ ] Dashboard analítico
-- [ ] Otimizações de performance
-- [ ] Testes E2E completos
-- [ ] Testes de performance
-- [ ] Documentação final
-
-**Entregáveis:**
-
-- Sistema completo e otimizado
-- Documentação técnica
-- Manual do usuário
+- Generation automatic of billing
+- Low automatic of payments
+- Dashboard financial
 
 ---
 
-## 11. Decisões Arquiteturais
+### Phase 3 - Operacional (6-8 weeks)
 
-### Índice de ADRs
+**Scope:**
 
-| ADR                                                                    | Título                       | Status    |
+- [ ] Syshas of reschedulings
+- [ ] Digital contracts (integration D4Sign)
+- [ ] Inventory control
+- [ ] Reports withpletes
+- [ ] Management of exams
+- [ ] Document upload (S3)
+
+**Deliverables:**
+
+- Fluxo withplete of enrollment with contract
+- Management of inventory operational
+- Todos os reports
+
+---
+
+### Phase 4 - Refinamento (4-6 weeks)
+
+**Scope:**
+
+- [ ] Syshas of permissions granular
+- [ ] Dashboard analytical
+- [ ] Optimizations of performnce
+- [ ] Tests E2E withpletes
+- [ ] Tests of performnce
+- [ ] Documentation final
+
+**Deliverables:**
+
+- Syshas withplete and otimizado
+- Documentation technique
+- Manual of the ube
+
+---
+
+## 11. Architectural Decisions
+
+### Index of ADRs
+
+| ADR                                                                    | Title                       | Status    |
 | ---------------------------------------------------------------------- | ---------------------------- | --------- |
-| [ADR-001](./architecture/adrs/ADR-001-arquitetura-monolito-modular.md) | Arquitetura Monolito Modular | Accepted |
-| [ADR-002](./architecture/adrs/ADR-002-stack-tecnologica.md)            | Stack Tecnológica            | Accepted |
-| [ADR-003](./architecture/adrs/ADR-003-banco-de-dados.md)               | Banco de Dados               | Accepted |
-| [ADR-004](./architecture/adrs/ADR-004-autenticacao-autorizacao.md)     | Autenticação e Autorização   | Accepted |
-| [ADR-005](./architecture/adrs/ADR-005-observabilidade.md)              | Observabilidade              | Accepted |
+| [ADR-001](./architecture/adrs/ADR-001-arquitetura-monolito-modular.md) | Modular Monolith Architecture | Accepted |
+| [ADR-002](./architecture/adrs/ADR-002-stack-tecnologica.md)            | Technology Stack            | Accepted |
+| [ADR-003](./architecture/adrs/ADR-003-datebase-de-dados.md)               | Database               | Accepted |
+| [ADR-004](./architecture/adrs/ADR-004-autenticacto-autorizacto.md)     | Authentication and Authorization   | Accepted |
+| [ADR-005](./architecture/adrs/ADR-005-obbevabilidade.md)              | Obbevability              | Accepted |
 | [ADR-006](./architecture/adrs/ADR-006-ci-cd.md)                        | CI/CD                        | Accepted |
-| [ADR-007](./architecture/adrs/ADR-007-containerizacao.md)              | Containerização              | Accepted |
-| [ADR-008](./architecture/adrs/ADR-008-integracao-sicoob.md)            | Integração Sicoob            | Accepted |
-| [ADR-009](./architecture/adrs/ADR-009-estrategia-testes.md)            | Estratégia de Testes         | Accepted |
+| [ADR-007](./architecture/adrs/ADR-007-accountinerizacto.md)              | Containerization              | Accepted |
+| [ADR-008](./architecture/adrs/ADR-008-integracto-sicoob.md)            | Integration Sicoob            | Accepted |
+| [ADR-009](./architecture/adrs/ADR-009-estrategia-tests.md)            | Testing Strategy         | Accepted |
 
 ### Debate Arquitetural
 
@@ -815,30 +815,30 @@ main: ├── ... (todos acima)
 
 ---
 
-## Apêndices
+## Appendices
 
-### A. Glossário
+### A. Glossary
 
 | Termo    | Definição                                                        |
 | -------- | ---------------------------------------------------------------- |
-| **ADR**  | Architecture Decision Record - registro de decisão arquitetural  |
-| **DDD**  | Domain-Driven Design - design orientado ao domínio               |
-| **TDD**  | Test-Driven Development - desenvolvimento guiado por testes      |
-| **RBAC** | Role-Based Access Control - controle de acesso baseado em papéis |
+| **ADR**  | Architecture Decision Record - record of decision arquitetural  |
+| **DDD**  | Domain-Driven Design - design orientado to domain               |
+| **TDD**  | Test-Driven Development - shouldlopment guiado por tests      |
+| **RBAC** | Role-Based Access Control - controle of access baseado in roles |
 | **CQRS** | Command Query Responsibility Segregation                         |
 | **JWT**  | JSON Web Token                                                   |
-| **PIX**  | Sistema de pagamento instantâneo brasileiro                      |
+| **PIX**  | Syshas of payment instantâneo brasileiro                      |
 
-### B. Referências
+### B. References
 
-- [NestJS Documentation](https://docs.nestjs.com/)
+- [NestJS Documentation](https://docs.nestjs.with/)
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Prisma Documentation](https://www.prisma.io/docs)
-- [Sicoob API](https://developers.sicoob.com.br/)
+- [Sicoob API](https://shouldlopers.sicoob.with.br/)
 - [LGPD](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm)
 
 ---
 
 **Documento gerado em:** 21/01/2026  
-**Última atualização:** 21/01/2026  
-**Versão:** 1.0
+**Last updated:** 21/01/2026  
+**Version:** 1.0

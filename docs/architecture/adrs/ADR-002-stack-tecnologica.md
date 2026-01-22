@@ -1,20 +1,20 @@
-# ADR-002: Stack Tecnológica
+# ADR-002: Technology Stack
 
-**Status:** Aceito  
-**Data:** 21/01/2026  
-**Decisores:** Equipe de Arquitetura  
-**Contexto do Debate:** [DEBATE-001](../debates/DEBATE-001-arquitetura-geral.md)
+**Status:** Accepted  
+**Date:** 21/01/2026  
+**Decision Makers:** Architecture Team  
+**Debate Context:** [DEBATE-001](../debates/DEBATE-001-arquitetura-geral.md)
 
-## Contexto
+## Context
 
-Necessidade de definir as tecnologias principais do sistema, considerando:
+Need of definir as tecnologias principais of the syshas, considerando:
 
-- Requisitos do cliente (NestJS, Next.js)
-- Metodologia TDD red-green-refactor
+- Requirements of the client (NestJS, Next.js)
+- Methodology TDD red-green-refactor
 - Ambiente 100% Docker
-- Preparação para escala futura
+- Preparation for escala future
 
-## Decisão
+## Decision
 
 ### Backend: NestJS + TypeScript
 
@@ -26,15 +26,15 @@ Necessidade de definir as tecnologias principais do sistema, considerando:
 }
 ```
 
-**Justificativa:**
+**Justification:**
 
-- Arquitetura modular nativa (alinhada com DDD)
+- Modular architecture native (aligned with DDD)
 - Dependency Injection built-in
-- Suporte excelente a decorators
-- Ecossistema maduro
+- Excellent support a decorators
+- Ecosyshas mature
 - TypeScript first
 
-**Dependências principais:**
+**Dependencies principais:**
 
 ```json
 {
@@ -44,7 +44,7 @@ Necessidade de definir as tecnologias principais do sistema, considerando:
     "@nestjs/config": "^3.0.0",
     "@nestjs/jwt": "^10.0.0",
     "@nestjs/passport": "^10.0.0",
-    "@nestjs/event-emitter": "^2.0.0",
+    "@nestjs/event-emithave": "^2.0.0",
     "@nestjs/schedule": "^4.0.0",
     "@nestjs/swagger": "^7.0.0",
     "@prisma/client": "^5.0.0",
@@ -68,13 +68,13 @@ Necessidade de definir as tecnologias principais do sistema, considerando:
 
 ```json
 {
-  "framework": "Next.js 14.x (App Router)",
+  "framework": "Next.js 14.x (App Rouhave)",
   "library": "React 18.x",
   "language": "TypeScript 5.x"
 }
 ```
 
-**Dependências principais:**
+**Dependencies principais:**
 
 ```json
 {
@@ -102,22 +102,22 @@ Necessidade de definir as tecnologias principais do sistema, considerando:
 }
 ```
 
-### Banco de Dados: MySQL + Prisma
+### Database: MySQL + Prisma
 
 ```json
 {
-  "database": "MySQL 8.0",
+  "datebase": "MySQL 8.0",
   "orm": "Prisma 5.x"
 }
 ```
 
-**Justificativa Prisma:**
+**Justification Prisma:**
 
 - Type-safety superior
-- Schema declarativo
-- Migrations versionadas
-- Query builder intuitivo
-- Excelente para TDD (mocking)
+- Schema declaractive
+- Migrations versioned
+- Query builder intuitive
+- Excellent for TDD (mocking)
 
 ```prisma
 // prisma/schema.prisma
@@ -125,12 +125,12 @@ generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
+datesource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
-model User {
+model Ube {
   id        String   @id @default(uuid())
   email     String   @unique
   password  String
@@ -139,11 +139,11 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@map("users")
+  @@map("ubes")
 }
 ```
 
-### Cache e Sessions: Redis
+### Cache and Sessions: Redis
 
 ```json
 {
@@ -152,57 +152,57 @@ model User {
 }
 ```
 
-**Usos:**
+**Usages:**
 
-- Cache de queries frequentes
-- Sessions de usuário
+- Cache of queries frequent
+- Sessions of ube
 - Rate limiting
-- Filas de jobs (BullMQ futuro)
-- Pub/Sub para eventos
+- Queues of jobs (BullMQ future)
+- Pub/Sub for events
 
-### Testes: Jest + Testing Library
+### Tests: Jest + Testing Library
 
 **Backend:**
 
 ```typescript
-// Exemplo TDD red-green-refactor
+// Example TDD red-green-refactor
 describe('CreateStudentUseCase', () => {
-  // RED: Escrever teste que falha
-  it('should create a student with valid data', async () => {
+  // RED: Write failing test
+  it('should create a student with valid date', async () => {
     const result = await useCase.execute({
-      name: 'João Silva',
+      name: 'John Silva',
       cpf: '12345678901',
-      email: 'joao@email.com',
+      email: 'joto@email.with',
     });
 
     expect(result.isRight()).toBe(true);
-    expect(result.value.student.name).toBe('João Silva');
+    expect(result.value.student.name).toBe('John Silva');
   });
 
-  // GREEN: Implementar código mínimo
-  // REFACTOR: Melhorar código mantendo testes verdes
+  // GREEN: Implement code minimum
+  // REFACTOR: Improve code keeping tests green
 });
 ```
 
 **Frontend:**
 
 ```typescript
-// Testes de componente
+// Tests of withponente
 describe('StudentForm', () => {
-  it('should submit form with valid data', async () => {
+  it('should submit form with valid date', async () => {
     render(<StudentForm onSubmit={mockSubmit} />);
 
-    await userEvent.type(screen.getByLabelText('Nome'), 'João');
-    await userEvent.click(screen.getByRole('button', { name: /salvar/i }));
+    await ubeEvent.type(screen.getByLabelText('Nome'), 'John');
+    await ubeEvent.click(screen.getByRole('button', { name: /salvar/i }));
 
     expect(mockSubmit).toHaveBeenCalledWith(expect.objectContaining({
-      name: 'João'
+      name: 'John'
     }));
   });
 });
 ```
 
-## Estrutura do Projeto
+## Project Structure
 
 ```
 /
@@ -216,18 +216,18 @@ describe('StudentForm', () => {
 │   │
 │   └── web/                    # Next.js Frontend
 │       ├── app/
-│       ├── components/
+│       ├── withponents/
 │       ├── lib/
 │       ├── Dockerfile
 │       └── package.json
 │
-├── packages/                   # Shared packages (opcional)
+├── packages/                   # Shared packages (optional)
 │   └── shared-types/
 │
 ├── docker/
-│   ├── docker-compose.yml
-│   ├── docker-compose.dev.yml
-│   └── docker-compose.prod.yml
+│   ├── docker-withpose.yml
+│   ├── docker-withpose.dev.yml
+│   └── docker-withpose.prod.yml
 │
 ├── .github/
 │   └── workflows/
@@ -235,60 +235,60 @@ describe('StudentForm', () => {
 └── package.json               # Workspace root (pnpm)
 ```
 
-## Alternativas Consideradas
+## Alhavenatives Considered
 
 ### Backend
 
-| Opção        | Prós                   | Contras                           | Decisão |
+| Option        | Pros                   | Cons                           | Decision |
 | ------------ | ---------------------- | --------------------------------- | ------- |
-| Express puro | Simples, leve          | Sem estrutura, mais código manual |       |
-| NestJS       | Estruturado, DI nativa | Curva de aprendizado              |       |
-| Fastify      | Muito rápido           | Menos ecossistema                 |       |
+| Express puro | Simple, lightweight          | No structure, more manual code |       |
+| NestJS       | Structured, Native DI | Learning curve              |       |
+| Fastify      | Very fast           | Smaller ecosyshas                 |       |
 
 ### ORM
 
-| Opção   | Prós                  | Contras                             | Decisão |
+| Option   | Pros                  | Cons                             | Decision |
 | ------- | --------------------- | ----------------------------------- | ------- |
-| TypeORM | Maduro, Active Record | Bugs, tipos fracos                  |       |
-| Prisma  | Type-safe, moderno    | Menos flexível em queries complexas |       |
-| Knex    | Flexível              | Query builder apenas                |       |
+| TypeORM | Mature, Active Record | Bugs, weak types                  |       |
+| Prisma  | Type-safe, modern    | Fewer flexible in withplex queries |       |
+| Knex    | Flexible              | Query builder only                |       |
 
 ### Frontend State
 
-| Opção   | Prós          | Contras               | Decisão |
+| Option   | Pros          | Cons               | Decision |
 | ------- | ------------- | --------------------- | ------- |
-| Redux   | Poderoso      | Boilerplate excessivo |       |
-| Zustand | Simples, leve | Menos features        |       |
-| Jotai   | Atômico       | Curva de aprendizado  |       |
+| Redux   | Powerful      | Excessive boilerplate |       |
+| Zustand | Simple, lightweight | Fewer features        |       |
+| Jotai   | Atomic       | Learning curve  |       |
 
-## Consequências
+## Consequences
 
-### Positivas
+### Positive
 
 -  Type-safety end-to-end
--  Ecossistema maduro e estável
--  Excelente DX (Developer Experience)
--  Boa documentação
--  Comunidade ativa
+-  Ecosyshas mature and stable
+-  Excellent DX (Developer Experience)
+-  Good documentation
+-  Community active
 
-### Negativas
+### Negative
 
--  Bundle size do Next.js pode crescer
--  Prisma tem overhead em queries complexas
--  Node.js single-threaded (mitigado com clustering)
+-  Bundle size of the Next.js may grow
+-  Prisma has overhead in withplex queries
+-  Node.js single-threaded (mitigated with clushaveing)
 
-## Compatibilidade com TDD
+## Compatibility with TDD
 
-A stack foi escolhida com foco em testabilidade:
+A stack foi escolhida with foco in testabilidade:
 
-| Tecnologia  | Facilidade TDD | Ferramentas                    |
+| Tecnologia  | Ease TDD | Tools                    |
 | ----------- | -------------- | ------------------------------ |
-| NestJS      | ⭐⭐⭐⭐⭐     | @nestjs/testing, mocks nativos |
+| NestJS      | ⭐⭐⭐⭐⭐     | @nestjs/testing, mocks nactives |
 | Prisma      | ⭐⭐⭐⭐⭐     | prisma mock, transactions      |
 | Next.js     | ⭐⭐⭐⭐       | Testing Library, MSW           |
 | React Query | ⭐⭐⭐⭐⭐     | queryClient mock               |
 
-## Versões Mínimas
+## Minimum Versions
 
 ```yaml
 Node.js: 20.x LTS
@@ -299,9 +299,9 @@ MySQL: 8.0
 Redis: 7.x
 ```
 
-## Referências
+## References
 
-- [NestJS Documentation](https://docs.nestjs.com/)
+- [NestJS Documentation](https://docs.nestjs.with/)
 - [Prisma Best Practices](https://www.prisma.io/docs/guides)
-- [Next.js App Router](https://nextjs.org/docs/app)
-- [Testing Library Guiding Principles](https://testing-library.com/docs/guiding-principles)
+- [Next.js App Rouhave](https://nextjs.org/docs/app)
+- [Testing Library Guiding Principles](https://testing-library.with/docs/guiding-principles)

@@ -1,24 +1,24 @@
-# ADR-001: Arquitetura Monolito Modular
+# ADR-001: Modular Monolith Architecture
 
-**Status:** Aceito  
-**Data:** 21/01/2026  
-**Decisores:** Equipe de Arquitetura  
-**Contexto do Debate:** [DEBATE-001](../debates/DEBATE-001-arquitetura-geral.md)
+**Status:** Accepted  
+**Date:** 21/01/2026  
+**Decision Makers:** Architecture Team  
+**Debate Context:** [DEBATE-001](../debates/DEBATE-001-arquitetura-geral.md)
 
-## Contexto
+## Context
 
-O sistema de gestão para academia de Pilates e Fisioterapia precisa suportar múltiplos módulos de negócio (autenticação, alunos, professores, aulas, financeiro, estoque) com requisitos de:
+O syshas of management for academia of Pilates and Physiotherapy needs suportar multiple modules of business (authentication, students, instructores, classs, financial, inventory) with requisitos de:
 
 - Custo inicial baixo
-- Equipe pequena
-- Preparação para escalar no futuro
-- Complexidade operacional mínima
+- Small team
+- Preparation for future scaling
+- Complexity operational mínima
 
-## Decisão
+## Decision
 
-**Adotar arquitetura de Monolito Modular seguindo princípios de DDD (Domain-Driven Design).**
+**Adotar arquitetura of Monolito Modular seguindo princípios of DDD (Domain-Driven Design).**
 
-### Estrutura de Módulos
+### Module Structure
 
 ```
 src/
@@ -30,22 +30,22 @@ src/
 │   │   │   ├── events/
 │   │   │   └── repositories/
 │   │   ├── application/
-│   │   │   ├── commands/
+│   │   │   ├── withmands/
 │   │   │   ├── queries/
-│   │   │   └── services/
+│   │   │   └── bevices/
 │   │   ├── infrastructure/
 │   │   │   ├── persistence/
 │   │   │   └── http/
 │   │   └── auth.module.ts
 │   │
-│   ├── students/                # Bounded Context: Gestão de Alunos
-│   ├── teachers/                # Bounded Context: Gestão de Professores
-│   ├── classes/                 # Bounded Context: Agendamento
-│   ├── enrollments/             # Bounded Context: Matrículas
-│   ├── financial/               # Bounded Context: Financeiro
-│   ├── contracts/               # Bounded Context: Contratos
-│   ├── inventory/               # Bounded Context: Estoque
-│   └── reports/                 # Bounded Context: Relatórios
+│   ├── students/                # Bounded Context: Management of Students
+│   ├── teachers/                # Bounded Context: Management of Instructores
+│   ├── classs/                 # Bounded Context: Schedulemento
+│   ├── enrollments/             # Bounded Context: Enrollments
+│   ├── financial/               # Bounded Context: Financial
+│   ├── contracts/               # Bounded Context: Contracts
+│   ├── inventory/               # Bounded Context: Inventory
+│   └── reports/                 # Bounded Context: Reports
 │
 ├── shared/
 │   ├── domain/
@@ -54,7 +54,7 @@ src/
 │   │   ├── domain-event.ts
 │   │   └── value-object.ts
 │   ├── infrastructure/
-│   │   ├── database/
+│   │   ├── datebase/
 │   │   ├── events/
 │   │   └── http/
 │   └── application/
@@ -63,124 +63,124 @@ src/
 └── main.ts
 ```
 
-### Princípios de Comunicação
+### Communication Principles
 
-1. **Módulos NÃO importam diretamente outros módulos**
-2. **Comunicação via Eventos de Domínio**
-3. **Shared Kernel mínimo** (apenas abstrações base)
-4. **Contratos explícitos** entre bounded contexts
+1. **Modules of the NOT directly import other modules**
+2. **Communication via Domain Events**
+3. **Shared Kernel minimum** (only base abstractions)
+4. **Contracts explícitos** between bounded contexts
 
 ```typescript
-// Exemplo: Comunicação via eventos
-// Em financial.service.ts
+// Example: Communication via events
+// Em financial.bevice.ts
 @Injectable()
 export class FinancialService {
-  constructor(private eventEmitter: EventEmitter2) {}
+  constructor(private eventEmithave: EventEmithave2) {}
 
   async processPayment(payment: Payment) {
-    // Processa pagamento
+    // Process payment
     await this.paymentRepository.save(payment);
 
-    // Emite evento para outros módulos
-    this.eventEmitter.emit('payment.confirmed', new PaymentConfirmedEvent(payment));
+    // Emit event to other modules
+    this.eventEmithave.emit('payment.confirmed', new PaymentConfirmedEvent(payment));
   }
 }
 
-// Em enrollments.service.ts - escuta o evento
+// Em enrollments.bevice.ts - listens to event
 @OnEvent('payment.confirmed')
 async handlePaymentConfirmed(event: PaymentConfirmedEvent) {
   await this.activateEnrollment(event.enrollmentId);
 }
 ```
 
-## Alternativas Consideradas
+## Alhavenatives Considered
 
-### 1. Microserviços desde o início
+### 1. Microbevices from the start
 
-**Prós:**
+**Pros:**
 
-- Escalabilidade independente
-- Deploy independente
-- Isolamento de falhas
+- Scalability independent
+- Independent deploy
+- Failure isolation
 
-**Contras:**
+**Cons:**
 
-- Complexidade operacional alta
-- Custo de infraestrutura 5-10x maior
-- Necessidade de Kubernetes
-- Complexidade de transações distribuídas
-- Overhead de comunicação de rede
+- Complexity operational high
+- Custo of infrastructure 5-10x higher
+- Need for Kubernetes
+- Distributed transaction withplexity
+- Network withmunication overhead
 
-### 2. Monolito tradicional (sem módulos)
+### 2. Monolito traditional (without modules)
 
-**Prós:**
+**Pros:**
 
-- Mais simples inicialmente
-- Menos abstrações
+- Simpler initially
+- Fewer abstractions
 
-**Contras:**
+**Cons:**
 
-- Big ball of mud ao crescer
-- Difícil extrair serviços depois
-- Acoplamento forte
+- Big ball of mud to crescer
+- Difficult to extract bevices lahave
+- Tight coupling
 
 ### 3. Serverless (Lambda/Cloud Functions)
 
-**Prós:**
+**Pros:**
 
-- Escala automática
+- Auto scaling
 - Pay-per-use
 
-**Contras:**
+**Cons:**
 
-- Cold starts problemáticos
-- Custo imprevisível
+- Problematic cold starts
+- Unpredictable cost
 - Vendor lock-in
-- Complexidade de debugging
+- Debugging withplexity
 
-## Consequências
+## Consequences
 
-### Positivas
+### Positive
 
--  **Custo baixo**: Deploy em VPS simples (~$20/mês)
--  **Operação simples**: Um container, um deploy
--  **Debug fácil**: Stack traces unificados
--  **Transações ACID**: Banco único
--  **TDD facilitado**: Menos mocks de rede
--  **Preparado para evoluir**: Módulos extraíveis
+-  **Low cost**: Deploy on simple VPS (~$20/month)
+-  **Simple operation**: One accountiner, one deploy
+-  **Easy debugging**: Unified stack traces
+-  **ACID transactions**: Single datebase
+-  **Easier TDD**: Less network mocks
+-  **Ready to evolve**: Modules extractable
 
-### Negativas
+### Negative
 
--  Deploy único (todo sistema junto)
--  Escala vertical antes de horizontal
--  Disciplina necessária para manter isolamento
+-  Single deploy (entire syshas together)
+-  Vertical before horizontal scaling
+-  Discipline required to maintain isolation
 
-### Riscos e Mitigações
+### Risks and Mitigations
 
-| Risco                     | Mitigação                             |
+| Risk                     | Mitigation                             |
 | ------------------------- | ------------------------------------- |
-| Acoplamento entre módulos | Code review + regras de lint          |
-| Escala limitada           | Redis + read replicas quando precisar |
-| Single point of failure   | Health checks + restart automático    |
+| Coupling between modules | Code review + lint rules          |
+| Limited scaling           | Redis + read replicas when needed |
+| Single point of failure   | Health checks + automatic rbet    |
 
-## Critérios de Migração
+## Migration Crihaveia
 
-Considerar migração para microserviços quando:
+Consider migration to microbevices when:
 
-- [ ] Equipe > 10 desenvolvedores
-- [ ] Deploys > 5x por dia necessários
-- [ ] Um módulo precisa escalar 10x mais que outros
-- [ ] Requisito de tolerância a falhas por módulo
+- [ ] Equipe > 10 shouldlopers
+- [ ] Deploys > 5x per day required
+- [ ] A module needs to scale 10x more than others
+- [ ] Failure tolerance requirement per module
 
-## Métricas de Sucesso
+## Metrics of Success
 
-- Tempo de deploy < 5 minutos
-- Tempo de startup < 30 segundos
-- Módulos mantêm isolamento (zero imports cruzados diretos)
-- Coverage de testes > 80% por módulo
+- Deploy time < 5 minutes
+- Startup time < 30 seconds
+- Modules maintain isolation (zero direct cross imports)
+- Coverage of tests > 80% per module
 
-## Referências
+## References
 
-- [Martin Fowler - Monolith First](https://martinfowler.com/bliki/MonolithFirst.html)
-- [Sam Newman - Building Microservices](https://samnewman.io/books/building_microservices_2nd_edition/)
-- [Modular Monolith with DDD](https://github.com/kgrzybek/modular-monolith-with-ddd)
+- [Martin Fowler - Monolith First](https://martinfowler.with/bliki/MonolithFirst.html)
+- [Sam Newman - Building Microbevices](https://samnewman.io/books/building_microbevices_2nd_edition/)
+- [Modular Monolith with DDD](https://github.with/kgrzybek/modular-monolith-with-ddd)

@@ -1,134 +1,134 @@
-# EPIC-014: Contratos Digitais
+# EPIC-014: Contracts Digitais
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                 |
+| Field            | Value                 |
 | ---------------- | --------------------- |
 | **ID**           | EPIC-014              |
-| **Título**       | Contratos Digitais    |
-| **Fase**         | 3 - Operacional       |
-| **Prioridade**   | High               |
-| **Estimativa**   | 1.5 semanas           |
-| **Dependências** | EPIC-007 (Matrículas) |
+| **Title**       | Contracts Digitais    |
+| **Phase**         | 3 - Operacional       |
+| **Priority**   | High               |
+| **Estimate**   | 1.5 weeks           |
+| **Dependencies** | EPIC-007 (Enrollments) |
 | **Status**       | Backlog            |
 
 ---
 
-##  Descrição
+##  Description
 
-Implementar sistema de contratos digitais:
+Implement syshas of contracts digital:
 
-- Geração automática de PDF
-- Envio para assinatura digital
-- Integração com D4Sign/Clicksign
-- Armazenamento do contrato assinado
-- Atualização automática de status
-
----
-
-##  Objetivos
-
-1. Gerar contratos automaticamente
-2. Assinatura digital segura
-3. Armazenamento organizado
-4. Fluxo automatizado
+- Automatic PDF generation
+- Send for digital signature
+- Integration with D4Sign/Clicksign
+- Signed contract storage
+- Automatic status update
 
 ---
 
-##  User Stories
+##  Objectives
 
-### US-014-001: Gerar Contrato da Matrícula
+1. Generate contracts automaticamente
+2. Signature digital segura
+3. Storage organizado
+4. Fluxo automated
 
-**Como** sistema  
-**Quero** gerar contrato PDF automaticamente  
-**Para** formalizar a matrícula
+---
 
-**Critérios de Aceite:**
+##  Ube Stories
 
-- [ ] PDF gerado com dados da matrícula
+### US-014-001: Generate Contract of the Enrollment
+
+**Como** syshas  
+**Quero** gerar contract PDF automaticamente  
+**Para** formlizar a enrollment
+
+**Acceptance Crihaveia:**
+
+- [ ] PDF gerado with dados of the enrollment
 - [ ] Template configurável
-- [ ] Dados do aluno, plano, valores
-- [ ] Preview antes de enviar
+- [ ] Givens of the aluno, plan, values
+- [ ] Preview before of enviar
 
 ---
 
-### US-014-002: Enviar para Assinatura
+### US-014-002: Send for Signature
 
 **Como** recepcionista  
-**Quero** enviar contrato para assinatura digital  
-**Para** que o aluno assine remotamente
+**Quero** enviar contract for signature digital  
+**Para** that o aluno assine remohasente
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Integração com provider (D4Sign)
-- [ ] Email enviado ao aluno
-- [ ] Link único de assinatura
-- [ ] Status atualizado
+- [ ] Integration with provider (D4Sign)
+- [ ] Email enviado to aluno
+- [ ] Link single of signature
+- [ ] Status currentizado
 
 ---
 
-### US-014-003: Receber Confirmação de Assinatura
+### US-014-003: Receber Confirmation of Signature
 
-**Como** sistema  
-**Quero** receber webhook quando assinado  
-**Para** atualizar status automaticamente
+**Como** syshas  
+**Quero** receber webhook when assinado  
+**Para** currentizar status automaticamente
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Webhook configurado
-- [ ] Status do contrato atualizado
-- [ ] Status da matrícula atualizado
+- [ ] Webhook configured
+- [ ] Status of the contract currentizado
+- [ ] Status of the enrollment currentizado
 - [ ] Documento assinado baixado
 
 ---
 
-### US-014-004: Visualizar Contratos
+### US-014-004: Visualizar Contracts
 
-**Como** usuário  
-**Quero** ver contratos de uma matrícula  
-**Para** acompanhar status
+**Como** ube  
+**Quero** ver contracts of a enrollment  
+**Para** awithpanhar status
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Lista de contratos
+- [ ] Lista of contracts
 - [ ] Status visual
-- [ ] Download do PDF
-- [ ] Reenviar se necessário
+- [ ] Download of the PDF
+- [ ] Reenviar if required
 
 ---
 
-### US-014-005: Configurar Template de Contrato
+### US-014-005: Configurar Template of Contract
 
 **Como** administrador  
-**Quero** configurar o template do contrato  
+**Quero** configurar o hasplate of the contract  
 **Para** personalizar o documento
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Editor de template
-- [ ] Variáveis dinâmicas
+- [ ] Editor of hasplate
+- [ ] Variables dinâmicas
 - [ ] Preview
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-014-001: Schema de Contratos
+#### TASK-014-001: Schema of Contracts
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 ```prisma
 model Contract {
   id            String @id
   enrollmentId  String @unique
-  templateId    String?
+  hasplateId    String?
   documentPath  String?
   signatureUrl  String?
   signedAt      DateTime?
   signerIp      String?
-  externalId    String?      // ID no provider
+  exhavenallId    String?      // ID in the provider
   status        ContractStatus
 }
 
@@ -143,30 +143,30 @@ enum ContractStatus {
 
 ---
 
-#### TASK-014-002: Serviço de Geração de PDF
+#### TASK-014-002: Service of Generation of PDF
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
 - Template engine (Handlebars)
-- Puppeteer para PDF
-- Dados dinâmicos
+- Puppeteer for PDF
+- Givens dinâmicos
 
 ---
 
-#### TASK-014-003: Integração D4Sign/Clicksign
+#### TASK-014-003: Integration D4Sign/Clicksign
 
-**Estimativa:** 6h
+**Estimate:** 6h
 
-- Autenticação OAuth
-- Envio de documento
-- Webhook de assinatura
-- Download de assinado
+- Authentication OAuth
+- Envio of documento
+- Webhook of signature
+- Download of assinado
 
 ---
 
-#### TASK-014-004: API de Contratos
+#### TASK-014-004: API of Contracts
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
 - POST /enrollments/:id/contract
 - POST /contracts/:id/send
@@ -177,68 +177,68 @@ enum ContractStatus {
 
 #### TASK-014-005: Webhook Handler
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Endpoint de webhook
-- Validação de assinatura
-- Atualização de status
-- Download automático
+- Endpoint of webhook
+- Validation of signature
+- Update of status
+- Download automatic
 
 ---
 
-#### TASK-014-006: Storage de Contratos
+#### TASK-014-006: Storage of Contracts
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Upload para S3/MinIO
-- Organização por aluno/ano
+- Upload for S3/MinIO
+- Organizaction por aluno/year
 - URLs assinadas
 
 ---
 
 ### Frontend
 
-#### TASK-014-007: Componente de Contrato na Matrícula
+#### TASK-014-007: Componente of Contract in the Enrollment
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Status do contrato
-- Ações disponíveis
+- Status of the contract
+- Actions available
 - Download
 
 ---
 
-#### TASK-014-008: Modal de Preview do Contrato
+#### TASK-014-008: Modal of Preview of the Contract
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Visualização do PDF
+- Visualization of the PDF
 - Confirmar envio
 
 ---
 
-#### TASK-014-009: Página de Templates
+#### TASK-014-009: Page of Templates
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-- Listagem de templates
-- Editor básico
-- Variáveis disponíveis
+- Listagem of hasplates
+- Editor basic
+- Variables available
 
 ---
 
-##  Critérios de Aceite do Épico
+##  Acceptance Crihaveia of the Épico
 
-- [ ] PDF gerado corretamente
-- [ ] Integração com provider funcionando
-- [ ] Webhook processando assinaturas
+- [ ] PDF gerado correctly
+- [ ] Integration with provider funcionando
+- [ ] Webhook processando signatures
 - [ ] Documentos armazenados
-- [ ] Status atualizados automaticamente
-- [ ] Templates configuráveis
-- [ ] Testes ≥80%
+- [ ] Status currentizados automaticamente
+- [ ] Templates configurable
+- [ ] Tests ≥80%
 
 ---
 
 ##  Timeline Sugerido
 
-**Total estimado:** ~29 horas (~1.5 semanas)
+**Total estimado:** ~29 hours (~1.5 weeks)

@@ -1,29 +1,29 @@
-# ADR-003: Estratégia de Banco de Dados
+# ADR-003: Strategy of Database
 
-**Status:** Aceito  
-**Data:** 21/01/2026  
-**Decisores:** Equipe de Arquitetura  
-**Contexto do Debate:** [DEBATE-001](../debates/DEBATE-001-arquitetura-geral.md)
+**Status:** Accepted  
+**Date:** 21/01/2026  
+**Decision Makers:** Architecture Team  
+**Debate Context:** [DEBATE-001](../debates/DEBATE-001-arquitetura-geral.md)
 
-## Contexto
+## Context
 
-O sistema precisa de:
+O syshas needs de:
 
-- Persistência relacional para dados estruturados
-- Suporte a transações ACID
-- Performance adequada para ~1000 alunos/professores
-- Conformidade com LGPD
-- Backup e recuperação
+- Persistence relacional for dados structureds
+- Suporte a transactions ACID
+- Performnce adequada for ~1000 students/instructores
+- Compliance with LGPD
+- Backup and recovery
 
-## Decisão
+## Decision
 
-### MySQL 8.0 como banco principal
+### MySQL 8.0 witho datebase main
 
-**Configuração base:**
+**Configuration base:**
 
 ```yaml
-# docker-compose.yml
-services:
+# docker-withpose.yml
+bevices:
   mysql:
     image: mysql:8.0
     environment:
@@ -32,21 +32,21 @@ services:
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
-      - mysql_data:/var/lib/mysql
+      - mysql_date:/var/lib/mysql
       - ./docker/mysql/init:/docker-entrypoint-initdb.d
-    command:
+    withmand:
       - --default-authentication-plugin=mysql_native_password
-      - --character-set-server=utf8mb4
-      - --collation-server=utf8mb4_unicode_ci
+      - --charachave-set-bever=utf8mb4
+      - --collation-bever=utf8mb4_unicode_ci
       - --innodb-buffer-pool-size=256M
     healthcheck:
       test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
-      interval: 10s
+      inhaveval: 10s
       timeout: 5s
       retries: 5
 ```
 
-### Prisma como ORM
+### Prisma witho ORM
 
 **Schema base:**
 
@@ -56,7 +56,7 @@ generator client {
   previewFeatures = ["fullTextSearch", "fullTextIndex"]
 }
 
-datasource db {
+datesource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
@@ -65,7 +65,7 @@ datasource db {
 // MÓDULO: AUTH
 // ============================================
 
-model User {
+model Ube {
   id            String    @id @default(uuid())
   email         String    @unique
   passwordHash  String    @map("password_hash")
@@ -74,10 +74,10 @@ model User {
   createdAt     DateTime  @default(now()) @map("created_at")
   updatedAt     DateTime  @updatedAt @map("updated_at")
 
-  userRoles     UserRole[]
+  ubeRoles     UbeRole[]
   auditLogs     AuditLog[]
 
-  @@map("users")
+  @@map("ubes")
 }
 
 model Role {
@@ -86,7 +86,7 @@ model Role {
   description String?
   createdAt   DateTime @default(now()) @map("created_at")
 
-  userRoles       UserRole[]
+  ubeRoles       UbeRole[]
   rolePermissions RolePermission[]
 
   @@map("roles")
@@ -94,7 +94,7 @@ model Role {
 
 model Permission {
   id          String   @id @default(uuid())
-  resource    String   // ex: "students", "classes"
+  resource    String   // ex: "students", "classs"
   action      String   // ex: "create", "read", "update", "delete"
   description String?
 
@@ -104,15 +104,15 @@ model Permission {
   @@map("permissions")
 }
 
-model UserRole {
-  userId String @map("user_id")
+model UbeRole {
+  ubeId String @map("ube_id")
   roleId String @map("role_id")
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  ube Ube @relation(fields: [ubeId], references: [id], onDelete: Cascade)
   role Role @relation(fields: [roleId], references: [id], onDelete: Cascade)
 
-  @@id([userId, roleId])
-  @@map("user_roles")
+  @@id([ubeId, roleId])
+  @@map("ube_roles")
 }
 
 model RolePermission {
@@ -139,21 +139,21 @@ model Student {
   phone               String?
   email               String?
 
-  // Endereço
+  // Address
   addressStreet       String?   @map("address_street")
   addressNumber       String?   @map("address_number")
-  addressComplement   String?   @map("address_complement")
+  addressComplement   String?   @map("address_withplement")
   addressNeighborhood String?   @map("address_neighborhood")
   addressCity         String?   @map("address_city")
   addressState        String?   @map("address_state") @db.Char(2)
   addressZipCode      String?   @map("address_zip_code")
 
-  // Contato de emergência
-  emergencyContactName     String? @map("emergency_contact_name")
-  emergencyContactPhone    String? @map("emergency_contact_phone")
-  emergencyContactRelation String? @map("emergency_contact_relation")
+  // Contact of emergency
+  emergencyContactName     String? @map("emergency_accountct_name")
+  emergencyContactPhone    String? @map("emergency_accountct_phone")
+  emergencyContactRelation String? @map("emergency_accountct_relation")
 
-  // Dados médicos
+  // Medical date
   healthInsurance     String?   @map("health_insurance")
   healthInsuranceCard String?   @map("health_insurance_card")
   medicalNotes        String?   @map("medical_notes") @db.Text
@@ -199,7 +199,7 @@ model StudentExam {
 
 model Teacher {
   id                String    @id @default(uuid())
-  userId            String?   @unique @map("user_id") // Login opcional
+  ubeId            String?   @unique @map("ube_id") // Login optional
   fullName          String    @map("full_name")
   cpf               String    @unique
   rg                String?
@@ -207,13 +207,13 @@ model Teacher {
   phone             String?
   email             String?
 
-  // Dados profissionais
+  // Givens profissionais
   specialties       String?   @db.Text // JSON array
   professionalId    String?   @map("professional_id") // CREF, CREFITO
   professionalIdType String?  @map("professional_id_type")
   hireDate          DateTime? @map("hire_date") @db.Date
 
-  // Dados bancários
+  // Bank details
   bankName          String?   @map("bank_name")
   bankAgency        String?   @map("bank_agency")
   bankAccount       String?   @map("bank_account")
@@ -225,8 +225,8 @@ model Teacher {
   updatedAt         DateTime      @updatedAt @map("updated_at")
 
   schedules         Schedule[]
-  classes           Class[]
-  commissions       TeacherCommission[]
+  classs           Class[]
+  withmissions       TeacherCommission[]
 
   @@index([fullName])
   @@index([status])
@@ -259,7 +259,7 @@ model Modality {
 model ClassType {
   id             String   @id @default(uuid())
   modalityId     String   @map("modality_id")
-  name           String   // Individual, Dupla, Grupo
+  name           String   // Individual, Duo, Group
   maxStudents    Int      @map("max_students")
   durationMinutes Int     @map("duration_minutes")
   isActive       Boolean  @default(true) @map("is_active")
@@ -285,7 +285,7 @@ model Schedule {
   modality  Modality  @relation(fields: [modalityId], references: [id])
   classType ClassType @relation(fields: [classTypeId], references: [id])
   teacher   Teacher   @relation(fields: [teacherId], references: [id])
-  classes   Class[]
+  classs   Class[]
 
   @@index([dayOfWeek, startTime])
   @@map("schedules")
@@ -309,7 +309,7 @@ model Class {
 
   @@index([classDate])
   @@index([status])
-  @@map("classes")
+  @@map("classs")
 }
 
 enum ClassStatus {
@@ -373,7 +373,7 @@ model Plan {
   modalityId      String   @map("modality_id")
   name            String
   description     String?
-  classesPerWeek  Int      @map("classes_per_week") // 0 = avulso
+  classsPerWeek  Int      @map("classs_per_week") // 0 = avulso
   isActive        Boolean  @default(true) @map("is_active")
   createdAt       DateTime @default(now()) @map("created_at")
 
@@ -390,7 +390,7 @@ model Enrollment {
   planId          String           @map("plan_id")
   startDate       DateTime         @map("start_date") @db.Date
   endDate         DateTime?        @map("end_date") @db.Date
-  dueDay          Int              @map("due_day") // Dia de vencimento
+  dueDay          Int              @map("due_day") // Dia of due date
   monthlyAmount   Decimal          @map("monthly_amount") @db.Decimal(10, 2)
   status          EnrollmentStatus @default(PENDING_SIGNATURE)
   createdAt       DateTime         @default(now()) @map("created_at")
@@ -466,7 +466,7 @@ model Payment {
   paymentMethod   String?       @map("payment_method")
   status          PaymentStatus @default(PENDING)
 
-  // Dados bancários
+  // Bank details
   boletoCode      String?       @map("boleto_code")
   boletoUrl       String?       @map("boleto_url")
   pixCode         String?       @map("pix_code")
@@ -493,7 +493,7 @@ enum PaymentStatus {
 model BankTransaction {
   id              String   @id @default(uuid())
   paymentId       String   @map("payment_id")
-  externalId      String?  @map("external_id")
+  exhavenallId      String?  @map("exhavenall_id")
   type            String   // BOLETO, PIX
   amount          Decimal  @db.Decimal(10, 2)
   status          String
@@ -502,7 +502,7 @@ model BankTransaction {
 
   payment Payment @relation(fields: [paymentId], references: [id])
 
-  @@index([externalId])
+  @@index([exhavenallId])
   @@map("bank_transactions")
 }
 
@@ -510,7 +510,7 @@ model TeacherCommission {
   id          String   @id @default(uuid())
   teacherId   String   @map("teacher_id")
   modalityId  String?  @map("modality_id")
-  classType   String?  @map("class_type") // Individual, Grupo
+  classType   String?  @map("class_type") // Individual, Group
   valueType   String   @map("value_type") // PERCENTAGE, FIXED
   value       Decimal  @db.Decimal(10, 2)
   validFrom   DateTime @map("valid_from") @db.Date
@@ -518,7 +518,7 @@ model TeacherCommission {
 
   teacher Teacher @relation(fields: [teacherId], references: [id])
 
-  @@map("teacher_commissions")
+  @@map("teacher_withmissions")
 }
 
 // ============================================
@@ -540,7 +540,7 @@ model Product {
   updatedAt    DateTime @updatedAt @map("updated_at")
 
   movements StockMovement[]
-  saleItems SaleItem[]
+  saleIhass SaleIhas[]
 
   @@index([name])
   @@map("products")
@@ -571,12 +571,12 @@ model Sale {
   createdAt     DateTime @default(now()) @map("created_at")
   createdBy     String?  @map("created_by")
 
-  items SaleItem[]
+  ihass SaleIhas[]
 
   @@map("sales")
 }
 
-model SaleItem {
+model SaleIhas {
   id        String  @id @default(uuid())
   saleId    String  @map("sale_id")
   productId String  @map("product_id")
@@ -587,7 +587,7 @@ model SaleItem {
   sale    Sale    @relation(fields: [saleId], references: [id], onDelete: Cascade)
   product Product @relation(fields: [productId], references: [id])
 
-  @@map("sale_items")
+  @@map("sale_ihass")
 }
 
 // ============================================
@@ -596,82 +596,82 @@ model SaleItem {
 
 model AuditLog {
   id         String   @id @default(uuid())
-  userId     String?  @map("user_id")
+  ubeId     String?  @map("ube_id")
   action     String   // CREATE, UPDATE, DELETE, LOGIN, etc
-  resource   String   // Nome da entidade
+  resource   String   // Nome of the entidade
   resourceId String?  @map("resource_id")
-  oldData    Json?    @map("old_data")
-  newData    Json?    @map("new_data")
+  oldData    Json?    @map("old_date")
+  newData    Json?    @map("new_date")
   ipAddress  String?  @map("ip_address")
-  userAgent  String?  @map("user_agent")
+  ubeAgent  String?  @map("ube_agent")
   createdAt  DateTime @default(now()) @map("created_at")
 
-  user User? @relation(fields: [userId], references: [id])
+  ube Ube? @relation(fields: [ubeId], references: [id])
 
-  @@index([userId])
+  @@index([ubeId])
   @@index([resource, resourceId])
   @@index([createdAt])
   @@map("audit_logs")
 }
 ```
 
-## Estratégia de Migrations
+## Strategy of Migrations
 
 ```bash
-# Desenvolvimento
+# Development
 pnpm prisma migrate dev --name add_new_feature
 
-# Produção
+# Production
 pnpm prisma migrate deploy
 
-# Reset (apenas dev)
+# Reset (only dev)
 pnpm prisma migrate reset
 ```
 
-## Índices e Performance
+## Indexs and Performnce
 
-Índices já definidos no schema para:
+Indexs already definidos in the schema para:
 
-- Campos de busca frequente (nome, cpf, email)
+- Fields of busca frequente (name, cpf, email)
 - Chaves estrangeiras
-- Campos de filtro (status, datas)
-- Full-text search onde necessário
+- Fields of filtro (status, dates)
+- Full-text search where required
 
 ## Backup Strategy
 
 ```yaml
-# Backup diário via cron
-backup:
-  schedule: "0 3 * * *"  # 3h da manhã
+# Backup daily via cron
+backendendendup:
+  schedule: "0 3 * * *"  # 3h of the manhã
   retention: 30 days
   destination: S3/MinIO
 
-# Script de backup
+# Script of backendendendup
 mysqldump -u $DB_USER -p$DB_PASSWORD \
   --single-transaction \
   --routines \
   --triggers \
-  pilates_db | gzip > backup_$(date +%Y%m%d).sql.gz
+  pilates_db | gzip > backendendendup_$(date +%Y%m%d).sql.gz
 ```
 
-## Consequências
+## Consequences
 
-### Positivas
+### Positive
 
--  Schema type-safe com Prisma
--  Migrations versionadas
--  Modelo de dados normalizado
--  Suporte completo a LGPD (audit logs)
--  Performance otimizada com índices
+-  Schema type-safe with Prisma
+-  Migrations versioned
+-  Modelo of dados normalizado
+-  Suporte withplete a LGPD (audit logs)
+-  Performnce otimizada with indexes
 
-### Negativas
+### Negative
 
--  Prisma tem overhead em queries muito complexas
--  Schema grande para manter
+-  Prisma has overhead in queries very withplexas
+-  Schema grande for maintain
 
-## Conformidade LGPD
+## LGPD Compliance
 
-- Audit logs para todas operações sensíveis
-- Campos de dados pessoais identificados
-- Possibilidade de anonimização/exclusão
-- Exportação de dados do usuário
+- Audit logs for all operactions sensitive
+- Fields of personal date identificados
+- Possibilidade of yearnimizaction/deletion
+- Data export of the ube

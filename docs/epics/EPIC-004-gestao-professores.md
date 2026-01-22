@@ -1,197 +1,197 @@
-# EPIC-004: Gestão de Professores
+# EPIC-004: Management of Instructores
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                   |
+| Field            | Value                   |
 | ---------------- | ----------------------- |
 | **ID**           | EPIC-004                |
-| **Título**       | Gestão de Professores   |
-| **Fase**         | 1 - MVP                 |
-| **Prioridade**   | High                 |
-| **Estimativa**   | 1 semana                |
-| **Dependências** | EPIC-002 (Autenticação) |
+| **Title**       | Management of Instructores   |
+| **Phase**         | 1 - MVP                 |
+| **Priority**   | High                 |
+| **Estimate**   | 1 week                |
+| **Dependencies** | EPIC-002 (Authentication) |
 | **Status**       | Backlog              |
 
 ---
 
-##  Descrição
+##  Description
 
-Implementar módulo de gestão de professores incluindo:
+Implement module of management of instructores including:
 
-- Cadastro completo com dados pessoais e profissionais
-- Registro profissional (CREF, CREFITO)
-- Especialidades
-- Dados bancários para pagamento
-- Vinculação com usuário do sistema (login)
-
----
-
-##  Objetivos
-
-1. CRUD completo de professores
-2. Gestão de especialidades
-3. Dados para pagamento (comissões)
-4. Vinculação opcional com login
+- Cadastro withplete with personal date and profissionais
+- Professional registration (CREF, CREFITO)
+- Specialties
+- Bank details for payment
+- Link to syshas ube (login)
 
 ---
 
-##  User Stories
+##  Objectives
 
-### US-004-001: Cadastrar Professor
+1. Full CRUD of instructores
+2. Management of specialties
+3. Givens for payment (withmissions)
+4. Linking optional with login
+
+---
+
+##  Ube Stories
+
+### US-004-001: Regishave Instructor
 
 **Como** administrador  
-**Quero** cadastrar um novo professor  
-**Para** que ele possa dar aulas
+**Quero** eachstrar a new instructor  
+**Para** that ele possa dar classs
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Formulário com dados pessoais
-- [ ] Dados profissionais (CREF/CREFITO)
-- [ ] Especialidades selecionáveis
-- [ ] Dados bancários opcionais
-- [ ] Validação de CPF único
+- [ ] Form with personal date
+- [ ] Givens profissionais (CREF/CREFITO)
+- [ ] Specialties selecionáveis
+- [ ] Bank details opcionais
+- [ ] Validation of CPF single
 
 ---
 
-### US-004-002: Listar Professores
+### US-004-002: Listar Instructores
 
-**Como** usuário do sistema  
-**Quero** ver a lista de professores  
+**Como** ube of the syshas  
+**Quero** ver a list of instructores  
 **Para** encontrar quem preciso
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Listagem paginada
-- [ ] Filtro por status e especialidade
-- [ ] Busca por nome
+- [ ] Filtro by status and especialidade
+- [ ] Busca por name
 
 ---
 
-### US-004-003: Vincular Professor a Usuário
+### US-004-003: Vincular Instructor a Ube
 
 **Como** administrador  
-**Quero** criar login para o professor  
-**Para** que ele acesse o sistema
+**Quero** create login for o instructor  
+**Para** that ele acesse o syshas
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Botão para criar usuário vinculado
-- [ ] Email do professor usado como login
-- [ ] Perfil "Professor" atribuído automaticamente
+- [ ] Button for create ube vincuside
+- [ ] Email of the instructor usado witho login
+- [ ] Profile "Instructor" atribuído automaticamente
 
 ---
 
-### US-004-004: Gerenciar Especialidades
+### US-004-004: Gerenciar Specialties
 
 **Como** administrador  
-**Quero** definir as especialidades do professor  
-**Para** saber quais aulas ele pode dar
+**Quero** definir as specialties of the instructor  
+**Para** saber quais classs ele can dar
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Multi-select de especialidades
-- [ ] Modalidades: Pilates, Fisioterapia, etc.
+- [ ] Multi-select of specialties
+- [ ] Modalities: Pilates, Fisiohaveapia, etc.
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-004-001: Módulo Teachers no NestJS
+#### TASK-004-001: Module Teachers in the NestJS
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 **Definition of Done:**
 
-- [ ] Estrutura DDD criada
+- [ ] Structure DDD criada
 - [ ] Entidade Teacher
-- [ ] Testes unitários
+- [ ] Unit tests
 
 ---
 
-#### TASK-004-002: Schema Prisma de Professores
+#### TASK-004-002: Schema Prisma of Instructores
 
-**Estimativa:** 1h
+**Estimate:** 1h
 
 **Definition of Done:**
 
-- [ ] Model Teacher com todos os campos
-- [ ] Relação com User (opcional)
-- [ ] Migration aplicada
+- [ ] Model Teacher with entires os fields
+- [ ] Relaction with Ube (optional)
+- [ ] Migration aplieach
 
 ---
 
-#### TASK-004-003: CRUD de Professores (API)
+#### TASK-004-003: CRUD of Instructores (API)
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
 **Definition of Done:**
 
 - [ ] Endpoints CRUD funcionando
-- [ ] Validações
-- [ ] Testes de integração
+- [ ] Validations
+- [ ] Integration tests
 
 ---
 
-#### TASK-004-004: Vinculação com Usuário
+#### TASK-004-004: Linking with Ube
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 **Definition of Done:**
 
-- [ ] POST /teachers/:id/create-user
-- [ ] Cria usuário com perfil Professor
-- [ ] Envia email de boas-vindas
+- [ ] POST /teachers/:id/create-ube
+- [ ] Cria ube with perfil Instructor
+- [ ] Envia email of boas-vindas
 
 ---
 
 ### Frontend
 
-#### TASK-004-005: Listagem de Professores
+#### TASK-004-005: Listagem of Instructores
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
 **Definition of Done:**
 
 - [ ] DataTable implementada
-- [ ] Filtros funcionando
-- [ ] Testes
+- [ ] Filhaves funcionando
+- [ ] Tests
 
 ---
 
-#### TASK-004-006: Formulário de Professor
+#### TASK-004-006: Form of Instructor
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
 **Definition of Done:**
 
-- [ ] Formulário completo
-- [ ] Validações
-- [ ] Multi-select de especialidades
-- [ ] Testes
+- [ ] Form withplete
+- [ ] Validations
+- [ ] Multi-select of specialties
+- [ ] Tests
 
 ---
 
-#### TASK-004-007: Página de Detalhes
+#### TASK-004-007: Page of Detalhes
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 **Definition of Done:**
 
-- [ ] Layout de detalhes
-- [ ] Botão criar usuário
-- [ ] Testes
+- [ ] Layout of detalhes
+- [ ] Button create ube
+- [ ] Tests
 
 ---
 
-##  Critérios de Aceite do Épico
+##  Acceptance Crihaveia of the Épico
 
-- [ ] CRUD completo funcionando
-- [ ] Especialidades configuráveis
-- [ ] Dados bancários salvos (criptografados)
-- [ ] Vinculação com usuário funcional
-- [ ] Testes ≥80%
+- [ ] Full CRUD funcionando
+- [ ] Specialties configurable
+- [ ] Bank details salvos (criptografados)
+- [ ] Linking with ube functional
+- [ ] Tests ≥80%
 
 ---
 
@@ -199,13 +199,13 @@ Implementar módulo de gestão de professores incluindo:
 
 ```
 Semana 1:
-├── TASK-004-001: Módulo (2h)
+├── TASK-004-001: Module (2h)
 ├── TASK-004-002: Schema (1h)
 ├── TASK-004-003: CRUD API (3h)
-├── TASK-004-004: Vinculação User (2h)
+├── TASK-004-004: Linking Ube (2h)
 ├── TASK-004-005: Listagem UI (3h)
-├── TASK-004-006: Formulário (4h)
+├── TASK-004-006: Form (4h)
 └── TASK-004-007: Detalhes (2h)
 ```
 
-**Total estimado:** ~17 horas (~1 semana)
+**Total estimado:** ~17 hours (~1 week)

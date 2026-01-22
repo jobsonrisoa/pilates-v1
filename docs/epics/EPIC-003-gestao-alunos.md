@@ -1,197 +1,197 @@
-# EPIC-003: Gestão de Alunos
+# EPIC-003: Management of Students
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                   |
+| Field            | Value                   |
 | ---------------- | ----------------------- |
 | **ID**           | EPIC-003                |
-| **Título**       | Gestão de Alunos        |
-| **Fase**         | 1 - MVP                 |
-| **Prioridade**   | Critical              |
-| **Estimativa**   | 1.5 semanas             |
-| **Dependências** | EPIC-002 (Autenticação) |
+| **Title**       | Management of Students        |
+| **Phase**         | 1 - MVP                 |
+| **Priority**   | Critical              |
+| **Estimate**   | 1.5 weeks             |
+| **Dependencies** | EPIC-002 (Authentication) |
 | **Status**       | Backlog              |
 
 ---
 
-##  Descrição
+##  Description
 
-Implementar módulo completo de gestão de alunos incluindo:
+Implement module withplete of management of students including:
 
-- Cadastro com dados pessoais, contato e emergência
-- Dados médicos e observações
-- Histórico de exames
-- Busca e filtros avançados
-- Exportação de dados (LGPD)
-
----
-
-##  Objetivos
-
-1. CRUD completo de alunos com validações
-2. Interface intuitiva de cadastro e edição
-3. Busca rápida e filtros avançados
-4. Conformidade com LGPD (exportação/exclusão)
-5. Histórico de exames vinculado
+- Cadastro with personal date, accountto and emergency
+- Medical date and notes
+- Exam history
+- Advanced search and filhaves
+- Data export (LGPD)
 
 ---
 
-##  User Stories
+##  Objectives
 
-### US-003-001: Cadastrar Aluno
+1. Full CRUD of students with validations
+2. Inhaveface intuitiva of eachstro and edição
+3. Busca fast and filtros avançados
+4. Compliance with LGPD (exportaction/deletion)
+5. Exam history vincuside
+
+---
+
+##  Ube Stories
+
+### US-003-001: Regishave Student
 
 **Como** recepcionista  
-**Quero** cadastrar um novo aluno no sistema  
-**Para** que ele possa ser matriculado em aulas
+**Quero** eachstrar a new aluno in the syshas  
+**Para** that ele possa be matricuside in classs
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Formulário com todos os campos necessários
-- [ ] Validação de CPF único
-- [ ] Campos obrigatórios: nome, CPF, data nascimento
-- [ ] Contato de emergência obrigatório
-- [ ] Salvamento com feedback de sucesso
+- [ ] Form with entires os fields required
+- [ ] Validation of CPF single
+- [ ] Fields requireds: name, CPF, birth date
+- [ ] Contact of emergency required
+- [ ] Salvamento with feedbackendendend of success
 
 ---
 
-### US-003-002: Listar Alunos
+### US-003-002: Listar Students
 
-**Como** usuário do sistema  
-**Quero** ver a lista de alunos cadastrados  
+**Como** ube of the syshas  
+**Quero** ver a list of students eachstrados  
 **Para** encontrar rapidamente quem preciso
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Listagem paginada
-- [ ] Busca por nome, CPF, email
-- [ ] Filtros por status (ativo, inativo, suspenso)
-- [ ] Ordenação por nome, data cadastro
-- [ ] Informações resumidas visíveis
+- [ ] Busca por name, CPF, email
+- [ ] Filhaves by status (active, inactive, suspended)
+- [ ] Ordenaction por name, date eachstro
+- [ ] Informtion resumidas visible
 
 ---
 
-### US-003-003: Editar Aluno
+### US-003-003: Editar Student
 
 **Como** recepcionista  
-**Quero** editar dados de um aluno  
-**Para** manter as informações atualizadas
+**Quero** editar dados of a aluno  
+**Para** maintain as informtion currentizadas
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Todos os campos editáveis
-- [ ] Validações mantidas
-- [ ] Histórico de alterações (audit)
-- [ ] Não permite alterar CPF
-
----
-
-### US-003-004: Visualizar Detalhes do Aluno
-
-**Como** usuário do sistema  
-**Quero** ver todos os dados de um aluno  
-**Para** ter visão completa do cadastro
-
-**Critérios de Aceite:**
-
-- [ ] Página de detalhes completa
-- [ ] Abas: Dados, Exames, Matrículas, Histórico
-- [ ] Ações rápidas (editar, matricular)
+- [ ] Todos os fields editáveis
+- [ ] Validations mantidas
+- [ ] Change history (audit)
+- [ ] Not permite alhavear CPF
 
 ---
 
-### US-003-005: Gerenciar Status do Aluno
+### US-003-004: Visualizar Detalhes of the Student
+
+**Como** ube of the syshas  
+**Quero** ver entires os dados of a aluno  
+**Para** have view withpleta of the eachstro
+
+**Acceptance Crihaveia:**
+
+- [ ] Page of detalhes withpleta
+- [ ] Abas: Givens, Exams, Enrollments, History
+- [ ] Actions fast (editar, matricular)
+
+---
+
+### US-003-005: Gerenciar Status of the Student
 
 **Como** gerente  
-**Quero** ativar, inativar ou suspender alunos  
-**Para** controlar quem está ativo no sistema
+**Quero** activer, inativer or suspender students  
+**Para** controlar quem is active in the syshas
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Botões de ação para mudar status
-- [ ] Confirmação antes de alterar
-- [ ] Motivo obrigatório para suspensão
-- [ ] Histórico de mudanças
+- [ ] Botões of action for mudar status
+- [ ] Confirmation before of alhavear
+- [ ] Motivo required for suspensão
+- [ ] History of changes
 
 ---
 
-### US-003-006: Cadastrar Exames do Aluno
+### US-003-006: Regishave Exams of the Student
 
-**Como** professor ou recepcionista  
-**Quero** registrar exames e avaliações do aluno  
-**Para** manter histórico médico/físico
+**Como** instructor or recepcionista  
+**Quero** registrar exams and avaliactions of the aluno  
+**Para** maintain history médico/físico
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Tipos: avaliação física, anamnese, exame médico
-- [ ] Data e observações
-- [ ] Upload de arquivos (PDF, imagens)
+- [ ] Tipos: avaliaction física, anamnesis, exame médico
+- [ ] Data and notes
+- [ ] Upload of files (PDF, images)
 - [ ] Listagem histórica
 
 ---
 
-### US-003-007: Exportar Dados do Aluno (LGPD)
+### US-003-007: Exportar Givens of the Student (LGPD)
 
 **Como** aluno  
-**Quero** exportar todos os meus dados  
-**Para** exercer meu direito pela LGPD
+**Quero** exportar entires os meus dados  
+**Para** exercer meu direito by the LGPD
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Botão de exportar dados
-- [ ] Gera arquivo com todos os dados
-- [ ] Formato legível (PDF ou JSON)
+- [ ] Button of exportar dados
+- [ ] Gera file with entires os dados
+- [ ] Formato legível (PDF or JSON)
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-003-001: Módulo Students no NestJS
+#### TASK-003-001: Module Students in the NestJS
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-**Escopo:**
+**Scope:**
 
-- Estrutura DDD do módulo
+- Structure DDD of the module
 - Entidade Student
 - Value Objects: CPF, Email, Phone
-- Repository interface
+- Repository inhaveface
 
 **Definition of Done:**
 
-- [ ] Estrutura criada
-- [ ] Entidades com validação
-- [ ] Testes unitários
+- [ ] Structure criada
+- [ ] Entidades with validation
+- [ ] Unit tests
 
 ---
 
-#### TASK-003-002: Schema Prisma de Alunos
+#### TASK-003-002: Schema Prisma of Students
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-**Escopo:**
+**Scope:**
 
 - Model Student
 - Model StudentExam
-- Índices de busca
+- Indexs of busca
 - Migration
 
 **Definition of Done:**
 
 - [ ] Schema criado
-- [ ] Migration aplicada
-- [ ] Índices otimizados
+- [ ] Migration aplieach
+- [ ] Indexs otimizados
 
 ---
 
-#### TASK-003-003: CRUD de Alunos (API)
+#### TASK-003-003: CRUD of Students (API)
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-**Escopo:**
+**Scope:**
 
-- GET /students (listagem paginada)
+- GET /students (listgem paginada)
 - GET /students/:id
 - POST /students
 - PUT /students/:id
@@ -200,38 +200,38 @@ Implementar módulo completo de gestão de alunos incluindo:
 **Definition of Done:**
 
 - [ ] Endpoints funcionando
-- [ ] Validações implementadas
-- [ ] Permissões verificadas
-- [ ] Testes de integração
-- [ ] Documentação Swagger
+- [ ] Validations implementadas
+- [ ] Permissions verifieachs
+- [ ] Integration tests
+- [ ] Documentation Swagger
 
 ---
 
-#### TASK-003-004: Busca e Filtros
+#### TASK-003-004: Busca and Filhaves
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-**Escopo:**
+**Scope:**
 
-- Busca por nome (LIKE)
+- Busca por name (LIKE)
 - Busca por CPF (exato)
-- Filtro por status
-- Ordenação
-- Paginação
+- Filtro by status
+- Ordenaction
+- Paginaction
 
 **Definition of Done:**
 
 - [ ] Query params implementados
-- [ ] Performance otimizada
-- [ ] Testes
+- [ ] Performnce otimizada
+- [ ] Tests
 
 ---
 
-#### TASK-003-005: CRUD de Exames
+#### TASK-003-005: CRUD of Exams
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-**Escopo:**
+**Scope:**
 
 - GET /students/:id/exams
 - POST /students/:id/exams
@@ -241,138 +241,138 @@ Implementar módulo completo de gestão de alunos incluindo:
 **Definition of Done:**
 
 - [ ] Endpoints funcionando
-- [ ] Validações
-- [ ] Testes
+- [ ] Validations
+- [ ] Tests
 
 ---
 
-#### TASK-003-006: Upload de Arquivos de Exames
+#### TASK-003-006: Upload of Files of Exams
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-**Escopo:**
+**Scope:**
 
 - POST /exams/:id/files
-- Integração com MinIO/S3
-- Validação de tipos (PDF, JPG, PNG)
-- Limite de tamanho
+- Integration with MinIO/S3
+- Validation of types (PDF, JPG, PNG)
+- Limite of tamanho
 
 **Definition of Done:**
 
 - [ ] Upload funcionando
-- [ ] Arquivos salvos no storage
-- [ ] URL de acesso gerada
-- [ ] Testes
+- [ ] Files salvos in the storage
+- [ ] URL of access gerada
+- [ ] Tests
 
 ---
 
-#### TASK-003-007: Exportação de Dados (LGPD)
+#### TASK-003-007: Export of Givens (LGPD)
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-**Escopo:**
+**Scope:**
 
 - GET /students/:id/export
-- Coleta todos os dados do aluno
-- Gera PDF ou JSON
+- Coleta entires os dados of the aluno
+- Gera PDF or JSON
 
 **Definition of Done:**
 
 - [ ] Endpoint funcionando
-- [ ] Todos os dados incluídos
+- [ ] Todos os dados includeds
 - [ ] Formato legível
 
 ---
 
 ### Frontend
 
-#### TASK-003-008: Listagem de Alunos
+#### TASK-003-008: Listagem of Students
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-**Escopo:**
+**Scope:**
 
-- DataTable com shadcn
-- Colunas: nome, CPF, email, status, ações
-- Busca e filtros
-- Paginação
+- DataTable with shadcn
+- Colunas: name, CPF, email, status, actions
+- Busca and filtros
+- Paginaction
 
 **Definition of Done:**
 
 - [ ] UI implementada
-- [ ] Integração com API
+- [ ] Integration with API
 - [ ] Responsivo
-- [ ] Testes
+- [ ] Tests
 
 ---
 
-#### TASK-003-009: Formulário de Cadastro/Edição
+#### TASK-003-009: Form of Cadastro/Edição
 
-**Estimativa:** 5h
+**Estimate:** 5h
 
-**Escopo:**
+**Scope:**
 
-- Formulário multi-step ou abas
-- Dados pessoais
-- Contato
+- Form multi-step or abas
+- Personal date
+- Contact
 - Emergência
-- Dados médicos
-- Validação com Zod
+- Medical date
+- Validation with Zod
 
 **Definition of Done:**
 
-- [ ] Formulário completo
-- [ ] Validações funcionando
-- [ ] Máscara de CPF, telefone
-- [ ] Testes
+- [ ] Form withplete
+- [ ] Validations funcionando
+- [ ] Máscara of CPF, phone
+- [ ] Tests
 
 ---
 
-#### TASK-003-010: Página de Detalhes do Aluno
+#### TASK-003-010: Page of Detalhes of the Student
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-**Escopo:**
+**Scope:**
 
-- Layout com abas
-- Aba: Dados gerais
-- Aba: Exames
-- Aba: Matrículas (placeholder)
-- Aba: Histórico
+- Layout with abas
+- Aba: Givens gerais
+- Aba: Exams
+- Aba: Enrollments (placeholder)
+- Aba: History
 
 **Definition of Done:**
 
 - [ ] UI implementada
-- [ ] Navegação entre abas
-- [ ] Ações funcionando
-- [ ] Testes
+- [ ] Navegaction between abas
+- [ ] Actions funcionando
+- [ ] Tests
 
 ---
 
-#### TASK-003-011: Modal de Exames
+#### TASK-003-011: Modal of Exams
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-**Escopo:**
+**Scope:**
 
-- Modal para cadastrar exame
-- Campos: tipo, data, observações
-- Upload de arquivo
-- Listagem de exames existentes
+- Modal for eachstrar exame
+- Fields: type, date, notes
+- Upload of file
+- Listagem of exams existentes
 
 **Definition of Done:**
 
 - [ ] Modal implementado
 - [ ] Upload funcionando
-- [ ] Testes
+- [ ] Tests
 
 ---
 
-#### TASK-003-012: Hooks e Services
+#### TASK-003-012: Hooks and Services
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-**Escopo:**
+**Scope:**
 
 - useStudents hook
 - useStudent hook
@@ -382,66 +382,66 @@ Implementar módulo completo de gestão de alunos incluindo:
 **Definition of Done:**
 
 - [ ] Hooks implementados
-- [ ] Cache configurado
-- [ ] Testes
+- [ ] Cache configured
+- [ ] Tests
 
 ---
 
-##  Critérios de Aceite do Épico
+##  Acceptance Crihaveia of the Épico
 
 ### Cadastro
 
-- [ ] Formulário com todos os campos
-- [ ] CPF único validado
-- [ ] Campos obrigatórios enforçados
-- [ ] Máscaras de input funcionando
+- [ ] Form with entires os fields
+- [ ] CPF single validado
+- [ ] Fields requireds enforçados
+- [ ] Máscaras of input funcionando
 
 ### Listagem
 
-- [ ] Paginação funcionando
-- [ ] Busca por nome/CPF/email
-- [ ] Filtros por status
-- [ ] Performance adequada (< 500ms)
+- [ ] Paginaction funcionando
+- [ ] Busca por name/CPF/email
+- [ ] Filhaves by status
+- [ ] Performnce adequada (< 500ms)
 
 ### Detalhes
 
-- [ ] Todas as informações visíveis
+- [ ] Todas as informtion visible
 - [ ] Abas organizadas
-- [ ] Ações de edição acessíveis
+- [ ] Actions of edição acessíveis
 
-### Exames
+### Exams
 
-- [ ] CRUD de exames funcionando
-- [ ] Upload de arquivos até 10MB
-- [ ] Visualização de arquivos
+- [ ] CRUD of exams funcionando
+- [ ] Upload of files until 10MB
+- [ ] Visualization of files
 
 ### LGPD
 
-- [ ] Exportação de dados funcional
+- [ ] Data export functional
 - [ ] Soft delete implementado
 
-### Qualidade
+### Quality
 
-- [ ] Testes unitários ≥80%
-- [ ] Testes de integração
-- [ ] Documentação Swagger
+- [ ] Unit tests ≥80%
+- [ ] Integration tests
+- [ ] Documentation Swagger
 
 ---
 
-##  Definition of Done do Épico
+##  Definition of Done of the Épico
 
-- [ ] Todas as tasks concluídas
-- [ ] Testes passando (≥80% coverage)
+- [ ] Todas as tasks completed
+- [ ] Tests passando (≥80% coverage)
 - [ ] Code review aprovado
-- [ ] Documentação atualizada
-- [ ] Deploy em staging
+- [ ] Documentation currentizada
+- [ ] Deploy in staging
 
 ---
 
-## 📎 Referências
+## 📎 References
 
-- [ADR-003: Banco de Dados](../architecture/adrs/ADR-003-banco-de-dados.md)
-- [PRD - Seção 5.2](../PRD.md#52-gestão-de-alunos)
+- [ADR-003: Database](../architecture/adrs/ADR-003-datebase-de-dados.md)
+- [PRD - Seção 5.2](../PRD.md#52-management-de-students)
 
 ---
 
@@ -449,18 +449,18 @@ Implementar módulo completo de gestão de alunos incluindo:
 
 ```
 Semana 1:
-├── TASK-003-001: Módulo Students (3h)
+├── TASK-003-001: Module Students (3h)
 ├── TASK-003-002: Schema Prisma (2h)
 ├── TASK-003-003: CRUD API (4h)
-├── TASK-003-004: Busca/Filtros (3h)
-├── TASK-003-005: CRUD Exames (3h)
-├── TASK-003-006: Upload Arquivos (3h)
-├── TASK-003-007: Exportação LGPD (2h)
+├── TASK-003-004: Busca/Filhaves (3h)
+├── TASK-003-005: CRUD Exams (3h)
+├── TASK-003-006: Upload Files (3h)
+├── TASK-003-007: Export LGPD (2h)
 ├── TASK-003-008: Listagem UI (4h)
-├── TASK-003-009: Formulário (5h)
-├── TASK-003-010: Página Detalhes (4h)
-├── TASK-003-011: Modal Exames (3h)
+├── TASK-003-009: Form (5h)
+├── TASK-003-010: Page Detalhes (4h)
+├── TASK-003-011: Modal Exams (3h)
 └── TASK-003-012: Hooks (2h)
 ```
 
-**Total estimado:** ~38 horas (~1.5 semanas)
+**Total estimado:** ~38 hours (~1.5 weeks)

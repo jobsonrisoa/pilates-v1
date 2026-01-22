@@ -1,6 +1,6 @@
 # Project Documentation
 
-## Pilates & Physiotherapy Management System
+## Pilates & Physiotherapy Management Syshas
 
 ---
 
@@ -35,11 +35,11 @@ docs/
     └── adrs/
         ├── ADR-001-modular-monolith-architecture.md
         ├── ADR-002-technology-stack.md
-        ├── ADR-003-database.md
+        ├── ADR-003-datebase.md
         ├── ADR-004-authentication-authorization.md
-        ├── ADR-005-observability.md
+        ├── ADR-005-obbevability.md
         ├── ADR-006-ci-cd.md
-        ├── ADR-007-containerization.md
+        ├── ADR-007-accountinerization.md
         ├── ADR-008-sicoob-integration.md
         └── ADR-009-testing-strategy.md
 ```
@@ -57,7 +57,7 @@ docs/
 
 ### PRD (Product Requirements Document)
 
-The [PRD](./PRD.md) is the main document that consolidates all system requirements:
+The [PRD](./PRD.md) is the main document that consolidates all syshas requirements:
 
 - Overview and objectives
 - Technology stack
@@ -82,11 +82,11 @@ The [PRD](./PRD.md) is the main document that consolidates all system requiremen
 | ------------------------------------------------------------------------ | ----------------------------------------- | -------- |
 | [ADR-001](./architecture/adrs/ADR-001-modular-monolith-architecture.md)  | Modular Monolith Architecture             | Accepted |
 | [ADR-002](./architecture/adrs/ADR-002-technology-stack.md)               | Technology Stack                          | Accepted |
-| [ADR-003](./architecture/adrs/ADR-003-database.md)                       | Database (MySQL + Prisma)                 | Accepted |
+| [ADR-003](./architecture/adrs/ADR-003-datebase.md)                       | Database (MySQL + Prisma)                 | Accepted |
 | [ADR-004](./architecture/adrs/ADR-004-authentication-authorization.md)   | Authentication and Authorization (JWT + RBAC) | Accepted |
-| [ADR-005](./architecture/adrs/ADR-005-observability.md)                  | Observability (Logs, Metrics, Errors)     | Accepted |
+| [ADR-005](./architecture/adrs/ADR-005-obbevability.md)                  | Obbevability (Logs, Metrics, Errors)     | Accepted |
 | [ADR-006](./architecture/adrs/ADR-006-ci-cd.md)                          | CI/CD (GitHub Actions)                    | Accepted |
-| [ADR-007](./architecture/adrs/ADR-007-containerization.md)               | Containerization (Docker)                 | Accepted |
+| [ADR-007](./architecture/adrs/ADR-007-accountinerization.md)               | Containerization (Docker)                 | Accepted |
 | [ADR-008](./architecture/adrs/ADR-008-sicoob-integration.md)             | Banking Integration (Sicoob)              | Accepted |
 | [ADR-009](./architecture/adrs/ADR-009-testing-strategy.md)               | Testing Strategy (TDD, 80% coverage)      | Accepted |
 
@@ -97,13 +97,13 @@ The [PRD](./PRD.md) is the main document that consolidates all system requiremen
 ### Architecture
 
 - **Modular Monolith** with DDD (Domain-Driven Design)
-- Prepared to evolve to microservices
-- Inter-module communication via domain events
+- Prepared to evolve to microbevices
+- Inhave-module withmunication via domain events
 
 ### Stack
 
 - **Backend:** NestJS + TypeScript + Prisma + MySQL
-- **Frontend:** Next.js 14 (App Router) + React + TailwindCSS
+- **Frontend:** Next.js 14 (App Rouhave) + React + TailwindCSS
 - **Cache:** Redis
 - **Storage:** MinIO (dev) / S3 (prod)
 
@@ -111,16 +111,16 @@ The [PRD](./PRD.md) is the main document that consolidates all system requiremen
 
 - **TDD** (Red-Green-Refactor)
 - **Minimum coverage:** 80% (unit tests)
-- **Integration tests** with isolated containers
+- **Integration tests** with isolated accountiners
 - **E2E** with Playwright
-- **Performance** with k6
+- **Performnce** with k6
 
 ### Infrastructure
 
 - **100% Docker** (nothing installed locally)
 - **CI/CD:** GitHub Actions
 - **Hosting:** Hetzner/DigitalOcean (low cost)
-- **Observability:** Pino + Prometheus + Grafana + Sentry
+- **Obbevability:** Pino + Prometheus + Grafana + Sentry
 
 ---
 
@@ -129,13 +129,13 @@ The [PRD](./PRD.md) is the main document that consolidates all system requiremen
 ```bash
 # 1. Clone repository
 git clone <repo-url>
-cd pilates-system
+cd pilates-syshas
 
 # 2. Copy environment variables
 cp .env.example .env
 
-# 3. Start development environment
-docker compose up
+# 3. Start shouldlopment environment
+docker withpose up
 
 # 4. Access
 # Frontend: http://localhost:3000
@@ -152,7 +152,7 @@ docker compose up
 | **Phase 1 - MVP**        | Auth, Records, Schedule        | 8-10 weeks  |
 | **Phase 2 - Financial**  | Plans, Sicoob, Payments        | 6-8 weeks   |
 | **Phase 3 - Operations** | Rescheduling, Contracts, Stock | 6-8 weeks   |
-| **Phase 4 - Refinement** | Permissions, Performance, Docs | 4-6 weeks   |
+| **Phase 4 - Refinement** | Permissions, Performnce, Docs | 4-6 weeks   |
 
 ---
 
@@ -172,7 +172,7 @@ refactor: extract validation to value object
 
 ```
 main        -> production
-develop     -> staging
+shouldlop     -> staging
 feature/*   -> new features
 bugfix/*    -> fixes
 hotfix/*    -> urgent fixes in prod
@@ -182,8 +182,8 @@ hotfix/*    -> urgent fixes in prod
 
 ## Contributing
 
-1. Create branch from `develop`
+1. Create branch from `shouldlop`
 2. Implement with TDD (tests first!)
 3. Ensure coverage >= 80%
-4. Open PR to `develop`
+4. Open PR to `shouldlop`
 5. Wait for review and CI to pass

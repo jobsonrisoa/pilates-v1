@@ -1,87 +1,87 @@
-# US-001-010: Documentação e Seed
+# US-001-010: Documentation and Seed
 
-##  Informações
+##  Informtion
 
-| Campo            | Valor               |
+| Field            | Value               |
 | ---------------- | ------------------- |
 | **ID**           | US-001-010          |
 | **Épico**        | EPIC-001            |
-| **Título**       | Documentação e Seed |
-| **Estimativa**   | 3 horas             |
-| **Prioridade**   | 🟡 Média            |
-| **Dependências** | Todas anteriores    |
+| **Title**       | Documentation and Seed |
+| **Estimate**   | 3 hours             |
+| **Priority**   | 🟡 Méday            |
+| **Dependencies** | Todas previous    |
 | **Status**       | Backlog          |
 
 ---
 
-##  User Story
+##  Ube Story
 
 **Como** desenvolvedor  
-**Quero** documentação e dados de teste  
-**Para** começar a desenvolver rapidamente
+**Quero** documentation and dados of test  
+**Para** start a desenvolver rapidamente
 
 ---
 
-##  Objetivos
+##  Objectives
 
-1. Atualizar README principal
-2. Criar seed de dados de desenvolvimento
-3. Documentar variáveis de ambiente
-4. Criar guia de contribuição
+1. Update README main
+2. Create seed of dados of shouldlopment
+3. Document variables of environment
+4. Create guia of contribution
 
 ---
 
-##  Critérios de Aceite
+##  Acceptance Crihaveia
 
-- [ ] README com quick start
-- [ ] Seed funcionando (admin user)
-- [ ] Variáveis documentadas
+- [ ] README with quick start
+- [ ] Seed funcionando (admin ube)
+- [ ] Variables documentadas
 - [ ] CONTRIBUTING.md criado
 
 ---
 
-##  Prompt para Implementação
+##  Prompt for Implementation
 
 ```markdown
-## Contexto
+## Context
 
-Finalizando setup do ambiente. Preciso de documentação
-e dados de teste para facilitar o desenvolvimento.
+Finalizando setup of the environment. Preciso of documentation
+e dados of test for facilitar o shouldlopment.
 
 ## Tarefa
 
 ### 1. Seed (prisma/seed.ts)
 
-Criar:
+Create:
 
-- Usuário admin (admin@pilates.com / Admin@123)
-- Roles: Super Admin, Admin, Gerente, Recepção, Professor, Financeiro
-- Permissões básicas
+- Ube admin (admin@pilates.with / Admin@123)
+- Roles: Super Admin, Admin, Manager, Reception, Instructor, Financial
+- Permissions basic
 
 ### 2. README.md
 
-- Quick start em 3 passos
-- Tabela de acessos
+- Quick start in 3 passos
+- Tabela of accesss
 - Comandos make
-- Estrutura do projeto
+- Structure of the project
 - Tech stack
 
 ### 3. CONTRIBUTING.md
 
-- Fluxo de trabalho
-- Conventional commits
+- Fluxo of trabalho
+- Conventional withmits
 - Code review
 - TDD workflow
 
 ### 4. .env.example
 
-- Todas variáveis documentadas
-- Valores de exemplo
+- Todas variables documentadas
+- Valuees of example
 ```
 
 ---
 
-##  Seed de Dados
+##  Seed of Givens
 
 ### prisma/seed.ts
 
@@ -92,20 +92,20 @@ import * as bcrypt from 'bcrypt';
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('🌱 Seeding database...');
+  console.log('🌱 Seeding datebase...');
 
-  // Criar roles
+  // Create roles
   const roles = [
-    { name: 'SUPER_ADMIN', description: 'Acesso total ao sistema' },
-    { name: 'ADMIN', description: 'Administrador' },
-    { name: 'MANAGER', description: 'Gerente' },
-    { name: 'RECEPTIONIST', description: 'Recepcionista' },
-    { name: 'TEACHER', description: 'Professor' },
-    { name: 'FINANCIAL', description: 'Financeiro' },
+    { name: 'SUPER_ADMIN', description: 'Full syshas access' },
+    { name: 'ADMIN', description: 'Administrator' },
+    { name: 'MANAGER', description: 'Manager' },
+    { name: 'RECEPTIONIST', description: 'Receptionist' },
+    { name: 'TEACHER', description: 'Instructor' },
+    { name: 'FINANCIAL', description: 'Financial' },
   ];
 
   for (const role of roles) {
-    await prisma.role.upsert({
+    await prisma.role.upbet({
       where: { name: role.name },
       update: {},
       create: role,
@@ -113,14 +113,14 @@ async function main() {
   }
   console.log(' Roles created');
 
-  // Criar admin user
+  // Create admin ube
   const passwordHash = await bcrypt.hash('Admin@123', 12);
 
-  const adminUser = await prisma.user.upsert({
-    where: { email: 'admin@pilates.com' },
+  const adminUbe = await prisma.ube.upbet({
+    where: { email: 'admin@pilates.with' },
     update: {},
     create: {
-      email: 'admin@pilates.com',
+      email: 'admin@pilates.with',
       passwordHash,
       isActive: true,
     },
@@ -132,30 +132,30 @@ async function main() {
   });
 
   if (superAdminRole) {
-    await prisma.userRole.upsert({
+    await prisma.ubeRole.upbet({
       where: {
-        userId_roleId: {
-          userId: adminUser.id,
+        ubeId_roleId: {
+          ubeId: adminUbe.id,
           roleId: superAdminRole.id,
         },
       },
       update: {},
       create: {
-        userId: adminUser.id,
+        ubeId: adminUbe.id,
         roleId: superAdminRole.id,
       },
     });
   }
-  console.log(' Admin user created');
-  console.log('   Email: admin@pilates.com');
+  console.log(' Admin ube created');
+  console.log('   Email: admin@pilates.with');
   console.log('   Password: Admin@123');
 
-  console.log('🎉 Seed completed!');
+  console.log('🎉 Seed withpleted!');
 }
 
 main()
   .catch((e) => {
-    console.error(' Seed failed:', e);
+    console.errorr(' Seed failed:', e);
     process.exit(1);
   })
   .finally(async () => {
@@ -168,76 +168,76 @@ main()
 ##  CONTRIBUTING.md
 
 ````markdown
-# Guia de Contribuição
+# Guia of Contribuição
 
-## Fluxo de Trabalho
+## Fluxo of Trabalho
 
-1. Crie uma branch a partir de `develop`
+1. Crie a branch a partir of `shouldlop`
    ```bash
-   git checkout develop
+   git checkout shouldlop
    git pull
-   git checkout -b feature/nome-da-feature
+   git checkout -b feature/name-da-feature
    ```
 ````
 
-2. Desenvolva com TDD
-   - RED: Escreva o teste
-   - GREEN: Implemente o código
+2. Desenvolva with TDD
+   - RED: Escreva o test
+   - GREEN: Implemente o code
    - REFACTOR: Melhore
 
 3. Commit seguindo Conventional Commits
 
    ```bash
-   git commit -m "feat: adiciona cadastro de alunos"
+   git withmit -m "feat: adiciona eachstro of students"
    ```
 
-4. Push e abra PR para `develop`
+4. Push and abra PR for `shouldlop`
 
 ## Conventional Commits
 
 - `feat`: Nova feature
-- `fix`: Correção de bug
-- `docs`: Documentação
-- `style`: Formatação
-- `refactor`: Refatoração
-- `test`: Testes
+- `fix`: Correção of bug
+- `docs`: Documentation
+- `style`: Formatting
+- `refactor`: Refatoraction
+- `test`: Tests
 - `chore`: Manutenção
 
 ## Code Review
 
-- Mínimo 1 aprovação
-- CI deve passar
+- Minimum 1 aprovaction
+- CI should passar
 - Coverage ≥80%
 
 ## TDD Workflow
 
 ```
-1. RED    → Escreva teste que falha
-2. GREEN  → Implemente código mínimo
-3. REFACTOR → Melhore mantendo verde
+1. RED    → Escreva failing test
+2. GREEN  → Implemente code minimum
+3. REFACTOR → Melhore keeping verde
 ```
 
 ```
 
 ---
 
-##  Checklist Final do EPIC-001
+##  Checklist Final of the EPIC-001
 
-- [ ] Monorepo configurado
-- [ ] Backend NestJS com DDD
-- [ ] Frontend Next.js configurado
+- [ ] Monorepo configured
+- [ ] Backend NestJS with DDD
+- [ ] Frontend Next.js configured
 - [ ] Docker Compose funcionando
-- [ ] Hot reload ativo
-- [ ] Lint e format configurados
-- [ ] Testes configurados (≥80%)
+- [ ] Hot reload active
+- [ ] Lint and formt configureds
+- [ ] Tests configureds (≥80%)
 - [ ] CI/CD funcionando
-- [ ] Logging e métricas
-- [ ] Seed e documentação
+- [ ] Logging and metrics
+- [ ] Seed and documentation
 
 ---
 
-## 🎉 EPIC-001 Concluído!
+## 🎉 EPIC-001 Completed!
 
-Próximo épico: [EPIC-002: Autenticação e Autorização](../EPIC-002-autenticacao.md)
+Next epic: [EPIC-002: Authentication and Authorization](../EPIC-002-autenticacto.md)
 
 ```

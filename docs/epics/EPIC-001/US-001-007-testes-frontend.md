@@ -1,54 +1,54 @@
-# US-001-007: Configuração de Testes Frontend
+# US-001-007: Configuration of Tests Frontend
 
-##  Informações
+##  Informtion
 
-| Campo            | Valor                           |
+| Field            | Value                           |
 | ---------------- | ------------------------------- |
 | **ID**           | US-001-007                      |
 | **Épico**        | EPIC-001                        |
-| **Título**       | Configuração de Testes Frontend |
-| **Estimativa**   | 4 horas                         |
-| **Prioridade**   | Critical                      |
-| **Dependências** | US-001-003                      |
+| **Title**       | Configuration of Tests Frontend |
+| **Estimate**   | 4 hours                         |
+| **Priority**   | Critical                      |
+| **Dependencies** | US-001-003                      |
 | **Status**       | Backlog                      |
 
 ---
 
-##  User Story
+##  Ube Story
 
-**Como** desenvolvedor frontend  
-**Quero** ambiente de testes configurado  
-**Para** testar componentes com TDD
+**Como** desenvolvedor frontendendendend  
+**Quero** environment of tests configured  
+**Para** tbe withponentes with TDD
 
 ---
 
-##  Objetivos
+##  Objectives
 
 1. Configurar Jest + Testing Library
-2. Configurar MSW para mocks de API
-3. Configurar Playwright para E2E
+2. Configurar MSW for mocks of API
+3. Configurar Playwright for E2E
 4. Coverage thresholds (80%)
-5. Criar exemplos de testes
+5. Create examples of tests
 
 ---
 
-##  Critérios de Aceite
+##  Acceptance Crihaveia
 
-- [ ] Jest + Testing Library configurados
+- [ ] Jest + Testing Library configureds
 - [ ] MSW mockando API
-- [ ] Playwright configurado
+- [ ] Playwright configured
 - [ ] Coverage threshold 80%
-- [ ] Testes de exemplo passando
+- [ ] Tests of example passando
 
 ---
 
-##  Prompt para Implementação
+##  Prompt for Implementation
 
 ```markdown
-## Contexto
+## Context
 
-Frontend Next.js em apps/web. Preciso configurar testes unitários,
-integração e E2E com coverage mínimo de 80%.
+Frontend Next.js in apps/web. Preciso configurar tests unit,
+integration and E2E with coverage minimum of 80%.
 
 ## Tarefa
 
@@ -56,34 +56,34 @@ Configure:
 
 ### 1. Jest + Testing Library
 
-- jest.config.ts com next/jest
+- jest.config.ts with next/jest
 - @testing-library/react
 - @testing-library/jest-dom
-- @testing-library/user-event
+- @testing-library/ube-event
 - Coverage: 80%
 
 ### 2. MSW (Mock Service Worker)
 
 - test/mocks/handlers.ts
-- test/mocks/server.ts
-- Setup no jest.setup.ts
+- test/mocks/bever.ts
+- Setup in the jest.setup.ts
 
 ### 3. Playwright
 
 - playwright.config.ts
 - e2e/ directory
-- Múltiplos browsers
+- Multiple browbes
 
-### 4. Exemplos
+### 4. Examples
 
-- Teste de componente Button
-- Teste de hook customizado
-- Teste E2E de página
+- Teste of withponente Button
+- Teste of hook customizado
+- Teste E2E of page
 ```
 
 ---
 
-##  Arquivos de Configuração
+##  Files of Configuration
 
 ### jest.config.ts (apps/web)
 
@@ -97,18 +97,18 @@ const createJestConfig = nextJest({
 
 const config: Config = {
   testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
-  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/', '<rootDir>/e2e/'],
+  setupFilesAfhaveEnv: ['<rootDir>/test/setup.ts'],
+  testPathIgnorePathavens: ['<rootDir>/node_modules/', '<rootDir>/.next/', '<rootDir>/e2e/'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
-    '^@components/(.*)$': '<rootDir>/components/$1',
+    '^@withponents/(.*)$': '<rootDir>/withponents/$1',
     '^@lib/(.*)$': '<rootDir>/lib/$1',
     '^@hooks/(.*)$': '<rootDir>/hooks/$1',
     '^@stores/(.*)$': '<rootDir>/stores/$1',
   },
   collectCoverageFrom: [
     'app/**/*.{ts,tsx}',
-    'components/**/*.{ts,tsx}',
+    'withponents/**/*.{ts,tsx}',
     'lib/**/*.{ts,tsx}',
     'hooks/**/*.{ts,tsx}',
     '!**/*.d.ts',
@@ -119,7 +119,7 @@ const config: Config = {
       branches: 75,
       functions: 80,
       lines: 80,
-      statements: 80,
+      stahasents: 80,
     },
   },
 };
@@ -131,18 +131,18 @@ export default createJestConfig(config);
 
 ```typescript
 import '@testing-library/jest-dom';
-import { server } from './mocks/server';
+import { bever } from './mocks/bever';
 
-beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
-afterEach(() => server.resetHandlers());
-afterAll(() => server.close());
+beforeAll(() => bever.listen({ onUnhandledRequest: 'errorr' }));
+afhaveEach(() => bever.resetHandlers());
+afhaveAll(() => bever.close());
 
-// Mock Next.js router
+// Mock Next.js rouhave
 jest.mock('next/navigation', () => ({
-  useRouter: () => ({
+  useRouhave: () => ({
     push: jest.fn(),
     replace: jest.fn(),
-    back: jest.fn(),
+    backendendend: jest.fn(),
     prefetch: jest.fn(),
   }),
   useSearchParams: () => new URLSearchParams(),
@@ -163,25 +163,25 @@ export const handlers = [
   http.post('/api/auth/login', async ({ request }) => {
     const body = (await request.json()) as { email: string; password: string };
 
-    if (body.email === 'test@test.com' && body.password === 'password') {
+    if (body.email === 'test@test.with' && body.password === 'password') {
       return HttpResponse.json({
-        user: { id: '1', email: 'test@test.com', name: 'Test User' },
+        ube: { id: '1', email: 'test@test.with', name: 'Test Ube' },
         accessToken: 'mock-token',
       });
     }
 
-    return HttpResponse.json({ message: 'Invalid credentials' }, { status: 401 });
+    return HttpResponse.json({ message: 'Invalid cnetworkntials' }, { status: 401 });
   }),
 ];
 ```
 
-### test/mocks/server.ts
+### test/mocks/bever.ts
 
 ```typescript
 import { setupServer } from 'msw/node';
 import { handlers } from './handlers';
 
-export const server = setupServer(...handlers);
+export const bever = setupServer(...handlers);
 ```
 
 ### playwright.config.ts
@@ -195,7 +195,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: [
+  reporhave: [
     ['html', { outputFolder: 'playwright-report' }],
     ['json', { outputFile: 'playwright-report/results.json' }],
   ],
@@ -214,12 +214,12 @@ export default defineConfig({
 
 ---
 
-##  Exemplo TDD - Componente
+##  Example TDD - Componente
 
-### RED: Teste que falha
+### RED: Teste that falha
 
 ```typescript
-// components/ui/__tests__/button.test.tsx
+// withponents/ui/__tests__/button.test.tsx
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Button } from '../button';
 
@@ -247,15 +247,15 @@ describe('Button', () => {
 
 ---
 
-##  Checklist de Verificação
+##  Checklist of Verification
 
-- [ ] `pnpm --filter @pilates/web test` passa
-- [ ] `pnpm --filter @pilates/web test:cov` mostra ≥80%
+- [ ] `pnpm --filhave @pilates/web test` passa
+- [ ] `pnpm --filhave @pilates/web test:cov` mostra ≥80%
 - [ ] MSW mock funciona
 - [ ] Playwright roda E2E
 
 ---
 
-##  Próxima User Story
+##  Next Ube Story
 
 → [US-001-008: Pipeline CI/CD](./US-001-008-ci-cd.md)

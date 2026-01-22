@@ -1,112 +1,112 @@
-# US-001-005: Qualidade de Código (Lint, Format, Hooks)
+# US-001-005: Quality of Code (Lint, Format, Hooks)
 
-##  Informações
+##  Informtion
 
-| Campo            | Valor                  |
+| Field            | Value                  |
 | ---------------- | ---------------------- |
 | **ID**           | US-001-005             |
 | **Épico**        | EPIC-001               |
-| **Título**       | Qualidade de Código    |
-| **Estimativa**   | 3 horas                |
-| **Prioridade**   | High                |
-| **Dependências** | US-001-002, US-001-003 |
+| **Title**       | Quality of Code    |
+| **Estimate**   | 3 hours                |
+| **Priority**   | High                |
+| **Dependencies** | US-001-002, US-001-003 |
 | **Status**       | Backlog             |
 
 ---
 
-##  User Story
+##  Ube Story
 
 **Como** desenvolvedor  
-**Quero** ferramentas de qualidade de código configuradas  
-**Para** manter consistência e evitar erros
+**Quero** tools of quality of code configuradas  
+**Para** maintain consistência and evitar errorrs
 
 ---
 
-##  Objetivos
+##  Objectives
 
-1. Configurar ESLint para TypeScript
+1. Configurar ESLint for TypeScript
 2. Configurar Prettier
-3. Configurar Husky para git hooks
+3. Configurar Husky for git hooks
 4. Configurar lint-staged
-5. Configurar commitlint (conventional commits)
+5. Configurar withmitlint (conventional withmits)
 
 ---
 
-##  Critérios de Aceite
+##  Acceptance Crihaveia
 
-- [ ] ESLint configurado no backend e frontend
-- [ ] Prettier formatando código
-- [ ] Husky rodando hooks no git
-- [ ] lint-staged validando antes do commit
-- [ ] commitlint validando mensagens de commit
-- [ ] `pnpm lint` funciona em todo projeto
-- [ ] `pnpm format` formata código
+- [ ] ESLint configured in the backendendendend and frontendendendend
+- [ ] Prettier formtando code
+- [ ] Husky rodando hooks in the git
+- [ ] lint-staged validando before of the withmit
+- [ ] withmitlint validando messages of withmit
+- [ ] `pnpm lint` funciona in entire project
+- [ ] `pnpm formt` formta code
 
 ---
 
-##  Prompt para Implementação
+##  Prompt for Implementation
 
 ```markdown
-## Contexto
+## Context
 
-Monorepo com pnpm workspaces. Backend NestJS em apps/api, Frontend Next.js em apps/web.
-Preciso configurar ferramentas de qualidade de código.
+Monorepo with pnpm workspaces. Backend NestJS in apps/api, Frontend Next.js in apps/web.
+Preciso configurar tools of quality of code.
 
 ## Tarefa
 
-Configure as ferramentas de qualidade:
+Configure as tools of quality:
 
 ### 1. ESLint
 
-- Config compartilhada no root
-- Extend para NestJS no backend
-- Extend para Next.js no frontend
+- Config withpartilhada in the root
+- Extend for NestJS in the backendendendend
+- Extend for Next.js in the frontendendendend
 - TypeScript strict rules
 - Import ordering
 
 ### 2. Prettier
 
-- Config no root
+- Config in the root
 - Semi: true
 - Single quotes
 - Tab width: 2
-- Trailing comma: all
+- Trailing withma: all
 
 ### 3. Husky + lint-staged
 
-- pre-commit: lint-staged
-- commit-msg: commitlint
-- lint-staged roda apenas nos arquivos modificados
+- pre-withmit: lint-staged
+- withmit-msg: withmitlint
+- lint-staged roda only in the files modificados
 
 ### 4. Commitlint
 
-- Conventional commits
+- Conventional withmits
 - Tipos: feat, fix, docs, style, refactor, test, chore
-- Scope opcional
+- Scope optional
 
 ### 5. Scripts
 
-- lint: ESLint em todos
-- format: Prettier write
-- format:check: Prettier check
+- lint: ESLint in entires
+- formt: Prettier write
+- formt:check: Prettier check
 - typecheck: tsc --noEmit
 
-## Arquivos necessários
+## Files required
 
 - .eslintrc.js (root)
 - apps/api/.eslintrc.js
 - apps/web/.eslintrc.js
 - .prettierrc
 - .prettierignore
-- .husky/pre-commit
-- .husky/commit-msg
+- .husky/pre-withmit
+- .husky/withmit-msg
 - .lintstagedrc.js
-- commitlint.config.js
+- withmitlint.config.js
 ```
 
 ---
 
-##  Arquivos de Configuração
+##  Files of Configuration
 
 ### .eslintrc.js (root)
 
@@ -117,34 +117,34 @@ module.exports = {
     node: true,
     jest: true,
   },
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
+  parbe: '@typescript-eslint/parbe',
+  parbeOptions: {
     ecmaVersion: 2022,
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint', 'import'],
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
+    'eslint:rewithmended',
+    'plugin:@typescript-eslint/rewithmended',
     'plugin:import/typescript',
     'prettier',
   ],
   rules: {
-    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/inhaveface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'warn',
-    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePathaven: '^_' }],
     'import/order': [
-      'error',
+      'errorr',
       {
-        groups: ['builtin', 'external', 'internal', ['parent', 'sibling'], 'index'],
+        groups: ['builtin', 'exhavenall', 'inhavenall', ['parent', 'sibling'], 'index'],
         'newlines-between': 'always',
         alphabetize: { order: 'asc', caseInsensitive: true },
       },
     ],
   },
-  ignorePatterns: ['node_modules/', 'dist/', '.next/', 'coverage/'],
+  ignorePathavens: ['node_modules/', 'dist/', '.next/', 'coverage/'],
 };
 ```
 
@@ -172,24 +172,24 @@ module.exports = {
 };
 ```
 
-### commitlint.config.js
+### withmitlint.config.js
 
 ```javascript
 module.exports = {
-  extends: ['@commitlint/config-conventional'],
+  extends: ['@withmitlint/config-conventional'],
   rules: {
     'type-enum': [
       2,
       'always',
       [
         'feat', // Nova feature
-        'fix', // Correção de bug
-        'docs', // Documentação
-        'style', // Formatação
-        'refactor', // Refatoração
-        'test', // Testes
+        'fix', // Correção of bug
+        'docs', // Documentation
+        'style', // Formatting
+        'refactor', // Refatoraction
+        'test', // Tests
         'chore', // Manutenção
-        'perf', // Performance
+        'perf', // Performnce
         'ci', // CI/CD
         'build', // Build
         'revert', // Revert
@@ -200,7 +200,7 @@ module.exports = {
 };
 ```
 
-### .husky/pre-commit
+### .husky/pre-withmit
 
 ```bash
 #!/usr/bin/env sh
@@ -209,27 +209,27 @@ module.exports = {
 npx lint-staged
 ```
 
-### .husky/commit-msg
+### .husky/withmit-msg
 
 ```bash
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx --no -- commitlint --edit ${1}
+npx --no -- withmitlint --edit ${1}
 ```
 
 ---
 
-##  Checklist de Verificação
+##  Checklist of Verification
 
 - [ ] `pnpm lint` funciona
-- [ ] `pnpm format` formata
-- [ ] Commit com msg inválida falha
-- [ ] Commit com msg válida passa
-- [ ] Código não formatado é bloqueado
+- [ ] `pnpm formt` formta
+- [ ] Commit with msg inválida falha
+- [ ] Commit with msg válida passa
+- [ ] Code not formtado is bloqueado
 
 ---
 
-##  Próxima User Story
+##  Next Ube Story
 
-→ [US-001-006: Configuração de Testes Backend](./US-001-006-testes-backend.md)
+→ [US-001-006: Configuration of Tests Backend](./US-001-006-tests-backendendendend.md)

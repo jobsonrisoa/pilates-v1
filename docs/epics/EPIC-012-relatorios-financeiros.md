@@ -1,227 +1,227 @@
-# EPIC-012: Relatórios Financeiros
+# EPIC-012: Reports Financials
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                                       |
+| Field            | Value                                       |
 | ---------------- | ------------------------------------------- |
 | **ID**           | EPIC-012                                    |
-| **Título**       | Relatórios Financeiros                      |
-| **Fase**         | 2 - Financeiro                              |
-| **Prioridade**   | High                                     |
-| **Estimativa**   | 1 semana                                    |
-| **Dependências** | EPIC-010 (Pagamentos), EPIC-011 (Comissões) |
+| **Title**       | Reports Financials                      |
+| **Phase**         | 2 - Financial                              |
+| **Priority**   | High                                     |
+| **Estimate**   | 1 week                                    |
+| **Dependencies** | EPIC-010 (Payments), EPIC-011 (Commissions) |
 | **Status**       | Backlog                                  |
 
 ---
 
-##  Descrição
+##  Description
 
-Implementar relatórios financeiros completos:
+Implement reports financial withpletes:
 
-- Receitas por período, modalidade, forma de pagamento
-- Inadimplência
-- Fluxo de caixa
-- Exportação em PDF e Excel
-
----
-
-##  Objetivos
-
-1. Visão clara das receitas
-2. Controle de inadimplência
-3. Análise por diferentes dimensões
-4. Exportação para contabilidade
+- Revenue by period, modality, payment method
+- Delinquency
+- Cash flow
+- Export in PDF and Excel
 
 ---
 
-##  User Stories
+##  Objectives
 
-### US-012-001: Relatório de Receitas por Período
+1. View clara of the receitas
+2. Controle of delinquency
+3. Analysis por diferentes dimensões
+4. Export for accountbilidade
+
+---
+
+##  Ube Stories
+
+### US-012-001: Report of Revenue por Period
 
 **Como** gerente  
-**Quero** ver receitas por dia/semana/mês/ano  
-**Para** acompanhar o faturamento
+**Quero** ver receitas per day/week/month/year  
+**Para** awithpanhar o billing
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Seleção de período
-- [ ] Agrupamento por dia/semana/mês
-- [ ] Gráfico de evolução
-- [ ] Comparativo com período anterior
+- [ ] Selection of period
+- [ ] Agrupamento per day/week/month
+- [ ] Chart of evolution
+- [ ] Comparactive with period previous
 
 ---
 
-### US-012-002: Relatório de Receitas por Modalidade
+### US-012-002: Report of Revenue por Modalidade
 
 **Como** gerente  
-**Quero** ver receitas por modalidade  
-**Para** saber o que mais fatura
+**Quero** ver receitas por modality  
+**Para** saber o that more fatura
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Receita por Pilates, Fisio, etc
-- [ ] Gráfico de pizza/barras
-- [ ] Percentual de cada
+- [ ] Chart of pizza/barras
+- [ ] Percentage of each
 
 ---
 
-### US-012-003: Relatório de Receitas por Forma de Pagamento
+### US-012-003: Report of Revenue por Forma of Payment
 
-**Como** financeiro  
-**Quero** ver receitas por forma de pagamento  
-**Para** entender como recebemos
+**Como** financial  
+**Quero** ver receitas por payment method  
+**Para** entender witho recebemos
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Boleto, PIX, Cartão, Dinheiro
-- [ ] Totais por forma
-- [ ] Taxas aplicadas (se houver)
+- [ ] Totais por form
+- [ ] Rates aplieachs (se houver)
 
 ---
 
-### US-012-004: Relatório de Inadimplência
+### US-012-004: Report of Delinquency
 
 **Como** gerente  
-**Quero** relatório detalhado de inadimplência  
-**Para** tomar ações
+**Quero** report detalhado of delinquency  
+**Para** tomar actions
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Total em aberto
-- [ ] Por faixa de atraso (30, 60, 90+ dias)
-- [ ] Lista de devedores
-- [ ] Histórico de inadimplência
+- [ ] Total in aberto
+- [ ] Por faixa of atraso (30, 60, 90+ days)
+- [ ] Lista of shoulddores
+- [ ] History of delinquency
 
 ---
 
-### US-012-005: Fluxo de Caixa
+### US-012-005: Fluxo of Caixa
 
-**Como** financeiro  
-**Quero** ver o fluxo de caixa  
+**Como** financial  
+**Quero** ver o fluxo of caixa  
 **Para** planejar financeiramente
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Entradas (receitas)
-- [ ] Saídas (comissões)
-- [ ] Saldo por período
-- [ ] Projeção futura
+- [ ] Saídas (withmissions)
+- [ ] Saldo por period
+- [ ] Projeção future
 
 ---
 
-### US-012-006: Exportar Relatórios
+### US-012-006: Exportar Reports
 
-**Como** financeiro  
-**Quero** exportar relatórios  
-**Para** enviar à contabilidade
+**Como** financial  
+**Quero** exportar reports  
+**Para** enviar to the accountbilidade
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Exportar em PDF
-- [ ] Exportar em Excel
+- [ ] Exportar in PDF
+- [ ] Exportar in Excel
 - [ ] Layout profissional
-- [ ] Dados completos
+- [ ] Givens withpletes
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-012-001: API de Receitas por Período
+#### TASK-012-001: API of Revenue por Period
 
-**Estimativa:** 3h
-
----
-
-#### TASK-012-002: API de Receitas por Modalidade
-
-**Estimativa:** 2h
+**Estimate:** 3h
 
 ---
 
-#### TASK-012-003: API de Receitas por Forma de Pagamento
+#### TASK-012-002: API of Revenue por Modalidade
 
-**Estimativa:** 2h
-
----
-
-#### TASK-012-004: API de Inadimplência
-
-**Estimativa:** 3h
+**Estimate:** 2h
 
 ---
 
-#### TASK-012-005: API de Fluxo de Caixa
+#### TASK-012-003: API of Revenue por Forma of Payment
 
-**Estimativa:** 3h
-
----
-
-#### TASK-012-006: Serviço de Exportação PDF
-
-**Estimativa:** 3h
-
-- Puppeteer ou PDFKit
-- Templates de relatório
+**Estimate:** 2h
 
 ---
 
-#### TASK-012-007: Serviço de Exportação Excel
+#### TASK-012-004: API of Delinquency
 
-**Estimativa:** 2h
+**Estimate:** 3h
+
+---
+
+#### TASK-012-005: API of Fluxo of Caixa
+
+**Estimate:** 3h
+
+---
+
+#### TASK-012-006: Service of Export PDF
+
+**Estimate:** 3h
+
+- Puppeteer or PDFKit
+- Templates of report
+
+---
+
+#### TASK-012-007: Service of Export Excel
+
+**Estimate:** 2h
 
 - ExcelJS
-- Formatação profissional
+- Formatting profissional
 
 ---
 
 ### Frontend
 
-#### TASK-012-008: Dashboard Financeiro Completo
+#### TASK-012-008: Dashboard Financial Completo
 
-**Estimativa:** 5h
+**Estimate:** 5h
 
-- Cards de resumo
-- Gráficos principais
-- Período selecionável
+- Cards of resumo
+- Charts principais
+- Period selecionável
 
 ---
 
-#### TASK-012-009: Página de Relatório de Receitas
+#### TASK-012-009: Page of Report of Revenue
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-- Filtros
+- Filhaves
 - Tabelas
-- Gráficos
-- Exportação
+- Charts
+- Export
 
 ---
 
-#### TASK-012-010: Página de Inadimplência
+#### TASK-012-010: Page of Delinquency
 
-**Estimativa:** 3h
-
----
-
-#### TASK-012-011: Página de Fluxo de Caixa
-
-**Estimativa:** 3h
+**Estimate:** 3h
 
 ---
 
-##  Critérios de Aceite do Épico
+#### TASK-012-011: Page of Fluxo of Caixa
 
-- [ ] Todos os relatórios funcionando
-- [ ] Gráficos informativos
-- [ ] Exportação PDF/Excel
-- [ ] Performance adequada
-- [ ] Filtros funcionais
-- [ ] Testes ≥80%
+**Estimate:** 3h
+
+---
+
+##  Acceptance Crihaveia of the Épico
+
+- [ ] Todos os reports funcionando
+- [ ] Charts informctives
+- [ ] Export PDF/Excel
+- [ ] Performnce adequada
+- [ ] Filhaves funcionais
+- [ ] Tests ≥80%
 
 ---
 
 ##  Timeline Sugerido
 
-**Total estimado:** ~33 horas (~1 semana)
+**Total estimado:** ~33 hours (~1 week)

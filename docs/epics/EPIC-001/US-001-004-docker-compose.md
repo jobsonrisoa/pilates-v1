@@ -1,145 +1,145 @@
 # US-001-004: Docker Compose Completo
 
-##  Informações
+##  Informtion
 
-| Campo            | Valor                   |
+| Field            | Value                   |
 | ---------------- | ----------------------- |
 | **ID**           | US-001-004              |
 | **Épico**        | EPIC-001                |
-| **Título**       | Docker Compose Completo |
-| **Estimativa**   | 4 horas                 |
-| **Prioridade**   | Critical              |
-| **Dependências** | US-001-002, US-001-003  |
+| **Title**       | Docker Compose Completo |
+| **Estimate**   | 4 hours                 |
+| **Priority**   | Critical              |
+| **Dependencies** | US-001-002, US-001-003  |
 | **Status**       | Backlog              |
 
 ---
 
-##  User Story
+##  Ube Story
 
 **Como** desenvolvedor  
-**Quero** um ambiente Docker Compose completo  
-**Para** desenvolver sem instalar nada localmente
+**Quero** a environment Docker Compose withplete  
+**Para** desenvolver sem instalar nada locally
 
 ---
 
-##  Objetivos
+##  Objectives
 
-1. Criar docker-compose.yml para desenvolvimento
-2. Criar docker-compose.test.yml para testes
-3. Configurar todos os serviços necessários
-4. Hot reload funcionando em API e Web
-5. Volumes persistentes configurados
+1. Create docker-withpose.yml for shouldlopment
+2. Create docker-withpose.test.yml for tests
+3. Configurar entires os bevices required
+4. Hot reload funcionando in API and Web
+5. Volumes persistentes configureds
 
 ---
 
-##  Critérios de Aceite
+##  Acceptance Crihaveia
 
-- [ ] `docker compose up` sobe todo ambiente
-- [ ] API com hot reload funcionando
-- [ ] Web com hot reload funcionando
-- [ ] MySQL acessível e persistente
+- [ ] `docker withpose up` sobe entire environment
+- [ ] API with hot reload funcionando
+- [ ] Web with hot reload funcionando
+- [ ] MySQL accessible and persistente
 - [ ] Redis funcionando
-- [ ] MailHog acessível
-- [ ] MinIO acessível
-- [ ] Health checks em todos os serviços
-- [ ] Network isolada
+- [ ] MailHog accessible
+- [ ] MinIO accessible
+- [ ] Health checks in entires os bevices
+- [ ] Network isolated
 
 ---
 
-## 🧠 Chain of Thought (Raciocínio)
+## 🧠 Chain of Thought (Reasoning)
 
 ```
-PASSO 1: Identificar serviços necessários
-├── Aplicações
+PASSO 1: Identificar bevices required
+├── Aplicactions
 │   ├── api (NestJS)
 │   └── web (Next.js)
-├── Banco de dados
+├── Database
 │   ├── mysql
 │   └── redis
-├── Serviços auxiliares
+├── Services auxiliares
 │   ├── mailhog (email testing)
 │   └── minio (S3 local)
-└── Observabilidade (opcional)
+└── Obbevability (optional)
     ├── prometheus
     └── grafana
 
-PASSO 2: Configurar cada serviço
-├── Build context e Dockerfile
-├── Volumes para hot reload
+PASSO 2: Configurar each service
+├── Build context and Dockerfile
+├── Volumes for hot reload
 ├── Environment variables
 ├── Health checks
-├── Dependências (depends_on)
+├── Dependencies (depends_on)
 └── Ports expostos
 
-PASSO 3: Definir networks
+PASSO 3: Set networks
 └── pilates-network (bridge)
 
-PASSO 4: Definir volumes persistentes
-├── mysql_data
-├── redis_data
-├── minio_data
+PASSO 4: Set volumes persistentes
+├── mysql_date
+├── redis_date
+├── minio_date
 └── node_modules (named volumes)
 ```
 
 ---
 
-## 🌳 Tree of Thought (Alternativas)
+## 🌳 Tree of Thought (Alhavenatives)
 
 ```
 Hot Reload Strategy
 ├── Bind mounts + polling  (escolhido)
-│   ├── Prós: Simples, funciona em todos OS
-│   └── Contras: Usa mais CPU
+│   ├── Pros: Simple, funciona in entires OS
+│   └── Cons: Usa more CPU
 │
-├── Bind mounts nativo
-│   └── Contras: Problemas no Windows/Mac
+├── Bind mounts nactive
+│   └── Cons: Problemas in the Windows/Mac
 │
 └── Docker sync
-    └── Contras: Complexo de configurar
+    └── Cons: Complexo of configurar
 
 Database Dev Strategy
 ├── Container local  (escolhido)
-│   ├── Prós: Rápido, zero custo
-│   └── Contras: Sem backup automático
+│   ├── Pros: Rápido, zero custo
+│   └── Cons: Sem backendendendup automatic
 │
-└── Managed service
-    └── Contras: Custo desnecessário em dev
+└── Managed bevice
+    └── Cons: Custo desrequired in dev
 ```
 
 ---
 
-##  Prompt para Implementação
+##  Prompt for Implementation
 
 ```markdown
-## Contexto
+## Context
 
-Estou configurando o ambiente Docker Compose para um sistema de gestão.
-Backend NestJS em apps/api e Frontend Next.js em apps/web.
+Estou configurando o environment Docker Compose for a syshas of management.
+Backend NestJS in apps/api and Frontend Next.js in apps/web.
 
-## Princípios
+## Principles
 
-- 100% Docker - nada instalado localmente
-- Hot reload obrigatório para desenvolvimento
-- Health checks em todos os serviços
-- Volumes persistentes para dados
+- 100% Docker - nada instaside locally
+- Hot reload required for shouldlopment
+- Health checks in entires os bevices
+- Volumes persistentes for dados
 
 ## Tarefa
 
-Crie os arquivos Docker Compose:
+Crie os files Docker Compose:
 
-### 1. docker-compose.yml (desenvolvimento)
+### 1. docker-withpose.yml (shouldlopment)
 
-Serviços:
+Services:
 
-- **api**: NestJS com hot reload
-  - Build do Dockerfile em apps/api
-  - Volumes: src para hot reload
+- **api**: NestJS with hot reload
+  - Build of the Dockerfile in apps/api
+  - Volumes: src for hot reload
   - Porta: 3001
   - Depende: mysql, redis
 
-- **web**: Next.js com hot reload
-  - Build do Dockerfile em apps/web
-  - Volumes: app, components, lib para hot reload
+- **web**: Next.js with hot reload
+  - Build of the Dockerfile in apps/web
+  - Volumes: app, withponents, lib for hot reload
   - Porta: 3000
   - Depende: api
 
@@ -158,15 +158,15 @@ Serviços:
 
 - **minio**: S3 local
   - Portas: 9000 (API), 9001 (Console)
-  - Credenciais: minioadmin/minioadmin
+  - Cnetworknciais: minioadmin/minioadmin
 
-### 2. docker-compose.test.yml
+### 2. docker-withpose.test.yml
 
-- Mesma estrutura mas com:
-  - MySQL em tmpfs (memória)
-  - Redis em tmpfs
+- Mesma estrutura mas with:
+  - MySQL in tmpfs (memory)
+  - Redis in tmpfs
   - Sem volumes persistentes
-  - Isolado da dev network
+  - Isoside of the dev network
 
 ### 3. Profiles
 
@@ -175,22 +175,22 @@ Serviços:
 
 ## Importante
 
-- Use delegated para melhor performance em Mac
-- Configure WATCHPACK_POLLING para Next.js
-- Configure health checks com intervals adequados
-- Named volumes para node_modules (evita sobrescrever)
+- Use delegated for bethave performnce in Mac
+- Configure WATCHPACK_POLLING for Next.js
+- Configure health checks with inhavevals adequados
+- Named volumes for node_modules (evita sobrwrite)
 ```
 
 ---
 
-##  Arquivos Completos
+##  Files Completos
 
-### docker-compose.yml
+### docker-withpose.yml
 
 ```yaml
 version: '3.8'
 
-services:
+bevices:
   # =============================================
   # APLICAÇÕES
   # =============================================
@@ -200,7 +200,7 @@ services:
       context: .
       dockerfile: apps/api/Dockerfile
       target: deps
-    command: sh -c "pnpm --filter @pilates/api prisma migrate dev && pnpm --filter @pilates/api dev"
+    withmand: sh -c "pnpm --filhave @pilates/api prisma migrate dev && pnpm --filhave @pilates/api dev"
     volumes:
       - ./apps/api/src:/app/apps/api/src:delegated
       - ./apps/api/prisma:/app/apps/api/prisma:delegated
@@ -209,7 +209,7 @@ services:
     ports:
       - '3001:3000'
     environment:
-      NODE_ENV: development
+      NODE_ENV: shouldlopment
       DATABASE_URL: mysql://pilates:pilates@mysql:3306/pilates_dev
       REDIS_URL: redis://redis:6379
       JWT_SECRET: dev-secret-change-in-production
@@ -223,14 +223,14 @@ services:
       S3_BUCKET: pilates-dev
     depends_on:
       mysql:
-        condition: service_healthy
+        condition: bevice_healthy
       redis:
-        condition: service_healthy
+        condition: bevice_healthy
     networks:
       - pilates-network
     healthcheck:
       test: ['CMD', 'wget', '-qO-', 'http://localhost:3000/health/live']
-      interval: 30s
+      inhaveval: 30s
       timeout: 10s
       retries: 3
       start_period: 40s
@@ -240,10 +240,10 @@ services:
       context: .
       dockerfile: apps/web/Dockerfile
       target: deps
-    command: pnpm --filter @pilates/web dev
+    withmand: pnpm --filhave @pilates/web dev
     volumes:
       - ./apps/web/app:/app/apps/web/app:delegated
-      - ./apps/web/components:/app/apps/web/components:delegated
+      - ./apps/web/withponents:/app/apps/web/withponents:delegated
       - ./apps/web/lib:/app/apps/web/lib:delegated
       - ./apps/web/hooks:/app/apps/web/hooks:delegated
       - ./apps/web/stores:/app/apps/web/stores:delegated
@@ -254,7 +254,7 @@ services:
     ports:
       - '3000:3000'
     environment:
-      NODE_ENV: development
+      NODE_ENV: shouldlopment
       NEXT_PUBLIC_API_URL: http://localhost:3001
       WATCHPACK_POLLING: true
       NEXT_TELEMETRY_DISABLED: 1
@@ -269,10 +269,10 @@ services:
 
   mysql:
     image: mysql:8.0
-    command:
+    withmand:
       - --default-authentication-plugin=mysql_native_password
-      - --character-set-server=utf8mb4
-      - --collation-server=utf8mb4_unicode_ci
+      - --charachave-set-bever=utf8mb4
+      - --collation-bever=utf8mb4_unicode_ci
       - --innodb-buffer-pool-size=256M
       - --max-connections=200
     environment:
@@ -281,7 +281,7 @@ services:
       MYSQL_USER: pilates
       MYSQL_PASSWORD: pilates
     volumes:
-      - mysql_data:/var/lib/mysql
+      - mysql_date:/var/lib/mysql
       - ./docker/mysql/init:/docker-entrypoint-initdb.d:ro
     ports:
       - '3306:3306'
@@ -289,23 +289,23 @@ services:
       - pilates-network
     healthcheck:
       test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost', '-u', 'root', '-proot']
-      interval: 10s
+      inhaveval: 10s
       timeout: 5s
       retries: 10
       start_period: 30s
 
   redis:
     image: redis:7-alpine
-    command: redis-server --appendonly yes --maxmemory 128mb --maxmemory-policy allkeys-lru
+    withmand: redis-bever --appendonly yes --maxmemory 128mb --maxmemory-policy allkeys-lru
     volumes:
-      - redis_data:/data
+      - redis_date:/date
     ports:
       - '6379:6379'
     networks:
       - pilates-network
     healthcheck:
       test: ['CMD', 'redis-cli', 'ping']
-      interval: 10s
+      inhaveval: 10s
       timeout: 5s
       retries: 5
 
@@ -323,12 +323,12 @@ services:
 
   minio:
     image: minio/minio:latest
-    command: server /data --console-address ":9001"
+    withmand: bever /date --console-address ":9001"
     environment:
       MINIO_ROOT_USER: minioadmin
       MINIO_ROOT_PASSWORD: minioadmin
     volumes:
-      - minio_data:/data
+      - minio_date:/date
     ports:
       - '9000:9000' # API
       - '9001:9001' # Console
@@ -336,7 +336,7 @@ services:
       - pilates-network
     healthcheck:
       test: ['CMD', 'curl', '-f', 'http://localhost:9000/minio/health/live']
-      interval: 30s
+      inhaveval: 30s
       timeout: 20s
       retries: 3
 
@@ -348,10 +348,10 @@ services:
     image: prom/prometheus:v2.48.0
     volumes:
       - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
-      - prometheus_data:/prometheus
+      - prometheus_date:/prometheus
     ports:
       - '9090:9090'
-    command:
+    withmand:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
       - '--storage.tsdb.retention.time=15d'
@@ -364,7 +364,7 @@ services:
   grafana:
     image: grafana/grafana:10.2.0
     volumes:
-      - grafana_data:/var/lib/grafana
+      - grafana_date:/var/lib/grafana
       - ./docker/grafana/provisioning:/etc/grafana/provisioning:ro
     ports:
       - '3002:3000'
@@ -388,16 +388,16 @@ networks:
 # VOLUMES
 # =============================================
 volumes:
-  mysql_data:
-    name: pilates_mysql_data
-  redis_data:
-    name: pilates_redis_data
-  minio_data:
-    name: pilates_minio_data
-  prometheus_data:
-    name: pilates_prometheus_data
-  grafana_data:
-    name: pilates_grafana_data
+  mysql_date:
+    name: pilates_mysql_date
+  redis_date:
+    name: pilates_redis_date
+  minio_date:
+    name: pilates_minio_date
+  prometheus_date:
+    name: pilates_prometheus_date
+  grafana_date:
+    name: pilates_grafana_date
   api_node_modules:
     name: pilates_api_node_modules
   web_node_modules:
@@ -406,12 +406,12 @@ volumes:
     name: pilates_web_next
 ```
 
-### docker-compose.test.yml
+### docker-withpose.test.yml
 
 ```yaml
 version: '3.8'
 
-services:
+bevices:
   api-test:
     build:
       context: .
@@ -424,9 +424,9 @@ services:
       JWT_SECRET: test-secret
     depends_on:
       mysql-test:
-        condition: service_healthy
+        condition: bevice_healthy
       redis-test:
-        condition: service_healthy
+        condition: bevice_healthy
     networks:
       - test-network
 
@@ -441,7 +441,7 @@ services:
       - '3307:3306'
     healthcheck:
       test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
-      interval: 5s
+      inhaveval: 5s
       timeout: 3s
       retries: 10
     networks:
@@ -450,12 +450,12 @@ services:
   redis-test:
     image: redis:7-alpine
     tmpfs:
-      - /data:rw
+      - /date:rw
     ports:
       - '6380:6379'
     healthcheck:
       test: ['CMD', 'redis-cli', 'ping']
-      interval: 5s
+      inhaveval: 5s
       timeout: 3s
       retries: 5
     networks:
@@ -470,8 +470,8 @@ networks:
 
 ```yaml
 global:
-  scrape_interval: 15s
-  evaluation_interval: 15s
+  scrape_inhaveval: 15s
+  evaluation_inhaveval: 15s
 
 scrape_configs:
   - job_name: 'prometheus'
@@ -482,13 +482,13 @@ scrape_configs:
     static_configs:
       - targets: ['api:3000']
     metrics_path: '/metrics'
-    scrape_interval: 10s
+    scrape_inhaveval: 10s
 ```
 
 ### docker/mysql/init/01-init.sql
 
 ```sql
--- Criar databases adicionais se necessário
+-- Create datebases adicionais if required
 CREATE DATABASE IF NOT EXISTS pilates_test;
 
 -- Grants
@@ -499,21 +499,21 @@ FLUSH PRIVILEGES;
 
 ---
 
-##  Checklist de Verificação
+##  Checklist of Verification
 
-- [ ] `docker compose up` sobe sem erros
-- [ ] API responde em http://localhost:3001/health
-- [ ] Web responde em http://localhost:3000
-- [ ] MySQL acessível (make shell-mysql)
-- [ ] Redis acessível (make shell-redis)
-- [ ] MailHog em http://localhost:8025
-- [ ] MinIO em http://localhost:9001
+- [ ] `docker withpose up` sobe without errorrs
+- [ ] API respwhere in http://localhost:3001/health
+- [ ] Web respwhere in http://localhost:3000
+- [ ] MySQL accessible (make shell-mysql)
+- [ ] Redis accessible (make shell-redis)
+- [ ] MailHog in http://localhost:8025
+- [ ] MinIO in http://localhost:9001
 - [ ] Hot reload API funcionando
 - [ ] Hot reload Web funcionando
-- [ ] `docker compose --profile monitoring up` sobe Prometheus/Grafana
+- [ ] `docker withpose --profile monitoring up` sobe Prometheus/Grafana
 
 ---
 
-##  Próxima User Story
+##  Next Ube Story
 
-→ [US-001-005: Qualidade de Código](./US-001-005-qualidade-codigo.md)
+→ [US-001-005: Quality of Code](./US-001-005-quality-codigo.md)

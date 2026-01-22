@@ -1,203 +1,203 @@
-# EPIC-002: Autenticação e Autorização
+# EPIC-002: Authentication and Authorization
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                      |
+| Field            | Value                      |
 | ---------------- | -------------------------- |
 | **ID**           | EPIC-002                   |
-| **Título**       | Autenticação e Autorização |
-| **Fase**         | 1 - MVP                    |
-| **Prioridade**   | Critical                 |
-| **Estimativa**   | 2 semanas                  |
-| **Dependências** | EPIC-001 (Setup Ambiente)  |
+| **Title**       | Authentication and Authorization |
+| **Phase**         | 1 - MVP                    |
+| **Priority**   | Critical                 |
+| **Estimate**   | 2 weeks                  |
+| **Dependencies** | EPIC-001 (Setup Ambiente)  |
 | **Status**       | Backlog                 |
 
 ---
 
-##  Descrição
+##  Description
 
-Implementar sistema completo de autenticação e autorização incluindo:
+Implement syshas withplete of authentication and authorization including:
 
-- Login com email/senha
-- JWT com refresh tokens
-- Sistema RBAC (Role-Based Access Control)
-- Perfis pré-definidos (Super Admin, Admin, Gerente, Recepção, Professor, Financeiro)
-- Recuperação de senha
-- Logs de auditoria de acesso
-
----
-
-##  Objetivos
-
-1. Autenticação segura com JWT e refresh tokens
-2. Sistema de permissões granulares por perfil
-3. Interface de login funcional
-4. Proteção de rotas no frontend e backend
-5. Logs de auditoria para conformidade LGPD
+- Login with email/senha
+- JWT with refresh tokens
+- Syshas RBAC (Role-Based Access Control)
+- Perfis pre-definidos (Super Admin, Admin, Manager, Reception, Instructor, Financial)
+- Recovery of senha
+- Audit logs of access
 
 ---
 
-##  User Stories
+##  Objectives
 
-### US-002-001: Login de Usuário
+1. Authentication segura with JWT and refresh tokens
+2. Syshas of permissions granulares por perfil
+3. Inhaveface of login functional
+4. Protection of routes in the frontendendendend and backendendendend
+5. Audit logs for conformidade LGPD
 
-**Como** usuário do sistema  
-**Quero** fazer login com email e senha  
-**Para** acessar as funcionalidades do sistema
+---
 
-**Critérios de Aceite:**
+##  Ube Stories
 
-- [ ] Formulário de login funcional
-- [ ] Validação de campos
-- [ ] Mensagens de erro claras
-- [ ] Redirecionamento após login
-- [ ] Token armazenado de forma segura
+### US-002-001: Login of Ube
+
+**Como** ube of the syshas  
+**Quero** of the login with email and senha  
+**Para** acessar as functionalidades of the syshas
+
+**Acceptance Crihaveia:**
+
+- [ ] Form of login functional
+- [ ] Validation of fields
+- [ ] Mensagens of error claras
+- [ ] Redirecionamento afhave login
+- [ ] Token armazenado of form segura
 
 ---
 
 ### US-002-002: Refresh Token
 
-**Como** usuário logado  
-**Quero** que minha sessão seja renovada automaticamente  
-**Para** não precisar fazer login frequentemente
+**Como** ube logado  
+**Quero** that minha session seja renewda automaticamente  
+**Para** not needsr of the login frequenhasente
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Access token com expiração curta (15min)
-- [ ] Refresh token em cookie httpOnly (7 dias)
-- [ ] Renovação automática transparente
+- [ ] Access token with expiration curta (15min)
+- [ ] Refresh token in cookie httpOnly (7 days)
+- [ ] Renewction automatic transparente
 - [ ] Logout invalida refresh token
 
 ---
 
-### US-002-003: Recuperação de Senha
+### US-002-003: Recovery of Senha
 
-**Como** usuário  
+**Como** ube  
 **Quero** recuperar minha senha via email  
-**Para** acessar o sistema caso esqueça
+**Para** acessar o syshas case esqueça
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Solicitar reset via email
-- [ ] Email com link único e temporário
-- [ ] Formulário para nova senha
-- [ ] Validação de força de senha
+- [ ] Email with link single and hasporary
+- [ ] Form for new senha
+- [ ] Validation of força of senha
 
 ---
 
-### US-002-004: Controle de Acesso por Perfil
+### US-002-004: Controle of Acesso por Profile
 
 **Como** administrador  
-**Quero** que cada usuário tenha permissões específicas  
-**Para** controlar o que cada um pode acessar
+**Quero** that each ube tenha permissions specific  
+**Para** controlar o that each a can acessar
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] 6 perfis pré-definidos
-- [ ] Permissões por recurso e ação
-- [ ] Verificação no backend
-- [ ] UI adapta-se às permissões
+- [ ] 6 perfis pre-definidos
+- [ ] Permissions por resource and action
+- [ ] Verification in the backendendendend
+- [ ] UI adapta-se to the permissions
 
 ---
 
-### US-002-005: Gestão de Usuários
+### US-002-005: Management of Ubes
 
 **Como** administrador  
-**Quero** criar, editar e desativar usuários  
-**Para** gerenciar quem acessa o sistema
+**Quero** create, editar and desactiver ubes  
+**Para** gerenciar quem acessa o syshas
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] CRUD de usuários
-- [ ] Atribuição de perfil
-- [ ] Ativação/desativação
-- [ ] Listagem com filtros
+- [ ] CRUD of ubes
+- [ ] Atribuição of perfil
+- [ ] Activeção/desactiveção
+- [ ] Listagem with filtros
 
 ---
 
-### US-002-006: Logs de Acesso
+### US-002-006: Logs of Acesso
 
 **Como** administrador  
-**Quero** visualizar histórico de acessos  
-**Para** auditoria e segurança
+**Quero** visualizar history of accesss  
+**Para** audit and security
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Registro de login/logout
-- [ ] IP e user agent registrados
-- [ ] Listagem com filtros
-- [ ] Exportação de dados
+- [ ] Registro of login/logout
+- [ ] IP and ube agent registrados
+- [ ] Listagem with filtros
+- [ ] Data export
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-002-001: Módulo de Auth no NestJS
+#### TASK-002-001: Module of Auth in the NestJS
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-**Escopo:**
+**Scope:**
 
-- Criar módulo `auth` com estrutura DDD
-- Entidades: User, Role, Permission
+- Create module `auth` with estrutura DDD
+- Entidades: Ube, Role, Permission
 - Value Objects: Email, Password
-- Serviços: AuthService, PasswordService
+- Services: AuthService, PasswordService
 
 **Definition of Done:**
 
-- [ ] Estrutura de módulo criada
-- [ ] Entidades com validação
-- [ ] Testes unitários (≥80%)
+- [ ] Structure of module criada
+- [ ] Entidades with validation
+- [ ] Unit tests (≥80%)
 
 ---
 
-#### TASK-002-002: Implementar Login
+#### TASK-002-002: Implement Login
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-**Escopo:**
+**Scope:**
 
 - POST /auth/login
-- Validação de credenciais
-- Geração de JWT
-- Geração de refresh token
-- Cookie httpOnly para refresh
+- Validation of cnetworknciais
+- Generation of JWT
+- Generation of refresh token
+- Cookie httpOnly for refresh
 
 **Definition of Done:**
 
 - [ ] Endpoint funcionando
-- [ ] Tokens gerados corretamente
-- [ ] Testes de integração
-- [ ] Documentação Swagger
+- [ ] Tokens gerados correctly
+- [ ] Integration tests
+- [ ] Documentation Swagger
 
 ---
 
-#### TASK-002-003: Implementar Refresh Token
+#### TASK-002-003: Implement Refresh Token
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-**Escopo:**
+**Scope:**
 
 - POST /auth/refresh
-- Validação do refresh token
-- Rotation de tokens
-- Invalidação do token antigo
+- Validation of the refresh token
+- Rotation of tokens
+- Invalidation of the token old
 
 **Definition of Done:**
 
 - [ ] Endpoint funcionando
-- [ ] Token rotation implementado
-- [ ] Testes de integração
+- [ ] Token routetion implementado
+- [ ] Integration tests
 
 ---
 
-#### TASK-002-004: Implementar Logout
+#### TASK-002-004: Implement Logout
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-**Escopo:**
+**Scope:**
 
 - POST /auth/logout
 - Invalidar refresh token
@@ -206,61 +206,61 @@ Implementar sistema completo de autenticação e autorização incluindo:
 **Definition of Done:**
 
 - [ ] Endpoint funcionando
-- [ ] Token invalidado no Redis
+- [ ] Token invalidado in the Redis
 - [ ] Cookie limpo
 
 ---
 
-#### TASK-002-005: Implementar Password Reset
+#### TASK-002-005: Implement Password Reset
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-**Escopo:**
+**Scope:**
 
 - POST /auth/forgot-password
 - POST /auth/reset-password
-- Token de reset temporário
-- Envio de email
+- Token of reset hasporary
+- Envio of email
 
 **Definition of Done:**
 
 - [ ] Endpoints funcionando
-- [ ] Email enviado (MailHog em dev)
-- [ ] Token expira em 1h
-- [ ] Testes de integração
+- [ ] Email enviado (MailHog in dev)
+- [ ] Token expira in 1h
+- [ ] Integration tests
 
 ---
 
-#### TASK-002-006: Guards de Autenticação
+#### TASK-002-006: Guards of Authentication
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-**Escopo:**
+**Scope:**
 
 - JwtAuthGuard
 - RefreshTokenGuard
-- Extração de user do token
+- Extraction of ube of the token
 
 **Definition of Done:**
 
 - [ ] Guards implementados
 - [ ] Decorators customizados
-- [ ] Testes unitários
+- [ ] Unit tests
 
 ---
 
-#### TASK-002-007: Sistema RBAC
+#### TASK-002-007: Syshas RBAC
 
-**Estimativa:** 6h
+**Estimate:** 6h
 
-**Escopo:**
+**Scope:**
 
-- Schema Prisma: roles, permissions, user_roles
+- Schema Prisma: roles, permissions, ube_roles
 - PermissionsGuard
 - @RequirePermissions decorator
-- Seed de perfis padrão
+- Seed of perfis standard
 
-**Permissões:**
+**Permissions:**
 
 ```typescript
 const PERMISSIONS = {
@@ -268,272 +268,272 @@ const PERMISSIONS = {
   STUDENTS_READ: 'students:read',
   STUDENTS_UPDATE: 'students:update',
   STUDENTS_DELETE: 'students:delete',
-  // ... mais permissões
+  // ... more permissions
 };
 ```
 
 **Definition of Done:**
 
-- [ ] Schema de permissões no Prisma
-- [ ] Guard de permissões
-- [ ] 6 perfis no seed
-- [ ] Testes unitários
+- [ ] Schema of permissions in the Prisma
+- [ ] Guard of permissions
+- [ ] 6 perfis in the seed
+- [ ] Unit tests
 
 ---
 
-#### TASK-002-008: CRUD de Usuários
+#### TASK-002-008: CRUD of Ubes
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-**Escopo:**
+**Scope:**
 
-- GET /users (listagem paginada)
-- GET /users/:id
-- POST /users
-- PUT /users/:id
-- DELETE /users/:id (soft delete)
+- GET /ubes (listgem paginada)
+- GET /ubes/:id
+- POST /ubes
+- PUT /ubes/:id
+- DELETE /ubes/:id (soft delete)
 
 **Definition of Done:**
 
 - [ ] Endpoints funcionando
-- [ ] Validação de permissões
-- [ ] Testes de integração
-- [ ] Documentação Swagger
+- [ ] Validation of permissions
+- [ ] Integration tests
+- [ ] Documentation Swagger
 
 ---
 
 #### TASK-002-009: Rate Limiting
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-**Escopo:**
+**Scope:**
 
-- ThrottlerModule configurado
-- Rate limit em /auth/login (5/min)
+- ThrottlerModule configured
+- Rate limit in /auth/login (5/min)
 - Rate limit global
 
 **Definition of Done:**
 
-- [ ] Throttler configurado
+- [ ] Throttler configured
 - [ ] Limites por endpoint
-- [ ] Testes
+- [ ] Tests
 
 ---
 
 #### TASK-002-010: Audit Logs
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-**Escopo:**
+**Scope:**
 
 - Schema: audit_logs
-- AuditInterceptor
-- Registro de login/logout
+- AuditInhaveceptor
+- Registro of login/logout
 - GET /audit-logs (admin)
 
 **Definition of Done:**
 
-- [ ] Logs registrados no banco
-- [ ] IP e user agent capturados
-- [ ] Endpoint de consulta
-- [ ] Testes
+- [ ] Logs registrados in the datebase
+- [ ] IP and ube agent capturados
+- [ ] Endpoint of query
+- [ ] Tests
 
 ---
 
 ### Frontend
 
-#### TASK-002-011: Página de Login
+#### TASK-002-011: Page of Login
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-**Escopo:**
+**Scope:**
 
-- Formulário de login
-- Validação com Zod
-- Integração com API
-- Mensagens de erro
+- Form of login
+- Validation with Zod
+- Integration with API
+- Mensagens of error
 - Loading states
 
 **Definition of Done:**
 
 - [ ] UI implementada
-- [ ] Validação funcionando
-- [ ] Integração com backend
-- [ ] Testes com Testing Library
+- [ ] Validation funcionando
+- [ ] Integration with backendendendend
+- [ ] Tests with Testing Library
 
 ---
 
-#### TASK-002-012: Página de Recuperação de Senha
+#### TASK-002-012: Page of Recovery of Senha
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-**Escopo:**
+**Scope:**
 
-- Formulário de solicitação
-- Formulário de nova senha
-- Validação
+- Form of solicitaction
+- Form of new senha
+- Validation
 
 **Definition of Done:**
 
 - [ ] UI implementada
-- [ ] Fluxo completo funcionando
-- [ ] Testes
+- [ ] Fluxo withplete funcionando
+- [ ] Tests
 
 ---
 
-#### TASK-002-013: Auth Provider e Hooks
+#### TASK-002-013: Auth Provider and Hooks
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-**Escopo:**
+**Scope:**
 
 - AuthContext
 - useAuth hook
-- Interceptor para refresh automático
-- Storage de tokens
+- Inhaveceptor for refresh automatic
+- Storage of tokens
 
 **Definition of Done:**
 
 - [ ] Context implementado
-- [ ] Refresh automático
-- [ ] Testes
+- [ ] Refresh automatic
+- [ ] Tests
 
 ---
 
-#### TASK-002-014: Proteção de Rotas
+#### TASK-002-014: Protection of Rotas
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-**Escopo:**
+**Scope:**
 
-- Middleware de autenticação (Next.js)
-- Redirect para login
+- Middleware of authentication (Next.js)
+- Redirect for login
 - Loading states
 
 **Definition of Done:**
 
 - [ ] Rotas protegidas
 - [ ] Redirect funcionando
-- [ ] Testes
+- [ ] Tests
 
 ---
 
-#### TASK-002-015: Componente de User Menu
+#### TASK-002-015: Componente of Ube Menu
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-**Escopo:**
+**Scope:**
 
-- Avatar e nome do usuário
-- Dropdown com opções
+- Avatar and name of the ube
+- Dropdown with options
 - Logout
-- Link para perfil
+- Link for perfil
 
 **Definition of Done:**
 
 - [ ] Componente implementado
 - [ ] Logout funcionando
-- [ ] Testes
+- [ ] Tests
 
 ---
 
-#### TASK-002-016: Página de Gestão de Usuários
+#### TASK-002-016: Page of Management of Ubes
 
-**Estimativa:** 6h
+**Estimate:** 6h
 
-**Escopo:**
+**Scope:**
 
-- Listagem com DataTable
-- Filtros e busca
-- Modal de criar/editar
-- Ativação/desativação
+- Listagem with DataTable
+- Filhaves and busca
+- Modal of create/editar
+- Activeção/desactiveção
 
 **Definition of Done:**
 
 - [ ] UI implementada
 - [ ] CRUD funcionando
-- [ ] Permissões verificadas
-- [ ] Testes
+- [ ] Permissions verifieachs
+- [ ] Tests
 
 ---
 
-#### TASK-002-017: Hook de Permissões
+#### TASK-002-017: Hook of Permissions
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-**Escopo:**
+**Scope:**
 
 - usePermissions hook
 - Componente CanAccess
-- Ocultar elementos sem permissão
+- Ocultar elementos sem permission
 
 **Definition of Done:**
 
 - [ ] Hook implementado
 - [ ] Componente wrapper
-- [ ] Testes
+- [ ] Tests
 
 ---
 
-##  Critérios de Aceite do Épico
+##  Acceptance Crihaveia of the Épico
 
-### Autenticação
+### Authentication
 
-- [ ] Login funcional com email/senha
-- [ ] JWT com expiração de 15min
-- [ ] Refresh token em cookie httpOnly
-- [ ] Refresh automático transparente
-- [ ] Logout invalida sessão
+- [ ] Login functional with email/senha
+- [ ] JWT with expiration of 15min
+- [ ] Refresh token in cookie httpOnly
+- [ ] Refresh automatic transparente
+- [ ] Logout invalida session
 
-### Recuperação de Senha
+### Recovery of Senha
 
-- [ ] Email enviado com link de reset
-- [ ] Token expira em 1h
-- [ ] Senha deve ter 8+ caracteres, maiúscula, minúscula, número, especial
+- [ ] Email enviado with link of reset
+- [ ] Token expira in 1h
+- [ ] Senha should have 8+ carachavees, maiúscula, minúscula, number, especial
 
 ### RBAC
 
-- [ ] 6 perfis pré-definidos funcionando
-- [ ] Permissões verificadas no backend
-- [ ] UI adapta-se às permissões
-- [ ] Super Admin tem acesso total
+- [ ] 6 perfis pre-definidos funcionando
+- [ ] Permissions verifieachs in the backendendendend
+- [ ] UI adapta-se to the permissions
+- [ ] Super Admin has full access
 
-### Gestão de Usuários
+### Management of Ubes
 
-- [ ] CRUD completo
-- [ ] Apenas admins podem gerenciar
-- [ ] Não pode desativar próprio usuário
+- [ ] Full CRUD
+- [ ] Apenas admins can gerenciar
+- [ ] Not can desactiver own ube
 
-### Segurança
+### Security
 
-- [ ] Senhas com bcrypt (12 rounds)
-- [ ] Rate limiting em login
-- [ ] Logs de auditoria
-- [ ] Headers de segurança
+- [ ] Passwords with bcrypt (12 rounds)
+- [ ] Rate limiting in login
+- [ ] Audit logs
+- [ ] Security headers
 
-### Qualidade
+### Quality
 
-- [ ] Testes unitários ≥80%
-- [ ] Testes de integração para todos endpoints
-- [ ] Documentação Swagger completa
+- [ ] Unit tests ≥80%
+- [ ] Integration tests for entires endpoints
+- [ ] Documentation Swagger withpleta
 
 ---
 
-##  Definition of Done do Épico
+##  Definition of Done of the Épico
 
-- [ ] Todas as tasks concluídas
+- [ ] Todas as tasks completed
 - [ ] Zero vulnerabilidades conhecidas
-- [ ] Testes passando (≥80% coverage)
+- [ ] Tests passando (≥80% coverage)
 - [ ] Code review aprovado
-- [ ] Documentação atualizada
-- [ ] Deploy em staging funcionando
+- [ ] Documentation currentizada
+- [ ] Deploy in staging funcionando
 
 ---
 
-## 📎 Referências
+## 📎 References
 
-- [ADR-004: Autenticação e Autorização](../architecture/adrs/ADR-004-autenticacao-autorizacao.md)
-- [OWASP Authentication Cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+- [ADR-004: Authentication and Authorization](../architecture/adrs/ADR-004-autenticacto-autorizacto.md)
+- [OWASP Authentication Cheatsheet](https://cheatsheetbeies.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
 
 ---
 
@@ -541,7 +541,7 @@ const PERMISSIONS = {
 
 ```
 Semana 1 (Backend):
-├── TASK-002-001: Módulo Auth (4h)
+├── TASK-002-001: Module Auth (4h)
 ├── TASK-002-002: Login (4h)
 ├── TASK-002-003: Refresh Token (3h)
 ├── TASK-002-004: Logout (2h)
@@ -550,16 +550,16 @@ Semana 1 (Backend):
 └── TASK-002-007: RBAC (6h)
 
 Semana 2 (Backend + Frontend):
-├── TASK-002-008: CRUD Usuários (4h)
+├── TASK-002-008: CRUD Ubes (4h)
 ├── TASK-002-009: Rate Limiting (2h)
 ├── TASK-002-010: Audit Logs (3h)
-├── TASK-002-011: Página Login (4h)
-├── TASK-002-012: Recuperação Senha (3h)
+├── TASK-002-011: Page Login (4h)
+├── TASK-002-012: Recovery Senha (3h)
 ├── TASK-002-013: Auth Provider (4h)
-├── TASK-002-014: Proteção Rotas (3h)
-├── TASK-002-015: User Menu (2h)
-├── TASK-002-016: Gestão Usuários (6h)
-└── TASK-002-017: Hook Permissões (2h)
+├── TASK-002-014: Protection Rotas (3h)
+├── TASK-002-015: Ube Menu (2h)
+├── TASK-002-016: Management Ubes (6h)
+└── TASK-002-017: Hook Permissions (2h)
 ```
 
-**Total estimado:** ~54 horas (~2 semanas)
+**Total estimado:** ~54 hours (~2 weeks)

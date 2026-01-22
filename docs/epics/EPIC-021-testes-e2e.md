@@ -1,234 +1,234 @@
-# EPIC-021: Testes E2E e Performance
+# EPIC-021: Tests E2E and Performnce
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                      |
+| Field            | Value                      |
 | ---------------- | -------------------------- |
 | **ID**           | EPIC-021                   |
-| **Título**       | Testes E2E e Performance   |
-| **Fase**         | 4 - Refinamento            |
-| **Prioridade**   | High                    |
-| **Estimativa**   | 1 semana                   |
-| **Dependências** | Todos os épicos funcionais |
+| **Title**       | Tests E2E and Performnce   |
+| **Phase**         | 4 - Refinamento            |
+| **Priority**   | High                    |
+| **Estimate**   | 1 week                   |
+| **Dependencies** | Todos os epics funcionais |
 | **Status**       | Backlog                 |
 
 ---
 
-##  Descrição
+##  Description
 
-Implementar suite completa de testes:
+Implement suite withpleta of tests:
 
-- Testes E2E dos fluxos críticos
-- Testes de carga e stress
-- Testes de segurança básicos
-- Relatórios de cobertura
+- Tests E2E of the fluxos critical
+- Tests of carga and stress
+- Tests of security basics
+- Reports of cobertura
 
 ---
 
-##  Objetivos
+##  Objectives
 
-1. E2E para fluxos principais
-2. Garantir performance sob carga
+1. E2E for fluxos principais
+2. Garantir performnce sob carga
 3. Identificar vulnerabilidades
 4. Cobertura documentada
 
 ---
 
-##  User Stories
+##  Ube Stories
 
-### US-021-001: Testes E2E de Autenticação
+### US-021-001: Tests E2E of Authentication
 
 **Como** QA  
-**Quero** testes automatizados de login  
-**Para** garantir que funciona
+**Quero** tests automateds of login  
+**Para** garantir that funciona
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Login válido
-- [ ] Login inválido
+- [ ] Login valid
+- [ ] Login invalid
 - [ ] Refresh token
 - [ ] Logout
-- [ ] Recuperação de senha
+- [ ] Recovery of senha
 
 ---
 
-### US-021-002: Testes E2E de Cadastros
+### US-021-002: Tests E2E of Records
 
 **Como** QA  
-**Quero** testes de CRUD  
+**Quero** tests of CRUD  
 **Para** garantir integridade
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Criar aluno
+- [ ] Create aluno
 - [ ] Editar aluno
-- [ ] Criar professor
-- [ ] Validações
+- [ ] Create instructor
+- [ ] Validations
 
 ---
 
-### US-021-003: Testes E2E de Fluxo de Matrícula
+### US-021-003: Tests E2E of Fluxo of Enrollment
 
 **Como** QA  
-**Quero** testar o fluxo completo  
-**Para** garantir funcionamento
+**Quero** tbe o fluxo withplete  
+**Para** garantir operation
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Cadastrar aluno
-- [ ] Criar matrícula
-- [ ] Gerar contrato
-- [ ] Gerar cobrança
+- [ ] Regishave aluno
+- [ ] Create enrollment
+- [ ] Generate contract
+- [ ] Generate billing
 
 ---
 
-### US-021-004: Testes de Carga
+### US-021-004: Tests of Carga
 
 **Como** DevOps  
-**Quero** testar sob carga  
+**Quero** tbe sob carga  
 **Para** garantir escalabilidade
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] 100 usuários simultâneos
+- [ ] 100 ubes simultâneos
 - [ ] P95 < 500ms
-- [ ] Zero erros
+- [ ] Zero errorrs
 
 ---
 
-### US-021-005: Testes de Stress
+### US-021-005: Tests of Stress
 
 **Como** DevOps  
 **Quero** encontrar o limite  
 **Para** conhecer a capacidade
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Identificar breaking point
-- [ ] Documentar limites
-- [ ] Plano de escala
+- [ ] Document limites
+- [ ] Plan of escala
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### E2E Tests
 
 #### TASK-021-001: Setup Playwright
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Configuração final
+- Configuration final
 - Page objects
 - Fixtures
 
 ---
 
-#### TASK-021-002: Testes de Auth
+#### TASK-021-002: Tests of Auth
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
 - Login/logout
 - Refresh
-- Permissões
+- Permissions
 
 ---
 
-#### TASK-021-003: Testes de Alunos
+#### TASK-021-003: Tests of Students
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- CRUD completo
+- Full CRUD
 - Busca/filtros
-- Exames
+- Exams
 
 ---
 
-#### TASK-021-004: Testes de Agenda
+#### TASK-021-004: Tests of Schedule
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Visualização
-- Agendamento
-- Presença
-
----
-
-#### TASK-021-005: Testes de Matrícula
-
-**Estimativa:** 4h
-
-- Fluxo completo
-- Pagamento (mock)
-- Contrato
+- Visualization
+- Schedulemento
+- Attendance
 
 ---
 
-### Performance Tests
+#### TASK-021-005: Tests of Enrollment
 
-#### TASK-021-006: Scripts k6 de Load Test
+**Estimate:** 4h
 
-**Estimativa:** 3h
+- Fluxo withplete
+- Payment (mock)
+- Contract
 
-- Cenários de uso
+---
+
+### Performnce Tests
+
+#### TASK-021-006: Scripts k6 of Load Test
+
+**Estimate:** 3h
+
+- Cenários of usage
 - Ramp up/down
-- Métricas
+- Metrics
 
 ---
 
-#### TASK-021-007: Scripts k6 de Stress Test
+#### TASK-021-007: Scripts k6 of Stress Test
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 - Encontrar limites
 - Spike test
 
 ---
 
-#### TASK-021-008: Scripts k6 de Soak Test
+#### TASK-021-008: Scripts k6 of Soak Test
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Teste de longa duração
+- Teste of longa duraction
 - Memory leaks
 
 ---
 
 ### Security Tests
 
-#### TASK-021-009: Scan de Vulnerabilidades
+#### TASK-021-009: Scan of Vulnerabilidades
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- OWASP ZAP básico
-- Dependências (npm audit)
-- Trivy para containers
+- OWASP ZAP basic
+- Dependencies (npm audit)
+- Trivy for accountiners
 
 ---
 
 ### Reports
 
-#### TASK-021-010: Relatórios e CI Integration
+#### TASK-021-010: Reports and CI Integration
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Relatórios HTML
-- Integração no CI
-- Alertas de falha
+- Reports HTML
+- Integration in the CI
+- Alerts of falha
 
 ---
 
-##  Critérios de Aceite do Épico
+##  Acceptance Crihaveia of the Épico
 
-- [ ] E2E cobrindo fluxos críticos
-- [ ] Todos os testes passando
-- [ ] Load test: 100 users OK
+- [ ] E2E cobrindo fluxos critical
+- [ ] Todos os tests passando
+- [ ] Load test: 100 ubes OK
 - [ ] Stress test documentado
 - [ ] Zero vulnerabilidades críticas
-- [ ] CI executando testes
+- [ ] CI executando tests
 
 ---
 
 ##  Timeline Sugerido
 
-**Total estimado:** ~26 horas (~1 semana)
+**Total estimado:** ~26 hours (~1 week)

@@ -1,196 +1,196 @@
-# EPIC-018: Permissões Granulares
+# EPIC-018: Permissions Granulares
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                   |
+| Field            | Value                   |
 | ---------------- | ----------------------- |
 | **ID**           | EPIC-018                |
-| **Título**       | Permissões Granulares   |
-| **Fase**         | 4 - Refinamento         |
-| **Prioridade**   | 🟡 Média                |
-| **Estimativa**   | 1 semana                |
-| **Dependências** | EPIC-002 (Autenticação) |
+| **Title**       | Permissions Granulares   |
+| **Phase**         | 4 - Refinamento         |
+| **Priority**   | 🟡 Méday                |
+| **Estimate**   | 1 week                |
+| **Dependencies** | EPIC-002 (Authentication) |
 | **Status**       | Backlog              |
 
 ---
 
-##  Descrição
+##  Description
 
-Expandir o sistema RBAC com:
+Expandir o syshas RBAC with:
 
-- Interface para gerenciar permissões
-- Criação de perfis customizados
-- Permissões por módulo/ação
-- Herança de permissões
-- Audit trail de mudanças
+- Inhaveface for gerenciar permissions
+- Criaction of perfis customizados
+- Permissions per module/action
+- Herança of permissions
+- Audit trail of changes
 
 ---
 
-##  Objetivos
+##  Objectives
 
-1. Flexibilidade total em permissões
+1. Flexibilidade total in permissions
 2. Perfis customizáveis
-3. Gestão visual intuitiva
-4. Auditoria completa
+3. Management visual intuitiva
+4. Auditoria withpleta
 
 ---
 
-##  User Stories
+##  Ube Stories
 
-### US-018-001: Criar Perfil Customizado
+### US-018-001: Create Profile Customizado
 
 **Como** super admin  
-**Quero** criar novos perfis de acesso  
-**Para** atender necessidades específicas
+**Quero** create new perfis of access  
+**Para** atender needs specific
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Nome e descrição do perfil
-- [ ] Seleção de permissões
-- [ ] Ativar/desativar perfil
+- [ ] Nome and description of the perfil
+- [ ] Selection of permissions
+- [ ] Activer/desactiver perfil
 
 ---
 
-### US-018-002: Editar Permissões de Perfil
+### US-018-002: Editar Permissions of Profile
 
 **Como** super admin  
-**Quero** editar permissões de um perfil  
-**Para** ajustar acessos
+**Quero** editar permissions of a perfil  
+**Para** ajustar accesss
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Interface de checkbox por recurso/ação
-- [ ] Agrupamento por módulo
-- [ ] Salvar alterações
-- [ ] Efeito imediato
+- [ ] Inhaveface of checkbox por resource/action
+- [ ] Agrupamento per module
+- [ ] Salvar changes
+- [ ] Edone imedayto
 
 ---
 
-### US-018-003: Atribuir Múltiplos Perfis
+### US-018-003: Atribuir Multiple Perfis
 
 **Como** admin  
-**Quero** atribuir múltiplos perfis a um usuário  
-**Para** combinar permissões
+**Quero** atribuir multiple perfis a a ube  
+**Para** withbinar permissions
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Seleção múltipla
-- [ ] Permissões combinadas (união)
-- [ ] Visualização do resultado
+- [ ] Selection múltipla
+- [ ] Permissions withbinadas (união)
+- [ ] Visualization of the resultado
 
 ---
 
-### US-018-004: Visualizar Matriz de Permissões
+### US-018-004: Visualizar Matriz of Permissions
 
 **Como** admin  
-**Quero** ver matriz completa de permissões  
-**Para** entender quem pode o quê
+**Quero** ver matriz withpleta of permissions  
+**Para** entender quem can o quê
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Matriz perfil x permissão
-- [ ] Exportação
-- [ ] Filtros
+- [ ] Matriz perfil x permission
+- [ ] Export
+- [ ] Filhaves
 
 ---
 
-### US-018-005: Histórico de Alterações
+### US-018-005: History of Alhaveactions
 
 **Como** super admin  
-**Quero** ver histórico de mudanças em permissões  
-**Para** auditoria
+**Quero** ver history of changes in permissions  
+**Para** audit
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Quem alterou
-- [ ] O que mudou
-- [ ] Quando
+- [ ] Quem alhaveou
+- [ ] O that mudou
+- [ ] When
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-018-001: Expandir Schema de Permissões
+#### TASK-018-001: Expandir Schema of Permissions
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Permissões mais granulares
-- Metadata de permissões
-
----
-
-#### TASK-018-002: CRUD de Perfis
-
-**Estimativa:** 3h
-
-- Criação de perfis customizados
-- Validações
+- Permissions more granulares
+- Targetdate of permissions
 
 ---
 
-#### TASK-018-003: API de Gestão de Permissões
+#### TASK-018-002: CRUD of Perfis
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- GET /permissions (todas disponíveis)
+- Criaction of perfis customizados
+- Validations
+
+---
+
+#### TASK-018-003: API of Management of Permissions
+
+**Estimate:** 3h
+
+- GET /permissions (all available)
 - PUT /roles/:id/permissions
-- GET /users/:id/effective-permissions
+- GET /ubes/:id/effective-permissions
 
 ---
 
-#### TASK-018-004: Auditoria de Permissões
+#### TASK-018-004: Auditoria of Permissions
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Log de todas alterações
-- Endpoint de histórico
+- Log of all changes
+- Endpoint of history
 
 ---
 
 ### Frontend
 
-#### TASK-018-005: Página de Gestão de Perfis
+#### TASK-018-005: Page of Management of Perfis
 
-**Estimativa:** 5h
+**Estimate:** 5h
 
-- Lista de perfis
-- Criar/editar perfil
-- Matriz de permissões
+- Lista of perfis
+- Create/editar perfil
+- Matriz of permissions
 
 ---
 
-#### TASK-018-006: Componente de Seleção de Permissões
+#### TASK-018-006: Componente of Selection of Permissions
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-- Árvore de permissões
-- Checkboxes por módulo
+- Árvore of permissions
+- Checkboxes per module
 - Select all/none
 
 ---
 
-#### TASK-018-007: Página de Matriz
+#### TASK-018-007: Page of Matriz
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Visualização matricial
-- Exportação
+- Visualization matricial
+- Export
 
 ---
 
-##  Critérios de Aceite do Épico
+##  Acceptance Crihaveia of the Épico
 
 - [ ] Perfis customizáveis
-- [ ] Interface intuitiva
-- [ ] Permissões granulares
-- [ ] Auditoria completa
-- [ ] Múltiplos perfis por usuário
-- [ ] Testes ≥80%
+- [ ] Inhaveface intuitiva
+- [ ] Permissions granulares
+- [ ] Auditoria withpleta
+- [ ] Multiple perfis por ube
+- [ ] Tests ≥80%
 
 ---
 
 ##  Timeline Sugerido
 
-**Total estimado:** ~22 horas (~1 semana)
+**Total estimado:** ~22 hours (~1 week)

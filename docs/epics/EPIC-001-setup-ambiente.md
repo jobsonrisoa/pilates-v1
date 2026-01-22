@@ -1,152 +1,152 @@
-# EPIC-001: Setup do Ambiente de Desenvolvimento
+# EPIC-001: Setup of the Development Environment
 
->  **User Stories detalhadas:** [EPIC-001/](./EPIC-001/)  
-> Cada US possui prompts AI-powered com Chain of Thought e TDD workflow
+>  **Ube Stories detailed:** [EPIC-001/](./EPIC-001/)  
+> Each US has AI-powered prompts with Chain of Thought and TDD workflow
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                                |
+| Field            | Value                                |
 | ---------------- | ------------------------------------ |
 | **ID**           | EPIC-001                             |
-| **Título**       | Setup do Ambiente de Desenvolvimento |
-| **Fase**         | 1 - MVP                              |
-| **Prioridade**   | Critical                           |
-| **Estimativa**   | 2 semanas                            |
-| **Dependências** | Nenhuma (épico inicial)              |
+| **Title**       | Setup of the Development Environment |
+| **Phase**         | 1 - MVP                              |
+| **Priority**   | Critical                           |
+| **Estimate**   | 2 weeks                            |
+| **Dependencies** | None (initial epic)              |
 | **Status**       | Backlog                           |
 
 ---
 
-##  Descrição
+##  Description
 
-Configurar toda a infraestrutura de desenvolvimento do projeto, incluindo:
+Configurar all a infrastructure of shouldlopment of the project, including:
 
-- Estrutura de monorepo com workspaces
-- Backend NestJS com arquitetura DDD
-- Frontend Next.js 14 com App Router
-- Banco de dados MySQL + Prisma
-- Ambiente 100% containerizado com Docker
-- Pipeline de CI/CD com GitHub Actions
-- Configuração de testes (unit, integração, e2e)
-- Ferramentas de qualidade (ESLint, Prettier, Husky)
+- Monorepo structure with workspaces
+- Backend NestJS with DDD architecture
+- Frontend Next.js 14 with App Rouhave
+- Database MySQL + Prisma
+- Ambiente 100% accountinerized with Docker
+- Pipeline of CI/CD with GitHub Actions
+- Configuration of tests (unit, integration, e2e)
+- Tools of quality (ESLint, Prettier, Husky)
 
-**Princípio fundamental:** Nenhuma dependência deve ser instalada localmente. Todo o ambiente deve funcionar exclusivamente via Docker.
-
----
-
-##  Objetivos
-
-1. Criar estrutura base do projeto seguindo padrões de DDD
-2. Configurar ambiente Docker completo para desenvolvimento
-3. Estabelecer pipeline de CI/CD funcional
-4. Configurar ferramentas de qualidade de código
-5. Criar estrutura de testes com coverage mínimo de 80%
-6. Documentar setup e onboarding de desenvolvedores
+**Fundamental principle:** No dependency should be installed locally. The entire environment should work exclusively via Docker.
 
 ---
 
-##  User Stories
+##  Objectives
 
-### US-001-001: Setup Inicial do Projeto
+1. Create base structure of the project following standards of DDD
+2. Configure environment Docker withplete for shouldlopment
+3. Establish pipeline of CI/CD functional
+4. Configurar tools of quality of code
+5. Create estrutura of tests with coverage minimum of 80%
+6. Document setup and onboarding of shouldlopers
+
+---
+
+##  Ube Stories
+
+### US-001-001: Initial Project Setup
 
 **Como** desenvolvedor  
-**Quero** clonar o repositório e subir o ambiente com um único comando  
-**Para** começar a desenvolver rapidamente sem configurações manuais
+**Quero** clonar o repository and subir o environment with a single withando  
+**Para** start a desenvolver rapidamente sem settings manuais
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] `docker compose up` inicia todo o ambiente
-- [ ] Hot reload funcionando para backend e frontend
-- [ ] Banco de dados acessível e com migrations aplicadas
-- [ ] Documentação de onboarding completa
+- [ ] `docker withpose up` inicia entire o environment
+- [ ] Hot reload funcionando for backendendendend and frontendendendend
+- [ ] Database accessible and with migrations aplieachs
+- [ ] Documentation of onboarding withpleta
 
 ---
 
-### US-001-002: Estrutura do Backend
+### US-001-002: Backend Structure
 
-**Como** desenvolvedor backend  
-**Quero** uma estrutura de projeto NestJS organizada com DDD  
-**Para** manter o código organizado e escalável
+**Como** desenvolvedor backendendendend  
+**Quero** a estrutura of project NestJS organizada with DDD  
+**Para** maintain o code organizado and escalável
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Estrutura de módulos seguindo bounded contexts
+- [ ] Structure of modules seguindo bounded contexts
 - [ ] Camadas separadas (domain, application, infrastructure)
-- [ ] Configuração de Prisma com MySQL
+- [ ] Configuration of Prisma with MySQL
 - [ ] Health checks implementados
-- [ ] Swagger/OpenAPI configurado
+- [ ] Swagger/OpenAPI configured
 
 ---
 
-### US-001-003: Estrutura do Frontend
+### US-001-003: Frontend Structure
 
-**Como** desenvolvedor frontend  
-**Quero** uma estrutura Next.js 14 com componentes base  
-**Para** desenvolver interfaces consistentes
+**Como** desenvolvedor frontendendendend  
+**Quero** a estrutura Next.js 14 with withponentes base  
+**Para** desenvolver inhavefaces consistentes
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] App Router configurado
-- [ ] TailwindCSS + shadcn/ui instalados
-- [ ] Estrutura de pastas organizada
-- [ ] React Query configurado
-- [ ] Zustand para estado global
-- [ ] Componentes base (Button, Input, Form, etc.)
+- [ ] App Rouhave configured
+- [ ] TailwindCSS + shadcn/ui instasides
+- [ ] Structure of folders organizada
+- [ ] React Query configured
+- [ ] Zustand for estado global
+- [ ] Components base (Button, Input, Form, etc.)
 
 ---
 
-### US-001-004: Pipeline de CI/CD
+### US-001-004: Pipeline of CI/CD
 
 **Como** desenvolvedor  
-**Quero** que meu código seja validado automaticamente  
-**Para** garantir qualidade antes do merge
+**Quero** that meu code seja validado automaticamente  
+**Para** garantir quality before of the merge
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Lint e type check em cada PR
-- [ ] Testes unitários com coverage ≥80%
-- [ ] Testes de integração passando
-- [ ] Build de Docker funcionando
-- [ ] Deploy automático para staging
+- [ ] Lint and type check in each PR
+- [ ] Unit tests with coverage ≥80%
+- [ ] Integration tests passando
+- [ ] Build of Docker funcionando
+- [ ] Deploy automatic for staging
 
 ---
 
-### US-001-005: Ambiente de Testes
+### US-001-005: Ambiente of Tests
 
 **Como** desenvolvedor  
-**Quero** executar testes facilmente  
-**Para** seguir a metodologia TDD
+**Quero** executar tests facilmente  
+**Para** seguir a meentirelogia TDD
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Jest configurado para backend e frontend
-- [ ] Coverage thresholds configurados (80%)
-- [ ] Containers de teste isolados
+- [ ] Jest configured for backendendendend and frontendendendend
+- [ ] Coverage thresholds configureds (80%)
+- [ ] Containers of test isosides
 - [ ] Watch mode funcionando
-- [ ] Testes podem ser executados via Docker
+- [ ] Tests can be executeds via Docker
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
-### Estrutura do Projeto
+### Project Structure
 
-#### TASK-001-001: Criar estrutura de monorepo
+#### TASK-001-001: Create estrutura of monorepo
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 ```
 /
 ├── apps/
 │   ├── api/           # NestJS Backend
 │   └── web/           # Next.js Frontend
-├── packages/          # Shared packages (futuro)
-├── docker/            # Configurações Docker
-├── docs/              # Documentação
+├── packages/          # Shared packages (future)
+├── docker/            # Settings Docker
+├── docs/              # Documentation
 ├── .github/           # GitHub Actions
-├── docker-compose.yml
-├── docker-compose.dev.yml
-├── docker-compose.test.yml
+├── docker-withpose.yml
+├── docker-withpose.dev.yml
+├── docker-withpose.test.yml
 ├── pnpm-workspace.yaml
 ├── package.json
 └── README.md
@@ -154,26 +154,26 @@ Configurar toda a infraestrutura de desenvolvimento do projeto, incluindo:
 
 **Definition of Done:**
 
-- [ ] Estrutura de pastas criada
-- [ ] pnpm workspace configurado
-- [ ] Scripts npm/pnpm no root
+- [ ] Structure of folders criada
+- [ ] pnpm workspace configured
+- [ ] Scripts npm/pnpm in the root
 
 ---
 
 #### TASK-001-002: Setup NestJS Backend
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-**Escopo:**
+**Scope:**
 
-- Criar projeto NestJS com TypeScript
+- Create project NestJS with TypeScript
 - Configurar estrutura DDD
 - Setup Prisma + MySQL
-- Configurar variáveis de ambiente
-- Implementar health checks
+- Configurar variables of environment
+- Implement health checks
 - Configurar Swagger
 
-**Estrutura:**
+**Structure:**
 
 ```
 apps/api/
@@ -187,8 +187,8 @@ apps/api/
 │   │   │   └── domain-event.base.ts
 │   │   ├── application/
 │   │   └── infrastructure/
-│   │       ├── database/
-│   │       │   └── prisma.service.ts
+│   │       ├── datebase/
+│   │       │   └── prisma.bevice.ts
 │   │       └── http/
 │   ├── config/
 │   ├── app.module.ts
@@ -204,28 +204,28 @@ apps/api/
 
 **Definition of Done:**
 
-- [ ] NestJS rodando em container
-- [ ] Prisma conectando no MySQL
+- [ ] NestJS rodando in accountiner
+- [ ] Prisma conectando in the MySQL
 - [ ] `/health` endpoint funcionando
-- [ ] `/api` (Swagger) acessível
+- [ ] `/api` (Swagger) accessible
 - [ ] Hot reload funcionando
 
 ---
 
 #### TASK-001-003: Setup Next.js Frontend
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-**Escopo:**
+**Scope:**
 
-- Criar projeto Next.js 14 com App Router
+- Create project Next.js 14 with App Rouhave
 - Configurar TailwindCSS
-- Instalar e configurar shadcn/ui
+- Instalar and configurar shadcn/ui
 - Setup React Query
 - Setup Zustand
 - Configurar react-hook-form + zod
 
-**Estrutura:**
+**Structure:**
 
 ```
 apps/web/
@@ -237,8 +237,8 @@ apps/web/
 │   ├── layout.tsx
 │   ├── page.tsx
 │   └── globals.css
-├── components/
-│   ├── ui/           # shadcn components
+├── withponents/
+│   ├── ui/           # shadcn withponents
 │   └── shared/
 ├── lib/
 │   ├── api.ts
@@ -257,120 +257,120 @@ apps/web/
 
 **Definition of Done:**
 
-- [ ] Next.js rodando em container
+- [ ] Next.js rodando in accountiner
 - [ ] TailwindCSS funcionando
-- [ ] Componentes shadcn instalados
-- [ ] Página de login básica (placeholder)
+- [ ] Components shadcn instasides
+- [ ] Page of login básica (placeholder)
 - [ ] Hot reload funcionando
 
 ---
 
 #### TASK-001-004: Configurar Docker Compose
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-**Arquivos a criar:**
+**Files a create:**
 
-1. `docker-compose.yml` - Ambiente de desenvolvimento principal
-2. `docker-compose.test.yml` - Ambiente de testes isolado
-3. `docker/` - Configurações auxiliares
+1. `docker-withpose.yml` - Development environment main
+2. `docker-withpose.test.yml` - Ambiente of tests isoside
+3. `docker/` - Settings auxiliares
 
-**Serviços:**
+**Services:**
 
 - `api` - NestJS Backend
 - `web` - Next.js Frontend
-- `mysql` - Banco de dados
-- `redis` - Cache e sessions
+- `mysql` - Database
+- `redis` - Cache and sessions
 - `mailhog` - Email testing
-- `minio` - Storage local (S3-compatible)
+- `minio` - Storage local (S3-withpatible)
 
 **Definition of Done:**
 
-- [ ] `docker compose up` sobe todo ambiente
-- [ ] Volumes persistentes configurados
-- [ ] Health checks em todos os serviços
-- [ ] Network isolada
-- [ ] Hot reload funcionando em api e web
+- [ ] `docker withpose up` sobe entire environment
+- [ ] Volumes persistentes configureds
+- [ ] Health checks in entires os bevices
+- [ ] Network isolated
+- [ ] Hot reload funcionando in api and web
 - [ ] `.env.example` documentado
 
 ---
 
-#### TASK-001-005: Configurar ESLint e Prettier
+#### TASK-001-005: Configurar ESLint and Prettier
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-**Escopo:**
+**Scope:**
 
-- ESLint com regras para TypeScript
-- Prettier para formatação
-- Integração ESLint + Prettier
-- Regras específicas para NestJS e React
+- ESLint with rules for TypeScript
+- Prettier for formtting
+- Integration ESLint + Prettier
+- Regras specific for NestJS and React
 - EditorConfig
 
-**Configurações:**
+**Settings:**
 
 ```
 /.eslintrc.js          # Config raiz
-/apps/api/.eslintrc.js # Config backend
-/apps/web/.eslintrc.js # Config frontend
+/apps/api/.eslintrc.js # Config backendendendend
+/apps/web/.eslintrc.js # Config frontendendendend
 /.prettierrc
 /.editorconfig
 ```
 
 **Definition of Done:**
 
-- [ ] `pnpm lint` funciona em todo projeto
-- [ ] `pnpm format` formata código
+- [ ] `pnpm lint` funciona in entire project
+- [ ] `pnpm formt` formta code
 - [ ] Sem conflitos ESLint/Prettier
-- [ ] VS Code settings configurados
+- [ ] VS Code settings configureds
 
 ---
 
-#### TASK-001-006: Configurar Husky e Commitlint
+#### TASK-001-006: Configurar Husky and Commitlint
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-**Escopo:**
+**Scope:**
 
-- Husky para git hooks
-- lint-staged para validação pré-commit
-- Commitlint para mensagens de commit
-- Conventional commits
+- Husky for git hooks
+- lint-staged for validation pre-withmit
+- Commitlint for messages of withmit
+- Conventional withmits
 
 **Hooks:**
 
 ```
-pre-commit:
-  - lint-staged (lint + format + typecheck)
+pre-withmit:
+  - lint-staged (lint + formt + typecheck)
 
-commit-msg:
-  - commitlint (conventional commits)
+withmit-msg:
+  - withmitlint (conventional withmits)
 
 pre-push:
-  - pnpm test (apenas testes unitários rápidos)
+  - pnpm test (only tests unit fasts)
 ```
 
 **Definition of Done:**
 
-- [ ] Commits seguem conventional commits
-- [ ] Lint roda antes de cada commit
-- [ ] Testes rodam antes de push
+- [ ] Commits seguem conventional withmits
+- [ ] Lint roda before of each withmit
+- [ ] Tests rodam before of push
 
 ---
 
 #### TASK-001-007: Configurar Jest (Backend)
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-**Escopo:**
+**Scope:**
 
-- Jest configurado para NestJS
+- Jest configured for NestJS
 - Coverage thresholds (80%)
-- Mocks para Prisma
-- Setup files para testes
+- Mocks for Prisma
+- Setup files for tests
 - Scripts npm
 
-**Arquivos:**
+**Files:**
 
 ```
 apps/api/
@@ -399,26 +399,26 @@ apps/api/
 
 **Definition of Done:**
 
-- [ ] `pnpm --filter api test` funciona
+- [ ] `pnpm --filhave api test` funciona
 - [ ] Coverage report gerado
-- [ ] Threshold de 80% configurado
+- [ ] Threshold of 80% configured
 - [ ] Watch mode funcionando
-- [ ] Teste de exemplo passando
+- [ ] Teste of example passando
 
 ---
 
 #### TASK-001-008: Configurar Jest (Frontend)
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-**Escopo:**
+**Scope:**
 
 - Jest + Testing Library
 - Coverage thresholds (80%)
-- MSW para mocking de API
+- MSW for mocking of API
 - Setup files
 
-**Arquivos:**
+**Files:**
 
 ```
 apps/web/
@@ -427,31 +427,31 @@ apps/web/
 ├── test/
 │   ├── setup.ts
 │   └── mocks/
-│       ├── server.ts
+│       ├── bever.ts
 │       └── handlers.ts
 ```
 
 **Definition of Done:**
 
-- [ ] `pnpm --filter web test` funciona
-- [ ] Testing Library configurado
-- [ ] MSW configurado
-- [ ] Teste de exemplo passando
+- [ ] `pnpm --filhave web test` funciona
+- [ ] Testing Library configured
+- [ ] MSW configured
+- [ ] Teste of example passando
 
 ---
 
 #### TASK-001-009: Configurar Playwright (E2E)
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-**Escopo:**
+**Scope:**
 
-- Playwright instalado
-- Configuração base
-- Testes de exemplo
+- Playwright instaside
+- Configuration base
+- Tests of example
 - Scripts npm
 
-**Arquivos:**
+**Files:**
 
 ```
 apps/web/
@@ -463,229 +463,229 @@ apps/web/
 
 **Definition of Done:**
 
-- [ ] `pnpm --filter web test:e2e` funciona
-- [ ] Múltiplos browsers configurados
-- [ ] Screenshots em falhas
+- [ ] `pnpm --filhave web test:e2e` funciona
+- [ ] Multiple browbes configureds
+- [ ] Screenshots in failures
 - [ ] Report HTML gerado
 
 ---
 
 #### TASK-001-010: Configurar GitHub Actions
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
 **Workflows:**
 
-1. **ci.yml** - Pipeline principal
+1. **ci.yml** - Pipeline main
    - Lint + Type Check
    - Unit Tests (paralelo)
    - Integration Tests
    - Build Docker
    - Coverage report
 
-2. **pr-check.yml** - Validação de PRs
+2. **pr-check.yml** - Validation of PRs
    - Size check
    - Label check
    - Coverage diff
 
 **Definition of Done:**
 
-- [ ] CI roda em cada PR
-- [ ] Testes paralelos funcionando
-- [ ] Coverage enviado para Codecov
-- [ ] Build de imagens funcionando
-- [ ] Status checks obrigatórios
+- [ ] CI roda in each PR
+- [ ] Tests paralelos funcionando
+- [ ] Coverage enviado for Codecov
+- [ ] Build of images funcionando
+- [ ] Status checks requireds
 
 ---
 
-#### TASK-001-011: Configurar docker-compose.test.yml
+#### TASK-001-011: Configurar docker-withpose.test.yml
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-**Escopo:**
+**Scope:**
 
-- MySQL de teste em tmpfs
-- Redis de teste em tmpfs
-- Isolamento de rede
-- Scripts de setup/teardown
+- MySQL of test in tmpfs
+- Redis of test in tmpfs
+- Isolation of network
+- Scripts of setup/teardown
 
 **Definition of Done:**
 
-- [ ] Containers de teste sobem rapidamente
-- [ ] Dados em memória (tmpfs)
-- [ ] Isolamento de ambiente dev
-- [ ] Cleanup automático
+- [ ] Containers of test sobem rapidamente
+- [ ] Givens in memory (tmpfs)
+- [ ] Isolation of environment dev
+- [ ] Cleanup automatic
 
 ---
 
-#### TASK-001-012: Criar Makefile
+#### TASK-001-012: Create Makefile
 
-**Estimativa:** 1h
+**Estimate:** 1h
 
 **Comandos:**
 
 ```makefile
-dev          # docker compose up
-dev-build    # docker compose up --build
-down         # docker compose down
-clean        # docker compose down -v
-logs         # docker compose logs -f
-shell-api    # docker compose exec api sh
-shell-web    # docker compose exec web sh
-shell-mysql  # acesso ao MySQL CLI
-test         # rodar todos os testes
-test-watch   # testes em watch mode
-lint         # rodar linter
+dev          # docker withpose up
+dev-build    # docker withpose up --build
+down         # docker withpose down
+clean        # docker withpose down -v
+logs         # docker withpose logs -f
+shell-api    # docker withpose exec api sh
+shell-web    # docker withpose exec web sh
+shell-mysql  # access to MySQL CLI
+test         # rodar entires os tests
+test-watch   # tests in watch mode
+lint         # rodar linhave
 migrate      # rodar migrations
-seed         # popular banco
+seed         # popular datebase
 ```
 
 **Definition of Done:**
 
-- [ ] Todos os comandos funcionando
-- [ ] `make help` documenta comandos
+- [ ] Todos os withmands funcionando
+- [ ] `make help` documenta withmands
 - [ ] README referencia Makefile
 
 ---
 
-#### TASK-001-013: Documentação de Onboarding
+#### TASK-001-013: Documentation of Onboarding
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 **Conteúdo:**
 
-- README principal do projeto
-- Requisitos (Docker)
+- README main of the project
+- Requirements (Docker)
 - Quick start
 - Arquitetura overview
-- Convenções de código
-- Fluxo de desenvolvimento
+- Convenções of code
+- Fluxo of shouldlopment
 - Troubleshooting
 
 **Definition of Done:**
 
-- [ ] README completo
-- [ ] Quick start em menos de 5 comandos
-- [ ] Screenshots das interfaces
-- [ ] FAQ com problemas comuns
+- [ ] README withplete
+- [ ] Quick start in less of 5 withmands
+- [ ] Screenshots of the inhavefaces
+- [ ] FAQ with problemas withuns
 
 ---
 
-#### TASK-001-014: Seed de Dados de Desenvolvimento
+#### TASK-001-014: Seed of Givens of Development
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-**Escopo:**
+**Scope:**
 
-- Criar script de seed com Prisma
-- Dados de exemplo realistas
-- Usuário admin padrão
-- Alunos, professores, aulas de exemplo
+- Create script of seed with Prisma
+- Givens of example realists
+- Ube admin standard
+- Students, instructores, classs of example
 
 **Definition of Done:**
 
-- [ ] `pnpm --filter api prisma db seed` funciona
-- [ ] Admin user criado (admin@test.com / password123)
-- [ ] Dados de exemplo variados
-- [ ] Idempotente (pode rodar múltiplas vezes)
+- [ ] `pnpm --filhave api prisma db seed` funciona
+- [ ] Admin ube criado (admin@test.with / password123)
+- [ ] Givens of example variados
+- [ ] Idempotente (can rodar multiple times)
 
 ---
 
 #### TASK-001-015: Configurar Logging (Pino)
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-**Escopo:**
+**Scope:**
 
-- Pino configurado no NestJS
-- Logs estruturados (JSON em prod)
-- Pretty print em dev
-- Redação de dados sensíveis
+- Pino configured in the NestJS
+- Logs structureds (JSON in prod)
+- Pretty print in dev
+- Redaction of sensitive date
 
 **Definition of Done:**
 
-- [ ] Logs estruturados funcionando
+- [ ] Logs structureds funcionando
 - [ ] Request/response logging
-- [ ] Dados sensíveis redactados
-- [ ] Configuração via env vars
+- [ ] Givens sensitive redactados
+- [ ] Configuration via env vars
 
 ---
 
-#### TASK-001-016: Configurar Métricas (Prometheus)
+#### TASK-001-016: Configurar Metrics (Prometheus)
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-**Escopo:**
+**Scope:**
 
-- Endpoint `/metrics` no NestJS
-- Métricas HTTP padrão
+- Endpoint `/metrics` in the NestJS
+- Metrics HTTP standard
 - Health indicators
 
 **Definition of Done:**
 
-- [ ] `/metrics` retorna métricas Prometheus
-- [ ] Métricas de request duration
-- [ ] Métricas de request count
+- [ ] `/metrics` retorna metrics Prometheus
+- [ ] Metrics of request duration
+- [ ] Metrics of request count
 
 ---
 
-##  Critérios de Aceite do Épico
+##  Acceptance Crihaveia of the Épico
 
-### Ambiente de Desenvolvimento
+### Development Environment
 
-- [ ] `docker compose up` inicia todo ambiente em < 5 min
-- [ ] Hot reload funciona para API e Web
-- [ ] Banco de dados acessível e com migrations
-- [ ] Swagger acessível em `/api`
-- [ ] Frontend acessível em `http://localhost:3000`
-- [ ] API acessível em `http://localhost:3001`
+- [ ] `docker withpose up` inicia entire environment in < 5 min
+- [ ] Hot reload funciona for API and Web
+- [ ] Database accessible and with migrations
+- [ ] Swagger accessible in `/api`
+- [ ] Frontend accessible in `http://localhost:3000`
+- [ ] API accessible in `http://localhost:3001`
 
-### Qualidade de Código
+### Quality of Code
 
-- [ ] ESLint + Prettier configurados
+- [ ] ESLint + Prettier configureds
 - [ ] Husky + lint-staged funcionando
-- [ ] Conventional commits enforçados
+- [ ] Conventional withmits enforçados
 
-### Testes
+### Tests
 
-- [ ] Testes unitários configurados (backend e frontend)
-- [ ] Coverage threshold de 80%
-- [ ] Testes de integração com containers isolados
-- [ ] Playwright configurado para E2E
+- [ ] Unit tests configureds (backendendendend and frontendendendend)
+- [ ] Coverage threshold of 80%
+- [ ] Integration tests with accountiners isosides
+- [ ] Playwright configured for E2E
 
 ### CI/CD
 
-- [ ] Pipeline roda em cada PR
-- [ ] Testes paralelos
-- [ ] Build de Docker funcional
-- [ ] Status checks obrigatórios
+- [ ] Pipeline roda in each PR
+- [ ] Tests paralelos
+- [ ] Build of Docker functional
+- [ ] Status checks requireds
 
-### Documentação
+### Documentation
 
-- [ ] README com quick start
-- [ ] Makefile com comandos úteis
+- [ ] README with quick start
+- [ ] Makefile with withmands úteis
 - [ ] Arquitetura documentada
 
 ---
 
-##  Definition of Done do Épico
+##  Definition of Done of the Épico
 
-- [ ] Todas as tasks concluídas
-- [ ] Zero erros de lint
-- [ ] Testes passando
+- [ ] Todas as tasks completed
+- [ ] Zero errorrs of lint
+- [ ] Tests passando
 - [ ] Coverage ≥ 80%
 - [ ] Code review aprovado
-- [ ] Documentação completa
-- [ ] Ambiente funcional para próximo épico
+- [ ] Documentation withpleta
+- [ ] Ambiente functional for next epic
 
 ---
 
-## 📎 Referências
+## 📎 References
 
-- [ADR-002: Stack Tecnológica](../architecture/adrs/ADR-002-stack-tecnologica.md)
+- [ADR-002: Technology Stack](../architecture/adrs/ADR-002-stack-tecnologica.md)
 - [ADR-006: CI/CD](../architecture/adrs/ADR-006-ci-cd.md)
-- [ADR-007: Containerização](../architecture/adrs/ADR-007-containerizacao.md)
-- [ADR-009: Estratégia de Testes](../architecture/adrs/ADR-009-estrategia-testes.md)
+- [ADR-007: Containerization](../architecture/adrs/ADR-007-accountinerizacto.md)
+- [ADR-009: Testing Strategy](../architecture/adrs/ADR-009-estrategia-tests.md)
 
 ---
 
@@ -693,7 +693,7 @@ seed         # popular banco
 
 ```
 Semana 1:
-├── TASK-001-001: Estrutura monorepo (2h)
+├── TASK-001-001: Structure monorepo (2h)
 ├── TASK-001-002: Setup NestJS (4h)
 ├── TASK-001-003: Setup Next.js (4h)
 ├── TASK-001-004: Docker Compose (4h)
@@ -706,11 +706,11 @@ Semana 2:
 ├── TASK-001-008: Jest Frontend (3h)
 ├── TASK-001-009: Playwright (2h)
 ├── TASK-001-010: GitHub Actions (4h)
-├── TASK-001-011: docker-compose.test (2h)
-├── TASK-001-013: Documentação (2h)
+├── TASK-001-011: docker-withpose.test (2h)
+├── TASK-001-013: Documentation (2h)
 ├── TASK-001-014: Seed (2h)
 ├── TASK-001-015: Logging (2h)
-└── TASK-001-016: Métricas (2h)
+└── TASK-001-016: Metrics (2h)
 ```
 
-**Total estimado:** ~40 horas (~2 semanas)
+**Total estimado:** ~40 hours (~2 weeks)

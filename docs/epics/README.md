@@ -1,55 +1,55 @@
-# Épicos do Projeto
+# Epics of the Projeto
 
->  **AI-Powered Development:** Cada épico possui User Stories com prompts otimizados  
-> para desenvolvimento assistido por AI usando **Chain of Thought** e **Tree of Thought**
+>  **AI-Powered Development:** Cada epic possui Ube Stories with prompts otimizados  
+> for shouldlopment assistido por AI usando **Chain of Thought** and **Tree of Thought**
 
-## Sistema de Gestão para Academia de Pilates e Fisioterapia
+## Management Syshas for Pilates and Physiotherapy Studio
 
 ---
 
-##  Visão Geral dos Épicos
+##  Overview of the Epics
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
 │                         ROADMAP DE ÉPICOS                            │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
-│  FASE 1 - MVP (8-10 semanas)                                        │
+│  FASE 1 - MVP (8-10 weeks)                                        │
 │  ┌─────────────────────────────────────────────────────────────┐   │
-│  │ EPIC-001: Setup Ambiente de Desenvolvimento                  │   │
-│  │ EPIC-002: Autenticação e Autorização                         │   │
-│  │ EPIC-003: Gestão de Alunos                                   │   │
-│  │ EPIC-004: Gestão de Professores                              │   │
-│  │ EPIC-005: Gestão de Aulas e Horários                         │   │
-│  │ EPIC-006: Agenda e Agendamento                               │   │
-│  │ EPIC-007: Matrículas Básicas                                 │   │
+│  │ EPIC-001: Setup Development Environment                  │   │
+│  │ EPIC-002: Authentication and Authorization                         │   │
+│  │ EPIC-003: Management of Students                                   │   │
+│  │ EPIC-004: Management of Instructores                              │   │
+│  │ EPIC-005: Management of Classes and Schedules                         │   │
+│  │ EPIC-006: Schedule and Schedulemento                               │   │
+│  │ EPIC-007: Enrollments Basic                                 │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 │                                                                     │
-│  FASE 2 - FINANCEIRO (6-8 semanas)                                  │
+│  FASE 2 - FINANCEIRO (6-8 weeks)                                  │
 │  ┌─────────────────────────────────────────────────────────────┐   │
-│  │ EPIC-008: Sistema de Planos e Preços                         │   │
-│  │ EPIC-009: Integração Bancária Sicoob                         │   │
-│  │ EPIC-010: Controle de Pagamentos                             │   │
-│  │ EPIC-011: Comissões de Professores                           │   │
-│  │ EPIC-012: Relatórios Financeiros                             │   │
+│  │ EPIC-008: Syshas of Plans and Prices                         │   │
+│  │ EPIC-009: Banking Integration Sicoob                         │   │
+│  │ EPIC-010: Payment Control                             │   │
+│  │ EPIC-011: Commissions of Instructores                           │   │
+│  │ EPIC-012: Reports Financials                             │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 │                                                                     │
-│  FASE 3 - OPERACIONAL (6-8 semanas)                                 │
+│  FASE 3 - OPERACIONAL (6-8 weeks)                                 │
 │  ┌─────────────────────────────────────────────────────────────┐   │
-│  │ EPIC-013: Sistema de Reposições                              │   │
-│  │ EPIC-014: Contratos Digitais                                 │   │
-│  │ EPIC-015: Gestão de Estoque                                  │   │
-│  │ EPIC-016: Relatórios Operacionais                            │   │
-│  │ EPIC-017: Upload de Documentos                               │   │
+│  │ EPIC-013: Syshas of Reschedulings                              │   │
+│  │ EPIC-014: Contracts Digitais                                 │   │
+│  │ EPIC-015: Management of Inventory                                  │   │
+│  │ EPIC-016: Reports Operacionais                            │   │
+│  │ EPIC-017: Upload of Documentos                               │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 │                                                                     │
-│  FASE 4 - REFINAMENTO (4-6 semanas)                                 │
+│  FASE 4 - REFINAMENTO (4-6 weeks)                                 │
 │  ┌─────────────────────────────────────────────────────────────┐   │
-│  │ EPIC-018: Permissões Granulares                              │   │
-│  │ EPIC-019: Dashboard Analítico                                │   │
-│  │ EPIC-020: Otimizações de Performance                         │   │
-│  │ EPIC-021: Testes E2E e Performance                           │   │
-│  │ EPIC-022: Documentação e Deploy Produção                     │   │
+│  │ EPIC-018: Permissions Granulares                              │   │
+│  │ EPIC-019: Dashboard Analytical                                │   │
+│  │ EPIC-020: Optimizations of Performnce                         │   │
+│  │ EPIC-021: Tests E2E and Performnce                           │   │
+│  │ EPIC-022: Documentation and Deploy Production                     │   │
 │  └─────────────────────────────────────────────────────────────┘   │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
@@ -57,179 +57,179 @@
 
 ---
 
-##  Lista de Épicos
+##  Lista of Epics
 
-### Fase 1 - MVP
+### Phase 1 - MVP
 
-| ID                                           | Épico                                                     | Prioridade | Estimativa  | Status     |
+| ID                                           | Épico                                                     | Priority | Estimate  | Status     |
 | -------------------------------------------- | --------------------------------------------------------- | ---------- | ----------- | ---------- |
-| [EPIC-001](./EPIC-001-setup-ambiente.md)     | Setup Ambiente de Desenvolvimento [(10 USs)](./EPIC-001/) | Critical | 2 semanas   | Backlog |
-| [EPIC-002](./EPIC-002-autenticacao.md)       | Autenticação e Autorização                                | Critical | 2 semanas   | Backlog |
-| [EPIC-003](./EPIC-003-gestao-alunos.md)      | Gestão de Alunos                                          | Critical | 1.5 semanas | Backlog |
-| [EPIC-004](./EPIC-004-gestao-professores.md) | Gestão de Professores                                     | High    | 1 semana    | Backlog |
-| [EPIC-005](./EPIC-005-gestao-aulas.md)       | Gestão de Aulas e Horários                                | High    | 1.5 semanas | Backlog |
-| [EPIC-006](./EPIC-006-agenda.md)             | Agenda e Agendamento                                      | High    | 1.5 semanas | Backlog |
-| [EPIC-007](./EPIC-007-matriculas.md)         | Matrículas Básicas                                        | High    | 1 semana    | Backlog |
+| [EPIC-001](./EPIC-001-setup-environment.md)     | Setup Development Environment [(10 USs)](./EPIC-001/) | Critical | 2 weeks   | Backlog |
+| [EPIC-002](./EPIC-002-autenticacto.md)       | Authentication and Authorization                                | Critical | 2 weeks   | Backlog |
+| [EPIC-003](./EPIC-003-gestto-students.md)      | Management of Students                                          | Critical | 1.5 weeks | Backlog |
+| [EPIC-004](./EPIC-004-gestto-instructores.md) | Management of Instructores                                     | High    | 1 week    | Backlog |
+| [EPIC-005](./EPIC-005-gestto-classs.md)       | Management of Classes and Schedules                                | High    | 1.5 weeks | Backlog |
+| [EPIC-006](./EPIC-006-schedule.md)             | Schedule and Schedulemento                                      | High    | 1.5 weeks | Backlog |
+| [EPIC-007](./EPIC-007-matriculas.md)         | Enrollments Basic                                        | High    | 1 week    | Backlog |
 
-### Fase 2 - Financeiro
+### Phase 2 - Financial
 
-| ID                                               | Épico                      | Prioridade | Estimativa  | Status     |
+| ID                                               | Épico                      | Priority | Estimate  | Status     |
 | ------------------------------------------------ | -------------------------- | ---------- | ----------- | ---------- |
-| [EPIC-008](./EPIC-008-planos-precos.md)          | Sistema de Planos e Preços | Critical | 1 semana    | Backlog |
-| [EPIC-009](./EPIC-009-integracao-sicoob.md)      | Integração Bancária Sicoob | Critical | 2 semanas   | Backlog |
-| [EPIC-010](./EPIC-010-pagamentos.md)             | Controle de Pagamentos     | Critical | 1.5 semanas | Backlog |
-| [EPIC-011](./EPIC-011-comissoes.md)              | Comissões de Professores   | 🟡 Média   | 1 semana    | Backlog |
-| [EPIC-012](./EPIC-012-relatorios-financeiros.md) | Relatórios Financeiros     | High    | 1 semana    | Backlog |
+| [EPIC-008](./EPIC-008-plans-precos.md)          | Syshas of Plans and Prices | Critical | 1 week    | Backlog |
+| [EPIC-009](./EPIC-009-integracto-sicoob.md)      | Banking Integration Sicoob | Critical | 2 weeks   | Backlog |
+| [EPIC-010](./EPIC-010-payments.md)             | Payment Control     | Critical | 1.5 weeks | Backlog |
+| [EPIC-011](./EPIC-011-withissoes.md)              | Commissions of Instructores   | 🟡 Méday   | 1 week    | Backlog |
+| [EPIC-012](./EPIC-012-relatorios-financial.md) | Reports Financials     | High    | 1 week    | Backlog |
 
-### Fase 3 - Operacional
+### Phase 3 - Operacional
 
-| ID                                                | Épico                   | Prioridade | Estimativa  | Status     |
+| ID                                                | Épico                   | Priority | Estimate  | Status     |
 | ------------------------------------------------- | ----------------------- | ---------- | ----------- | ---------- |
-| [EPIC-013](./EPIC-013-reposicoes.md)              | Sistema de Reposições   | High    | 1.5 semanas | Backlog |
-| [EPIC-014](./EPIC-014-contratos.md)               | Contratos Digitais      | High    | 1.5 semanas | Backlog |
-| [EPIC-015](./EPIC-015-estoque.md)                 | Gestão de Estoque       | 🟡 Média   | 1.5 semanas | Backlog |
-| [EPIC-016](./EPIC-016-relatorios-operacionais.md) | Relatórios Operacionais | 🟡 Média   | 1 semana    | Backlog |
-| [EPIC-017](./EPIC-017-upload-documentos.md)       | Upload de Documentos    | 🟡 Média   | 1 semana    | Backlog |
+| [EPIC-013](./EPIC-013-reposicoes.md)              | Syshas of Reschedulings   | High    | 1.5 weeks | Backlog |
+| [EPIC-014](./EPIC-014-contracts.md)               | Contracts Digitais      | High    | 1.5 weeks | Backlog |
+| [EPIC-015](./EPIC-015-inventory.md)                 | Management of Inventory       | 🟡 Méday   | 1.5 weeks | Backlog |
+| [EPIC-016](./EPIC-016-relatorios-operacionais.md) | Reports Operacionais | 🟡 Méday   | 1 week    | Backlog |
+| [EPIC-017](./EPIC-017-upload-documentos.md)       | Upload of Documentos    | 🟡 Méday   | 1 week    | Backlog |
 
-### Fase 4 - Refinamento
+### Phase 4 - Refinamento
 
-| ID                                              | Épico                          | Prioridade | Estimativa  | Status     |
+| ID                                              | Épico                          | Priority | Estimate  | Status     |
 | ----------------------------------------------- | ------------------------------ | ---------- | ----------- | ---------- |
-| [EPIC-018](./EPIC-018-permissoes-granulares.md) | Permissões Granulares          | 🟡 Média   | 1 semana    | Backlog |
-| [EPIC-019](./EPIC-019-dashboard.md)             | Dashboard Analítico            | 🟡 Média   | 1.5 semanas | Backlog |
-| [EPIC-020](./EPIC-020-performance.md)           | Otimizações de Performance     | 🟡 Média   | 1 semana    | Backlog |
-| [EPIC-021](./EPIC-021-testes-e2e.md)            | Testes E2E e Performance       | High    | 1 semana    | Backlog |
-| [EPIC-022](./EPIC-022-deploy-producao.md)       | Documentação e Deploy Produção | Critical | 1 semana    | Backlog |
+| [EPIC-018](./EPIC-018-permissoes-granulares.md) | Permissions Granulares          | 🟡 Méday   | 1 week    | Backlog |
+| [EPIC-019](./EPIC-019-dashboard.md)             | Dashboard Analytical            | 🟡 Méday   | 1.5 weeks | Backlog |
+| [EPIC-020](./EPIC-020-performnce.md)           | Optimizations of Performnce     | 🟡 Méday   | 1 week    | Backlog |
+| [EPIC-021](./EPIC-021-tests-e2e.md)            | Tests E2E and Performnce       | High    | 1 week    | Backlog |
+| [EPIC-022](./EPIC-022-deploy-producto.md)       | Documentation and Deploy Production | Critical | 1 week    | Backlog |
 
 ---
 
-##  Resumo por Fase
+##  Resumo por Phase
 
-| Fase                     | Épicos | Tasks    | Estimativa      |
+| Phase                     | Epics | Tasks    | Estimate      |
 | ------------------------ | ------ | -------- | --------------- |
-| **Fase 1 - MVP**         | 7      | ~81      | 10.5 semanas    |
-| **Fase 2 - Financeiro**  | 5      | ~54      | 6.5 semanas     |
-| **Fase 3 - Operacional** | 5      | ~52      | 6.5 semanas     |
-| **Fase 4 - Refinamento** | 5      | ~49      | 5.5 semanas     |
-| **TOTAL**                | **22** | **~236** | **~29 semanas** |
+| **Phase 1 - MVP**         | 7      | ~81      | 10.5 weeks    |
+| **Phase 2 - Financial**  | 5      | ~54      | 6.5 weeks     |
+| **Phase 3 - Operacional** | 5      | ~52      | 6.5 weeks     |
+| **Phase 4 - Refinamento** | 5      | ~49      | 5.5 weeks     |
+| **TOTAL**                | **22** | **~236** | **~29 weeks** |
 
 ---
 
-##  Métricas do Projeto
+##  Metrics of the Projeto
 
-### Estimativa Total
+### Estimate Total
 
-| Fase                 | Épicos | Estimativa      |
+| Phase                 | Epics | Estimate      |
 | -------------------- | ------ | --------------- |
-| Fase 1 - MVP         | 7      | 10.5 semanas    |
-| Fase 2 - Financeiro  | 5      | 6.5 semanas     |
-| Fase 3 - Operacional | 5      | 6.5 semanas     |
-| Fase 4 - Refinamento | 5      | 5.5 semanas     |
-| **Total**            | **22** | **~29 semanas** |
+| Phase 1 - MVP         | 7      | 10.5 weeks    |
+| Phase 2 - Financial  | 5      | 6.5 weeks     |
+| Phase 3 - Operacional | 5      | 6.5 weeks     |
+| Phase 4 - Refinamento | 5      | 5.5 weeks     |
+| **Total**            | **22** | **~29 weeks** |
 
-### Legenda de Status
+### Legenda of Status
 
 | Ícone | Status       |
 | ----- | ------------ |
 |     | Backlog      |
-|     | Em Progresso |
+|     | In Progress |
 | 👀    | Em Review    |
-|     | Concluído    |
+|     | Completed    |
 | ⏸️    | Pausado      |
-|     | Cancelado    |
+|     | Cancelled    |
 
-### Legenda de Prioridade
+### Legenda of Priority
 
-| Ícone | Prioridade |
+| Ícone | Priority |
 | ----- | ---------- |
-|     | Crítica    |
-|     | Alta       |
-| 🟡    | Média      |
-|     | Baixa      |
+|     | Critical    |
+|     | High       |
+| 🟡    | Méday      |
+|     | Low      |
 
 ---
 
-##  Dependências entre Épicos
+##  Dependencies between Epics
 
 ```
 EPIC-001 (Setup)
     │
     ├──► EPIC-002 (Auth)
     │        │
-    │        ├──► EPIC-003 (Alunos)
+    │        ├──► EPIC-003 (Students)
     │        │        │
-    │        │        └──► EPIC-007 (Matrículas)
+    │        │        └──► EPIC-007 (Enrollments)
     │        │                 │
-    │        │                 ├──► EPIC-008 (Planos)
+    │        │                 ├──► EPIC-008 (Plans)
     │        │                 │        │
     │        │                 │        └──► EPIC-009 (Sicoob)
     │        │                 │                 │
-    │        │                 │                 └──► EPIC-010 (Pagamentos)
+    │        │                 │                 └──► EPIC-010 (Payments)
     │        │                 │
-    │        │                 └──► EPIC-014 (Contratos)
+    │        │                 └──► EPIC-014 (Contracts)
     │        │
-    │        ├──► EPIC-004 (Professores)
+    │        ├──► EPIC-004 (Instructores)
     │        │        │
-    │        │        └──► EPIC-011 (Comissões)
+    │        │        └──► EPIC-011 (Commissions)
     │        │
-    │        └──► EPIC-005 (Aulas)
+    │        └──► EPIC-005 (Classes)
     │                 │
-    │                 ├──► EPIC-006 (Agenda)
+    │                 ├──► EPIC-006 (Schedule)
     │                 │        │
-    │                 │        └──► EPIC-013 (Reposições)
+    │                 │        └──► EPIC-013 (Reschedulings)
     │                 │
-    │                 └──► EPIC-007 (Matrículas)
+    │                 └──► EPIC-007 (Enrollments)
     │
-    └──► EPIC-017 (Upload) ──► EPIC-015 (Estoque)
+    └──► EPIC-017 (Upload) ──► EPIC-015 (Inventory)
 ```
 
 ---
 
-##  Template de Épico
+##  Template of Épico
 
-Cada épico segue o template:
+Cada epic segue o hasplate:
 
 ```markdown
-# EPIC-XXX: Título do Épico
+# EPIC-XXX: Title of the Épico
 
-## Informações Gerais
+## General Informtion
 
 - **ID:** EPIC-XXX
-- **Fase:** X
-- **Prioridade:** //🟡/
-- **Estimativa:** X semanas
-- **Dependências:** EPIC-YYY, EPIC-ZZZ
+- **Phase:** X
+- **Priority:** //🟡/
+- **Estimate:** X weeks
+- **Dependencies:** EPIC-YYY, EPIC-ZZZ
 
-## Descrição
+## Description
 
-Descrição detalhada do épico...
+Description detalhada of the epic...
 
-## Objetivos
+## Objectives
 
-- Objetivo 1
-- Objetivo 2
+- Objective 1
+- Objective 2
 
-## User Stories
+## Ube Stories
 
-- [ ] US-XXX-001: Como [persona], quero [ação] para [benefício]
+- [ ] US-XXX-001: Como [persona], quero [action] for [benefício]
 - [ ] US-XXX-002: ...
 
-## Tasks Técnicas
+## Tasks Technical
 
-- [ ] TASK-XXX-001: Descrição
+- [ ] TASK-XXX-001: Description
 - [ ] TASK-XXX-002: ...
 
-## Critérios de Aceite
+## Acceptance Crihaveia
 
 - [ ] Critério 1
 - [ ] Critério 2
 
 ## Definition of Done
 
-- [ ] Código implementado
-- [ ] Testes unitários (≥80% coverage)
-- [ ] Testes de integração
+- [ ] Code implementado
+- [ ] Unit tests (≥80% coverage)
+- [ ] Integration tests
 - [ ] Code review aprovado
-- [ ] Documentação atualizada
-- [ ] Deploy em staging
+- [ ] Documentation currentizada
+- [ ] Deploy in staging
 ```

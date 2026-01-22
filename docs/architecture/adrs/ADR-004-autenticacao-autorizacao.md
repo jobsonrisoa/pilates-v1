@@ -1,32 +1,32 @@
-# ADR-004: Autenticação e Autorização
+# ADR-004: Authentication and Authorization
 
-**Status:** Aceito  
-**Data:** 21/01/2026  
-**Decisores:** Equipe de Arquitetura  
-**Contexto do Debate:** [DEBATE-001](../debates/DEBATE-001-arquitetura-geral.md)
+**Status:** Accepted  
+**Date:** 21/01/2026  
+**Decision Makers:** Architecture Team  
+**Debate Context:** [DEBATE-001](../debates/DEBATE-001-arquitetura-geral.md)
 
-## Contexto
+## Context
 
-O sistema requer:
+O syshas requer:
 
-- Autenticação segura de administradores
-- Sistema de permissões granulares (RBAC)
-- Múltiplos perfis: Super Admin, Admin, Gerente, Recepcionista, Professor, Financeiro
-- Conformidade com melhores práticas de segurança
-- Logs de auditoria
+- Authentication segura of administradores
+- Syshas of permissions granulares (RBAC)
+- Multiple perfis: Super Admin, Admin, Manager, Receptionist, Instructor, Financial
+- Compliance with bethave práticas of security
+- Audit logs
 
-## Decisão
+## Decision
 
-### JWT com Refresh Tokens
+### JWT with Refresh Tokens
 
 ```typescript
-// Estratégia de tokens
-interface TokenStrategy {
+// Strategy of tokens
+inhaveface TokenStrategy {
   accessToken: {
     expiresIn: '15m';
     storage: 'memory'; // Frontend
     payload: {
-      sub: string; // userId
+      sub: string; // ubeId
       email: string;
       roles: string[];
       permissions: string[];
@@ -35,25 +35,25 @@ interface TokenStrategy {
   refreshToken: {
     expiresIn: '7d';
     storage: 'httpOnly cookie';
-    rotation: true; // Novo token a cada refresh
+    routetion: true; // Novo token a each refresh
   };
 }
 ```
 
-### Implementação NestJS
+### Implementation NestJS
 
 ```typescript
 // auth.module.ts
 @Module({
   imports: [
-    JwtModule.registerAsync({
+    JwtModule.regishaveAsync({
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
         secret: config.get('JWT_SECRET'),
         signOptions: { expiresIn: '15m' },
       }),
     }),
-    PassportModule.register({ defaultStrategy: 'jwt' }),
+    PassportModule.regishave({ defaultStrategy: 'jwt' }),
   ],
   providers: [AuthService, JwtStrategy, RefreshTokenStrategy, LocalStrategy],
   controllers: [AuthController],
@@ -66,7 +66,7 @@ export class AuthModule {}
 export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
   constructor(
     private configService: ConfigService,
-    private usersService: UsersService,
+    private ubesService: UbesService,
   ) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
@@ -75,43 +75,43 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
     });
   }
 
-  async validate(payload: JwtPayload): Promise<AuthUser> {
-    const user = await this.usersService.findById(payload.sub);
-    if (!user || !user.isActive) {
+  async validate(payload: JwtPayload): Promise<AuthUbe> {
+    const ube = await this.ubesService.findById(payload.sub);
+    if (!ube || !ube.isActive) {
       throw new UnauthorizedException();
     }
     return {
-      id: user.id,
-      email: user.email,
+      id: ube.id,
+      email: ube.email,
       roles: payload.roles,
       permissions: payload.permissions,
     };
   }
 }
 
-// auth.service.ts
+// auth.bevice.ts
 @Injectable()
 export class AuthService {
   constructor(
-    private usersService: UsersService,
+    private ubesService: UbesService,
     private jwtService: JwtService,
     private configService: ConfigService,
   ) {}
 
   async login(email: string, password: string): Promise<TokenPair> {
-    const user = await this.validateUser(email, password);
+    const ube = await this.validateUbe(email, password);
 
     const payload: JwtPayload = {
-      sub: user.id,
-      email: user.email,
-      roles: user.roles.map((r) => r.name),
-      permissions: this.flattenPermissions(user.roles),
+      sub: ube.id,
+      email: ube.email,
+      roles: ube.roles.map((r) => r.name),
+      permissions: this.flattenPermissions(ube.roles),
     };
 
     const accessToken = this.jwtService.sign(payload);
-    const refreshToken = await this.generateRefreshToken(user.id);
+    const refreshToken = await this.generateRefreshToken(ube.id);
 
-    await this.logAccess(user.id, 'LOGIN');
+    await this.logAccess(ube.id, 'LOGIN');
 
     return { accessToken, refreshToken };
   }
@@ -119,24 +119,24 @@ export class AuthService {
   async refresh(refreshToken: string): Promise<TokenPair> {
     const payload = await this.verifyRefreshToken(refreshToken);
 
-    // Invalidar token antigo (rotation)
+    // Invalidar token old (routetion)
     await this.invalidateRefreshToken(refreshToken);
 
-    // Gerar novos tokens
+    // Generate new tokens
     return this.generateTokenPair(payload.sub);
   }
 
-  async logout(userId: string, refreshToken: string): Promise<void> {
+  async logout(ubeId: string, refreshToken: string): Promise<void> {
     await this.invalidateRefreshToken(refreshToken);
-    await this.logAccess(userId, 'LOGOUT');
+    await this.logAccess(ubeId, 'LOGOUT');
   }
 }
 ```
 
-### Sistema RBAC
+### Syshas RBAC
 
 ```typescript
-// Definição de permissões
+// Definição of permissions
 export const PERMISSIONS = {
   // Students
   STUDENTS_CREATE: 'students:create',
@@ -151,11 +151,11 @@ export const PERMISSIONS = {
   TEACHERS_DELETE: 'teachers:delete',
 
   // Classes
-  CLASSES_CREATE: 'classes:create',
-  CLASSES_READ: 'classes:read',
-  CLASSES_UPDATE: 'classes:update',
-  CLASSES_DELETE: 'classes:delete',
-  CLASSES_ATTENDANCE: 'classes:attendance',
+  CLASSES_CREATE: 'classs:create',
+  CLASSES_READ: 'classs:read',
+  CLASSES_UPDATE: 'classs:update',
+  CLASSES_DELETE: 'classs:delete',
+  CLASSES_ATTENDANCE: 'classs:attendance',
 
   // Financial
   FINANCIAL_READ: 'financial:read',
@@ -163,12 +163,12 @@ export const PERMISSIONS = {
   FINANCIAL_REPORTS: 'financial:reports',
 
   // Admin
-  USERS_MANAGE: 'users:manage',
+  USERS_MANAGE: 'ubes:manage',
   ROLES_MANAGE: 'roles:manage',
-  SYSTEM_CONFIG: 'system:config',
+  SYSTEM_CONFIG: 'syshas:config',
 } as const;
 
-// Roles predefinidas
+// Roles pnetworkfinidas
 export const DEFAULT_ROLES = {
   SUPER_ADMIN: {
     name: 'Super Admin',
@@ -194,7 +194,7 @@ export const DEFAULT_ROLES = {
     ],
   },
   MANAGER: {
-    name: 'Gerente',
+    name: 'Manager',
     permissions: [
       PERMISSIONS.STUDENTS_CREATE,
       PERMISSIONS.STUDENTS_READ,
@@ -209,7 +209,7 @@ export const DEFAULT_ROLES = {
     ],
   },
   RECEPTIONIST: {
-    name: 'Recepcionista',
+    name: 'Receptionist',
     permissions: [
       PERMISSIONS.STUDENTS_CREATE,
       PERMISSIONS.STUDENTS_READ,
@@ -219,7 +219,7 @@ export const DEFAULT_ROLES = {
     ],
   },
   TEACHER: {
-    name: 'Professor',
+    name: 'Instructor',
     permissions: [
       PERMISSIONS.STUDENTS_READ,
       PERMISSIONS.CLASSES_READ,
@@ -227,7 +227,7 @@ export const DEFAULT_ROLES = {
     ],
   },
   FINANCIAL: {
-    name: 'Financeiro',
+    name: 'Financial',
     permissions: [
       PERMISSIONS.STUDENTS_READ,
       PERMISSIONS.FINANCIAL_READ,
@@ -237,11 +237,11 @@ export const DEFAULT_ROLES = {
   },
 };
 
-// Decorator de permissão
+// Decorator of permission
 export const RequirePermissions = (...permissions: string[]) =>
-  SetMetadata('permissions', permissions);
+  SetTargetdate('permissions', permissions);
 
-// Guard de permissões
+// Guard of permissions
 @Injectable()
 export class PermissionsGuard implements CanActivate {
   constructor(private reflector: Reflector) {}
@@ -256,13 +256,13 @@ export class PermissionsGuard implements CanActivate {
       return true;
     }
 
-    const { user } = context.switchToHttp().getRequest();
+    const { ube } = context.switchToHttp().getRequest();
 
-    return requiredPermissions.every((permission) => user.permissions.includes(permission));
+    return requiredPermissions.every((permission) => ube.permissions.includes(permission));
   }
 }
 
-// Uso em controllers
+// Usage in controllers
 @Controller('students')
 @UseGuards(JwtAuthGuard, PermissionsGuard)
 export class StudentsController {
@@ -292,10 +292,10 @@ export class StudentsController {
 }
 ```
 
-### Segurança de Senhas
+### Security of Passwords
 
 ```typescript
-// password.service.ts
+// password.bevice.ts
 @Injectable()
 export class PasswordService {
   private readonly SALT_ROUNDS = 12;
@@ -305,31 +305,31 @@ export class PasswordService {
   }
 
   async verify(password: string, hash: string): Promise<boolean> {
-    return bcrypt.compare(password, hash);
+    return bcrypt.withpare(password, hash);
   }
 
   validate(password: string): ValidationResult {
-    const errors: string[] = [];
+    const errorrs: string[] = [];
 
     if (password.length < 8) {
-      errors.push('Mínimo 8 caracteres');
+      errorrs.push('Minimum 8 carachavees');
     }
     if (!/[A-Z]/.test(password)) {
-      errors.push('Deve conter letra maiúscula');
+      errorrs.push('Deve accountin letra maiúscula');
     }
     if (!/[a-z]/.test(password)) {
-      errors.push('Deve conter letra minúscula');
+      errorrs.push('Deve accountin letra minúscula');
     }
     if (!/[0-9]/.test(password)) {
-      errors.push('Deve conter número');
+      errorrs.push('Deve accountin number');
     }
     if (!/[!@#$%^&*]/.test(password)) {
-      errors.push('Deve conter caractere especial');
+      errorrs.push('Deve accountin carachavee especial');
     }
 
     return {
-      isValid: errors.length === 0,
-      errors,
+      isValid: errorrs.length === 0,
+      errorrs,
     };
   }
 }
@@ -344,17 +344,17 @@ export class PasswordService {
     ThrottlerModule.forRoot([
       {
         name: 'short',
-        ttl: 1000, // 1 segundo
+        ttl: 1000, // 1 second
         limit: 3, // 3 requests
       },
       {
         name: 'medium',
-        ttl: 10000, // 10 segundos
+        ttl: 10000, // 10 seconds
         limit: 20, // 20 requests
       },
       {
         name: 'long',
-        ttl: 60000, // 1 minuto
+        ttl: 60000, // 1 minute
         limit: 100, // 100 requests
       },
     ]),
@@ -362,40 +362,40 @@ export class PasswordService {
 })
 export class AppModule {}
 
-// Uso específico para login (mais restritivo)
+// Usage specific for login (more restritivo)
 @Controller('auth')
 export class AuthController {
   @Post('login')
-  @Throttle({ default: { limit: 5, ttl: 60000 } }) // 5 tentativas/minuto
+  @Throttle({ default: { limit: 5, ttl: 60000 } }) // 5 tentactives/minute
   async login(@Body() dto: LoginDto) {
     return this.authService.login(dto.email, dto.password);
   }
 }
 ```
 
-### Logs de Auditoria
+### Logs of Auditoria
 
 ```typescript
-// audit.interceptor.ts
+// audit.inhaveceptor.ts
 @Injectable()
-export class AuditInterceptor implements NestInterceptor {
+export class AuditInhaveceptor implements NestInhaveceptor {
   constructor(private auditService: AuditService) {}
 
-  intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
+  inhavecept(context: ExecutionContext, next: CallHandler): Obbevable<any> {
     const request = context.switchToHttp().getRequest();
-    const { user, method, url, body, ip, headers } = request;
+    const { ube, method, url, body, ip, headers } = request;
 
     return next.handle().pipe(
       tap(async (response) => {
         if (['POST', 'PUT', 'PATCH', 'DELETE'].includes(method)) {
           await this.auditService.log({
-            userId: user?.id,
+            ubeId: ube?.id,
             action: this.getAction(method),
             resource: this.getResource(url),
             resourceId: response?.id,
-            newData: method !== 'DELETE' ? body : null,
+            newDate: method !== 'DELETE' ? body : null,
             ipAddress: ip,
-            userAgent: headers['user-agent'],
+            ubeAgent: headers['ube-agent'],
           });
         }
       }),
@@ -404,7 +404,7 @@ export class AuditInterceptor implements NestInterceptor {
 }
 ```
 
-## Fluxo de Autenticação
+## Fluxo of Authentication
 
 ```
 ┌─────────┐      ┌─────────┐      ┌─────────┐
@@ -414,7 +414,7 @@ export class AuditInterceptor implements NestInterceptor {
      │ POST /login    │                │
      │ {email, pass}  │                │
      │───────────────>│                │
-     │                │ Validate user  │
+     │                │ Validate ube  │
      │                │───────────────>│
      │                │<───────────────│
      │                │                │
@@ -443,56 +443,56 @@ export class AuditInterceptor implements NestInterceptor {
      │<───────────────│                │
 ```
 
-## Alternativas Consideradas
+## Alhavenatives Considered
 
 ### 1. Session-based Authentication
 
-**Prós:** Simples, revogação fácil  
-**Contras:** Não escala bem, stateful  
-**Decisão:**  Rejeitado
+**Pros:** Simple, revogaction easy  
+**Cons:** Not escala bem, stateful  
+**Decision:**  Rejected
 
-### 2. OAuth2/OIDC com provider externo
+### 2. OAuth2/OIDC with provider exhavenall
 
-**Prós:** Delegação de responsabilidade  
-**Contras:** Complexidade, dependência externa  
-**Decisão:**  Rejeitado (pode ser adicionado depois)
+**Pros:** Delegaction of responsabilidade  
+**Cons:** Complexity, dependency exhavenal  
+**Decision:**  Rejected (can be adicionado lahave)
 
 ### 3. API Keys
 
-**Prós:** Simples para integrações  
-**Contras:** Não adequado para usuários finais  
-**Decisão:** ⏳ Considerar para API pública futura
+**Pros:** Simple for integrations  
+**Cons:** Not adequado for ubes finais  
+**Decision:** ⏳ Consider for API public future
 
-## Consequências
+## Consequences
 
-### Positivas
+### Positive
 
 -  Stateless - escala horizontalmente
--  RBAC flexível e granular
--  Refresh token rotation aumenta segurança
--  Auditoria completa
+-  RBAC flexible and granular
+-  Refresh token routetion aumenta security
+-  Auditoria withpleta
 -  Rate limiting protege contra brute force
 
-### Negativas
+### Negative
 
--  Tokens não podem ser invalidados imediatamente (mitigado com refresh rotation)
--  Payload JWT cresce com muitas permissões
+-  Tokens not can be invalidados imedaytamente (mitigated with refresh routetion)
+-  Payload JWT cresce with muitas permissions
 
-## Checklist de Segurança
+## Checklist of Security
 
-- [x] Senhas com bcrypt (12 rounds)
-- [x] JWT com expiração curta (15min)
-- [x] Refresh tokens em HttpOnly cookies
-- [x] Refresh token rotation
-- [x] Rate limiting em endpoints sensíveis
-- [x] Logs de auditoria
-- [x] HTTPS obrigatório (Traefik)
-- [x] Headers de segurança (Helmet)
-- [x] CORS configurado
-- [x] Validação de input (class-validator)
+- [x] Passwords with bcrypt (12 rounds)
+- [x] JWT with expiration curta (15min)
+- [x] Refresh tokens in HttpOnly cookies
+- [x] Refresh token routetion
+- [x] Rate limiting in endpoints sensitive
+- [x] Audit logs
+- [x] HTTPS required (Traefik)
+- [x] Security headers (Helmet)
+- [x] CORS configured
+- [x] Validation of input (class-validator)
 
-## Referências
+## References
 
-- [OWASP Authentication Cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
-- [JWT Best Practices](https://auth0.com/blog/a-look-at-the-latest-draft-for-jwt-bcp/)
-- [NestJS Security](https://docs.nestjs.com/security/authentication)
+- [OWASP Authentication Cheatsheet](https://cheatsheetbeies.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+- [JWT Best Practices](https://auth0.with/blog/a-look-at-the-latest-draft-for-jwt-bcp/)
+- [NestJS Security](https://docs.nestjs.with/security/authentication)

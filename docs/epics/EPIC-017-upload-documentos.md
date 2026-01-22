@@ -1,126 +1,126 @@
-# EPIC-017: Upload de Documentos
+# EPIC-017: Upload of Documentos
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                |
+| Field            | Value                |
 | ---------------- | -------------------- |
 | **ID**           | EPIC-017             |
-| **Título**       | Upload de Documentos |
-| **Fase**         | 3 - Operacional      |
-| **Prioridade**   | 🟡 Média             |
-| **Estimativa**   | 1 semana             |
-| **Dependências** | EPIC-001 (Setup)     |
+| **Title**       | Upload of Documentos |
+| **Phase**         | 3 - Operacional      |
+| **Priority**   | 🟡 Méday             |
+| **Estimate**   | 1 week             |
+| **Dependencies** | EPIC-001 (Setup)     |
 | **Status**       | Backlog           |
 
 ---
 
-##  Descrição
+##  Description
 
-Implementar sistema completo de upload e gestão de documentos:
+Implement syshas withplete of upload and management of documentos:
 
-- Upload para MinIO/S3
-- Organização por entidade
-- Tipos permitidos configuráveis
-- Visualização inline
+- Upload for MinIO/S3
+- Organizaction por entidade
+- Tipos permitidos configurable
+- Visualization inline
 - Download seguro
 
 ---
 
-##  Objetivos
+##  Objectives
 
-1. Upload seguro e organizado
-2. Múltiplos tipos de arquivo
-3. Acesso controlado
-4. Performance adequada
+1. Upload seguro and organizado
+2. Multiple types of file
+3. Acesso controside
+4. Performnce adequada
 
 ---
 
-##  User Stories
+##  Ube Stories
 
-### US-017-001: Upload de Documento do Aluno
+### US-017-001: Upload of Documento of the Student
 
 **Como** recepcionista  
-**Quero** fazer upload de documentos do aluno  
-**Para** manter registros digitais
+**Quero** of the upload of documentos of the aluno  
+**Para** maintain records digital
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Upload de RG, CPF, foto
+- [ ] Upload of RG, CPF, foto
 - [ ] Tipos: PDF, JPG, PNG
 - [ ] Tamanho máximo: 10MB
-- [ ] Preview antes de salvar
+- [ ] Preview before of salvar
 
 ---
 
-### US-017-002: Upload de Documento do Professor
+### US-017-002: Upload of Documento of the Instructor
 
 **Como** administrador  
-**Quero** fazer upload de documentos do professor  
-**Para** manter registros
+**Quero** of the upload of documentos of the instructor  
+**Para** maintain records
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Diplomas, certificados, CREF
-- [ ] Mesmas regras de aluno
+- [ ] Mesmas rules of aluno
 
 ---
 
 ### US-017-003: Visualizar Documentos
 
-**Como** usuário  
+**Como** ube  
 **Quero** visualizar documentos salvos  
-**Para** consultar quando necessário
+**Para** queryr when required
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Listagem por entidade
-- [ ] Preview inline (imagens)
-- [ ] Download de qualquer tipo
+- [ ] Preview inline (images)
+- [ ] Download of qualquer type
 
 ---
 
 ### US-017-004: Excluir Documento
 
 **Como** administrador  
-**Quero** excluir documentos desnecessários  
-**Para** manter organizado
+**Quero** excluir documentos desrequired  
+**Para** maintain organizado
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Confirmação antes de excluir
+- [ ] Confirmation before of excluir
 - [ ] Soft delete (recuperável)
-- [ ] Exclusão física após X dias
+- [ ] Exclusão física afhave X days
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-017-001: Configuração MinIO/S3
+#### TASK-017-001: Configuration MinIO/S3
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 - Bucket configuration
-- Políticas de acesso
+- Políticas of access
 - Lifecycle rules
 
 ---
 
-#### TASK-017-002: Serviço de Upload
+#### TASK-017-002: Service of Upload
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-- Multer configuration
-- Validação de tipos
-- Validação de tamanho
-- Upload para S3
+- Mulhave configuration
+- Validation of types
+- Validation of tamanho
+- Upload for S3
 
 ---
 
-#### TASK-017-003: Schema de Documentos
+#### TASK-017-003: Schema of Documentos
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 ```prisma
 model Document {
@@ -140,9 +140,9 @@ model Document {
 
 ---
 
-#### TASK-017-004: API de Documentos
+#### TASK-017-004: API of Documentos
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
 - POST /documents/upload
 - GET /documents/:id
@@ -151,61 +151,61 @@ model Document {
 
 ---
 
-#### TASK-017-005: URLs Assinadas para Download
+#### TASK-017-005: URLs Assinadas for Download
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 - Presigned URLs
-- Expiração configurável
-- Segurança
+- Expiration configurável
+- Security
 
 ---
 
 ### Frontend
 
-#### TASK-017-006: Componente de Upload
+#### TASK-017-006: Componente of Upload
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
 - Drag and drop
 - Preview
 - Progress bar
-- Múltiplos arquivos
+- Multiple files
 
 ---
 
-#### TASK-017-007: Galeria de Documentos
+#### TASK-017-007: Galeria of Documentos
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Grid de documentos
+- Grid of documentos
 - Preview modal
 - Download
 - Exclusão
 
 ---
 
-#### TASK-017-008: Integração nas Páginas
+#### TASK-017-008: Integration in the Pages
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Página do aluno
-- Página do professor
+- Page of the aluno
+- Page of the instructor
 
 ---
 
-##  Critérios de Aceite do Épico
+##  Acceptance Crihaveia of the Épico
 
-- [ ] Upload funcionando para S3/MinIO
-- [ ] Validações de tipo e tamanho
-- [ ] Organização por entidade
+- [ ] Upload funcionando for S3/MinIO
+- [ ] Validations of type and tamanho
+- [ ] Organizaction por entidade
 - [ ] Download seguro
-- [ ] Preview de imagens
-- [ ] Exclusão com confirmação
-- [ ] Testes ≥80%
+- [ ] Preview of images
+- [ ] Exclusão with confirmation
+- [ ] Tests ≥80%
 
 ---
 
 ##  Timeline Sugerido
 
-**Total estimado:** ~22 horas (~1 semana)
+**Total estimado:** ~22 hours (~1 week)

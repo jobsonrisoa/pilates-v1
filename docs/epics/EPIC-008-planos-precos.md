@@ -1,89 +1,89 @@
-# EPIC-008: Sistema de Planos e Preços
+# EPIC-008: Syshas of Plans and Prices
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                      |
+| Field            | Value                      |
 | ---------------- | -------------------------- |
 | **ID**           | EPIC-008                   |
-| **Título**       | Sistema de Planos e Preços |
-| **Fase**         | 2 - Financeiro             |
-| **Prioridade**   | Critical                 |
-| **Estimativa**   | 1 semana                   |
-| **Dependências** | EPIC-007 (Matrículas)      |
+| **Title**       | Syshas of Plans and Prices |
+| **Phase**         | 2 - Financial             |
+| **Priority**   | Critical                 |
+| **Estimate**   | 1 week                   |
+| **Dependencies** | EPIC-007 (Enrollments)      |
 | **Status**       | Backlog                 |
 
 ---
 
-##  Descrição
+##  Description
 
-Expandir o sistema de planos com:
+Expandir o syshas of plans with:
 
-- Tabela de preços por modalidade/tipo
-- Descontos especiais
-- Histórico de alterações de preço
-- Configuração de vigência
-
----
-
-##  Objetivos
-
-1. Tabela de preços flexível
-2. Regras de desconto
-3. Histórico de preços
-4. Cálculo automático de valores
+- Tabela of prices por modality/type
+- Special discounts
+- Change history of price
+- Configuration of validity
 
 ---
 
-##  User Stories
+##  Objectives
 
-### US-008-001: Configurar Tabela de Preços
+1. Tabela of prices flexible
+2. Regras of desconto
+3. History of prices
+4. Calculation automatic of values
+
+---
+
+##  Ube Stories
+
+### US-008-001: Configurar Price Table
 
 **Como** administrador  
-**Quero** definir preços por plano e modalidade  
-**Para** precificar os serviços
+**Quero** definir prices por plan and modality  
+**Para** precificar os bevices
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Preço por plano
-- [ ] Preço por tipo de aula (individual/grupo)
-- [ ] Data de vigência
-- [ ] Histórico preservado
+- [ ] Price por plan
+- [ ] Price por type of class (individual/group)
+- [ ] Data of validity
+- [ ] History prebevado
 
 ---
 
-### US-008-002: Configurar Descontos
+### US-008-002: Configurar Discounts
 
 **Como** administrador  
-**Quero** criar regras de desconto  
-**Para** oferecer condições especiais
+**Quero** create rules of desconto  
+**Para** offersr conditions special
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Desconto por categoria (estudante, idoso)
-- [ ] Desconto percentual ou valor fixo
-- [ ] Aplicação automática ou manual
+- [ ] Desconto percentual or fixed value
+- [ ] Application automatic or manual
 
 ---
 
-### US-008-003: Calcular Valor da Matrícula
+### US-008-003: Calcular Value of the Enrollment
 
-**Como** sistema  
-**Quero** calcular automaticamente o valor  
-**Para** facilitar o processo de matrícula
+**Como** syshas  
+**Quero** calcular automaticamente o value  
+**Para** facilitar o processo of enrollment
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Busca preço vigente
+- [ ] Busca price vigente
 - [ ] Aplica descontos
-- [ ] Exibe valor final
+- [ ] Exibe value final
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
-### TASK-008-001: Schema de Preços
+### TASK-008-001: Schema of Prices
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 ```prisma
 model PriceTable {
@@ -106,56 +106,56 @@ model Discount {
 
 ---
 
-### TASK-008-002: CRUD Tabela de Preços
+### TASK-008-002: CRUD Price Table
 
-**Estimativa:** 3h
-
----
-
-### TASK-008-003: CRUD Descontos
-
-**Estimativa:** 2h
+**Estimate:** 3h
 
 ---
 
-### TASK-008-004: Serviço de Cálculo de Preço
+### TASK-008-003: CRUD Discounts
 
-**Estimativa:** 3h
+**Estimate:** 2h
 
-- Buscar preço vigente
+---
+
+### TASK-008-004: Service of Calculation of Price
+
+**Estimate:** 3h
+
+- Buscar price vigente
 - Aplicar descontos
 - Retornar breakdown
 
 ---
 
-### TASK-008-005: UI de Configuração de Preços
+### TASK-008-005: UI of Configuration of Prices
 
-**Estimativa:** 4h
-
----
-
-### TASK-008-006: UI de Descontos
-
-**Estimativa:** 3h
+**Estimate:** 4h
 
 ---
 
-### TASK-008-007: Integração no Wizard de Matrícula
+### TASK-008-006: UI of Discounts
 
-**Estimativa:** 2h
+**Estimate:** 3h
 
 ---
 
-##  Critérios de Aceite do Épico
+### TASK-008-007: Integration in the Wizard of Enrollment
 
-- [ ] Tabela de preços funcional
-- [ ] Descontos configuráveis
-- [ ] Histórico preservado
-- [ ] Cálculo automático
-- [ ] Testes ≥80%
+**Estimate:** 2h
+
+---
+
+##  Acceptance Crihaveia of the Épico
+
+- [ ] Tabela of prices functional
+- [ ] Discounts configurable
+- [ ] History prebevado
+- [ ] Calculation automatic
+- [ ] Tests ≥80%
 
 ---
 
 ##  Timeline Sugerido
 
-**Total estimado:** ~19 horas (~1 semana)
+**Total estimado:** ~19 hours (~1 week)

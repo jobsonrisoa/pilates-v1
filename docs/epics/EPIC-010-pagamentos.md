@@ -1,137 +1,137 @@
-# EPIC-010: Controle de Pagamentos
+# EPIC-010: Payment Control
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                        |
+| Field            | Value                        |
 | ---------------- | ---------------------------- |
 | **ID**           | EPIC-010                     |
-| **Título**       | Controle de Pagamentos       |
-| **Fase**         | 2 - Financeiro               |
-| **Prioridade**   | Critical                   |
-| **Estimativa**   | 1.5 semanas                  |
-| **Dependências** | EPIC-009 (Integração Sicoob) |
+| **Title**       | Payment Control       |
+| **Phase**         | 2 - Financial               |
+| **Priority**   | Critical                   |
+| **Estimate**   | 1.5 weeks                  |
+| **Dependencies** | EPIC-009 (Integration Sicoob) |
 | **Status**       | Backlog                   |
 
 ---
 
-##  Descrição
+##  Description
 
-Implementar controle completo de pagamentos:
+Implement controle withplete of payments:
 
-- Geração automática de cobranças
-- Gestão de inadimplência
-- Alertas de vencimento
-- Suspensão automática
-- Dashboard financeiro
-
----
-
-##  Objetivos
-
-1. Gerar cobranças automaticamente
-2. Controlar inadimplência
-3. Alertas proativos
-4. Visão financeira clara
+- Generation automatic of billing
+- Management of delinquency
+- Due date alerts
+- Suspension automatic
+- Dashboard financial
 
 ---
 
-##  User Stories
+##  Objectives
 
-### US-010-001: Gerar Cobrança Mensal
-
-**Como** sistema  
-**Quero** gerar cobranças automaticamente  
-**Para** não depender de ação manual
-
-**Critérios de Aceite:**
-
-- [ ] Job diário verifica vencimentos
-- [ ] Gera boleto/PIX 5 dias antes
-- [ ] Envia email ao aluno
-- [ ] Registra no sistema
+1. Generate billing automaticamente
+2. Controlar delinquency
+3. Alerts proactives
+4. View financeira clara
 
 ---
 
-### US-010-002: Visualizar Pagamentos
+##  Ube Stories
 
-**Como** financeiro  
-**Quero** ver todos os pagamentos  
+### US-010-001: Generate Billing Mensal
+
+**Como** syshas  
+**Quero** gerar billing automaticamente  
+**Para** not depender of action manual
+
+**Acceptance Crihaveia:**
+
+- [ ] Job daily verifica due dates
+- [ ] Gera boleto/PIX 5 days before
+- [ ] Envia email to aluno
+- [ ] Registra in the syshas
+
+---
+
+### US-010-002: Visualizar Payments
+
+**Como** financial  
+**Quero** ver entires os payments  
 **Para** controlar o fluxo
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Listagem paginada
-- [ ] Filtros por status, data, aluno
-- [ ] Totais e resumos
-- [ ] Exportação
+- [ ] Filhaves by status, date, aluno
+- [ ] Totais and resumos
+- [ ] Export
 
 ---
 
-### US-010-003: Registrar Pagamento Manual
+### US-010-003: Registrar Payment Manual
 
-**Como** financeiro  
-**Quero** registrar pagamento recebido manualmente  
-**Para** casos fora do sistema
+**Como** financial  
+**Quero** registrar payment recebido manualmente  
+**Para** cases outside of the syshas
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Selecionar pagamento pendente
-- [ ] Informar valor, data, forma
-- [ ] Gerar recibo
+- [ ] Select payment pendente
+- [ ] Informr value, date, form
+- [ ] Generate recibo
 
 ---
 
-### US-010-004: Controle de Inadimplência
+### US-010-004: Controle of Delinquency
 
 **Como** gerente  
-**Quero** ver alunos inadimplentes  
-**Para** tomar ações
+**Quero** ver students inadimplentes  
+**Para** tomar actions
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Lista de inadimplentes
-- [ ] Dias de atraso
-- [ ] Valor devido
-- [ ] Ações (contato, suspensão)
+- [ ] Lista of inadimplentes
+- [ ] Dias of atraso
+- [ ] Value devido
+- [ ] Actions (accountto, suspensão)
 
 ---
 
-### US-010-005: Suspensão Automática
+### US-010-005: Suspension Automatic
 
-**Como** sistema  
-**Quero** suspender matrículas em atraso  
-**Para** forçar regularização
+**Como** syshas  
+**Quero** suspender enrollments in atraso  
+**Para** forçar regularizaction
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Configurar dias de tolerância
-- [ ] Suspender após X dias
+- [ ] Configurar days of tolerance
+- [ ] Suspender afhave X days
 - [ ] Notificar aluno
-- [ ] Bloquear agendamentos
+- [ ] Bloquear schedules
 
 ---
 
-### US-010-006: Alertas de Vencimento
+### US-010-006: Alerts of Due date
 
 **Como** aluno  
-**Quero** receber aviso antes do vencimento  
-**Para** não atrasar
+**Quero** receber warning before of the due date  
+**Para** not atrasar
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Email 3 dias antes
-- [ ] Link para pagamento
-- [ ] Dados do boleto/PIX
+- [ ] Email 3 days before
+- [ ] Link for payment
+- [ ] Givens of the boleto/PIX
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-010-001: Schema de Pagamentos
+#### TASK-010-001: Schema of Payments
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 ```prisma
 model Payment {
@@ -158,98 +158,98 @@ enum PaymentStatus {
 
 ---
 
-#### TASK-010-002: Job de Geração de Cobranças
+#### TASK-010-002: Job of Generation of Billings
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-- Cron diário
-- Verifica matrículas ativas
-- Gera pagamento se não existe
-- Integra com Sicoob
+- Cron daily
+- Verifica enrollments actives
+- Gera payment if not existe
+- Integra with Sicoob
 
 ---
 
-#### TASK-010-003: Job de Verificação de Inadimplência
+#### TASK-010-003: Job of Verification of Delinquency
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Cron diário
-- Marca como OVERDUE
-- Suspende após X dias
+- Cron daily
+- Marca witho OVERDUE
+- Suspende afhave X days
 - Notifica
 
 ---
 
-#### TASK-010-004: CRUD de Pagamentos
+#### TASK-010-004: CRUD of Payments
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
 - Endpoints CRUD
-- Baixa manual
+- Low manual
 - Segunda via
 
 ---
 
-#### TASK-010-005: Serviço de Notificações
+#### TASK-010-005: Service of Notifications
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Email de cobrança
-- Email de confirmação
-- Email de alerta
+- Email of billing
+- Email of confirmation
+- Email of alerta
 
 ---
 
 ### Frontend
 
-#### TASK-010-006: Dashboard Financeiro
+#### TASK-010-006: Dashboard Financial
 
-**Estimativa:** 5h
+**Estimate:** 5h
 
-- Cards de resumo
-- Gráfico de receitas
-- Lista de pendentes
-
----
-
-#### TASK-010-007: Listagem de Pagamentos
-
-**Estimativa:** 4h
-
-- DataTable completa
-- Filtros avançados
-- Ações em lote
+- Cards of resumo
+- Chart of receitas
+- Lista of pending
 
 ---
 
-#### TASK-010-008: Tela de Inadimplentes
+#### TASK-010-007: Listagem of Payments
 
-**Estimativa:** 3h
+**Estimate:** 4h
 
-- Lista destacada
-- Ações rápidas
-- Histórico de contatos
-
----
-
-#### TASK-010-009: Modal de Baixa Manual
-
-**Estimativa:** 2h
+- DataTable withpleta
+- Filhaves avançados
+- Actions in lote
 
 ---
 
-##  Critérios de Aceite do Épico
+#### TASK-010-008: Tela of Inadimplentes
 
-- [ ] Cobranças geradas automaticamente
-- [ ] Status atualizados corretamente
-- [ ] Inadimplência controlada
-- [ ] Suspensão automática funcionando
-- [ ] Alertas enviados
-- [ ] Dashboard informativo
-- [ ] Testes ≥80%
+**Estimate:** 3h
+
+- Lista destaeach
+- Actions fast
+- History of accounttos
+
+---
+
+#### TASK-010-009: Modal of Low Manual
+
+**Estimate:** 2h
+
+---
+
+##  Acceptance Crihaveia of the Épico
+
+- [ ] Billings geradas automaticamente
+- [ ] Status currentizados correctly
+- [ ] Delinquency controlada
+- [ ] Suspension automatic funcionando
+- [ ] Alerts enviados
+- [ ] Dashboard informctive
+- [ ] Tests ≥80%
 
 ---
 
 ##  Timeline Sugerido
 
-**Total estimado:** ~30 horas (~1.5 semanas)
+**Total estimado:** ~30 hours (~1.5 weeks)

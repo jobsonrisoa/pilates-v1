@@ -1,123 +1,123 @@
-# EPIC-006: Agenda e Agendamento
+# EPIC-006: Schedule and Schedulemento
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                       |
+| Field            | Value                       |
 | ---------------- | --------------------------- |
 | **ID**           | EPIC-006                    |
-| **Título**       | Agenda e Agendamento        |
-| **Fase**         | 1 - MVP                     |
-| **Prioridade**   | High                     |
-| **Estimativa**   | 1.5 semanas                 |
-| **Dependências** | EPIC-005 (Aulas e Horários) |
+| **Title**       | Schedule and Schedulemento        |
+| **Phase**         | 1 - MVP                     |
+| **Priority**   | High                     |
+| **Estimate**   | 1.5 weeks                 |
+| **Dependencies** | EPIC-005 (Classes and Schedules) |
 | **Status**       | Backlog                  |
 
 ---
 
-##  Descrição
+##  Description
 
-Implementar sistema de agenda visual e agendamento de aulas:
+Implement syshas of schedule visual and schedulemento of classs:
 
-- Calendário visual (dia, semana, mês)
-- Agendamento de alunos em horários
-- Controle de presença/falta
-- Visualização de ocupação
-- Lista de espera
-
----
-
-##  Objetivos
-
-1. Agenda visual intuitiva
-2. Agendamento rápido de alunos
-3. Registro de presença/falta
-4. Controle de capacidade e espera
+- Calendário visual (day, week, month)
+- Schedulemento of students in schedules
+- Controle of attendance/fhigh
+- Visualization of occupancy
+- Waiting list
 
 ---
 
-##  User Stories
+##  Objectives
 
-### US-006-001: Visualizar Agenda
+1. Schedule visual intuitiva
+2. Schedulemento fast of students
+3. Registro of attendance/fhigh
+4. Controle of capacidade and espera
+
+---
+
+##  Ube Stories
+
+### US-006-001: Visualizar Schedule
 
 **Como** recepcionista  
-**Quero** ver a agenda de aulas  
-**Para** saber o que está acontecendo
+**Quero** ver a schedule of classs  
+**Para** saber o that is acontecendo
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Visualização por dia
-- [ ] Visualização por semana
-- [ ] Visualização por mês
-- [ ] Filtros por professor/modalidade
-- [ ] Cores por status
+- [ ] Visualization per day
+- [ ] Visualization por week
+- [ ] Visualization por month
+- [ ] Filhaves por instructor/modality
+- [ ] Cores by status
 
 ---
 
-### US-006-002: Agendar Aluno em Aula
+### US-006-002: Scheduler Student in Class
 
 **Como** recepcionista  
-**Quero** agendar um aluno em uma aula  
-**Para** reservar sua vaga
+**Quero** scheduler a aluno in a class  
+**Para** rebevar sua vaga
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Selecionar aula na agenda
-- [ ] Buscar e selecionar aluno
+- [ ] Select class in the schedule
+- [ ] Buscar and selecionar aluno
 - [ ] Verificar disponibilidade
-- [ ] Confirmar agendamento
+- [ ] Confirmar schedulemento
 
 ---
 
-### US-006-003: Marcar Presença/Falta
+### US-006-003: Marcar Attendance/Fhigh
 
-**Como** professor ou recepcionista  
-**Quero** registrar presença ou falta  
+**Como** instructor or recepcionista  
+**Quero** registrar attendance or fhigh  
 **Para** controlar a frequência
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Marcar presente
-- [ ] Marcar falta (com/sem aviso)
-- [ ] Observações opcionais
-- [ ] Atualização em tempo real
+- [ ] Marcar present
+- [ ] Marcar fhigh (with/sem warning)
+- [ ] Obbevactions opcionais
+- [ ] Update in haspo real
 
 ---
 
-### US-006-004: Lista de Espera
+### US-006-004: Lista of Espera
 
 **Como** recepcionista  
-**Quero** adicionar aluno na lista de espera  
-**Para** caso surja vaga
+**Quero** adicionar aluno in the list of espera  
+**Para** case surja vaga
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Adicionar à espera quando lotado
-- [ ] Notificação quando vaga abrir
+- [ ] Adicionar to the espera when lotado
+- [ ] Notificaction when vaga abrir
 - [ ] Ordem por chegada
 
 ---
 
-### US-006-005: Cancelar Agendamento
+### US-006-005: Cancelar Schedulemento
 
 **Como** recepcionista  
-**Quero** cancelar um agendamento  
+**Quero** cancelar a schedulemento  
 **Para** liberar a vaga
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Cancelar com motivo
-- [ ] Regra de aviso prévio (24h)
-- [ ] Gerar crédito se aplicável
+- [ ] Cancelar with motivo
+- [ ] Regra of warning previo (24h)
+- [ ] Generate credit if aplicável
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-006-001: Schema de Aulas (Classes)
+#### TASK-006-001: Schema of Classes (Classes)
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 ```prisma
 model Class {
@@ -139,109 +139,109 @@ model Attendance {
 
 ---
 
-#### TASK-006-002: Geração de Aulas a partir da Grade
+#### TASK-006-002: Generation of Classes a partir of the Grade
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Job para gerar aulas futuras
-- Baseado nos Schedules ativos
-- Gerar X semanas à frente
-
----
-
-#### TASK-006-003: API de Agenda
-
-**Estimativa:** 4h
-
-- GET /classes?date=&view=day|week|month
-- GET /classes/:id
-- GET /classes/:id/attendances
+- Job for gerar classs futures
+- Baseado in the Schedules actives
+- Generate X weeks to the frente
 
 ---
 
-#### TASK-006-004: API de Agendamento
+#### TASK-006-003: API of Schedule
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-- POST /classes/:id/attendances
+- GET /classs?date=&view=day|week|month
+- GET /classs/:id
+- GET /classs/:id/attendances
+
+---
+
+#### TASK-006-004: API of Schedulemento
+
+**Estimate:** 4h
+
+- POST /classs/:id/attendances
 - PUT /attendances/:id
 - DELETE /attendances/:id
 
 ---
 
-#### TASK-006-005: Controle de Presença
+#### TASK-006-005: Controle of Attendance
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
 - PUT /attendances/:id/check-in
-- Marcar presente/falta
-- Regras de aviso prévio
+- Marcar present/fhigh
+- Regras of warning previo
 
 ---
 
-#### TASK-006-006: Lista de Espera
+#### TASK-006-006: Lista of Espera
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- POST /classes/:id/waitlist
-- Promoção automática
+- POST /classs/:id/waitlist
+- Promoção automatic
 
 ---
 
 ### Frontend
 
-#### TASK-006-007: Componente de Calendário
+#### TASK-006-007: Componente of Calendário
 
-**Estimativa:** 6h
+**Estimate:** 6h
 
-- Visualização dia/semana/mês
-- Integração com react-big-calendar ou similar
-- Customização visual
+- Visualization day/week/month
+- Integration with react-big-calendar or similar
+- Customization visual
 
 ---
 
-#### TASK-006-008: Modal de Detalhes da Aula
+#### TASK-006-008: Modal of Detalhes of the Class
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Lista de alunos agendados
-- Botões de presença
+- Lista of students scheduledos
+- Botões of attendance
 - Adicionar aluno
 
 ---
 
-#### TASK-006-009: Agendamento Rápido
+#### TASK-006-009: Schedulemento Rápido
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Busca de aluno
-- Seleção de horário
-- Confirmação
+- Busca of aluno
+- Selection of schedule
+- Confirmation
 
 ---
 
-#### TASK-006-010: Painel de Presença
+#### TASK-006-010: Painel of Attendance
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Lista da aula atual
-- Check-in rápido
+- Lista of the class current
+- Check-in fast
 - Status visual
 
 ---
 
-##  Critérios de Aceite do Épico
+##  Acceptance Crihaveia of the Épico
 
 - [ ] Calendário visual funcionando
-- [ ] Três visualizações (dia, semana, mês)
-- [ ] Agendamento de alunos
-- [ ] Registro de presença/falta
-- [ ] Lista de espera
-- [ ] Performance adequada
-- [ ] Testes ≥80%
+- [ ] Três visualizactions (day, week, month)
+- [ ] Schedulemento of students
+- [ ] Registro of attendance/fhigh
+- [ ] Waiting list
+- [ ] Performnce adequada
+- [ ] Tests ≥80%
 
 ---
 
 ##  Timeline Sugerido
 
-**Total estimado:** ~33 horas (~1.5 semanas)
+**Total estimado:** ~33 hours (~1.5 weeks)

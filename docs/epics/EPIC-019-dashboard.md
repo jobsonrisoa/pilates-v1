@@ -1,109 +1,109 @@
-# EPIC-019: Dashboard Analítico
+# EPIC-019: Dashboard Analytical
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                           |
+| Field            | Value                           |
 | ---------------- | ------------------------------- |
 | **ID**           | EPIC-019                        |
-| **Título**       | Dashboard Analítico             |
-| **Fase**         | 4 - Refinamento                 |
-| **Prioridade**   | 🟡 Média                        |
-| **Estimativa**   | 1.5 semanas                     |
-| **Dependências** | EPIC-012, EPIC-016 (Relatórios) |
+| **Title**       | Dashboard Analytical             |
+| **Phase**         | 4 - Refinamento                 |
+| **Priority**   | 🟡 Méday                        |
+| **Estimate**   | 1.5 weeks                     |
+| **Dependencies** | EPIC-012, EPIC-016 (Reports) |
 | **Status**       | Backlog                      |
 
 ---
 
-##  Descrição
+##  Description
 
-Criar dashboard analítico unificado:
+Create dashboard analytical unificado:
 
-- KPIs principais em destaque
-- Gráficos interativos
-- Filtros globais
-- Drill-down em métricas
-- Customização por usuário
-
----
-
-##  Objetivos
-
-1. Visão executiva do negócio
-2. Métricas em tempo real
-3. Análise de tendências
-4. Tomada de decisão rápida
+- KPIs principais in destaque
+- Charts inhaveactives
+- Filhaves global
+- Drill-down in metrics
+- Customization por ube
 
 ---
 
-##  User Stories
+##  Objectives
+
+1. View executiva of the business
+2. Metrics in haspo real
+3. Analysis of trends
+4. Tomada of decision fast
+
+---
+
+##  Ube Stories
 
 ### US-019-001: Ver KPIs Principais
 
 **Como** gerente  
-**Quero** ver KPIs principais na abertura  
-**Para** ter visão rápida do negócio
+**Quero** ver KPIs principais in the abertura  
+**Para** have view fast of the business
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Alunos ativos
-- [ ] Receita do mês
-- [ ] Taxa de ocupação
-- [ ] Inadimplência
-- [ ] Comparativo período anterior
+- [ ] Students actives
+- [ ] Receita of the month
+- [ ] Occupancy rate
+- [ ] Delinquency
+- [ ] Comparactive period previous
 
 ---
 
 ### US-019-002: Analisar Tendências
 
 **Como** gerente  
-**Quero** ver gráficos de evolução  
-**Para** identificar tendências
+**Quero** ver charts of evolution  
+**Para** identificar trends
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Gráfico de receitas (linha)
-- [ ] Gráfico de alunos (linha)
-- [ ] Gráfico de ocupação (barras)
-- [ ] Período selecionável
+- [ ] Chart of receitas (line)
+- [ ] Chart of students (line)
+- [ ] Chart of occupancy (barras)
+- [ ] Period selecionável
 
 ---
 
-### US-019-003: Drill-down em Métricas
+### US-019-003: Drill-down in Metrics
 
 **Como** gerente  
-**Quero** clicar em um KPI e ver detalhes  
-**Para** investigar números
+**Quero** clicar in a KPI and ver detalhes  
+**Para** investigar numbers
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Clique em card abre detalhes
-- [ ] Dados filtrados
-- [ ] Navegação intuitiva
+- [ ] Clique in card abre detalhes
+- [ ] Givens filtrados
+- [ ] Navegaction intuitiva
 
 ---
 
-### US-019-004: Filtros Globais
+### US-019-004: Filhaves Globais
 
-**Como** usuário  
-**Quero** aplicar filtros em todo o dashboard  
-**Para** focar em um período/área
+**Como** ube  
+**Quero** aplicar filtros in entire o dashboard  
+**Para** focar in a period/área
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Filtro de período
-- [ ] Filtro de modalidade
-- [ ] Filtro de unidade (futuro)
-- [ ] Todos os cards atualizam
+- [ ] Filtro of period
+- [ ] Filtro of modality
+- [ ] Filtro of unidade (future)
+- [ ] Todos os cards currentizam
 
 ---
 
 ### US-019-005: Customizar Dashboard
 
-**Como** usuário  
+**Como** ube  
 **Quero** escolher quais cards ver  
-**Para** personalizar minha visão
+**Para** personalizar minha view
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Mostrar/ocultar cards
 - [ ] Reordenar cards
@@ -115,87 +115,87 @@ Criar dashboard analítico unificado:
 
 **Como** gerente  
 **Quero** exportar o dashboard  
-**Para** apresentar em reuniões
+**Para** apresentar in reuniões
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Exportar como PDF
-- [ ] Layout de impressão
-- [ ] Data de geração
+- [ ] Exportar witho PDF
+- [ ] Layout of impressão
+- [ ] Data of generation
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-019-001: API de KPIs Consolidados
+#### TASK-019-001: API of KPIs Consolidados
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-- Endpoint único com todos os KPIs
-- Cache para performance
-- Cálculos otimizados
-
----
-
-#### TASK-019-002: API de Dados para Gráficos
-
-**Estimativa:** 4h
-
-- Séries temporais
-- Agregações por período
-- Formatação para charts
+- Endpoint single with entires os KPIs
+- Cache for performnce
+- Calculations otimizados
 
 ---
 
-#### TASK-019-003: Persistência de Preferências
+#### TASK-019-002: API of Givens for Charts
 
-**Estimativa:** 2h
+**Estimate:** 4h
 
-- Salvar configuração do usuário
-- Carregar ao logar
+- Séries hasporais
+- Agregactions por period
+- Formatting for charts
+
+---
+
+#### TASK-019-003: Persistence of Preferências
+
+**Estimate:** 2h
+
+- Salvar configuration of the ube
+- Carregar to logar
 
 ---
 
 ### Frontend
 
-#### TASK-019-004: Layout do Dashboard
+#### TASK-019-004: Layout of the Dashboard
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
 - Grid responsivo
-- Cards de KPI
-- Área de gráficos
+- Cards of KPI
+- Área of charts
 
 ---
 
-#### TASK-019-005: Componentes de KPI
+#### TASK-019-005: Components of KPI
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Card com valor e variação
-- Ícones e cores
-- Animações
+- Card with value and variaction
+- Ícones and cores
+- Animactions
 
 ---
 
-#### TASK-019-006: Gráficos Interativos
+#### TASK-019-006: Charts Inhaveactives
 
-**Estimativa:** 6h
+**Estimate:** 6h
 
-- Recharts ou Chart.js
+- Recharts or Chart.js
 - Tooltips
 - Zoom/pan
 - Responsivo
 
 ---
 
-#### TASK-019-007: Filtros Globais
+#### TASK-019-007: Filhaves Globais
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Context de filtros
+- Context of filtros
 - Date range picker
 - Multi-select
 
@@ -203,46 +203,46 @@ Criar dashboard analítico unificado:
 
 #### TASK-019-008: Drill-down Navigation
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Links nos cards
-- Modais de detalhes
-- Navegação
-
----
-
-#### TASK-019-009: Customização
-
-**Estimativa:** 4h
-
-- Drag and drop de cards
-- Toggle de visibilidade
-- Persistência
+- Links in the cards
+- Modais of detalhes
+- Navegaction
 
 ---
 
-#### TASK-019-010: Exportação PDF
+#### TASK-019-009: Customization
 
-**Estimativa:** 3h
+**Estimate:** 4h
 
-- html2canvas ou similar
-- Layout de impressão
+- Drag and drop of cards
+- Toggle of visibilidade
+- Persistence
 
 ---
 
-##  Critérios de Aceite do Épico
+#### TASK-019-010: Export PDF
 
-- [ ] KPIs principais visíveis
-- [ ] Gráficos funcionando
+**Estimate:** 3h
+
+- html2canvas or similar
+- Layout of impressão
+
+---
+
+##  Acceptance Crihaveia of the Épico
+
+- [ ] KPIs principais visible
+- [ ] Charts funcionando
 - [ ] Drill-down navegável
-- [ ] Filtros globais
-- [ ] Customização salva
-- [ ] Exportação PDF
-- [ ] Performance <2s load
-- [ ] Testes ≥80%
+- [ ] Filhaves global
+- [ ] Customization salva
+- [ ] Export PDF
+- [ ] Performnce <2s load
+- [ ] Tests ≥80%
 
 ---
 
 ##  Timeline Sugerido
 
-**Total estimado:** ~36 horas (~1.5 semanas)
+**Total estimado:** ~36 hours (~1.5 weeks)

@@ -1,107 +1,107 @@
-# EPIC-011: Comissões de Professores
+# EPIC-011: Commissions of Instructores
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                                         |
+| Field            | Value                                         |
 | ---------------- | --------------------------------------------- |
 | **ID**           | EPIC-011                                      |
-| **Título**       | Comissões de Professores                      |
-| **Fase**         | 2 - Financeiro                                |
-| **Prioridade**   | 🟡 Média                                      |
-| **Estimativa**   | 1 semana                                      |
-| **Dependências** | EPIC-004 (Professores), EPIC-010 (Pagamentos) |
+| **Title**       | Commissions of Instructores                      |
+| **Phase**         | 2 - Financial                                |
+| **Priority**   | 🟡 Méday                                      |
+| **Estimate**   | 1 week                                      |
+| **Dependencies** | EPIC-004 (Instructores), EPIC-010 (Payments) |
 | **Status**       | Backlog                                    |
 
 ---
 
-##  Descrição
+##  Description
 
-Implementar sistema de comissões para professores:
+Implement syshas of withmissions for instructores:
 
-- Configuração de percentual ou valor fixo por aula
-- Diferenciação por modalidade e tipo de aula
-- Cálculo automático baseado em aulas ministradas
-- Relatório mensal de comissões a pagar
-
----
-
-##  Objetivos
-
-1. Configurar regras de comissão flexíveis
-2. Calcular comissões automaticamente
-3. Gerar relatórios para pagamento
-4. Histórico de pagamentos de comissões
+- Configuration of percentual or fixed value por class
+- Diferenciaction por modality and type of class
+- Calculation automatic baseado in classs ministradas
+- Monthly report of withmissions a pay
 
 ---
 
-##  User Stories
+##  Objectives
 
-### US-011-001: Configurar Comissão do Professor
+1. Configurar rules of commission flexíveis
+2. Calcular withmissions automaticamente
+3. Generate reports for payment
+4. History of payments of withmissions
+
+---
+
+##  Ube Stories
+
+### US-011-001: Configurar Comissão of the Instructor
 
 **Como** administrador  
-**Quero** definir as regras de comissão de cada professor  
-**Para** calcular quanto pagar
+**Quero** definir as rules of commission of each instructor  
+**Para** calcular quanto pay
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Definir por percentual ou valor fixo
-- [ ] Diferenciar por modalidade
-- [ ] Diferenciar por tipo (individual/grupo)
-- [ ] Vigência com data início/fim
-
----
-
-### US-011-002: Calcular Comissões do Mês
-
-**Como** financeiro  
-**Quero** ver quanto devo pagar a cada professor  
-**Para** fazer os pagamentos
-
-**Critérios de Aceite:**
-
-- [ ] Listar aulas ministradas no período
-- [ ] Aplicar regras de comissão
-- [ ] Totalizar por professor
-- [ ] Detalhar por aula
+- [ ] Set por percentual or fixed value
+- [ ] Diferenciar por modality
+- [ ] Diferenciar por type (individual/group)
+- [ ] Vigência with date start/fim
 
 ---
 
-### US-011-003: Gerar Relatório de Comissões
+### US-011-002: Calcular Commissions of the Mês
 
-**Como** financeiro  
-**Quero** exportar relatório de comissões  
-**Para** documentar e pagar
+**Como** financial  
+**Quero** ver quanto devo pay a each instructor  
+**Para** of the os payments
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Filtro por período
-- [ ] Filtro por professor
+- [ ] Listar classs ministradas in the period
+- [ ] Aplicar rules of commission
+- [ ] Totalizar por instructor
+- [ ] Detalhar por class
+
+---
+
+### US-011-003: Generate Report of Commissions
+
+**Como** financial  
+**Quero** exportar report of withmissions  
+**Para** documentar and pay
+
+**Acceptance Crihaveia:**
+
+- [ ] Filtro por period
+- [ ] Filtro por instructor
 - [ ] Exportar PDF/Excel
-- [ ] Incluir detalhamento
+- [ ] Incluir detailing
 
 ---
 
-### US-011-004: Registrar Pagamento de Comissão
+### US-011-004: Registrar Payment of Comissão
 
-**Como** financeiro  
-**Quero** registrar que paguei a comissão  
-**Para** controlar o que foi pago
+**Como** financial  
+**Quero** registrar that paguei a commission  
+**Para** controlar o that foi pago
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Marcar como pago
-- [ ] Data e forma de pagamento
-- [ ] Gerar comprovante
+- [ ] Marcar witho pago
+- [ ] Data and payment method
+- [ ] Generate withprovante
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-011-001: Schema de Comissões
+#### TASK-011-001: Schema of Commissions
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 ```prisma
 model TeacherCommission {
@@ -129,78 +129,78 @@ model CommissionPayment {
 
 ---
 
-#### TASK-011-002: CRUD de Regras de Comissão
+#### TASK-011-002: CRUD of Regras of Comissão
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
 ---
 
-#### TASK-011-003: Serviço de Cálculo de Comissões
+#### TASK-011-003: Service of Calculation of Commissions
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-- Buscar aulas do período
-- Aplicar regras por professor
+- Buscar classs of the period
+- Aplicar rules por instructor
 - Calcular totais
 
 ---
 
-#### TASK-011-004: API de Relatório de Comissões
+#### TASK-011-004: API of Report of Commissions
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- GET /commissions/report
-- Filtros de período e professor
+- GET /withmissions/report
+- Filhaves of period and instructor
 - Retorno detalhado
 
 ---
 
-#### TASK-011-005: Registro de Pagamento
+#### TASK-011-005: Registro of Payment
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 ---
 
 ### Frontend
 
-#### TASK-011-006: Página de Configuração de Comissões
+#### TASK-011-006: Page of Configuration of Commissions
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-- Por professor
-- Múltiplas regras
+- Por instructor
+- Múltiplas rules
 - Vigência
 
 ---
 
-#### TASK-011-007: Página de Relatório de Comissões
+#### TASK-011-007: Page of Report of Commissions
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-- Filtros
+- Filhaves
 - Tabela detalhada
 - Totais
-- Exportação
+- Export
 
 ---
 
-#### TASK-011-008: Modal de Pagamento
+#### TASK-011-008: Modal of Payment
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 ---
 
-##  Critérios de Aceite do Épico
+##  Acceptance Crihaveia of the Épico
 
-- [ ] Regras de comissão configuráveis
-- [ ] Cálculo automático correto
-- [ ] Relatório detalhado
-- [ ] Exportação funcionando
-- [ ] Histórico de pagamentos
-- [ ] Testes ≥80%
+- [ ] Regras of commission configurable
+- [ ] Calculation automatic correto
+- [ ] Report detalhado
+- [ ] Export funcionando
+- [ ] History of payments
+- [ ] Tests ≥80%
 
 ---
 
 ##  Timeline Sugerido
 
-**Total estimado:** ~24 horas (~1 semana)
+**Total estimado:** ~24 hours (~1 week)

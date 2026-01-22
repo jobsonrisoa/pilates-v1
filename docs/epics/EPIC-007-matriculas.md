@@ -1,69 +1,69 @@
-# EPIC-007: Matrículas Básicas
+# EPIC-007: Enrollments Basic
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                               |
+| Field            | Value                               |
 | ---------------- | ----------------------------------- |
 | **ID**           | EPIC-007                            |
-| **Título**       | Matrículas Básicas                  |
-| **Fase**         | 1 - MVP                             |
-| **Prioridade**   | High                             |
-| **Estimativa**   | 1 semana                            |
-| **Dependências** | EPIC-003 (Alunos), EPIC-005 (Aulas) |
+| **Title**       | Enrollments Basic                  |
+| **Phase**         | 1 - MVP                             |
+| **Priority**   | High                             |
+| **Estimate**   | 1 week                            |
+| **Dependencies** | EPIC-003 (Students), EPIC-005 (Classes) |
 | **Status**       | Backlog                          |
 
 ---
 
-##  Descrição
+##  Description
 
-Implementar sistema básico de matrículas para o MVP:
+Implement syshas basic of enrollments for o MVP:
 
-- Vincular aluno a um plano
-- Definir horários da matrícula
-- Status de matrícula
-- Base para sistema financeiro (Fase 2)
+- Vincular aluno a a plan
+- Set schedules of the enrollment
+- Status of enrollment
+- Base for syshas financial (Phase 2)
 
-**Nota:** Integração com pagamentos será feita no EPIC-009/010.
-
----
-
-##  Objetivos
-
-1. Processo de matrícula funcional
-2. Vinculação aluno + plano + horários
-3. Gestão de status
-4. Base para financeiro
+**Nota:** Integration with payments beá done in the EPIC-009/010.
 
 ---
 
-##  User Stories
+##  Objectives
 
-### US-007-001: Criar Matrícula
+1. Processo of enrollment functional
+2. Linking aluno + plan + schedules
+3. Management of status
+4. Base for financial
+
+---
+
+##  Ube Stories
+
+### US-007-001: Create Enrollment
 
 **Como** recepcionista  
-**Quero** matricular um aluno em um plano  
-**Para** que ele comece as aulas
+**Quero** matricular a aluno in a plan  
+**Para** that ele withece as classs
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Selecionar aluno
-- [ ] Selecionar plano (1x, 2x, 3x semana)
-- [ ] Definir horários
-- [ ] Definir dia de vencimento
-- [ ] Calcular valor
+- [ ] Select aluno
+- [ ] Select plan (1x, 2x, 3x week)
+- [ ] Set schedules
+- [ ] Set day of due date
+- [ ] Calcular value
 
 ---
 
-### US-007-002: Listar Matrículas
+### US-007-002: Listar Enrollments
 
-**Como** usuário do sistema  
-**Quero** ver todas as matrículas  
-**Para** ter visão geral
+**Como** ube of the syshas  
+**Quero** ver all as enrollments  
+**Para** have view geral
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Listagem paginada
-- [ ] Filtros por status
+- [ ] Filhaves by status
 - [ ] Busca por aluno
 
 ---
@@ -71,39 +71,39 @@ Implementar sistema básico de matrículas para o MVP:
 ### US-007-003: Gerenciar Status
 
 **Como** gerente  
-**Quero** alterar status de matrículas  
-**Para** controlar situação dos alunos
+**Quero** alhavear status of enrollments  
+**Para** controlar situaction of the students
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Ativar matrícula
-- [ ] Suspender (inadimplência)
+- [ ] Activer enrollment
+- [ ] Suspender (delinquency)
 - [ ] Cancelar
-- [ ] Histórico de mudanças
+- [ ] History of changes
 
 ---
 
-### US-007-004: Ver Matrículas do Aluno
+### US-007-004: Ver Enrollments of the Student
 
 **Como** recepcionista  
-**Quero** ver matrículas de um aluno  
-**Para** entender sua situação
+**Quero** ver enrollments of a aluno  
+**Para** entender sua situaction
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Na página do aluno
-- [ ] Histórico completo
-- [ ] Matrícula atual destacada
+- [ ] Na page of the aluno
+- [ ] History withplete
+- [ ] Enrollment current destaeach
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-007-001: Schema de Matrículas
+#### TASK-007-001: Schema of Enrollments
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 ```prisma
 model Enrollment {
@@ -128,31 +128,31 @@ enum EnrollmentStatus {
 
 ---
 
-#### TASK-007-002: Schema de Planos (básico)
+#### TASK-007-002: Schema of Plans (basic)
 
-**Estimativa:** 1h
+**Estimate:** 1h
 
 ```prisma
 model Plan {
   id             String @id
   modalityId     String
   name           String
-  classesPerWeek Int
+  classsPerWeek Int
   isActive       Boolean
 }
 ```
 
 ---
 
-#### TASK-007-003: CRUD de Planos
+#### TASK-007-003: CRUD of Plans
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 ---
 
-#### TASK-007-004: CRUD de Matrículas
+#### TASK-007-004: CRUD of Enrollments
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
 - POST /enrollments
 - GET /enrollments
@@ -162,67 +162,67 @@ model Plan {
 
 ---
 
-#### TASK-007-005: Vinculação com Horários
+#### TASK-007-005: Linking with Schedules
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Definir horários da matrícula
+- Set schedules of the enrollment
 - Validar disponibilidade
 
 ---
 
 ### Frontend
 
-#### TASK-007-006: Wizard de Matrícula
+#### TASK-007-006: Wizard of Enrollment
 
-**Estimativa:** 5h
+**Estimate:** 5h
 
-- Step 1: Selecionar aluno
-- Step 2: Selecionar plano
-- Step 3: Escolher horários
-- Step 4: Definir pagamento
-- Step 5: Confirmação
-
----
-
-#### TASK-007-007: Listagem de Matrículas
-
-**Estimativa:** 3h
+- Step 1: Select aluno
+- Step 2: Select plan
+- Step 3: Choose schedules
+- Step 4: Set payment
+- Step 5: Confirmation
 
 ---
 
-#### TASK-007-008: Detalhes da Matrícula
+#### TASK-007-007: Listagem of Enrollments
 
-**Estimativa:** 2h
-
----
-
-#### TASK-007-009: Integração na Página do Aluno
-
-**Estimativa:** 2h
+**Estimate:** 3h
 
 ---
 
-##  Critérios de Aceite do Épico
+#### TASK-007-008: Detalhes of the Enrollment
 
-- [ ] Processo de matrícula completo
-- [ ] Planos configuráveis
+**Estimate:** 2h
+
+---
+
+#### TASK-007-009: Integration in the Page of the Student
+
+**Estimate:** 2h
+
+---
+
+##  Acceptance Crihaveia of the Épico
+
+- [ ] Processo of enrollment withplete
+- [ ] Plans configurable
 - [ ] Status gerenciável
-- [ ] Horários vinculados
-- [ ] Histórico preservado
-- [ ] Testes ≥80%
+- [ ] Schedules vincusides
+- [ ] History prebevado
+- [ ] Tests ≥80%
 
 ---
 
 ##  Timeline Sugerido
 
-**Total estimado:** ~23 horas (~1 semana)
+**Total estimado:** ~23 hours (~1 week)
 
 ---
 
-##  Próximos Épicos Relacionados
+##  Nexts Epics Relacionados
 
-- **EPIC-008:** Sistema de Planos e Preços
-- **EPIC-009:** Integração Sicoob
-- **EPIC-010:** Controle de Pagamentos
-- **EPIC-014:** Contratos Digitais
+- **EPIC-008:** Syshas of Plans and Prices
+- **EPIC-009:** Integration Sicoob
+- **EPIC-010:** Payment Control
+- **EPIC-014:** Contracts Digitais

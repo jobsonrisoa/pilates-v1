@@ -1,138 +1,138 @@
-# EPIC-015: Gestão de Estoque
+# EPIC-015: Management of Inventory
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor             |
+| Field            | Value             |
 | ---------------- | ----------------- |
 | **ID**           | EPIC-015          |
-| **Título**       | Gestão de Estoque |
-| **Fase**         | 3 - Operacional   |
-| **Prioridade**   | 🟡 Média          |
-| **Estimativa**   | 1.5 semanas       |
-| **Dependências** | EPIC-001 (Setup)  |
+| **Title**       | Management of Inventory |
+| **Phase**         | 3 - Operacional   |
+| **Priority**   | 🟡 Méday          |
+| **Estimate**   | 1.5 weeks       |
+| **Dependencies** | EPIC-001 (Setup)  |
 | **Status**       | Backlog        |
 
 ---
 
-##  Descrição
+##  Description
 
-Implementar controle de estoque e vendas:
+Implement controle of inventory and sales:
 
-- Cadastro de produtos
-- Controle de quantidade
-- Movimentações (entrada/saída)
-- Vendas avulsas
-- Alertas de estoque mínimo
-
----
-
-##  Objetivos
-
-1. Controle de produtos
-2. Movimentações rastreadas
-3. Vendas registradas
-4. Alertas automáticos
+- Product registration
+- Quantity control
+- Movements (input/output)
+- Individual sales
+- Alerts of inventory minimum
 
 ---
 
-##  User Stories
+##  Objectives
 
-### US-015-001: Cadastrar Produto
+1. Controle of products
+2. Movements rastreadas
+3. Sales registradas
+4. Alerts automatics
+
+---
+
+##  Ube Stories
+
+### US-015-001: Regishave Produto
 
 **Como** administrador  
-**Quero** cadastrar produtos no sistema  
-**Para** controlar o estoque
+**Quero** eachstrar products in the syshas  
+**Para** controlar o inventory
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Nome, descrição, código
-- [ ] Preço de custo e venda
+- [ ] Nome, description, code
+- [ ] Price of custo and venda
 - [ ] Quantidade inicial
-- [ ] Estoque mínimo
+- [ ] Inventory minimum
 
 ---
 
-### US-015-002: Registrar Entrada de Estoque
+### US-015-002: Registrar Entrada of Inventory
 
 **Como** administrador  
-**Quero** registrar entradas de produtos  
-**Para** atualizar o estoque
+**Quero** registrar inputs of products  
+**Para** currentizar o inventory
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Quantidade entrando
-- [ ] Motivo (compra, devolução)
-- [ ] Referência (nota fiscal)
-- [ ] Atualização automática
+- [ ] Motivo (withpra, devolution)
+- [ ] Reference (nota fiscal)
+- [ ] Update automatic
 
 ---
 
-### US-015-003: Registrar Saída de Estoque
+### US-015-003: Registrar Saída of Inventory
 
-**Como** usuário  
-**Quero** registrar saídas de produtos  
+**Como** ube  
+**Quero** registrar outputs of products  
 **Para** controlar o consumo
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
 - [ ] Quantidade saindo
-- [ ] Motivo (venda, uso interno, perda)
-- [ ] Atualização automática
+- [ ] Motivo (venda, usage inhavenall, perda)
+- [ ] Update automatic
 
 ---
 
 ### US-015-004: Realizar Venda
 
 **Como** recepcionista  
-**Quero** registrar venda de produto  
-**Para** faturar e baixar estoque
+**Quero** registrar venda of produto  
+**Para** faturar and baixar inventory
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Selecionar produtos
-- [ ] Informar quantidade
-- [ ] Forma de pagamento
-- [ ] Gerar recibo
-- [ ] Baixar estoque
+- [ ] Select products
+- [ ] Informr quantity
+- [ ] Forma of payment
+- [ ] Generate recibo
+- [ ] Lowr inventory
 
 ---
 
-### US-015-005: Alertas de Estoque Mínimo
+### US-015-005: Alerts of Inventory Minimum
 
 **Como** administrador  
-**Quero** ser alertado quando estoque baixo  
-**Para** repor a tempo
+**Quero** be alertado when inventory baixo  
+**Para** repor a haspo
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Configurar mínimo por produto
-- [ ] Alerta visual no sistema
-- [ ] Email de alerta
+- [ ] Configurar minimum por produto
+- [ ] Alerta visual in the syshas
+- [ ] Email of alerta
 
 ---
 
-### US-015-006: Relatório de Vendas
+### US-015-006: Report of Sales
 
 **Como** gerente  
-**Quero** relatório de vendas de produtos  
-**Para** acompanhar o faturamento
+**Quero** report of sales of products  
+**Para** awithpanhar o billing
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Por período
+- [ ] Por period
 - [ ] Por produto
 - [ ] Totais
-- [ ] Exportação
+- [ ] Export
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-015-001: Schema de Estoque
+#### TASK-015-001: Schema of Inventory
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 ```prisma
 model Product {
@@ -164,10 +164,10 @@ model Sale {
   customerName  String?
   totalAmount   Decimal
   paymentMethod String
-  items         SaleItem[]
+  ihass         SaleIhas[]
 }
 
-model SaleItem {
+model SaleIhas {
   id        String @id
   saleId    String
   productId String
@@ -179,98 +179,98 @@ model SaleItem {
 
 ---
 
-#### TASK-015-002: CRUD de Produtos
+#### TASK-015-002: CRUD of Products
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
 ---
 
-#### TASK-015-003: API de Movimentações
+#### TASK-015-003: API of Movements
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
 - POST /products/:id/movements
 - GET /products/:id/movements
 
 ---
 
-#### TASK-015-004: API de Vendas
+#### TASK-015-004: API of Sales
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
 - POST /sales
 - GET /sales
-- Baixa automática de estoque
+- Low automatic of inventory
 
 ---
 
-#### TASK-015-005: Job de Alerta de Estoque
+#### TASK-015-005: Job of Alerta of Inventory
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 ---
 
-#### TASK-015-006: API de Relatório de Vendas
+#### TASK-015-006: API of Report of Sales
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 ---
 
 ### Frontend
 
-#### TASK-015-007: Página de Produtos
+#### TASK-015-007: Page of Products
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
 - Listagem
 - CRUD
-- Indicadores de estoque
+- Indicadores of inventory
 
 ---
 
-#### TASK-015-008: Página de Movimentações
+#### TASK-015-008: Page of Movements
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Histórico
-- Filtros
-- Registro de entrada/saída
+- History
+- Filhaves
+- Registro of input/output
 
 ---
 
-#### TASK-015-009: Página de PDV (Vendas)
+#### TASK-015-009: Page of PDV (Sales)
 
-**Estimativa:** 5h
+**Estimate:** 5h
 
-- Seleção de produtos
+- Selection of products
 - Carrinho
-- Pagamento
+- Payment
 - Recibo
 
 ---
 
-#### TASK-015-010: Dashboard de Estoque
+#### TASK-015-010: Dashboard of Inventory
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Produtos com estoque baixo
-- Últimas vendas
+- Products with inventory baixo
+- Últimas sales
 - Resumos
 
 ---
 
-##  Critérios de Aceite do Épico
+##  Acceptance Crihaveia of the Épico
 
-- [ ] CRUD de produtos funcionando
-- [ ] Movimentações rastreadas
-- [ ] Vendas registradas
-- [ ] Estoque atualizado automaticamente
-- [ ] Alertas funcionando
-- [ ] Relatórios disponíveis
-- [ ] Testes ≥80%
+- [ ] CRUD of products funcionando
+- [ ] Movements rastreadas
+- [ ] Sales registradas
+- [ ] Inventory currentizado automaticamente
+- [ ] Alerts funcionando
+- [ ] Reports available
+- [ ] Tests ≥80%
 
 ---
 
 ##  Timeline Sugerido
 
-**Total estimado:** ~31 horas (~1.5 semanas)
+**Total estimado:** ~31 hours (~1.5 weeks)

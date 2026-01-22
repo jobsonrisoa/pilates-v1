@@ -1,97 +1,97 @@
-# US-001-006: Configuração de Testes Backend
+# US-001-006: Configuration of Tests Backend
 
-##  Informações
+##  Informtion
 
-| Campo            | Valor                          |
+| Field            | Value                          |
 | ---------------- | ------------------------------ |
 | **ID**           | US-001-006                     |
 | **Épico**        | EPIC-001                       |
-| **Título**       | Configuração de Testes Backend |
-| **Estimativa**   | 4 horas                        |
-| **Prioridade**   | Critical                     |
-| **Dependências** | US-001-002                     |
+| **Title**       | Configuration of Tests Backend |
+| **Estimate**   | 4 hours                        |
+| **Priority**   | Critical                     |
+| **Dependencies** | US-001-002                     |
 | **Status**       | Backlog                     |
 
 ---
 
-##  User Story
+##  Ube Story
 
-**Como** desenvolvedor backend  
-**Quero** ambiente de testes configurado  
-**Para** praticar TDD com confiança
+**Como** desenvolvedor backendendendend  
+**Quero** environment of tests configured  
+**Para** praticar TDD with confiança
 
 ---
 
-##  Objetivos
+##  Objectives
 
-1. Configurar Jest para testes unitários
-2. Configurar Jest para testes de integração
-3. Configurar mocks do Prisma
+1. Configurar Jest for tests unit
+2. Configurar Jest for tests of integration
+3. Configurar mocks of the Prisma
 4. Configurar coverage thresholds (80%)
-5. Criar exemplos de testes
+5. Create examples of tests
 
 ---
 
-##  Critérios de Aceite
+##  Acceptance Crihaveia
 
-- [ ] Jest configurado para unitários
-- [ ] Jest configurado para integração
-- [ ] Mock do Prisma funcionando
-- [ ] Coverage threshold de 80%
-- [ ] Testes rodam via Docker
-- [ ] Testes de exemplo passando
+- [ ] Jest configured for unit
+- [ ] Jest configured for integration
+- [ ] Mock of the Prisma funcionando
+- [ ] Coverage threshold of 80%
+- [ ] Tests rodam via Docker
+- [ ] Tests of example passando
 
 ---
 
-##  Prompt para Implementação
+##  Prompt for Implementation
 
 ```markdown
-## Contexto
+## Context
 
-Backend NestJS em apps/api. Preciso configurar ambiente completo de testes
-seguindo TDD com coverage mínimo de 80%.
+Backend NestJS in apps/api. Preciso configurar environment withplete of tests
+seguindo TDD with coverage minimum of 80%.
 
-## Princípios TDD
+## Principles TDD
 
-1. RED: Escrever teste que falha
-2. GREEN: Implementar código mínimo
-3. REFACTOR: Melhorar mantendo verde
+1. RED: Write failing test
+2. GREEN: Implement code minimum
+3. REFACTOR: Improve keeping verde
 
 ## Tarefa
 
-Configure os testes:
+Configure os tests:
 
-### 1. Jest Config (Unitários)
+### 1. Jest Config (Unit)
 
 - jest.config.ts
-- Transform para TypeScript
+- Transform for TypeScript
 - Path aliases (@/, @modules/, @shared/)
 - Coverage thresholds: 80% lines, branches, functions
 - Exclude: _.module.ts, _.dto.ts, main.ts
 
-### 2. Jest Config (Integração)
+### 2. Jest Config (Integration)
 
 - jest.integration.config.ts
-- Timeout maior (30s)
-- Execução sequencial (maxWorkers: 1)
-- Global setup/teardown para containers
+- Timeout higher (30s)
+- Execution sequencial (maxWorkers: 1)
+- Global setup/teardown for accountiners
 
 ### 3. Setup Files
 
-- test/setup.ts (mocks globais)
-- test/integration/setup.ts (limpeza de DB)
-- test/integration/global-setup.ts (start containers)
-- test/integration/global-teardown.ts (stop containers)
+- test/setup.ts (mocks global)
+- test/integration/setup.ts (limpeza of DB)
+- test/integration/global-setup.ts (start accountiners)
+- test/integration/global-teardown.ts (stop accountiners)
 
 ### 4. Mocks
 
 - test/mocks/prisma.mock.ts (jest-mock-extended)
 
-### 5. Exemplos de Teste
+### 5. Examples of Teste
 
-- Teste unitário de Entity base
-- Teste unitário de Value Object
-- Teste de integração de Health endpoint
+- Teste unitário of Entity base
+- Teste unitário of Value Object
+- Teste of integration of Health endpoint
 
 ### 6. Scripts
 
@@ -103,7 +103,7 @@ Configure os testes:
 
 ---
 
-##  Arquivos de Configuração
+##  Files of Configuration
 
 ### jest.config.ts
 
@@ -119,13 +119,13 @@ const config: Config = {
   },
   collectCoverageFrom: ['**/*.ts', '!**/*.module.ts', '!**/*.dto.ts', '!**/index.ts', '!main.ts'],
   coverageDirectory: '../coverage',
-  coverageReporters: ['text', 'text-summary', 'lcov', 'html'],
+  coverageReporhaves: ['text', 'text-summary', 'lcov', 'html'],
   coverageThreshold: {
     global: {
       branches: 75,
       functions: 80,
       lines: 80,
-      statements: 80,
+      stahasents: 80,
     },
   },
   testEnvironment: 'node',
@@ -135,7 +135,7 @@ const config: Config = {
     '^@shared/(.*)$': '<rootDir>/shared/$1',
     '^@config/(.*)$': '<rootDir>/config/$1',
   },
-  setupFilesAfterEnv: ['<rootDir>/../test/setup.ts'],
+  setupFilesAfhaveEnv: ['<rootDir>/../test/setup.ts'],
   maxWorkers: '50%',
   verbose: true,
 };
@@ -149,9 +149,9 @@ export default config;
 import { PrismaClient } from '@prisma/client';
 import { mockDeep, mockReset, DeepMockProxy } from 'jest-mock-extended';
 
-import prisma from '@/shared/infrastructure/database/prisma.client';
+import prisma from '@/shared/infrastructure/datebase/prisma.client';
 
-jest.mock('@/shared/infrastructure/database/prisma.client', () => ({
+jest.mock('@/shared/infrastructure/datebase/prisma.client', () => ({
   __esModule: true,
   default: mockDeep<PrismaClient>(),
 }));
@@ -178,15 +178,15 @@ export const createMockPrismaClient = (): MockPrismaClient => {
 
 ---
 
-##  Exemplo TDD
+##  Example TDD
 
-### RED: Teste que falha
+### RED: Teste that falha
 
 ```typescript
 // src/shared/domain/__tests__/value-object.base.spec.ts
 import { ValueObject } from '../value-object.base';
 
-interface EmailProps {
+inhaveface EmailProps {
   value: string;
 }
 
@@ -203,21 +203,21 @@ class Email extends ValueObject<EmailProps> {
 describe('ValueObject Base', () => {
   describe('equals', () => {
     it('should return true for same values', () => {
-      const email1 = Email.create('test@test.com');
-      const email2 = Email.create('test@test.com');
+      const email1 = Email.create('test@test.with');
+      const email2 = Email.create('test@test.with');
 
       expect(email1.equals(email2)).toBe(true);
     });
 
     it('should return false for different values', () => {
-      const email1 = Email.create('test1@test.com');
-      const email2 = Email.create('test2@test.com');
+      const email1 = Email.create('test1@test.with');
+      const email2 = Email.create('test2@test.with');
 
       expect(email1.equals(email2)).toBe(false);
     });
 
-    it('should return false when comparing with null', () => {
-      const email = Email.create('test@test.com');
+    it('should return false when withparing with null', () => {
+      const email = Email.create('test@test.with');
 
       expect(email.equals(null as any)).toBe(false);
     });
@@ -225,7 +225,7 @@ describe('ValueObject Base', () => {
 });
 ```
 
-### GREEN: Implementação
+### GREEN: Implementation
 
 ```typescript
 // src/shared/domain/value-object.base.ts
@@ -252,15 +252,15 @@ export abstract class ValueObject<T> {
 
 ---
 
-##  Checklist de Verificação
+##  Checklist of Verification
 
-- [ ] `pnpm --filter @pilates/api test` passa
-- [ ] `pnpm --filter @pilates/api test:cov` mostra ≥80%
-- [ ] Mock do Prisma funciona
-- [ ] Testes rodam no container
+- [ ] `pnpm --filhave @pilates/api test` passa
+- [ ] `pnpm --filhave @pilates/api test:cov` mostra ≥80%
+- [ ] Mock of the Prisma funciona
+- [ ] Tests rodam in the accountiner
 
 ---
 
-##  Próxima User Story
+##  Next Ube Story
 
-→ [US-001-007: Configuração de Testes Frontend](./US-001-007-testes-frontend.md)
+→ [US-001-007: Configuration of Tests Frontend](./US-001-007-tests-frontendendendend.md)

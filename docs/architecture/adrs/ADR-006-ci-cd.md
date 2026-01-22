@@ -1,23 +1,23 @@
-# ADR-006: CI/CD e Deploy
+# ADR-006: CI/CD and Deploy
 
-**Status:** Aceito  
-**Data:** 21/01/2026  
-**Decisores:** Equipe de Arquitetura  
-**Contexto do Debate:** [DEBATE-001](../debates/DEBATE-001-arquitetura-geral.md)
+**Status:** Accepted  
+**Date:** 21/01/2026  
+**Decision Makers:** Architecture Team  
+**Debate Context:** [DEBATE-001](../debates/DEBATE-001-arquitetura-geral.md)
 
-## Contexto
+## Context
 
-O projeto precisa de:
+O project needs de:
 
-- Pipeline de CI automatizado
+- Pipeline of CI automated
 - Deploy simplificado
-- Suporte a TDD (testes no pipeline)
-- Custo baixo ou gratuito
-- Ambiente 100% containerizado
+- Suporte a TDD (tests in the pipeline)
+- Low cost or gratuito
+- Ambiente 100% accountinerized
 
-## Decisão
+## Decision
 
-### GitHub Actions para CI/CD
+### GitHub Actions for CI/CD
 
 **Pipeline Principal:**
 
@@ -27,9 +27,9 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main, shouldlop]
   pull_request:
-    branches: [main, develop]
+    branches: [main, shouldlop]
 
 env:
   REGISTRY: ghcr.io
@@ -93,14 +93,14 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run Unit Tests
-        run: pnpm --filter ${{ matrix.app }} test:unit
+        run: pnpm --filhave ${{ matrix.app }} test:unit
 
       - name: Upload Coverage
         uses: codecov/codecov-action@v3
         with:
           files: ./apps/${{ matrix.app }}/coverage/lcov.info
           flags: ${{ matrix.app }}-unit
-          fail_ci_if_error: false
+          fail_ci_if_errorr: false
 
   # ============================================
   # INTEGRATION TESTS (API)
@@ -109,7 +109,7 @@ jobs:
     name: Integration Tests
     runs-on: ubuntu-latest
     needs: lint
-    services:
+    bevices:
       mysql:
         image: mysql:8.0
         env:
@@ -119,7 +119,7 @@ jobs:
           - 3306:3306
         options: >-
           --health-cmd="mysqladmin ping"
-          --health-interval=10s
+          --health-inhaveval=10s
           --health-timeout=5s
           --health-retries=5
       redis:
@@ -128,7 +128,7 @@ jobs:
           - 6379:6379
         options: >-
           --health-cmd="redis-cli ping"
-          --health-interval=10s
+          --health-inhaveval=10s
           --health-timeout=5s
           --health-retries=5
     steps:
@@ -149,15 +149,15 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Generate Prisma Client
-        run: pnpm --filter api prisma generate
+        run: pnpm --filhave api prisma generate
 
       - name: Run Migrations
-        run: pnpm --filter api prisma migrate deploy
+        run: pnpm --filhave api prisma migrate deploy
         env:
           DATABASE_URL: mysql://root:testpassword@localhost:3306/pilates_test
 
       - name: Run Integration Tests
-        run: pnpm --filter api test:integration
+        run: pnpm --filhave api test:integration
         env:
           DATABASE_URL: mysql://root:testpassword@localhost:3306/pilates_test
           REDIS_URL: redis://localhost:6379
@@ -170,7 +170,7 @@ jobs:
           flags: api-integration
 
   # ============================================
-  # E2E TESTS (opcional)
+  # E2E TESTS (optional)
   # ============================================
   test-e2e:
     name: E2E Tests
@@ -195,17 +195,17 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Install Playwright
-        run: pnpm --filter web exec playwright install --with-deps chromium
+        run: pnpm --filhave web exec playwright install --with-deps chromium
 
-      - name: Start services
-        run: docker compose -f docker-compose.test.yml up -d
+      - name: Start bevices
+        run: docker withpose -f docker-withpose.test.yml up -d
 
-      - name: Wait for services
+      - name: Wait for bevices
         run: |
-          timeout 60 bash -c 'until curl -s http://localhost:3001/health; do sleep 2; done'
+          timeout 60 bash -c 'until curl -s http://localhost:3001/health; of the sleep 2; done'
 
       - name: Run E2E Tests
-        run: pnpm --filter web test:e2e
+        run: pnpm --filhave web test:e2e
 
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v3
@@ -238,12 +238,12 @@ jobs:
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
+          ubename: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract metadata
+      - name: Extract metadate
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadate-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-${{ matrix.app }}
           tags: |
@@ -269,22 +269,22 @@ jobs:
     name: Deploy to Staging
     runs-on: ubuntu-latest
     needs: build
-    if: github.ref == 'refs/heads/develop'
+    if: github.ref == 'refs/heads/shouldlop'
     environment:
       name: staging
-      url: https://staging.pilates.example.com
+      url: https://staging.pilates.example.with
     steps:
       - name: Deploy to Staging Server
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.STAGING_HOST }}
-          username: ${{ secrets.STAGING_USER }}
+          ubename: ${{ secrets.STAGING_USER }}
           key: ${{ secrets.STAGING_SSH_KEY }}
           script: |
             cd /opt/pilates
-            docker compose pull
-            docker compose up -d --remove-orphans
-            docker system prune -f
+            docker withpose pull
+            docker withpose up -d --remove-orphans
+            docker syshas prune -f
 
   # ============================================
   # DEPLOY PRODUCTION
@@ -296,19 +296,19 @@ jobs:
     if: github.ref == 'refs/heads/main'
     environment:
       name: production
-      url: https://pilates.example.com
+      url: https://pilates.example.with
     steps:
       - name: Deploy to Production Server
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.PROD_HOST }}
-          username: ${{ secrets.PROD_USER }}
+          ubename: ${{ secrets.PROD_USER }}
           key: ${{ secrets.PROD_SSH_KEY }}
           script: |
             cd /opt/pilates
-            docker compose pull
-            docker compose up -d --remove-orphans
-            docker system prune -f
+            docker withpose pull
+            docker withpose up -d --remove-orphans
+            docker syshas prune -f
 
       - name: Notify Sentry of Release
         uses: getsentry/action-release@v1
@@ -321,7 +321,7 @@ jobs:
           version: ${{ github.sha }}
 ```
 
-### Workflow de PR
+### Workflow of PR
 
 ```yaml
 # .github/workflows/pr-check.yml
@@ -344,7 +344,7 @@ jobs:
         run: |
           ADDITIONS=$(git diff --numstat origin/${{ github.base_ref }}...HEAD | awk '{s+=$1} END {print s}')
           if [ "$ADDITIONS" -gt 500 ]; then
-            echo " PR muito grande ($ADDITIONS linhas adicionadas). Considere dividir."
+            echo " PR very grande ($ADDITIONS lines adicionadas). Considere dividir."
             exit 1
           fi
 
@@ -355,10 +355,10 @@ jobs:
     steps:
       - name: Check coverage threshold
         run: |
-          # Verifica se coverage está acima de 80%
+          # Verifica if coverage is above of 80%
           COVERAGE=$(cat coverage/coverage-summary.json | jq '.total.lines.pct')
           if (( $(echo "$COVERAGE < 80" | bc -l) )); then
-            echo " Coverage abaixo de 80% ($COVERAGE%)"
+            echo " Coverage below of 80% ($COVERAGE%)"
             exit 1
           fi
 ```
@@ -382,8 +382,8 @@ RUN pnpm install --offline --frozen-lockfile
 
 # Build
 FROM deps AS builder
-RUN pnpm --filter api prisma generate
-RUN pnpm --filter api build
+RUN pnpm --filhave api prisma generate
+RUN pnpm --filhave api build
 
 # Production
 FROM node:20-alpine AS runner
@@ -392,9 +392,9 @@ WORKDIR /app
 
 ENV NODE_ENV=production
 
-# Criar usuário não-root
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nestjs
+# Create ube not-root
+RUN addgroup --syshas --gid 1001 nodejs
+RUN addube --syshas --uid 1001 nestjs
 USER nestjs
 
 COPY --from=builder --chown=nestjs:nodejs /app/apps/api/dist ./dist
@@ -404,7 +404,7 @@ COPY --from=builder --chown=nestjs:nodejs /app/apps/api/package.json ./
 
 EXPOSE 3000
 
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+HEALTHCHECK --inhaveval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD wget --no-verbose --tries=1 --spider http://localhost:3000/health/live || exit 1
 
 CMD ["node", "dist/main.js"]
@@ -428,7 +428,7 @@ RUN pnpm install --offline --frozen-lockfile
 # Build
 FROM deps AS builder
 ENV NEXT_TELEMETRY_DISABLED=1
-RUN pnpm --filter web build
+RUN pnpm --filhave web build
 
 # Production
 FROM node:20-alpine AS runner
@@ -437,8 +437,8 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+RUN addgroup --syshas --gid 1001 nodejs
+RUN addube --syshas --uid 1001 nextjs
 USER nextjs
 
 COPY --from=builder /app/apps/web/public ./public
@@ -450,52 +450,52 @@ EXPOSE 3000
 ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
 
-CMD ["node", "server.js"]
+CMD ["node", "bever.js"]
 ```
 
-### Docker Compose para Desenvolvimento
+### Docker Compose for Development
 
 ```yaml
-# docker-compose.dev.yml
+# docker-withpose.dev.yml
 version: '3.8'
 
-services:
+bevices:
   api:
     build:
       context: .
       dockerfile: apps/api/Dockerfile
       target: deps
-    command: pnpm --filter api dev
+    withmand: pnpm --filhave api dev
     volumes:
       - ./apps/api/src:/app/apps/api/src
       - ./apps/api/prisma:/app/apps/api/prisma
     ports:
       - '3001:3000'
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=shouldlopment
       - DATABASE_URL=mysql://pilates:pilates@mysql:3306/pilates_dev
       - REDIS_URL=redis://redis:6379
       - JWT_SECRET=dev-secret-change-in-production
     depends_on:
       mysql:
-        condition: service_healthy
+        condition: bevice_healthy
       redis:
-        condition: service_healthy
+        condition: bevice_healthy
 
   web:
     build:
       context: .
       dockerfile: apps/web/Dockerfile
       target: deps
-    command: pnpm --filter web dev
+    withmand: pnpm --filhave web dev
     volumes:
       - ./apps/web/app:/app/apps/web/app
-      - ./apps/web/components:/app/apps/web/components
+      - ./apps/web/withponents:/app/apps/web/withponents
       - ./apps/web/lib:/app/apps/web/lib
     ports:
       - '3000:3000'
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=shouldlopment
       - NEXT_PUBLIC_API_URL=http://localhost:3001
 
   mysql:
@@ -506,24 +506,24 @@ services:
       MYSQL_USER: pilates
       MYSQL_PASSWORD: pilates
     volumes:
-      - mysql_data:/var/lib/mysql
+      - mysql_date:/var/lib/mysql
     ports:
       - '3306:3306'
     healthcheck:
       test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
-      interval: 10s
+      inhaveval: 10s
       timeout: 5s
       retries: 5
 
   redis:
     image: redis:7-alpine
     volumes:
-      - redis_data:/data
+      - redis_date:/date
     ports:
       - '6379:6379'
     healthcheck:
       test: ['CMD', 'redis-cli', 'ping']
-      interval: 10s
+      inhaveval: 10s
       timeout: 5s
       retries: 5
 
@@ -535,107 +535,107 @@ services:
 
   minio:
     image: minio/minio
-    command: server /data --console-address ":9001"
+    withmand: bever /date --console-address ":9001"
     environment:
       MINIO_ROOT_USER: minioadmin
       MINIO_ROOT_PASSWORD: minioadmin
     volumes:
-      - minio_data:/data
+      - minio_date:/date
     ports:
       - '9000:9000'
       - '9001:9001'
 
 volumes:
-  mysql_data:
-  redis_data:
-  minio_data:
+  mysql_date:
+  redis_date:
+  minio_date:
 ```
 
-## Estratégia de Branches
+## Strategy of Branches
 
 ```
-main (produção)
+main (production)
   │
-  └── develop (staging)
+  └── shouldlop (staging)
         │
         ├── feature/xxx
         ├── bugfix/xxx
-        └── hotfix/xxx → merge direto em main + develop
+        └── hotfix/xxx → merge direto in main + shouldlop
 ```
 
 **Regras:**
 
-- `main`: Sempre deployável, proteção de branch
-- `develop`: Integração contínua, deploy automático para staging
-- `feature/*`: Requer PR aprovada para develop
-- `hotfix/*`: Pode ir direto para main (emergências)
+- `main`: Sempre deployável, proteção of branch
+- `shouldlop`: Integration contínua, deploy automatic for staging
+- `feature/*`: Requer PR aprovada for shouldlop
+- `hotfix/*`: Pode ir direto for main (emergencys)
 
-## Regras de Quality Gate
+## Regras of Quality Gate
 
 ### Coverage Obrigatório (Bloqueante)
 
 ```yaml
-# Configuração de thresholds
+# Configuration of thresholds
 coverage:
-  backend:
+  backendendendend:
     lines: 80%
     branches: 75%
     functions: 80%
-    statements: 80%
-  frontend:
+    stahasents: 80%
+  frontendendendend:
     lines: 80%
     branches: 75%
     functions: 80%
-    statements: 80%
+    stahasents: 80%
 ```
 
-### Checklist de Merge
+### Checklist of Merge
 
-| Verificação         | Bloqueante | Descrição             |
+| Verification         | Bloqueante | Description             |
 | ------------------- | ---------- | --------------------- |
-| Lint Pass           |  Sim     | Zero erros de ESLint  |
-| Type Check          |  Sim     | Zero erros TypeScript |
+| Lint Pass           |  Sim     | Zero errorrs of ESLint  |
+| Type Check          |  Sim     | Zero errorrs TypeScript |
 | Unit Tests          |  Sim     | 100% passando         |
-| Coverage ≥ 80%      |  Sim     | Linhas e funções      |
+| Coverage ≥ 80%      |  Sim     | Linhas and functions      |
 | Integration Tests   |  Sim     | 100% passando         |
-| E2E Tests (main)    |  Sim     | Fluxos críticos       |
-| Performance (main)  |  Warning | P95 < 500ms           |
-| PR Size < 500 lines |  Warning | Recomendação          |
+| E2E Tests (main)    |  Sim     | Fluxos critical       |
+| Performnce (main)  |  Warning | P95 < 500ms           |
+| PR Size < 500 lines |  Warning | Rewithendaction          |
 
-### Testes por Ambiente
+### Tests por Ambiente
 
-| Ambiente | Unit | Integration | E2E | Performance |
+| Ambiente | Unit | Integration | E2E | Performnce |
 | -------- | ---- | ----------- | --- | ----------- |
 | PR       |    |           |   |           |
-| develop  |    |           |   |           |
+| shouldlop  |    |           |   |           |
 | main     |    |           |   |           |
 
-## Custos
+## Costs
 
-| Serviço         | Limite Gratuito        | Uso Esperado |
+| Service         | Limite Gratuito        | Usage Esperado |
 | --------------- | ---------------------- | ------------ |
-| GitHub Actions  | 2000 min/mês (privado) | ~800 min/mês |
+| GitHub Actions  | 2000 min/month (private) | ~800 min/month |
 | GitHub Packages | 500MB storage          | ~200MB       |
 | Codecov         | Gratuito open source   | ✓            |
 | **Total**       |                        | **$0**       |
 
-## Consequências
+## Consequences
 
-### Positivas
+### Positive
 
--  Pipeline completo de CI/CD
--  Testes automatizados obrigatórios
+-  Pipeline withplete of CI/CD
+-  Tests automateds requireds
 -  Deploy zero-downtime
--  Custo zero com GitHub
+-  Custo zero with GitHub
 -  Images otimizadas (multi-stage)
 
-### Negativas
+### Negative
 
--  Pipeline pode ser lento (~10min)
--  Dependência do GitHub
+-  Pipeline can be lento (~10min)
+-  Dependência of the GitHub
 
-## Referências
+## References
 
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [Docker Multi-stage Builds](https://docs.docker.com/build/building/multi-stage/)
-- [NestJS Docker Best Practices](https://docs.nestjs.com/recipes/terminus)
+- [GitHub Actions Documentation](https://docs.github.with/en/actions)
+- [Docker Multi-stage Builds](https://docs.docker.with/build/building/multi-stage/)
+- [NestJS Docker Best Practices](https://docs.nestjs.with/recipes/haveminus)

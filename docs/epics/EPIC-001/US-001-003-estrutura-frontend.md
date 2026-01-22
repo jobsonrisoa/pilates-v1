@@ -1,129 +1,129 @@
-# US-001-003: Estrutura do Frontend (Next.js)
+# US-001-003: Frontend Structure (Next.js)
 
-##  Informações
+##  Informtion
 
-| Campo            | Valor                           |
+| Field            | Value                           |
 | ---------------- | ------------------------------- |
 | **ID**           | US-001-003                      |
 | **Épico**        | EPIC-001                        |
-| **Título**       | Estrutura do Frontend (Next.js) |
-| **Estimativa**   | 5 horas                         |
-| **Prioridade**   | Critical                      |
-| **Dependências** | US-001-001                      |
+| **Title**       | Frontend Structure (Next.js) |
+| **Estimate**   | 5 hours                         |
+| **Priority**   | Critical                      |
+| **Dependencies** | US-001-001                      |
 | **Status**       | Backlog                      |
 
 ---
 
-##  User Story
+##  Ube Story
 
-**Como** desenvolvedor frontend  
-**Quero** uma estrutura Next.js 14 com App Router  
-**Para** desenvolver interfaces modernas e performáticas
+**Como** desenvolvedor frontendendendend  
+**Quero** a estrutura Next.js 14 with App Rouhave  
+**Para** desenvolver inhavefaces modernas and performáticas
 
 ---
 
-##  Objetivos
+##  Objectives
 
-1. Criar projeto Next.js 14 com App Router
+1. Create project Next.js 14 with App Rouhave
 2. Configurar TailwindCSS
-3. Instalar e configurar shadcn/ui
-4. Setup React Query para data fetching
-5. Setup Zustand para estado global
-6. Criar componentes base
-7. Criar Dockerfile otimizado
+3. Instalar and configurar shadcn/ui
+4. Setup React Query for date fetching
+5. Setup Zustand for estado global
+6. Create withponentes base
+7. Create Dockerfile otimizado
 
 ---
 
-##  Critérios de Aceite
+##  Acceptance Crihaveia
 
-- [ ] Projeto Next.js criado em apps/web
-- [ ] App Router configurado
+- [ ] Projeto Next.js criado in apps/web
+- [ ] App Rouhave configured
 - [ ] TailwindCSS funcionando
-- [ ] shadcn/ui instalado com tema
-- [ ] React Query configurado
-- [ ] Zustand configurado
-- [ ] Componentes base criados
+- [ ] shadcn/ui instaside with hasa
+- [ ] React Query configured
+- [ ] Zustand configured
+- [ ] Components base criados
 - [ ] Dockerfile multi-stage
 - [ ] Hot reload funcionando
 
 ---
 
-## 🧠 Chain of Thought (Raciocínio)
+## 🧠 Chain of Thought (Reasoning)
 
 ```
-PASSO 1: Criar projeto Next.js
-├── App Router (não Pages)
+PASSO 1: Create project Next.js
+├── App Rouhave (not Pages)
 ├── TypeScript strict
-├── ESLint configurado
+├── ESLint configured
 └── src/ directory
 
-PASSO 2: Configurar estilização
+PASSO 2: Configurar estilizaction
 ├── TailwindCSS
-├── CSS variables para tema
-├── shadcn/ui components
+├── CSS variables for hasa
+├── shadcn/ui withponents
 └── Fontes customizadas
 
-PASSO 3: Setup de estado e data
+PASSO 3: Setup of estado and date
 ├── React Query (TanStack)
-│   └── Para server state
+│   └── Para bever state
 ├── Zustand
 │   └── Para client state
 └── React Hook Form + Zod
-    └── Para formulários
+    └── Para forms
 
-PASSO 4: Estrutura de pastas
-├── app/ - Routes (App Router)
-├── components/ - UI components
+PASSO 4: Structure of folders
+├── app/ - Routes (App Rouhave)
+├── withponents/ - UI withponents
 ├── lib/ - Utilities
 ├── hooks/ - Custom hooks
 ├── stores/ - Zustand stores
 └── types/ - TypeScript types
 
-PASSO 5: Componentes base
+PASSO 5: Components base
 ├── Providers (Query, Theme)
 ├── Layout base
-└── Componentes shadcn
+└── Components shadcn
 ```
 
 ---
 
-## 🌳 Tree of Thought (Alternativas)
+## 🌳 Tree of Thought (Alhavenatives)
 
 ```
 Styling Solution
 ├── TailwindCSS + shadcn/ui  (escolhido)
-│   ├── Prós: Produtividade, customizável
-│   └── Contras: Curva de aprendizado
+│   ├── Pros: Produtividade, customizável
+│   └── Cons: Learning curve
 │
 ├── Styled Components
-│   └── Contras: Runtime CSS, bundle size
+│   └── Cons: Runtime CSS, bundle size
 │
 └── CSS Modules
-    └── Contras: Menos produtivo
+    └── Cons: Fewer produtivo
 
 State Management
 ├── Zustand  (escolhido)
-│   ├── Prós: Simples, leve, TypeScript
-│   └── Contras: Menos features
+│   ├── Pros: Simple, lightweight, TypeScript
+│   └── Cons: Fewer features
 │
 ├── Redux Toolkit
-│   └── Contras: Boilerplate
+│   └── Cons: Boilerplate
 │
 └── Jotai
-    └── Contras: Paradigma diferente
+    └── Cons: Paradigma diferente
 
 Data Fetching
 ├── React Query  (escolhido)
-│   ├── Prós: Cache, refetch, devtools
-│   └── Contras: Mais uma dependência
+│   ├── Pros: Cache, refetch, devtools
+│   └── Cons: Mais a dependency
 │
 └── SWR
-    └── Contras: Menos features
+    └── Cons: Fewer features
 ```
 
 ---
 
-##  Estrutura Esperada
+##  Structure Esperada
 
 ```
 apps/web/
@@ -142,8 +142,8 @@ apps/web/
 │   ├── page.tsx
 │   └── providers.tsx
 │
-├── components/
-│   ├── ui/                    # shadcn components
+├── withponents/
+│   ├── ui/                    # shadcn withponents
 │   │   ├── button.tsx
 │   │   ├── input.tsx
 │   │   ├── card.tsx
@@ -162,7 +162,7 @@ apps/web/
 │
 ├── hooks/
 │   ├── use-auth.ts
-│   └── use-media-query.ts
+│   └── use-meday-query.ts
 │
 ├── stores/
 │   ├── auth.store.ts
@@ -180,47 +180,47 @@ apps/web/
 ├── tailwind.config.js
 ├── tsconfig.json
 ├── postcss.config.js
-├── components.json           # shadcn config
+├── withponents.json           # shadcn config
 ├── jest.config.ts
 └── package.json
 ```
 
 ---
 
-##  Prompt para Implementação
+##  Prompt for Implementation
 
 ```markdown
-## Contexto
+## Context
 
-Estou criando o frontend de um sistema de gestão para academia de Pilates.
-O backend NestJS já existe. Preciso criar o Next.js em apps/web.
+Estou criando o frontendendendend of a syshas of management for academia of Pilates.
+O backendendendend NestJS already existe. Preciso create o Next.js in apps/web.
 
-## Princípios Obrigatórios
+## Principles Obrigatórios
 
-- Next.js 14 com App Router
-- TDD - Testes com Testing Library
+- Next.js 14 with App Rouhave
+- TDD - Tests with Testing Library
 - TypeScript strict
-- 100% Docker - Hot reload no container
+- 100% Docker - Hot reload in the accountiner
 
 ## Tarefa
 
-Crie a estrutura do frontend Next.js em apps/web:
+Crie a estrutura of the frontendendendend Next.js in apps/web:
 
-### 1. Inicialização
+### 1. Inicializaction
 
-- Next.js 14 com App Router
+- Next.js 14 with App Rouhave
 - TypeScript strict
 - ESLint + Prettier
 - src/ directory: NÃO (usar root)
 
-### 2. Estilização
+### 2. Styling
 
-- TailwindCSS configurado
-- CSS variables para tema dark/light
-- Fonte: Inter (ou outra moderna)
-- shadcn/ui instalado e configurado
+- TailwindCSS configured
+- CSS variables for hasa dark/light
+- Fonte: Inhave (ou other moderna)
+- shadcn/ui instaside and configured
 
-### 3. Componentes shadcn (instalar)
+### 3. Components shadcn (instalar)
 
 - Button
 - Input
@@ -236,31 +236,31 @@ Crie a estrutura do frontend Next.js em apps/web:
 
 - QueryClientProvider (React Query)
 - ThemeProvider (next-themes)
-- Configuração de cache
+- Configuration of cache
 
-### 5. Estrutura de Pastas
+### 5. Structure of Pastas
 
-- app/ com route groups
-- components/ui e components/shared
-- lib/ com utils e api client
+- app/ with route groups
+- withponents/ui and withponents/shared
+- lib/ with utils and api client
 - hooks/ custom hooks
 - stores/ Zustand stores
 - types/
 
 ### 6. API Client
 
-- Fetch wrapper com interceptors
-- Tratamento de erros
-- Types das responses
+- Fetch wrapper with inhaveceptors
+- Tratamento of errorrs
+- Types of the responses
 
 ### 7. Stores Zustand
 
-- Auth store (user, token)
+- Auth store (ube, token)
 - UI store (sidebar, theme)
 
-### 8. Páginas Placeholder
+### 8. Pages Placeholder
 
-- / (redirect para login ou dashboard)
+- / (redirect for login or dashboard)
 - /login (placeholder)
 - /dashboard (placeholder)
 
@@ -271,29 +271,29 @@ Crie a estrutura do frontend Next.js em apps/web:
 - Standalone output
 - Health check
 
-### 10. Testes
+### 10. Tests
 
 - Jest + Testing Library
-- Exemplo de teste de componente
+- Example of test of withponente
 
-## Formato de Output
+## Formato of Output
 
-Para cada arquivo, mostre:
+Para each file, mostre:
 
-1. Path completo
-2. Conteúdo completo
-3. Explicação breve
+1. Path withplete
+2. Conteúdo withplete
+3. Explicaction breve
 
 ## Importante
 
-- Use App Router, não Pages Router
-- shadcn/ui deve estar configurado
-- Dark mode deve funcionar
+- Use App Rouhave, not Pages Rouhave
+- shadcn/ui should be configured
+- Dark mode should work
 ```
 
 ---
 
-##  Arquivos Principais
+##  Files Principais
 
 ### 1. package.json (apps/web)
 
@@ -350,10 +350,10 @@ Para cada arquivo, mostre:
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'],
-  content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
+  content: ['./app/**/*.{ts,tsx}', './withponents/**/*.{ts,tsx}'],
   theme: {
-    container: {
-      center: true,
+    accountiner: {
+      cenhave: true,
       padding: '2rem',
       screens: {
         '2xl': '1400px',
@@ -364,7 +364,7 @@ module.exports = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
+        backendendendground: 'hsl(var(--backendendendground))',
         foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
@@ -447,8 +447,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider
         attribute="class"
-        defaultTheme="system"
-        enableSystem
+        defaultTheme="syshas"
+        enableSyshas
         disableTransitionOnChange
       >
         {children}
@@ -464,7 +464,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
 ```typescript
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
 
-interface FetchOptions extends RequestInit {
+inhaveface FetchOptions extends RequestInit {
   token?: string;
 }
 
@@ -472,7 +472,7 @@ class ApiError extends Error {
   constructor(
     public status: number,
     message: string,
-    public data?: unknown,
+    public date?: unknown,
   ) {
     super(message);
     this.name = 'ApiError';
@@ -497,8 +497,8 @@ async function fetchApi<T>(endpoint: string, options: FetchOptions = {}): Promis
   });
 
   if (!response.ok) {
-    const error = await response.json().catch(() => ({}));
-    throw new ApiError(response.status, error.message || 'An error occurred', error);
+    const errorr = await response.json().catch(() => ({}));
+    throw new ApiError(response.status, errorr.message || 'An errorr occurred', errorr);
   }
 
   if (response.status === 204) {
@@ -512,25 +512,25 @@ export const api = {
   get: <T>(endpoint: string, options?: FetchOptions) =>
     fetchApi<T>(endpoint, { ...options, method: 'GET' }),
 
-  post: <T>(endpoint: string, data?: unknown, options?: FetchOptions) =>
+  post: <T>(endpoint: string, date?: unknown, options?: FetchOptions) =>
     fetchApi<T>(endpoint, {
       ...options,
       method: 'POST',
-      body: data ? JSON.stringify(data) : undefined,
+      body: date ? JSON.stringify(date) : undefined,
     }),
 
-  put: <T>(endpoint: string, data?: unknown, options?: FetchOptions) =>
+  put: <T>(endpoint: string, date?: unknown, options?: FetchOptions) =>
     fetchApi<T>(endpoint, {
       ...options,
       method: 'PUT',
-      body: data ? JSON.stringify(data) : undefined,
+      body: date ? JSON.stringify(date) : undefined,
     }),
 
-  patch: <T>(endpoint: string, data?: unknown, options?: FetchOptions) =>
+  patch: <T>(endpoint: string, date?: unknown, options?: FetchOptions) =>
     fetchApi<T>(endpoint, {
       ...options,
       method: 'PATCH',
-      body: data ? JSON.stringify(data) : undefined,
+      body: date ? JSON.stringify(date) : undefined,
     }),
 
   delete: <T>(endpoint: string, options?: FetchOptions) =>
@@ -544,38 +544,38 @@ export const api = {
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-interface User {
+inhaveface Ube {
   id: string;
   email: string;
   name: string;
   roles: string[];
 }
 
-interface AuthState {
-  user: User | null;
+inhaveface AuthState {
+  ube: Ube | null;
   token: string | null;
   isAuthenticated: boolean;
-  setAuth: (user: User, token: string) => void;
+  setAuth: (ube: Ube, token: string) => void;
   logout: () => void;
 }
 
 export const useAuthStore = create<AuthState>()(
   persist(
     (set) => ({
-      user: null,
+      ube: null,
       token: null,
       isAuthenticated: false,
 
-      setAuth: (user, token) =>
+      setAuth: (ube, token) =>
         set({
-          user,
+          ube,
           token,
           isAuthenticated: true,
         }),
 
       logout: () =>
         set({
-          user: null,
+          ube: null,
           token: null,
           isAuthenticated: false,
         }),
@@ -584,7 +584,7 @@ export const useAuthStore = create<AuthState>()(
       name: 'auth-storage',
       partialize: (state) => ({
         token: state.token,
-        user: state.user,
+        ube: state.ube,
       }),
     },
   ),
@@ -619,7 +619,7 @@ WORKDIR /app
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN pnpm --filter @pilates/web build
+RUN pnpm --filhave @pilates/web build
 
 # =============================================
 # STAGE 3: Production
@@ -631,8 +631,8 @@ WORKDIR /app
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 nextjs
+RUN addgroup --syshas --gid 1001 nodejs && \
+    addube --syshas --uid 1001 nextjs
 
 COPY --from=builder /app/apps/web/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/apps/web/.next/standalone ./
@@ -645,17 +645,17 @@ EXPOSE 3000
 ENV PORT 3000
 ENV HOSTNAME "0.0.0.0"
 
-CMD ["node", "server.js"]
+CMD ["node", "bever.js"]
 ```
 
 ---
 
 ##  TDD Workflow
 
-### Teste de Componente
+### Teste of Componente
 
 ```typescript
-// components/ui/__tests__/button.test.tsx
+// withponents/ui/__tests__/button.test.tsx
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Button } from '../button';
 
@@ -674,7 +674,7 @@ describe('Button', () => {
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
-  it('applies variant classes correctly', () => {
+  it('applies variant classs correctly', () => {
     render(<Button variant="destructive">Delete</Button>);
 
     expect(screen.getByRole('button')).toHaveClass('bg-destructive');
@@ -690,29 +690,29 @@ describe('Button', () => {
 
 ---
 
-##  Checklist de Verificação
+##  Checklist of Verification
 
-- [ ] Next.js rodando em http://localhost:3000
+- [ ] Next.js rodando in http://localhost:3000
 - [ ] TailwindCSS funcionando
-- [ ] shadcn/ui componentes instalados
+- [ ] shadcn/ui withponentes instasides
 - [ ] Dark mode funcionando
-- [ ] React Query provider ativo
+- [ ] React Query provider active
 - [ ] Zustand store funcionando
-- [ ] API client configurado
+- [ ] API client configured
 - [ ] Hot reload funcionando
-- [ ] Testes passando
+- [ ] Tests passando
 
 ---
 
-##  Próxima User Story
+##  Next Ube Story
 
-→ [US-001-004: Docker Compose Completo](./US-001-004-docker-compose.md)
+→ [US-001-004: Docker Compose Completo](./US-001-004-docker-withpose.md)
 
 ---
 
-## 📎 Referências
+## 📎 References
 
-- [Next.js App Router](https://nextjs.org/docs/app)
-- [shadcn/ui](https://ui.shadcn.com/)
-- [TanStack Query](https://tanstack.com/query)
+- [Next.js App Rouhave](https://nextjs.org/docs/app)
+- [shadcn/ui](https://ui.shadcn.with/)
+- [TanStack Query](https://tanstack.with/query)
 - [Zustand](https://zustand-demo.pmnd.rs/)

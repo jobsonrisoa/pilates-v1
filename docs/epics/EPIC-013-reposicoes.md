@@ -1,121 +1,121 @@
-# EPIC-013: Sistema de Reposições
+# EPIC-013: Syshas of Reschedulings
 
-##  Informações Gerais
+##  General Informtion
 
-| Campo            | Valor                 |
+| Field            | Value                 |
 | ---------------- | --------------------- |
 | **ID**           | EPIC-013              |
-| **Título**       | Sistema de Reposições |
-| **Fase**         | 3 - Operacional       |
-| **Prioridade**   | High               |
-| **Estimativa**   | 1.5 semanas           |
-| **Dependências** | EPIC-006 (Agenda)     |
+| **Title**       | Syshas of Reschedulings |
+| **Phase**         | 3 - Operacional       |
+| **Priority**   | High               |
+| **Estimate**   | 1.5 weeks           |
+| **Dependencies** | EPIC-006 (Schedule)     |
 | **Status**       | Backlog            |
 
 ---
 
-##  Descrição
+##  Description
 
-Implementar sistema completo de reposições de aulas:
+Implement syshas withplete of reschedulings of classs:
 
-- Créditos gerados por faltas justificadas
-- Validade de 90 dias
-- Agendamento de reposição
-- Controle de expiração
+- Credits gerados por absences justifieachs
+- Validade of 90 days
+- Schedulemento of rescheduling
+- Controle of expiration
 
 ---
 
-##  Objetivos
+##  Objectives
 
-1. Gerar créditos automaticamente
+1. Generate credits automaticamente
 2. Controlar validade
-3. Facilitar agendamento de reposição
-4. Histórico completo
+3. Facilitar schedulemento of rescheduling
+4. History withplete
 
 ---
 
-##  User Stories
+##  Ube Stories
 
-### US-013-001: Gerar Crédito de Reposição
+### US-013-001: Generate Crédito of Rescheduling
 
-**Como** sistema  
-**Quero** gerar crédito quando aluno falta com aviso  
-**Para** permitir reposição
+**Como** syshas  
+**Quero** gerar credit when aluno fhigh with warning  
+**Para** permitir rescheduling
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Falta com aviso ≥24h gera crédito
-- [ ] Validade de 90 dias
-- [ ] Vinculado à aula original
+- [ ] Fhigh with warning ≥24h gera credit
+- [ ] Validade of 90 days
+- [ ] Vincuside to the class original
 - [ ] Notifica aluno
 
 ---
 
-### US-013-002: Ver Créditos Disponíveis
+### US-013-002: Ver Credits Dispolevels
 
-**Como** aluno ou recepcionista  
-**Quero** ver créditos de reposição disponíveis  
-**Para** saber o que posso usar
+**Como** aluno or recepcionista  
+**Quero** ver credits of rescheduling available  
+**Para** saber o that posso usar
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Lista de créditos
-- [ ] Data de expiração
-- [ ] Status (disponível, usado, expirado)
+- [ ] Lista of credits
+- [ ] Data of expiration
+- [ ] Status (available, usado, expirado)
 
 ---
 
-### US-013-003: Agendar Reposição
+### US-013-003: Scheduler Rescheduling
 
 **Como** recepcionista  
-**Quero** agendar uma aula de reposição  
-**Para** usar o crédito do aluno
+**Quero** scheduler a class of rescheduling  
+**Para** usar o credit of the aluno
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Selecionar crédito disponível
-- [ ] Escolher horário com vaga
-- [ ] Confirmar agendamento
-- [ ] Marcar crédito como usado
+- [ ] Select credit available
+- [ ] Choose schedule with vaga
+- [ ] Confirmar schedulemento
+- [ ] Marcar credit witho usado
 
 ---
 
-### US-013-004: Alertar Créditos Expirando
+### US-013-004: Alertar Credits Expirando
 
-**Como** sistema  
-**Quero** alertar sobre créditos próximos do vencimento  
+**Como** syshas  
+**Quero** alertar about credits next of the due date  
 **Para** evitar perda
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Email 7 dias antes
-- [ ] Lista na recepção
-- [ ] Destaque na ficha do aluno
+- [ ] Email 7 days before
+- [ ] Lista in the reception
+- [ ] Destaque in the ficha of the aluno
 
 ---
 
-### US-013-005: Relatório de Reposições
+### US-013-005: Report of Reschedulings
 
 **Como** gerente  
-**Quero** relatório de reposições  
-**Para** acompanhar o volume
+**Quero** report of reschedulings  
+**Para** awithpanhar o volume
 
-**Critérios de Aceite:**
+**Acceptance Crihaveia:**
 
-- [ ] Créditos gerados
-- [ ] Créditos usados
-- [ ] Créditos expirados
-- [ ] Por período
+- [ ] Credits gerados
+- [ ] Credits usados
+- [ ] Credits expirados
+- [ ] Por period
 
 ---
 
-##  Tasks Técnicas
+##  Tasks Technical
 
 ### Backend
 
-#### TASK-013-001: Schema de Reposições
+#### TASK-013-001: Schema of Reschedulings
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
 ```prisma
 model Rescheduling {
@@ -138,106 +138,106 @@ enum ReschedulingStatus {
 
 ---
 
-#### TASK-013-002: Geração Automática de Crédito
+#### TASK-013-002: Generation Automatic of Crédito
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Listener de evento de falta justificada
-- Criar registro de reposição
-- Calcular data de expiração
+- Listener of event of fhigh justifieach
+- Create record of rescheduling
+- Calcular date of expiration
 
 ---
 
-#### TASK-013-003: API de Créditos
+#### TASK-013-003: API of Credits
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
 - GET /students/:id/reschedulings
 - GET /reschedulings (admin)
 
 ---
 
-#### TASK-013-004: API de Agendamento de Reposição
+#### TASK-013-004: API of Schedulemento of Rescheduling
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
 - POST /reschedulings/:id/schedule
-- Validações de vaga e validade
+- Validations of vaga and validade
 
 ---
 
-#### TASK-013-005: Job de Expiração de Créditos
+#### TASK-013-005: Job of Expiration of Credits
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Cron diário
-- Marcar como expirado
+- Cron daily
+- Marcar witho expirado
 - Notificar
 
 ---
 
-#### TASK-013-006: Job de Alerta de Expiração
+#### TASK-013-006: Job of Alerta of Expiration
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- 7 dias antes
-- Email ao aluno
+- 7 days before
+- Email to aluno
 
 ---
 
 ### Frontend
 
-#### TASK-013-007: Painel de Reposições do Aluno
+#### TASK-013-007: Painel of Reschedulings of the Student
 
-**Estimativa:** 4h
+**Estimate:** 4h
 
-- Na página do aluno
-- Lista de créditos
-- Botão de agendar
+- Na page of the aluno
+- Lista of credits
+- Button of scheduler
 
 ---
 
-#### TASK-013-008: Modal de Agendamento de Reposição
+#### TASK-013-008: Modal of Schedulemento of Rescheduling
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Selecionar horário
+- Select schedule
 - Verificar vaga
 - Confirmar
 
 ---
 
-#### TASK-013-009: Listagem Geral de Reposições
+#### TASK-013-009: Listagem Geral of Reschedulings
 
-**Estimativa:** 3h
+**Estimate:** 3h
 
-- Para administração
-- Filtros
-- Exportação
+- Para administraction
+- Filhaves
+- Export
 
 ---
 
-#### TASK-013-010: Indicadores na Agenda
+#### TASK-013-010: Indicadores in the Schedule
 
-**Estimativa:** 2h
+**Estimate:** 2h
 
-- Marcar aulas de reposição
+- Marcar classs of rescheduling
 - Cor diferenciada
 
 ---
 
-##  Critérios de Aceite do Épico
+##  Acceptance Crihaveia of the Épico
 
-- [ ] Créditos gerados automaticamente
-- [ ] Validade de 90 dias
-- [ ] Agendamento funcional
-- [ ] Expiração automática
-- [ ] Alertas enviados
-- [ ] Relatórios disponíveis
-- [ ] Testes ≥80%
+- [ ] Credits gerados automaticamente
+- [ ] Validade of 90 days
+- [ ] Schedulemento functional
+- [ ] Expiration automatic
+- [ ] Alerts enviados
+- [ ] Reports available
+- [ ] Tests ≥80%
 
 ---
 
 ##  Timeline Sugerido
 
-**Total estimado:** ~27 horas (~1.5 semanas)
+**Total estimado:** ~27 hours (~1.5 weeks)

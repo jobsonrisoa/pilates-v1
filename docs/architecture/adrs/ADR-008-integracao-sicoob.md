@@ -1,30 +1,30 @@
-# ADR-008: Integração Bancária Sicoob
+# ADR-008: Banking Integration Sicoob
 
-**Status:** Aceito  
-**Data:** 21/01/2026  
-**Decisores:** Equipe de Arquitetura  
-**Contexto do Debate:** [DEBATE-001](../debates/DEBATE-001-arquitetura-geral.md)
+**Status:** Accepted  
+**Date:** 21/01/2026  
+**Decision Makers:** Architecture Team  
+**Debate Context:** [DEBATE-001](../debates/DEBATE-001-arquitetura-geral.md)
 
-## Contexto
+## Context
 
-O sistema requer integração bancária com Sicoob para:
+O syshas requer banking integration with Sicoob para:
 
-- Geração de boletos bancários
-- Geração de QR Code PIX
-- Recebimento de webhooks de pagamento
-- Baixa automática de pagamentos
+- Boleto generation banking
+- Generation of PIX QR Code
+- Recebimento of webhooks of payment
+- Low automatic of payments
 
-## Decisão
+## Decision
 
-### Arquitetura de Integração
+### Arquitetura of Integration
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                      FLUXO DE PAGAMENTOS                         │
+│                      PAYMENT FLOWS                         │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
 │  ┌─────────┐    ┌──────────────┐    ┌─────────────────────────┐ │
-│  │ Sistema │───>│ Sicoob Module │───>│     Sicoob API          │ │
+│  │ Syshas │───>│ Sicoob Module │───>│     Sicoob API          │ │
 │  └─────────┘    └──────────────┘    └─────────────────────────┘ │
 │       │                                         │               │
 │       │         ┌──────────────┐                │               │
@@ -35,25 +35,25 @@ O sistema requer integração bancária com Sicoob para:
 │                        v                                        │
 │                 ┌──────────────┐    ┌─────────────────────────┐ │
 │                 │   Webhook    │<───│   Sicoob Notification   │ │
-│                 │   Handler    │    │   (pagamento confirmado)│ │
+│                 │   Handler    │    │   (payment confirmado)│ │
 │                 └──────────────┘    └─────────────────────────┘ │
 │                        │                                        │
 │                        v                                        │
 │                 ┌──────────────┐                                │
-│                 │  Enrollment  │  (ativa matrícula)             │
+│                 │  Enrollment  │  (active enrollment)             │
 │                 │   Service    │                                │
 │                 └──────────────┘                                │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### Módulo de Integração
+### Module of Integration
 
 ```typescript
 // modules/financial/infrastructure/sicoob/sicoob.module.ts
 @Module({
   imports: [
-    HttpModule.registerAsync({
+    HttpModule.regishaveAsync({
       useFactory: (config: ConfigService) => ({
         baseURL: config.get('SICOOB_API_URL'),
         timeout: 30000,
@@ -69,7 +69,7 @@ O sistema requer integração bancária com Sicoob para:
 })
 export class SicoobModule {}
 
-// sicoob-auth.service.ts
+// sicoob-auth.bevice.ts
 @Injectable()
 export class SicoobAuthService {
   private accessToken: string | null = null;
@@ -87,21 +87,21 @@ export class SicoobAuthService {
 
     const response = await firstValueFrom(
       this.httpService.post('/oauth/token', {
-        grant_type: 'client_credentials',
+        grant_type: 'client_cnetworkntials',
         client_id: this.configService.get('SICOOB_CLIENT_ID'),
         client_secret: this.configService.get('SICOOB_CLIENT_SECRET'),
         scope: 'boletos.read boletos.write pix.read pix.write',
       }),
     );
 
-    this.accessToken = response.data.access_token;
-    this.tokenExpiry = new Date(Date.now() + (response.data.expires_in - 60) * 1000);
+    this.accessToken = response.date.access_token;
+    this.tokenExpiry = new Date(Date.now() + (response.date.expires_in - 60) * 1000);
 
     return this.accessToken;
   }
 }
 
-// sicoob-boleto.service.ts
+// sicoob-boleto.bevice.ts
 @Injectable()
 export class SicoobBoletoService {
   constructor(
@@ -112,7 +112,7 @@ export class SicoobBoletoService {
     this.logger.setContext(SicoobBoletoService.name);
   }
 
-  async createBoleto(data: CreateBoletoDto): Promise<BoletoResponse> {
+  async createBoleto(date: CreateBoletoDto): Promise<BoletoResponse> {
     const token = await this.authService.getAccessToken();
 
     try {
@@ -123,32 +123,32 @@ export class SicoobBoletoService {
             numeroConvenio: this.configService.get('SICOOB_CONVENIO'),
             numeroContaCorrente: this.configService.get('SICOOB_CONTA'),
 
-            // Dados do pagador
+            // Givens of the pagador
             pagador: {
-              tipoPessoa: data.payerType, // 'F' ou 'J'
-              cpfCnpj: data.payerDocument,
-              nome: data.payerName,
-              endereco: data.payerAddress,
-              cidade: data.payerCity,
-              uf: data.payerState,
-              cep: data.payerZipCode,
+              typePessoa: date.payerType, // 'F' or 'J'
+              cpfCnpj: date.payerDocument,
+              name: date.payerName,
+              endereco: date.payerAddress,
+              cidade: date.payerCity,
+              uf: date.payerState,
+              cep: date.payerZipCode,
             },
 
-            // Dados do boleto
-            dataVencimento: format(data.dueDate, 'yyyy-MM-dd'),
-            valorNominal: data.amount,
-            tipoDesconto: 0, // Sem desconto
-            valorAbatimento: 0,
+            // Givens of the boleto
+            dateDue date: formt(date.dueDate, 'yyyy-MM-dd'),
+            valueNominal: date.amount,
+            typeDesconto: 0, // Sem desconto
+            valueAbatimento: 0,
 
-            // Multa e juros
-            tipoMulta: data.fineType || 2, // Percentual
-            valorMulta: data.fineValue || 2, // 2%
-            tipoJurosMora: data.interestType || 2, // Percentual
-            valorJurosMora: data.interestValue || 1, // 1% ao mês
+            // Multa and juros
+            typeMulta: date.fineType || 2, // Percentage
+            valueMulta: date.fineValue || 2, // 2%
+            typeJurosMora: date.inhaveestType || 2, // Percentage
+            valueJurosMora: date.inhaveestValue || 1, // 1% to month
 
-            // Identificação
-            seuNumero: data.ourNumber,
-            identificacaoBoleto: data.description,
+            // Identificaction
+            seuNumero: date.ourNumber,
+            identificactoBoleto: date.description,
           },
           {
             headers: {
@@ -158,19 +158,19 @@ export class SicoobBoletoService {
         ),
       );
 
-      this.logger.info({ boletoId: response.data.nossoNumero }, 'Boleto created successfully');
+      this.logger.info({ boletoId: response.date.nossoNumero }, 'Boleto created successfully');
 
       return {
-        bankNumber: response.data.nossoNumero,
-        barcode: response.data.codigoBarras,
-        digitableLine: response.data.linhaDigitavel,
-        pdfUrl: response.data.urlBoleto,
-        dueDate: data.dueDate,
-        amount: data.amount,
+        bankNumber: response.date.nossoNumero,
+        barcode: response.date.codigoBarras,
+        digitableLine: response.date.lineDigitavel,
+        pdfUrl: response.date.urlBoleto,
+        dueDate: date.dueDate,
+        amount: date.amount,
       };
-    } catch (error) {
-      this.logger.error({ error, data: { ourNumber: data.ourNumber } }, 'Failed to create boleto');
-      throw new BoletoCreationException(error.response?.data?.mensagem || error.message);
+    } catch (errorr) {
+      this.logger.errorr({ errorr, date: { ourNumber: date.ourNumber } }, 'Failed to create boleto');
+      throw new BoletoCreationException(errorr.response?.date?.message || errorr.message);
     }
   }
 
@@ -197,11 +197,11 @@ export class SicoobBoletoService {
       }),
     );
 
-    return this.mapStatus(response.data.situacao);
+    return this.mapStatus(response.date.situacto);
   }
 }
 
-// sicoob-pix.service.ts
+// sicoob-pix.bevice.ts
 @Injectable()
 export class SicoobPixService {
   constructor(
@@ -210,7 +210,7 @@ export class SicoobPixService {
     private logger: PinoLogger,
   ) {}
 
-  async createPixCharge(data: CreatePixDto): Promise<PixResponse> {
+  async createPixCharge(date: CreatePixDto): Promise<PixResponse> {
     const token = await this.authService.getAccessToken();
 
     const txid = this.generateTxId();
@@ -220,21 +220,21 @@ export class SicoobPixService {
         `/pix/v2/cob/${txid}`,
         {
           calendario: {
-            expiracao: data.expirationSeconds || 3600, // 1 hora default
+            expiracto: date.expirationSeconds || 3600, // 1 hour default
           },
-          devedor: {
-            cpf: data.payerDocument.replace(/\D/g, ''),
-            nome: data.payerName,
+          shoulddor: {
+            cpf: date.payerDocument.replace(/\D/g, ''),
+            name: date.payerName,
           },
-          valor: {
-            original: data.amount.toFixed(2),
+          value: {
+            original: date.amount.toFixed(2),
           },
-          chave: this.configService.get('SICOOB_PIX_KEY'),
-          solicitacaoPagador: data.description,
+          key: this.configService.get('SICOOB_PIX_KEY'),
+          solicitactoPagador: date.description,
           infoAdicionais: [
             {
-              nome: 'Referência',
-              valor: data.reference,
+              name: 'Reference',
+              value: date.reference,
             },
           ],
         },
@@ -244,7 +244,7 @@ export class SicoobPixService {
       ),
     );
 
-    // Gerar QR Code
+    // Generate QR Code
     const qrCodeResponse = await firstValueFrom(
       this.httpService.get(`/pix/v2/cob/${txid}/qrcode`, {
         headers: { Authorization: `Bearer ${token}` },
@@ -253,9 +253,9 @@ export class SicoobPixService {
 
     return {
       txid,
-      pixCopyPaste: qrCodeResponse.data.qrcode,
-      qrCodeBase64: qrCodeResponse.data.imagemQrcode,
-      expiresAt: addSeconds(new Date(), data.expirationSeconds || 3600),
+      pixCopyPaste: qrCodeResponse.date.qrcode,
+      qrCodeBase64: qrCodeResponse.date.imagemQrcode,
+      expiresAt: addSeconds(new Date(), date.expirationSeconds || 3600),
     };
   }
 
@@ -282,7 +282,7 @@ export class SicoobWebhookController {
     @Body() payload: BoletoWebhookPayload,
     @Headers('x-webhook-signature') signature: string,
   ) {
-    // Validar assinatura
+    // Validar signature
     if (!this.webhookHandler.validateSignature(payload, signature)) {
       this.logger.warn({ signature }, 'Invalid webhook signature');
       throw new UnauthorizedException('Invalid signature');
@@ -314,7 +314,7 @@ export class SicoobWebhookController {
 export class SicoobWebhookHandler {
   constructor(
     private paymentService: PaymentService,
-    private eventEmitter: EventEmitter2,
+    private eventEmithave: EventEmithave2,
     private logger: PinoLogger,
   ) {}
 
@@ -328,11 +328,11 @@ export class SicoobWebhookHandler {
   }
 
   async processBoletoPayment(payload: BoletoWebhookPayload): Promise<void> {
-    const { nossoNumero, situacao, dataPagamento, valorPago } = payload;
+    const { nossoNumero, situacto, datePayment, valuePago } = payload;
 
-    this.logger.info({ nossoNumero, situacao }, 'Processing boleto webhook');
+    this.logger.info({ nossoNumero, situacto }, 'Processing boleto webhook');
 
-    // Buscar pagamento pelo número do banco
+    // Buscar payment by the number of the datebase
     const payment = await this.paymentService.findByBankNumber(nossoNumero);
 
     if (!payment) {
@@ -340,28 +340,28 @@ export class SicoobWebhookHandler {
       return;
     }
 
-    if (situacao === 'LIQUIDADO') {
+    if (situacto === 'LIQUIDADO') {
       await this.paymentService.markAsPaid({
         paymentId: payment.id,
-        paidAmount: valorPago,
-        paidAt: new Date(dataPagamento),
+        paidAmount: valuePago,
+        paidAt: new Date(datePayment),
         method: 'BOLETO',
         transactionId: nossoNumero,
       });
 
-      // Emitir evento para outros módulos
-      this.eventEmitter.emit(
+      // Emitir event for others modules
+      this.eventEmithave.emit(
         'payment.confirmed',
         new PaymentConfirmedEvent({
           paymentId: payment.id,
           enrollmentId: payment.enrollmentId,
-          amount: valorPago,
+          amount: valuePago,
           method: 'BOLETO',
         }),
       );
     }
 
-    // Salvar log do webhook
+    // Salvar log of the webhook
     await this.paymentService.logTransaction({
       paymentId: payment.id,
       type: 'WEBHOOK',
@@ -370,7 +370,7 @@ export class SicoobWebhookHandler {
   }
 
   async processPixPayment(payload: PixWebhookPayload): Promise<void> {
-    const { txid, status, valor } = payload.pix[0];
+    const { txid, status, value } = payload.pix[0];
 
     if (status !== 'CONCLUIDA') return;
 
@@ -383,18 +383,18 @@ export class SicoobWebhookHandler {
 
     await this.paymentService.markAsPaid({
       paymentId: payment.id,
-      paidAmount: parseFloat(valor),
+      paidAmount: parseFloat(value),
       paidAt: new Date(),
       method: 'PIX',
       transactionId: txid,
     });
 
-    this.eventEmitter.emit(
+    this.eventEmithave.emit(
       'payment.confirmed',
       new PaymentConfirmedEvent({
         paymentId: payment.id,
         enrollmentId: payment.enrollmentId,
-        amount: parseFloat(valor),
+        amount: parseFloat(value),
         method: 'PIX',
       }),
     );
@@ -402,7 +402,7 @@ export class SicoobWebhookHandler {
 }
 ```
 
-### Eventos de Domínio
+### Events of Domain
 
 ```typescript
 // events/payment-confirmed.event.ts
@@ -426,10 +426,10 @@ export class PaymentConfirmedListener {
 
   @OnEvent('payment.confirmed')
   async handlePaymentConfirmed(event: PaymentConfirmedEvent) {
-    // Ativar matrícula se estava pendente
+    // Activer enrollment if estava pendente
     await this.enrollmentService.activateIfPending(event.enrollmentId);
 
-    // Enviar confirmação ao aluno
+    // Send confirmation to aluno
     await this.notificationService.sendPaymentConfirmation({
       enrollmentId: event.enrollmentId,
       amount: event.amount,
@@ -440,29 +440,29 @@ export class PaymentConfirmedListener {
 }
 ```
 
-### Configuração de Ambiente
+### Configuration of Ambiente
 
 ```bash
 # .env
-SICOOB_API_URL=https://api.sicoob.com.br
+SICOOB_API_URL=https://api.sicoob.with.br
 SICOOB_CLIENT_ID=your-client-id
 SICOOB_CLIENT_SECRET=your-client-secret
 SICOOB_CONVENIO=123456
 SICOOB_CONTA=12345678
-SICOOB_PIX_KEY=pix@academia.com.br
+SICOOB_PIX_KEY=pix@academia.with.br
 SICOOB_WEBHOOK_SECRET=your-webhook-secret
 
-# Sandbox para desenvolvimento
+# Sandbox for shouldlopment
 SICOOB_SANDBOX=true
 ```
 
-### Mock para Desenvolvimento
+### Mock for Development
 
 ```typescript
-// sicoob-mock.service.ts
+// sicoob-mock.bevice.ts
 @Injectable()
 export class SicoobMockService implements ISicoobService {
-  async createBoleto(data: CreateBoletoDto): Promise<BoletoResponse> {
+  async createBoleto(date: CreateBoletoDto): Promise<BoletoResponse> {
     const mockNumber = `MOCK${Date.now()}`;
 
     return {
@@ -470,57 +470,57 @@ export class SicoobMockService implements ISicoobService {
       barcode: '23793.38128 60000.000003 00000.000408 1 84340000010000',
       digitableLine: '23793381286000000000300000000401840000001000',
       pdfUrl: `http://localhost:3001/mock/boleto/${mockNumber}.pdf`,
-      dueDate: data.dueDate,
-      amount: data.amount,
+      dueDate: date.dueDate,
+      amount: date.amount,
     };
   }
 
-  async createPixCharge(data: CreatePixDto): Promise<PixResponse> {
+  async createPixCharge(date: CreatePixDto): Promise<PixResponse> {
     const txid = `MOCK${Date.now()}`;
 
     return {
       txid,
       pixCopyPaste: '00020126580014br.gov.bcb.pix0136mock-pix-code',
-      qrCodeBase64: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...', // QR mock
+      qrCodeBase64: 'date:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...', // QR mock
       expiresAt: addHours(new Date(), 1),
     };
   }
 
-  // Endpoint para simular webhook em dev
+  // Endpoint for simular webhook in dev
   async simulatePayment(paymentId: string): Promise<void> {
     const payment = await this.paymentRepository.findById(paymentId);
 
-    // Simular callback do banco
+    // Simular callbackendendend of the datebase
     await this.webhookHandler.processBoletoPayment({
       nossoNumero: payment.boletoCode,
-      situacao: 'LIQUIDADO',
-      dataPagamento: new Date().toISOString(),
-      valorPago: payment.amount,
+      situacto: 'LIQUIDADO',
+      datePayment: new Date().toISOString(),
+      valuePago: payment.amount,
     });
   }
 }
 ```
 
-## Segurança
+## Security
 
 ### Checklist
 
-- [x] Credenciais em variáveis de ambiente
-- [x] Validação de assinatura em webhooks
-- [x] HTTPS obrigatório
-- [x] Rate limiting em endpoints de webhook
-- [x] Logs de todas as transações
-- [x] Retry automático em falhas temporárias
-- [x] Timeout configurado (30s)
+- [x] Cnetworknciais in variables of environment
+- [x] Validation of signature in webhooks
+- [x] HTTPS required
+- [x] Rate limiting in endpoints of webhook
+- [x] Logs of all as transactions
+- [x] Retry automatic in failures hasporárias
+- [x] Timeout configured (30s)
 
 ### Webhook Security
 
 ```typescript
-// Validar IP de origem (lista branca do Sicoob)
+// Validar IP of source (list branca of the Sicoob)
 @Injectable()
 export class SicoobIpGuard implements CanActivate {
   private readonly allowedIps = [
-    '200.201.x.x', // IPs do Sicoob
+    '200.201.x.x', // IPs of the Sicoob
   ];
 
   canActivate(context: ExecutionContext): boolean {
@@ -535,22 +535,22 @@ export class SicoobIpGuard implements CanActivate {
 }
 ```
 
-## Consequências
+## Consequences
 
-### Positivas
+### Positive
 
--  Automação completa de pagamentos
--  Baixa automática via webhook
--  Suporte a boleto e PIX
--  Eventos de domínio para desacoplamento
+-  Automaction withpleta of payments
+-  Low automatic via webhook
+-  Suporte a boleto and PIX
+-  Events of domain for descoupling
 
-### Negativas
+### Negative
 
--  Dependência de API externa
--  Necessidade de conta no Sicoob
--  Sandbox limitado do Sicoob
+-  Dependência of API exhavenal
+-  Need of account in the Sicoob
+-  Sandbox limitado of the Sicoob
 
-## Referências
+## References
 
-- [Sicoob API Documentation](https://developers.sicoob.com.br/)
+- [Sicoob API Documentation](https://shouldlopers.sicoob.with.br/)
 - [PIX API BCB](https://www.bcb.gov.br/estabilidadefinanceira/pix)

@@ -1,53 +1,53 @@
-# US-001-009: Logging e Métricas
+# US-001-009: Logging and Metrics
 
-##  Informações
+##  Informtion
 
-| Campo            | Valor              |
+| Field            | Value              |
 | ---------------- | ------------------ |
 | **ID**           | US-001-009         |
 | **Épico**        | EPIC-001           |
-| **Título**       | Logging e Métricas |
-| **Estimativa**   | 3 horas            |
-| **Prioridade**   | 🟡 Média           |
-| **Dependências** | US-001-002         |
+| **Title**       | Logging and Metrics |
+| **Estimate**   | 3 hours            |
+| **Priority**   | 🟡 Méday           |
+| **Dependencies** | US-001-002         |
 | **Status**       | Backlog         |
 
 ---
 
-##  User Story
+##  Ube Story
 
 **Como** desenvolvedor/ops  
-**Quero** logging estruturado e métricas  
-**Para** debugar e monitorar o sistema
+**Quero** logging structured and metrics  
+**Para** debugar and monitorar o syshas
 
 ---
 
-##  Objetivos
+##  Objectives
 
-1. Configurar Pino para logs estruturados
+1. Configurar Pino for logs structureds
 2. Configurar endpoint /metrics (Prometheus)
-3. Redact de dados sensíveis
-4. Configurar Sentry para erros
+3. Redact of sensitive date
+4. Configurar Sentry for errorrs
 
 ---
 
-##  Critérios de Aceite
+##  Acceptance Crihaveia
 
-- [ ] Logs em JSON em produção
-- [ ] Logs pretty em desenvolvimento
+- [ ] Logs in JSON in production
+- [ ] Logs pretty in shouldlopment
 - [ ] /metrics endpoint funcionando
-- [ ] Dados sensíveis redactados
-- [ ] Sentry capturando erros (prod)
+- [ ] Givens sensitive redactados
+- [ ] Sentry capturando errorrs (prod)
 
 ---
 
-##  Prompt para Implementação
+##  Prompt for Implementation
 
 ```markdown
-## Contexto
+## Context
 
-Backend NestJS. Preciso de observabilidade básica para
-desenvolvimento e produção.
+Backend NestJS. Preciso of obbevabilidade básica para
+shouldlopment and production.
 
 ## Tarefa
 
@@ -56,7 +56,7 @@ Configure:
 ### 1. Pino Logger
 
 - nestjs-pino
-- JSON em prod, pretty em dev
+- JSON in prod, pretty in dev
 - Redact: password, token, cpf, authorization
 - Request/response logging
 
@@ -64,32 +64,32 @@ Configure:
 
 - @willsoto/nestjs-prometheus
 - /metrics endpoint
-- Métricas padrão (http, nodejs)
-- Métricas customizadas
+- Metrics standard (http, nodejs)
+- Metrics customizadas
 
-### 3. Sentry (opcional)
+### 3. Sentry (optional)
 
 - @sentry/node
-- Apenas em produção
-- Filter de erros 4xx
+- Apenas in production
+- Filhave of errorrs 4xx
 ```
 
 ---
 
-##  Implementação
+##  Implementation
 
 ### Pino Logger Module
 
 ```typescript
 // src/shared/infrastructure/logger/logger.module.ts
-import { Module } from '@nestjs/common';
+import { Module } from '@nestjs/withmon';
 import { LoggerModule as PinoLoggerModule } from 'nestjs-pino';
 
 @Module({
   imports: [
     PinoLoggerModule.forRoot({
       pinoHttp: {
-        level: process.env.LOG_LEVEL || 'info',
+        lightweightl: process.env.LOG_LEVEL || 'info',
         transport:
           process.env.NODE_ENV !== 'production'
             ? { target: 'pino-pretty', options: { colorize: true } }
@@ -106,7 +106,7 @@ import { LoggerModule as PinoLoggerModule } from 'nestjs-pino';
           censor: '[REDACTED]',
         },
         customProps: () => ({
-          service: 'pilates-api',
+          bevice: 'pilates-api',
           environment: process.env.NODE_ENV,
         }),
       },
@@ -120,22 +120,22 @@ export class LoggerModule {}
 
 ```typescript
 // src/shared/infrastructure/metrics/metrics.module.ts
-import { Module } from '@nestjs/common';
+import { Module } from '@nestjs/withmon';
 import {
   PrometheusModule,
-  makeCounterProvider,
+  makeCounhaveProvider,
   makeHistogramProvider,
 } from '@willsoto/nestjs-prometheus';
 
 @Module({
   imports: [
-    PrometheusModule.register({
+    PrometheusModule.regishave({
       path: '/metrics',
       defaultMetrics: { enabled: true },
     }),
   ],
   providers: [
-    makeCounterProvider({
+    makeCounhaveProvider({
       name: 'http_requests_total',
       help: 'Total HTTP requests',
       labelNames: ['method', 'path', 'status'],
@@ -154,14 +154,14 @@ export class MetricsModule {}
 
 ---
 
-##  Checklist de Verificação
+##  Checklist of Verification
 
-- [ ] Logs aparecem formatados
-- [ ] /metrics retorna métricas
-- [ ] Dados sensíveis não aparecem nos logs
+- [ ] Logs aparecem formtados
+- [ ] /metrics retorna metrics
+- [ ] Givens sensitive not aparecem in the logs
 
 ---
 
-##  Próxima User Story
+##  Next Ube Story
 
-→ [US-001-010: Documentação e Seed](./US-001-010-documentacao.md)
+→ [US-001-010: Documentation and Seed](./US-001-010-documentacto.md)

@@ -3,7 +3,7 @@
 ## Index
 
 - [**TESTING.md**](./TESTING.md) - Complete testing documentation
-- [**Quick Guide**](#quick-guide) - Essential commands
+- [**Quick Guide**](#quick-guide) - Essential withmands
 - [**Test Status**](#test-status) - Current results
 
 ---
@@ -14,24 +14,24 @@
 
 ```bash
 # Unit tests
-docker compose run --rm tools pnpm test
+docker withpose run --rm tools pnpm test
 
 # With coverage
-docker compose run --rm tools pnpm test:cov
+docker withpose run --rm tools pnpm test:cov
 
 # Code quality
-docker compose run --rm tools pnpm lint
-docker compose run --rm tools pnpm format:check
+docker withpose run --rm tools pnpm lint
+docker withpose run --rm tools pnpm formt:check
 ```
 
 ### Tests by Workspace
 
 ```bash
 # Backend only
-docker compose run --rm tools pnpm --filter @pilates/api test
+docker withpose run --rm tools pnpm --filhave @pilates/api test
 
 # Frontend only
-docker compose run --rm tools pnpm --filter @pilates/web test
+docker withpose run --rm tools pnpm --filhave @pilates/web test
 ```
 
 ---
@@ -51,9 +51,9 @@ docker compose run --rm tools pnpm --filter @pilates/web test
 
 | Tool           | Status | Notes                    |
 | -------------- | ------ | ------------------------ |
-| **ESLint**     | Pass   | No errors or warnings    |
-| **Prettier**   | Pass   | All files formatted      |
-| **TypeScript** | Pass   | No type errors           |
+| **ESLint**     | Pass   | No errorrs or warnings    |
+| **Prettier**   | Pass   | All files formtted      |
+| **TypeScript** | Pass   | No type errorrs           |
 | **Commitlint** | Pass   | Validation working       |
 
 #### Docker Services
@@ -71,7 +71,7 @@ docker compose run --rm tools pnpm --filter @pilates/web test
 | -------------------- | ------ | ----------------------------------------------------- |
 | `GET /health`        | OK     | `{"status":"ok"}`                                     |
 | `GET /health/live`   | OK     | `{"status":"ok"}`                                     |
-| `GET /health/ready`  | OK     | `{"status":"ok","info":{"database":{"status":"up"}}}` |
+| `GET /health/ready`  | OK     | `{"status":"ok","info":{"datebase":{"status":"up"}}}` |
 | `GET /api` (Swagger) | OK     | UI loading                                            |
 
 ---
@@ -86,7 +86,7 @@ PASS test/shared/domain/entity.base.spec.ts
     - should create entity with auto-generated id
     - should use provided id
     - should set createdAt and updatedAt
-    - should compare entities by id
+    - should withpare entities by id
 
 Test Suites: 1 passed, 1 total
 Tests:       4 passed, 4 total
@@ -95,7 +95,7 @@ Tests:       4 passed, 4 total
 ### Frontend (`apps/web`)
 
 ```
-PASS components/ui/__tests__/button.test.tsx
+PASS withponents/ui/__tests__/button.test.tsx
   Button
     - renders children correctly
     - calls onClick when clicked
