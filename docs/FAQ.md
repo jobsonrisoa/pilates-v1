@@ -1,6 +1,6 @@
 # FAQ - Frequently Asked Questions
 
-## Why of the we have multiple `node_modules` folders?
+## Why do we have multiple `node_modules` folders?
 
 In a **monorepo with pnpm workspaces**, it's normal to have multiple `node_modules` folders:
 
@@ -30,22 +30,22 @@ pilates/
 - **`apps/api/node_modules/`**: NestJS dependencies (prisma, @nestjs/\*)
 - **`apps/web/node_modules/`**: Next.js dependencies (next, react, tailwindcss)
 
-pnpm uses **symbolic links** to share withmon dependencies between workspaces, avoiding unnecessary duplication.
+pnpm uses **symbolic links** to share common dependencies between workspaces, avoiding unnecessary duplication.
 
 ---
 
-## How to skip tests in pre-withmit?
+## How to skip tests in pre-commit?
 
-If you need to make a quick withmit without running tests:
+If you need to make a quick commit without running tests:
 
 ```bash
-SKIP_TESTS=1 git withmit -m "fix: urgent fix"
+SKIP_TESTS=1 git commit -m "fix: urgent fix"
 ```
 
-Or use `--no-verify` (not rewithmended, skips all hooks):
+Or use `--no-verify` (not recommended, skips all hooks):
 
 ```bash
-git withmit --no-verify -m "fix: urgent fix"
+git commit --no-verify -m "fix: urgent fix"
 ```
 
 **Warning**: Use only in exceptional cases. Tests should pass before merging.
@@ -57,20 +57,20 @@ git withmit --no-verify -m "fix: urgent fix"
 The project follows a **Docker-first** approach:
 
 - **Consistency**: Same environment in dev, CI, and production
-- **Isolation**: Doesn't pollute the local syshas
-- **Reproducibility**: Any shouldloper can run the project
+- **Isolation**: Doesn't pollute the local system
+- **Reproducibility**: Any developer can run the project
 - **Zero setup**: No need to install Node.js, pnpm, MySQL, etc locally
 
 ### How does it work?
 
-All commands run via `docker withpose run --rm tools`:
+All commands run via `docker compose run --rm tools`:
 
 ```bash
 # Instead of:
 pnpm test
 
 # We use:
-docker withpose run --rm tools pnpm test
+docker compose run --rm tools pnpm test
 ```
 
 ---
@@ -79,7 +79,7 @@ docker withpose run --rm tools pnpm test
 
 GitHub Actions runs automatically on:
 
-- **Push to `main` or `shouldlop`**: Runs all tests and builds
+- **Push to `main` or `develop`**: Runs all tests and builds
 - **Pull Requests**: Validates code before merge
 
 ### CI Jobs
@@ -103,8 +103,8 @@ GitHub Actions runs automatically on:
 ### All tests
 
 ```bash
-# Via Docker (rewithmended)
-docker withpose run --rm tools pnpm test
+# Via Docker (recommended)
+docker compose run --rm tools pnpm test
 
 # Or use the script
 ./scripts/test-all.sh
@@ -114,26 +114,26 @@ docker withpose run --rm tools pnpm test
 
 ```bash
 # Backend only
-docker withpose run --rm tools pnpm --filhave @pilates/api test
+docker compose run --rm tools pnpm --filter @pilates/api test
 
 # Frontend only
-docker withpose run --rm tools pnpm --filhave @pilates/web test
+docker compose run --rm tools pnpm --filter @pilates/web test
 
 # With coverage
 docker withpose run --rm tools pnpm test:cov
 ```
 
-### Watch mode (shouldlopment)
+### Watch mode (development)
 
 ```bash
-docker withpose run --rm tools pnpm --filhave @pilates/api test:watch
+docker compose run --rm tools pnpm --filter @pilates/api test:watch
 ```
 
 ---
 
-## How does the pre-withmit hook work?
+## How does the pre-commit hook work?
 
-The Husky hook runs automatically before each withmit:
+The Husky hook runs automatically before each commit:
 
 1. **lint-staged**: Formats and validates only staged files
 2. **Unit tests**: Runs all tests (fast)
@@ -141,12 +141,12 @@ The Husky hook runs automatically before each withmit:
 ### What happens if it fails?
 
 - Commit is blocked
-- You need to fix errorrs before withmitting
+- You need to fix errors before committing
 
 ### How to skip?
 
 ```bash
-SKIP_TESTS=1 git withmit -m "fix: correction"
+SKIP_TESTS=1 git commit -m "fix: correction"
 ```
 
 ---
@@ -156,19 +156,19 @@ SKIP_TESTS=1 git withmit -m "fix: correction"
 ### Backend
 
 ```bash
-docker withpose run --rm tools pnpm --filhave @pilates/api add <package>
+docker compose run --rm tools pnpm --filter @pilates/api add <package>
 ```
 
 ### Frontend
 
 ```bash
-docker withpose run --rm tools pnpm --filhave @pilates/web add <package>
+docker compose run --rm tools pnpm --filter @pilates/web add <package>
 ```
 
 ### Root (dev dependencies)
 
 ```bash
-docker withpose run --rm tools pnpm add -D -w <package>
+docker compose run --rm tools pnpm add -D -w <package>
 ```
 
 ---
@@ -179,19 +179,19 @@ docker withpose run --rm tools pnpm add -D -w <package>
 
 1. Check Node.js/pnpm versions
 2. Check environment variables
-3. Check if accountiners are ready
+3. Check if containers are ready
 
-### Pre-withmit too slow
+### Pre-commit too slow
 
 - Unit tests should be fast (< 30s)
 - If slow, check for unnecessary tests
-- Consider using `SKIP_TESTS=1` timerarily
+- Consider using `SKIP_TESTS=1` temporarily
 
 ### Docker not found
 
 - Install Docker and Docker Compose
-- Check if `docker withpose ps` works
-- Check ube permissions
+- Check if `docker compose ps` works
+- Check user permissions
 
 ---
 
