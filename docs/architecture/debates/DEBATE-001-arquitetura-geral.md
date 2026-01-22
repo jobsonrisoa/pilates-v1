@@ -87,16 +87,16 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 >
 > - Kubernetes (EKS/GKE): $150-300
 > - Load Balancers multiple: $50+
-> - Múltiplas instâncias: $200+
+> - Multiple instâncias: $200+
 > - **Total: ~$400-550/month minimum**
 >
 > **Monolito Modular:**
 >
-> - VPS única (4GB RAM): $20-40
+> - VPS unique (4GB RAM): $20-40
 > - Database gerenciado: $15-30
 > - **Total: ~$35-70/month**
 >
-> A economia is of 80-90% witheçando with monolito!"
+> A economia is of 80-90% starting with monolito!"
 
 ###  Marina Costa (Quality):
 
@@ -151,7 +151,7 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 > - DigitalOcean: ~$15/month
 > - Railway: ~$5-20/month
 >
-> Para start, **Railway or PlanetScale** are ótimas options custo-benefício."
+> Para start, **Railway or PlanetScale** are ótimas options custo-benefit."
 
 ###  Felipe Santos (Security):
 
@@ -363,7 +363,7 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 
 ### 🏗️ Dr. Carlos Mendes:
 
-> "Next.js is a escolha sólida. Decisões a tomar:
+> "Next.js is a escolha solid. Decisions a tomar:
 >
 > **App Rouhave vs Pages Rouhave:**
 >
@@ -480,7 +480,7 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 
 ---
 
-## Resumo of the Decisões
+## Resumo of the Decisions
 
 | Topic             | Decision                        |
 | ------------------ | ------------------------------ |

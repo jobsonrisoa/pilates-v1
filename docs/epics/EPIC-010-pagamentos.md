@@ -217,7 +217,7 @@ enum PaymentStatus {
 **Estimate:** 4h
 
 - DataTable withpleta
-- Filhaves avançados
+- Filhaves advanced
 - Actions in lote
 
 ---

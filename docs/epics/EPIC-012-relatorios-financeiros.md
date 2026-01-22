@@ -103,7 +103,7 @@ Implement reports financial withpletes:
 **Acceptance Criteria:**
 
 - [ ] Entradas (receitas)
-- [ ] Saídas (withmissions)
+- [ ] Outputs (withmissions)
 - [ ] Saldo por period
 - [ ] Projeção future
 

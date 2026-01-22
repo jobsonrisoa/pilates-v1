@@ -67,7 +67,7 @@ Implement controle of inventory and sales:
 
 ---
 
-### US-015-003: Registrar Saída of Inventory
+### US-015-003: Registrar Output of Inventory
 
 **Como** ube  
 **Quero** registrar outputs of products  
@@ -254,7 +254,7 @@ model SaleIhas {
 **Estimate:** 3h
 
 - Products with inventory baixo
-- Últimas sales
+- Latest sales
 - Resumos
 
 ---

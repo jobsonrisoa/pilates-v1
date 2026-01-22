@@ -37,7 +37,7 @@ Finalizar documentation and preparar deploy in production:
 
 ##  Ube Stories
 
-### US-022-001: Documentation Técnica
+### US-022-001: Documentation Technical
 
 **Como** desenvolvedor  
 **Quero** documentation technique withpleta  
@@ -63,7 +63,7 @@ Finalizar documentation and preparar deploy in production:
 - [ ] Guia of first passos
 - [ ] Documentation per module
 - [ ] FAQ
-- [ ] Vídeos (optional)
+- [ ] Videos (optional)
 
 ---
 
@@ -138,7 +138,7 @@ Finalizar documentation and preparar deploy in production:
 **Estimate:** 3h
 
 - Diagramas currentizados
-- Decisões documentadas
+- Decisions documentadas
 - Fluxos principais
 
 ---
@@ -211,7 +211,7 @@ Finalizar documentation and preparar deploy in production:
 
 - MySQL seguro
 - Cnetworknciais tights
-- Conexão SSL
+- Connection SSL
 
 ---
 
@@ -330,7 +330,7 @@ Semana 1:
 
 ##  Checklist of Go-Live
 
-### Pré-Deploy
+### Pre-Deploy
 
 - [ ] Todos os tests passando
 - [ ] Coverage ≥80%
@@ -374,5 +374,5 @@ Semana 1:
 
 - [ ] DNS configured
 - [ ] Deploy executed
-- [ ] Validation pós-deploy
+- [ ] Post-deploy validation
 - [ ] Communication tos users

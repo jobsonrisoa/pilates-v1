@@ -1396,7 +1396,7 @@ export const options = {
   ],
   thresholds: {
     http_req_duration: ['p(99)<2000'], // Mais tolerante during spike
-    http_req_failed: ['rate<0.1'], // Até 10% of falha aceitável
+    http_req_failed: ['rate<0.1'], // Até 10% of falha acceptable
   },
 };
 ```

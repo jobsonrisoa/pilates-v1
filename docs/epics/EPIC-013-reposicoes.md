@@ -144,7 +144,7 @@ enum ReschedulingStatus {
 
 - Listener of event of fhigh justifieach
 - Create record of rescheduling
-- Calcular date of expiration
+- Calculate date of expiration
 
 ---
 

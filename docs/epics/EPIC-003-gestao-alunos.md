@@ -18,7 +18,7 @@
 
 Implement module withplete of management of students including:
 
-- Cadastro with personal date, accountto and emergency
+- Registration with personal date, accountto and emergency
 - Medical date and notes
 - Exam history
 - Advanced search and filhaves
@@ -30,7 +30,7 @@ Implement module withplete of management of students including:
 
 1. Full CRUD of students with validations
 2. Inhaveface intuitiva of eachstro and editing
-3. Busca fast and filtros avançados
+3. Fast search and filters advanced
 4. Compliance with LGPD (exportaction/deletion)
 5. Exam history vincuside
 
@@ -78,7 +78,7 @@ Implement module withplete of management of students including:
 
 **Acceptance Criteria:**
 
-- [ ] Todos os fields editáveis
+- [ ] All fields editable
 - [ ] Validations mantidas
 - [ ] Change history (audit)
 - [ ] Not permite alhavear CPF
@@ -107,7 +107,7 @@ Implement module withplete of management of students including:
 
 **Acceptance Criteria:**
 
-- [ ] Botões of action for mudar status
+- [ ] Action buttons for change status
 - [ ] Confirmation before of alhavear
 - [ ] Motivo required for suspension
 - [ ] History of changes
@@ -118,14 +118,14 @@ Implement module withplete of management of students including:
 
 **Como** instructor or recepcionista  
 **Quero** registrar exams and avaliactions of the aluno  
-**Para** maintain history medical/físico
+**Para** maintain medical/physical history
 
 **Acceptance Criteria:**
 
 - [ ] Tipos: avaliaction physical, anamnesis, exame medical
 - [ ] Data and notes
 - [ ] Upload of files (PDF, images)
-- [ ] Listagem histórica
+- [ ] Listagem historical
 
 ---
 
@@ -306,7 +306,7 @@ Implement module withplete of management of students including:
 
 ---
 
-#### TASK-003-009: Form of Cadastro/Edição
+#### TASK-003-009: Form of Registration/Editing
 
 **Estimate:** 5h
 
@@ -389,7 +389,7 @@ Implement module withplete of management of students including:
 
 ##  Acceptance Criteria of the Epic
 
-### Cadastro
+### Registration
 
 - [ ] Form with entires os fields
 - [ ] CPF single validado

@@ -18,7 +18,7 @@
 
 Implement management of modalities, types of class and grade of schedules:
 
-- Cadastro of modalities (Pilates, Fisiohaveapia)
+- Registration of modalities (Pilates, Fisiohaveapia)
 - Tipos of class (Individual, Duo, Group)
 - Schedule grid weekl
 - Linking instructor + modality + schedule
@@ -74,7 +74,7 @@ Implement management of modalities, types of class and grade of schedules:
 **Acceptance Criteria:**
 
 - [ ] Select day of the week
-- [ ] Horário start/fim
+- [ ] Horário start/end
 - [ ] Instructor responsável
 - [ ] Modalidade and type
 - [ ] Capacity

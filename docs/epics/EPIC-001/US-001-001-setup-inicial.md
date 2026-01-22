@@ -600,7 +600,7 @@ Após implement, verifique:
 - [ ] `pnpm install` funciona in the root
 - [ ] `.env.example` is documentado
 - [ ] `make help` mostra os commands
-- [ ] README is claro and útil
+- [ ] README is claro and useful
 - [ ] Git inicializado with .gitignore
 
 ---

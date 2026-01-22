@@ -18,7 +18,7 @@
 
 Implement module of management of instructores including:
 
-- Cadastro withplete with personal date and profissionais
+- Registration withplete with personal date and profissionais
 - Professional registration (CREF, CREFITO)
 - Specialties
 - Bank details for payment

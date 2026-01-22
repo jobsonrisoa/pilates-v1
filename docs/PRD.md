@@ -547,7 +547,7 @@ Cancellation:
 
 ## 7. Integrations
 
-### 7.1 Sicoob (Bancária)
+### 7.1 Sicoob (Banking)
 
 | Funcionalidade       | Endpoint                      |
 | -------------------- | ----------------------------- |
@@ -724,7 +724,7 @@ main: ├── ... (entires above)
 - [ ] Authentication and RBAC basic
 - [ ] CRUD of students
 - [ ] CRUD of instructores
-- [ ] Cadastro of classs/schedules
+- [ ] Registration of classs/schedules
 - [ ] Schedule basic
 - [ ] Enrollment simple
 

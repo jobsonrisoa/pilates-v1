@@ -458,7 +458,7 @@ scrape_configs:
 
 ### Negative
 
--  Sem distributed tracing (aceitável for monolito)
+-  Sem distributed tracing (acceptable for monolito)
 -  Grafana needs configuration manual inicial
 
 ## Alerts Rewithendados

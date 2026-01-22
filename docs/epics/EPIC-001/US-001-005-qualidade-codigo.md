@@ -224,8 +224,8 @@ npx --no -- withmitlint --edit ${1}
 
 - [ ] `pnpm lint` funciona
 - [ ] `pnpm formt` formta
-- [ ] Commit with msg inválida falha
-- [ ] Commit with msg válida passa
+- [ ] Commit with msg invalid falha
+- [ ] Commit with msg valid passa
 - [ ] Code not formtado is bloqueado
 
 ---

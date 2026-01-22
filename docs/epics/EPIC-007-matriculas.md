@@ -50,7 +50,7 @@ Implement syshas basic of enrollments for o MVP:
 - [ ] Select plan (1x, 2x, 3x week)
 - [ ] Set schedules
 - [ ] Set day of due date
-- [ ] Calcular value
+- [ ] Calculate value
 
 ---
 

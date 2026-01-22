@@ -65,10 +65,10 @@ Expandir o syshas of plans with:
 
 ---
 
-### US-008-003: Calcular Value of the Enrollment
+### US-008-003: Calculate Value of the Enrollment
 
 **Como** syshas  
-**Quero** calcular automaticamente o value  
+**Quero** calculate automaticamente o value  
 **Para** facilitar o processo of enrollment
 
 **Acceptance Criteria:**

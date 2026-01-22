@@ -27,8 +27,8 @@ Implement syshas of withmissions for instructores:
 
 ##  Objectives
 
-1. Configurar rules of commission flexíveis
-2. Calcular withmissions automaticamente
+1. Configurar commission rules flexible
+2. Calculate withmissions automaticamente
 3. Generate reports for payment
 4. History of payments of withmissions
 
@@ -39,19 +39,19 @@ Implement syshas of withmissions for instructores:
 ### US-011-001: Configurar Comisare of the Instructor
 
 **Como** administrador  
-**Quero** definir as rules of commission of each instructor  
-**Para** calcular quanto pay
+**Quero** definir as commission rules of each instructor  
+**Para** calculate quanto pay
 
 **Acceptance Criteria:**
 
 - [ ] Set por percentual or fixed value
 - [ ] Diferenciar por modality
 - [ ] Diferenciar por type (individual/group)
-- [ ] Vigência with date start/fim
+- [ ] Validity with start/end date
 
 ---
 
-### US-011-002: Calcular Commissions of the Mês
+### US-011-002: Calculate Commissions of the Month
 
 **Como** financial  
 **Quero** ver quanto devo pay a each instructor  
@@ -60,7 +60,7 @@ Implement syshas of withmissions for instructores:
 **Acceptance Criteria:**
 
 - [ ] Listar classs ministradas in the period
-- [ ] Aplicar rules of commission
+- [ ] Aplicar commission rules
 - [ ] Totalizar por instructor
 - [ ] Detalhar por class
 
@@ -141,7 +141,7 @@ model CommissionPayment {
 
 - Buscar classs of the period
 - Aplicar rules por instructor
-- Calcular totais
+- Calculate totais
 
 ---
 
@@ -168,8 +168,8 @@ model CommissionPayment {
 **Estimate:** 4h
 
 - Por instructor
-- Múltiplas rules
-- Vigência
+- Multiple rules
+- Validity
 
 ---
 

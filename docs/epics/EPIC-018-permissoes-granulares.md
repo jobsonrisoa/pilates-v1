@@ -29,7 +29,7 @@ Expandir o syshas RBAC with:
 ##  Objectives
 
 1. Flexibilidade total in permissions
-2. Perfis customizáveis
+2. Perfis customizable
 3. Management visual intuitiva
 4. Auditoria withpleta
 
@@ -75,7 +75,7 @@ Expandir o syshas RBAC with:
 **Acceptance Criteria:**
 
 - [ ] Selection múltipla
-- [ ] Permissions withbinadas (união)
+- [ ] Permissions withbinadas (union)
 - [ ] Visualization of the resultado
 
 ---
@@ -182,7 +182,7 @@ Expandir o syshas RBAC with:
 
 ##  Acceptance Criteria of the Epic
 
-- [ ] Perfis customizáveis
+- [ ] Perfis customizable
 - [ ] Inhaveface intuitiva
 - [ ] Permissions granulares
 - [ ] Auditoria withpleta

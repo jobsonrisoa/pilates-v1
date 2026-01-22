@@ -211,7 +211,7 @@ Description detalhada of the epic...
 
 ## Ube Stories
 
-- [ ] US-XXX-001: Como [persona], quero [action] for [benefício]
+- [ ] US-XXX-001: Como [persona], quero [action] for [benefit]
 - [ ] US-XXX-002: ...
 
 ## Tasks Technical

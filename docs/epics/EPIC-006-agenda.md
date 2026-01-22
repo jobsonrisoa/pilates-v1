@@ -205,7 +205,7 @@ model Attendance {
 **Estimate:** 3h
 
 - Lista of students scheduledos
-- Botões of attendance
+- Buttons of attendance
 - Adicionar aluno
 
 ---
