@@ -2,21 +2,22 @@
 
 ## 📋 Informações Gerais
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | EPIC-014 |
-| **Título** | Contratos Digitais |
-| **Fase** | 3 - Operacional |
-| **Prioridade** | 🟠 Alta |
-| **Estimativa** | 1.5 semanas |
+| Campo            | Valor                 |
+| ---------------- | --------------------- |
+| **ID**           | EPIC-014              |
+| **Título**       | Contratos Digitais    |
+| **Fase**         | 3 - Operacional       |
+| **Prioridade**   | 🟠 Alta               |
+| **Estimativa**   | 1.5 semanas           |
 | **Dependências** | EPIC-007 (Matrículas) |
-| **Status** | 📋 Backlog |
+| **Status**       | 📋 Backlog            |
 
 ---
 
 ## 📝 Descrição
 
 Implementar sistema de contratos digitais:
+
 - Geração automática de PDF
 - Envio para assinatura digital
 - Integração com D4Sign/Clicksign
@@ -37,11 +38,13 @@ Implementar sistema de contratos digitais:
 ## 👤 User Stories
 
 ### US-014-001: Gerar Contrato da Matrícula
+
 **Como** sistema  
 **Quero** gerar contrato PDF automaticamente  
 **Para** formalizar a matrícula
 
 **Critérios de Aceite:**
+
 - [ ] PDF gerado com dados da matrícula
 - [ ] Template configurável
 - [ ] Dados do aluno, plano, valores
@@ -50,11 +53,13 @@ Implementar sistema de contratos digitais:
 ---
 
 ### US-014-002: Enviar para Assinatura
+
 **Como** recepcionista  
 **Quero** enviar contrato para assinatura digital  
 **Para** que o aluno assine remotamente
 
 **Critérios de Aceite:**
+
 - [ ] Integração com provider (D4Sign)
 - [ ] Email enviado ao aluno
 - [ ] Link único de assinatura
@@ -63,11 +68,13 @@ Implementar sistema de contratos digitais:
 ---
 
 ### US-014-003: Receber Confirmação de Assinatura
+
 **Como** sistema  
 **Quero** receber webhook quando assinado  
 **Para** atualizar status automaticamente
 
 **Critérios de Aceite:**
+
 - [ ] Webhook configurado
 - [ ] Status do contrato atualizado
 - [ ] Status da matrícula atualizado
@@ -76,11 +83,13 @@ Implementar sistema de contratos digitais:
 ---
 
 ### US-014-004: Visualizar Contratos
+
 **Como** usuário  
 **Quero** ver contratos de uma matrícula  
 **Para** acompanhar status
 
 **Critérios de Aceite:**
+
 - [ ] Lista de contratos
 - [ ] Status visual
 - [ ] Download do PDF
@@ -89,11 +98,13 @@ Implementar sistema de contratos digitais:
 ---
 
 ### US-014-005: Configurar Template de Contrato
+
 **Como** administrador  
 **Quero** configurar o template do contrato  
 **Para** personalizar o documento
 
 **Critérios de Aceite:**
+
 - [ ] Editor de template
 - [ ] Variáveis dinâmicas
 - [ ] Preview
@@ -105,6 +116,7 @@ Implementar sistema de contratos digitais:
 ### Backend
 
 #### TASK-014-001: Schema de Contratos
+
 **Estimativa:** 2h
 
 ```prisma
@@ -132,6 +144,7 @@ enum ContractStatus {
 ---
 
 #### TASK-014-002: Serviço de Geração de PDF
+
 **Estimativa:** 4h
 
 - Template engine (Handlebars)
@@ -141,6 +154,7 @@ enum ContractStatus {
 ---
 
 #### TASK-014-003: Integração D4Sign/Clicksign
+
 **Estimativa:** 6h
 
 - Autenticação OAuth
@@ -151,6 +165,7 @@ enum ContractStatus {
 ---
 
 #### TASK-014-004: API de Contratos
+
 **Estimativa:** 3h
 
 - POST /enrollments/:id/contract
@@ -161,6 +176,7 @@ enum ContractStatus {
 ---
 
 #### TASK-014-005: Webhook Handler
+
 **Estimativa:** 3h
 
 - Endpoint de webhook
@@ -171,6 +187,7 @@ enum ContractStatus {
 ---
 
 #### TASK-014-006: Storage de Contratos
+
 **Estimativa:** 2h
 
 - Upload para S3/MinIO
@@ -182,6 +199,7 @@ enum ContractStatus {
 ### Frontend
 
 #### TASK-014-007: Componente de Contrato na Matrícula
+
 **Estimativa:** 3h
 
 - Status do contrato
@@ -191,6 +209,7 @@ enum ContractStatus {
 ---
 
 #### TASK-014-008: Modal de Preview do Contrato
+
 **Estimativa:** 2h
 
 - Visualização do PDF
@@ -199,6 +218,7 @@ enum ContractStatus {
 ---
 
 #### TASK-014-009: Página de Templates
+
 **Estimativa:** 4h
 
 - Listagem de templates
@@ -222,4 +242,3 @@ enum ContractStatus {
 ## 📅 Timeline Sugerido
 
 **Total estimado:** ~29 horas (~1.5 semanas)
-

@@ -2,15 +2,15 @@
 
 ## 📋 Informações
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | US-001-004 |
-| **Épico** | EPIC-001 |
-| **Título** | Docker Compose Completo |
-| **Estimativa** | 4 horas |
-| **Prioridade** | 🔴 Crítica |
-| **Dependências** | US-001-002, US-001-003 |
-| **Status** | 📋 Backlog |
+| Campo            | Valor                   |
+| ---------------- | ----------------------- |
+| **ID**           | US-001-004              |
+| **Épico**        | EPIC-001                |
+| **Título**       | Docker Compose Completo |
+| **Estimativa**   | 4 horas                 |
+| **Prioridade**   | 🔴 Crítica              |
+| **Dependências** | US-001-002, US-001-003  |
+| **Status**       | 📋 Backlog              |
 
 ---
 
@@ -112,20 +112,25 @@ Database Dev Strategy
 
 ```markdown
 ## Contexto
+
 Estou configurando o ambiente Docker Compose para um sistema de gestão.
 Backend NestJS em apps/api e Frontend Next.js em apps/web.
 
 ## Princípios
+
 - 100% Docker - nada instalado localmente
 - Hot reload obrigatório para desenvolvimento
 - Health checks em todos os serviços
 - Volumes persistentes para dados
 
 ## Tarefa
+
 Crie os arquivos Docker Compose:
 
 ### 1. docker-compose.yml (desenvolvimento)
+
 Serviços:
+
 - **api**: NestJS com hot reload
   - Build do Dockerfile em apps/api
   - Volumes: src para hot reload
@@ -156,6 +161,7 @@ Serviços:
   - Credenciais: minioadmin/minioadmin
 
 ### 2. docker-compose.test.yml
+
 - Mesma estrutura mas com:
   - MySQL em tmpfs (memória)
   - Redis em tmpfs
@@ -163,10 +169,12 @@ Serviços:
   - Isolado da dev network
 
 ### 3. Profiles
+
 - default: api, web, mysql, redis, mailhog, minio
 - monitoring: + prometheus, grafana
 
 ## Importante
+
 - Use delegated para melhor performance em Mac
 - Configure WATCHPACK_POLLING para Next.js
 - Configure health checks com intervals adequados
@@ -186,7 +194,7 @@ services:
   # =============================================
   # APLICAÇÕES
   # =============================================
-  
+
   api:
     build:
       context: .
@@ -199,7 +207,7 @@ services:
       - ./apps/api/test:/app/apps/api/test:delegated
       - api_node_modules:/app/apps/api/node_modules
     ports:
-      - "3001:3000"
+      - '3001:3000'
     environment:
       NODE_ENV: development
       DATABASE_URL: mysql://pilates:pilates@mysql:3306/pilates_dev
@@ -221,7 +229,7 @@ services:
     networks:
       - pilates-network
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:3000/health/live"]
+      test: ['CMD', 'wget', '-qO-', 'http://localhost:3000/health/live']
       interval: 30s
       timeout: 10s
       retries: 3
@@ -244,7 +252,7 @@ services:
       - web_node_modules:/app/apps/web/node_modules
       - web_next:/app/apps/web/.next
     ports:
-      - "3000:3000"
+      - '3000:3000'
     environment:
       NODE_ENV: development
       NEXT_PUBLIC_API_URL: http://localhost:3001
@@ -258,7 +266,7 @@ services:
   # =============================================
   # BANCO DE DADOS
   # =============================================
-  
+
   mysql:
     image: mysql:8.0
     command:
@@ -276,11 +284,11 @@ services:
       - mysql_data:/var/lib/mysql
       - ./docker/mysql/init:/docker-entrypoint-initdb.d:ro
     ports:
-      - "3306:3306"
+      - '3306:3306'
     networks:
       - pilates-network
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost', '-u', 'root', '-proot']
       interval: 10s
       timeout: 5s
       retries: 10
@@ -292,11 +300,11 @@ services:
     volumes:
       - redis_data:/data
     ports:
-      - "6379:6379"
+      - '6379:6379'
     networks:
       - pilates-network
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ['CMD', 'redis-cli', 'ping']
       interval: 10s
       timeout: 5s
       retries: 5
@@ -304,12 +312,12 @@ services:
   # =============================================
   # SERVIÇOS AUXILIARES
   # =============================================
-  
+
   mailhog:
     image: mailhog/mailhog:latest
     ports:
-      - "1025:1025"   # SMTP
-      - "8025:8025"   # Web UI
+      - '1025:1025' # SMTP
+      - '8025:8025' # Web UI
     networks:
       - pilates-network
 
@@ -322,12 +330,12 @@ services:
     volumes:
       - minio_data:/data
     ports:
-      - "9000:9000"   # API
-      - "9001:9001"   # Console
+      - '9000:9000' # API
+      - '9001:9001' # Console
     networks:
       - pilates-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      test: ['CMD', 'curl', '-f', 'http://localhost:9000/minio/health/live']
       interval: 30s
       timeout: 20s
       retries: 3
@@ -335,14 +343,14 @@ services:
   # =============================================
   # OBSERVABILIDADE (Profile: monitoring)
   # =============================================
-  
+
   prometheus:
     image: prom/prometheus:v2.48.0
     volumes:
       - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - prometheus_data:/prometheus
     ports:
-      - "9090:9090"
+      - '9090:9090'
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
@@ -359,7 +367,7 @@ services:
       - grafana_data:/var/lib/grafana
       - ./docker/grafana/provisioning:/etc/grafana/provisioning:ro
     ports:
-      - "3002:3000"
+      - '3002:3000'
     environment:
       GF_SECURITY_ADMIN_USER: admin
       GF_SECURITY_ADMIN_PASSWORD: admin
@@ -430,9 +438,9 @@ services:
     tmpfs:
       - /var/lib/mysql:rw
     ports:
-      - "3307:3306"
+      - '3307:3306'
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
       interval: 5s
       timeout: 3s
       retries: 10
@@ -444,9 +452,9 @@ services:
     tmpfs:
       - /data:rw
     ports:
-      - "6380:6379"
+      - '6380:6379'
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ['CMD', 'redis-cli', 'ping']
       interval: 5s
       timeout: 3s
       retries: 5
@@ -509,4 +517,3 @@ FLUSH PRIVILEGES;
 ## 🔗 Próxima User Story
 
 → [US-001-005: Qualidade de Código](./US-001-005-qualidade-codigo.md)
-

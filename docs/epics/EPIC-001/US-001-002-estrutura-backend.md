@@ -2,15 +2,15 @@
 
 ## 📋 Informações
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | US-001-002 |
-| **Épico** | EPIC-001 |
-| **Título** | Estrutura do Backend (NestJS + DDD) |
-| **Estimativa** | 6 horas |
-| **Prioridade** | 🔴 Crítica |
-| **Dependências** | US-001-001 |
-| **Status** | 📋 Backlog |
+| Campo            | Valor                               |
+| ---------------- | ----------------------------------- |
+| **ID**           | US-001-002                          |
+| **Épico**        | EPIC-001                            |
+| **Título**       | Estrutura do Backend (NestJS + DDD) |
+| **Estimativa**   | 6 horas                             |
+| **Prioridade**   | 🔴 Crítica                          |
+| **Dependências** | US-001-001                          |
+| **Status**       | 📋 Backlog                          |
 
 ---
 
@@ -192,10 +192,12 @@ apps/api/
 
 ```markdown
 ## Contexto
+
 Estou criando o backend de um sistema de gestão para academia de Pilates.
 A estrutura do monorepo já existe. Preciso criar o projeto NestJS em apps/api.
 
 ## Princípios Obrigatórios
+
 - TDD (Test-Driven Development) - Testes primeiro!
 - DDD (Domain-Driven Design) - Bounded contexts
 - Clean Architecture - Dependências de fora para dentro
@@ -203,15 +205,19 @@ A estrutura do monorepo já existe. Preciso criar o projeto NestJS em apps/api.
 - 100% Docker - Container com hot reload
 
 ## Tarefa
+
 Crie a estrutura do backend NestJS com DDD em apps/api:
 
 ### 1. Inicialização do Projeto
+
 - NestJS com TypeScript strict
 - ESM modules
 - Path aliases (@/, @modules/, @shared/)
 
 ### 2. Estrutura DDD
+
 Crie a estrutura de pastas:
+
 - src/modules/ - Para bounded contexts (health por enquanto)
 - src/shared/domain/ - Base classes (Entity, ValueObject, AggregateRoot)
 - src/shared/infrastructure/ - Database (Prisma), HTTP (filters, interceptors)
@@ -219,18 +225,22 @@ Crie a estrutura de pastas:
 - src/config/ - Configurações tipadas
 
 ### 3. Base Classes DDD
+
 Implemente:
+
 - Entity base com id, createdAt, updatedAt
 - ValueObject base com equals()
 - AggregateRoot base com domain events
 - Either monad para Result pattern
 
 ### 4. Prisma Setup
+
 - Schema inicial (apenas User para teste)
 - PrismaService com onModuleInit
 - PrismaModule global
 
 ### 5. Health Module
+
 - HealthController com endpoints:
   - GET /health (completo)
   - GET /health/live (liveness)
@@ -238,6 +248,7 @@ Implemente:
 - Checks: database, memory, disk
 
 ### 6. Configurações
+
 - ConfigModule com validação (Joi ou Zod)
 - Swagger configurado em /api
 - CORS configurado
@@ -245,6 +256,7 @@ Implemente:
 - Compression
 
 ### 7. Dockerfile
+
 - Multi-stage build
 - Node 20 Alpine
 - Usuário não-root
@@ -252,17 +264,21 @@ Implemente:
 - Otimizado para cache
 
 ### 8. Testes
+
 - Jest configurado
 - Exemplo de teste unitário
 - Mock do Prisma
 
 ## Formato de Output
+
 Para cada arquivo, mostre:
+
 1. Path completo
 2. Conteúdo completo
 3. Breve explicação do porquê
 
 ## Importante
+
 - NÃO instale dependências localmente
 - Tudo deve funcionar via Docker
 - Siga EXATAMENTE a estrutura especificada
@@ -544,9 +560,7 @@ export class HealthController {
   @HealthCheck()
   @ApiOperation({ summary: 'Readiness probe - pronto para receber tráfego?' })
   ready() {
-    return this.health.check([
-      () => this.prisma.pingCheck('database', this.prismaService),
-    ]);
+    return this.health.check([() => this.prisma.pingCheck('database', this.prismaService)]);
   }
 }
 ```
@@ -574,23 +588,23 @@ class TestEntity extends Entity<TestProps> {
 describe('Entity Base', () => {
   it('should create entity with auto-generated id', () => {
     const entity = new TestEntity({ name: 'Test' });
-    
+
     expect(entity.id).toBeDefined();
     expect(entity.id).toHaveLength(36); // UUID format
   });
 
   it('should use provided id', () => {
-    const entity = new TestEntity({ 
+    const entity = new TestEntity({
       id: 'custom-id',
-      name: 'Test' 
+      name: 'Test',
     });
-    
+
     expect(entity.id).toBe('custom-id');
   });
 
   it('should set createdAt and updatedAt', () => {
     const entity = new TestEntity({ name: 'Test' });
-    
+
     expect(entity.createdAt).toBeInstanceOf(Date);
     expect(entity.updatedAt).toBeInstanceOf(Date);
   });
@@ -599,7 +613,7 @@ describe('Entity Base', () => {
     const entity1 = new TestEntity({ id: 'same-id', name: 'Test 1' });
     const entity2 = new TestEntity({ id: 'same-id', name: 'Test 2' });
     const entity3 = new TestEntity({ id: 'diff-id', name: 'Test 1' });
-    
+
     expect(entity1.equals(entity2)).toBe(true);
     expect(entity1.equals(entity3)).toBe(false);
   });
@@ -643,4 +657,3 @@ Implemente a classe Entity conforme mostrado acima.
 - [NestJS Documentation](https://docs.nestjs.com/)
 - [Prisma with NestJS](https://docs.nestjs.com/recipes/prisma)
 - [DDD in TypeScript](https://khalilstemmler.com/articles/domain-driven-design-intro/)
-

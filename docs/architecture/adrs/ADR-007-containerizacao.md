@@ -8,9 +8,11 @@
 ## Contexto
 
 Requisito do cliente:
+
 > "Tudo deve ser em Docker, nada instalado no ambiente local de desenvolvimento"
 
 Isso implica:
+
 - Desenvolvimento 100% containerizado
 - Sem necessidade de instalar Node.js, MySQL, Redis localmente
 - Ambiente consistente entre desenvolvedores
@@ -70,7 +72,7 @@ services:
       - ./apps/api/test:/app/apps/api/test:delegated
       - api_node_modules:/app/apps/api/node_modules
     ports:
-      - "3001:3000"
+      - '3001:3000'
     environment:
       NODE_ENV: development
       DATABASE_URL: mysql://pilates:pilates@mysql:3306/pilates_dev
@@ -92,7 +94,7 @@ services:
     networks:
       - pilates-network
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:3000/health/live"]
+      test: ['CMD', 'wget', '-qO-', 'http://localhost:3000/health/live']
       interval: 30s
       timeout: 10s
       retries: 3
@@ -111,7 +113,7 @@ services:
       - web_node_modules:/app/apps/web/node_modules
       - web_next:/app/apps/web/.next
     ports:
-      - "3000:3000"
+      - '3000:3000'
     environment:
       NODE_ENV: development
       NEXT_PUBLIC_API_URL: http://localhost:3001
@@ -141,11 +143,11 @@ services:
       - mysql_data:/var/lib/mysql
       - ./docker/mysql/init:/docker-entrypoint-initdb.d:ro
     ports:
-      - "3306:3306"
+      - '3306:3306'
     networks:
       - pilates-network
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost', '-u', 'root', '-proot']
       interval: 10s
       timeout: 5s
       retries: 10
@@ -157,11 +159,11 @@ services:
     volumes:
       - redis_data:/data
     ports:
-      - "6379:6379"
+      - '6379:6379'
     networks:
       - pilates-network
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ['CMD', 'redis-cli', 'ping']
       interval: 10s
       timeout: 5s
       retries: 5
@@ -172,8 +174,8 @@ services:
   mailhog:
     image: mailhog/mailhog
     ports:
-      - "1025:1025"   # SMTP
-      - "8025:8025"   # Web UI
+      - '1025:1025' # SMTP
+      - '8025:8025' # Web UI
     networks:
       - pilates-network
 
@@ -186,12 +188,12 @@ services:
     volumes:
       - minio_data:/data
     ports:
-      - "9000:9000"   # API
-      - "9001:9001"   # Console
+      - '9000:9000' # API
+      - '9001:9001' # Console
     networks:
       - pilates-network
     healthcheck:
-      test: ["CMD", "mc", "ready", "local"]
+      test: ['CMD', 'mc', 'ready', 'local']
       interval: 30s
       timeout: 20s
       retries: 3
@@ -205,7 +207,7 @@ services:
       - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - prometheus_data:/prometheus
     ports:
-      - "9090:9090"
+      - '9090:9090'
     networks:
       - pilates-network
     profiles:
@@ -217,7 +219,7 @@ services:
       - grafana_data:/var/lib/grafana
       - ./docker/grafana/provisioning:/etc/grafana/provisioning:ro
     ports:
-      - "3002:3000"
+      - '3002:3000'
     environment:
       GF_SECURITY_ADMIN_PASSWORD: admin
       GF_USERS_ALLOW_SIGN_UP: false
@@ -256,24 +258,24 @@ volumes:
     "dev:logs": "docker compose logs -f",
     "dev:logs:api": "docker compose logs -f api",
     "dev:logs:web": "docker compose logs -f web",
-    
+
     "dev:monitoring": "docker compose --profile monitoring up",
-    
+
     "shell:api": "docker compose exec api sh",
     "shell:web": "docker compose exec web sh",
     "shell:mysql": "docker compose exec mysql mysql -u pilates -ppilates pilates_dev",
     "shell:redis": "docker compose exec redis redis-cli",
-    
+
     "db:migrate": "docker compose exec api pnpm --filter api prisma migrate dev",
     "db:seed": "docker compose exec api pnpm --filter api prisma db seed",
     "db:reset": "docker compose exec api pnpm --filter api prisma migrate reset --force",
     "db:studio": "docker compose exec api pnpm --filter api prisma studio",
-    
+
     "test": "docker compose exec api pnpm --filter api test",
     "test:watch": "docker compose exec api pnpm --filter api test:watch",
     "test:cov": "docker compose exec api pnpm --filter api test:cov",
     "test:e2e": "docker compose exec api pnpm --filter api test:e2e",
-    
+
     "lint": "docker compose exec api pnpm lint && docker compose exec web pnpm lint",
     "format": "docker compose exec api pnpm format && docker compose exec web pnpm format"
   }
@@ -346,7 +348,7 @@ lint: ## Roda linter
   "dockerComposeFile": ["../docker-compose.yml"],
   "service": "api",
   "workspaceFolder": "/app",
-  
+
   "customizations": {
     "vscode": {
       "extensions": [
@@ -363,11 +365,11 @@ lint: ## Roda linter
       }
     }
   },
-  
+
   "forwardPorts": [3000, 3001, 3306, 6379, 8025, 9000],
-  
+
   "postCreateCommand": "pnpm install",
-  
+
   "remoteUser": "node"
 }
 ```
@@ -382,14 +384,14 @@ api:
   volumes:
     - ./apps/api/src:/app/apps/api/src:delegated
   environment:
-    CHOKIDAR_USEPOLLING: true  # Necessário em alguns sistemas
+    CHOKIDAR_USEPOLLING: true # Necessário em alguns sistemas
 
 # Para Web (Next.js)
 web:
   volumes:
     - ./apps/web/app:/app/apps/web/app:delegated
   environment:
-    WATCHPACK_POLLING: true  # Para Next.js
+    WATCHPACK_POLLING: true # Para Next.js
 ```
 
 ### .env.example
@@ -465,6 +467,7 @@ docker compose exec api sh
 ## Consequências
 
 ### Positivas
+
 - ✅ Zero instalação local necessária
 - ✅ Ambiente consistente entre devs
 - ✅ Onboarding em minutos
@@ -473,11 +476,13 @@ docker compose exec api sh
 - ✅ Fácil limpar e recomeçar
 
 ### Negativas
+
 - ⚠️ Docker necessário (consumo de recursos)
 - ⚠️ Primeira inicialização lenta
 - ⚠️ Debugging pode ser mais complexo
 
 ### Mitigações
+
 - Usar `delegated` volumes para melhor performance no macOS
 - Profiles para serviços opcionais (monitoring)
 - VS Code Dev Containers para debugging integrado
@@ -487,4 +492,3 @@ docker compose exec api sh
 - [Docker Compose Documentation](https://docs.docker.com/compose/)
 - [VS Code Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers)
 - [NestJS Docker Guide](https://docs.nestjs.com/recipes/terminus)
-

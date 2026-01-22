@@ -2,21 +2,22 @@
 
 ## 📋 Informações Gerais
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | EPIC-003 |
-| **Título** | Gestão de Alunos |
-| **Fase** | 1 - MVP |
-| **Prioridade** | 🔴 Crítica |
-| **Estimativa** | 1.5 semanas |
+| Campo            | Valor                   |
+| ---------------- | ----------------------- |
+| **ID**           | EPIC-003                |
+| **Título**       | Gestão de Alunos        |
+| **Fase**         | 1 - MVP                 |
+| **Prioridade**   | 🔴 Crítica              |
+| **Estimativa**   | 1.5 semanas             |
 | **Dependências** | EPIC-002 (Autenticação) |
-| **Status** | 📋 Backlog |
+| **Status**       | 📋 Backlog              |
 
 ---
 
 ## 📝 Descrição
 
 Implementar módulo completo de gestão de alunos incluindo:
+
 - Cadastro com dados pessoais, contato e emergência
 - Dados médicos e observações
 - Histórico de exames
@@ -38,11 +39,13 @@ Implementar módulo completo de gestão de alunos incluindo:
 ## 👤 User Stories
 
 ### US-003-001: Cadastrar Aluno
+
 **Como** recepcionista  
 **Quero** cadastrar um novo aluno no sistema  
 **Para** que ele possa ser matriculado em aulas
 
 **Critérios de Aceite:**
+
 - [ ] Formulário com todos os campos necessários
 - [ ] Validação de CPF único
 - [ ] Campos obrigatórios: nome, CPF, data nascimento
@@ -52,11 +55,13 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 ### US-003-002: Listar Alunos
+
 **Como** usuário do sistema  
 **Quero** ver a lista de alunos cadastrados  
 **Para** encontrar rapidamente quem preciso
 
 **Critérios de Aceite:**
+
 - [ ] Listagem paginada
 - [ ] Busca por nome, CPF, email
 - [ ] Filtros por status (ativo, inativo, suspenso)
@@ -66,11 +71,13 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 ### US-003-003: Editar Aluno
+
 **Como** recepcionista  
 **Quero** editar dados de um aluno  
 **Para** manter as informações atualizadas
 
 **Critérios de Aceite:**
+
 - [ ] Todos os campos editáveis
 - [ ] Validações mantidas
 - [ ] Histórico de alterações (audit)
@@ -79,11 +86,13 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 ### US-003-004: Visualizar Detalhes do Aluno
+
 **Como** usuário do sistema  
 **Quero** ver todos os dados de um aluno  
 **Para** ter visão completa do cadastro
 
 **Critérios de Aceite:**
+
 - [ ] Página de detalhes completa
 - [ ] Abas: Dados, Exames, Matrículas, Histórico
 - [ ] Ações rápidas (editar, matricular)
@@ -91,11 +100,13 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 ### US-003-005: Gerenciar Status do Aluno
+
 **Como** gerente  
 **Quero** ativar, inativar ou suspender alunos  
 **Para** controlar quem está ativo no sistema
 
 **Critérios de Aceite:**
+
 - [ ] Botões de ação para mudar status
 - [ ] Confirmação antes de alterar
 - [ ] Motivo obrigatório para suspensão
@@ -104,11 +115,13 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 ### US-003-006: Cadastrar Exames do Aluno
+
 **Como** professor ou recepcionista  
 **Quero** registrar exames e avaliações do aluno  
 **Para** manter histórico médico/físico
 
 **Critérios de Aceite:**
+
 - [ ] Tipos: avaliação física, anamnese, exame médico
 - [ ] Data e observações
 - [ ] Upload de arquivos (PDF, imagens)
@@ -117,11 +130,13 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 ### US-003-007: Exportar Dados do Aluno (LGPD)
+
 **Como** aluno  
 **Quero** exportar todos os meus dados  
 **Para** exercer meu direito pela LGPD
 
 **Critérios de Aceite:**
+
 - [ ] Botão de exportar dados
 - [ ] Gera arquivo com todos os dados
 - [ ] Formato legível (PDF ou JSON)
@@ -133,15 +148,18 @@ Implementar módulo completo de gestão de alunos incluindo:
 ### Backend
 
 #### TASK-003-001: Módulo Students no NestJS
+
 **Estimativa:** 3h
 
 **Escopo:**
+
 - Estrutura DDD do módulo
 - Entidade Student
 - Value Objects: CPF, Email, Phone
 - Repository interface
 
 **Definition of Done:**
+
 - [ ] Estrutura criada
 - [ ] Entidades com validação
 - [ ] Testes unitários
@@ -149,15 +167,18 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 #### TASK-003-002: Schema Prisma de Alunos
+
 **Estimativa:** 2h
 
 **Escopo:**
+
 - Model Student
 - Model StudentExam
 - Índices de busca
 - Migration
 
 **Definition of Done:**
+
 - [ ] Schema criado
 - [ ] Migration aplicada
 - [ ] Índices otimizados
@@ -165,9 +186,11 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 #### TASK-003-003: CRUD de Alunos (API)
+
 **Estimativa:** 4h
 
 **Escopo:**
+
 - GET /students (listagem paginada)
 - GET /students/:id
 - POST /students
@@ -175,6 +198,7 @@ Implementar módulo completo de gestão de alunos incluindo:
 - DELETE /students/:id (soft delete)
 
 **Definition of Done:**
+
 - [ ] Endpoints funcionando
 - [ ] Validações implementadas
 - [ ] Permissões verificadas
@@ -184,9 +208,11 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 #### TASK-003-004: Busca e Filtros
+
 **Estimativa:** 3h
 
 **Escopo:**
+
 - Busca por nome (LIKE)
 - Busca por CPF (exato)
 - Filtro por status
@@ -194,6 +220,7 @@ Implementar módulo completo de gestão de alunos incluindo:
 - Paginação
 
 **Definition of Done:**
+
 - [ ] Query params implementados
 - [ ] Performance otimizada
 - [ ] Testes
@@ -201,15 +228,18 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 #### TASK-003-005: CRUD de Exames
+
 **Estimativa:** 3h
 
 **Escopo:**
+
 - GET /students/:id/exams
 - POST /students/:id/exams
 - PUT /exams/:id
 - DELETE /exams/:id
 
 **Definition of Done:**
+
 - [ ] Endpoints funcionando
 - [ ] Validações
 - [ ] Testes
@@ -217,15 +247,18 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 #### TASK-003-006: Upload de Arquivos de Exames
+
 **Estimativa:** 3h
 
 **Escopo:**
+
 - POST /exams/:id/files
 - Integração com MinIO/S3
 - Validação de tipos (PDF, JPG, PNG)
 - Limite de tamanho
 
 **Definition of Done:**
+
 - [ ] Upload funcionando
 - [ ] Arquivos salvos no storage
 - [ ] URL de acesso gerada
@@ -234,14 +267,17 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 #### TASK-003-007: Exportação de Dados (LGPD)
+
 **Estimativa:** 2h
 
 **Escopo:**
+
 - GET /students/:id/export
 - Coleta todos os dados do aluno
 - Gera PDF ou JSON
 
 **Definition of Done:**
+
 - [ ] Endpoint funcionando
 - [ ] Todos os dados incluídos
 - [ ] Formato legível
@@ -251,15 +287,18 @@ Implementar módulo completo de gestão de alunos incluindo:
 ### Frontend
 
 #### TASK-003-008: Listagem de Alunos
+
 **Estimativa:** 4h
 
 **Escopo:**
+
 - DataTable com shadcn
 - Colunas: nome, CPF, email, status, ações
 - Busca e filtros
 - Paginação
 
 **Definition of Done:**
+
 - [ ] UI implementada
 - [ ] Integração com API
 - [ ] Responsivo
@@ -268,9 +307,11 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 #### TASK-003-009: Formulário de Cadastro/Edição
+
 **Estimativa:** 5h
 
 **Escopo:**
+
 - Formulário multi-step ou abas
 - Dados pessoais
 - Contato
@@ -279,6 +320,7 @@ Implementar módulo completo de gestão de alunos incluindo:
 - Validação com Zod
 
 **Definition of Done:**
+
 - [ ] Formulário completo
 - [ ] Validações funcionando
 - [ ] Máscara de CPF, telefone
@@ -287,9 +329,11 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 #### TASK-003-010: Página de Detalhes do Aluno
+
 **Estimativa:** 4h
 
 **Escopo:**
+
 - Layout com abas
 - Aba: Dados gerais
 - Aba: Exames
@@ -297,6 +341,7 @@ Implementar módulo completo de gestão de alunos incluindo:
 - Aba: Histórico
 
 **Definition of Done:**
+
 - [ ] UI implementada
 - [ ] Navegação entre abas
 - [ ] Ações funcionando
@@ -305,15 +350,18 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 #### TASK-003-011: Modal de Exames
+
 **Estimativa:** 3h
 
 **Escopo:**
+
 - Modal para cadastrar exame
 - Campos: tipo, data, observações
 - Upload de arquivo
 - Listagem de exames existentes
 
 **Definition of Done:**
+
 - [ ] Modal implementado
 - [ ] Upload funcionando
 - [ ] Testes
@@ -321,15 +369,18 @@ Implementar módulo completo de gestão de alunos incluindo:
 ---
 
 #### TASK-003-012: Hooks e Services
+
 **Estimativa:** 2h
 
 **Escopo:**
+
 - useStudents hook
 - useStudent hook
 - useCreateStudent mutation
 - useUpdateStudent mutation
 
 **Definition of Done:**
+
 - [ ] Hooks implementados
 - [ ] Cache configurado
 - [ ] Testes
@@ -339,32 +390,38 @@ Implementar módulo completo de gestão de alunos incluindo:
 ## ✅ Critérios de Aceite do Épico
 
 ### Cadastro
+
 - [ ] Formulário com todos os campos
 - [ ] CPF único validado
 - [ ] Campos obrigatórios enforçados
 - [ ] Máscaras de input funcionando
 
 ### Listagem
+
 - [ ] Paginação funcionando
 - [ ] Busca por nome/CPF/email
 - [ ] Filtros por status
 - [ ] Performance adequada (< 500ms)
 
 ### Detalhes
+
 - [ ] Todas as informações visíveis
 - [ ] Abas organizadas
 - [ ] Ações de edição acessíveis
 
 ### Exames
+
 - [ ] CRUD de exames funcionando
 - [ ] Upload de arquivos até 10MB
 - [ ] Visualização de arquivos
 
 ### LGPD
+
 - [ ] Exportação de dados funcional
 - [ ] Soft delete implementado
 
 ### Qualidade
+
 - [ ] Testes unitários ≥80%
 - [ ] Testes de integração
 - [ ] Documentação Swagger
@@ -407,4 +464,3 @@ Semana 1:
 ```
 
 **Total estimado:** ~38 horas (~1.5 semanas)
-

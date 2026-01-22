@@ -1,4 +1,4 @@
-version: "3.8"
+version: '3.8'
 
 services:
   api-test:
@@ -29,9 +29,9 @@ services:
     tmpfs:
       - /var/lib/mysql:rw
     ports:
-      - "3307:3306"
+      - '3307:3306'
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
       interval: 5s
       timeout: 3s
       retries: 10
@@ -43,9 +43,9 @@ services:
     tmpfs:
       - /data:rw
     ports:
-      - "6380:6379"
+      - '6380:6379'
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ['CMD', 'redis-cli', 'ping']
       interval: 5s
       timeout: 3s
       retries: 5
@@ -55,5 +55,3 @@ services:
 networks:
   test-network:
     driver: bridge
-
-

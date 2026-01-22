@@ -6,7 +6,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Pilates System',
-  description: 'Sistema de gestão para Pilates & Fisioterapia'
+  description: 'Sistema de gestão para Pilates & Fisioterapia',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -18,5 +18,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-
-

@@ -2,21 +2,22 @@
 
 ## 📋 Informações Gerais
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | EPIC-020 |
-| **Título** | Otimizações de Performance |
-| **Fase** | 4 - Refinamento |
-| **Prioridade** | 🟡 Média |
-| **Estimativa** | 1 semana |
+| Campo            | Valor                      |
+| ---------------- | -------------------------- |
+| **ID**           | EPIC-020                   |
+| **Título**       | Otimizações de Performance |
+| **Fase**         | 4 - Refinamento            |
+| **Prioridade**   | 🟡 Média                   |
+| **Estimativa**   | 1 semana                   |
 | **Dependências** | Todos os épicos anteriores |
-| **Status** | 📋 Backlog |
+| **Status**       | 📋 Backlog                 |
 
 ---
 
 ## 📝 Descrição
 
 Otimizar performance do sistema:
+
 - Query optimization (N+1, índices)
 - Caching estratégico
 - Lazy loading no frontend
@@ -37,11 +38,13 @@ Otimizar performance do sistema:
 ## 👤 User Stories
 
 ### US-020-001: Melhorar Tempo de Resposta da API
+
 **Como** usuário  
 **Quero** respostas rápidas da API  
 **Para** ter boa experiência
 
 **Critérios de Aceite:**
+
 - [ ] P95 < 500ms
 - [ ] P99 < 1000ms
 - [ ] Identificar queries lentas
@@ -49,11 +52,13 @@ Otimizar performance do sistema:
 ---
 
 ### US-020-002: Acelerar Carregamento do Frontend
+
 **Como** usuário  
 **Quero** que as páginas carreguem rápido  
 **Para** não esperar
 
 **Critérios de Aceite:**
+
 - [ ] LCP < 2.5s
 - [ ] FID < 100ms
 - [ ] CLS < 0.1
@@ -61,11 +66,13 @@ Otimizar performance do sistema:
 ---
 
 ### US-020-003: Implementar Cache
+
 **Como** sistema  
 **Quero** cachear dados frequentes  
 **Para** reduzir carga no banco
 
 **Critérios de Aceite:**
+
 - [ ] Cache de configurações
 - [ ] Cache de listas (com invalidação)
 - [ ] Cache de relatórios
@@ -77,6 +84,7 @@ Otimizar performance do sistema:
 ### Backend
 
 #### TASK-020-001: Auditoria de Queries
+
 **Estimativa:** 3h
 
 - Identificar N+1
@@ -86,6 +94,7 @@ Otimizar performance do sistema:
 ---
 
 #### TASK-020-002: Otimização de Queries
+
 **Estimativa:** 4h
 
 - Adicionar includes/selects
@@ -95,6 +104,7 @@ Otimizar performance do sistema:
 ---
 
 #### TASK-020-003: Implementar Cache Redis
+
 **Estimativa:** 4h
 
 - Cache decorator
@@ -105,6 +115,7 @@ Otimizar performance do sistema:
 ---
 
 #### TASK-020-004: Compressão e Headers
+
 **Estimativa:** 2h
 
 - Gzip compression
@@ -114,6 +125,7 @@ Otimizar performance do sistema:
 ---
 
 #### TASK-020-005: Connection Pooling
+
 **Estimativa:** 2h
 
 - Pool de conexões MySQL
@@ -124,6 +136,7 @@ Otimizar performance do sistema:
 ### Frontend
 
 #### TASK-020-006: Code Splitting
+
 **Estimativa:** 3h
 
 - Lazy loading de rotas
@@ -133,6 +146,7 @@ Otimizar performance do sistema:
 ---
 
 #### TASK-020-007: Bundle Analysis e Otimização
+
 **Estimativa:** 3h
 
 - Analisar bundle
@@ -142,6 +156,7 @@ Otimizar performance do sistema:
 ---
 
 #### TASK-020-008: Image Optimization
+
 **Estimativa:** 2h
 
 - Next Image optimization
@@ -151,6 +166,7 @@ Otimizar performance do sistema:
 ---
 
 #### TASK-020-009: Service Worker (PWA básico)
+
 **Estimativa:** 3h
 
 - Cache de assets
@@ -161,6 +177,7 @@ Otimizar performance do sistema:
 ### Monitoramento
 
 #### TASK-020-010: Métricas de Performance
+
 **Estimativa:** 2h
 
 - Adicionar métricas de latência
@@ -183,4 +200,3 @@ Otimizar performance do sistema:
 ## 📅 Timeline Sugerido
 
 **Total estimado:** ~28 horas (~1 semana)
-

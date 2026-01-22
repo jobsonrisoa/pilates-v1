@@ -2,15 +2,15 @@
 
 ## 📋 Informações
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | US-001-003 |
-| **Épico** | EPIC-001 |
-| **Título** | Estrutura do Frontend (Next.js) |
-| **Estimativa** | 5 horas |
-| **Prioridade** | 🔴 Crítica |
-| **Dependências** | US-001-001 |
-| **Status** | 📋 Backlog |
+| Campo            | Valor                           |
+| ---------------- | ------------------------------- |
+| **ID**           | US-001-003                      |
+| **Épico**        | EPIC-001                        |
+| **Título**       | Estrutura do Frontend (Next.js) |
+| **Estimativa**   | 5 horas                         |
+| **Prioridade**   | 🔴 Crítica                      |
+| **Dependências** | US-001-001                      |
+| **Status**       | 📋 Backlog                      |
 
 ---
 
@@ -191,31 +191,37 @@ apps/web/
 
 ```markdown
 ## Contexto
+
 Estou criando o frontend de um sistema de gestão para academia de Pilates.
 O backend NestJS já existe. Preciso criar o Next.js em apps/web.
 
 ## Princípios Obrigatórios
+
 - Next.js 14 com App Router
 - TDD - Testes com Testing Library
 - TypeScript strict
 - 100% Docker - Hot reload no container
 
 ## Tarefa
+
 Crie a estrutura do frontend Next.js em apps/web:
 
 ### 1. Inicialização
+
 - Next.js 14 com App Router
 - TypeScript strict
 - ESLint + Prettier
 - src/ directory: NÃO (usar root)
 
 ### 2. Estilização
+
 - TailwindCSS configurado
 - CSS variables para tema dark/light
 - Fonte: Inter (ou outra moderna)
 - shadcn/ui instalado e configurado
 
 ### 3. Componentes shadcn (instalar)
+
 - Button
 - Input
 - Card
@@ -227,11 +233,13 @@ Crie a estrutura do frontend Next.js em apps/web:
 - Tabs
 
 ### 4. Providers Setup
+
 - QueryClientProvider (React Query)
 - ThemeProvider (next-themes)
 - Configuração de cache
 
 ### 5. Estrutura de Pastas
+
 - app/ com route groups
 - components/ui e components/shared
 - lib/ com utils e api client
@@ -240,36 +248,44 @@ Crie a estrutura do frontend Next.js em apps/web:
 - types/
 
 ### 6. API Client
+
 - Fetch wrapper com interceptors
 - Tratamento de erros
 - Types das responses
 
 ### 7. Stores Zustand
+
 - Auth store (user, token)
 - UI store (sidebar, theme)
 
 ### 8. Páginas Placeholder
+
 - / (redirect para login ou dashboard)
 - /login (placeholder)
 - /dashboard (placeholder)
 
 ### 9. Dockerfile
+
 - Multi-stage build
 - Node 20 Alpine
 - Standalone output
 - Health check
 
 ### 10. Testes
+
 - Jest + Testing Library
 - Exemplo de teste de componente
 
 ## Formato de Output
+
 Para cada arquivo, mostre:
+
 1. Path completo
 2. Conteúdo completo
 3. Explicação breve
 
 ## Importante
+
 - Use App Router, não Pages Router
 - shadcn/ui deve estar configurado
 - Dark mode deve funcionar
@@ -333,78 +349,75 @@ Para cada arquivo, mostre:
 ```javascript
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
-  content: [
-    './app/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-  ],
+  darkMode: ['class'],
+  content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: '2rem',
       screens: {
-        "2xl": "1400px",
+        '2xl': '1400px',
       },
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {
-        "accordion-down": {
+        'accordion-down': {
           from: { height: 0 },
-          to: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 'var(--radix-accordion-content-height)' },
         },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: 0 },
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-}
+  plugins: [require('tailwindcss-animate')],
+};
 ```
 
 ### 3. app/providers.tsx
@@ -459,17 +472,14 @@ class ApiError extends Error {
   constructor(
     public status: number,
     message: string,
-    public data?: unknown
+    public data?: unknown,
   ) {
     super(message);
     this.name = 'ApiError';
   }
 }
 
-async function fetchApi<T>(
-  endpoint: string,
-  options: FetchOptions = {}
-): Promise<T> {
+async function fetchApi<T>(endpoint: string, options: FetchOptions = {}): Promise<T> {
   const { token, ...fetchOptions } = options;
 
   const headers: HeadersInit = {
@@ -488,11 +498,7 @@ async function fetchApi<T>(
 
   if (!response.ok) {
     const error = await response.json().catch(() => ({}));
-    throw new ApiError(
-      response.status,
-      error.message || 'An error occurred',
-      error
-    );
+    throw new ApiError(response.status, error.message || 'An error occurred', error);
   }
 
   if (response.status === 204) {
@@ -580,8 +586,8 @@ export const useAuthStore = create<AuthState>()(
         token: state.token,
         user: state.user,
       }),
-    }
-  )
+    },
+  ),
 );
 ```
 
@@ -662,21 +668,21 @@ describe('Button', () => {
   it('calls onClick when clicked', () => {
     const handleClick = jest.fn();
     render(<Button onClick={handleClick}>Click me</Button>);
-    
+
     fireEvent.click(screen.getByRole('button'));
-    
+
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
   it('applies variant classes correctly', () => {
     render(<Button variant="destructive">Delete</Button>);
-    
+
     expect(screen.getByRole('button')).toHaveClass('bg-destructive');
   });
 
   it('is disabled when disabled prop is true', () => {
     render(<Button disabled>Disabled</Button>);
-    
+
     expect(screen.getByRole('button')).toBeDisabled();
   });
 });
@@ -710,4 +716,3 @@ describe('Button', () => {
 - [shadcn/ui](https://ui.shadcn.com/)
 - [TanStack Query](https://tanstack.com/query)
 - [Zustand](https://zustand-demo.pmnd.rs/)
-

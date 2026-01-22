@@ -7,5 +7,3 @@ export abstract class DomainEvent<TPayload = unknown> {
     this.occurredAt = occurredAt ?? new Date();
   }
 }
-
-

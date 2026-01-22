@@ -3,19 +3,19 @@ module.exports = {
   env: {
     node: true,
     es2022: true,
-    jest: true
+    jest: true,
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2022,
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['@typescript-eslint', 'import'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
-    'prettier'
+    'prettier',
   ],
   rules: {
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
@@ -25,11 +25,9 @@ module.exports = {
       {
         groups: ['builtin', 'external', 'internal', ['parent', 'sibling'], 'index'],
         'newlines-between': 'always',
-        alphabetize: { order: 'asc', caseInsensitive: true }
-      }
-    ]
+        alphabetize: { order: 'asc', caseInsensitive: true },
+      },
+    ],
   },
-  ignorePatterns: ['node_modules/', 'dist/', '.next/', 'coverage/', 'playwright-report/']
+  ignorePatterns: ['node_modules/', 'dist/', '.next/', 'coverage/', 'playwright-report/'],
 };
-
-

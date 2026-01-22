@@ -41,5 +41,3 @@ export abstract class Entity<T extends EntityProps> {
     return this._id === entity._id;
   }
 }
-
-

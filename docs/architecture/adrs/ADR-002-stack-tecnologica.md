@@ -8,6 +8,7 @@
 ## Contexto
 
 Necessidade de definir as tecnologias principais do sistema, considerando:
+
 - Requisitos do cliente (NestJS, Next.js)
 - Metodologia TDD red-green-refactor
 - Ambiente 100% Docker
@@ -26,6 +27,7 @@ Necessidade de definir as tecnologias principais do sistema, considerando:
 ```
 
 **Justificativa:**
+
 - Arquitetura modular nativa (alinhada com DDD)
 - Dependency Injection built-in
 - Suporte excelente a decorators
@@ -33,6 +35,7 @@ Necessidade de definir as tecnologias principais do sistema, considerando:
 - TypeScript first
 
 **Dependências principais:**
+
 ```json
 {
   "dependencies": {
@@ -72,6 +75,7 @@ Necessidade de definir as tecnologias principais do sistema, considerando:
 ```
 
 **Dependências principais:**
+
 ```json
 {
   "dependencies": {
@@ -108,6 +112,7 @@ Necessidade de definir as tecnologias principais do sistema, considerando:
 ```
 
 **Justificativa Prisma:**
+
 - Type-safety superior
 - Schema declarativo
 - Migrations versionadas
@@ -133,7 +138,7 @@ model User {
   roleId    String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  
+
   @@map("users")
 }
 ```
@@ -148,6 +153,7 @@ model User {
 ```
 
 **Usos:**
+
 - Cache de queries frequentes
 - Sessions de usuário
 - Rate limiting
@@ -157,6 +163,7 @@ model User {
 ### Testes: Jest + Testing Library
 
 **Backend:**
+
 ```typescript
 // Exemplo TDD red-green-refactor
 describe('CreateStudentUseCase', () => {
@@ -165,28 +172,29 @@ describe('CreateStudentUseCase', () => {
     const result = await useCase.execute({
       name: 'João Silva',
       cpf: '12345678901',
-      email: 'joao@email.com'
+      email: 'joao@email.com',
     });
-    
+
     expect(result.isRight()).toBe(true);
     expect(result.value.student.name).toBe('João Silva');
   });
-  
+
   // GREEN: Implementar código mínimo
   // REFACTOR: Melhorar código mantendo testes verdes
 });
 ```
 
 **Frontend:**
+
 ```typescript
 // Testes de componente
 describe('StudentForm', () => {
   it('should submit form with valid data', async () => {
     render(<StudentForm onSubmit={mockSubmit} />);
-    
+
     await userEvent.type(screen.getByLabelText('Nome'), 'João');
     await userEvent.click(screen.getByRole('button', { name: /salvar/i }));
-    
+
     expect(mockSubmit).toHaveBeenCalledWith(expect.objectContaining({
       name: 'João'
     }));
@@ -230,29 +238,33 @@ describe('StudentForm', () => {
 ## Alternativas Consideradas
 
 ### Backend
-| Opção | Prós | Contras | Decisão |
-|-------|------|---------|---------|
-| Express puro | Simples, leve | Sem estrutura, mais código manual | ❌ |
-| NestJS | Estruturado, DI nativa | Curva de aprendizado | ✅ |
-| Fastify | Muito rápido | Menos ecossistema | ❌ |
+
+| Opção        | Prós                   | Contras                           | Decisão |
+| ------------ | ---------------------- | --------------------------------- | ------- |
+| Express puro | Simples, leve          | Sem estrutura, mais código manual | ❌      |
+| NestJS       | Estruturado, DI nativa | Curva de aprendizado              | ✅      |
+| Fastify      | Muito rápido           | Menos ecossistema                 | ❌      |
 
 ### ORM
-| Opção | Prós | Contras | Decisão |
-|-------|------|---------|---------|
-| TypeORM | Maduro, Active Record | Bugs, tipos fracos | ❌ |
-| Prisma | Type-safe, moderno | Menos flexível em queries complexas | ✅ |
-| Knex | Flexível | Query builder apenas | ❌ |
+
+| Opção   | Prós                  | Contras                             | Decisão |
+| ------- | --------------------- | ----------------------------------- | ------- |
+| TypeORM | Maduro, Active Record | Bugs, tipos fracos                  | ❌      |
+| Prisma  | Type-safe, moderno    | Menos flexível em queries complexas | ✅      |
+| Knex    | Flexível              | Query builder apenas                | ❌      |
 
 ### Frontend State
-| Opção | Prós | Contras | Decisão |
-|-------|------|---------|---------|
-| Redux | Poderoso | Boilerplate excessivo | ❌ |
-| Zustand | Simples, leve | Menos features | ✅ |
-| Jotai | Atômico | Curva de aprendizado | ❌ |
+
+| Opção   | Prós          | Contras               | Decisão |
+| ------- | ------------- | --------------------- | ------- |
+| Redux   | Poderoso      | Boilerplate excessivo | ❌      |
+| Zustand | Simples, leve | Menos features        | ✅      |
+| Jotai   | Atômico       | Curva de aprendizado  | ❌      |
 
 ## Consequências
 
 ### Positivas
+
 - ✅ Type-safety end-to-end
 - ✅ Ecossistema maduro e estável
 - ✅ Excelente DX (Developer Experience)
@@ -260,6 +272,7 @@ describe('StudentForm', () => {
 - ✅ Comunidade ativa
 
 ### Negativas
+
 - ⚠️ Bundle size do Next.js pode crescer
 - ⚠️ Prisma tem overhead em queries complexas
 - ⚠️ Node.js single-threaded (mitigado com clustering)
@@ -268,12 +281,12 @@ describe('StudentForm', () => {
 
 A stack foi escolhida com foco em testabilidade:
 
-| Tecnologia | Facilidade TDD | Ferramentas |
-|------------|----------------|-------------|
-| NestJS | ⭐⭐⭐⭐⭐ | @nestjs/testing, mocks nativos |
-| Prisma | ⭐⭐⭐⭐⭐ | prisma mock, transactions |
-| Next.js | ⭐⭐⭐⭐ | Testing Library, MSW |
-| React Query | ⭐⭐⭐⭐⭐ | queryClient mock |
+| Tecnologia  | Facilidade TDD | Ferramentas                    |
+| ----------- | -------------- | ------------------------------ |
+| NestJS      | ⭐⭐⭐⭐⭐     | @nestjs/testing, mocks nativos |
+| Prisma      | ⭐⭐⭐⭐⭐     | prisma mock, transactions      |
+| Next.js     | ⭐⭐⭐⭐       | Testing Library, MSW           |
+| React Query | ⭐⭐⭐⭐⭐     | queryClient mock               |
 
 ## Versões Mínimas
 
@@ -292,4 +305,3 @@ Redis: 7.x
 - [Prisma Best Practices](https://www.prisma.io/docs/guides)
 - [Next.js App Router](https://nextjs.org/docs/app)
 - [Testing Library Guiding Principles](https://testing-library.com/docs/guiding-principles)
-

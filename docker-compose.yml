@@ -1,9 +1,20 @@
-version: "3.8"
+version: '3.8'
 
 services:
   # =============================================
   # APLICAÇÕES
   # =============================================
+  tools:
+    build:
+      context: .
+      dockerfile: docker/tools/Dockerfile
+    working_dir: /repo
+    volumes:
+      - ./:/repo:delegated
+      - pnpm_store:/pnpm-store
+    networks:
+      - pilates-network
+
   api:
     build:
       context: .
@@ -15,7 +26,7 @@ services:
       APP_PORT: 3000
       DATABASE_URL: mysql://pilates:pilates@mysql:3306/pilates_dev
     ports:
-      - "3001:3000"
+      - '3001:3000'
     volumes:
       - ./apps/api/src:/app/apps/api/src:delegated
       - ./apps/api/prisma:/app/apps/api/prisma:delegated
@@ -26,7 +37,7 @@ services:
     networks:
       - pilates-network
     healthcheck:
-      test: ["CMD", "curl", "-fsS", "http://localhost:3000/health/live"]
+      test: ['CMD', 'curl', '-fsS', 'http://localhost:3000/health/live']
       interval: 30s
       timeout: 10s
       retries: 3
@@ -41,10 +52,10 @@ services:
     environment:
       NODE_ENV: development
       NEXT_PUBLIC_API_URL: http://localhost:3001
-      WATCHPACK_POLLING: "true"
-      NEXT_TELEMETRY_DISABLED: "1"
+      WATCHPACK_POLLING: 'true'
+      NEXT_TELEMETRY_DISABLED: '1'
     ports:
-      - "3000:3000"
+      - '3000:3000'
     volumes:
       - ./apps/web/app:/app/apps/web/app:delegated
       - ./apps/web/components:/app/apps/web/components:delegated
@@ -73,14 +84,14 @@ services:
       MYSQL_USER: pilates
       MYSQL_PASSWORD: pilates
     ports:
-      - "3306:3306"
+      - '3306:3306'
     volumes:
       - mysql_data:/var/lib/mysql
       - ./docker/mysql/init:/docker-entrypoint-initdb.d:ro
     networks:
       - pilates-network
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost', '-u', 'root', '-proot']
       interval: 10s
       timeout: 5s
       retries: 10
@@ -90,13 +101,13 @@ services:
     image: redis:7-alpine
     command: redis-server --appendonly yes
     ports:
-      - "6379:6379"
+      - '6379:6379'
     volumes:
       - redis_data:/data
     networks:
       - pilates-network
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ['CMD', 'redis-cli', 'ping']
       interval: 10s
       timeout: 5s
       retries: 5
@@ -107,8 +118,8 @@ services:
   mailhog:
     image: mailhog/mailhog:latest
     ports:
-      - "1025:1025"
-      - "8025:8025"
+      - '1025:1025'
+      - '8025:8025'
     networks:
       - pilates-network
 
@@ -119,14 +130,14 @@ services:
       MINIO_ROOT_USER: minioadmin
       MINIO_ROOT_PASSWORD: minioadmin
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - '9000:9000'
+      - '9001:9001'
     volumes:
       - minio_data:/data
     networks:
       - pilates-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      test: ['CMD', 'curl', '-f', 'http://localhost:9000/minio/health/live']
       interval: 30s
       timeout: 20s
       retries: 3
@@ -140,10 +151,10 @@ services:
       - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - prometheus_data:/prometheus
     ports:
-      - "9090:9090"
+      - '9090:9090'
     command:
-      - "--config.file=/etc/prometheus/prometheus.yml"
-      - "--storage.tsdb.path=/prometheus"
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
     networks:
       - pilates-network
     profiles:
@@ -155,11 +166,11 @@ services:
       - grafana_data:/var/lib/grafana
       - ./docker/grafana/provisioning:/etc/grafana/provisioning:ro
     ports:
-      - "3002:3000"
+      - '3002:3000'
     environment:
       GF_SECURITY_ADMIN_USER: admin
       GF_SECURITY_ADMIN_PASSWORD: admin
-      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_USERS_ALLOW_SIGN_UP: 'false'
     networks:
       - pilates-network
     profiles:
@@ -176,9 +187,9 @@ volumes:
     name: pilates_redis_data
   minio_data:
     name: pilates_minio_data
+  pnpm_store:
+    name: pilates_pnpm_store
   prometheus_data:
     name: pilates_prometheus_data
   grafana_data:
     name: pilates_grafana_data
-
-

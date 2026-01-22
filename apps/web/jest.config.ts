@@ -13,10 +13,8 @@ const config: Config = {
     '^@lib/(.*)$': '<rootDir>/lib/$1',
     '^@hooks/(.*)$': '<rootDir>/hooks/$1',
     '^@stores/(.*)$': '<rootDir>/stores/$1',
-    '^@types/(.*)$': '<rootDir>/types/$1'
-  }
+    '^@types/(.*)$': '<rootDir>/types/$1',
+  },
 };
 
 export default createJestConfig(config);
-
-

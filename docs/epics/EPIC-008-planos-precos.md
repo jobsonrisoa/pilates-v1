@@ -2,21 +2,22 @@
 
 ## 📋 Informações Gerais
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | EPIC-008 |
-| **Título** | Sistema de Planos e Preços |
-| **Fase** | 2 - Financeiro |
-| **Prioridade** | 🔴 Crítica |
-| **Estimativa** | 1 semana |
-| **Dependências** | EPIC-007 (Matrículas) |
-| **Status** | 📋 Backlog |
+| Campo            | Valor                      |
+| ---------------- | -------------------------- |
+| **ID**           | EPIC-008                   |
+| **Título**       | Sistema de Planos e Preços |
+| **Fase**         | 2 - Financeiro             |
+| **Prioridade**   | 🔴 Crítica                 |
+| **Estimativa**   | 1 semana                   |
+| **Dependências** | EPIC-007 (Matrículas)      |
+| **Status**       | 📋 Backlog                 |
 
 ---
 
 ## 📝 Descrição
 
 Expandir o sistema de planos com:
+
 - Tabela de preços por modalidade/tipo
 - Descontos especiais
 - Histórico de alterações de preço
@@ -36,11 +37,13 @@ Expandir o sistema de planos com:
 ## 👤 User Stories
 
 ### US-008-001: Configurar Tabela de Preços
+
 **Como** administrador  
 **Quero** definir preços por plano e modalidade  
 **Para** precificar os serviços
 
 **Critérios de Aceite:**
+
 - [ ] Preço por plano
 - [ ] Preço por tipo de aula (individual/grupo)
 - [ ] Data de vigência
@@ -49,11 +52,13 @@ Expandir o sistema de planos com:
 ---
 
 ### US-008-002: Configurar Descontos
+
 **Como** administrador  
 **Quero** criar regras de desconto  
 **Para** oferecer condições especiais
 
 **Critérios de Aceite:**
+
 - [ ] Desconto por categoria (estudante, idoso)
 - [ ] Desconto percentual ou valor fixo
 - [ ] Aplicação automática ou manual
@@ -61,11 +66,13 @@ Expandir o sistema de planos com:
 ---
 
 ### US-008-003: Calcular Valor da Matrícula
+
 **Como** sistema  
 **Quero** calcular automaticamente o valor  
 **Para** facilitar o processo de matrícula
 
 **Critérios de Aceite:**
+
 - [ ] Busca preço vigente
 - [ ] Aplica descontos
 - [ ] Exibe valor final
@@ -75,6 +82,7 @@ Expandir o sistema de planos com:
 ## 🔧 Tasks Técnicas
 
 ### TASK-008-001: Schema de Preços
+
 **Estimativa:** 2h
 
 ```prisma
@@ -99,16 +107,19 @@ model Discount {
 ---
 
 ### TASK-008-002: CRUD Tabela de Preços
+
 **Estimativa:** 3h
 
 ---
 
 ### TASK-008-003: CRUD Descontos
+
 **Estimativa:** 2h
 
 ---
 
 ### TASK-008-004: Serviço de Cálculo de Preço
+
 **Estimativa:** 3h
 
 - Buscar preço vigente
@@ -118,16 +129,19 @@ model Discount {
 ---
 
 ### TASK-008-005: UI de Configuração de Preços
+
 **Estimativa:** 4h
 
 ---
 
 ### TASK-008-006: UI de Descontos
+
 **Estimativa:** 3h
 
 ---
 
 ### TASK-008-007: Integração no Wizard de Matrícula
+
 **Estimativa:** 2h
 
 ---
@@ -145,4 +159,3 @@ model Discount {
 ## 📅 Timeline Sugerido
 
 **Total estimado:** ~19 horas (~1 semana)
-

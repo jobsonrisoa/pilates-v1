@@ -2,15 +2,15 @@
 
 ## 📋 Informações
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | US-001-001 |
-| **Épico** | EPIC-001 |
-| **Título** | Setup Inicial do Projeto |
-| **Estimativa** | 4 horas |
-| **Prioridade** | 🔴 Crítica |
-| **Dependências** | Nenhuma |
-| **Status** | 📋 Backlog |
+| Campo            | Valor                    |
+| ---------------- | ------------------------ |
+| **ID**           | US-001-001               |
+| **Épico**        | EPIC-001                 |
+| **Título**       | Setup Inicial do Projeto |
+| **Estimativa**   | 4 horas                  |
+| **Prioridade**   | 🔴 Crítica               |
+| **Dependências** | Nenhuma                  |
+| **Status**       | 📋 Backlog               |
 
 ---
 
@@ -141,16 +141,19 @@ pilates/
 
 ```markdown
 ## Contexto
+
 Estou criando um sistema de gestão para academia de Pilates/Fisioterapia.
 Preciso configurar a estrutura inicial do monorepo.
 
 ## Princípios
+
 - TDD (Test-Driven Development)
 - DDD (Domain-Driven Design)
 - 100% Docker (nada instalado localmente)
 - pnpm como gerenciador de pacotes
 
 ## Tarefa
+
 Crie a estrutura inicial do monorepo com:
 
 1. **Estrutura de pastas:**
@@ -176,12 +179,14 @@ Crie a estrutura inicial do monorepo com:
    - format: formatar código
 
 ## Requisitos
+
 - Use pnpm workspaces
 - Prepare para Docker (apps terão Dockerfiles)
 - Documente variáveis de ambiente
 - Inclua comandos no Makefile
 
 ## Output Esperado
+
 Forneça os arquivos completos com explicações.
 Siga o formato: nome do arquivo → conteúdo
 ```
@@ -477,7 +482,7 @@ deploy-prod: ## Deploy para produção
 
 ### 6. README.md (root)
 
-```markdown
+````markdown
 # 🏋️ Sistema de Gestão - Pilates & Fisioterapia
 
 Sistema completo de gestão para academia de Pilates e Fisioterapia.
@@ -507,18 +512,19 @@ make dev
 # ou
 docker compose up
 ```
+````
 
 ### Acessos
 
-| Serviço | URL |
-|---------|-----|
-| Frontend | http://localhost:3000 |
-| API | http://localhost:3001 |
+| Serviço            | URL                       |
+| ------------------ | ------------------------- |
+| Frontend           | http://localhost:3000     |
+| API                | http://localhost:3001     |
 | API Docs (Swagger) | http://localhost:3001/api |
-| MailHog | http://localhost:8025 |
-| MinIO Console | http://localhost:9001 |
-| Prometheus | http://localhost:9090 |
-| Grafana | http://localhost:3002 |
+| MailHog            | http://localhost:8025     |
+| MinIO Console      | http://localhost:9001     |
+| Prometheus         | http://localhost:9090     |
+| Grafana            | http://localhost:3002     |
 
 ### Comandos Úteis
 
@@ -581,6 +587,7 @@ make format       # Formata código
 ## 📄 Licença
 
 Privado - Todos os direitos reservados.
+
 ```
 
 ---
@@ -610,3 +617,4 @@ Após concluir esta US, prossiga para:
 - [pnpm Workspaces](https://pnpm.io/workspaces)
 - [Monorepo Best Practices](https://monorepo.tools/)
 
+```

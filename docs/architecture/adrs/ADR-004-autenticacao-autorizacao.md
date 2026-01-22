@@ -8,6 +8,7 @@
 ## Contexto
 
 O sistema requer:
+
 - Autenticação segura de administradores
 - Sistema de permissões granulares (RBAC)
 - Múltiplos perfis: Super Admin, Admin, Gerente, Recepcionista, Professor, Financeiro
@@ -25,11 +26,11 @@ interface TokenStrategy {
     expiresIn: '15m';
     storage: 'memory'; // Frontend
     payload: {
-      sub: string;      // userId
+      sub: string; // userId
       email: string;
       roles: string[];
       permissions: string[];
-    }
+    };
   };
   refreshToken: {
     expiresIn: '7d';
@@ -54,12 +55,7 @@ interface TokenStrategy {
     }),
     PassportModule.register({ defaultStrategy: 'jwt' }),
   ],
-  providers: [
-    AuthService,
-    JwtStrategy,
-    RefreshTokenStrategy,
-    LocalStrategy,
-  ],
+  providers: [AuthService, JwtStrategy, RefreshTokenStrategy, LocalStrategy],
   controllers: [AuthController],
   exports: [AuthService],
 })
@@ -104,11 +100,11 @@ export class AuthService {
 
   async login(email: string, password: string): Promise<TokenPair> {
     const user = await this.validateUser(email, password);
-    
+
     const payload: JwtPayload = {
       sub: user.id,
       email: user.email,
-      roles: user.roles.map(r => r.name),
+      roles: user.roles.map((r) => r.name),
       permissions: this.flattenPermissions(user.roles),
     };
 
@@ -122,10 +118,10 @@ export class AuthService {
 
   async refresh(refreshToken: string): Promise<TokenPair> {
     const payload = await this.verifyRefreshToken(refreshToken);
-    
+
     // Invalidar token antigo (rotation)
     await this.invalidateRefreshToken(refreshToken);
-    
+
     // Gerar novos tokens
     return this.generateTokenPair(payload.sub);
   }
@@ -147,25 +143,25 @@ export const PERMISSIONS = {
   STUDENTS_READ: 'students:read',
   STUDENTS_UPDATE: 'students:update',
   STUDENTS_DELETE: 'students:delete',
-  
+
   // Teachers
   TEACHERS_CREATE: 'teachers:create',
   TEACHERS_READ: 'teachers:read',
   TEACHERS_UPDATE: 'teachers:update',
   TEACHERS_DELETE: 'teachers:delete',
-  
+
   // Classes
   CLASSES_CREATE: 'classes:create',
   CLASSES_READ: 'classes:read',
   CLASSES_UPDATE: 'classes:update',
   CLASSES_DELETE: 'classes:delete',
   CLASSES_ATTENDANCE: 'classes:attendance',
-  
+
   // Financial
   FINANCIAL_READ: 'financial:read',
   FINANCIAL_CREATE: 'financial:create',
   FINANCIAL_REPORTS: 'financial:reports',
-  
+
   // Admin
   USERS_MANAGE: 'users:manage',
   ROLES_MANAGE: 'roles:manage',
@@ -251,20 +247,18 @@ export class PermissionsGuard implements CanActivate {
   constructor(private reflector: Reflector) {}
 
   canActivate(context: ExecutionContext): boolean {
-    const requiredPermissions = this.reflector.getAllAndOverride<string[]>(
-      'permissions',
-      [context.getHandler(), context.getClass()],
-    );
+    const requiredPermissions = this.reflector.getAllAndOverride<string[]>('permissions', [
+      context.getHandler(),
+      context.getClass(),
+    ]);
 
     if (!requiredPermissions) {
       return true;
     }
 
     const { user } = context.switchToHttp().getRequest();
-    
-    return requiredPermissions.every(permission =>
-      user.permissions.includes(permission),
-    );
+
+    return requiredPermissions.every((permission) => user.permissions.includes(permission));
   }
 }
 
@@ -316,7 +310,7 @@ export class PasswordService {
 
   validate(password: string): ValidationResult {
     const errors: string[] = [];
-    
+
     if (password.length < 8) {
       errors.push('Mínimo 8 caracteres');
     }
@@ -350,13 +344,13 @@ export class PasswordService {
     ThrottlerModule.forRoot([
       {
         name: 'short',
-        ttl: 1000,  // 1 segundo
-        limit: 3,    // 3 requests
+        ttl: 1000, // 1 segundo
+        limit: 3, // 3 requests
       },
       {
         name: 'medium',
         ttl: 10000, // 10 segundos
-        limit: 20,  // 20 requests
+        limit: 20, // 20 requests
       },
       {
         name: 'long',
@@ -452,16 +446,19 @@ export class AuditInterceptor implements NestInterceptor {
 ## Alternativas Consideradas
 
 ### 1. Session-based Authentication
+
 **Prós:** Simples, revogação fácil  
 **Contras:** Não escala bem, stateful  
 **Decisão:** ❌ Rejeitado
 
 ### 2. OAuth2/OIDC com provider externo
+
 **Prós:** Delegação de responsabilidade  
 **Contras:** Complexidade, dependência externa  
 **Decisão:** ❌ Rejeitado (pode ser adicionado depois)
 
 ### 3. API Keys
+
 **Prós:** Simples para integrações  
 **Contras:** Não adequado para usuários finais  
 **Decisão:** ⏳ Considerar para API pública futura
@@ -469,6 +466,7 @@ export class AuditInterceptor implements NestInterceptor {
 ## Consequências
 
 ### Positivas
+
 - ✅ Stateless - escala horizontalmente
 - ✅ RBAC flexível e granular
 - ✅ Refresh token rotation aumenta segurança
@@ -476,6 +474,7 @@ export class AuditInterceptor implements NestInterceptor {
 - ✅ Rate limiting protege contra brute force
 
 ### Negativas
+
 - ⚠️ Tokens não podem ser invalidados imediatamente (mitigado com refresh rotation)
 - ⚠️ Payload JWT cresce com muitas permissões
 
@@ -497,4 +496,3 @@ export class AuditInterceptor implements NestInterceptor {
 - [OWASP Authentication Cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
 - [JWT Best Practices](https://auth0.com/blog/a-look-at-the-latest-draft-for-jwt-bcp/)
 - [NestJS Security](https://docs.nestjs.com/security/authentication)
-

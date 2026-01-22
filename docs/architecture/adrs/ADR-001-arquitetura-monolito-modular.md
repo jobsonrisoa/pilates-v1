@@ -8,6 +8,7 @@
 ## Contexto
 
 O sistema de gestão para academia de Pilates e Fisioterapia precisa suportar múltiplos módulos de negócio (autenticação, alunos, professores, aulas, financeiro, estoque) com requisitos de:
+
 - Custo inicial baixo
 - Equipe pequena
 - Preparação para escalar no futuro
@@ -79,7 +80,7 @@ export class FinancialService {
   async processPayment(payment: Payment) {
     // Processa pagamento
     await this.paymentRepository.save(payment);
-    
+
     // Emite evento para outros módulos
     this.eventEmitter.emit('payment.confirmed', new PaymentConfirmedEvent(payment));
   }
@@ -95,12 +96,15 @@ async handlePaymentConfirmed(event: PaymentConfirmedEvent) {
 ## Alternativas Consideradas
 
 ### 1. Microserviços desde o início
+
 **Prós:**
+
 - Escalabilidade independente
 - Deploy independente
 - Isolamento de falhas
 
 **Contras:**
+
 - Complexidade operacional alta
 - Custo de infraestrutura 5-10x maior
 - Necessidade de Kubernetes
@@ -108,21 +112,27 @@ async handlePaymentConfirmed(event: PaymentConfirmedEvent) {
 - Overhead de comunicação de rede
 
 ### 2. Monolito tradicional (sem módulos)
+
 **Prós:**
+
 - Mais simples inicialmente
 - Menos abstrações
 
 **Contras:**
+
 - Big ball of mud ao crescer
 - Difícil extrair serviços depois
 - Acoplamento forte
 
 ### 3. Serverless (Lambda/Cloud Functions)
+
 **Prós:**
+
 - Escala automática
 - Pay-per-use
 
 **Contras:**
+
 - Cold starts problemáticos
 - Custo imprevisível
 - Vendor lock-in
@@ -131,6 +141,7 @@ async handlePaymentConfirmed(event: PaymentConfirmedEvent) {
 ## Consequências
 
 ### Positivas
+
 - ✅ **Custo baixo**: Deploy em VPS simples (~$20/mês)
 - ✅ **Operação simples**: Um container, um deploy
 - ✅ **Debug fácil**: Stack traces unificados
@@ -139,21 +150,23 @@ async handlePaymentConfirmed(event: PaymentConfirmedEvent) {
 - ✅ **Preparado para evoluir**: Módulos extraíveis
 
 ### Negativas
+
 - ⚠️ Deploy único (todo sistema junto)
 - ⚠️ Escala vertical antes de horizontal
 - ⚠️ Disciplina necessária para manter isolamento
 
 ### Riscos e Mitigações
 
-| Risco | Mitigação |
-|-------|-----------|
-| Acoplamento entre módulos | Code review + regras de lint |
-| Escala limitada | Redis + read replicas quando precisar |
-| Single point of failure | Health checks + restart automático |
+| Risco                     | Mitigação                             |
+| ------------------------- | ------------------------------------- |
+| Acoplamento entre módulos | Code review + regras de lint          |
+| Escala limitada           | Redis + read replicas quando precisar |
+| Single point of failure   | Health checks + restart automático    |
 
 ## Critérios de Migração
 
 Considerar migração para microserviços quando:
+
 - [ ] Equipe > 10 desenvolvedores
 - [ ] Deploys > 5x por dia necessários
 - [ ] Um módulo precisa escalar 10x mais que outros
@@ -171,4 +184,3 @@ Considerar migração para microserviços quando:
 - [Martin Fowler - Monolith First](https://martinfowler.com/bliki/MonolithFirst.html)
 - [Sam Newman - Building Microservices](https://samnewman.io/books/building_microservices_2nd_edition/)
 - [Modular Monolith with DDD](https://github.com/kgrzybek/modular-monolith-with-ddd)
-

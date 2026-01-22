@@ -37,13 +37,13 @@ O projeto segue metodologia TDD (Test-Driven Development) com ciclo Red-Green-Re
 
 ### Métricas de Qualidade Obrigatórias
 
-| Métrica | Backend | Frontend | Bloqueante |
-|---------|---------|----------|------------|
-| Coverage Linhas | ≥ 80% | ≥ 80% | ✅ Sim |
-| Coverage Branches | ≥ 75% | ≥ 75% | ✅ Sim |
-| Coverage Functions | ≥ 80% | ≥ 80% | ✅ Sim |
-| Testes E2E críticos | 100% pass | 100% pass | ✅ Sim |
-| Performance P95 | < 500ms | - | ⚠️ Warning |
+| Métrica             | Backend   | Frontend  | Bloqueante |
+| ------------------- | --------- | --------- | ---------- |
+| Coverage Linhas     | ≥ 80%     | ≥ 80%     | ✅ Sim     |
+| Coverage Branches   | ≥ 75%     | ≥ 75%     | ✅ Sim     |
+| Coverage Functions  | ≥ 80%     | ≥ 80%     | ✅ Sim     |
+| Testes E2E críticos | 100% pass | 100% pass | ✅ Sim     |
+| Performance P95     | < 500ms   | -         | ⚠️ Warning |
 
 ---
 
@@ -130,7 +130,7 @@ describe('CreateStudentUseCase', () => {
   // ============================================
   // RED: Escrever teste que falha
   // ============================================
-  
+
   describe('execute', () => {
     it('should create a student with valid data', async () => {
       // Arrange
@@ -307,7 +307,7 @@ describe('CPF Value Object', () => {
   describe('create', () => {
     it('should create CPF and format correctly', () => {
       const cpf = CPF.create('52998224725');
-      
+
       expect(cpf.isRight()).toBe(true);
       expect(cpf.value.formatted).toBe('529.982.247-25');
       expect(cpf.value.unformatted).toBe('52998224725');
@@ -315,7 +315,7 @@ describe('CPF Value Object', () => {
 
     it('should fail for invalid CPF', () => {
       const cpf = CPF.create('11111111111');
-      
+
       expect(cpf.isLeft()).toBe(true);
     });
   });
@@ -402,7 +402,7 @@ const createWrapper = () => {
       mutations: { retry: false },
     },
   });
-  
+
   return ({ children }: { children: React.ReactNode }) => (
     <QueryClientProvider client={queryClient}>
       {children}
@@ -650,9 +650,9 @@ services:
       MYSQL_ROOT_PASSWORD: test
       MYSQL_DATABASE: pilates_test
     tmpfs:
-      - /var/lib/mysql  # Dados em memória para velocidade
+      - /var/lib/mysql # Dados em memória para velocidade
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
       interval: 5s
       timeout: 3s
       retries: 10
@@ -664,7 +664,7 @@ services:
     tmpfs:
       - /data
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ['CMD', 'redis-cli', 'ping']
       interval: 5s
       timeout: 3s
       retries: 5
@@ -706,7 +706,7 @@ import { execSync } from 'child_process';
 
 export default async () => {
   console.log('\n🐳 Starting test containers...');
-  
+
   execSync('docker compose -f docker-compose.test.yml up -d mysql-test redis-test', {
     stdio: 'inherit',
   });
@@ -914,7 +914,12 @@ describe('Students API (Integration)', () => {
         data: [
           { fullName: 'Ana Silva', cpf: '11111111111', birthDate: new Date(), status: 'ACTIVE' },
           { fullName: 'Bruno Costa', cpf: '22222222222', birthDate: new Date(), status: 'ACTIVE' },
-          { fullName: 'Carlos Dias', cpf: '33333333333', birthDate: new Date(), status: 'INACTIVE' },
+          {
+            fullName: 'Carlos Dias',
+            cpf: '33333333333',
+            birthDate: new Date(),
+            status: 'INACTIVE',
+          },
         ],
       });
     });
@@ -1065,13 +1070,13 @@ test.describe('Student Management', () => {
 
   test.beforeAll(async ({ browser }) => {
     page = await browser.newPage();
-    
+
     // Login
     await page.goto('/login');
     await page.fill('[data-testid="email-input"]', 'admin@test.com');
     await page.fill('[data-testid="password-input"]', 'password123');
     await page.click('[data-testid="login-button"]');
-    
+
     await expect(page).toHaveURL('/dashboard');
   });
 
@@ -1083,7 +1088,7 @@ test.describe('Student Management', () => {
     // Navegar para cadastro
     await page.click('[data-testid="nav-students"]');
     await page.click('[data-testid="new-student-button"]');
-    
+
     await expect(page).toHaveURL('/students/new');
 
     // Preencher formulário
@@ -1099,7 +1104,7 @@ test.describe('Student Management', () => {
     // Verificar sucesso
     await expect(page.locator('[data-testid="toast-success"]')).toBeVisible();
     await expect(page).toHaveURL(/\/students\/[a-z0-9-]+/);
-    
+
     // Verificar dados na página de detalhes
     await expect(page.locator('[data-testid="student-name"]')).toHaveText('E2E Test Student');
   });
@@ -1117,7 +1122,7 @@ test.describe('Student Management', () => {
     // CPF inválido
     await page.fill('[data-testid="cpf-input"]', '111.111.111-11');
     await page.click('[data-testid="submit-button"]');
-    
+
     await expect(page.locator('[data-testid="error-cpf"]')).toContainText('CPF inválido');
   });
 
@@ -1132,7 +1137,7 @@ test.describe('Student Management', () => {
 
     // Filtrar por status
     await page.selectOption('[data-testid="status-filter"]', 'ACTIVE');
-    
+
     // Verificar resultados filtrados
     const rows = page.locator('[data-testid="student-row"]');
     for (const row of await rows.all()) {
@@ -1142,7 +1147,7 @@ test.describe('Student Management', () => {
 
   test('should edit student', async () => {
     await page.goto('/students');
-    
+
     // Clicar no primeiro aluno
     await page.click('[data-testid="student-row"]:first-child');
     await page.click('[data-testid="edit-button"]');
@@ -1159,26 +1164,26 @@ test.describe('Student Management', () => {
   test('should handle enrollment flow', async () => {
     await page.goto('/students');
     await page.click('[data-testid="student-row"]:first-child');
-    
+
     // Iniciar matrícula
     await page.click('[data-testid="new-enrollment-button"]');
-    
+
     // Selecionar plano
     await page.selectOption('[data-testid="plan-select"]', 'pilates-2x');
-    
+
     // Selecionar horários
     await page.click('[data-testid="schedule-mon-08:00"]');
     await page.click('[data-testid="schedule-wed-08:00"]');
-    
+
     // Confirmar
     await page.click('[data-testid="confirm-enrollment-button"]');
-    
+
     // Verificar contrato gerado
     await expect(page.locator('[data-testid="contract-preview"]')).toBeVisible();
-    
+
     // Enviar para assinatura
     await page.click('[data-testid="send-contract-button"]');
-    
+
     await expect(page.locator('[data-testid="toast-success"]')).toContainText('Contrato enviado');
   });
 });
@@ -1187,7 +1192,7 @@ test.describe('Student Management', () => {
 test.describe('Authentication', () => {
   test('should login successfully', async ({ page }) => {
     await page.goto('/login');
-    
+
     await page.fill('[data-testid="email-input"]', 'admin@test.com');
     await page.fill('[data-testid="password-input"]', 'password123');
     await page.click('[data-testid="login-button"]');
@@ -1198,7 +1203,7 @@ test.describe('Authentication', () => {
 
   test('should show error for invalid credentials', async ({ page }) => {
     await page.goto('/login');
-    
+
     await page.fill('[data-testid="email-input"]', 'wrong@email.com');
     await page.fill('[data-testid="password-input"]', 'wrongpassword');
     await page.click('[data-testid="login-button"]');
@@ -1218,7 +1223,7 @@ test.describe('Authentication', () => {
     await page.fill('[data-testid="email-input"]', 'admin@test.com');
     await page.fill('[data-testid="password-input"]', 'password123');
     await page.click('[data-testid="login-button"]');
-    
+
     await expect(page).toHaveURL('/dashboard');
 
     // Logout
@@ -1248,15 +1253,15 @@ const studentCreationTrend = new Trend('student_creation_duration');
 
 export const options = {
   stages: [
-    { duration: '1m', target: 10 },   // Ramp up
-    { duration: '5m', target: 50 },   // Carga normal
-    { duration: '2m', target: 100 },  // Pico
-    { duration: '1m', target: 0 },    // Ramp down
+    { duration: '1m', target: 10 }, // Ramp up
+    { duration: '5m', target: 50 }, // Carga normal
+    { duration: '2m', target: 100 }, // Pico
+    { duration: '1m', target: 0 }, // Ramp down
   ],
   thresholds: {
-    http_req_duration: ['p(95)<500', 'p(99)<1000'],  // 95% < 500ms, 99% < 1s
-    errors: ['rate<0.01'],  // < 1% de erros
-    'student_creation_duration': ['p(95)<1000'],
+    http_req_duration: ['p(95)<500', 'p(99)<1000'], // 95% < 500ms, 99% < 1s
+    errors: ['rate<0.01'], // < 1% de erros
+    student_creation_duration: ['p(95)<1000'],
   },
 };
 
@@ -1264,12 +1269,16 @@ const BASE_URL = __ENV.BASE_URL || 'http://localhost:3001';
 
 // Setup: fazer login e obter token
 export function setup() {
-  const loginRes = http.post(`${BASE_URL}/auth/login`, JSON.stringify({
-    email: 'admin@test.com',
-    password: 'password123',
-  }), {
-    headers: { 'Content-Type': 'application/json' },
-  });
+  const loginRes = http.post(
+    `${BASE_URL}/auth/login`,
+    JSON.stringify({
+      email: 'admin@test.com',
+      password: 'password123',
+    }),
+    {
+      headers: { 'Content-Type': 'application/json' },
+    },
+  );
 
   return { token: loginRes.json('accessToken') };
 }
@@ -1277,50 +1286,54 @@ export function setup() {
 export default function (data) {
   const headers = {
     'Content-Type': 'application/json',
-    'Authorization': `Bearer ${data.token}`,
+    Authorization: `Bearer ${data.token}`,
   };
 
   // Cenário 1: Listar alunos (70% das requisições)
   if (Math.random() < 0.7) {
     const listRes = http.get(`${BASE_URL}/students?page=1&limit=20`, { headers });
-    
+
     check(listRes, {
       'list status is 200': (r) => r.status === 200,
       'list returns data': (r) => r.json('data') !== undefined,
     });
-    
+
     errorRate.add(listRes.status !== 200);
   }
-  
+
   // Cenário 2: Buscar aluno específico (20%)
   else if (Math.random() < 0.9) {
     const searchRes = http.get(`${BASE_URL}/students?search=Silva`, { headers });
-    
+
     check(searchRes, {
       'search status is 200': (r) => r.status === 200,
     });
-    
+
     errorRate.add(searchRes.status !== 200);
   }
-  
+
   // Cenário 3: Criar aluno (10%)
   else {
     const startTime = Date.now();
-    
-    const createRes = http.post(`${BASE_URL}/students`, JSON.stringify({
-      fullName: `Load Test User ${Date.now()}`,
-      cpf: generateCPF(),
-      email: `loadtest${Date.now()}@test.com`,
-      birthDate: '1990-01-15',
-    }), { headers });
+
+    const createRes = http.post(
+      `${BASE_URL}/students`,
+      JSON.stringify({
+        fullName: `Load Test User ${Date.now()}`,
+        cpf: generateCPF(),
+        email: `loadtest${Date.now()}@test.com`,
+        birthDate: '1990-01-15',
+      }),
+      { headers },
+    );
 
     studentCreationTrend.add(Date.now() - startTime);
-    
+
     check(createRes, {
       'create status is 201': (r) => r.status === 201,
       'create returns id': (r) => r.json('id') !== undefined,
     });
-    
+
     errorRate.add(createRes.status !== 201);
   }
 
@@ -1359,7 +1372,7 @@ export const options = {
 export default function () {
   // Teste de stress no endpoint mais crítico
   const res = http.get(`${__ENV.BASE_URL}/students`);
-  
+
   check(res, {
     'status is 200': (r) => r.status === 200,
     'response time < 1.5s': (r) => r.timings.duration < 1500,
@@ -1373,17 +1386,17 @@ export default function () {
 // k6/spike-test.js
 export const options = {
   stages: [
-    { duration: '10s', target: 100 },   // Ramp up normal
-    { duration: '1m', target: 100 },    // Manter
-    { duration: '10s', target: 1000 },  // SPIKE!
-    { duration: '3m', target: 1000 },   // Manter spike
-    { duration: '10s', target: 100 },   // Voltar ao normal
-    { duration: '3m', target: 100 },    // Recuperação
-    { duration: '10s', target: 0 },     // Ramp down
+    { duration: '10s', target: 100 }, // Ramp up normal
+    { duration: '1m', target: 100 }, // Manter
+    { duration: '10s', target: 1000 }, // SPIKE!
+    { duration: '3m', target: 1000 }, // Manter spike
+    { duration: '10s', target: 100 }, // Voltar ao normal
+    { duration: '3m', target: 100 }, // Recuperação
+    { duration: '10s', target: 0 }, // Ramp down
   ],
   thresholds: {
-    http_req_duration: ['p(99)<2000'],  // Mais tolerante durante spike
-    http_req_failed: ['rate<0.1'],      // Até 10% de falha aceitável
+    http_req_duration: ['p(99)<2000'], // Mais tolerante durante spike
+    http_req_failed: ['rate<0.1'], // Até 10% de falha aceitável
   },
 };
 ```
@@ -1424,24 +1437,24 @@ jobs:
         app: [api, web]
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
-          
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
-          
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        
+
       - name: Run Unit Tests with Coverage
         run: pnpm --filter ${{ matrix.app }} test:cov
-        
+
       - name: Check Coverage Threshold
         run: |
           COVERAGE=$(cat apps/${{ matrix.app }}/coverage/coverage-summary.json | jq '.total.lines.pct')
@@ -1450,7 +1463,7 @@ jobs:
             exit 1
           fi
           echo "✅ Coverage: $COVERAGE%"
-          
+
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
@@ -1485,29 +1498,29 @@ jobs:
           --health-retries=5
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
-          
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
-          
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        
+
       - name: Generate Prisma Client
         run: pnpm --filter api prisma generate
-        
+
       - name: Run Migrations
         run: pnpm --filter api prisma migrate deploy
         env:
           DATABASE_URL: mysql://root:test@localhost:3306/pilates_test
-          
+
       - name: Run Integration Tests
         run: pnpm --filter api test:integration
         env:
@@ -1521,34 +1534,34 @@ jobs:
     needs: [unit-tests, integration-tests]
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
-          
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
-          
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        
+
       - name: Install Playwright
         run: pnpm --filter web exec playwright install --with-deps
-        
+
       - name: Start Application
         run: docker compose -f docker-compose.test.yml up -d
-        
+
       - name: Wait for Application
         run: |
           timeout 120 bash -c 'until curl -s http://localhost:3000/health; do sleep 2; done'
-          
+
       - name: Run E2E Tests
         run: pnpm --filter web test:e2e
-        
+
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v3
         if: always()
@@ -1563,21 +1576,21 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Start Application
         run: docker compose -f docker-compose.test.yml up -d
-        
+
       - name: Wait for Application
         run: |
           timeout 120 bash -c 'until curl -s http://localhost:3001/health; do sleep 2; done'
-          
+
       - name: Run k6 Load Test
         uses: grafana/k6-action@v0.3.1
         with:
           filename: k6/load-test.js
         env:
           BASE_URL: http://localhost:3001
-          
+
       - name: Upload Performance Results
         uses: actions/upload-artifact@v3
         with:
@@ -1589,17 +1602,18 @@ jobs:
 
 ## Resumo da Estratégia
 
-| Tipo | Ferramenta | Cobertura | Frequência |
-|------|------------|-----------|------------|
-| Unit (Backend) | Jest | ≥ 80% | Cada PR |
-| Unit (Frontend) | Jest + RTL | ≥ 80% | Cada PR |
-| Integração | Supertest + MySQL | Endpoints críticos | Cada PR |
-| E2E | Playwright | Fluxos críticos | Merge em develop/main |
-| Performance | k6 | Load/Stress/Spike | Merge em main |
+| Tipo            | Ferramenta        | Cobertura          | Frequência            |
+| --------------- | ----------------- | ------------------ | --------------------- |
+| Unit (Backend)  | Jest              | ≥ 80%              | Cada PR               |
+| Unit (Frontend) | Jest + RTL        | ≥ 80%              | Cada PR               |
+| Integração      | Supertest + MySQL | Endpoints críticos | Cada PR               |
+| E2E             | Playwright        | Fluxos críticos    | Merge em develop/main |
+| Performance     | k6                | Load/Stress/Spike  | Merge em main         |
 
 ## Consequências
 
 ### Positivas
+
 - ✅ Cobertura garantida de 80%+
 - ✅ Bugs encontrados cedo (shift-left)
 - ✅ Documentação viva via testes
@@ -1607,12 +1621,13 @@ jobs:
 - ✅ Métricas de qualidade objetivas
 
 ### Negativas
+
 - ⚠️ Tempo de CI aumentado (~15-20min)
 - ⚠️ Manutenção de testes
 - ⚠️ Curva de aprendizado TDD
 
 ### Mitigações
+
 - Paralelização de testes
 - Cache de dependências
 - Testes E2E apenas em branches principais
-

@@ -8,6 +8,7 @@
 ## Contexto
 
 O sistema requer integração bancária com Sicoob para:
+
 - Geração de boletos bancários
 - Geração de QR Code PIX
 - Recebimento de webhooks de pagamento
@@ -63,12 +64,7 @@ O sistema requer integração bancária com Sicoob para:
       inject: [ConfigService],
     }),
   ],
-  providers: [
-    SicoobAuthService,
-    SicoobBoletoService,
-    SicoobPixService,
-    SicoobWebhookHandler,
-  ],
+  providers: [SicoobAuthService, SicoobBoletoService, SicoobPixService, SicoobWebhookHandler],
   exports: [SicoobBoletoService, SicoobPixService],
 })
 export class SicoobModule {}
@@ -126,7 +122,7 @@ export class SicoobBoletoService {
           {
             numeroConvenio: this.configService.get('SICOOB_CONVENIO'),
             numeroContaCorrente: this.configService.get('SICOOB_CONTA'),
-            
+
             // Dados do pagador
             pagador: {
               tipoPessoa: data.payerType, // 'F' ou 'J'
@@ -137,19 +133,19 @@ export class SicoobBoletoService {
               uf: data.payerState,
               cep: data.payerZipCode,
             },
-            
+
             // Dados do boleto
             dataVencimento: format(data.dueDate, 'yyyy-MM-dd'),
             valorNominal: data.amount,
             tipoDesconto: 0, // Sem desconto
             valorAbatimento: 0,
-            
+
             // Multa e juros
             tipoMulta: data.fineType || 2, // Percentual
             valorMulta: data.fineValue || 2, // 2%
             tipoJurosMora: data.interestType || 2, // Percentual
             valorJurosMora: data.interestValue || 1, // 1% ao mês
-            
+
             // Identificação
             seuNumero: data.ourNumber,
             identificacaoBoleto: data.description,
@@ -162,10 +158,7 @@ export class SicoobBoletoService {
         ),
       );
 
-      this.logger.info(
-        { boletoId: response.data.nossoNumero },
-        'Boleto created successfully',
-      );
+      this.logger.info({ boletoId: response.data.nossoNumero }, 'Boleto created successfully');
 
       return {
         bankNumber: response.data.nossoNumero,
@@ -330,11 +323,8 @@ export class SicoobWebhookHandler {
     const expectedSignature = createHmac('sha256', secret)
       .update(JSON.stringify(payload))
       .digest('hex');
-    
-    return timingSafeEqual(
-      Buffer.from(signature),
-      Buffer.from(expectedSignature),
-    );
+
+    return timingSafeEqual(Buffer.from(signature), Buffer.from(expectedSignature));
   }
 
   async processBoletoPayment(payload: BoletoWebhookPayload): Promise<void> {
@@ -344,7 +334,7 @@ export class SicoobWebhookHandler {
 
     // Buscar pagamento pelo número do banco
     const payment = await this.paymentService.findByBankNumber(nossoNumero);
-    
+
     if (!payment) {
       this.logger.warn({ nossoNumero }, 'Payment not found for webhook');
       return;
@@ -360,12 +350,15 @@ export class SicoobWebhookHandler {
       });
 
       // Emitir evento para outros módulos
-      this.eventEmitter.emit('payment.confirmed', new PaymentConfirmedEvent({
-        paymentId: payment.id,
-        enrollmentId: payment.enrollmentId,
-        amount: valorPago,
-        method: 'BOLETO',
-      }));
+      this.eventEmitter.emit(
+        'payment.confirmed',
+        new PaymentConfirmedEvent({
+          paymentId: payment.id,
+          enrollmentId: payment.enrollmentId,
+          amount: valorPago,
+          method: 'BOLETO',
+        }),
+      );
     }
 
     // Salvar log do webhook
@@ -382,7 +375,7 @@ export class SicoobWebhookHandler {
     if (status !== 'CONCLUIDA') return;
 
     const payment = await this.paymentService.findByPixTxId(txid);
-    
+
     if (!payment) {
       this.logger.warn({ txid }, 'Payment not found for PIX webhook');
       return;
@@ -396,12 +389,15 @@ export class SicoobWebhookHandler {
       transactionId: txid,
     });
 
-    this.eventEmitter.emit('payment.confirmed', new PaymentConfirmedEvent({
-      paymentId: payment.id,
-      enrollmentId: payment.enrollmentId,
-      amount: parseFloat(valor),
-      method: 'PIX',
-    }));
+    this.eventEmitter.emit(
+      'payment.confirmed',
+      new PaymentConfirmedEvent({
+        paymentId: payment.id,
+        enrollmentId: payment.enrollmentId,
+        amount: parseFloat(valor),
+        method: 'PIX',
+      }),
+    );
   }
 }
 ```
@@ -468,7 +464,7 @@ SICOOB_SANDBOX=true
 export class SicoobMockService implements ISicoobService {
   async createBoleto(data: CreateBoletoDto): Promise<BoletoResponse> {
     const mockNumber = `MOCK${Date.now()}`;
-    
+
     return {
       bankNumber: mockNumber,
       barcode: '23793.38128 60000.000003 00000.000408 1 84340000010000',
@@ -481,7 +477,7 @@ export class SicoobMockService implements ISicoobService {
 
   async createPixCharge(data: CreatePixDto): Promise<PixResponse> {
     const txid = `MOCK${Date.now()}`;
-    
+
     return {
       txid,
       pixCopyPaste: '00020126580014br.gov.bcb.pix0136mock-pix-code',
@@ -493,7 +489,7 @@ export class SicoobMockService implements ISicoobService {
   // Endpoint para simular webhook em dev
   async simulatePayment(paymentId: string): Promise<void> {
     const payment = await this.paymentRepository.findById(paymentId);
-    
+
     // Simular callback do banco
     await this.webhookHandler.processBoletoPayment({
       nossoNumero: payment.boletoCode,
@@ -508,6 +504,7 @@ export class SicoobMockService implements ISicoobService {
 ## Segurança
 
 ### Checklist
+
 - [x] Credenciais em variáveis de ambiente
 - [x] Validação de assinatura em webhooks
 - [x] HTTPS obrigatório
@@ -517,6 +514,7 @@ export class SicoobMockService implements ISicoobService {
 - [x] Timeout configurado (30s)
 
 ### Webhook Security
+
 ```typescript
 // Validar IP de origem (lista branca do Sicoob)
 @Injectable()
@@ -528,11 +526,11 @@ export class SicoobIpGuard implements CanActivate {
   canActivate(context: ExecutionContext): boolean {
     const request = context.switchToHttp().getRequest();
     const ip = request.ip;
-    
+
     // Em dev, permitir qualquer IP
     if (process.env.NODE_ENV !== 'production') return true;
-    
-    return this.allowedIps.some(allowed => ip.startsWith(allowed.replace('.x.x', '')));
+
+    return this.allowedIps.some((allowed) => ip.startsWith(allowed.replace('.x.x', '')));
   }
 }
 ```
@@ -540,12 +538,14 @@ export class SicoobIpGuard implements CanActivate {
 ## Consequências
 
 ### Positivas
+
 - ✅ Automação completa de pagamentos
 - ✅ Baixa automática via webhook
 - ✅ Suporte a boleto e PIX
 - ✅ Eventos de domínio para desacoplamento
 
 ### Negativas
+
 - ⚠️ Dependência de API externa
 - ⚠️ Necessidade de conta no Sicoob
 - ⚠️ Sandbox limitado do Sicoob
@@ -554,4 +554,3 @@ export class SicoobIpGuard implements CanActivate {
 
 - [Sicoob API Documentation](https://developers.sicoob.com.br/)
 - [PIX API BCB](https://www.bcb.gov.br/estabilidadefinanceira/pix)
-

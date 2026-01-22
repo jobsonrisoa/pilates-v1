@@ -2,15 +2,15 @@
 
 ## 📋 Informações
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | US-001-006 |
-| **Épico** | EPIC-001 |
-| **Título** | Configuração de Testes Backend |
-| **Estimativa** | 4 horas |
-| **Prioridade** | 🔴 Crítica |
-| **Dependências** | US-001-002 |
-| **Status** | 📋 Backlog |
+| Campo            | Valor                          |
+| ---------------- | ------------------------------ |
+| **ID**           | US-001-006                     |
+| **Épico**        | EPIC-001                       |
+| **Título**       | Configuração de Testes Backend |
+| **Estimativa**   | 4 horas                        |
+| **Prioridade**   | 🔴 Crítica                     |
+| **Dependências** | US-001-002                     |
+| **Status**       | 📋 Backlog                     |
 
 ---
 
@@ -47,45 +47,54 @@
 
 ```markdown
 ## Contexto
+
 Backend NestJS em apps/api. Preciso configurar ambiente completo de testes
 seguindo TDD com coverage mínimo de 80%.
 
 ## Princípios TDD
+
 1. RED: Escrever teste que falha
 2. GREEN: Implementar código mínimo
 3. REFACTOR: Melhorar mantendo verde
 
 ## Tarefa
+
 Configure os testes:
 
 ### 1. Jest Config (Unitários)
+
 - jest.config.ts
 - Transform para TypeScript
 - Path aliases (@/, @modules/, @shared/)
 - Coverage thresholds: 80% lines, branches, functions
-- Exclude: *.module.ts, *.dto.ts, main.ts
+- Exclude: _.module.ts, _.dto.ts, main.ts
 
 ### 2. Jest Config (Integração)
+
 - jest.integration.config.ts
 - Timeout maior (30s)
 - Execução sequencial (maxWorkers: 1)
 - Global setup/teardown para containers
 
 ### 3. Setup Files
+
 - test/setup.ts (mocks globais)
 - test/integration/setup.ts (limpeza de DB)
 - test/integration/global-setup.ts (start containers)
 - test/integration/global-teardown.ts (stop containers)
 
 ### 4. Mocks
+
 - test/mocks/prisma.mock.ts (jest-mock-extended)
 
 ### 5. Exemplos de Teste
+
 - Teste unitário de Entity base
 - Teste unitário de Value Object
 - Teste de integração de Health endpoint
 
 ### 6. Scripts
+
 - test: jest
 - test:watch: jest --watch
 - test:cov: jest --coverage
@@ -108,13 +117,7 @@ const config: Config = {
   transform: {
     '^.+\\.(t|j)s$': 'ts-jest',
   },
-  collectCoverageFrom: [
-    '**/*.ts',
-    '!**/*.module.ts',
-    '!**/*.dto.ts',
-    '!**/index.ts',
-    '!main.ts',
-  ],
+  collectCoverageFrom: ['**/*.ts', '!**/*.module.ts', '!**/*.dto.ts', '!**/index.ts', '!main.ts'],
   coverageDirectory: '../coverage',
   coverageReporters: ['text', 'text-summary', 'lcov', 'html'],
   coverageThreshold: {
@@ -261,4 +264,3 @@ export abstract class ValueObject<T> {
 ## 🔗 Próxima User Story
 
 → [US-001-007: Configuração de Testes Frontend](./US-001-007-testes-frontend.md)
-

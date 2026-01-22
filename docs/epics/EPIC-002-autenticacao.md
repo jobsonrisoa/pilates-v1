@@ -2,21 +2,22 @@
 
 ## 📋 Informações Gerais
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | EPIC-002 |
-| **Título** | Autenticação e Autorização |
-| **Fase** | 1 - MVP |
-| **Prioridade** | 🔴 Crítica |
-| **Estimativa** | 2 semanas |
-| **Dependências** | EPIC-001 (Setup Ambiente) |
-| **Status** | 📋 Backlog |
+| Campo            | Valor                      |
+| ---------------- | -------------------------- |
+| **ID**           | EPIC-002                   |
+| **Título**       | Autenticação e Autorização |
+| **Fase**         | 1 - MVP                    |
+| **Prioridade**   | 🔴 Crítica                 |
+| **Estimativa**   | 2 semanas                  |
+| **Dependências** | EPIC-001 (Setup Ambiente)  |
+| **Status**       | 📋 Backlog                 |
 
 ---
 
 ## 📝 Descrição
 
 Implementar sistema completo de autenticação e autorização incluindo:
+
 - Login com email/senha
 - JWT com refresh tokens
 - Sistema RBAC (Role-Based Access Control)
@@ -39,11 +40,13 @@ Implementar sistema completo de autenticação e autorização incluindo:
 ## 👤 User Stories
 
 ### US-002-001: Login de Usuário
+
 **Como** usuário do sistema  
 **Quero** fazer login com email e senha  
 **Para** acessar as funcionalidades do sistema
 
 **Critérios de Aceite:**
+
 - [ ] Formulário de login funcional
 - [ ] Validação de campos
 - [ ] Mensagens de erro claras
@@ -53,11 +56,13 @@ Implementar sistema completo de autenticação e autorização incluindo:
 ---
 
 ### US-002-002: Refresh Token
+
 **Como** usuário logado  
 **Quero** que minha sessão seja renovada automaticamente  
 **Para** não precisar fazer login frequentemente
 
 **Critérios de Aceite:**
+
 - [ ] Access token com expiração curta (15min)
 - [ ] Refresh token em cookie httpOnly (7 dias)
 - [ ] Renovação automática transparente
@@ -66,11 +71,13 @@ Implementar sistema completo de autenticação e autorização incluindo:
 ---
 
 ### US-002-003: Recuperação de Senha
+
 **Como** usuário  
 **Quero** recuperar minha senha via email  
 **Para** acessar o sistema caso esqueça
 
 **Critérios de Aceite:**
+
 - [ ] Solicitar reset via email
 - [ ] Email com link único e temporário
 - [ ] Formulário para nova senha
@@ -79,11 +86,13 @@ Implementar sistema completo de autenticação e autorização incluindo:
 ---
 
 ### US-002-004: Controle de Acesso por Perfil
+
 **Como** administrador  
 **Quero** que cada usuário tenha permissões específicas  
 **Para** controlar o que cada um pode acessar
 
 **Critérios de Aceite:**
+
 - [ ] 6 perfis pré-definidos
 - [ ] Permissões por recurso e ação
 - [ ] Verificação no backend
@@ -92,11 +101,13 @@ Implementar sistema completo de autenticação e autorização incluindo:
 ---
 
 ### US-002-005: Gestão de Usuários
+
 **Como** administrador  
 **Quero** criar, editar e desativar usuários  
 **Para** gerenciar quem acessa o sistema
 
 **Critérios de Aceite:**
+
 - [ ] CRUD de usuários
 - [ ] Atribuição de perfil
 - [ ] Ativação/desativação
@@ -105,11 +116,13 @@ Implementar sistema completo de autenticação e autorização incluindo:
 ---
 
 ### US-002-006: Logs de Acesso
+
 **Como** administrador  
 **Quero** visualizar histórico de acessos  
 **Para** auditoria e segurança
 
 **Critérios de Aceite:**
+
 - [ ] Registro de login/logout
 - [ ] IP e user agent registrados
 - [ ] Listagem com filtros
@@ -122,15 +135,18 @@ Implementar sistema completo de autenticação e autorização incluindo:
 ### Backend
 
 #### TASK-002-001: Módulo de Auth no NestJS
+
 **Estimativa:** 4h
 
 **Escopo:**
+
 - Criar módulo `auth` com estrutura DDD
 - Entidades: User, Role, Permission
 - Value Objects: Email, Password
 - Serviços: AuthService, PasswordService
 
 **Definition of Done:**
+
 - [ ] Estrutura de módulo criada
 - [ ] Entidades com validação
 - [ ] Testes unitários (≥80%)
@@ -138,9 +154,11 @@ Implementar sistema completo de autenticação e autorização incluindo:
 ---
 
 #### TASK-002-002: Implementar Login
+
 **Estimativa:** 4h
 
 **Escopo:**
+
 - POST /auth/login
 - Validação de credenciais
 - Geração de JWT
@@ -148,6 +166,7 @@ Implementar sistema completo de autenticação e autorização incluindo:
 - Cookie httpOnly para refresh
 
 **Definition of Done:**
+
 - [ ] Endpoint funcionando
 - [ ] Tokens gerados corretamente
 - [ ] Testes de integração
@@ -156,15 +175,18 @@ Implementar sistema completo de autenticação e autorização incluindo:
 ---
 
 #### TASK-002-003: Implementar Refresh Token
+
 **Estimativa:** 3h
 
 **Escopo:**
+
 - POST /auth/refresh
 - Validação do refresh token
 - Rotation de tokens
 - Invalidação do token antigo
 
 **Definition of Done:**
+
 - [ ] Endpoint funcionando
 - [ ] Token rotation implementado
 - [ ] Testes de integração
@@ -172,14 +194,17 @@ Implementar sistema completo de autenticação e autorização incluindo:
 ---
 
 #### TASK-002-004: Implementar Logout
+
 **Estimativa:** 2h
 
 **Escopo:**
+
 - POST /auth/logout
 - Invalidar refresh token
 - Limpar cookie
 
 **Definition of Done:**
+
 - [ ] Endpoint funcionando
 - [ ] Token invalidado no Redis
 - [ ] Cookie limpo
@@ -187,15 +212,18 @@ Implementar sistema completo de autenticação e autorização incluindo:
 ---
 
 #### TASK-002-005: Implementar Password Reset
+
 **Estimativa:** 4h
 
 **Escopo:**
+
 - POST /auth/forgot-password
 - POST /auth/reset-password
 - Token de reset temporário
 - Envio de email
 
 **Definition of Done:**
+
 - [ ] Endpoints funcionando
 - [ ] Email enviado (MailHog em dev)
 - [ ] Token expira em 1h
@@ -204,14 +232,17 @@ Implementar sistema completo de autenticação e autorização incluindo:
 ---
 
 #### TASK-002-006: Guards de Autenticação
+
 **Estimativa:** 3h
 
 **Escopo:**
+
 - JwtAuthGuard
 - RefreshTokenGuard
 - Extração de user do token
 
 **Definition of Done:**
+
 - [ ] Guards implementados
 - [ ] Decorators customizados
 - [ ] Testes unitários
@@ -219,15 +250,18 @@ Implementar sistema completo de autenticação e autorização incluindo:
 ---
 
 #### TASK-002-007: Sistema RBAC
+
 **Estimativa:** 6h
 
 **Escopo:**
+
 - Schema Prisma: roles, permissions, user_roles
 - PermissionsGuard
 - @RequirePermissions decorator
 - Seed de perfis padrão
 
 **Permissões:**
+
 ```typescript
 const PERMISSIONS = {
   STUDENTS_CREATE: 'students:create',
@@ -239,6 +273,7 @@ const PERMISSIONS = {
 ```
 
 **Definition of Done:**
+
 - [ ] Schema de permissões no Prisma
 - [ ] Guard de permissões
 - [ ] 6 perfis no seed
@@ -247,9 +282,11 @@ const PERMISSIONS = {
 ---
 
 #### TASK-002-008: CRUD de Usuários
+
 **Estimativa:** 4h
 
 **Escopo:**
+
 - GET /users (listagem paginada)
 - GET /users/:id
 - POST /users
@@ -257,6 +294,7 @@ const PERMISSIONS = {
 - DELETE /users/:id (soft delete)
 
 **Definition of Done:**
+
 - [ ] Endpoints funcionando
 - [ ] Validação de permissões
 - [ ] Testes de integração
@@ -265,14 +303,17 @@ const PERMISSIONS = {
 ---
 
 #### TASK-002-009: Rate Limiting
+
 **Estimativa:** 2h
 
 **Escopo:**
+
 - ThrottlerModule configurado
 - Rate limit em /auth/login (5/min)
 - Rate limit global
 
 **Definition of Done:**
+
 - [ ] Throttler configurado
 - [ ] Limites por endpoint
 - [ ] Testes
@@ -280,15 +321,18 @@ const PERMISSIONS = {
 ---
 
 #### TASK-002-010: Audit Logs
+
 **Estimativa:** 3h
 
 **Escopo:**
+
 - Schema: audit_logs
 - AuditInterceptor
 - Registro de login/logout
 - GET /audit-logs (admin)
 
 **Definition of Done:**
+
 - [ ] Logs registrados no banco
 - [ ] IP e user agent capturados
 - [ ] Endpoint de consulta
@@ -299,9 +343,11 @@ const PERMISSIONS = {
 ### Frontend
 
 #### TASK-002-011: Página de Login
+
 **Estimativa:** 4h
 
 **Escopo:**
+
 - Formulário de login
 - Validação com Zod
 - Integração com API
@@ -309,6 +355,7 @@ const PERMISSIONS = {
 - Loading states
 
 **Definition of Done:**
+
 - [ ] UI implementada
 - [ ] Validação funcionando
 - [ ] Integração com backend
@@ -317,14 +364,17 @@ const PERMISSIONS = {
 ---
 
 #### TASK-002-012: Página de Recuperação de Senha
+
 **Estimativa:** 3h
 
 **Escopo:**
+
 - Formulário de solicitação
 - Formulário de nova senha
 - Validação
 
 **Definition of Done:**
+
 - [ ] UI implementada
 - [ ] Fluxo completo funcionando
 - [ ] Testes
@@ -332,15 +382,18 @@ const PERMISSIONS = {
 ---
 
 #### TASK-002-013: Auth Provider e Hooks
+
 **Estimativa:** 4h
 
 **Escopo:**
+
 - AuthContext
 - useAuth hook
 - Interceptor para refresh automático
 - Storage de tokens
 
 **Definition of Done:**
+
 - [ ] Context implementado
 - [ ] Refresh automático
 - [ ] Testes
@@ -348,14 +401,17 @@ const PERMISSIONS = {
 ---
 
 #### TASK-002-014: Proteção de Rotas
+
 **Estimativa:** 3h
 
 **Escopo:**
+
 - Middleware de autenticação (Next.js)
 - Redirect para login
 - Loading states
 
 **Definition of Done:**
+
 - [ ] Rotas protegidas
 - [ ] Redirect funcionando
 - [ ] Testes
@@ -363,15 +419,18 @@ const PERMISSIONS = {
 ---
 
 #### TASK-002-015: Componente de User Menu
+
 **Estimativa:** 2h
 
 **Escopo:**
+
 - Avatar e nome do usuário
 - Dropdown com opções
 - Logout
 - Link para perfil
 
 **Definition of Done:**
+
 - [ ] Componente implementado
 - [ ] Logout funcionando
 - [ ] Testes
@@ -379,15 +438,18 @@ const PERMISSIONS = {
 ---
 
 #### TASK-002-016: Página de Gestão de Usuários
+
 **Estimativa:** 6h
 
 **Escopo:**
+
 - Listagem com DataTable
 - Filtros e busca
 - Modal de criar/editar
 - Ativação/desativação
 
 **Definition of Done:**
+
 - [ ] UI implementada
 - [ ] CRUD funcionando
 - [ ] Permissões verificadas
@@ -396,14 +458,17 @@ const PERMISSIONS = {
 ---
 
 #### TASK-002-017: Hook de Permissões
+
 **Estimativa:** 2h
 
 **Escopo:**
+
 - usePermissions hook
 - Componente CanAccess
 - Ocultar elementos sem permissão
 
 **Definition of Done:**
+
 - [ ] Hook implementado
 - [ ] Componente wrapper
 - [ ] Testes
@@ -413,6 +478,7 @@ const PERMISSIONS = {
 ## ✅ Critérios de Aceite do Épico
 
 ### Autenticação
+
 - [ ] Login funcional com email/senha
 - [ ] JWT com expiração de 15min
 - [ ] Refresh token em cookie httpOnly
@@ -420,28 +486,33 @@ const PERMISSIONS = {
 - [ ] Logout invalida sessão
 
 ### Recuperação de Senha
+
 - [ ] Email enviado com link de reset
 - [ ] Token expira em 1h
 - [ ] Senha deve ter 8+ caracteres, maiúscula, minúscula, número, especial
 
 ### RBAC
+
 - [ ] 6 perfis pré-definidos funcionando
 - [ ] Permissões verificadas no backend
 - [ ] UI adapta-se às permissões
 - [ ] Super Admin tem acesso total
 
 ### Gestão de Usuários
+
 - [ ] CRUD completo
 - [ ] Apenas admins podem gerenciar
 - [ ] Não pode desativar próprio usuário
 
 ### Segurança
+
 - [ ] Senhas com bcrypt (12 rounds)
 - [ ] Rate limiting em login
 - [ ] Logs de auditoria
 - [ ] Headers de segurança
 
 ### Qualidade
+
 - [ ] Testes unitários ≥80%
 - [ ] Testes de integração para todos endpoints
 - [ ] Documentação Swagger completa
@@ -492,4 +563,3 @@ Semana 2 (Backend + Frontend):
 ```
 
 **Total estimado:** ~54 horas (~2 semanas)
-

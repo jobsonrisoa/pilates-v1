@@ -2,21 +2,22 @@
 
 ## 📋 Informações Gerais
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | EPIC-021 |
-| **Título** | Testes E2E e Performance |
-| **Fase** | 4 - Refinamento |
-| **Prioridade** | 🟠 Alta |
-| **Estimativa** | 1 semana |
+| Campo            | Valor                      |
+| ---------------- | -------------------------- |
+| **ID**           | EPIC-021                   |
+| **Título**       | Testes E2E e Performance   |
+| **Fase**         | 4 - Refinamento            |
+| **Prioridade**   | 🟠 Alta                    |
+| **Estimativa**   | 1 semana                   |
 | **Dependências** | Todos os épicos funcionais |
-| **Status** | 📋 Backlog |
+| **Status**       | 📋 Backlog                 |
 
 ---
 
 ## 📝 Descrição
 
 Implementar suite completa de testes:
+
 - Testes E2E dos fluxos críticos
 - Testes de carga e stress
 - Testes de segurança básicos
@@ -36,11 +37,13 @@ Implementar suite completa de testes:
 ## 👤 User Stories
 
 ### US-021-001: Testes E2E de Autenticação
+
 **Como** QA  
 **Quero** testes automatizados de login  
 **Para** garantir que funciona
 
 **Critérios de Aceite:**
+
 - [ ] Login válido
 - [ ] Login inválido
 - [ ] Refresh token
@@ -50,11 +53,13 @@ Implementar suite completa de testes:
 ---
 
 ### US-021-002: Testes E2E de Cadastros
+
 **Como** QA  
 **Quero** testes de CRUD  
 **Para** garantir integridade
 
 **Critérios de Aceite:**
+
 - [ ] Criar aluno
 - [ ] Editar aluno
 - [ ] Criar professor
@@ -63,11 +68,13 @@ Implementar suite completa de testes:
 ---
 
 ### US-021-003: Testes E2E de Fluxo de Matrícula
+
 **Como** QA  
 **Quero** testar o fluxo completo  
 **Para** garantir funcionamento
 
 **Critérios de Aceite:**
+
 - [ ] Cadastrar aluno
 - [ ] Criar matrícula
 - [ ] Gerar contrato
@@ -76,11 +83,13 @@ Implementar suite completa de testes:
 ---
 
 ### US-021-004: Testes de Carga
+
 **Como** DevOps  
 **Quero** testar sob carga  
 **Para** garantir escalabilidade
 
 **Critérios de Aceite:**
+
 - [ ] 100 usuários simultâneos
 - [ ] P95 < 500ms
 - [ ] Zero erros
@@ -88,11 +97,13 @@ Implementar suite completa de testes:
 ---
 
 ### US-021-005: Testes de Stress
+
 **Como** DevOps  
 **Quero** encontrar o limite  
 **Para** conhecer a capacidade
 
 **Critérios de Aceite:**
+
 - [ ] Identificar breaking point
 - [ ] Documentar limites
 - [ ] Plano de escala
@@ -104,6 +115,7 @@ Implementar suite completa de testes:
 ### E2E Tests
 
 #### TASK-021-001: Setup Playwright
+
 **Estimativa:** 2h
 
 - Configuração final
@@ -113,6 +125,7 @@ Implementar suite completa de testes:
 ---
 
 #### TASK-021-002: Testes de Auth
+
 **Estimativa:** 3h
 
 - Login/logout
@@ -122,6 +135,7 @@ Implementar suite completa de testes:
 ---
 
 #### TASK-021-003: Testes de Alunos
+
 **Estimativa:** 3h
 
 - CRUD completo
@@ -131,6 +145,7 @@ Implementar suite completa de testes:
 ---
 
 #### TASK-021-004: Testes de Agenda
+
 **Estimativa:** 3h
 
 - Visualização
@@ -140,6 +155,7 @@ Implementar suite completa de testes:
 ---
 
 #### TASK-021-005: Testes de Matrícula
+
 **Estimativa:** 4h
 
 - Fluxo completo
@@ -151,6 +167,7 @@ Implementar suite completa de testes:
 ### Performance Tests
 
 #### TASK-021-006: Scripts k6 de Load Test
+
 **Estimativa:** 3h
 
 - Cenários de uso
@@ -160,6 +177,7 @@ Implementar suite completa de testes:
 ---
 
 #### TASK-021-007: Scripts k6 de Stress Test
+
 **Estimativa:** 2h
 
 - Encontrar limites
@@ -168,6 +186,7 @@ Implementar suite completa de testes:
 ---
 
 #### TASK-021-008: Scripts k6 de Soak Test
+
 **Estimativa:** 2h
 
 - Teste de longa duração
@@ -178,6 +197,7 @@ Implementar suite completa de testes:
 ### Security Tests
 
 #### TASK-021-009: Scan de Vulnerabilidades
+
 **Estimativa:** 2h
 
 - OWASP ZAP básico
@@ -189,6 +209,7 @@ Implementar suite completa de testes:
 ### Reports
 
 #### TASK-021-010: Relatórios e CI Integration
+
 **Estimativa:** 2h
 
 - Relatórios HTML
@@ -211,4 +232,3 @@ Implementar suite completa de testes:
 ## 📅 Timeline Sugerido
 
 **Total estimado:** ~26 horas (~1 semana)
-

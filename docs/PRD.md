@@ -32,18 +32,19 @@ Sistema completo de gestão para centro de atividades físicas, abrangendo Pilat
 
 ### 1.2 Público-Alvo
 
-| Perfil | Descrição | Funcionalidades Principais |
-|--------|-----------|---------------------------|
-| **Super Admin** | Proprietário/Gestor principal | Acesso total ao sistema |
-| **Admin** | Administrador | Gestão de usuários, configurações |
-| **Gerente** | Coordenador operacional | Relatórios, gestão de aulas |
-| **Recepcionista** | Atendimento | Cadastros, agendamentos |
-| **Professor** | Instrutor | Agenda, presença, alunos |
-| **Financeiro** | Controle financeiro | Pagamentos, relatórios |
+| Perfil            | Descrição                     | Funcionalidades Principais        |
+| ----------------- | ----------------------------- | --------------------------------- |
+| **Super Admin**   | Proprietário/Gestor principal | Acesso total ao sistema           |
+| **Admin**         | Administrador                 | Gestão de usuários, configurações |
+| **Gerente**       | Coordenador operacional       | Relatórios, gestão de aulas       |
+| **Recepcionista** | Atendimento                   | Cadastros, agendamentos           |
+| **Professor**     | Instrutor                     | Agenda, presença, alunos          |
+| **Financeiro**    | Controle financeiro           | Pagamentos, relatórios            |
 
 ### 1.3 Escopo
 
 **Incluso:**
+
 - Gestão de alunos e professores
 - Agendamento de aulas
 - Controle de matrículas e planos
@@ -53,6 +54,7 @@ Sistema completo de gestão para centro de atividades físicas, abrangendo Pilat
 - Controle de estoque
 
 **Não incluso (v1.0):**
+
 - Aplicativo mobile nativo
 - Portal do aluno
 - Integração com redes sociais
@@ -64,23 +66,23 @@ Sistema completo de gestão para centro de atividades físicas, abrangendo Pilat
 
 ### 2.1 Objetivos de Negócio
 
-| Objetivo | Métrica | Meta |
-|----------|---------|------|
-| Reduzir inadimplência | Taxa de inadimplência | < 5% |
-| Otimizar ocupação | Taxa de ocupação de horários | > 85% |
-| Agilizar cadastros | Tempo médio de matrícula | < 10 min |
-| Automatizar cobranças | % de cobranças automáticas | 100% |
-| Reduzir faltas | Taxa de no-show | < 10% |
+| Objetivo              | Métrica                      | Meta     |
+| --------------------- | ---------------------------- | -------- |
+| Reduzir inadimplência | Taxa de inadimplência        | < 5%     |
+| Otimizar ocupação     | Taxa de ocupação de horários | > 85%    |
+| Agilizar cadastros    | Tempo médio de matrícula     | < 10 min |
+| Automatizar cobranças | % de cobranças automáticas   | 100%     |
+| Reduzir faltas        | Taxa de no-show              | < 10%    |
 
 ### 2.2 Objetivos Técnicos
 
-| Objetivo | Métrica | Meta |
-|----------|---------|------|
-| Disponibilidade | Uptime | ≥ 99.5% |
-| Performance | Tempo de resposta P95 | < 500ms |
-| Qualidade | Cobertura de testes | ≥ 80% |
-| Segurança | Vulnerabilidades críticas | 0 |
-| Manutenibilidade | Débito técnico | Baixo |
+| Objetivo         | Métrica                   | Meta    |
+| ---------------- | ------------------------- | ------- |
+| Disponibilidade  | Uptime                    | ≥ 99.5% |
+| Performance      | Tempo de resposta P95     | < 500ms |
+| Qualidade        | Cobertura de testes       | ≥ 80%   |
+| Segurança        | Vulnerabilidades críticas | 0       |
+| Manutenibilidade | Débito técnico            | Baixo   |
 
 ---
 
@@ -88,49 +90,49 @@ Sistema completo de gestão para centro de atividades físicas, abrangendo Pilat
 
 ### 3.1 Backend
 
-| Tecnologia | Versão | Propósito |
-|------------|--------|-----------|
-| **Node.js** | 20 LTS | Runtime |
-| **NestJS** | 10.x | Framework backend |
-| **TypeScript** | 5.x | Linguagem |
-| **Prisma** | 5.x | ORM |
-| **MySQL** | 8.0 | Banco de dados |
-| **Redis** | 7.x | Cache e sessions |
-| **Jest** | 29.x | Testes |
+| Tecnologia     | Versão | Propósito         |
+| -------------- | ------ | ----------------- |
+| **Node.js**    | 20 LTS | Runtime           |
+| **NestJS**     | 10.x   | Framework backend |
+| **TypeScript** | 5.x    | Linguagem         |
+| **Prisma**     | 5.x    | ORM               |
+| **MySQL**      | 8.0    | Banco de dados    |
+| **Redis**      | 7.x    | Cache e sessions  |
+| **Jest**       | 29.x   | Testes            |
 
 ### 3.2 Frontend
 
-| Tecnologia | Versão | Propósito |
-|------------|--------|-----------|
-| **Next.js** | 14.x | Framework frontend |
-| **React** | 18.x | UI Library |
-| **TypeScript** | 5.x | Linguagem |
-| **TailwindCSS** | 3.x | Estilização |
-| **shadcn/ui** | Latest | Componentes |
-| **React Query** | 5.x | Data fetching |
-| **Zustand** | 4.x | Estado global |
-| **React Hook Form** | 7.x | Formulários |
-| **Zod** | 3.x | Validação |
+| Tecnologia          | Versão | Propósito          |
+| ------------------- | ------ | ------------------ |
+| **Next.js**         | 14.x   | Framework frontend |
+| **React**           | 18.x   | UI Library         |
+| **TypeScript**      | 5.x    | Linguagem          |
+| **TailwindCSS**     | 3.x    | Estilização        |
+| **shadcn/ui**       | Latest | Componentes        |
+| **React Query**     | 5.x    | Data fetching      |
+| **Zustand**         | 4.x    | Estado global      |
+| **React Hook Form** | 7.x    | Formulários        |
+| **Zod**             | 3.x    | Validação          |
 
 ### 3.3 Infraestrutura
 
-| Tecnologia | Propósito |
-|------------|-----------|
-| **Docker** | Containerização |
-| **Docker Compose** | Orquestração local |
-| **Traefik** | Reverse proxy |
-| **GitHub Actions** | CI/CD |
+| Tecnologia               | Propósito           |
+| ------------------------ | ------------------- |
+| **Docker**               | Containerização     |
+| **Docker Compose**       | Orquestração local  |
+| **Traefik**              | Reverse proxy       |
+| **GitHub Actions**       | CI/CD               |
 | **Hetzner/DigitalOcean** | Hospedagem produção |
-| **Railway** | Hospedagem staging |
+| **Railway**              | Hospedagem staging  |
 
 ### 3.4 Observabilidade
 
-| Tecnologia | Propósito |
-|------------|-----------|
-| **Pino** | Logging estruturado |
-| **Prometheus** | Métricas |
-| **Grafana** | Dashboards |
-| **Sentry** | Error tracking |
+| Tecnologia     | Propósito           |
+| -------------- | ------------------- |
+| **Pino**       | Logging estruturado |
+| **Prometheus** | Métricas            |
+| **Grafana**    | Dashboards          |
+| **Sentry**     | Error tracking      |
 
 > **📖 Referência:** [ADR-002: Stack Tecnológica](./architecture/adrs/ADR-002-stack-tecnologica.md)
 
@@ -177,13 +179,13 @@ Sistema completo de gestão para centro de atividades físicas, abrangendo Pilat
 
 ### 4.2 Padrões Arquiteturais
 
-| Padrão | Aplicação |
-|--------|-----------|
-| **DDD** | Domain-Driven Design para modelagem |
-| **CQRS Light** | Separação de comandos e queries |
+| Padrão           | Aplicação                             |
+| ---------------- | ------------------------------------- |
+| **DDD**          | Domain-Driven Design para modelagem   |
+| **CQRS Light**   | Separação de comandos e queries       |
 | **Event-Driven** | Comunicação entre módulos via eventos |
-| **Repository** | Abstração de persistência |
-| **Use Cases** | Lógica de aplicação isolada |
+| **Repository**   | Abstração de persistência             |
+| **Use Cases**    | Lógica de aplicação isolada           |
 
 ### 4.3 Estrutura de Módulos
 
@@ -228,6 +230,7 @@ src/
 ### 5.1 Autenticação e Autorização
 
 #### Funcionalidades
+
 - [x] Login com email/senha
 - [x] JWT com refresh tokens
 - [x] Sistema RBAC (Role-Based Access Control)
@@ -236,15 +239,15 @@ src/
 
 #### Perfis e Permissões
 
-| Recurso | Super Admin | Admin | Gerente | Recepção | Professor | Financeiro |
-|---------|:-----------:|:-----:|:-------:|:--------:|:---------:|:----------:|
-| Usuários | CRUD | CRU | R | - | - | - |
-| Alunos | CRUD | CRUD | CRUD | CRU | R | R |
-| Professores | CRUD | CRUD | CRU | R | R | R |
-| Aulas | CRUD | CRUD | CRUD | RU | RU | R |
-| Financeiro | CRUD | CRUD | R | - | - | CRUD |
-| Relatórios | ✓ | ✓ | ✓ | - | - | ✓ |
-| Config | ✓ | ✓ | - | - | - | - |
+| Recurso     | Super Admin | Admin | Gerente | Recepção | Professor | Financeiro |
+| ----------- | :---------: | :---: | :-----: | :------: | :-------: | :--------: |
+| Usuários    |    CRUD     |  CRU  |    R    |    -     |     -     |     -      |
+| Alunos      |    CRUD     | CRUD  |  CRUD   |   CRU    |     R     |     R      |
+| Professores |    CRUD     | CRUD  |   CRU   |    R     |     R     |     R      |
+| Aulas       |    CRUD     | CRUD  |  CRUD   |    RU    |    RU     |     R      |
+| Financeiro  |    CRUD     | CRUD  |    R    |    -     |     -     |    CRUD    |
+| Relatórios  |      ✓      |   ✓   |    ✓    |    -     |     -     |     ✓      |
+| Config      |      ✓      |   ✓   |    -    |    -     |     -     |     -      |
 
 > **📖 Referência:** [ADR-004: Autenticação e Autorização](./architecture/adrs/ADR-004-autenticacao-autorizacao.md)
 
@@ -253,6 +256,7 @@ src/
 ### 5.2 Gestão de Alunos
 
 #### Dados Cadastrais
+
 - Dados pessoais (nome, CPF, RG, data nascimento)
 - Contato (telefone, email)
 - Endereço completo
@@ -261,6 +265,7 @@ src/
 - Status (ativo, inativo, suspenso)
 
 #### Funcionalidades
+
 - [x] CRUD completo de alunos
 - [x] Upload de documentos
 - [x] Histórico de exames
@@ -268,6 +273,7 @@ src/
 - [x] Exportação de dados (LGPD)
 
 #### Exames
+
 - Tipos: Avaliação física, anamnese, exames médicos
 - Upload de arquivos (PDF, imagens)
 - Histórico completo
@@ -277,6 +283,7 @@ src/
 ### 5.3 Gestão de Professores
 
 #### Dados Cadastrais
+
 - Dados pessoais
 - Registro profissional (CREF, CREFITO)
 - Especialidades
@@ -284,6 +291,7 @@ src/
 - Dados bancários
 
 #### Funcionalidades
+
 - [x] CRUD completo
 - [x] Gestão de especialidades
 - [x] Grade de horários
@@ -295,18 +303,21 @@ src/
 ### 5.4 Gestão de Aulas e Agendamento
 
 #### Modalidades
+
 - Pilates
 - Fisioterapia
 - Outras (configuráveis)
 
 #### Tipos de Aula
-| Tipo | Capacidade | Duração |
-|------|------------|---------|
-| Individual | 1 aluno | 50 min |
-| Dupla | 2 alunos | 50 min |
-| Grupo | até 6 alunos | 50 min |
+
+| Tipo       | Capacidade   | Duração |
+| ---------- | ------------ | ------- |
+| Individual | 1 aluno      | 50 min  |
+| Dupla      | 2 alunos     | 50 min  |
+| Grupo      | até 6 alunos | 50 min  |
 
 #### Funcionalidades
+
 - [x] Grade de horários por dia/semana
 - [x] Agenda visual (dia, semana, mês)
 - [x] Controle de presença/falta
@@ -330,13 +341,14 @@ Cancelamento:
 ### 5.5 Matrículas e Planos
 
 #### Planos Disponíveis
-| Plano | Frequência | Descrição |
-|-------|------------|-----------|
-| Avulso | - | Aula única |
-| 1x/semana | Semanal | 4 aulas/mês |
-| 2x/semana | Semanal | 8 aulas/mês |
-| 3x/semana | Semanal | 12 aulas/mês |
-| 4x/semana | Semanal | 16 aulas/mês |
+
+| Plano     | Frequência | Descrição    |
+| --------- | ---------- | ------------ |
+| Avulso    | -          | Aula única   |
+| 1x/semana | Semanal    | 4 aulas/mês  |
+| 2x/semana | Semanal    | 8 aulas/mês  |
+| 3x/semana | Semanal    | 12 aulas/mês |
+| 4x/semana | Semanal    | 16 aulas/mês |
 
 #### Processo de Matrícula
 
@@ -361,6 +373,7 @@ Cancelamento:
 ```
 
 #### Status de Matrícula
+
 - `PENDING_SIGNATURE` - Aguardando assinatura do contrato
 - `ACTIVE` - Matrícula ativa
 - `SUSPENDED` - Suspensa (inadimplência)
@@ -372,6 +385,7 @@ Cancelamento:
 ### 5.6 Contratos Digitais
 
 #### Funcionalidades
+
 - [x] Geração automática de PDF
 - [x] Envio para assinatura digital
 - [x] Validação com IP e timestamp
@@ -379,6 +393,7 @@ Cancelamento:
 - [x] Atualização automática de status
 
 #### Integrações Sugeridas
+
 - D4Sign
 - Clicksign
 - DocuSign
@@ -388,17 +403,20 @@ Cancelamento:
 ### 5.7 Módulo Financeiro
 
 #### Tabela de Preços
+
 - Preço por modalidade
 - Preço por tipo de plano
 - Descontos especiais
 - Histórico de alterações
 
 #### Comissões de Professores
+
 - Percentual ou valor fixo
 - Por modalidade/tipo de aula
 - Relatório mensal
 
 #### Controle de Pagamentos
+
 - Geração de boletos (Sicoob)
 - QR Code PIX (Sicoob)
 - Baixa automática via webhook
@@ -435,6 +453,7 @@ Cancelamento:
 ### 5.8 Relatórios
 
 #### Relatórios Financeiros
+
 - Receitas por período
 - Receitas por modalidade
 - Receitas por forma de pagamento
@@ -443,6 +462,7 @@ Cancelamento:
 - Fluxo de caixa
 
 #### Relatórios Operacionais
+
 - Alunos por status
 - Taxa de ocupação
 - Faltas e presenças
@@ -450,11 +470,13 @@ Cancelamento:
 - Aulas por professor
 
 #### Relatórios de Marketing
+
 - Novos alunos por período
 - Taxa de cancelamento (churn)
 - Origem dos alunos
 
 #### Funcionalidades
+
 - Filtros (data, professor, modalidade, status)
 - Exportação PDF e Excel
 - Gráficos interativos
@@ -464,6 +486,7 @@ Cancelamento:
 ### 5.9 Estoque
 
 #### Funcionalidades
+
 - [x] Cadastro de produtos
 - [x] Controle de quantidade
 - [x] Alertas de estoque mínimo
@@ -477,19 +500,19 @@ Cancelamento:
 
 ### 6.1 Performance
 
-| Métrica | Requisito |
-|---------|-----------|
-| Tempo de resposta P95 | < 500ms |
-| Tempo de resposta P99 | < 1000ms |
-| Throughput | > 100 req/s |
-| Tempo de startup | < 30s |
+| Métrica               | Requisito   |
+| --------------------- | ----------- |
+| Tempo de resposta P95 | < 500ms     |
+| Tempo de resposta P99 | < 1000ms    |
+| Throughput            | > 100 req/s |
+| Tempo de startup      | < 30s       |
 
 ### 6.2 Disponibilidade
 
-| Métrica | Requisito |
-|---------|-----------|
-| Uptime | ≥ 99.5% |
-| RTO (Recovery Time Objective) | < 1 hora |
+| Métrica                        | Requisito  |
+| ------------------------------ | ---------- |
+| Uptime                         | ≥ 99.5%    |
+| RTO (Recovery Time Objective)  | < 1 hora   |
 | RPO (Recovery Point Objective) | < 24 horas |
 
 ### 6.3 Segurança
@@ -526,28 +549,28 @@ Cancelamento:
 
 ### 7.1 Sicoob (Bancária)
 
-| Funcionalidade | Endpoint |
-|----------------|----------|
-| Geração de boletos | POST /cobranca/v2/boletos |
-| Geração de PIX | PUT /pix/v2/cob/{txid} |
-| Consulta de status | GET /cobranca/v2/boletos/{id} |
-| Webhook de pagamento | POST /webhooks/sicoob |
+| Funcionalidade       | Endpoint                      |
+| -------------------- | ----------------------------- |
+| Geração de boletos   | POST /cobranca/v2/boletos     |
+| Geração de PIX       | PUT /pix/v2/cob/{txid}        |
+| Consulta de status   | GET /cobranca/v2/boletos/{id} |
+| Webhook de pagamento | POST /webhooks/sicoob         |
 
 ### 7.2 Assinatura Digital
 
-| Provider | Funcionalidade |
-|----------|----------------|
-| D4Sign / Clicksign | Envio de documento |
-| | Webhook de assinatura |
-| | Download de documento assinado |
+| Provider           | Funcionalidade                 |
+| ------------------ | ------------------------------ |
+| D4Sign / Clicksign | Envio de documento             |
+|                    | Webhook de assinatura          |
+|                    | Download de documento assinado |
 
 ### 7.3 Email (Opcional)
 
-| Provider | Uso |
-|----------|-----|
+| Provider | Uso              |
+| -------- | ---------------- |
 | SendGrid | Envio de boletos |
-| AWS SES | Contratos |
-| Mailgun | Notificações |
+| AWS SES  | Contratos        |
+| Mailgun  | Notificações     |
 
 ---
 
@@ -558,15 +581,16 @@ Cancelamento:
 ```yaml
 # docker-compose.yml
 services:
-  api:        # NestJS API
-  web:        # Next.js Frontend
-  mysql:      # Banco de dados
-  redis:      # Cache/Sessions
-  mailhog:    # Email testing
-  minio:      # Storage local
+  api: # NestJS API
+  web: # Next.js Frontend
+  mysql: # Banco de dados
+  redis: # Cache/Sessions
+  mailhog: # Email testing
+  minio: # Storage local
 ```
 
 **Requisitos:**
+
 - Docker 24+
 - Docker Compose 2+
 - 8GB RAM mínimo
@@ -604,13 +628,13 @@ services:
 
 ### 8.3 Custos Estimados
 
-| Item | Dev/Staging | Produção |
-|------|-------------|----------|
-| VPS (Hetzner CX21) | €5/mês | €10/mês |
-| MySQL (Managed) | - | €15/mês |
-| Backup Storage | - | €5/mês |
-| Domain + SSL | - | €10/ano |
-| **Total** | ~€5/mês | ~€30/mês |
+| Item               | Dev/Staging | Produção |
+| ------------------ | ----------- | -------- |
+| VPS (Hetzner CX21) | €5/mês      | €10/mês  |
+| MySQL (Managed)    | -           | €15/mês  |
+| Backup Storage     | -           | €5/mês   |
+| Domain + SSL       | -           | €10/ano  |
+| **Total**          | ~€5/mês     | ~€30/mês |
 
 > **📖 Referência:** [ADR-007: Containerização](./architecture/adrs/ADR-007-containerizacao.md)
 
@@ -621,6 +645,7 @@ services:
 ### 9.1 Metodologia
 
 **TDD - Test-Driven Development**
+
 ```
 RED → GREEN → REFACTOR
  │       │         │
@@ -649,41 +674,38 @@ RED → GREEN → REFACTOR
 
 ### 9.3 Métricas de Qualidade
 
-| Métrica | Backend | Frontend | Bloqueante |
-|---------|---------|----------|------------|
-| **Coverage Linhas** | ≥ 80% | ≥ 80% | ✅ Sim |
-| **Coverage Branches** | ≥ 75% | ≥ 75% | ✅ Sim |
-| **Coverage Functions** | ≥ 80% | ≥ 80% | ✅ Sim |
-| **Testes E2E** | 100% pass | 100% pass | ✅ Sim |
-| **Performance P95** | < 500ms | - | ⚠️ Warning |
+| Métrica                | Backend   | Frontend  | Bloqueante |
+| ---------------------- | --------- | --------- | ---------- |
+| **Coverage Linhas**    | ≥ 80%     | ≥ 80%     | ✅ Sim     |
+| **Coverage Branches**  | ≥ 75%     | ≥ 75%     | ✅ Sim     |
+| **Coverage Functions** | ≥ 80%     | ≥ 80%     | ✅ Sim     |
+| **Testes E2E**         | 100% pass | 100% pass | ✅ Sim     |
+| **Performance P95**    | < 500ms   | -         | ⚠️ Warning |
 
 ### 9.4 Ferramentas
 
-| Tipo | Backend | Frontend |
-|------|---------|----------|
-| **Unit** | Jest | Jest + Testing Library |
-| **Integração** | Supertest + MySQL container | MSW |
-| **E2E** | - | Playwright |
-| **Performance** | k6 | k6 |
-| **Coverage** | Istanbul/c8 | Istanbul/c8 |
+| Tipo            | Backend                     | Frontend               |
+| --------------- | --------------------------- | ---------------------- |
+| **Unit**        | Jest                        | Jest + Testing Library |
+| **Integração**  | Supertest + MySQL container | MSW                    |
+| **E2E**         | -                           | Playwright             |
+| **Performance** | k6                          | k6                     |
+| **Coverage**    | Istanbul/c8                 | Istanbul/c8            |
 
 ### 9.5 CI Pipeline
 
 ```yaml
-PR:
-  ├── Lint + Type Check
+PR: ├── Lint + Type Check
   ├── Unit Tests (paralelo)
   │   ├── Backend (coverage ≥ 80%)
   │   └── Frontend (coverage ≥ 80%)
   └── Integration Tests
 
-develop:
-  ├── ... (todos acima)
+develop: ├── ... (todos acima)
   ├── E2E Tests
   └── Deploy Staging
 
-main:
-  ├── ... (todos acima)
+main: ├── ... (todos acima)
   ├── Performance Tests
   └── Deploy Production
 ```
@@ -697,6 +719,7 @@ main:
 ### Fase 1 - MVP (8-10 semanas)
 
 **Escopo:**
+
 - [ ] Setup do projeto (Docker, CI/CD)
 - [ ] Autenticação e RBAC básico
 - [ ] CRUD de alunos
@@ -706,6 +729,7 @@ main:
 - [ ] Matrícula simples
 
 **Entregáveis:**
+
 - Sistema funcional para cadastros básicos
 - Agenda de aulas operacional
 - Testes unitários ≥ 80%
@@ -715,6 +739,7 @@ main:
 ### Fase 2 - Financeiro (6-8 semanas)
 
 **Escopo:**
+
 - [ ] Sistema de planos completo
 - [ ] Tabela de preços
 - [ ] Integração Sicoob (boletos e PIX)
@@ -723,6 +748,7 @@ main:
 - [ ] Relatórios financeiros básicos
 
 **Entregáveis:**
+
 - Geração automática de cobranças
 - Baixa automática de pagamentos
 - Dashboard financeiro
@@ -732,6 +758,7 @@ main:
 ### Fase 3 - Operacional (6-8 semanas)
 
 **Escopo:**
+
 - [ ] Sistema de reposições
 - [ ] Contratos digitais (integração D4Sign)
 - [ ] Controle de estoque
@@ -740,6 +767,7 @@ main:
 - [ ] Upload de documentos (S3)
 
 **Entregáveis:**
+
 - Fluxo completo de matrícula com contrato
 - Gestão de estoque operacional
 - Todos os relatórios
@@ -749,6 +777,7 @@ main:
 ### Fase 4 - Refinamento (4-6 semanas)
 
 **Escopo:**
+
 - [ ] Sistema de permissões granular
 - [ ] Dashboard analítico
 - [ ] Otimizações de performance
@@ -757,26 +786,28 @@ main:
 - [ ] Documentação final
 
 **Entregáveis:**
+
 - Sistema completo e otimizado
 - Documentação técnica
 - Manual do usuário
 
 ---
+
 ## 11. Decisões Arquiteturais
 
 ### Índice de ADRs
 
-| ADR | Título | Status |
-|-----|--------|--------|
+| ADR                                                                    | Título                       | Status    |
+| ---------------------------------------------------------------------- | ---------------------------- | --------- |
 | [ADR-001](./architecture/adrs/ADR-001-arquitetura-monolito-modular.md) | Arquitetura Monolito Modular | ✅ Aceito |
-| [ADR-002](./architecture/adrs/ADR-002-stack-tecnologica.md) | Stack Tecnológica | ✅ Aceito |
-| [ADR-003](./architecture/adrs/ADR-003-banco-de-dados.md) | Banco de Dados | ✅ Aceito |
-| [ADR-004](./architecture/adrs/ADR-004-autenticacao-autorizacao.md) | Autenticação e Autorização | ✅ Aceito |
-| [ADR-005](./architecture/adrs/ADR-005-observabilidade.md) | Observabilidade | ✅ Aceito |
-| [ADR-006](./architecture/adrs/ADR-006-ci-cd.md) | CI/CD | ✅ Aceito |
-| [ADR-007](./architecture/adrs/ADR-007-containerizacao.md) | Containerização | ✅ Aceito |
-| [ADR-008](./architecture/adrs/ADR-008-integracao-sicoob.md) | Integração Sicoob | ✅ Aceito |
-| [ADR-009](./architecture/adrs/ADR-009-estrategia-testes.md) | Estratégia de Testes | ✅ Aceito |
+| [ADR-002](./architecture/adrs/ADR-002-stack-tecnologica.md)            | Stack Tecnológica            | ✅ Aceito |
+| [ADR-003](./architecture/adrs/ADR-003-banco-de-dados.md)               | Banco de Dados               | ✅ Aceito |
+| [ADR-004](./architecture/adrs/ADR-004-autenticacao-autorizacao.md)     | Autenticação e Autorização   | ✅ Aceito |
+| [ADR-005](./architecture/adrs/ADR-005-observabilidade.md)              | Observabilidade              | ✅ Aceito |
+| [ADR-006](./architecture/adrs/ADR-006-ci-cd.md)                        | CI/CD                        | ✅ Aceito |
+| [ADR-007](./architecture/adrs/ADR-007-containerizacao.md)              | Containerização              | ✅ Aceito |
+| [ADR-008](./architecture/adrs/ADR-008-integracao-sicoob.md)            | Integração Sicoob            | ✅ Aceito |
+| [ADR-009](./architecture/adrs/ADR-009-estrategia-testes.md)            | Estratégia de Testes         | ✅ Aceito |
 
 ### Debate Arquitetural
 
@@ -788,15 +819,15 @@ main:
 
 ### A. Glossário
 
-| Termo | Definição |
-|-------|-----------|
-| **ADR** | Architecture Decision Record - registro de decisão arquitetural |
-| **DDD** | Domain-Driven Design - design orientado ao domínio |
-| **TDD** | Test-Driven Development - desenvolvimento guiado por testes |
+| Termo    | Definição                                                        |
+| -------- | ---------------------------------------------------------------- |
+| **ADR**  | Architecture Decision Record - registro de decisão arquitetural  |
+| **DDD**  | Domain-Driven Design - design orientado ao domínio               |
+| **TDD**  | Test-Driven Development - desenvolvimento guiado por testes      |
 | **RBAC** | Role-Based Access Control - controle de acesso baseado em papéis |
-| **CQRS** | Command Query Responsibility Segregation |
-| **JWT** | JSON Web Token |
-| **PIX** | Sistema de pagamento instantâneo brasileiro |
+| **CQRS** | Command Query Responsibility Segregation                         |
+| **JWT**  | JSON Web Token                                                   |
+| **PIX**  | Sistema de pagamento instantâneo brasileiro                      |
 
 ### B. Referências
 
@@ -811,4 +842,3 @@ main:
 **Documento gerado em:** 21/01/2026  
 **Última atualização:** 21/01/2026  
 **Versão:** 1.0
-

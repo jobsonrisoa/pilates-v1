@@ -21,7 +21,7 @@ describe('Entity Base', () => {
   it('should use provided id', () => {
     const entity = new TestEntity({
       id: 'custom-id',
-      name: 'Test'
+      name: 'Test',
     });
 
     expect(entity.id).toBe('custom-id');
@@ -43,5 +43,3 @@ describe('Entity Base', () => {
     expect(entity1.equals(entity3)).toBe(false);
   });
 });
-
-

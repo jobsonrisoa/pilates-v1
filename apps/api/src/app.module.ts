@@ -8,12 +8,10 @@ import { PrismaModule } from '@/shared/infrastructure/database/prisma.module';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      expandVariables: true
+      expandVariables: true,
     }),
     PrismaModule,
-    HealthModule
-  ]
+    HealthModule,
+  ],
 })
 export class AppModule {}
-
-

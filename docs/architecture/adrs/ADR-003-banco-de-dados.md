@@ -8,6 +8,7 @@
 ## Contexto
 
 O sistema precisa de:
+
 - Persistência relacional para dados estruturados
 - Suporte a transações ACID
 - Performance adequada para ~1000 alunos/professores
@@ -19,6 +20,7 @@ O sistema precisa de:
 ### MySQL 8.0 como banco principal
 
 **Configuração base:**
+
 ```yaml
 # docker-compose.yml
 services:
@@ -38,7 +40,7 @@ services:
       - --collation-server=utf8mb4_unicode_ci
       - --innodb-buffer-pool-size=256M
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
       interval: 10s
       timeout: 5s
       retries: 5
@@ -47,6 +49,7 @@ services:
 ### Prisma como ORM
 
 **Schema base:**
+
 ```prisma
 generator client {
   provider        = "prisma-client-js"
@@ -70,10 +73,10 @@ model User {
   lastLoginAt   DateTime? @map("last_login_at")
   createdAt     DateTime  @default(now()) @map("created_at")
   updatedAt     DateTime  @updatedAt @map("updated_at")
-  
+
   userRoles     UserRole[]
   auditLogs     AuditLog[]
-  
+
   @@map("users")
 }
 
@@ -82,10 +85,10 @@ model Role {
   name        String   @unique
   description String?
   createdAt   DateTime @default(now()) @map("created_at")
-  
+
   userRoles       UserRole[]
   rolePermissions RolePermission[]
-  
+
   @@map("roles")
 }
 
@@ -94,9 +97,9 @@ model Permission {
   resource    String   // ex: "students", "classes"
   action      String   // ex: "create", "read", "update", "delete"
   description String?
-  
+
   rolePermissions RolePermission[]
-  
+
   @@unique([resource, action])
   @@map("permissions")
 }
@@ -104,10 +107,10 @@ model Permission {
 model UserRole {
   userId String @map("user_id")
   roleId String @map("role_id")
-  
+
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   role Role @relation(fields: [roleId], references: [id], onDelete: Cascade)
-  
+
   @@id([userId, roleId])
   @@map("user_roles")
 }
@@ -115,10 +118,10 @@ model UserRole {
 model RolePermission {
   roleId       String @map("role_id")
   permissionId String @map("permission_id")
-  
+
   role       Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
   permission Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
-  
+
   @@id([roleId, permissionId])
   @@map("role_permissions")
 }
@@ -135,7 +138,7 @@ model Student {
   birthDate           DateTime  @map("birth_date") @db.Date
   phone               String?
   email               String?
-  
+
   // Endereço
   addressStreet       String?   @map("address_street")
   addressNumber       String?   @map("address_number")
@@ -144,25 +147,25 @@ model Student {
   addressCity         String?   @map("address_city")
   addressState        String?   @map("address_state") @db.Char(2)
   addressZipCode      String?   @map("address_zip_code")
-  
+
   // Contato de emergência
   emergencyContactName     String? @map("emergency_contact_name")
   emergencyContactPhone    String? @map("emergency_contact_phone")
   emergencyContactRelation String? @map("emergency_contact_relation")
-  
+
   // Dados médicos
   healthInsurance     String?   @map("health_insurance")
   healthInsuranceCard String?   @map("health_insurance_card")
   medicalNotes        String?   @map("medical_notes") @db.Text
-  
+
   status              StudentStatus @default(ACTIVE)
   createdAt           DateTime      @default(now()) @map("created_at")
   updatedAt           DateTime      @updatedAt @map("updated_at")
-  
+
   exams               StudentExam[]
   enrollments         Enrollment[]
   attendances         Attendance[]
-  
+
   @@index([fullName])
   @@index([status])
   @@map("students")
@@ -183,9 +186,9 @@ model StudentExam {
   notes       String?  @db.Text
   filePath    String?  @map("file_path")
   createdAt   DateTime @default(now()) @map("created_at")
-  
+
   student Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
-  
+
   @@index([studentId])
   @@map("student_exams")
 }
@@ -203,28 +206,28 @@ model Teacher {
   birthDate         DateTime  @map("birth_date") @db.Date
   phone             String?
   email             String?
-  
+
   // Dados profissionais
   specialties       String?   @db.Text // JSON array
   professionalId    String?   @map("professional_id") // CREF, CREFITO
   professionalIdType String?  @map("professional_id_type")
   hireDate          DateTime? @map("hire_date") @db.Date
-  
+
   // Dados bancários
   bankName          String?   @map("bank_name")
   bankAgency        String?   @map("bank_agency")
   bankAccount       String?   @map("bank_account")
   bankAccountType   String?   @map("bank_account_type")
   pixKey            String?   @map("pix_key")
-  
+
   status            TeacherStatus @default(ACTIVE)
   createdAt         DateTime      @default(now()) @map("created_at")
   updatedAt         DateTime      @updatedAt @map("updated_at")
-  
+
   schedules         Schedule[]
   classes           Class[]
   commissions       TeacherCommission[]
-  
+
   @@index([fullName])
   @@index([status])
   @@map("teachers")
@@ -245,11 +248,11 @@ model Modality {
   description String?
   isActive    Boolean  @default(true) @map("is_active")
   createdAt   DateTime @default(now()) @map("created_at")
-  
+
   classTypes  ClassType[]
   plans       Plan[]
   schedules   Schedule[]
-  
+
   @@map("modalities")
 }
 
@@ -260,11 +263,11 @@ model ClassType {
   maxStudents    Int      @map("max_students")
   durationMinutes Int     @map("duration_minutes")
   isActive       Boolean  @default(true) @map("is_active")
-  
+
   modality Modality @relation(fields: [modalityId], references: [id])
   schedules Schedule[]
   prices   PriceTable[]
-  
+
   @@map("class_types")
 }
 
@@ -278,12 +281,12 @@ model Schedule {
   endTime     String   @map("end_time") @db.VarChar(5)
   maxStudents Int      @map("max_students")
   isActive    Boolean  @default(true) @map("is_active")
-  
+
   modality  Modality  @relation(fields: [modalityId], references: [id])
   classType ClassType @relation(fields: [classTypeId], references: [id])
   teacher   Teacher   @relation(fields: [teacherId], references: [id])
   classes   Class[]
-  
+
   @@index([dayOfWeek, startTime])
   @@map("schedules")
 }
@@ -299,11 +302,11 @@ model Class {
   notes       String?     @db.Text
   createdAt   DateTime    @default(now()) @map("created_at")
   updatedAt   DateTime    @updatedAt @map("updated_at")
-  
+
   schedule    Schedule     @relation(fields: [scheduleId], references: [id])
   teacher     Teacher      @relation(fields: [teacherId], references: [id])
   attendances Attendance[]
-  
+
   @@index([classDate])
   @@index([status])
   @@map("classes")
@@ -326,14 +329,14 @@ model Attendance {
   notes        String?
   createdAt    DateTime         @default(now()) @map("created_at")
   updatedAt    DateTime         @updatedAt @map("updated_at")
-  
+
   class      Class      @relation(fields: [classId], references: [id])
   student    Student    @relation(fields: [studentId], references: [id])
   enrollment Enrollment @relation(fields: [enrollmentId], references: [id])
-  
+
   reschedulingFrom Rescheduling[] @relation("OriginalAttendance")
   reschedulingTo   Rescheduling[] @relation("NewAttendance")
-  
+
   @@unique([classId, studentId])
   @@map("attendances")
 }
@@ -354,10 +357,10 @@ model Rescheduling {
   expiresAt            DateTime @map("expires_at")
   usedAt               DateTime? @map("used_at")
   createdAt            DateTime @default(now()) @map("created_at")
-  
+
   originalAttendance Attendance  @relation("OriginalAttendance", fields: [originalAttendanceId], references: [id])
   newAttendance      Attendance? @relation("NewAttendance", fields: [newAttendanceId], references: [id])
-  
+
   @@map("reschedulings")
 }
 
@@ -373,11 +376,11 @@ model Plan {
   classesPerWeek  Int      @map("classes_per_week") // 0 = avulso
   isActive        Boolean  @default(true) @map("is_active")
   createdAt       DateTime @default(now()) @map("created_at")
-  
+
   modality    Modality     @relation(fields: [modalityId], references: [id])
   prices      PriceTable[]
   enrollments Enrollment[]
-  
+
   @@map("plans")
 }
 
@@ -392,13 +395,13 @@ model Enrollment {
   status          EnrollmentStatus @default(PENDING_SIGNATURE)
   createdAt       DateTime         @default(now()) @map("created_at")
   updatedAt       DateTime         @updatedAt @map("updated_at")
-  
+
   student     Student      @relation(fields: [studentId], references: [id])
   plan        Plan         @relation(fields: [planId], references: [id])
   contract    Contract?
   payments    Payment[]
   attendances Attendance[]
-  
+
   @@index([status])
   @@map("enrollments")
 }
@@ -421,9 +424,9 @@ model Contract {
   status        ContractStatus @default(DRAFT)
   createdAt     DateTime       @default(now()) @map("created_at")
   updatedAt     DateTime       @updatedAt @map("updated_at")
-  
+
   enrollment Enrollment @relation(fields: [enrollmentId], references: [id])
-  
+
   @@map("contracts")
 }
 
@@ -446,10 +449,10 @@ model PriceTable {
   validFrom   DateTime @map("valid_from") @db.Date
   validUntil  DateTime? @map("valid_until") @db.Date
   createdAt   DateTime @default(now()) @map("created_at")
-  
+
   plan      Plan?      @relation(fields: [planId], references: [id])
   classType ClassType? @relation(fields: [classTypeId], references: [id])
-  
+
   @@map("price_tables")
 }
 
@@ -462,19 +465,19 @@ model Payment {
   paidAmount      Decimal?      @map("paid_amount") @db.Decimal(10, 2)
   paymentMethod   String?       @map("payment_method")
   status          PaymentStatus @default(PENDING)
-  
+
   // Dados bancários
   boletoCode      String?       @map("boleto_code")
   boletoUrl       String?       @map("boleto_url")
   pixCode         String?       @map("pix_code")
   pixQrCode       String?       @map("pix_qr_code")
-  
+
   createdAt       DateTime      @default(now()) @map("created_at")
   updatedAt       DateTime      @updatedAt @map("updated_at")
-  
+
   enrollment      Enrollment    @relation(fields: [enrollmentId], references: [id])
   transactions    BankTransaction[]
-  
+
   @@index([dueDate])
   @@index([status])
   @@map("payments")
@@ -496,9 +499,9 @@ model BankTransaction {
   status          String
   webhookPayload  Json?    @map("webhook_payload")
   createdAt       DateTime @default(now()) @map("created_at")
-  
+
   payment Payment @relation(fields: [paymentId], references: [id])
-  
+
   @@index([externalId])
   @@map("bank_transactions")
 }
@@ -512,9 +515,9 @@ model TeacherCommission {
   value       Decimal  @db.Decimal(10, 2)
   validFrom   DateTime @map("valid_from") @db.Date
   validUntil  DateTime? @map("valid_until") @db.Date
-  
+
   teacher Teacher @relation(fields: [teacherId], references: [id])
-  
+
   @@map("teacher_commissions")
 }
 
@@ -535,10 +538,10 @@ model Product {
   isActive     Boolean  @default(true) @map("is_active")
   createdAt    DateTime @default(now()) @map("created_at")
   updatedAt    DateTime @updatedAt @map("updated_at")
-  
+
   movements StockMovement[]
   saleItems SaleItem[]
-  
+
   @@index([name])
   @@map("products")
 }
@@ -552,9 +555,9 @@ model StockMovement {
   reference   String?  // Nota fiscal, venda, etc
   createdAt   DateTime @default(now()) @map("created_at")
   createdBy   String?  @map("created_by")
-  
+
   product Product @relation(fields: [productId], references: [id])
-  
+
   @@map("stock_movements")
 }
 
@@ -567,9 +570,9 @@ model Sale {
   notes         String?
   createdAt     DateTime @default(now()) @map("created_at")
   createdBy     String?  @map("created_by")
-  
+
   items SaleItem[]
-  
+
   @@map("sales")
 }
 
@@ -580,10 +583,10 @@ model SaleItem {
   quantity  Int
   unitPrice Decimal @map("unit_price") @db.Decimal(10, 2)
   total     Decimal @db.Decimal(10, 2)
-  
+
   sale    Sale    @relation(fields: [saleId], references: [id], onDelete: Cascade)
   product Product @relation(fields: [productId], references: [id])
-  
+
   @@map("sale_items")
 }
 
@@ -602,9 +605,9 @@ model AuditLog {
   ipAddress  String?  @map("ip_address")
   userAgent  String?  @map("user_agent")
   createdAt  DateTime @default(now()) @map("created_at")
-  
+
   user User? @relation(fields: [userId], references: [id])
-  
+
   @@index([userId])
   @@index([resource, resourceId])
   @@index([createdAt])
@@ -628,6 +631,7 @@ pnpm prisma migrate reset
 ## Índices e Performance
 
 Índices já definidos no schema para:
+
 - Campos de busca frequente (nome, cpf, email)
 - Chaves estrangeiras
 - Campos de filtro (status, datas)
@@ -641,7 +645,7 @@ backup:
   schedule: "0 3 * * *"  # 3h da manhã
   retention: 30 days
   destination: S3/MinIO
-  
+
 # Script de backup
 mysqldump -u $DB_USER -p$DB_PASSWORD \
   --single-transaction \
@@ -653,6 +657,7 @@ mysqldump -u $DB_USER -p$DB_PASSWORD \
 ## Consequências
 
 ### Positivas
+
 - ✅ Schema type-safe com Prisma
 - ✅ Migrations versionadas
 - ✅ Modelo de dados normalizado
@@ -660,6 +665,7 @@ mysqldump -u $DB_USER -p$DB_PASSWORD \
 - ✅ Performance otimizada com índices
 
 ### Negativas
+
 - ⚠️ Prisma tem overhead em queries muito complexas
 - ⚠️ Schema grande para manter
 
@@ -669,4 +675,3 @@ mysqldump -u $DB_USER -p$DB_PASSWORD \
 - Campos de dados pessoais identificados
 - Possibilidade de anonimização/exclusão
 - Exportação de dados do usuário
-

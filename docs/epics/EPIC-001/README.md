@@ -14,18 +14,18 @@ Este épico configura toda a infraestrutura de desenvolvimento do projeto seguin
 
 ## 🗂️ User Stories
 
-| ID | Título | Estimativa | Status |
-|----|--------|------------|--------|
-| [US-001-001](./US-001-001-setup-inicial.md) | Setup Inicial do Projeto | 4h | 📋 Backlog |
-| [US-001-002](./US-001-002-estrutura-backend.md) | Estrutura do Backend (NestJS + DDD) | 6h | 📋 Backlog |
-| [US-001-003](./US-001-003-estrutura-frontend.md) | Estrutura do Frontend (Next.js) | 5h | 📋 Backlog |
-| [US-001-004](./US-001-004-docker-compose.md) | Docker Compose Completo | 4h | 📋 Backlog |
-| [US-001-005](./US-001-005-qualidade-codigo.md) | Qualidade de Código (Lint, Format, Hooks) | 3h | 📋 Backlog |
-| [US-001-006](./US-001-006-testes-backend.md) | Configuração de Testes Backend | 4h | 📋 Backlog |
-| [US-001-007](./US-001-007-testes-frontend.md) | Configuração de Testes Frontend | 4h | 📋 Backlog |
-| [US-001-008](./US-001-008-ci-cd.md) | Pipeline CI/CD (GitHub Actions) | 5h | 📋 Backlog |
-| [US-001-009](./US-001-009-observabilidade.md) | Logging e Métricas | 3h | 📋 Backlog |
-| [US-001-010](./US-001-010-documentacao.md) | Documentação e Seed | 3h | 📋 Backlog |
+| ID                                               | Título                                    | Estimativa | Status     |
+| ------------------------------------------------ | ----------------------------------------- | ---------- | ---------- |
+| [US-001-001](./US-001-001-setup-inicial.md)      | Setup Inicial do Projeto                  | 4h         | 📋 Backlog |
+| [US-001-002](./US-001-002-estrutura-backend.md)  | Estrutura do Backend (NestJS + DDD)       | 6h         | 📋 Backlog |
+| [US-001-003](./US-001-003-estrutura-frontend.md) | Estrutura do Frontend (Next.js)           | 5h         | 📋 Backlog |
+| [US-001-004](./US-001-004-docker-compose.md)     | Docker Compose Completo                   | 4h         | 📋 Backlog |
+| [US-001-005](./US-001-005-qualidade-codigo.md)   | Qualidade de Código (Lint, Format, Hooks) | 3h         | 📋 Backlog |
+| [US-001-006](./US-001-006-testes-backend.md)     | Configuração de Testes Backend            | 4h         | 📋 Backlog |
+| [US-001-007](./US-001-007-testes-frontend.md)    | Configuração de Testes Frontend           | 4h         | 📋 Backlog |
+| [US-001-008](./US-001-008-ci-cd.md)              | Pipeline CI/CD (GitHub Actions)           | 5h         | 📋 Backlog |
+| [US-001-009](./US-001-009-observabilidade.md)    | Logging e Métricas                        | 3h         | 📋 Backlog |
+| [US-001-010](./US-001-010-documentacao.md)       | Documentação e Seed                       | 3h         | 📋 Backlog |
 
 ---
 
@@ -70,6 +70,7 @@ US-001-001 (Setup Inicial)
 ### Formato dos Prompts
 
 Cada US contém:
+
 - Contexto e objetivo
 - Critérios de aceite (checklist)
 - Tasks técnicas detalhadas
@@ -107,4 +108,3 @@ Cada US contém:
 - [ADR-002: Stack Tecnológica](../../architecture/adrs/ADR-002-stack-tecnologica.md)
 - [ADR-007: Containerização](../../architecture/adrs/ADR-007-containerizacao.md)
 - [ADR-009: Estratégia de Testes](../../architecture/adrs/ADR-009-estrategia-testes.md)
-

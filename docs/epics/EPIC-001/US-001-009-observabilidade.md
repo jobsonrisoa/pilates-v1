@@ -2,15 +2,15 @@
 
 ## 📋 Informações
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | US-001-009 |
-| **Épico** | EPIC-001 |
-| **Título** | Logging e Métricas |
-| **Estimativa** | 3 horas |
-| **Prioridade** | 🟡 Média |
-| **Dependências** | US-001-002 |
-| **Status** | 📋 Backlog |
+| Campo            | Valor              |
+| ---------------- | ------------------ |
+| **ID**           | US-001-009         |
+| **Épico**        | EPIC-001           |
+| **Título**       | Logging e Métricas |
+| **Estimativa**   | 3 horas            |
+| **Prioridade**   | 🟡 Média           |
+| **Dependências** | US-001-002         |
+| **Status**       | 📋 Backlog         |
 
 ---
 
@@ -45,25 +45,30 @@
 
 ```markdown
 ## Contexto
+
 Backend NestJS. Preciso de observabilidade básica para
 desenvolvimento e produção.
 
 ## Tarefa
+
 Configure:
 
 ### 1. Pino Logger
+
 - nestjs-pino
 - JSON em prod, pretty em dev
 - Redact: password, token, cpf, authorization
 - Request/response logging
 
 ### 2. Prometheus Metrics
+
 - @willsoto/nestjs-prometheus
 - /metrics endpoint
 - Métricas padrão (http, nodejs)
 - Métricas customizadas
 
 ### 3. Sentry (opcional)
+
 - @sentry/node
 - Apenas em produção
 - Filter de erros 4xx
@@ -160,4 +165,3 @@ export class MetricsModule {}
 ## 🔗 Próxima User Story
 
 → [US-001-010: Documentação e Seed](./US-001-010-documentacao.md)
-

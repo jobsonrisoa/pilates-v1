@@ -2,21 +2,22 @@
 
 ## 📋 Informações Gerais
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | EPIC-007 |
-| **Título** | Matrículas Básicas |
-| **Fase** | 1 - MVP |
-| **Prioridade** | 🟠 Alta |
-| **Estimativa** | 1 semana |
+| Campo            | Valor                               |
+| ---------------- | ----------------------------------- |
+| **ID**           | EPIC-007                            |
+| **Título**       | Matrículas Básicas                  |
+| **Fase**         | 1 - MVP                             |
+| **Prioridade**   | 🟠 Alta                             |
+| **Estimativa**   | 1 semana                            |
 | **Dependências** | EPIC-003 (Alunos), EPIC-005 (Aulas) |
-| **Status** | 📋 Backlog |
+| **Status**       | 📋 Backlog                          |
 
 ---
 
 ## 📝 Descrição
 
 Implementar sistema básico de matrículas para o MVP:
+
 - Vincular aluno a um plano
 - Definir horários da matrícula
 - Status de matrícula
@@ -38,11 +39,13 @@ Implementar sistema básico de matrículas para o MVP:
 ## 👤 User Stories
 
 ### US-007-001: Criar Matrícula
+
 **Como** recepcionista  
 **Quero** matricular um aluno em um plano  
 **Para** que ele comece as aulas
 
 **Critérios de Aceite:**
+
 - [ ] Selecionar aluno
 - [ ] Selecionar plano (1x, 2x, 3x semana)
 - [ ] Definir horários
@@ -52,11 +55,13 @@ Implementar sistema básico de matrículas para o MVP:
 ---
 
 ### US-007-002: Listar Matrículas
+
 **Como** usuário do sistema  
 **Quero** ver todas as matrículas  
 **Para** ter visão geral
 
 **Critérios de Aceite:**
+
 - [ ] Listagem paginada
 - [ ] Filtros por status
 - [ ] Busca por aluno
@@ -64,11 +69,13 @@ Implementar sistema básico de matrículas para o MVP:
 ---
 
 ### US-007-003: Gerenciar Status
+
 **Como** gerente  
 **Quero** alterar status de matrículas  
 **Para** controlar situação dos alunos
 
 **Critérios de Aceite:**
+
 - [ ] Ativar matrícula
 - [ ] Suspender (inadimplência)
 - [ ] Cancelar
@@ -77,11 +84,13 @@ Implementar sistema básico de matrículas para o MVP:
 ---
 
 ### US-007-004: Ver Matrículas do Aluno
+
 **Como** recepcionista  
 **Quero** ver matrículas de um aluno  
 **Para** entender sua situação
 
 **Critérios de Aceite:**
+
 - [ ] Na página do aluno
 - [ ] Histórico completo
 - [ ] Matrícula atual destacada
@@ -93,6 +102,7 @@ Implementar sistema básico de matrículas para o MVP:
 ### Backend
 
 #### TASK-007-001: Schema de Matrículas
+
 **Estimativa:** 2h
 
 ```prisma
@@ -119,6 +129,7 @@ enum EnrollmentStatus {
 ---
 
 #### TASK-007-002: Schema de Planos (básico)
+
 **Estimativa:** 1h
 
 ```prisma
@@ -134,11 +145,13 @@ model Plan {
 ---
 
 #### TASK-007-003: CRUD de Planos
+
 **Estimativa:** 2h
 
 ---
 
 #### TASK-007-004: CRUD de Matrículas
+
 **Estimativa:** 4h
 
 - POST /enrollments
@@ -150,6 +163,7 @@ model Plan {
 ---
 
 #### TASK-007-005: Vinculação com Horários
+
 **Estimativa:** 2h
 
 - Definir horários da matrícula
@@ -160,6 +174,7 @@ model Plan {
 ### Frontend
 
 #### TASK-007-006: Wizard de Matrícula
+
 **Estimativa:** 5h
 
 - Step 1: Selecionar aluno
@@ -171,16 +186,19 @@ model Plan {
 ---
 
 #### TASK-007-007: Listagem de Matrículas
+
 **Estimativa:** 3h
 
 ---
 
 #### TASK-007-008: Detalhes da Matrícula
+
 **Estimativa:** 2h
 
 ---
 
 #### TASK-007-009: Integração na Página do Aluno
+
 **Estimativa:** 2h
 
 ---
@@ -208,4 +226,3 @@ model Plan {
 - **EPIC-009:** Integração Sicoob
 - **EPIC-010:** Controle de Pagamentos
 - **EPIC-014:** Contratos Digitais
-

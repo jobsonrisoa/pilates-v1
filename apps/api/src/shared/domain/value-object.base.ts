@@ -15,5 +15,3 @@ export abstract class ValueObject<T> {
     return JSON.stringify(this.props) === JSON.stringify(vo.props);
   }
 }
-
-

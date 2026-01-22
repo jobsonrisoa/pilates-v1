@@ -4,7 +4,7 @@ import {
   DiskHealthIndicator,
   HealthCheck,
   HealthCheckService,
-  MemoryHealthIndicator
+  MemoryHealthIndicator,
 } from '@nestjs/terminus';
 
 import { PrismaHealthIndicator } from '@/modules/health/prisma.health-indicator';
@@ -16,7 +16,7 @@ export class HealthController {
     private readonly health: HealthCheckService,
     private readonly prisma: PrismaHealthIndicator,
     private readonly memory: MemoryHealthIndicator,
-    private readonly disk: DiskHealthIndicator
+    private readonly disk: DiskHealthIndicator,
   ) {}
 
   @Get()
@@ -26,7 +26,7 @@ export class HealthController {
     return this.health.check([
       () => this.prisma.isHealthy('database'),
       () => this.memory.checkHeap('memory_heap', 300 * 1024 * 1024),
-      () => this.disk.checkStorage('storage', { path: '/', thresholdPercent: 0.9 })
+      () => this.disk.checkStorage('storage', { path: '/', thresholdPercent: 0.9 }),
     ]);
   }
 
@@ -43,5 +43,3 @@ export class HealthController {
     return this.health.check([() => this.prisma.isHealthy('database')]);
   }
 }
-
-

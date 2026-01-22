@@ -14,5 +14,3 @@ export abstract class AggregateRoot<T extends EntityProps> extends Entity<T> {
     return events;
   }
 }
-
-

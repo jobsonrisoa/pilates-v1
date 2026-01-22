@@ -8,6 +8,7 @@
 ## Contexto
 
 O projeto precisa de:
+
 - Pipeline de CI automatizado
 - Deploy simplificado
 - Suporte a TDD (testes no pipeline)
@@ -19,6 +20,7 @@ O projeto precisa de:
 ### GitHub Actions para CI/CD
 
 **Pipeline Principal:**
+
 ```yaml
 # .github/workflows/ci.yml
 name: CI/CD Pipeline
@@ -42,24 +44,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
-          
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
-          
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        
+
       - name: Run ESLint
         run: pnpm lint
-        
+
       - name: Run Type Check
         run: pnpm typecheck
 
@@ -75,24 +77,24 @@ jobs:
         app: [api, web]
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
-          
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
-          
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        
+
       - name: Run Unit Tests
         run: pnpm --filter ${{ matrix.app }} test:unit
-        
+
       - name: Upload Coverage
         uses: codecov/codecov-action@v3
         with:
@@ -131,36 +133,36 @@ jobs:
           --health-retries=5
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
-          
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
-          
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        
+
       - name: Generate Prisma Client
         run: pnpm --filter api prisma generate
-        
+
       - name: Run Migrations
         run: pnpm --filter api prisma migrate deploy
         env:
           DATABASE_URL: mysql://root:testpassword@localhost:3306/pilates_test
-          
+
       - name: Run Integration Tests
         run: pnpm --filter api test:integration
         env:
           DATABASE_URL: mysql://root:testpassword@localhost:3306/pilates_test
           REDIS_URL: redis://localhost:6379
           JWT_SECRET: test-secret-key-for-ci
-          
+
       - name: Upload Coverage
         uses: codecov/codecov-action@v3
         with:
@@ -177,34 +179,34 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
-          
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
-          
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        
+
       - name: Install Playwright
         run: pnpm --filter web exec playwright install --with-deps chromium
-        
+
       - name: Start services
         run: docker compose -f docker-compose.test.yml up -d
-        
+
       - name: Wait for services
         run: |
           timeout 60 bash -c 'until curl -s http://localhost:3001/health; do sleep 2; done'
-          
+
       - name: Run E2E Tests
         run: pnpm --filter web test:e2e
-        
+
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v3
         if: failure()
@@ -228,17 +230,17 @@ jobs:
         app: [api, web]
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-        
+
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Extract metadata
         id: meta
         uses: docker/metadata-action@v5
@@ -248,7 +250,7 @@ jobs:
             type=ref,event=branch
             type=sha,prefix=
             type=raw,value=latest,enable={{is_default_branch}}
-            
+
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
@@ -307,7 +309,7 @@ jobs:
             docker compose pull
             docker compose up -d --remove-orphans
             docker system prune -f
-            
+
       - name: Notify Sentry of Release
         uses: getsentry/action-release@v1
         env:
@@ -337,7 +339,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          
+
       - name: Check PR size
         run: |
           ADDITIONS=$(git diff --numstat origin/${{ github.base_ref }}...HEAD | awk '{s+=$1} END {print s}')
@@ -468,7 +470,7 @@ services:
       - ./apps/api/src:/app/apps/api/src
       - ./apps/api/prisma:/app/apps/api/prisma
     ports:
-      - "3001:3000"
+      - '3001:3000'
     environment:
       - NODE_ENV=development
       - DATABASE_URL=mysql://pilates:pilates@mysql:3306/pilates_dev
@@ -491,7 +493,7 @@ services:
       - ./apps/web/components:/app/apps/web/components
       - ./apps/web/lib:/app/apps/web/lib
     ports:
-      - "3000:3000"
+      - '3000:3000'
     environment:
       - NODE_ENV=development
       - NEXT_PUBLIC_API_URL=http://localhost:3001
@@ -506,9 +508,9 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - '3306:3306'
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
       interval: 10s
       timeout: 5s
       retries: 5
@@ -518,9 +520,9 @@ services:
     volumes:
       - redis_data:/data
     ports:
-      - "6379:6379"
+      - '6379:6379'
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ['CMD', 'redis-cli', 'ping']
       interval: 10s
       timeout: 5s
       retries: 5
@@ -528,8 +530,8 @@ services:
   mailhog:
     image: mailhog/mailhog
     ports:
-      - "1025:1025"
-      - "8025:8025"
+      - '1025:1025'
+      - '8025:8025'
 
   minio:
     image: minio/minio
@@ -540,8 +542,8 @@ services:
     volumes:
       - minio_data:/data
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - '9000:9000'
+      - '9001:9001'
 
 volumes:
   mysql_data:
@@ -562,6 +564,7 @@ main (produção)
 ```
 
 **Regras:**
+
 - `main`: Sempre deployável, proteção de branch
 - `develop`: Integração contínua, deploy automático para staging
 - `feature/*`: Requer PR aprovada para develop
@@ -588,37 +591,38 @@ coverage:
 
 ### Checklist de Merge
 
-| Verificação | Bloqueante | Descrição |
-|-------------|------------|-----------|
-| Lint Pass | ✅ Sim | Zero erros de ESLint |
-| Type Check | ✅ Sim | Zero erros TypeScript |
-| Unit Tests | ✅ Sim | 100% passando |
-| Coverage ≥ 80% | ✅ Sim | Linhas e funções |
-| Integration Tests | ✅ Sim | 100% passando |
-| E2E Tests (main) | ✅ Sim | Fluxos críticos |
-| Performance (main) | ⚠️ Warning | P95 < 500ms |
-| PR Size < 500 lines | ⚠️ Warning | Recomendação |
+| Verificação         | Bloqueante | Descrição             |
+| ------------------- | ---------- | --------------------- |
+| Lint Pass           | ✅ Sim     | Zero erros de ESLint  |
+| Type Check          | ✅ Sim     | Zero erros TypeScript |
+| Unit Tests          | ✅ Sim     | 100% passando         |
+| Coverage ≥ 80%      | ✅ Sim     | Linhas e funções      |
+| Integration Tests   | ✅ Sim     | 100% passando         |
+| E2E Tests (main)    | ✅ Sim     | Fluxos críticos       |
+| Performance (main)  | ⚠️ Warning | P95 < 500ms           |
+| PR Size < 500 lines | ⚠️ Warning | Recomendação          |
 
 ### Testes por Ambiente
 
 | Ambiente | Unit | Integration | E2E | Performance |
-|----------|------|-------------|-----|-------------|
-| PR | ✅ | ✅ | ❌ | ❌ |
-| develop | ✅ | ✅ | ✅ | ❌ |
-| main | ✅ | ✅ | ✅ | ✅ |
+| -------- | ---- | ----------- | --- | ----------- |
+| PR       | ✅   | ✅          | ❌  | ❌          |
+| develop  | ✅   | ✅          | ✅  | ❌          |
+| main     | ✅   | ✅          | ✅  | ✅          |
 
 ## Custos
 
-| Serviço | Limite Gratuito | Uso Esperado |
-|---------|-----------------|--------------|
-| GitHub Actions | 2000 min/mês (privado) | ~800 min/mês |
-| GitHub Packages | 500MB storage | ~200MB |
-| Codecov | Gratuito open source | ✓ |
-| **Total** | | **$0** |
+| Serviço         | Limite Gratuito        | Uso Esperado |
+| --------------- | ---------------------- | ------------ |
+| GitHub Actions  | 2000 min/mês (privado) | ~800 min/mês |
+| GitHub Packages | 500MB storage          | ~200MB       |
+| Codecov         | Gratuito open source   | ✓            |
+| **Total**       |                        | **$0**       |
 
 ## Consequências
 
 ### Positivas
+
 - ✅ Pipeline completo de CI/CD
 - ✅ Testes automatizados obrigatórios
 - ✅ Deploy zero-downtime
@@ -626,6 +630,7 @@ coverage:
 - ✅ Images otimizadas (multi-stage)
 
 ### Negativas
+
 - ⚠️ Pipeline pode ser lento (~10min)
 - ⚠️ Dependência do GitHub
 
@@ -634,4 +639,3 @@ coverage:
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [Docker Multi-stage Builds](https://docs.docker.com/build/building/multi-stage/)
 - [NestJS Docker Best Practices](https://docs.nestjs.com/recipes/terminus)
-

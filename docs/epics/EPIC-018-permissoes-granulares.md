@@ -2,21 +2,22 @@
 
 ## 📋 Informações Gerais
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | EPIC-018 |
-| **Título** | Permissões Granulares |
-| **Fase** | 4 - Refinamento |
-| **Prioridade** | 🟡 Média |
-| **Estimativa** | 1 semana |
+| Campo            | Valor                   |
+| ---------------- | ----------------------- |
+| **ID**           | EPIC-018                |
+| **Título**       | Permissões Granulares   |
+| **Fase**         | 4 - Refinamento         |
+| **Prioridade**   | 🟡 Média                |
+| **Estimativa**   | 1 semana                |
 | **Dependências** | EPIC-002 (Autenticação) |
-| **Status** | 📋 Backlog |
+| **Status**       | 📋 Backlog              |
 
 ---
 
 ## 📝 Descrição
 
 Expandir o sistema RBAC com:
+
 - Interface para gerenciar permissões
 - Criação de perfis customizados
 - Permissões por módulo/ação
@@ -37,11 +38,13 @@ Expandir o sistema RBAC com:
 ## 👤 User Stories
 
 ### US-018-001: Criar Perfil Customizado
+
 **Como** super admin  
 **Quero** criar novos perfis de acesso  
 **Para** atender necessidades específicas
 
 **Critérios de Aceite:**
+
 - [ ] Nome e descrição do perfil
 - [ ] Seleção de permissões
 - [ ] Ativar/desativar perfil
@@ -49,11 +52,13 @@ Expandir o sistema RBAC com:
 ---
 
 ### US-018-002: Editar Permissões de Perfil
+
 **Como** super admin  
 **Quero** editar permissões de um perfil  
 **Para** ajustar acessos
 
 **Critérios de Aceite:**
+
 - [ ] Interface de checkbox por recurso/ação
 - [ ] Agrupamento por módulo
 - [ ] Salvar alterações
@@ -62,11 +67,13 @@ Expandir o sistema RBAC com:
 ---
 
 ### US-018-003: Atribuir Múltiplos Perfis
+
 **Como** admin  
 **Quero** atribuir múltiplos perfis a um usuário  
 **Para** combinar permissões
 
 **Critérios de Aceite:**
+
 - [ ] Seleção múltipla
 - [ ] Permissões combinadas (união)
 - [ ] Visualização do resultado
@@ -74,11 +81,13 @@ Expandir o sistema RBAC com:
 ---
 
 ### US-018-004: Visualizar Matriz de Permissões
+
 **Como** admin  
 **Quero** ver matriz completa de permissões  
 **Para** entender quem pode o quê
 
 **Critérios de Aceite:**
+
 - [ ] Matriz perfil x permissão
 - [ ] Exportação
 - [ ] Filtros
@@ -86,11 +95,13 @@ Expandir o sistema RBAC com:
 ---
 
 ### US-018-005: Histórico de Alterações
+
 **Como** super admin  
 **Quero** ver histórico de mudanças em permissões  
 **Para** auditoria
 
 **Critérios de Aceite:**
+
 - [ ] Quem alterou
 - [ ] O que mudou
 - [ ] Quando
@@ -102,6 +113,7 @@ Expandir o sistema RBAC com:
 ### Backend
 
 #### TASK-018-001: Expandir Schema de Permissões
+
 **Estimativa:** 2h
 
 - Permissões mais granulares
@@ -110,6 +122,7 @@ Expandir o sistema RBAC com:
 ---
 
 #### TASK-018-002: CRUD de Perfis
+
 **Estimativa:** 3h
 
 - Criação de perfis customizados
@@ -118,6 +131,7 @@ Expandir o sistema RBAC com:
 ---
 
 #### TASK-018-003: API de Gestão de Permissões
+
 **Estimativa:** 3h
 
 - GET /permissions (todas disponíveis)
@@ -127,6 +141,7 @@ Expandir o sistema RBAC com:
 ---
 
 #### TASK-018-004: Auditoria de Permissões
+
 **Estimativa:** 2h
 
 - Log de todas alterações
@@ -137,6 +152,7 @@ Expandir o sistema RBAC com:
 ### Frontend
 
 #### TASK-018-005: Página de Gestão de Perfis
+
 **Estimativa:** 5h
 
 - Lista de perfis
@@ -146,6 +162,7 @@ Expandir o sistema RBAC com:
 ---
 
 #### TASK-018-006: Componente de Seleção de Permissões
+
 **Estimativa:** 4h
 
 - Árvore de permissões
@@ -155,6 +172,7 @@ Expandir o sistema RBAC com:
 ---
 
 #### TASK-018-007: Página de Matriz
+
 **Estimativa:** 3h
 
 - Visualização matricial
@@ -176,4 +194,3 @@ Expandir o sistema RBAC com:
 ## 📅 Timeline Sugerido
 
 **Total estimado:** ~22 horas (~1 semana)
-

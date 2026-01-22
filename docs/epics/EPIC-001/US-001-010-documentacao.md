@@ -2,15 +2,15 @@
 
 ## 📋 Informações
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | US-001-010 |
-| **Épico** | EPIC-001 |
-| **Título** | Documentação e Seed |
-| **Estimativa** | 3 horas |
-| **Prioridade** | 🟡 Média |
-| **Dependências** | Todas anteriores |
-| **Status** | 📋 Backlog |
+| Campo            | Valor               |
+| ---------------- | ------------------- |
+| **ID**           | US-001-010          |
+| **Épico**        | EPIC-001            |
+| **Título**       | Documentação e Seed |
+| **Estimativa**   | 3 horas             |
+| **Prioridade**   | 🟡 Média            |
+| **Dependências** | Todas anteriores    |
+| **Status**       | 📋 Backlog          |
 
 ---
 
@@ -44,18 +44,22 @@
 
 ```markdown
 ## Contexto
+
 Finalizando setup do ambiente. Preciso de documentação
 e dados de teste para facilitar o desenvolvimento.
 
 ## Tarefa
 
 ### 1. Seed (prisma/seed.ts)
+
 Criar:
+
 - Usuário admin (admin@pilates.com / Admin@123)
 - Roles: Super Admin, Admin, Gerente, Recepção, Professor, Financeiro
 - Permissões básicas
 
 ### 2. README.md
+
 - Quick start em 3 passos
 - Tabela de acessos
 - Comandos make
@@ -63,12 +67,14 @@ Criar:
 - Tech stack
 
 ### 3. CONTRIBUTING.md
+
 - Fluxo de trabalho
 - Conventional commits
 - Code review
 - TDD workflow
 
 ### 4. .env.example
+
 - Todas variáveis documentadas
 - Valores de exemplo
 ```
@@ -109,7 +115,7 @@ async function main() {
 
   // Criar admin user
   const passwordHash = await bcrypt.hash('Admin@123', 12);
-  
+
   const adminUser = await prisma.user.upsert({
     where: { email: 'admin@pilates.com' },
     update: {},
@@ -161,7 +167,7 @@ main()
 
 ## 📝 CONTRIBUTING.md
 
-```markdown
+````markdown
 # Guia de Contribuição
 
 ## Fluxo de Trabalho
@@ -172,6 +178,7 @@ main()
    git pull
    git checkout -b feature/nome-da-feature
    ```
+````
 
 2. Desenvolva com TDD
    - RED: Escreva o teste
@@ -179,6 +186,7 @@ main()
    - REFACTOR: Melhore
 
 3. Commit seguindo Conventional Commits
+
    ```bash
    git commit -m "feat: adiciona cadastro de alunos"
    ```
@@ -208,6 +216,7 @@ main()
 2. GREEN  → Implemente código mínimo
 3. REFACTOR → Melhore mantendo verde
 ```
+
 ```
 
 ---
@@ -231,3 +240,4 @@ main()
 
 Próximo épico: [EPIC-002: Autenticação e Autorização](../EPIC-002-autenticacao.md)
 
+```

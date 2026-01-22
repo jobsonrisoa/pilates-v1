@@ -2,21 +2,22 @@
 
 ## 📋 Informações Gerais
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | EPIC-005 |
-| **Título** | Gestão de Aulas e Horários |
-| **Fase** | 1 - MVP |
-| **Prioridade** | 🟠 Alta |
-| **Estimativa** | 1.5 semanas |
-| **Dependências** | EPIC-004 (Professores) |
-| **Status** | 📋 Backlog |
+| Campo            | Valor                      |
+| ---------------- | -------------------------- |
+| **ID**           | EPIC-005                   |
+| **Título**       | Gestão de Aulas e Horários |
+| **Fase**         | 1 - MVP                    |
+| **Prioridade**   | 🟠 Alta                    |
+| **Estimativa**   | 1.5 semanas                |
+| **Dependências** | EPIC-004 (Professores)     |
+| **Status**       | 📋 Backlog                 |
 
 ---
 
 ## 📝 Descrição
 
 Implementar gestão de modalidades, tipos de aula e grade de horários:
+
 - Cadastro de modalidades (Pilates, Fisioterapia)
 - Tipos de aula (Individual, Dupla, Grupo)
 - Grade de horários semanal
@@ -36,11 +37,13 @@ Implementar gestão de modalidades, tipos de aula e grade de horários:
 ## 👤 User Stories
 
 ### US-005-001: Gerenciar Modalidades
+
 **Como** administrador  
 **Quero** cadastrar modalidades de aula  
 **Para** definir o que a academia oferece
 
 **Critérios de Aceite:**
+
 - [ ] CRUD de modalidades
 - [ ] Nome e descrição
 - [ ] Ativar/desativar
@@ -48,11 +51,13 @@ Implementar gestão de modalidades, tipos de aula e grade de horários:
 ---
 
 ### US-005-002: Gerenciar Tipos de Aula
+
 **Como** administrador  
 **Quero** definir tipos de aula por modalidade  
 **Para** configurar capacidades e durações
 
 **Critérios de Aceite:**
+
 - [ ] Tipos: Individual, Dupla, Grupo
 - [ ] Capacidade máxima
 - [ ] Duração em minutos
@@ -61,11 +66,13 @@ Implementar gestão de modalidades, tipos de aula e grade de horários:
 ---
 
 ### US-005-003: Criar Grade de Horários
+
 **Como** gerente  
 **Quero** definir a grade semanal de aulas  
 **Para** organizar os horários disponíveis
 
 **Critérios de Aceite:**
+
 - [ ] Selecionar dia da semana
 - [ ] Horário início/fim
 - [ ] Professor responsável
@@ -75,11 +82,13 @@ Implementar gestão de modalidades, tipos de aula e grade de horários:
 ---
 
 ### US-005-004: Visualizar Grade Semanal
+
 **Como** usuário do sistema  
 **Quero** ver a grade de horários da semana  
 **Para** entender a disponibilidade
 
 **Critérios de Aceite:**
+
 - [ ] Visualização em grade (tabela)
 - [ ] Filtro por professor
 - [ ] Filtro por modalidade
@@ -92,6 +101,7 @@ Implementar gestão de modalidades, tipos de aula e grade de horários:
 ### Backend
 
 #### TASK-005-001: Schema de Modalidades e Tipos
+
 **Estimativa:** 2h
 
 ```prisma
@@ -115,16 +125,19 @@ model ClassType {
 ---
 
 #### TASK-005-002: CRUD Modalidades
+
 **Estimativa:** 2h
 
 ---
 
 #### TASK-005-003: CRUD Tipos de Aula
+
 **Estimativa:** 2h
 
 ---
 
 #### TASK-005-004: Schema de Grade (Schedules)
+
 **Estimativa:** 2h
 
 ```prisma
@@ -144,11 +157,13 @@ model Schedule {
 ---
 
 #### TASK-005-005: CRUD Grade de Horários
+
 **Estimativa:** 4h
 
 ---
 
 #### TASK-005-006: Validações de Conflito
+
 **Estimativa:** 2h
 
 - Professor não pode ter dois horários sobrepostos
@@ -159,16 +174,19 @@ model Schedule {
 ### Frontend
 
 #### TASK-005-007: Página de Modalidades
+
 **Estimativa:** 3h
 
 ---
 
 #### TASK-005-008: Página de Tipos de Aula
+
 **Estimativa:** 3h
 
 ---
 
 #### TASK-005-009: Página de Grade de Horários
+
 **Estimativa:** 5h
 
 - Visualização em tabela semanal
@@ -178,6 +196,7 @@ model Schedule {
 ---
 
 #### TASK-005-010: Filtros e Visualizações
+
 **Estimativa:** 2h
 
 ---
@@ -196,4 +215,3 @@ model Schedule {
 ## 📅 Timeline Sugerido
 
 **Total estimado:** ~27 horas (~1.5 semanas)
-

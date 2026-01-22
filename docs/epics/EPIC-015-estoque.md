@@ -2,21 +2,22 @@
 
 ## 📋 Informações Gerais
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | EPIC-015 |
-| **Título** | Gestão de Estoque |
-| **Fase** | 3 - Operacional |
-| **Prioridade** | 🟡 Média |
-| **Estimativa** | 1.5 semanas |
-| **Dependências** | EPIC-001 (Setup) |
-| **Status** | 📋 Backlog |
+| Campo            | Valor             |
+| ---------------- | ----------------- |
+| **ID**           | EPIC-015          |
+| **Título**       | Gestão de Estoque |
+| **Fase**         | 3 - Operacional   |
+| **Prioridade**   | 🟡 Média          |
+| **Estimativa**   | 1.5 semanas       |
+| **Dependências** | EPIC-001 (Setup)  |
+| **Status**       | 📋 Backlog        |
 
 ---
 
 ## 📝 Descrição
 
 Implementar controle de estoque e vendas:
+
 - Cadastro de produtos
 - Controle de quantidade
 - Movimentações (entrada/saída)
@@ -37,11 +38,13 @@ Implementar controle de estoque e vendas:
 ## 👤 User Stories
 
 ### US-015-001: Cadastrar Produto
+
 **Como** administrador  
 **Quero** cadastrar produtos no sistema  
 **Para** controlar o estoque
 
 **Critérios de Aceite:**
+
 - [ ] Nome, descrição, código
 - [ ] Preço de custo e venda
 - [ ] Quantidade inicial
@@ -50,11 +53,13 @@ Implementar controle de estoque e vendas:
 ---
 
 ### US-015-002: Registrar Entrada de Estoque
+
 **Como** administrador  
 **Quero** registrar entradas de produtos  
 **Para** atualizar o estoque
 
 **Critérios de Aceite:**
+
 - [ ] Quantidade entrando
 - [ ] Motivo (compra, devolução)
 - [ ] Referência (nota fiscal)
@@ -63,11 +68,13 @@ Implementar controle de estoque e vendas:
 ---
 
 ### US-015-003: Registrar Saída de Estoque
+
 **Como** usuário  
 **Quero** registrar saídas de produtos  
 **Para** controlar o consumo
 
 **Critérios de Aceite:**
+
 - [ ] Quantidade saindo
 - [ ] Motivo (venda, uso interno, perda)
 - [ ] Atualização automática
@@ -75,11 +82,13 @@ Implementar controle de estoque e vendas:
 ---
 
 ### US-015-004: Realizar Venda
+
 **Como** recepcionista  
 **Quero** registrar venda de produto  
 **Para** faturar e baixar estoque
 
 **Critérios de Aceite:**
+
 - [ ] Selecionar produtos
 - [ ] Informar quantidade
 - [ ] Forma de pagamento
@@ -89,11 +98,13 @@ Implementar controle de estoque e vendas:
 ---
 
 ### US-015-005: Alertas de Estoque Mínimo
+
 **Como** administrador  
 **Quero** ser alertado quando estoque baixo  
 **Para** repor a tempo
 
 **Critérios de Aceite:**
+
 - [ ] Configurar mínimo por produto
 - [ ] Alerta visual no sistema
 - [ ] Email de alerta
@@ -101,11 +112,13 @@ Implementar controle de estoque e vendas:
 ---
 
 ### US-015-006: Relatório de Vendas
+
 **Como** gerente  
 **Quero** relatório de vendas de produtos  
 **Para** acompanhar o faturamento
 
 **Critérios de Aceite:**
+
 - [ ] Por período
 - [ ] Por produto
 - [ ] Totais
@@ -118,6 +131,7 @@ Implementar controle de estoque e vendas:
 ### Backend
 
 #### TASK-015-001: Schema de Estoque
+
 **Estimativa:** 2h
 
 ```prisma
@@ -166,11 +180,13 @@ model SaleItem {
 ---
 
 #### TASK-015-002: CRUD de Produtos
+
 **Estimativa:** 3h
 
 ---
 
 #### TASK-015-003: API de Movimentações
+
 **Estimativa:** 3h
 
 - POST /products/:id/movements
@@ -179,6 +195,7 @@ model SaleItem {
 ---
 
 #### TASK-015-004: API de Vendas
+
 **Estimativa:** 4h
 
 - POST /sales
@@ -188,11 +205,13 @@ model SaleItem {
 ---
 
 #### TASK-015-005: Job de Alerta de Estoque
+
 **Estimativa:** 2h
 
 ---
 
 #### TASK-015-006: API de Relatório de Vendas
+
 **Estimativa:** 2h
 
 ---
@@ -200,6 +219,7 @@ model SaleItem {
 ### Frontend
 
 #### TASK-015-007: Página de Produtos
+
 **Estimativa:** 4h
 
 - Listagem
@@ -209,6 +229,7 @@ model SaleItem {
 ---
 
 #### TASK-015-008: Página de Movimentações
+
 **Estimativa:** 3h
 
 - Histórico
@@ -218,6 +239,7 @@ model SaleItem {
 ---
 
 #### TASK-015-009: Página de PDV (Vendas)
+
 **Estimativa:** 5h
 
 - Seleção de produtos
@@ -228,6 +250,7 @@ model SaleItem {
 ---
 
 #### TASK-015-010: Dashboard de Estoque
+
 **Estimativa:** 3h
 
 - Produtos com estoque baixo
@@ -251,4 +274,3 @@ model SaleItem {
 ## 📅 Timeline Sugerido
 
 **Total estimado:** ~31 horas (~1.5 semanas)
-

@@ -2,15 +2,15 @@
 
 ## 📋 Informações
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | US-001-005 |
-| **Épico** | EPIC-001 |
-| **Título** | Qualidade de Código |
-| **Estimativa** | 3 horas |
-| **Prioridade** | 🟠 Alta |
+| Campo            | Valor                  |
+| ---------------- | ---------------------- |
+| **ID**           | US-001-005             |
+| **Épico**        | EPIC-001               |
+| **Título**       | Qualidade de Código    |
+| **Estimativa**   | 3 horas                |
+| **Prioridade**   | 🟠 Alta                |
 | **Dependências** | US-001-002, US-001-003 |
-| **Status** | 📋 Backlog |
+| **Status**       | 📋 Backlog             |
 
 ---
 
@@ -48,13 +48,16 @@
 
 ```markdown
 ## Contexto
+
 Monorepo com pnpm workspaces. Backend NestJS em apps/api, Frontend Next.js em apps/web.
 Preciso configurar ferramentas de qualidade de código.
 
 ## Tarefa
+
 Configure as ferramentas de qualidade:
 
 ### 1. ESLint
+
 - Config compartilhada no root
 - Extend para NestJS no backend
 - Extend para Next.js no frontend
@@ -62,6 +65,7 @@ Configure as ferramentas de qualidade:
 - Import ordering
 
 ### 2. Prettier
+
 - Config no root
 - Semi: true
 - Single quotes
@@ -69,22 +73,26 @@ Configure as ferramentas de qualidade:
 - Trailing comma: all
 
 ### 3. Husky + lint-staged
+
 - pre-commit: lint-staged
 - commit-msg: commitlint
 - lint-staged roda apenas nos arquivos modificados
 
 ### 4. Commitlint
+
 - Conventional commits
 - Tipos: feat, fix, docs, style, refactor, test, chore
 - Scope opcional
 
 ### 5. Scripts
+
 - lint: ESLint em todos
 - format: Prettier write
 - format:check: Prettier check
 - typecheck: tsc --noEmit
 
 ## Arquivos necessários
+
 - .eslintrc.js (root)
 - apps/api/.eslintrc.js
 - apps/web/.eslintrc.js
@@ -130,13 +138,7 @@ module.exports = {
     'import/order': [
       'error',
       {
-        groups: [
-          'builtin',
-          'external',
-          'internal',
-          ['parent', 'sibling'],
-          'index',
-        ],
+        groups: ['builtin', 'external', 'internal', ['parent', 'sibling'], 'index'],
         'newlines-between': 'always',
         alphabetize: { order: 'asc', caseInsensitive: true },
       },
@@ -180,17 +182,17 @@ module.exports = {
       2,
       'always',
       [
-        'feat',     // Nova feature
-        'fix',      // Correção de bug
-        'docs',     // Documentação
-        'style',    // Formatação
+        'feat', // Nova feature
+        'fix', // Correção de bug
+        'docs', // Documentação
+        'style', // Formatação
         'refactor', // Refatoração
-        'test',     // Testes
-        'chore',    // Manutenção
-        'perf',     // Performance
-        'ci',       // CI/CD
-        'build',    // Build
-        'revert',   // Revert
+        'test', // Testes
+        'chore', // Manutenção
+        'perf', // Performance
+        'ci', // CI/CD
+        'build', // Build
+        'revert', // Revert
       ],
     ],
     'subject-case': [0],
@@ -231,4 +233,3 @@ npx --no -- commitlint --edit ${1}
 ## 🔗 Próxima User Story
 
 → [US-001-006: Configuração de Testes Backend](./US-001-006-testes-backend.md)
-

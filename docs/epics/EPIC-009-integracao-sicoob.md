@@ -2,21 +2,22 @@
 
 ## 📋 Informações Gerais
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | EPIC-009 |
-| **Título** | Integração Bancária Sicoob |
-| **Fase** | 2 - Financeiro |
-| **Prioridade** | 🔴 Crítica |
-| **Estimativa** | 2 semanas |
+| Campo            | Valor                      |
+| ---------------- | -------------------------- |
+| **ID**           | EPIC-009                   |
+| **Título**       | Integração Bancária Sicoob |
+| **Fase**         | 2 - Financeiro             |
+| **Prioridade**   | 🔴 Crítica                 |
+| **Estimativa**   | 2 semanas                  |
 | **Dependências** | EPIC-008 (Planos e Preços) |
-| **Status** | 📋 Backlog |
+| **Status**       | 📋 Backlog                 |
 
 ---
 
 ## 📝 Descrição
 
 Implementar integração completa com API do Sicoob para:
+
 - Autenticação OAuth2
 - Geração de boletos bancários
 - Geração de cobranças PIX
@@ -37,11 +38,13 @@ Implementar integração completa com API do Sicoob para:
 ## 👤 User Stories
 
 ### US-009-001: Gerar Boleto
+
 **Como** sistema  
 **Quero** gerar boleto automaticamente  
 **Para** cobrar o aluno
 
 **Critérios de Aceite:**
+
 - [ ] Boleto gerado via API Sicoob
 - [ ] Código de barras válido
 - [ ] PDF para download/impressão
@@ -50,11 +53,13 @@ Implementar integração completa com API do Sicoob para:
 ---
 
 ### US-009-002: Gerar PIX
+
 **Como** sistema  
 **Quero** gerar cobrança PIX  
 **Para** oferecer opção de pagamento
 
 **Critérios de Aceite:**
+
 - [ ] QR Code gerado
 - [ ] Código copia e cola
 - [ ] Expiração configurável
@@ -63,11 +68,13 @@ Implementar integração completa com API do Sicoob para:
 ---
 
 ### US-009-003: Receber Webhook de Pagamento
+
 **Como** sistema  
 **Quero** receber notificação quando pagamento for feito  
 **Para** dar baixa automática
 
 **Critérios de Aceite:**
+
 - [ ] Endpoint de webhook seguro
 - [ ] Validação de assinatura
 - [ ] Atualização do status
@@ -76,11 +83,13 @@ Implementar integração completa com API do Sicoob para:
 ---
 
 ### US-009-004: Baixa Automática
+
 **Como** sistema  
 **Quero** atualizar status quando pago  
 **Para** manter dados corretos
 
 **Critérios de Aceite:**
+
 - [ ] Status atualizado para PAID
 - [ ] Data de pagamento registrada
 - [ ] Matrícula mantida ativa
@@ -93,6 +102,7 @@ Implementar integração completa com API do Sicoob para:
 ### Backend
 
 #### TASK-009-001: Módulo de Integração Sicoob
+
 **Estimativa:** 2h
 
 - Estrutura do módulo
@@ -102,6 +112,7 @@ Implementar integração completa com API do Sicoob para:
 ---
 
 #### TASK-009-002: Autenticação OAuth2 Sicoob
+
 **Estimativa:** 4h
 
 - Obter access token
@@ -111,6 +122,7 @@ Implementar integração completa com API do Sicoob para:
 ---
 
 #### TASK-009-003: Serviço de Geração de Boletos
+
 **Estimativa:** 6h
 
 - Integração com API /cobranca/v2/boletos
@@ -121,6 +133,7 @@ Implementar integração completa com API do Sicoob para:
 ---
 
 #### TASK-009-004: Serviço de Geração de PIX
+
 **Estimativa:** 4h
 
 - Integração com API /pix/v2/cob
@@ -130,6 +143,7 @@ Implementar integração completa com API do Sicoob para:
 ---
 
 #### TASK-009-005: Webhook Handler
+
 **Estimativa:** 6h
 
 - Endpoint POST /webhooks/sicoob
@@ -141,6 +155,7 @@ Implementar integração completa com API do Sicoob para:
 ---
 
 #### TASK-009-006: Eventos de Domínio
+
 **Estimativa:** 3h
 
 - PaymentConfirmedEvent
@@ -150,6 +165,7 @@ Implementar integração completa com API do Sicoob para:
 ---
 
 #### TASK-009-007: Mock Service para Dev
+
 **Estimativa:** 3h
 
 - Simular geração de boleto
@@ -161,6 +177,7 @@ Implementar integração completa com API do Sicoob para:
 ### Configuração
 
 #### TASK-009-008: Variáveis de Ambiente
+
 **Estimativa:** 1h
 
 ```env
@@ -174,6 +191,7 @@ SICOOB_WEBHOOK_SECRET=
 ---
 
 #### TASK-009-009: Documentação de Integração
+
 **Estimativa:** 2h
 
 - Fluxo de integração
@@ -185,6 +203,7 @@ SICOOB_WEBHOOK_SECRET=
 ### Testes
 
 #### TASK-009-010: Testes de Integração
+
 **Estimativa:** 4h
 
 - Testes com mock
@@ -232,4 +251,3 @@ Semana 2:
 ```
 
 **Total estimado:** ~35 horas (~2 semanas)
-

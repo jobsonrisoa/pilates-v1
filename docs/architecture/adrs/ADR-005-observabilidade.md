@@ -8,6 +8,7 @@
 ## Contexto
 
 O sistema precisa de observabilidade para:
+
 - Detectar e diagnosticar problemas rapidamente
 - Monitorar performance
 - Auditoria de operações
@@ -54,16 +55,14 @@ import { LoggerModule as PinoLoggerModule } from 'nestjs-pino';
     PinoLoggerModule.forRoot({
       pinoHttp: {
         level: process.env.LOG_LEVEL || 'info',
-        transport: process.env.NODE_ENV !== 'production'
-          ? { target: 'pino-pretty' }
-          : undefined,
-        
+        transport: process.env.NODE_ENV !== 'production' ? { target: 'pino-pretty' } : undefined,
+
         // Campos customizados
         customProps: () => ({
           service: 'pilates-api',
           environment: process.env.NODE_ENV,
         }),
-        
+
         // Redact de dados sensíveis
         redact: {
           paths: [
@@ -75,7 +74,7 @@ import { LoggerModule as PinoLoggerModule } from 'nestjs-pino';
           ],
           censor: '[REDACTED]',
         },
-        
+
         // Serializers customizados
         serializers: {
           req: (req) => ({
@@ -103,7 +102,7 @@ export class StudentsService {
 
   async create(dto: CreateStudentDto): Promise<Student> {
     this.logger.info({ dto: { name: dto.name } }, 'Creating student');
-    
+
     try {
       const student = await this.repository.create(dto);
       this.logger.info({ studentId: student.id }, 'Student created');
@@ -117,6 +116,7 @@ export class StudentsService {
 ```
 
 **Formato de log em produção (JSON):**
+
 ```json
 {
   "level": 30,
@@ -141,7 +141,11 @@ export class StudentsService {
 ```typescript
 // metrics.module.ts
 import { Module } from '@nestjs/common';
-import { PrometheusModule, makeCounterProvider, makeHistogramProvider } from '@willsoto/nestjs-prometheus';
+import {
+  PrometheusModule,
+  makeCounterProvider,
+  makeHistogramProvider,
+} from '@willsoto/nestjs-prometheus';
 
 @Module({
   imports: [
@@ -159,7 +163,7 @@ import { PrometheusModule, makeCounterProvider, makeHistogramProvider } from '@w
       help: 'Total number of HTTP requests',
       labelNames: ['method', 'path', 'status'],
     }),
-    
+
     // Histograma de duração
     makeHistogramProvider({
       name: 'http_request_duration_seconds',
@@ -167,7 +171,7 @@ import { PrometheusModule, makeCounterProvider, makeHistogramProvider } from '@w
       labelNames: ['method', 'path'],
       buckets: [0.1, 0.3, 0.5, 1, 2, 5],
     }),
-    
+
     // Métricas de negócio
     makeCounterProvider({
       name: 'students_created_total',
@@ -202,9 +206,9 @@ export class MetricsInterceptor implements NestInterceptor {
     const request = context.switchToHttp().getRequest();
     const { method, route } = request;
     const path = route?.path || request.url;
-    
+
     const end = this.requestDuration.startTimer({ method, path });
-    
+
     return next.handle().pipe(
       tap(() => {
         const response = context.switchToHttp().getResponse();
@@ -223,6 +227,7 @@ export class MetricsInterceptor implements NestInterceptor {
 ```
 
 **Dashboards Grafana sugeridos:**
+
 - Overview: requests/s, latência p99, erros
 - Negócio: novos alunos, aulas agendadas, pagamentos
 - Infraestrutura: CPU, memória, conexões DB
@@ -243,10 +248,10 @@ export class SentryModule implements OnModuleInit {
         dsn: this.configService.get('SENTRY_DSN'),
         environment: this.configService.get('NODE_ENV'),
         release: this.configService.get('APP_VERSION'),
-        
+
         // Sampling
         tracesSampleRate: 0.1, // 10% para performance
-        
+
         // Filtrar dados sensíveis
         beforeSend(event) {
           if (event.request?.data) {
@@ -255,7 +260,7 @@ export class SentryModule implements OnModuleInit {
           }
           return event;
         },
-        
+
         // Integrations
         integrations: [
           new Sentry.Integrations.Http({ tracing: true }),
@@ -285,9 +290,8 @@ export class SentryExceptionFilter implements ExceptionFilter {
     }
 
     // Resposta normal de erro
-    const status = exception instanceof HttpException
-      ? exception.getStatus()
-      : HttpStatus.INTERNAL_SERVER_ERROR;
+    const status =
+      exception instanceof HttpException ? exception.getStatus() : HttpStatus.INTERNAL_SERVER_ERROR;
 
     response.status(status).json({
       statusCode: status,
@@ -337,10 +341,11 @@ export class HealthController {
     return this.health.check([
       () => this.db.pingCheck('database'),
       () => this.redis.pingCheck('redis'),
-      () => this.disk.checkStorage('storage', {
-        path: '/',
-        thresholdPercent: 0.9,
-      }),
+      () =>
+        this.disk.checkStorage('storage', {
+          path: '/',
+          thresholdPercent: 0.9,
+        }),
       () => this.memory.checkHeap('memory_heap', 300 * 1024 * 1024), // 300MB
     ]);
   }
@@ -348,6 +353,7 @@ export class HealthController {
 ```
 
 **Resposta do health check:**
+
 ```json
 {
   "status": "ok",
@@ -378,7 +384,7 @@ services:
       - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
     ports:
-      - "9090:9090"
+      - '9090:9090'
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.retention.time=15d'
@@ -389,7 +395,7 @@ services:
       - grafana_data:/var/lib/grafana
       - ./docker/grafana/provisioning:/etc/grafana/provisioning
     ports:
-      - "3001:3000"
+      - '3001:3000'
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
       - GF_USERS_ALLOW_SIGN_UP=false
@@ -411,35 +417,39 @@ scrape_configs:
 ## Fases de Implementação
 
 ### Fase 1 - MVP (Custo Zero)
+
 - [x] Logs estruturados (Pino → stdout)
 - [x] Health checks básicos
 - [x] Sentry (free tier: 5K erros/mês)
 - [x] UptimeRobot (free: 50 monitors)
 
 ### Fase 2 - Métricas
+
 - [ ] Prometheus + Grafana (self-hosted)
 - [ ] Dashboards de negócio
 - [ ] Alertas básicos
 
 ### Fase 3 - Avançado (se necessário)
+
 - [ ] Logtail para logs centralizados
 - [ ] OpenTelemetry para tracing
 - [ ] APM completo
 
 ## Custos Estimados
 
-| Serviço | Tier | Custo |
-|---------|------|-------|
-| Sentry | Free | $0 (5K erros/mês) |
-| UptimeRobot | Free | $0 (50 monitors) |
-| Prometheus | Self-hosted | $0 (~100MB RAM) |
-| Grafana | Self-hosted | $0 (~100MB RAM) |
-| Logtail | Free | $0 (1GB/mês) |
-| **Total** | | **$0** |
+| Serviço     | Tier        | Custo             |
+| ----------- | ----------- | ----------------- |
+| Sentry      | Free        | $0 (5K erros/mês) |
+| UptimeRobot | Free        | $0 (50 monitors)  |
+| Prometheus  | Self-hosted | $0 (~100MB RAM)   |
+| Grafana     | Self-hosted | $0 (~100MB RAM)   |
+| Logtail     | Free        | $0 (1GB/mês)      |
+| **Total**   |             | **$0**            |
 
 ## Consequências
 
 ### Positivas
+
 - ✅ Custo zero com free tiers
 - ✅ Setup simples para monolito
 - ✅ Logs estruturados facilitam debug
@@ -447,6 +457,7 @@ scrape_configs:
 - ✅ Alertas de erros automáticos (Sentry)
 
 ### Negativas
+
 - ⚠️ Sem distributed tracing (aceitável para monolito)
 - ⚠️ Grafana precisa configuração manual inicial
 
@@ -457,7 +468,7 @@ scrape_configs:
 - name: API Down
   condition: up == 0 for 1m
   severity: critical
-  
+
 - name: High Error Rate
   condition: rate(http_requests_total{status=~"5.."}[5m]) > 0.1
   severity: critical
@@ -466,7 +477,7 @@ scrape_configs:
 - name: High Latency
   condition: histogram_quantile(0.99, http_request_duration_seconds) > 2
   severity: warning
-  
+
 - name: Database Slow
   condition: prisma_query_duration_seconds > 1
   severity: warning
@@ -483,4 +494,3 @@ scrape_configs:
 - [Prometheus Best Practices](https://prometheus.io/docs/practices/naming/)
 - [Sentry for Node.js](https://docs.sentry.io/platforms/node/)
 - [NestJS Health Checks](https://docs.nestjs.com/recipes/terminus)
-

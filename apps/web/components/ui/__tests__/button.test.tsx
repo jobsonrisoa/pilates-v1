@@ -23,5 +23,3 @@ describe('Button', () => {
     expect(screen.getByRole('button')).toBeDisabled();
   });
 });
-
-

@@ -2,15 +2,15 @@
 
 ## 📋 Informações
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | US-001-007 |
-| **Épico** | EPIC-001 |
-| **Título** | Configuração de Testes Frontend |
-| **Estimativa** | 4 horas |
-| **Prioridade** | 🔴 Crítica |
-| **Dependências** | US-001-003 |
-| **Status** | 📋 Backlog |
+| Campo            | Valor                           |
+| ---------------- | ------------------------------- |
+| **ID**           | US-001-007                      |
+| **Épico**        | EPIC-001                        |
+| **Título**       | Configuração de Testes Frontend |
+| **Estimativa**   | 4 horas                         |
+| **Prioridade**   | 🔴 Crítica                      |
+| **Dependências** | US-001-003                      |
+| **Status**       | 📋 Backlog                      |
 
 ---
 
@@ -46,13 +46,16 @@
 
 ```markdown
 ## Contexto
+
 Frontend Next.js em apps/web. Preciso configurar testes unitários,
 integração e E2E com coverage mínimo de 80%.
 
 ## Tarefa
+
 Configure:
 
 ### 1. Jest + Testing Library
+
 - jest.config.ts com next/jest
 - @testing-library/react
 - @testing-library/jest-dom
@@ -60,16 +63,19 @@ Configure:
 - Coverage: 80%
 
 ### 2. MSW (Mock Service Worker)
+
 - test/mocks/handlers.ts
 - test/mocks/server.ts
 - Setup no jest.setup.ts
 
 ### 3. Playwright
+
 - playwright.config.ts
 - e2e/ directory
 - Múltiplos browsers
 
 ### 4. Exemplos
+
 - Teste de componente Button
 - Teste de hook customizado
 - Teste E2E de página
@@ -155,19 +161,16 @@ export const handlers = [
   }),
 
   http.post('/api/auth/login', async ({ request }) => {
-    const body = await request.json() as { email: string; password: string };
-    
+    const body = (await request.json()) as { email: string; password: string };
+
     if (body.email === 'test@test.com' && body.password === 'password') {
       return HttpResponse.json({
         user: { id: '1', email: 'test@test.com', name: 'Test User' },
         accessToken: 'mock-token',
       });
     }
-    
-    return HttpResponse.json(
-      { message: 'Invalid credentials' },
-      { status: 401 }
-    );
+
+    return HttpResponse.json({ message: 'Invalid credentials' }, { status: 401 });
   }),
 ];
 ```
@@ -229,9 +232,9 @@ describe('Button', () => {
   it('handles click', () => {
     const onClick = jest.fn();
     render(<Button onClick={onClick}>Click</Button>);
-    
+
     fireEvent.click(screen.getByRole('button'));
-    
+
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 
@@ -256,4 +259,3 @@ describe('Button', () => {
 ## 🔗 Próxima User Story
 
 → [US-001-008: Pipeline CI/CD](./US-001-008-ci-cd.md)
-

@@ -2,21 +2,22 @@
 
 ## 📋 Informações Gerais
 
-| Campo | Valor |
-|-------|-------|
-| **ID** | EPIC-022 |
-| **Título** | Documentação e Deploy Produção |
-| **Fase** | 4 - Refinamento |
-| **Prioridade** | 🔴 Crítica |
-| **Estimativa** | 1 semana |
-| **Dependências** | Todos os épicos anteriores |
-| **Status** | 📋 Backlog |
+| Campo            | Valor                          |
+| ---------------- | ------------------------------ |
+| **ID**           | EPIC-022                       |
+| **Título**       | Documentação e Deploy Produção |
+| **Fase**         | 4 - Refinamento                |
+| **Prioridade**   | 🔴 Crítica                     |
+| **Estimativa**   | 1 semana                       |
+| **Dependências** | Todos os épicos anteriores     |
+| **Status**       | 📋 Backlog                     |
 
 ---
 
 ## 📝 Descrição
 
 Finalizar documentação e preparar deploy em produção:
+
 - Documentação técnica completa
 - Manual do usuário
 - Configuração de produção
@@ -37,11 +38,13 @@ Finalizar documentação e preparar deploy em produção:
 ## 👤 User Stories
 
 ### US-022-001: Documentação Técnica
+
 **Como** desenvolvedor  
 **Quero** documentação técnica completa  
 **Para** manter o sistema
 
 **Critérios de Aceite:**
+
 - [ ] Arquitetura documentada
 - [ ] API documentada (Swagger)
 - [ ] Guia de contribuição
@@ -50,11 +53,13 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 ### US-022-002: Manual do Usuário
+
 **Como** usuário  
 **Quero** manual de uso  
 **Para** aprender o sistema
 
 **Critérios de Aceite:**
+
 - [ ] Guia de primeiros passos
 - [ ] Documentação por módulo
 - [ ] FAQ
@@ -63,11 +68,13 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 ### US-022-003: Configurar Produção
+
 **Como** DevOps  
 **Quero** ambiente de produção configurado  
 **Para** hospedar o sistema
 
 **Critérios de Aceite:**
+
 - [ ] VPS provisionada
 - [ ] Docker configurado
 - [ ] Traefik com SSL
@@ -77,11 +84,13 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 ### US-022-004: Deploy Automatizado
+
 **Como** DevOps  
 **Quero** deploy automático  
 **Para** entregar rapidamente
 
 **Critérios de Aceite:**
+
 - [ ] Push em main → deploy prod
 - [ ] Push em develop → deploy staging
 - [ ] Rollback fácil
@@ -90,11 +99,13 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 ### US-022-005: Monitoramento
+
 **Como** DevOps  
 **Quero** monitoramento ativo  
 **Para** saber quando há problemas
 
 **Critérios de Aceite:**
+
 - [ ] Uptime monitoring
 - [ ] Alertas de erro (Sentry)
 - [ ] Dashboards Grafana
@@ -103,11 +114,13 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 ### US-022-006: Checklist de Go-Live
+
 **Como** gerente  
 **Quero** checklist completo  
 **Para** garantir que está tudo pronto
 
 **Critérios de Aceite:**
+
 - [ ] Segurança revisada
 - [ ] Backups testados
 - [ ] Performance validada
@@ -121,6 +134,7 @@ Finalizar documentação e preparar deploy em produção:
 ### Documentação
 
 #### TASK-022-001: Documentação de Arquitetura
+
 **Estimativa:** 3h
 
 - Diagramas atualizados
@@ -130,6 +144,7 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 #### TASK-022-002: Documentação de API
+
 **Estimativa:** 2h
 
 - Swagger completo
@@ -139,6 +154,7 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 #### TASK-022-003: Manual do Usuário
+
 **Estimativa:** 4h
 
 - Screenshots
@@ -148,6 +164,7 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 #### TASK-022-004: Guia de Deploy
+
 **Estimativa:** 2h
 
 - Requisitos
@@ -159,6 +176,7 @@ Finalizar documentação e preparar deploy em produção:
 ### Infraestrutura
 
 #### TASK-022-005: Provisionar VPS
+
 **Estimativa:** 2h
 
 - Criar servidor (Hetzner/DO)
@@ -168,6 +186,7 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 #### TASK-022-006: Configurar Docker em Produção
+
 **Estimativa:** 3h
 
 - docker-compose.prod.yml
@@ -177,6 +196,7 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 #### TASK-022-007: Configurar Traefik + SSL
+
 **Estimativa:** 2h
 
 - Reverse proxy
@@ -186,6 +206,7 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 #### TASK-022-008: Configurar Banco de Produção
+
 **Estimativa:** 2h
 
 - MySQL seguro
@@ -195,6 +216,7 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 #### TASK-022-009: Configurar Backups
+
 **Estimativa:** 2h
 
 - Backup diário MySQL
@@ -206,6 +228,7 @@ Finalizar documentação e preparar deploy em produção:
 ### CI/CD
 
 #### TASK-022-010: Pipeline de Deploy Produção
+
 **Estimativa:** 3h
 
 - GitHub Actions final
@@ -217,6 +240,7 @@ Finalizar documentação e preparar deploy em produção:
 ### Monitoramento
 
 #### TASK-022-011: Configurar UptimeRobot
+
 **Estimativa:** 1h
 
 - Endpoints críticos
@@ -225,6 +249,7 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 #### TASK-022-012: Configurar Sentry Produção
+
 **Estimativa:** 1h
 
 - DSN de produção
@@ -233,6 +258,7 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 #### TASK-022-013: Dashboards Grafana
+
 **Estimativa:** 2h
 
 - Dashboard de overview
@@ -244,6 +270,7 @@ Finalizar documentação e preparar deploy em produção:
 ### Go-Live
 
 #### TASK-022-014: Checklist de Segurança
+
 **Estimativa:** 2h
 
 - Revisão de secrets
@@ -254,6 +281,7 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 #### TASK-022-015: Seed de Dados Iniciais
+
 **Estimativa:** 1h
 
 - Usuário admin
@@ -263,6 +291,7 @@ Finalizar documentação e preparar deploy em produção:
 ---
 
 #### TASK-022-016: Teste de Go-Live
+
 **Estimativa:** 2h
 
 - Smoke tests
@@ -302,6 +331,7 @@ Semana 1:
 ## 🚀 Checklist de Go-Live
 
 ### Pré-Deploy
+
 - [ ] Todos os testes passando
 - [ ] Coverage ≥80%
 - [ ] Code review completo
@@ -311,6 +341,7 @@ Semana 1:
 - [ ] SSL configurado
 
 ### Segurança
+
 - [ ] Senhas fortes
 - [ ] Rate limiting ativo
 - [ ] CORS configurado
@@ -319,26 +350,29 @@ Semana 1:
 - [ ] Audit logs ativos
 
 ### Dados
+
 - [ ] Backups configurados
 - [ ] Backup testado (restore)
 - [ ] Seed executado
 - [ ] Usuário admin criado
 
 ### Monitoramento
+
 - [ ] UptimeRobot configurado
 - [ ] Sentry configurado
 - [ ] Grafana com dashboards
 - [ ] Alertas configurados
 
 ### Validação Final
+
 - [ ] Smoke tests OK
 - [ ] Performance validada
 - [ ] Fluxos críticos testados
 - [ ] Mobile responsivo
 
 ### Go-Live
+
 - [ ] DNS configurado
 - [ ] Deploy executado
 - [ ] Validação pós-deploy
 - [ ] Comunicação aos usuários
-

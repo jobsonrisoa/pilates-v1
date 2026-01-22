@@ -61,57 +61,57 @@
 
 ### Fase 1 - MVP
 
-| ID | Épico | Prioridade | Estimativa | Status |
-|----|-------|------------|------------|--------|
-| [EPIC-001](./EPIC-001-setup-ambiente.md) | Setup Ambiente de Desenvolvimento [(10 USs)](./EPIC-001/) | 🔴 Crítica | 2 semanas | 📋 Backlog |
-| [EPIC-002](./EPIC-002-autenticacao.md) | Autenticação e Autorização | 🔴 Crítica | 2 semanas | 📋 Backlog |
-| [EPIC-003](./EPIC-003-gestao-alunos.md) | Gestão de Alunos | 🔴 Crítica | 1.5 semanas | 📋 Backlog |
-| [EPIC-004](./EPIC-004-gestao-professores.md) | Gestão de Professores | 🟠 Alta | 1 semana | 📋 Backlog |
-| [EPIC-005](./EPIC-005-gestao-aulas.md) | Gestão de Aulas e Horários | 🟠 Alta | 1.5 semanas | 📋 Backlog |
-| [EPIC-006](./EPIC-006-agenda.md) | Agenda e Agendamento | 🟠 Alta | 1.5 semanas | 📋 Backlog |
-| [EPIC-007](./EPIC-007-matriculas.md) | Matrículas Básicas | 🟠 Alta | 1 semana | 📋 Backlog |
+| ID                                           | Épico                                                     | Prioridade | Estimativa  | Status     |
+| -------------------------------------------- | --------------------------------------------------------- | ---------- | ----------- | ---------- |
+| [EPIC-001](./EPIC-001-setup-ambiente.md)     | Setup Ambiente de Desenvolvimento [(10 USs)](./EPIC-001/) | 🔴 Crítica | 2 semanas   | 📋 Backlog |
+| [EPIC-002](./EPIC-002-autenticacao.md)       | Autenticação e Autorização                                | 🔴 Crítica | 2 semanas   | 📋 Backlog |
+| [EPIC-003](./EPIC-003-gestao-alunos.md)      | Gestão de Alunos                                          | 🔴 Crítica | 1.5 semanas | 📋 Backlog |
+| [EPIC-004](./EPIC-004-gestao-professores.md) | Gestão de Professores                                     | 🟠 Alta    | 1 semana    | 📋 Backlog |
+| [EPIC-005](./EPIC-005-gestao-aulas.md)       | Gestão de Aulas e Horários                                | 🟠 Alta    | 1.5 semanas | 📋 Backlog |
+| [EPIC-006](./EPIC-006-agenda.md)             | Agenda e Agendamento                                      | 🟠 Alta    | 1.5 semanas | 📋 Backlog |
+| [EPIC-007](./EPIC-007-matriculas.md)         | Matrículas Básicas                                        | 🟠 Alta    | 1 semana    | 📋 Backlog |
 
 ### Fase 2 - Financeiro
 
-| ID | Épico | Prioridade | Estimativa | Status |
-|----|-------|------------|------------|--------|
-| [EPIC-008](./EPIC-008-planos-precos.md) | Sistema de Planos e Preços | 🔴 Crítica | 1 semana | 📋 Backlog |
-| [EPIC-009](./EPIC-009-integracao-sicoob.md) | Integração Bancária Sicoob | 🔴 Crítica | 2 semanas | 📋 Backlog |
-| [EPIC-010](./EPIC-010-pagamentos.md) | Controle de Pagamentos | 🔴 Crítica | 1.5 semanas | 📋 Backlog |
-| [EPIC-011](./EPIC-011-comissoes.md) | Comissões de Professores | 🟡 Média | 1 semana | 📋 Backlog |
-| [EPIC-012](./EPIC-012-relatorios-financeiros.md) | Relatórios Financeiros | 🟠 Alta | 1 semana | 📋 Backlog |
+| ID                                               | Épico                      | Prioridade | Estimativa  | Status     |
+| ------------------------------------------------ | -------------------------- | ---------- | ----------- | ---------- |
+| [EPIC-008](./EPIC-008-planos-precos.md)          | Sistema de Planos e Preços | 🔴 Crítica | 1 semana    | 📋 Backlog |
+| [EPIC-009](./EPIC-009-integracao-sicoob.md)      | Integração Bancária Sicoob | 🔴 Crítica | 2 semanas   | 📋 Backlog |
+| [EPIC-010](./EPIC-010-pagamentos.md)             | Controle de Pagamentos     | 🔴 Crítica | 1.5 semanas | 📋 Backlog |
+| [EPIC-011](./EPIC-011-comissoes.md)              | Comissões de Professores   | 🟡 Média   | 1 semana    | 📋 Backlog |
+| [EPIC-012](./EPIC-012-relatorios-financeiros.md) | Relatórios Financeiros     | 🟠 Alta    | 1 semana    | 📋 Backlog |
 
 ### Fase 3 - Operacional
 
-| ID | Épico | Prioridade | Estimativa | Status |
-|----|-------|------------|------------|--------|
-| [EPIC-013](./EPIC-013-reposicoes.md) | Sistema de Reposições | 🟠 Alta | 1.5 semanas | 📋 Backlog |
-| [EPIC-014](./EPIC-014-contratos.md) | Contratos Digitais | 🟠 Alta | 1.5 semanas | 📋 Backlog |
-| [EPIC-015](./EPIC-015-estoque.md) | Gestão de Estoque | 🟡 Média | 1.5 semanas | 📋 Backlog |
-| [EPIC-016](./EPIC-016-relatorios-operacionais.md) | Relatórios Operacionais | 🟡 Média | 1 semana | 📋 Backlog |
-| [EPIC-017](./EPIC-017-upload-documentos.md) | Upload de Documentos | 🟡 Média | 1 semana | 📋 Backlog |
+| ID                                                | Épico                   | Prioridade | Estimativa  | Status     |
+| ------------------------------------------------- | ----------------------- | ---------- | ----------- | ---------- |
+| [EPIC-013](./EPIC-013-reposicoes.md)              | Sistema de Reposições   | 🟠 Alta    | 1.5 semanas | 📋 Backlog |
+| [EPIC-014](./EPIC-014-contratos.md)               | Contratos Digitais      | 🟠 Alta    | 1.5 semanas | 📋 Backlog |
+| [EPIC-015](./EPIC-015-estoque.md)                 | Gestão de Estoque       | 🟡 Média   | 1.5 semanas | 📋 Backlog |
+| [EPIC-016](./EPIC-016-relatorios-operacionais.md) | Relatórios Operacionais | 🟡 Média   | 1 semana    | 📋 Backlog |
+| [EPIC-017](./EPIC-017-upload-documentos.md)       | Upload de Documentos    | 🟡 Média   | 1 semana    | 📋 Backlog |
 
 ### Fase 4 - Refinamento
 
-| ID | Épico | Prioridade | Estimativa | Status |
-|----|-------|------------|------------|--------|
-| [EPIC-018](./EPIC-018-permissoes-granulares.md) | Permissões Granulares | 🟡 Média | 1 semana | 📋 Backlog |
-| [EPIC-019](./EPIC-019-dashboard.md) | Dashboard Analítico | 🟡 Média | 1.5 semanas | 📋 Backlog |
-| [EPIC-020](./EPIC-020-performance.md) | Otimizações de Performance | 🟡 Média | 1 semana | 📋 Backlog |
-| [EPIC-021](./EPIC-021-testes-e2e.md) | Testes E2E e Performance | 🟠 Alta | 1 semana | 📋 Backlog |
-| [EPIC-022](./EPIC-022-deploy-producao.md) | Documentação e Deploy Produção | 🔴 Crítica | 1 semana | 📋 Backlog |
+| ID                                              | Épico                          | Prioridade | Estimativa  | Status     |
+| ----------------------------------------------- | ------------------------------ | ---------- | ----------- | ---------- |
+| [EPIC-018](./EPIC-018-permissoes-granulares.md) | Permissões Granulares          | 🟡 Média   | 1 semana    | 📋 Backlog |
+| [EPIC-019](./EPIC-019-dashboard.md)             | Dashboard Analítico            | 🟡 Média   | 1.5 semanas | 📋 Backlog |
+| [EPIC-020](./EPIC-020-performance.md)           | Otimizações de Performance     | 🟡 Média   | 1 semana    | 📋 Backlog |
+| [EPIC-021](./EPIC-021-testes-e2e.md)            | Testes E2E e Performance       | 🟠 Alta    | 1 semana    | 📋 Backlog |
+| [EPIC-022](./EPIC-022-deploy-producao.md)       | Documentação e Deploy Produção | 🔴 Crítica | 1 semana    | 📋 Backlog |
 
 ---
 
 ## 📊 Resumo por Fase
 
-| Fase | Épicos | Tasks | Estimativa |
-|------|--------|-------|------------|
-| **Fase 1 - MVP** | 7 | ~81 | 10.5 semanas |
-| **Fase 2 - Financeiro** | 5 | ~54 | 6.5 semanas |
-| **Fase 3 - Operacional** | 5 | ~52 | 6.5 semanas |
-| **Fase 4 - Refinamento** | 5 | ~49 | 5.5 semanas |
-| **TOTAL** | **22** | **~236** | **~29 semanas** |
+| Fase                     | Épicos | Tasks    | Estimativa      |
+| ------------------------ | ------ | -------- | --------------- |
+| **Fase 1 - MVP**         | 7      | ~81      | 10.5 semanas    |
+| **Fase 2 - Financeiro**  | 5      | ~54      | 6.5 semanas     |
+| **Fase 3 - Operacional** | 5      | ~52      | 6.5 semanas     |
+| **Fase 4 - Refinamento** | 5      | ~49      | 5.5 semanas     |
+| **TOTAL**                | **22** | **~236** | **~29 semanas** |
 
 ---
 
@@ -119,33 +119,33 @@
 
 ### Estimativa Total
 
-| Fase | Épicos | Estimativa |
-|------|--------|------------|
-| Fase 1 - MVP | 7 | 10.5 semanas |
-| Fase 2 - Financeiro | 5 | 6.5 semanas |
-| Fase 3 - Operacional | 5 | 6.5 semanas |
-| Fase 4 - Refinamento | 5 | 5.5 semanas |
-| **Total** | **22** | **~29 semanas** |
+| Fase                 | Épicos | Estimativa      |
+| -------------------- | ------ | --------------- |
+| Fase 1 - MVP         | 7      | 10.5 semanas    |
+| Fase 2 - Financeiro  | 5      | 6.5 semanas     |
+| Fase 3 - Operacional | 5      | 6.5 semanas     |
+| Fase 4 - Refinamento | 5      | 5.5 semanas     |
+| **Total**            | **22** | **~29 semanas** |
 
 ### Legenda de Status
 
-| Ícone | Status |
-|-------|--------|
-| 📋 | Backlog |
-| 🔄 | Em Progresso |
-| 👀 | Em Review |
-| ✅ | Concluído |
-| ⏸️ | Pausado |
-| ❌ | Cancelado |
+| Ícone | Status       |
+| ----- | ------------ |
+| 📋    | Backlog      |
+| 🔄    | Em Progresso |
+| 👀    | Em Review    |
+| ✅    | Concluído    |
+| ⏸️    | Pausado      |
+| ❌    | Cancelado    |
 
 ### Legenda de Prioridade
 
 | Ícone | Prioridade |
-|-------|------------|
-| 🔴 | Crítica |
-| 🟠 | Alta |
-| 🟡 | Média |
-| 🟢 | Baixa |
+| ----- | ---------- |
+| 🔴    | Crítica    |
+| 🟠    | Alta       |
+| 🟡    | Média      |
+| 🟢    | Baixa      |
 
 ---
 
@@ -193,6 +193,7 @@ Cada épico segue o template:
 # EPIC-XXX: Título do Épico
 
 ## Informações Gerais
+
 - **ID:** EPIC-XXX
 - **Fase:** X
 - **Prioridade:** 🔴/🟠/🟡/🟢
@@ -200,25 +201,31 @@ Cada épico segue o template:
 - **Dependências:** EPIC-YYY, EPIC-ZZZ
 
 ## Descrição
+
 Descrição detalhada do épico...
 
 ## Objetivos
+
 - Objetivo 1
 - Objetivo 2
 
 ## User Stories
+
 - [ ] US-XXX-001: Como [persona], quero [ação] para [benefício]
 - [ ] US-XXX-002: ...
 
 ## Tasks Técnicas
+
 - [ ] TASK-XXX-001: Descrição
 - [ ] TASK-XXX-002: ...
 
 ## Critérios de Aceite
+
 - [ ] Critério 1
 - [ ] Critério 2
 
 ## Definition of Done
+
 - [ ] Código implementado
 - [ ] Testes unitários (≥80% coverage)
 - [ ] Testes de integração
@@ -226,4 +233,3 @@ Descrição detalhada do épico...
 - [ ] Documentação atualizada
 - [ ] Deploy em staging
 ```
-
