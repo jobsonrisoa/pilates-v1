@@ -1,6 +1,6 @@
 # US-001-006: Configuration of Tests Backend
 
-##  Informtion
+##  Information
 
 | Field            | Value                          |
 | ---------------- | ------------------------------ |
@@ -16,7 +16,7 @@
 
 ##  Ube Story
 
-**Como** desenvolvedor backendendendend  
+**Como** desenvolvedor backend  
 **I want to** environment of tests configured  
 **Para** praticar TDD with confiança
 
@@ -48,7 +48,7 @@
 ```markdown
 ## Context
 
-Backend NestJS in apps/api. Preciso configurar environment withplete of tests
+Backend NestJS in apps/api. Preciso configurar environment complete of tests
 seguindo TDD with coverage minimum of 80%.
 
 ## Principles TDD
@@ -74,14 +74,14 @@ Configure os tests:
 - jest.integration.config.ts
 - Timeout higher (30s)
 - Execution sequencial (maxWorkers: 1)
-- Global setup/teardown for accountiners
+- Global setup/teardown for containers
 
 ### 3. Setup Files
 
 - test/setup.ts (mocks global)
 - test/integration/setup.ts (limpeza of DB)
-- test/integration/global-setup.ts (start accountiners)
-- test/integration/global-teardown.ts (stop accountiners)
+- test/integration/global-setup.ts (start containers)
+- test/integration/global-teardown.ts (stop containers)
 
 ### 4. Mocks
 
@@ -149,9 +149,9 @@ export default config;
 import { PrismaClient } from '@prisma/client';
 import { mockDeep, mockReset, DeepMockProxy } from 'jest-mock-extended';
 
-import prisma from '@/shared/infrastructure/datebase/prisma.client';
+import prisma from '@/shared/infrastructure/database/prisma.client';
 
-jest.mock('@/shared/infrastructure/datebase/prisma.client', () => ({
+jest.mock('@/shared/infrastructure/database/prisma.client', () => ({
   __esModule: true,
   default: mockDeep<PrismaClient>(),
 }));
@@ -254,8 +254,8 @@ export abstract class ValueObject<T> {
 
 ##  Checklist of Verification
 
-- [ ] `pnpm --filhave @pilates/api test` passa
-- [ ] `pnpm --filhave @pilates/api test:cov` mostra ≥80%
+- [ ] `pnpm --filter @pilates/api test` passa
+- [ ] `pnpm --filter @pilates/api test:cov` mostra ≥80%
 - [ ] Mock of the Prisma funciona
 - [ ] Tests rodam in the accountiner
 
@@ -263,4 +263,4 @@ export abstract class ValueObject<T> {
 
 ##  Next Ube Story
 
-→ [US-001-007: Configuration of Tests Frontend](./US-001-007-tests-frontendendendend.md)
+→ [US-001-007: Configuration of Tests Frontend](./US-001-007-tests-frontend.md)

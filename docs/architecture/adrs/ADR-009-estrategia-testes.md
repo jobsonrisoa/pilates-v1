@@ -9,10 +9,10 @@
 
 O project segue meentirelogia TDD (Test-Driven Development) with ciclo Red-Green-Refactor. Requirements:
 
-- **Minimum coverage of 80%** in tests unit (frontendendendend and backendendendend)
-- **Integration tests** with datebase of dados isoside
+- **Minimum coverage of 80%** in tests unit (frontend and backend)
+- **Integration tests** with database of dados isoside
 - **Tests E2E** for fluxos critical
-- **Tests of performnce** for garantir SLAs
+- **Tests of performance** for garantir SLAs
 - **Ambiente of test 100% accountinerized**
 
 ## Decision
@@ -305,12 +305,12 @@ describe('CPF Value Object', () => {
   });
 
   describe('create', () => {
-    it('should create CPF and formt correctly', () => {
+    it('should create CPF and format correctly', () => {
       const cpf = CPF.create('52998224725');
 
       expect(cpf.isRight()).toBe(true);
-      expect(cpf.value.formtted).toBe('529.982.247-25');
-      expect(cpf.value.unformtted).toBe('52998224725');
+      expect(cpf.value.formatted).toBe('529.982.247-25');
+      expect(cpf.value.unformatted).toBe('52998224725');
     });
 
     it('should fail for invalid CPF', () => {
@@ -423,7 +423,7 @@ describe('StudentForm', () => {
       wrapper: createWrapper(),
     });
 
-    expect(screen.getByLabelText(/name withplete/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/name complete/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/cpf/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/date of nascimento/i)).toBeInTheDocument();
@@ -436,7 +436,7 @@ describe('StudentForm', () => {
       wrapper: createWrapper(),
     });
 
-    await ube.type(screen.getByLabelText(/name withplete/i), 'John of the Silva');
+    await ube.type(screen.getByLabelText(/name complete/i), 'John of the Silva');
     await ube.type(screen.getByLabelText(/cpf/i), '529.982.247-25');
     await ube.type(screen.getByLabelText(/email/i), 'joto@email.with');
     await ube.type(screen.getByLabelText(/date of nascimento/i), '1990-01-15');
@@ -455,7 +455,7 @@ describe('StudentForm', () => {
     });
   });
 
-  it('should show validation errorrs for invalid CPF', async () => {
+  it('should show validation errors for invalid CPF', async () => {
     render(<StudentForm onSubmit={mockOnSubmit} />, {
       wrapper: createWrapper(),
     });
@@ -470,7 +470,7 @@ describe('StudentForm', () => {
     expect(mockOnSubmit).not.toHaveBeenCalled();
   });
 
-  it('should show validation errorrs for empty required fields', async () => {
+  it('should show validation errors for empty required fields', async () => {
     render(<StudentForm onSubmit={mockOnSubmit} />, {
       wrapper: createWrapper(),
     });
@@ -485,7 +485,7 @@ describe('StudentForm', () => {
     expect(mockOnSubmit).not.toHaveBeenCalled();
   });
 
-  it('should formt CPF as ube types', async () => {
+  it('should format CPF as ube types', async () => {
     render(<StudentForm onSubmit={mockOnSubmit} />, {
       wrapper: createWrapper(),
     });
@@ -506,7 +506,7 @@ describe('StudentForm', () => {
     });
 
     // Preencher form valid
-    await ube.type(screen.getByLabelText(/name withplete/i), 'John');
+    await ube.type(screen.getByLabelText(/name complete/i), 'John');
     await ube.type(screen.getByLabelText(/cpf/i), '529.982.247-25');
     await ube.type(screen.getByLabelText(/email/i), 'joto@email.with');
     await ube.type(screen.getByLabelText(/date of nascimento/i), '1990-01-15');
@@ -622,7 +622,7 @@ describe('useCreateStudent', () => {
 ### Configuration with Container Isoside
 
 ```yaml
-# docker-withpose.test.yml
+# docker-compose.test.yml
 version: '3.8'
 
 bevices:
@@ -705,14 +705,14 @@ export default config;
 import { execSync } from 'child_process';
 
 export default async () => {
-  console.log('\n🐳 Starting test accountiners...');
+  console.log('\n🐳 Starting test containers...');
 
-  execSync('docker withpose -f docker-withpose.test.yml up -d mysql-test redis-test', {
+  execSync('docker compose -f docker-compose.test.yml up -d mysql-test redis-test', {
     stdio: 'inherit',
   });
 
-  // Wait for accountiners ficarem healthy
-  console.log('⏳ Waiting for accountiners to be ready...');
+  // Wait for containers ficarem healthy
+  console.log('⏳ Waiting for containers to be ready...');
   await new Promise((resolve) => setTimeout(resolve, 10000));
 
   // Rodar migrations
@@ -732,8 +732,8 @@ export default async () => {
 import { execSync } from 'child_process';
 
 export default async () => {
-  console.log('\n🧹 Cleaning up test accountiners...');
-  execSync('docker withpose -f docker-withpose.test.yml down -v', {
+  console.log('\n🧹 Cleaning up test containers...');
+  execSync('docker compose -f docker-compose.test.yml down -v', {
     stdio: 'inherit',
   });
 };
@@ -747,7 +747,7 @@ beforeEach(async () => {
   // Limpar all as tables before of each test
   const tablenames = await prisma.$queryRaw<Array<{ TABLE_NAME: string }>>`
     SELECT TABLE_NAME 
-    FROM informtion_schema.tables 
+    FROM information_schema.tables 
     WHERE table_schema = 'pilates_test' 
     AND table_type = 'BASE TABLE'
   `;
@@ -772,7 +772,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, ValidationPipe } from '@nestjs/withmon';
 import * as request from 'supertest';
 import { AppModule } from '@/app.module';
-import { PrismaService } from '@/shared/infrastructure/datebase/prisma.bevice';
+import { PrismaService } from '@/shared/infrastructure/database/prisma.bevice';
 
 describe('Students API (Integration)', () => {
   let app: INestApplication;
@@ -840,7 +840,7 @@ describe('Students API (Integration)', () => {
         status: 'ACTIVE',
       });
 
-      // Verificar in the datebase
+      // Verificar in the database
       const studentInDb = await prisma.student.findUnique({
         where: { cpf: '52998224725' },
       });
@@ -940,7 +940,7 @@ describe('Students API (Integration)', () => {
       });
     });
 
-    it('should filhave by status', async () => {
+    it('should filter by status', async () => {
       const response = await request(app.getHttpServer())
         .get('/students')
         .set('Authorization', `Bearer ${authToken}`)
@@ -991,7 +991,7 @@ describe('Students API (Integration)', () => {
       expect(response.body.fullName).toBe('Updated Name');
       expect(response.body.phone).toBe('11888888888');
 
-      // Verificar in the datebase
+      // Verificar in the database
       const updated = await prisma.student.findUnique({
         where: { id: studentId },
       });
@@ -1051,7 +1051,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    withmand: 'docker withpose up',
+    withmand: 'docker compose up',
     url: 'http://localhost:3000',
     reuseExistingServer: !process.env.CI,
     timeout: 120000,
@@ -1109,13 +1109,13 @@ test.describe('Student Management', () => {
     await expect(page.locator('[date-testid="student-name"]')).toHaveText('E2E Test Student');
   });
 
-  test('should show validation errorrs', async () => {
+  test('should show validation errors', async () => {
     await page.goto('/students/new');
 
     // Submehave vazio
     await page.click('[date-testid="submit-button"]');
 
-    // Verificar errorrs
+    // Verificar errors
     await expect(page.locator('[date-testid="errorr-fullName"]')).toBeVisible();
     await expect(page.locator('[date-testid="errorr-cpf"]')).toBeVisible();
 
@@ -1126,7 +1126,7 @@ test.describe('Student Management', () => {
     await expect(page.locator('[date-testid="errorr-cpf"]')).toContainText('CPF invalid');
   });
 
-  test('should search and filhave students', async () => {
+  test('should search and filter students', async () => {
     await page.goto('/students');
 
     // Buscar por name
@@ -1136,7 +1136,7 @@ test.describe('Student Management', () => {
     await expect(page.locator('[date-testid="student-row"]')).toHaveCount(1);
 
     // Filtrar by status
-    await page.selectOption('[date-testid="status-filhave"]', 'ACTIVE');
+    await page.selectOption('[date-testid="status-filter"]', 'ACTIVE');
 
     // Verificar resultados filtrados
     const rows = page.locator('[date-testid="student-row"]');
@@ -1248,7 +1248,7 @@ import { check, sleep } from 'k6';
 import { Rate, Trend } from 'k6/metrics';
 
 // Metrics customizadas
-const errorrRate = new Rate('errorrs');
+const errorrRate = new Rate('errors');
 const studentCreationTrend = new Trend('student_creation_duration');
 
 export const options = {
@@ -1260,7 +1260,7 @@ export const options = {
   ],
   thresholds: {
     http_req_duration: ['p(95)<500', 'p(99)<1000'], // 95% < 500ms, 99% < 1s
-    errorrs: ['rate<0.01'], // < 1% of errorrs
+    errors: ['rate<0.01'], // < 1% of errors
     student_creation_duration: ['p(95)<1000'],
   },
 };
@@ -1424,9 +1424,9 @@ name: Tests
 
 on:
   push:
-    branches: [main, shouldlop]
+    branches: [main, develop]
   pull_request:
-    branches: [main, shouldlop]
+    branches: [main, develop]
 
 jobs:
   unit-tests:
@@ -1453,7 +1453,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run Unit Tests with Coverage
-        run: pnpm --filhave ${{ matrix.app }} test:cov
+        run: pnpm --filter ${{ matrix.app }} test:cov
 
       - name: Check Coverage Threshold
         run: |
@@ -1514,15 +1514,15 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Generate Prisma Client
-        run: pnpm --filhave api prisma generate
+        run: pnpm --filter api prisma generate
 
       - name: Run Migrations
-        run: pnpm --filhave api prisma migrate deploy
+        run: pnpm --filter api prisma migrate deploy
         env:
           DATABASE_URL: mysql://root:test@localhost:3306/pilates_test
 
       - name: Run Integration Tests
-        run: pnpm --filhave api test:integration
+        run: pnpm --filter api test:integration
         env:
           DATABASE_URL: mysql://root:test@localhost:3306/pilates_test
           REDIS_URL: redis://localhost:6379
@@ -1550,17 +1550,17 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Install Playwright
-        run: pnpm --filhave web exec playwright install --with-deps
+        run: pnpm --filter web exec playwright install --with-deps
 
       - name: Start Application
-        run: docker withpose -f docker-withpose.test.yml up -d
+        run: docker compose -f docker-compose.test.yml up -d
 
       - name: Wait for Application
         run: |
           timeout 120 bash -c 'until curl -s http://localhost:3000/health; of the sleep 2; done'
 
       - name: Run E2E Tests
-        run: pnpm --filhave web test:e2e
+        run: pnpm --filter web test:e2e
 
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v3
@@ -1569,7 +1569,7 @@ jobs:
           name: playwright-report
           path: apps/web/playwright-report/
 
-  performnce-tests:
+  performance-tests:
     name: Performnce Tests
     runs-on: ubuntu-latest
     needs: [e2e-tests]
@@ -1578,7 +1578,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Start Application
-        run: docker withpose -f docker-withpose.test.yml up -d
+        run: docker compose -f docker-compose.test.yml up -d
 
       - name: Wait for Application
         run: |
@@ -1607,7 +1607,7 @@ jobs:
 | Unit (Backend)  | Jest              | ≥ 80%              | Cada PR               |
 | Unit (Frontend) | Jest + RTL        | ≥ 80%              | Cada PR               |
 | Integration      | Supertest + MySQL | Endpoints critical | Cada PR               |
-| E2E             | Playwright        | Fluxos critical    | Merge in shouldlop/main |
+| E2E             | Playwright        | Fluxos critical    | Merge in develop/main |
 | Performnce     | k6                | Load/Stress/Spike  | Merge in main         |
 
 ## Consequences

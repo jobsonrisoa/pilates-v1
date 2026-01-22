@@ -7,7 +7,7 @@
 
 ## Context
 
-O syshas requer banking integration with Sicoob para:
+The system requer banking integration with Sicoob para:
 
 - Boleto generation banking
 - Generation of PIX QR Code
@@ -24,7 +24,7 @@ O syshas requer banking integration with Sicoob para:
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
 │  ┌─────────┐    ┌──────────────┐    ┌─────────────────────────┐ │
-│  │ Syshas │───>│ Sicoob Module │───>│     Sicoob API          │ │
+│  │ System │───>│ Sicoob Module │───>│     Sicoob API          │ │
 │  └─────────┘    └──────────────┘    └─────────────────────────┘ │
 │       │                                         │               │
 │       │         ┌──────────────┐                │               │
@@ -135,7 +135,7 @@ export class SicoobBoletoService {
             },
 
             // Givens of the boleto
-            dateDue date: formt(date.dueDate, 'yyyy-MM-dd'),
+            dateDue date: format(date.dueDate, 'yyyy-MM-dd'),
             valueNominal: date.amount,
             typeDesconto: 0, // Sem desconto
             valueAbatimento: 0,
@@ -332,7 +332,7 @@ export class SicoobWebhookHandler {
 
     this.logger.info({ nossoNumero, situacto }, 'Processing boleto webhook');
 
-    // Buscar payment by the number of the datebase
+    // Buscar payment by the number of the database
     const payment = await this.paymentService.findByBankNumber(nossoNumero);
 
     if (!payment) {
@@ -349,7 +349,7 @@ export class SicoobWebhookHandler {
         transactionId: nossoNumero,
       });
 
-      // Emitir event for others modules
+      // Emitir event for other modules
       this.eventEmithave.emit(
         'payment.confirmed',
         new PaymentConfirmedEvent({
@@ -444,15 +444,15 @@ export class PaymentConfirmedListener {
 
 ```bash
 # .env
-SICOOB_API_URL=https://api.sicoob.with.br
+SICOOB_API_URL=https://api.sicoob.com.br
 SICOOB_CLIENT_ID=your-client-id
 SICOOB_CLIENT_SECRET=your-client-secret
 SICOOB_CONVENIO=123456
 SICOOB_CONTA=12345678
-SICOOB_PIX_KEY=pix@academia.with.br
+SICOOB_PIX_KEY=pix@academia.com.br
 SICOOB_WEBHOOK_SECRET=your-webhook-secret
 
-# Sandbox for shouldlopment
+# Sandbox for development
 SICOOB_SANDBOX=true
 ```
 
@@ -490,7 +490,7 @@ export class SicoobMockService implements ISicoobService {
   async simulatePayment(paymentId: string): Promise<void> {
     const payment = await this.paymentRepository.findById(paymentId);
 
-    // Simular callbackendendend of the datebase
+    // Simular callbackendendend of the database
     await this.webhookHandler.processBoletoPayment({
       nossoNumero: payment.boletoCode,
       situacto: 'LIQUIDADO',
@@ -539,7 +539,7 @@ export class SicoobIpGuard implements CanActivate {
 
 ### Positive
 
--  Automaction withpleta of payments
+-  Automaction complete of payments
 -  Low automatic via webhook
 -  Suporte a boleto and PIX
 -  Events of domain for descoupling
@@ -552,5 +552,5 @@ export class SicoobIpGuard implements CanActivate {
 
 ## References
 
-- [Sicoob API Documentation](https://shouldlopers.sicoob.with.br/)
+- [Sicoob API Documentation](https://developers.sicoob.com.br/)
 - [PIX API BCB](https://www.bcb.gov.br/estabilidadefinanceira/pix)

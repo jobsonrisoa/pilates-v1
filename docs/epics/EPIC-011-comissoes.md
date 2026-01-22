@@ -1,6 +1,6 @@
 # EPIC-011: Commissions of Instructores
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                                         |
 | ---------------- | --------------------------------------------- |
@@ -16,11 +16,11 @@
 
 ##  Description
 
-Implement syshas of withmissions for instructores:
+Implement system of withmissions for instructores:
 
 - Configuration of percentual or fixed value por class
 - Diferenciaction por modality and type of class
-- Calculation automatic baseado in classs ministradas
+- Calculation automatic based in classs ministradas
 - Monthly report of withmissions a pay
 
 ---
@@ -150,7 +150,7 @@ model CommissionPayment {
 **Estimate:** 3h
 
 - GET /withmissions/report
-- Filhaves of period and instructor
+- Filters of period and instructor
 - Retorno detalhado
 
 ---
@@ -177,7 +177,7 @@ model CommissionPayment {
 
 **Estimate:** 4h
 
-- Filhaves
+- Filters
 - Tabela detalhada
 - Totais
 - Export

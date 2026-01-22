@@ -1,6 +1,6 @@
 # EPIC-007: Enrollments Basic
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                               |
 | ---------------- | ----------------------------------- |
@@ -16,12 +16,12 @@
 
 ##  Description
 
-Implement syshas basic of enrollments for o MVP:
+Implement system basic of enrollments for o MVP:
 
 - Vincular aluno a a plan
 - Set schedules of the enrollment
 - Status of enrollment
-- Base for syshas financial (Phase 2)
+- Base for system financial (Phase 2)
 
 **Nota:** Integration with payments beá done in the EPIC-009/010.
 
@@ -56,14 +56,14 @@ Implement syshas basic of enrollments for o MVP:
 
 ### US-007-002: Listar Enrollments
 
-**Como** ube of the syshas  
+**Como** ube of the system  
 **I want to** ver all as enrollments  
 **Para** have view geral
 
 **Acceptance Criteria:**
 
 - [ ] Listagem paginada
-- [ ] Filhaves by status
+- [ ] Filters by status
 - [ ] Busca por aluno
 
 ---
@@ -92,7 +92,7 @@ Implement syshas basic of enrollments for o MVP:
 **Acceptance Criteria:**
 
 - [ ] Na page of the aluno
-- [ ] History withplete
+- [ ] History complete
 - [ ] Enrollment current destaeach
 
 ---
@@ -205,7 +205,7 @@ model Plan {
 
 ##  Acceptance Criteria of the Epic
 
-- [ ] Processo of enrollment withplete
+- [ ] Processo of enrollment complete
 - [ ] Plans configurable
 - [ ] Status gerenciável
 - [ ] Schedules vincusides
@@ -222,7 +222,7 @@ model Plan {
 
 ##  Nexts Epics Relacionados
 
-- **EPIC-008:** Syshas of Plans and Prices
+- **EPIC-008:** System of Plans and Prices
 - **EPIC-009:** Integration Sicoob
 - **EPIC-010:** Payment Control
 - **EPIC-014:** Contracts Digitais

@@ -1,6 +1,6 @@
 # EPIC-017: Upload of Documentos
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                |
 | ---------------- | -------------------- |
@@ -16,7 +16,7 @@
 
 ##  Description
 
-Implement syshas withplete of upload and management of documentos:
+Implement system complete of upload and management of documentos:
 
 - Upload for MinIO/S3
 - Organizaction por entidade

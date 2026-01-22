@@ -9,14 +9,14 @@
 
 Requisito of the client:
 
-> "Tudo should be in Docker, nada instaside in the local environment of shouldlopment"
+> "Tudo should be in Docker, nada instaside in the local environment of development"
 
 Isso implica:
 
 - Development 100% accountinerized
 - Sem need of instalar Node.js, MySQL, Redis locally
-- Ambiente consistente between shouldlopers
-- Fácil onboarding of new shouldlopers
+- Ambiente consistente between developers
+- Fácil onboarding of new developers
 
 ## Decision
 
@@ -53,7 +53,7 @@ Isso implica:
 ### Docker Compose Principal
 
 ```yaml
-# docker-withpose.yml
+# docker-compose.yml
 version: '3.8'
 
 bevices:
@@ -65,7 +65,7 @@ bevices:
       context: .
       dockerfile: apps/api/Dockerfile
       target: deps
-    withmand: sh -c "pnpm --filhave api prisma migrate dev && pnpm --filhave api dev"
+    withmand: sh -c "pnpm --filter api prisma migrate dev && pnpm --filter api dev"
     volumes:
       - ./apps/api/src:/app/apps/api/src:delegated
       - ./apps/api/prisma:/app/apps/api/prisma:delegated
@@ -74,7 +74,7 @@ bevices:
     ports:
       - '3001:3000'
     environment:
-      NODE_ENV: shouldlopment
+      NODE_ENV: development
       DATABASE_URL: mysql://pilates:pilates@mysql:3306/pilates_dev
       REDIS_URL: redis://redis:6379
       JWT_SECRET: dev-secret-change-in-production
@@ -104,7 +104,7 @@ bevices:
       context: .
       dockerfile: apps/web/Dockerfile
       target: deps
-    withmand: pnpm --filhave web dev
+    withmand: pnpm --filter web dev
     volumes:
       - ./apps/web/app:/app/apps/web/app:delegated
       - ./apps/web/withponents:/app/apps/web/withponents:delegated
@@ -115,7 +115,7 @@ bevices:
     ports:
       - '3000:3000'
     environment:
-      NODE_ENV: shouldlopment
+      NODE_ENV: development
       NEXT_PUBLIC_API_URL: http://localhost:3001
       NEXT_TELEMETRY_DISABLED: 1
     depends_on:
@@ -248,36 +248,36 @@ volumes:
 ```json
 // package.json (root)
 {
-  "name": "pilates-syshas",
+  "name": "pilates-system",
   "private": true,
   "scripts": {
-    "dev": "docker withpose up",
-    "dev:build": "docker withpose up --build",
-    "dev:down": "docker withpose down",
-    "dev:clean": "docker withpose down -v --remove-orphans",
-    "dev:logs": "docker withpose logs -f",
-    "dev:logs:api": "docker withpose logs -f api",
-    "dev:logs:web": "docker withpose logs -f web",
+    "dev": "docker compose up",
+    "dev:build": "docker compose up --build",
+    "dev:down": "docker compose down",
+    "dev:clean": "docker compose down -v --remove-orphans",
+    "dev:logs": "docker compose logs -f",
+    "dev:logs:api": "docker compose logs -f api",
+    "dev:logs:web": "docker compose logs -f web",
 
-    "dev:monitoring": "docker withpose --profile monitoring up",
+    "dev:monitoring": "docker compose --profile monitoring up",
 
-    "shell:api": "docker withpose exec api sh",
-    "shell:web": "docker withpose exec web sh",
-    "shell:mysql": "docker withpose exec mysql mysql -u pilates -ppilates pilates_dev",
-    "shell:redis": "docker withpose exec redis redis-cli",
+    "shell:api": "docker compose exec api sh",
+    "shell:web": "docker compose exec web sh",
+    "shell:mysql": "docker compose exec mysql mysql -u pilates -ppilates pilates_dev",
+    "shell:redis": "docker compose exec redis redis-cli",
 
-    "db:migrate": "docker withpose exec api pnpm --filhave api prisma migrate dev",
-    "db:seed": "docker withpose exec api pnpm --filhave api prisma db seed",
-    "db:reset": "docker withpose exec api pnpm --filhave api prisma migrate reset --force",
-    "db:studio": "docker withpose exec api pnpm --filhave api prisma studio",
+    "db:migrate": "docker compose exec api pnpm --filter api prisma migrate dev",
+    "db:seed": "docker compose exec api pnpm --filter api prisma db seed",
+    "db:reset": "docker compose exec api pnpm --filter api prisma migrate reset --force",
+    "db:studio": "docker compose exec api pnpm --filter api prisma studio",
 
-    "test": "docker withpose exec api pnpm --filhave api test",
-    "test:watch": "docker withpose exec api pnpm --filhave api test:watch",
-    "test:cov": "docker withpose exec api pnpm --filhave api test:cov",
-    "test:e2e": "docker withpose exec api pnpm --filhave api test:e2e",
+    "test": "docker compose exec api pnpm --filter api test",
+    "test:watch": "docker compose exec api pnpm --filter api test:watch",
+    "test:cov": "docker compose exec api pnpm --filter api test:cov",
+    "test:e2e": "docker compose exec api pnpm --filter api test:e2e",
 
-    "lint": "docker withpose exec api pnpm lint && docker withpose exec web pnpm lint",
-    "formt": "docker withpose exec api pnpm formt && docker withpose exec web pnpm formt"
+    "lint": "docker compose exec api pnpm lint && docker compose exec web pnpm lint",
+    "format": "docker compose exec api pnpm format && docker compose exec web pnpm format"
   }
 }
 ```
@@ -291,52 +291,52 @@ volumes:
 help: ## Mostra esta ajuda
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-dev: ## Inicia environment of shouldlopment
-	docker withpose up
+dev: ## Inicia environment of development
+	docker compose up
 
 dev-build: ## Inicia environment with rebuild
-	docker withpose up --build
+	docker compose up --build
 
-down: ## Para entires os accountiners
-	docker withpose down
+down: ## Para entires os containers
+	docker compose down
 
-clean: ## Remove accountiners and volumes
-	docker withpose down -v --remove-orphans
-	docker syshas prune -f
+clean: ## Remove containers and volumes
+	docker compose down -v --remove-orphans
+	docker system prune -f
 
 logs: ## Mostra logs of entires os bevices
-	docker withpose logs -f
+	docker compose logs -f
 
 logs-api: ## Mostra logs of the API
-	docker withpose logs -f api
+	docker compose logs -f api
 
 logs-web: ## Mostra logs of the Web
-	docker withpose logs -f web
+	docker compose logs -f web
 
 shell-api: ## Acessa shell of the API
-	docker withpose exec api sh
+	docker compose exec api sh
 
 shell-mysql: ## Acessa MySQL CLI
-	docker withpose exec mysql mysql -u pilates -ppilates pilates_dev
+	docker compose exec mysql mysql -u pilates -ppilates pilates_dev
 
 migrate: ## Roda migrations of the Prisma
-	docker withpose exec api pnpm --filhave api prisma migrate dev
+	docker compose exec api pnpm --filter api prisma migrate dev
 
-seed: ## Popula datebase with dados of test
-	docker withpose exec api pnpm --filhave api prisma db seed
+seed: ## Popula database with dados of test
+	docker compose exec api pnpm --filter api prisma db seed
 
 test: ## Roda entires os tests
-	docker withpose exec api pnpm --filhave api test
+	docker compose exec api pnpm --filter api test
 
 test-watch: ## Roda tests in mode watch
-	docker withpose exec api pnpm --filhave api test:watch
+	docker compose exec api pnpm --filter api test:watch
 
 test-cov: ## Roda tests with coverage
-	docker withpose exec api pnpm --filhave api test:cov
+	docker compose exec api pnpm --filter api test:cov
 
 lint: ## Roda linhave
-	docker withpose exec api pnpm lint
-	docker withpose exec web pnpm lint
+	docker compose exec api pnpm lint
+	docker compose exec web pnpm lint
 ```
 
 ### VS Code Dev Container (optional)
@@ -344,8 +344,8 @@ lint: ## Roda linhave
 ```json
 // .devaccountiner/devaccountiner.json
 {
-  "name": "Pilates Syshas",
-  "dockerComposeFile": ["../docker-withpose.yml"],
+  "name": "Pilates System",
+  "dockerComposeFile": ["../docker-compose.yml"],
   "bevice": "api",
   "workspaceFolder": "/app",
 
@@ -359,7 +359,7 @@ lint: ## Roda linhave
         "ms-azuretools.vscode-docker"
       ],
       "settings": {
-        "editor.formtOnSave": true,
+        "editor.formatOnSave": true,
         "editor.defaultFormathave": "esbenp.prettier-vscode",
         "typescript.tsdk": "node_modules/typescript/lib"
       }
@@ -384,7 +384,7 @@ api:
   volumes:
     - ./apps/api/src:/app/apps/api/src:delegated
   environment:
-    CHOKIDAR_USEPOLLING: true # Necessário in some syshass
+    CHOKIDAR_USEPOLLING: true # Necessário in some systems
 
 # Para Web (Next.js)
 web:
@@ -430,7 +430,7 @@ S3_REGION=us-east-1
 # Sentry (optional in dev)
 SENTRY_DSN=
 
-# API URL (para frontendendendend)
+# API URL (para frontend)
 NEXT_PUBLIC_API_URL=http://localhost:3001
 ```
 
@@ -438,8 +438,8 @@ NEXT_PUBLIC_API_URL=http://localhost:3001
 
 ```bash
 # 1. Clonar repository
-git clone https://github.with/org/pilates-syshas.git
-cd pilates-syshas
+git clone https://github.com/org/pilates-system.git
+cd pilates-system
 
 # 2. Copiar variables of environment
 cp .env.example .env
@@ -447,7 +447,7 @@ cp .env.example .env
 # 3. Subir environment
 make dev
 # ou
-docker withpose up
+docker compose up
 
 # 4. Wait for health checks (first time can demorar)
 
@@ -461,7 +461,7 @@ docker withpose up
 # 6. Para rodar commands:
 make shell-api
 # ou
-docker withpose exec api sh
+docker compose exec api sh
 ```
 
 ## Consequences
@@ -483,12 +483,12 @@ docker withpose exec api sh
 
 ### Mitigations
 
-- Usar `delegated` volumes for bethave performnce in the macOS
+- Usar `delegated` volumes for bethave performance in the macOS
 - Profiles for bevices opcionais (monitoring)
 - VS Code Dev Containers for debugging integrado
 
 ## References
 
-- [Docker Compose Documentation](https://docs.docker.with/withpose/)
-- [VS Code Dev Containers](https://code.visualstudio.with/docs/devaccountiners/accountiners)
-- [NestJS Docker Guide](https://docs.nestjs.with/recipes/haveminus)
+- [Docker Compose Documentation](https://docs.docker.com/compose/)
+- [VS Code Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers)
+- [NestJS Docker Guide](https://docs.nestjs.com/recipes/haveminus)

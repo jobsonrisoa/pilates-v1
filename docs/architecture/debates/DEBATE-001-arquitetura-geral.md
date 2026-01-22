@@ -1,4 +1,4 @@
-# Debate Arquitetural #001 - Arquitetura Geral of the Syshas
+# Architectural Debate #001 - General Architecture of the System
 
 **Date:** 21/01/2026  
 **Participbefore:**
@@ -8,13 +8,13 @@
 -  **Roberto Silva** - Especialist in Costs and Otimizaction Cloud
 -  **Marina Costa** - Especialist in Quality and Tests
 -  **Felipe Santos** - Especialist in Security
--  **Juliana Oliveira** - Especialist in Obbevability
+-  **Juliana Oliveira** - Especialist in Observability
 
 ---
 
 ## Context
 
-Management syshas for academia of Pilates and Physiotherapy with modules de:
+Management system for academia of Pilates and Physiotherapy with modules de:
 
 - Authentication and RBAC
 - Management of Students and Instructores
@@ -38,7 +38,7 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 
 ### 🏗️ Dr. Carlos Mendes (Arquiteto):
 
-> "Para a syshas deste porte, with a team that imagino be pequena initially, rewithendo tightmente start with a **Monolito Modular**.
+> "Para a system deste porte, with a team that imagino be pequena initially, rewithendo tightmente start with a **Monolito Modular**.
 >
 > A estrutura of the NestJS already favorece isso with seus modules. Podemos organizar o code in bounded contexts of the DDD sem a withplexity operational of microbevices.
 >
@@ -77,7 +77,7 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 > - Deploy in qualquer VPS barata
 > - Logs centralizados naturalmente
 >
-> Minha sumanagement is usar **Docker Compose** for shouldlopment and a single Dockerfile otimizado for production."
+> Minha sumanagement is usar **Docker Compose** for development and a single Dockerfile optimized for production."
 
 ###  Roberto Silva (Costs):
 
@@ -119,16 +119,16 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 
 > "O requisito menciona MySQL, o that is adequado. Para DDD, sugiro usar o standard Repository with Prisma or TypeORM.
 >
-> Porém, there is a decision importante: **um datebase single or datebase por bounded context?**
+> Porém, there is a decision importante: **um database single or database por bounded context?**
 >
-> Minha recommendation: **datebase single with schemas/prefixos lógicos**. Isso facilita:
+> Minha recommendation: **database single with schemas/prefixos lógicos**. Isso facilita:
 >
 > - Transactions cross-domain when required
 > - Backup single
 > - Fewer custo
 > - Migrations more simple
 >
-> When (e se) migrarmos for microbevices, each service can have seu own schema or datebase."
+> When (e se) migrarmos for microbevices, each service can have seu own schema or database."
 
 ###  Ana Rodrigues:
 
@@ -185,12 +185,12 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 > - Render: free tier + $7/month
 > - Fly.io: free tier + pay-as-you-go
 >
-> **Option 3 - AWS (more caro, more controle):**
+> **Option 3 - AWS (more caro, more control):**
 >
 > - EC2 t3.micro: ~$10/month
 > - Lightsail: $5-10/month
 >
-> Minha recommendation: **Railway for shouldlopment/staging and Hetzner/DigitalOcean for production**."
+> Minha recommendation: **Railway for development/staging and Hetzner/DigitalOcean for production**."
 
 ###  Ana Rodrigues:
 
@@ -229,11 +229,11 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 
 ---
 
-## Topic 4: Obbevability
+## Topic 4: Observability
 
 ###  Juliana Oliveira:
 
-> "Obbevability is crítica, mas needs be proporcional to tamanho of the syshas. Para a monolito inicial, sugiro o stack more simple possible:
+> "Observability is crítica, mas needs be proporcional to tamanho of the system. Para a monolito inicial, sugiro o stack more simple possible:
 >
 > **Logging:**
 >
@@ -254,11 +254,11 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 > **APM Simple:**
 >
 > - New Relic (free tier generoso)
-> - Sentry for errorrs (free tier)"
+> - Sentry for errors (free tier)"
 
 ###  Ana Rodrigues:
 
-> "Concordo with a Juliana. Minha stack of obbevabilidade rewithendada:
+> "Concordo with a Juliana. Minha stack of observabilidade rewithendada:
 >
 > **Phase 1 (MVP):**
 >
@@ -278,11 +278,11 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 
 ###  Roberto Silva:
 
-> "Costs of obbevabilidade:
+> "Costs of observabilidade:
 >
 > **Gratuito/Barato:**
 >
-> - Sentry: free until 5K errorrs/month
+> - Sentry: free until 5K errors/month
 > - Logtail: free until 1GB/month
 > - UptimeRobot: free 50 monitors
 > - Grafana Cloud: free tier generoso
@@ -294,7 +294,7 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 >
 > Rewithendo start 100% gratuito and evolve conforme need."
 
-** DECISÃO: Sentry (errorrs) + Pino (logs) + Prometheus/Grafana (metrics) - tudo gratuito/self-hosted**
+** DECISÃO: Sentry (errors) + Pino (logs) + Prometheus/Grafana (metrics) - tudo gratuito/self-hosted**
 
 ---
 
@@ -399,28 +399,28 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 > - **Self-hosted**: Node.js in the same bevidor
 > - **Static export**: if not needsr of SSR
 >
-> Rewithendo **self-hosted** together with o backendendendend for simplificar and economizar."
+> Rewithendo **self-hosted** together with o backend for simplificar and economizar."
 
 ###  Ana Rodrigues:
 
-> "Para shouldlopment local with Docker:
+> "Para development local with Docker:
 >
 > ```yaml
 > bevices:
->   frontendendendend:
->     build: ./frontendendendend
+>   frontend:
+>     build: ./frontend
 >     volumes:
->       - ./frontendendendend:/app
+>       - ./frontend:/app
 >       - /app/node_modules
 >     ports:
 >       - '3000:3000'
 >     environment:
->       - NEXT_PUBLIC_API_URL=http://backendendendend:3001
+>       - NEXT_PUBLIC_API_URL=http://backend:3001
 > ```
 >
 > Hot-reload working, sem instalar Node.js locally."
 
-** DECISÃO: Next.js App Rouhave, self-hosted together with backendendendend**
+** DECISÃO: Next.js App Rouhave, self-hosted together with backend**
 
 ---
 
@@ -506,9 +506,9 @@ Management syshas for academia of Pilates and Physiotherapy with modules de:
 1.  Create ADRs for each decision
 2.  Create PRD consolidado
 3.  Set estrutura of folders of the project
-4.  Create docker-withpose.yml base
-5.  Iniciar shouldlopment of the MVP
+4.  Create docker-compose.yml base
+5.  Iniciar development of the MVP
 
 ---
 
-_Documento gerado a partir of the debate arquitetural realizado in 21/01/2026_
+_Documento gerado a partir of the debate architectural realizado in 21/01/2026_

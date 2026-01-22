@@ -1,6 +1,6 @@
 # EPIC-010: Payment Control
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                        |
 | ---------------- | ---------------------------- |
@@ -16,7 +16,7 @@
 
 ##  Description
 
-Implement controle withplete of payments:
+Implement control complete of payments:
 
 - Generation automatic of billing
 - Management of delinquency
@@ -39,7 +39,7 @@ Implement controle withplete of payments:
 
 ### US-010-001: Generate Billing Mensal
 
-**Como** syshas  
+**Como** system  
 **I want to** gerar billing automaticamente  
 **Para** not depender of action manual
 
@@ -48,7 +48,7 @@ Implement controle withplete of payments:
 - [ ] Job daily verifica due dates
 - [ ] Gera boleto/PIX 5 days before
 - [ ] Envia email to aluno
-- [ ] Registra in the syshas
+- [ ] Registra in the system
 
 ---
 
@@ -61,7 +61,7 @@ Implement controle withplete of payments:
 **Acceptance Criteria:**
 
 - [ ] Listagem paginada
-- [ ] Filhaves by status, date, aluno
+- [ ] Filters by status, date, aluno
 - [ ] Totais and resumos
 - [ ] Export
 
@@ -71,7 +71,7 @@ Implement controle withplete of payments:
 
 **Como** financial  
 **I want to** registrar payment recebido manualmente  
-**Para** cases outside of the syshas
+**Para** cases outside of the system
 
 **Acceptance Criteria:**
 
@@ -98,7 +98,7 @@ Implement controle withplete of payments:
 
 ### US-010-005: Suspension Automatic
 
-**Como** syshas  
+**Como** system  
 **I want to** suspender enrollments in atraso  
 **Para** forçar regularizaction
 
@@ -216,8 +216,8 @@ enum PaymentStatus {
 
 **Estimate:** 4h
 
-- DataTable withpleta
-- Filhaves advanced
+- DataTable complete
+- Filters advanced
 - Actions in lote
 
 ---

@@ -1,6 +1,6 @@
 # US-001-010: Documentation and Seed
 
-##  Informtion
+##  Information
 
 | Field            | Value               |
 | ---------------- | ------------------- |
@@ -25,7 +25,7 @@
 ##  Objectives
 
 1. Update README main
-2. Create seed of dados of shouldlopment
+2. Create seed of dados of development
 3. Document variables of environment
 4. Create guia of contribution
 
@@ -46,7 +46,7 @@
 ## Context
 
 Finalizando setup of the environment. Preciso of documentation
-e dados of test for facilitar o shouldlopment.
+e dados of test for facilitar o development.
 
 ## Tarefa
 
@@ -92,11 +92,11 @@ import * as bcrypt from 'bcrypt';
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('🌱 Seeding datebase...');
+  console.log('🌱 Seeding database...');
 
   // Create roles
   const roles = [
-    { name: 'SUPER_ADMIN', description: 'Full syshas access' },
+    { name: 'SUPER_ADMIN', description: 'Full system access' },
     { name: 'ADMIN', description: 'Administrator' },
     { name: 'MANAGER', description: 'Manager' },
     { name: 'RECEPTIONIST', description: 'Receptionist' },
@@ -150,7 +150,7 @@ async function main() {
   console.log('   Email: admin@pilates.with');
   console.log('   Password: Admin@123');
 
-  console.log('🎉 Seed withpleted!');
+  console.log('🎉 Seed completed!');
 }
 
 main()
@@ -172,9 +172,9 @@ main()
 
 ## Fluxo of Trabalho
 
-1. Crie a branch a partir of `shouldlop`
+1. Crie a branch a partir of `develop`
    ```bash
-   git checkout shouldlop
+   git checkout develop
    git pull
    git checkout -b feature/name-da-feature
    ```
@@ -188,10 +188,10 @@ main()
 3. Commit seguindo Conventional Commits
 
    ```bash
-   git withmit -m "feat: adiciona eachstro of students"
+   git commit -m "feat: adiciona eachstro of students"
    ```
 
-4. Push and abra PR for `shouldlop`
+4. Push and abra PR for `develop`
 
 ## Conventional Commits
 
@@ -228,7 +228,7 @@ main()
 - [ ] Frontend Next.js configured
 - [ ] Docker Compose working
 - [ ] Hot reload active
-- [ ] Lint and formt configureds
+- [ ] Lint and format configureds
 - [ ] Tests configureds (≥80%)
 - [ ] CI/CD working
 - [ ] Logging and metrics
@@ -238,6 +238,6 @@ main()
 
 ## 🎉 EPIC-001 Completed!
 
-Next epic: [EPIC-002: Authentication and Authorization](../EPIC-002-autenticacto.md)
+Next epic: [EPIC-002: Authentication and Authorization](../EPIC-002-autenticacao.md)
 
 ```

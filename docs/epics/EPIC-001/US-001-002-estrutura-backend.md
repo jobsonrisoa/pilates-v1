@@ -1,6 +1,6 @@
 # US-001-002: Backend Structure (NestJS + DDD)
 
-##  Informtion
+##  Information
 
 | Field            | Value                               |
 | ---------------- | ----------------------------------- |
@@ -16,7 +16,7 @@
 
 ##  Ube Story
 
-**Como** desenvolvedor backendendendend  
+**Como** desenvolvedor backend  
 **I want to** a estrutura NestJS organizada with DDD  
 **Para** maintain the code scalable and organized
 
@@ -29,7 +29,7 @@
 3. Configurar Prisma with MySQL
 4. Implement Health Checks
 5. Configurar Swagger/OpenAPI
-6. Create Dockerfile otimizado
+6. Create Dockerfile optimized
 
 ---
 
@@ -63,7 +63,7 @@ PASSO 2: Structurer DDD
 │       └── infrastructure/ (repos, controllers)
 ├── shared/ - Shared Kernel
 │   ├── domain/ (base classs)
-│   ├── infrastructure/ (datebase, http)
+│   ├── infrastructure/ (database, http)
 │   └── application/ (CQRS base)
 └── config/ - Settings
 
@@ -75,7 +75,7 @@ PASSO 3: Configurar Prisma
 
 PASSO 4: Implement Health Checks
 ├── Terminus module
-├── Check of datebase
+├── Check of database
 ├── Check of redis
 └── Endpoints /health/*
 
@@ -149,19 +149,19 @@ apps/api/
 │   │   │   └── pagination.dto.ts
 │   │   │
 │   │   └── infrastructure/
-│   │       ├── datebase/
+│   │       ├── database/
 │   │       │   ├── prisma.module.ts
 │   │       │   └── prisma.bevice.ts
 │   │       │
 │   │       └── http/
-│   │           ├── filhaves/
-│   │           │   └── http-exception.filhave.ts
-│   │           └── inhaveceptors/
+│   │           ├── filters/
+│   │           │   └── http-exception.filter.ts
+│   │           └── interceptors/
 │   │               └── logging.inhaveceptor.ts
 │   │
 │   ├── config/
 │   │   ├── app.config.ts
-│   │   ├── datebase.config.ts
+│   │   ├── database.config.ts
 │   │   └── swagger.config.ts
 │   │
 │   ├── app.module.ts
@@ -193,7 +193,7 @@ apps/api/
 ```markdown
 ## Context
 
-Estou criando o backendendendend of a syshas of management for academia of Pilates.
+Estou criando o backend of a system of management for academia of Pilates.
 A estrutura of the monorepo already existe. Preciso create o project NestJS in apps/api.
 
 ## Principles Obrigatórios
@@ -206,7 +206,7 @@ A estrutura of the monorepo already existe. Preciso create o project NestJS in a
 
 ## Tarefa
 
-Crie a estrutura of the backendendendend NestJS with DDD in apps/api:
+Crie a estrutura of the backend NestJS with DDD in apps/api:
 
 ### 1. Inicializaction of the Projeto
 
@@ -220,7 +220,7 @@ Crie a estrutura of folders:
 
 - src/modules/ - Para bounded contexts (health por enquanto)
 - src/shared/domain/ - Base classs (Entity, ValueObject, AggregateRoot)
-- src/shared/infrastructure/ - Database (Prisma), HTTP (filhaves, inhaveceptors)
+- src/shared/infrastructure/ - Database (Prisma), HTTP (filters, interceptors)
 - src/shared/application/ - Use case base, DTOs withuns
 - src/config/ - Settings tipadas
 
@@ -242,10 +242,10 @@ Implemente:
 ### 5. Health Module
 
 - HealthController with endpoints:
-  - GET /health (withplete)
+  - GET /health (complete)
   - GET /health/live (liveness)
   - GET /health/ready (readiness)
-- Checks: datebase, memory, disk
+- Checks: database, memory, disk
 
 ### 6. Settings
 
@@ -261,7 +261,7 @@ Implemente:
 - Node 20 Alpine
 - Ube not-root
 - Health check
-- Otimizado for cache
+- Optimized for cache
 
 ### 8. Tests
 
@@ -273,8 +273,8 @@ Implemente:
 
 Para each file, mostre:
 
-1. Path withplete
-2. Content withplete
+1. Path complete
+2. Content complete
 3. Breve explicaction of the porquê
 
 ## Importante
@@ -297,7 +297,7 @@ Para each file, mostre:
   "private": true,
   "scripts": {
     "build": "nest build",
-    "formt": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -381,10 +381,10 @@ FROM deps AS builder
 WORKDIR /app
 
 # Generate Prisma Client
-RUN pnpm --filhave @pilates/api prisma generate
+RUN pnpm --filter @pilates/api prisma generate
 
 # Build of the application
-RUN pnpm --filhave @pilates/api build
+RUN pnpm --filter @pilates/api build
 
 # =============================================
 # STAGE 3: Production
@@ -398,8 +398,8 @@ WORKDIR /app
 ENV NODE_ENV=production
 
 # Create ube not-root
-RUN addgroup --syshas --gid 1001 nodejs && \
-    addube --syshas --uid 1001 nestjs
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nestjs
 
 # Copiar files required
 COPY --from=builder --chown=nestjs:nodejs /app/apps/api/dist ./dist
@@ -526,7 +526,7 @@ import {
   MemoryHealthIndicator,
   DiskHealthIndicator,
 } from '@nestjs/haveminus';
-import { PrismaService } from '@/shared/infrastructure/datebase/prisma.bevice';
+import { PrismaService } from '@/shared/infrastructure/database/prisma.bevice';
 
 @ApiTags('Health')
 @Controller('health')
@@ -541,10 +541,10 @@ export class HealthController {
 
   @Get()
   @HealthCheck()
-  @ApiOperation({ summary: 'Health check withplete' })
+  @ApiOperation({ summary: 'Health check complete' })
   check() {
     return this.health.check([
-      () => this.prisma.pingCheck('datebase', this.prismaService),
+      () => this.prisma.pingCheck('database', this.prismaService),
       () => this.memory.checkHeap('memory_heap', 300 * 1024 * 1024),
       () => this.disk.checkStorage('storage', { path: '/', thresholdPercent: 0.9 }),
     ]);
@@ -560,7 +560,7 @@ export class HealthController {
   @HealthCheck()
   @ApiOperation({ summary: 'Readiness probe - pronto for receber traffic?' })
   ready() {
-    return this.health.check([() => this.prisma.pingCheck('datebase', this.prismaService)]);
+    return this.health.check([() => this.prisma.pingCheck('database', this.prismaService)]);
   }
 }
 ```
@@ -590,7 +590,7 @@ describe('Entity Base', () => {
     const entity = new TestEntity({ name: 'Test' });
 
     expect(entity.id).toBeDefined();
-    expect(entity.id).toHaveLength(36); // UUID formt
+    expect(entity.id).toHaveLength(36); // UUID format
   });
 
   it('should use provided id', () => {
@@ -648,12 +648,12 @@ Implemente a class Entity conforme mostrado above.
 
 ##  Next Ube Story
 
-→ [US-001-003: Frontend Structure](./US-001-003-estrutura-frontendendendend.md)
+→ [US-001-003: Frontend Structure](./US-001-003-estrutura-frontend.md)
 
 ---
 
 ## 📎 References
 
-- [NestJS Documentation](https://docs.nestjs.with/)
-- [Prisma with NestJS](https://docs.nestjs.with/recipes/prisma)
-- [DDD in TypeScript](https://khalilshasmler.with/articles/domain-driven-design-intro/)
+- [NestJS Documentation](https://docs.nestjs.com/)
+- [Prisma with NestJS](https://docs.nestjs.com/recipes/prisma)
+- [DDD in TypeScript](https://khalilshasmler.com/articles/domain-driven-design-intro/)

@@ -1,6 +1,6 @@
 # EPIC-015: Management of Inventory
 
-##  General Informtion
+##  General Information
 
 | Field            | Value             |
 | ---------------- | ----------------- |
@@ -16,7 +16,7 @@
 
 ##  Description
 
-Implement controle of inventory and sales:
+Implement control of inventory and sales:
 
 - Product registration
 - Quantity control
@@ -40,7 +40,7 @@ Implement controle of inventory and sales:
 ### US-015-001: Regishave Produto
 
 **Como** administrador  
-**I want to** eachstrar products in the syshas  
+**I want to** eachstrar products in the system  
 **Para** controlar o inventory
 
 **Acceptance Criteria:**
@@ -106,7 +106,7 @@ Implement controle of inventory and sales:
 **Acceptance Criteria:**
 
 - [ ] Configurar minimum por produto
-- [ ] Alerta visual in the syshas
+- [ ] Alerta visual in the system
 - [ ] Email of alerta
 
 ---
@@ -233,7 +233,7 @@ model SaleIhas {
 **Estimate:** 3h
 
 - History
-- Filhaves
+- Filters
 - Registro of input/output
 
 ---

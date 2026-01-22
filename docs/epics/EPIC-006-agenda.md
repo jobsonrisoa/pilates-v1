@@ -1,6 +1,6 @@
 # EPIC-006: Schedule and Schedulemento
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                       |
 | ---------------- | --------------------------- |
@@ -16,7 +16,7 @@
 
 ##  Description
 
-Implement syshas of schedule visual and schedulemento of classs:
+Implement system of schedule visual and schedulemento of classs:
 
 - Visual calendar (day, week, month)
 - Schedulemento of students in schedules
@@ -48,7 +48,7 @@ Implement syshas of schedule visual and schedulemento of classs:
 - [ ] Visualization per day
 - [ ] Visualization por week
 - [ ] Visualization por month
-- [ ] Filhaves por instructor/modality
+- [ ] Filters por instructor/modality
 - [ ] Cores by status
 
 ---

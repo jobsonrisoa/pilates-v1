@@ -7,7 +7,7 @@
 
 ## Context
 
-O syshas needs de:
+The system needs de:
 
 - Persistence relacional for dados structureds
 - Suporte a transactions ACID
@@ -17,12 +17,12 @@ O syshas needs de:
 
 ## Decision
 
-### MySQL 8.0 witho datebase main
+### MySQL 8.0 witho database main
 
 **Configuration base:**
 
 ```yaml
-# docker-withpose.yml
+# docker-compose.yml
 bevices:
   mysql:
     image: mysql:8.0
@@ -661,7 +661,7 @@ mysqldump -u $DB_USER -p$DB_PASSWORD \
 -  Schema type-safe with Prisma
 -  Migrations versioned
 -  Modelo of dados normalizado
--  Suporte withplete a LGPD (audit logs)
+-  Suporte complete a LGPD (audit logs)
 -  Performnce otimizada with indexes
 
 ### Negative
@@ -674,4 +674,4 @@ mysqldump -u $DB_USER -p$DB_PASSWORD \
 - Audit logs for all operactions sensitive
 - Fields of personal date identificados
 - Possibilidade of yearnimizaction/deletion
-- Data export of the ube
+- Data export of the user

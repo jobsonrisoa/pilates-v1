@@ -1,6 +1,6 @@
 # EPIC-016: Reports Operacionais
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                                    |
 | ---------------- | ---------------------------------------- |
@@ -181,7 +181,7 @@ Implement reports operacionais:
 **Estimate:** 6h
 
 - Uma page por report
-- Filhaves
+- Filters
 - Charts
 - Export
 
@@ -189,7 +189,7 @@ Implement reports operacionais:
 
 ##  Acceptance Criteria of the Epic
 
-- [ ] Todos os reports working
+- [ ] All reports working
 - [ ] Charts informctives
 - [ ] Applicable filters
 - [ ] Export PDF/Excel

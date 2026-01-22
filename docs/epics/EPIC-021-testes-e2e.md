@@ -1,6 +1,6 @@
 # EPIC-021: Tests E2E and Performnce
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                      |
 | ---------------- | -------------------------- |
@@ -16,7 +16,7 @@
 
 ##  Description
 
-Implement suite withpleta of tests:
+Implement suite complete of tests:
 
 - Tests E2E of the fluxos critical
 - Tests of carga and stress
@@ -28,7 +28,7 @@ Implement suite withpleta of tests:
 ##  Objectives
 
 1. E2E for fluxos principais
-2. Garantir performnce sob carga
+2. Garantir performance sob carga
 3. Identificar vulnerabilidades
 4. Cobertura documentada
 
@@ -70,7 +70,7 @@ Implement suite withpleta of tests:
 ### US-021-003: Tests E2E of Fluxo of Enrollment
 
 **Como** QA  
-**I want to** tbe o fluxo withplete  
+**I want to** tbe o fluxo complete  
 **Para** garantir operation
 
 **Acceptance Criteria:**
@@ -92,7 +92,7 @@ Implement suite withpleta of tests:
 
 - [ ] 100 users simultaneous
 - [ ] P95 < 500ms
-- [ ] Zero errorrs
+- [ ] Zero errors
 
 ---
 
@@ -158,7 +158,7 @@ Implement suite withpleta of tests:
 
 **Estimate:** 4h
 
-- Fluxo withplete
+- Complete flow
 - Payment (mock)
 - Contract
 
@@ -202,7 +202,7 @@ Implement suite withpleta of tests:
 
 - OWASP ZAP basic
 - Dependencies (npm audit)
-- Trivy for accountiners
+- Trivy for containers
 
 ---
 

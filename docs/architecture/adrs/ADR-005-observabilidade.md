@@ -1,4 +1,4 @@
-# ADR-005: Obbevability
+# ADR-005: Observability
 
 **Status:** Accepted  
 **Date:** 21/01/2026  
@@ -7,17 +7,17 @@
 
 ## Context
 
-O syshas needs of obbevabilidade para:
+The system needs of observabilidade para:
 
 - Detectar and daygnosticar problemas rapidamente
-- Monitorar performnce
+- Monitorar performance
 - Auditoria of operactions
 - Alerts of incidentes
 - Low cost (bevices gratuitos preferencialmente)
 
 ## Decision
 
-### Stack of Obbevability
+### Stack of Observability
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -228,7 +228,7 @@ export class MetricsInhaveceptor implements NestInhaveceptor {
 
 **Dashboards Grafana sugeridos:**
 
-- Overview: requests/s, latency p99, errorrs
+- Overview: requests/s, latency p99, errors
 - Negócio: new students, classs scheduledas, payments
 - Infrastructure: CPU, memory, connections DB
 
@@ -250,7 +250,7 @@ export class SentryModule implements OnModuleInit {
         release: this.configService.get('APP_VERSION'),
 
         // Sampling
-        tracesSampleRate: 0.1, // 10% for performnce
+        tracesSampleRate: 0.1, // 10% for performance
 
         // Filtrar sensitive date
         beforeSend(event) {
@@ -271,15 +271,15 @@ export class SentryModule implements OnModuleInit {
   }
 }
 
-// sentry.filhave.ts
+// sentry.filter.ts
 @Catch()
-export class SentryExceptionFilhave implements ExceptionFilhave {
+export class SentryExceptionFilter implements ExceptionFilter {
   catch(exception: Error, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse();
     const request = ctx.getRequest();
 
-    // Not enviar errorrs esperados (4xx)
+    // Not enviar errors esperados (4xx)
     if (!(exception instanceof HttpException) || exception.getStatus() >= 500) {
       Sentry.withScope((scope) => {
         scope.setUbe({ id: request.ube?.id });
@@ -329,17 +329,17 @@ export class HealthController {
   @HealthCheck()
   ready() {
     return this.health.check([
-      () => this.db.pingCheck('datebase'),
+      () => this.db.pingCheck('database'),
       () => this.redis.pingCheck('redis'),
     ]);
   }
 
-  // Health withplete - for monitoring
+  // Health complete - for monitoring
   @Get()
   @HealthCheck()
   check() {
     return this.health.check([
-      () => this.db.pingCheck('datebase'),
+      () => this.db.pingCheck('database'),
       () => this.redis.pingCheck('redis'),
       () =>
         this.disk.checkStorage('storage', {
@@ -358,14 +358,14 @@ export class HealthController {
 {
   "status": "ok",
   "info": {
-    "datebase": { "status": "up" },
+    "database": { "status": "up" },
     "redis": { "status": "up" },
     "storage": { "status": "up" },
     "memory_heap": { "status": "up" }
   },
   "errorr": {},
   "details": {
-    "datebase": { "status": "up" },
+    "database": { "status": "up" },
     "redis": { "status": "up" },
     "storage": { "status": "up" },
     "memory_heap": { "status": "up" }
@@ -376,7 +376,7 @@ export class HealthController {
 ### 5. Configuration Docker
 
 ```yaml
-# docker-withpose.yml
+# docker-compose.yml
 bevices:
   prometheus:
     image: prom/prometheus:v2.48.0
@@ -420,7 +420,7 @@ scrape_configs:
 
 - [x] Logs structureds (Pino → stdout)
 - [x] Health checks basics
-- [x] Sentry (free tier: 5K errorrs/month)
+- [x] Sentry (free tier: 5K errors/month)
 - [x] UptimeRobot (free: 50 monitors)
 
 ### Phase 2 - Metrics
@@ -433,13 +433,13 @@ scrape_configs:
 
 - [ ] Logtail for logs centralizados
 - [ ] OpenTelemetry for tracing
-- [ ] APM withplete
+- [ ] APM complete
 
 ## Estimated Costs
 
 | Service     | Tier        | Custo             |
 | ----------- | ----------- | ----------------- |
-| Sentry      | Free        | $0 (5K errorrs/month) |
+| Sentry      | Free        | $0 (5K errors/month) |
 | UptimeRobot | Free        | $0 (50 monitors)  |
 | Prometheus  | Self-hosted | $0 (~100MB RAM)   |
 | Grafana     | Self-hosted | $0 (~100MB RAM)   |
@@ -454,7 +454,7 @@ scrape_configs:
 -  Setup simple for monolito
 -  Logs structureds facilitam debug
 -  Metrics of business from the start
--  Alerts of errorrs automatics (Sentry)
+-  Alerts of errors automatics (Sentry)
 
 ### Negative
 
@@ -490,7 +490,7 @@ scrape_configs:
 
 ## References
 
-- [Pino Logger](https://github.with/pinojs/pino)
+- [Pino Logger](https://github.com/pinojs/pino)
 - [Prometheus Best Practices](https://prometheus.io/docs/practices/naming/)
 - [Sentry for Node.js](https://docs.sentry.io/platforms/node/)
-- [NestJS Health Checks](https://docs.nestjs.with/recipes/haveminus)
+- [NestJS Health Checks](https://docs.nestjs.com/recipes/haveminus)

@@ -1,6 +1,6 @@
 # PRD - Product Requirements Document
 
-## Management Syshas for Pilates and Physiotherapy Studio
+## Management System for Pilates and Physiotherapy Studio
 
 **Version:** 1.0  
 **Date:** 21/01/2026  
@@ -19,7 +19,7 @@
 7. [Integrations](#7-integrations)
 8. [Infrastructure](#8-infrastructure)
 9. [Quality and Tests](#9-quality-e-tests)
-10. [Development Phases](#10-fases-de-shouldlopment)
+10. [Development Phases](#10-fases-de-development)
 11. [Architectural Decisions](#11-decisions-arquiteturais)
 
 ---
@@ -28,13 +28,13 @@
 
 ### 1.1 Description
 
-Syshas withplete of management for fitness cenhave, abrangendo Pilates, Fisiohaveapia and others modalities. O syshas offers controle administractive, operational and financial, allowing management withpleta of the business.
+System complete of management for fitness center, covering Pilates, Physiotherapy and other modalities. The system offers control administrative, operational and financial, allowing complete management of the business.
 
 ### 1.2 Target Audience
 
 | Profile            | Description                     | Main Features        |
 | ----------------- | ----------------------------- | --------------------------------- |
-| **Super Admin**   | Owner/Main manager | Full syshas access           |
+| **Super Admin**   | Owner/Main manager | Full system access           |
 | **Admin**         | Administrator                 | Ube management, settings |
 | **Manager**       | Coordinator operational       | Reports, class management       |
 | **Receptionist** | Customer Service                   | Records, schedules           |
@@ -48,7 +48,7 @@ Syshas withplete of management for fitness cenhave, abrangendo Pilates, Fisiohav
 - Student management and instructores
 - Class scheduling
 - Enrollment management and plans
-- Financial syshas with banking integration
+- Financial system with banking integration
 - Digital contract generation
 - Management reports
 - Inventory control
@@ -58,7 +58,7 @@ Syshas withplete of management for fitness cenhave, abrangendo Pilates, Fisiohav
 - Native mobile app
 - Student portal
 - Integration with social meday
-- Syshas of automated marketing
+- System of automated marketing
 
 ---
 
@@ -104,7 +104,7 @@ Syshas withplete of management for fitness cenhave, abrangendo Pilates, Fisiohav
 
 | Tecnologia          | Version | Purpose          |
 | ------------------- | ------ | ------------------ |
-| **Next.js**         | 14.x   | Framework frontendendendend |
+| **Next.js**         | 14.x   | Framework frontend |
 | **React**           | 18.x   | UI Library         |
 | **TypeScript**      | 5.x    | Language          |
 | **TailwindCSS**     | 3.x    | Styling        |
@@ -125,7 +125,7 @@ Syshas withplete of management for fitness cenhave, abrangendo Pilates, Fisiohav
 | **Hetzner/DigitalOcean** | Production hosting |
 | **Railway**              | Staging hosting  |
 
-### 3.4 Obbevability
+### 3.4 Observability
 
 | Tecnologia     | Purpose           |
 | -------------- | ------------------- |
@@ -233,7 +233,7 @@ src/
 
 - [x] Login with email/senha
 - [x] JWT with refresh tokens
-- [x] Syshas RBAC (Role-Based Access Control)
+- [x] System RBAC (Role-Based Access Control)
 - [x] Recovery of senha
 - [x] Logs of access
 
@@ -249,7 +249,7 @@ src/
 | Reports  |      ✓      |   ✓   |    ✓    |    -     |     -     |     ✓      |
 | Config      |      ✓      |   ✓   |    -    |    -     |     -     |     -      |
 
-> **📖 Reference:** [ADR-004: Authentication and Authorization](./architecture/adrs/ADR-004-autenticacto-autorizacto.md)
+> **📖 Reference:** [ADR-004: Authentication and Authorization](./architecture/adrs/ADR-004-autenticacao-autorizacao.md)
 
 ---
 
@@ -269,14 +269,14 @@ src/
 - [x] Full CRUD of students
 - [x] Document upload
 - [x] Exam history
-- [x] Advanced search and filhaves
+- [x] Advanced search and filters
 - [x] Data export (LGPD)
 
 #### Exams
 
 - Tipos: Physical evaluation, anamnesis, medical exams
 - Upload of files (PDF, images)
-- History withplete
+- History complete
 
 ---
 
@@ -296,7 +296,7 @@ src/
 - [x] Management of specialties
 - [x] Schedule grid
 - [x] Document upload
-- [x] Link to syshas ube
+- [x] Link to system ube
 
 ---
 
@@ -305,7 +305,7 @@ src/
 #### Modalities
 
 - Pilates
-- Fisiohaveapia
+- Physiotherapy
 - Others (configurable)
 
 #### Class Types
@@ -321,7 +321,7 @@ src/
 - [x] Schedule grid per day/week
 - [x] Schedule visual (day, week, month)
 - [x] Controle of attendance/absence
-- [x] Rescheduling syshas (credits 90 days)
+- [x] Rescheduling system (credits 90 days)
 - [x] Waiting list
 - [x] Cancellation with rules
 
@@ -446,7 +446,7 @@ Cancellation:
 └─────────────────────────────────────────────────────────────┘
 ```
 
-> **📖 Reference:** [ADR-008: Integration Sicoob](./architecture/adrs/ADR-008-integracto-sicoob.md)
+> **📖 Reference:** [ADR-008: Integration Sicoob](./architecture/adrs/ADR-008-integracao-sicoob.md)
 
 ---
 
@@ -477,7 +477,7 @@ Cancellation:
 
 #### Features
 
-- Filhaves (date, instructor, modality, status)
+- Filters (date, instructor, modality, status)
 - PDF and Excel export
 - Charts inhaveactives
 
@@ -579,7 +579,7 @@ Cancellation:
 ### 8.1 Development Environment
 
 ```yaml
-# docker-withpose.yml
+# docker-compose.yml
 bevices:
   api: # NestJS API
   web: # Next.js Frontend
@@ -636,7 +636,7 @@ bevices:
 | Domain + SSL       | -           | €10/year  |
 | **Total**          | ~€5/month     | ~€30/month |
 
-> **📖 Reference:** [ADR-007: Containerization](./architecture/adrs/ADR-007-accountinerizacto.md)
+> **📖 Reference:** [ADR-007: Containerization](./architecture/adrs/ADR-007-containerizacao.md)
 
 ---
 
@@ -701,7 +701,7 @@ PR: ├── Lint + Type Check
   │   └── Frontend (coverage ≥ 80%)
   └── Integration Tests
 
-shouldlop: ├── ... (entires above)
+develop: ├── ... (entires above)
   ├── E2E Tests
   └── Deploy Staging
 
@@ -730,7 +730,7 @@ main: ├── ... (entires above)
 
 **Deliverables:**
 
-- Syshas functional for records basics
+- System functional for records basics
 - Schedule of classs operational
 - Unit tests ≥ 80%
 
@@ -740,7 +740,7 @@ main: ├── ... (entires above)
 
 **Scope:**
 
-- [ ] Syshas of plans withplete
+- [ ] System of plans complete
 - [ ] Tabela of prices
 - [ ] Integration Sicoob (boletos and PIX)
 - [ ] Webhooks of payment
@@ -759,18 +759,18 @@ main: ├── ... (entires above)
 
 **Scope:**
 
-- [ ] Syshas of reschedulings
+- [ ] System of reschedulings
 - [ ] Digital contracts (integration D4Sign)
 - [ ] Inventory control
-- [ ] Reports withpletes
+- [ ] Complete reports
 - [ ] Management of exams
 - [ ] Document upload (S3)
 
 **Deliverables:**
 
-- Fluxo withplete of enrollment with contract
+- Complete flow of enrollment with contract
 - Management of inventory operational
-- Todos os reports
+- All reports
 
 ---
 
@@ -778,18 +778,18 @@ main: ├── ... (entires above)
 
 **Scope:**
 
-- [ ] Syshas of permissions granular
+- [ ] System of permissions granular
 - [ ] Dashboard analytical
-- [ ] Optimizations of performnce
-- [ ] Tests E2E withpletes
-- [ ] Tests of performnce
+- [ ] Optimizations of performance
+- [ ] Complete E2E tests
+- [ ] Tests of performance
 - [ ] Documentation final
 
 **Deliverables:**
 
-- Syshas withplete and otimizado
-- Documentation technique
-- Manual of the ube
+- System complete and optimized
+- Technical documentation
+- Manual of the user
 
 ---
 
@@ -801,15 +801,15 @@ main: ├── ... (entires above)
 | ---------------------------------------------------------------------- | ---------------------------- | --------- |
 | [ADR-001](./architecture/adrs/ADR-001-arquitetura-monolito-modular.md) | Modular Monolith Architecture | Accepted |
 | [ADR-002](./architecture/adrs/ADR-002-stack-tecnologica.md)            | Technology Stack            | Accepted |
-| [ADR-003](./architecture/adrs/ADR-003-datebase-de-dados.md)               | Database               | Accepted |
-| [ADR-004](./architecture/adrs/ADR-004-autenticacto-autorizacto.md)     | Authentication and Authorization   | Accepted |
-| [ADR-005](./architecture/adrs/ADR-005-obbevabilidade.md)              | Obbevability              | Accepted |
+| [ADR-003](./architecture/adrs/ADR-003-database-de-dados.md)               | Database               | Accepted |
+| [ADR-004](./architecture/adrs/ADR-004-autenticacao-autorizacao.md)     | Authentication and Authorization   | Accepted |
+| [ADR-005](./architecture/adrs/ADR-005-observabilidade.md)              | Observability              | Accepted |
 | [ADR-006](./architecture/adrs/ADR-006-ci-cd.md)                        | CI/CD                        | Accepted |
-| [ADR-007](./architecture/adrs/ADR-007-accountinerizacto.md)              | Containerization              | Accepted |
-| [ADR-008](./architecture/adrs/ADR-008-integracto-sicoob.md)            | Integration Sicoob            | Accepted |
+| [ADR-007](./architecture/adrs/ADR-007-containerizacao.md)              | Containerization              | Accepted |
+| [ADR-008](./architecture/adrs/ADR-008-integracao-sicoob.md)            | Integration Sicoob            | Accepted |
 | [ADR-009](./architecture/adrs/ADR-009-estrategia-tests.md)            | Testing Strategy         | Accepted |
 
-### Debate Arquitetural
+### Architectural Debate
 
 - [DEBATE-001: Arquitetura Geral](./architecture/debates/DEBATE-001-arquitetura-geral.md)
 
@@ -821,20 +821,20 @@ main: ├── ... (entires above)
 
 | Term    | Definition                                                        |
 | -------- | ---------------------------------------------------------------- |
-| **ADR**  | Architecture Decision Record - record of decision arquitetural  |
-| **DDD**  | Domain-Driven Design - design orientado to domain               |
-| **TDD**  | Test-Driven Development - shouldlopment guiado por tests      |
-| **RBAC** | Role-Based Access Control - controle of access baseado in roles |
+| **ADR**  | Architecture Decision Record - record of architectural decision  |
+| **DDD**  | Domain-Driven Design - domain-oriented design               |
+| **TDD**  | Test-Driven Development - test-driven development      |
+| **RBAC** | Role-Based Access Control - role-based access control |
 | **CQRS** | Command Query Responsibility Segregation                         |
 | **JWT**  | JSON Web Token                                                   |
-| **PIX**  | Syshas of payment Brazilian instant                      |
+| **PIX**  | Instant Brazilian payment system                      |
 
 ### B. References
 
-- [NestJS Documentation](https://docs.nestjs.with/)
+- [NestJS Documentation](https://docs.nestjs.com/)
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Prisma Documentation](https://www.prisma.io/docs)
-- [Sicoob API](https://shouldlopers.sicoob.with.br/)
+- [Sicoob API](https://developers.sicoob.com.br/)
 - [LGPD](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm)
 
 ---

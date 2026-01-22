@@ -2,7 +2,7 @@
 
 ##  Overview
 
-Este epic configura all a infrastructure of shouldlopment of the project seguindo os principles:
+Este epic configura all a infrastructure of development of the project seguindo os principles:
 
 - **TDD** - Test-Driven Development (Red → Green → Refactor)
 - **DDD** - Domain-Driven Design
@@ -17,14 +17,14 @@ Este epic configura all a infrastructure of shouldlopment of the project seguind
 | ID                                               | Title                                    | Estimate | Status     |
 | ------------------------------------------------ | ----------------------------------------- | ---------- | ---------- |
 | [US-001-001](./US-001-001-setup-inicial.md)      | Initial Project Setup                  | 4h         | Backlog |
-| [US-001-002](./US-001-002-estrutura-backendendendend.md)  | Backend Structure (NestJS + DDD)       | 6h         | Backlog |
-| [US-001-003](./US-001-003-estrutura-frontendendendend.md) | Frontend Structure (Next.js)           | 5h         | Backlog |
-| [US-001-004](./US-001-004-docker-withpose.md)     | Docker Compose Completo                   | 4h         | Backlog |
+| [US-001-002](./US-001-002-estrutura-backend.md)  | Backend Structure (NestJS + DDD)       | 6h         | Backlog |
+| [US-001-003](./US-001-003-estrutura-frontend.md) | Frontend Structure (Next.js)           | 5h         | Backlog |
+| [US-001-004](./US-001-004-docker-compose.md)     | Docker Compose Completo                   | 4h         | Backlog |
 | [US-001-005](./US-001-005-quality-codigo.md)   | Quality of Code (Lint, Format, Hooks) | 3h         | Backlog |
-| [US-001-006](./US-001-006-tests-backendendendend.md)     | Configuration of Tests Backend            | 4h         | Backlog |
-| [US-001-007](./US-001-007-tests-frontendendendend.md)    | Configuration of Tests Frontend           | 4h         | Backlog |
+| [US-001-006](./US-001-006-tests-backend.md)     | Configuration of Tests Backend            | 4h         | Backlog |
+| [US-001-007](./US-001-007-tests-frontend.md)    | Configuration of Tests Frontend           | 4h         | Backlog |
 | [US-001-008](./US-001-008-ci-cd.md)              | Pipeline CI/CD (GitHub Actions)           | 5h         | Backlog |
-| [US-001-009](./US-001-009-obbevabilidade.md)    | Logging and Metrics                        | 3h         | Backlog |
+| [US-001-009](./US-001-009-observabilidade.md)    | Logging and Metrics                        | 3h         | Backlog |
 | [US-001-010](./US-001-010-documentacto.md)       | Documentation and Seed                       | 3h         | Backlog |
 
 ---
@@ -48,7 +48,7 @@ US-001-001 (Initial Setup)
     │
     └──► US-001-008 (CI/CD)
               │
-              └──► US-001-009 (Obbevability)
+              └──► US-001-009 (Observability)
                         │
                         └──► US-001-010 (Docs)
 ```
@@ -83,18 +83,18 @@ Cada US accountins:
 ##  Definition of Done of the Epic
 
 - [ ] Todas as Ube Stories completed
-- [ ] `docker withpose up` funciona
+- [ ] `docker compose up` funciona
 - [ ] Hot reload active (API and Web)
 - [ ] Tests passando (≥80% coverage)
 - [ ] CI pipeline functional
-- [ ] Documentation withpleta
+- [ ] Complete documentation
 - [ ] Seed of dados working
 
 ---
 
 ##  Como Começar
 
-1. **Leia** a [US-001-001](./US-001-001-setup-inicial.md) withpleta
+1. **Leia** a [US-001-001](./US-001-001-setup-inicial.md) complete
 2. **Copie** o prompt for o AI
 3. **Execute** os commands gerados
 4. **Valide** os crihaveia of aceite
@@ -106,5 +106,5 @@ Cada US accountins:
 
 - [EPIC-001 Original](../EPIC-001-setup-environment.md)
 - [ADR-002: Technology Stack](../../architecture/adrs/ADR-002-stack-tecnologica.md)
-- [ADR-007: Containerization](../../architecture/adrs/ADR-007-accountinerizacto.md)
+- [ADR-007: Containerization](../../architecture/adrs/ADR-007-containerizacao.md)
 - [ADR-009: Testing Strategy](../../architecture/adrs/ADR-009-estrategia-tests.md)

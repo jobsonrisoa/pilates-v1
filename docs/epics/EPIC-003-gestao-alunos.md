@@ -1,6 +1,6 @@
 # EPIC-003: Management of Students
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                   |
 | ---------------- | ----------------------- |
@@ -16,12 +16,12 @@
 
 ##  Description
 
-Implement module withplete of management of students including:
+Implement module complete of management of students including:
 
 - Registration with personal date, accountto and emergency
 - Medical date and notes
 - Exam history
-- Advanced search and filhaves
+- Advanced search and filters
 - Data export (LGPD)
 
 ---
@@ -41,7 +41,7 @@ Implement module withplete of management of students including:
 ### US-003-001: Regishave Student
 
 **Como** recepcionista  
-**I want to** eachstrar a new aluno in the syshas  
+**I want to** eachstrar a new aluno in the system  
 **Para** that ele possa be matricuside in classs
 
 **Acceptance Criteria:**
@@ -56,7 +56,7 @@ Implement module withplete of management of students including:
 
 ### US-003-002: Listar Students
 
-**Como** ube of the syshas  
+**Como** ube of the system  
 **I want to** ver a list of students eachstrados  
 **Para** encontrar rapidamente quem preciso
 
@@ -64,9 +64,9 @@ Implement module withplete of management of students including:
 
 - [ ] Listagem paginada
 - [ ] Busca por name, CPF, email
-- [ ] Filhaves by status (active, inactive, suspended)
+- [ ] Filters by status (active, inactive, suspended)
 - [ ] Ordenaction por name, date eachstro
-- [ ] Informtion resumidas visible
+- [ ] Information resumidas visible
 
 ---
 
@@ -74,7 +74,7 @@ Implement module withplete of management of students including:
 
 **Como** recepcionista  
 **I want to** editar dados of a aluno  
-**Para** maintain as informtion currentizadas
+**Para** maintain as information currentizadas
 
 **Acceptance Criteria:**
 
@@ -87,13 +87,13 @@ Implement module withplete of management of students including:
 
 ### US-003-004: Visualizar Detalhes of the Student
 
-**Como** ube of the syshas  
+**Como** ube of the system  
 **I want to** ver entires os dados of a aluno  
-**Para** have view withpleta of the eachstro
+**Para** have view complete of the eachstro
 
 **Acceptance Criteria:**
 
-- [ ] Page of detalhes withpleta
+- [ ] Page of detalhes complete
 - [ ] Abas: Givens, Exams, Enrollments, History
 - [ ] Actions fast (editar, matricular)
 
@@ -103,7 +103,7 @@ Implement module withplete of management of students including:
 
 **Como** gerente  
 **I want to** activer, inativer or suspender students  
-**Para** controlar quem is active in the syshas
+**Para** controlar quem is active in the system
 
 **Acceptance Criteria:**
 
@@ -181,7 +181,7 @@ Implement module withplete of management of students including:
 
 - [ ] Schema criado
 - [ ] Migration aplieach
-- [ ] Indexs otimizados
+- [ ] Indexs optimizeds
 
 ---
 
@@ -207,7 +207,7 @@ Implement module withplete of management of students including:
 
 ---
 
-#### TASK-003-004: Busca and Filhaves
+#### TASK-003-004: Busca and Filters
 
 **Estimate:** 3h
 
@@ -321,7 +321,7 @@ Implement module withplete of management of students including:
 
 **Definition of Done:**
 
-- [ ] Form withplete
+- [ ] Form complete
 - [ ] Validations working
 - [ ] Máscara of CPF, phone
 - [ ] Tests
@@ -400,12 +400,12 @@ Implement module withplete of management of students including:
 
 - [ ] Paginaction working
 - [ ] Busca por name/CPF/email
-- [ ] Filhaves by status
+- [ ] Filters by status
 - [ ] Performnce adequada (< 500ms)
 
 ### Detalhes
 
-- [ ] Todas as informtion visible
+- [ ] Todas as information visible
 - [ ] Abas organizadas
 - [ ] Editing actions accessible
 
@@ -440,7 +440,7 @@ Implement module withplete of management of students including:
 
 ## 📎 References
 
-- [ADR-003: Database](../architecture/adrs/ADR-003-datebase-de-dados.md)
+- [ADR-003: Database](../architecture/adrs/ADR-003-database-de-dados.md)
 - [PRD - Section 5.2](../PRD.md#52-student-management)
 
 ---
@@ -452,7 +452,7 @@ Semana 1:
 ├── TASK-003-001: Module Students (3h)
 ├── TASK-003-002: Schema Prisma (2h)
 ├── TASK-003-003: CRUD API (4h)
-├── TASK-003-004: Busca/Filhaves (3h)
+├── TASK-003-004: Busca/Filters (3h)
 ├── TASK-003-005: CRUD Exams (3h)
 ├── TASK-003-006: Upload Files (3h)
 ├── TASK-003-007: Export LGPD (2h)

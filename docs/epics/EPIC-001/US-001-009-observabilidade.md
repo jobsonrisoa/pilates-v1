@@ -1,6 +1,6 @@
 # US-001-009: Logging and Metrics
 
-##  Informtion
+##  Information
 
 | Field            | Value              |
 | ---------------- | ------------------ |
@@ -18,7 +18,7 @@
 
 **Como** desenvolvedor/ops  
 **I want to** logging structured and metrics  
-**Para** debugar and monitorar o syshas
+**Para** debugar and monitorar o system
 
 ---
 
@@ -27,17 +27,17 @@
 1. Configurar Pino for logs structureds
 2. Configurar endpoint /metrics (Prometheus)
 3. Redact of sensitive date
-4. Configurar Sentry for errorrs
+4. Configurar Sentry for errors
 
 ---
 
 ##  Acceptance Criteria
 
 - [ ] Logs in JSON in production
-- [ ] Logs pretty in shouldlopment
+- [ ] Logs pretty in development
 - [ ] /metrics endpoint working
 - [ ] Givens sensitive redactados
-- [ ] Sentry capturando errorrs (prod)
+- [ ] Sentry capturando errors (prod)
 
 ---
 
@@ -46,8 +46,8 @@
 ```markdown
 ## Context
 
-Backend NestJS. Preciso of obbevabilidade basic para
-shouldlopment and production.
+Backend NestJS. Preciso of observabilidade basic para
+development and production.
 
 ## Tarefa
 
@@ -71,7 +71,7 @@ Configure:
 
 - @sentry/node
 - Apenas in production
-- Filhave of errorrs 4xx
+- Filter of errors 4xx
 ```
 
 ---
@@ -156,7 +156,7 @@ export class MetricsModule {}
 
 ##  Checklist of Verification
 
-- [ ] Logs aparecem formtados
+- [ ] Logs aparecem formatados
 - [ ] /metrics retorna metrics
 - [ ] Givens sensitive not aparecem in the logs
 

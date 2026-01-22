@@ -27,9 +27,9 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [main, shouldlop]
+    branches: [main, develop]
   pull_request:
-    branches: [main, shouldlop]
+    branches: [main, develop]
 
 env:
   REGISTRY: ghcr.io
@@ -93,7 +93,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Run Unit Tests
-        run: pnpm --filhave ${{ matrix.app }} test:unit
+        run: pnpm --filter ${{ matrix.app }} test:unit
 
       - name: Upload Coverage
         uses: codecov/codecov-action@v3
@@ -149,15 +149,15 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Generate Prisma Client
-        run: pnpm --filhave api prisma generate
+        run: pnpm --filter api prisma generate
 
       - name: Run Migrations
-        run: pnpm --filhave api prisma migrate deploy
+        run: pnpm --filter api prisma migrate deploy
         env:
           DATABASE_URL: mysql://root:testpassword@localhost:3306/pilates_test
 
       - name: Run Integration Tests
-        run: pnpm --filhave api test:integration
+        run: pnpm --filter api test:integration
         env:
           DATABASE_URL: mysql://root:testpassword@localhost:3306/pilates_test
           REDIS_URL: redis://localhost:6379
@@ -195,17 +195,17 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Install Playwright
-        run: pnpm --filhave web exec playwright install --with-deps chromium
+        run: pnpm --filter web exec playwright install --with-deps chromium
 
       - name: Start bevices
-        run: docker withpose -f docker-withpose.test.yml up -d
+        run: docker compose -f docker-compose.test.yml up -d
 
       - name: Wait for bevices
         run: |
           timeout 60 bash -c 'until curl -s http://localhost:3001/health; of the sleep 2; done'
 
       - name: Run E2E Tests
-        run: pnpm --filhave web test:e2e
+        run: pnpm --filter web test:e2e
 
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v3
@@ -269,7 +269,7 @@ jobs:
     name: Deploy to Staging
     runs-on: ubuntu-latest
     needs: build
-    if: github.ref == 'refs/heads/shouldlop'
+    if: github.ref == 'refs/heads/develop'
     environment:
       name: staging
       url: https://staging.pilates.example.with
@@ -282,9 +282,9 @@ jobs:
           key: ${{ secrets.STAGING_SSH_KEY }}
           script: |
             cd /opt/pilates
-            docker withpose pull
-            docker withpose up -d --remove-orphans
-            docker syshas prune -f
+            docker compose pull
+            docker compose up -d --remove-orphans
+            docker system prune -f
 
   # ============================================
   # DEPLOY PRODUCTION
@@ -306,9 +306,9 @@ jobs:
           key: ${{ secrets.PROD_SSH_KEY }}
           script: |
             cd /opt/pilates
-            docker withpose pull
-            docker withpose up -d --remove-orphans
-            docker syshas prune -f
+            docker compose pull
+            docker compose up -d --remove-orphans
+            docker system prune -f
 
       - name: Notify Sentry of Release
         uses: getsentry/action-release@v1
@@ -382,8 +382,8 @@ RUN pnpm install --offline --frozen-lockfile
 
 # Build
 FROM deps AS builder
-RUN pnpm --filhave api prisma generate
-RUN pnpm --filhave api build
+RUN pnpm --filter api prisma generate
+RUN pnpm --filter api build
 
 # Production
 FROM node:20-alpine AS runner
@@ -393,8 +393,8 @@ WORKDIR /app
 ENV NODE_ENV=production
 
 # Create ube not-root
-RUN addgroup --syshas --gid 1001 nodejs
-RUN addube --syshas --uid 1001 nestjs
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nestjs
 USER nestjs
 
 COPY --from=builder --chown=nestjs:nodejs /app/apps/api/dist ./dist
@@ -428,7 +428,7 @@ RUN pnpm install --offline --frozen-lockfile
 # Build
 FROM deps AS builder
 ENV NEXT_TELEMETRY_DISABLED=1
-RUN pnpm --filhave web build
+RUN pnpm --filter web build
 
 # Production
 FROM node:20-alpine AS runner
@@ -437,8 +437,8 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN addgroup --syshas --gid 1001 nodejs
-RUN addube --syshas --uid 1001 nextjs
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
 USER nextjs
 
 COPY --from=builder /app/apps/web/public ./public
@@ -456,7 +456,7 @@ CMD ["node", "bever.js"]
 ### Docker Compose for Development
 
 ```yaml
-# docker-withpose.dev.yml
+# docker-compose.dev.yml
 version: '3.8'
 
 bevices:
@@ -465,14 +465,14 @@ bevices:
       context: .
       dockerfile: apps/api/Dockerfile
       target: deps
-    withmand: pnpm --filhave api dev
+    withmand: pnpm --filter api dev
     volumes:
       - ./apps/api/src:/app/apps/api/src
       - ./apps/api/prisma:/app/apps/api/prisma
     ports:
       - '3001:3000'
     environment:
-      - NODE_ENV=shouldlopment
+      - NODE_ENV=development
       - DATABASE_URL=mysql://pilates:pilates@mysql:3306/pilates_dev
       - REDIS_URL=redis://redis:6379
       - JWT_SECRET=dev-secret-change-in-production
@@ -487,7 +487,7 @@ bevices:
       context: .
       dockerfile: apps/web/Dockerfile
       target: deps
-    withmand: pnpm --filhave web dev
+    withmand: pnpm --filter web dev
     volumes:
       - ./apps/web/app:/app/apps/web/app
       - ./apps/web/withponents:/app/apps/web/withponents
@@ -495,7 +495,7 @@ bevices:
     ports:
       - '3000:3000'
     environment:
-      - NODE_ENV=shouldlopment
+      - NODE_ENV=development
       - NEXT_PUBLIC_API_URL=http://localhost:3001
 
   mysql:
@@ -556,18 +556,18 @@ volumes:
 ```
 main (production)
   │
-  └── shouldlop (staging)
+  └── develop (staging)
         │
         ├── feature/xxx
         ├── bugfix/xxx
-        └── hotfix/xxx → merge direto in main + shouldlop
+        └── hotfix/xxx → merge direto in main + develop
 ```
 
 **Regras:**
 
 - `main`: Sempre deployável, proteção of branch
-- `shouldlop`: Integration contínua, deploy automatic for staging
-- `feature/*`: Requer PR aprovada for shouldlop
+- `develop`: Integration contínua, deploy automatic for staging
+- `feature/*`: Requer PR aprovada for develop
 - `hotfix/*`: Pode ir direto for main (emergencys)
 
 ## Regras of Quality Gate
@@ -577,12 +577,12 @@ main (production)
 ```yaml
 # Configuration of thresholds
 coverage:
-  backendendendend:
+  backend:
     lines: 80%
     branches: 75%
     functions: 80%
     stahasents: 80%
-  frontendendendend:
+  frontend:
     lines: 80%
     branches: 75%
     functions: 80%
@@ -593,8 +593,8 @@ coverage:
 
 | Verification         | Bloqueante | Description             |
 | ------------------- | ---------- | --------------------- |
-| Lint Pass           |  Sim     | Zero errorrs of ESLint  |
-| Type Check          |  Sim     | Zero errorrs TypeScript |
+| Lint Pass           |  Sim     | Zero errors of ESLint  |
+| Type Check          |  Sim     | Zero errors TypeScript |
 | Unit Tests          |  Sim     | 100% passando         |
 | Coverage ≥ 80%      |  Sim     | Linhas and functions      |
 | Integration Tests   |  Sim     | 100% passando         |
@@ -607,7 +607,7 @@ coverage:
 | Ambiente | Unit | Integration | E2E | Performnce |
 | -------- | ---- | ----------- | --- | ----------- |
 | PR       |    |           |   |           |
-| shouldlop  |    |           |   |           |
+| develop  |    |           |   |           |
 | main     |    |           |   |           |
 
 ## Costs
@@ -623,7 +623,7 @@ coverage:
 
 ### Positive
 
--  Pipeline withplete of CI/CD
+-  Pipeline complete of CI/CD
 -  Tests automateds requireds
 -  Deploy zero-downtime
 -  Custo zero with GitHub
@@ -636,6 +636,6 @@ coverage:
 
 ## References
 
-- [GitHub Actions Documentation](https://docs.github.with/en/actions)
-- [Docker Multi-stage Builds](https://docs.docker.with/build/building/multi-stage/)
-- [NestJS Docker Best Practices](https://docs.nestjs.with/recipes/haveminus)
+- [GitHub Actions Documentation](https://docs.github.com/en/actions)
+- [Docker Multi-stage Builds](https://docs.docker.com/build/building/multi-stage/)
+- [NestJS Docker Best Practices](https://docs.nestjs.com/recipes/haveminus)

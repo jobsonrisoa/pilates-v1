@@ -1,6 +1,6 @@
 # EPIC-009: Banking Integration Sicoob
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                      |
 | ---------------- | -------------------------- |
@@ -16,7 +16,7 @@
 
 ##  Description
 
-Implement integration withpleta with API of the Sicoob para:
+Implement integration complete with API of the Sicoob para:
 
 - Authentication OAuth2
 - Boleto generation banking
@@ -39,7 +39,7 @@ Implement integration withpleta with API of the Sicoob para:
 
 ### US-009-001: Generate Boleto
 
-**Como** syshas  
+**Como** system  
 **I want to** gerar boleto automaticamente  
 **Para** cobrar o aluno
 
@@ -54,7 +54,7 @@ Implement integration withpleta with API of the Sicoob para:
 
 ### US-009-002: Generate PIX
 
-**Como** syshas  
+**Como** system  
 **I want to** gerar billing PIX  
 **Para** offersr option of payment
 
@@ -69,7 +69,7 @@ Implement integration withpleta with API of the Sicoob para:
 
 ### US-009-003: Receber Webhook of Payment
 
-**Como** syshas  
+**Como** system  
 **I want to** receber notificaction when payment for done  
 **Para** dar baixa automatic
 
@@ -84,7 +84,7 @@ Implement integration withpleta with API of the Sicoob para:
 
 ### US-009-004: Low Automatic
 
-**Como** syshas  
+**Como** system  
 **I want to** currentizar status when pago  
 **Para** maintain dados corretos
 
@@ -127,8 +127,8 @@ Implement integration withpleta with API of the Sicoob para:
 
 - Integration with API /cobranca/v2/boletos
 - Mapeamento of dados
-- Tratamento of errorrs
-- Mock for shouldlopment
+- Tratamento of errors
+- Mock for development
 
 ---
 
@@ -138,7 +138,7 @@ Implement integration withpleta with API of the Sicoob para:
 
 - Integration with API /pix/v2/cob
 - Generation of QR Code
-- Mock for shouldlopment
+- Mock for development
 
 ---
 
@@ -218,17 +218,17 @@ SICOOB_WEBHOOK_SECRET=
 - [ ] PIX working
 - [ ] Webhook recebendo payments
 - [ ] Low automatic working
-- [ ] Audit logs withpletes
-- [ ] Mock for shouldlopment
+- [ ] Audit logs completes
+- [ ] Mock for development
 - [ ] Tests ≥80%
-- [ ] Documentation withpleta
+- [ ] Complete documentation
 
 ---
 
 ## 📎 References
 
-- [ADR-008: Integration Sicoob](../architecture/adrs/ADR-008-integracto-sicoob.md)
-- [Sicoob API Docs](https://shouldlopers.sicoob.with.br/)
+- [ADR-008: Integration Sicoob](../architecture/adrs/ADR-008-integracao-sicoob.md)
+- [Sicoob API Docs](https://developers.sicoob.com.br/)
 
 ---
 

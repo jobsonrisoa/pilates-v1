@@ -1,6 +1,6 @@
 # EPIC-004: Management of Instructores
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                   |
 | ---------------- | ----------------------- |
@@ -18,11 +18,11 @@
 
 Implement module of management of instructores including:
 
-- Registration withplete with personal date and profissionais
+- Registration complete with personal date and profissionais
 - Professional registration (CREF, CREFITO)
 - Specialties
 - Bank details for payment
-- Link to syshas ube (login)
+- Link to system ube (login)
 
 ---
 
@@ -55,7 +55,7 @@ Implement module of management of instructores including:
 
 ### US-004-002: Listar Instructores
 
-**Como** ube of the syshas  
+**Como** ube of the system  
 **I want to** ver a list of instructores  
 **Para** encontrar quem preciso
 
@@ -71,7 +71,7 @@ Implement module of management of instructores including:
 
 **Como** administrador  
 **I want to** create login for o instructor  
-**Para** that ele acesse o syshas
+**Para** that ele acesse o system
 
 **Acceptance Criteria:**
 
@@ -90,7 +90,7 @@ Implement module of management of instructores including:
 **Acceptance Criteria:**
 
 - [ ] Multi-select of specialties
-- [ ] Modalities: Pilates, Fisiohaveapia, etc.
+- [ ] Modalities: Pilates, Physiotherapy, etc.
 
 ---
 
@@ -155,7 +155,7 @@ Implement module of management of instructores including:
 **Definition of Done:**
 
 - [ ] DataTable implementada
-- [ ] Filhaves working
+- [ ] Filters working
 - [ ] Tests
 
 ---
@@ -166,7 +166,7 @@ Implement module of management of instructores including:
 
 **Definition of Done:**
 
-- [ ] Form withplete
+- [ ] Form complete
 - [ ] Validations
 - [ ] Multi-select of specialties
 - [ ] Tests

@@ -1,11 +1,11 @@
-# EPIC-013: Syshas of Reschedulings
+# EPIC-013: System of Reschedulings
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                 |
 | ---------------- | --------------------- |
 | **ID**           | EPIC-013              |
-| **Title**       | Syshas of Reschedulings |
+| **Title**       | System of Reschedulings |
 | **Phase**         | 3 - Operacional       |
 | **Priority**   | High               |
 | **Estimate**   | 1.5 weeks           |
@@ -16,7 +16,7 @@
 
 ##  Description
 
-Implement syshas withplete of reschedulings of classs:
+Implement system complete of reschedulings of classs:
 
 - Credits gerados por absences justifieachs
 - Validade of 90 days
@@ -30,7 +30,7 @@ Implement syshas withplete of reschedulings of classs:
 1. Generate credits automaticamente
 2. Controlar validade
 3. Facilitar schedulemento of rescheduling
-4. History withplete
+4. History complete
 
 ---
 
@@ -38,7 +38,7 @@ Implement syshas withplete of reschedulings of classs:
 
 ### US-013-001: Generate Crédito of Rescheduling
 
-**Como** syshas  
+**Como** system  
 **I want to** gerar credit when aluno fhigh with warning  
 **Para** permitir rescheduling
 
@@ -82,7 +82,7 @@ Implement syshas withplete of reschedulings of classs:
 
 ### US-013-004: Alertar Credits Expirando
 
-**Como** syshas  
+**Como** system  
 **I want to** alertar about credits next of the due date  
 **Para** evitar perda
 
@@ -212,7 +212,7 @@ enum ReschedulingStatus {
 **Estimate:** 3h
 
 - Para administraction
-- Filhaves
+- Filters
 - Export
 
 ---

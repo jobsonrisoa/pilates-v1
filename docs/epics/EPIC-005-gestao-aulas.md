@@ -1,6 +1,6 @@
 # EPIC-005: Management of Classes and Schedules
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                      |
 | ---------------- | -------------------------- |
@@ -18,7 +18,7 @@
 
 Implement management of modalities, types of class and grade of schedules:
 
-- Registration of modalities (Pilates, Fisiohaveapia)
+- Registration of modalities (Pilates, Physiotherapy)
 - Tipos of class (Individual, Duo, Group)
 - Schedule grid weekl
 - Linking instructor + modality + schedule
@@ -30,7 +30,7 @@ Implement management of modalities, types of class and grade of schedules:
 1. Configurar modalities available
 2. Set types of class and capacidades
 3. Create grade of schedules recorrente
-4. Base for syshas of schedulemento
+4. Base for system of schedulemento
 
 ---
 
@@ -83,7 +83,7 @@ Implement management of modalities, types of class and grade of schedules:
 
 ### US-005-004: Visualizar Grade Weekly
 
-**Como** ube of the syshas  
+**Como** ube of the system  
 **I want to** ver a grade of schedules of the week  
 **Para** entender a disponibilidade
 
@@ -92,7 +92,7 @@ Implement management of modalities, types of class and grade of schedules:
 - [ ] Visualization in grade (table)
 - [ ] Filtro por instructor
 - [ ] Filtro por modality
-- [ ] Informtion fast
+- [ ] Information fast
 
 ---
 
@@ -195,7 +195,7 @@ model Schedule {
 
 ---
 
-#### TASK-005-010: Filhaves and Visualizactions
+#### TASK-005-010: Filters and Visualizactions
 
 **Estimate:** 2h
 

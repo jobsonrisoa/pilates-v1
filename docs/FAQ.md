@@ -120,7 +120,7 @@ docker compose run --rm tools pnpm --filter @pilates/api test
 docker compose run --rm tools pnpm --filter @pilates/web test
 
 # With coverage
-docker withpose run --rm tools pnpm test:cov
+docker compose run --rm tools pnpm test:cov
 ```
 
 ### Watch mode (development)

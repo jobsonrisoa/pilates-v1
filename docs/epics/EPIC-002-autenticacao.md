@@ -1,6 +1,6 @@
 # EPIC-002: Authentication and Authorization
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                      |
 | ---------------- | -------------------------- |
@@ -16,11 +16,11 @@
 
 ##  Description
 
-Implement syshas withplete of authentication and authorization including:
+Implement system complete of authentication and authorization including:
 
 - Login with email/senha
 - JWT with refresh tokens
-- Syshas RBAC (Role-Based Access Control)
+- System RBAC (Role-Based Access Control)
 - Perfis pre-definidos (Super Admin, Admin, Manager, Reception, Instructor, Financial)
 - Recovery of senha
 - Audit logs of access
@@ -30,9 +30,9 @@ Implement syshas withplete of authentication and authorization including:
 ##  Objectives
 
 1. Authentication segura with JWT and refresh tokens
-2. Syshas of permissions granulares por perfil
+2. System of permissions granular por perfil
 3. Inhaveface of login functional
-4. Protection of routes in the frontendendendend and backendendendend
+4. Protection of routes in the frontend and backend
 5. Audit logs for conformidade LGPD
 
 ---
@@ -41,9 +41,9 @@ Implement syshas withplete of authentication and authorization including:
 
 ### US-002-001: Login of Ube
 
-**Como** ube of the syshas  
+**Como** ube of the system  
 **I want to** of the login with email and senha  
-**Para** acessar as functionalidades of the syshas
+**Para** acessar as functionalidades of the system
 
 **Acceptance Criteria:**
 
@@ -74,7 +74,7 @@ Implement syshas withplete of authentication and authorization including:
 
 **Como** ube  
 **I want to** recuperar minha senha via email  
-**Para** acessar o syshas case esqueça
+**Para** acessar o system case esqueça
 
 **Acceptance Criteria:**
 
@@ -95,7 +95,7 @@ Implement syshas withplete of authentication and authorization including:
 
 - [ ] 6 perfis pre-definidos
 - [ ] Permissions por resource and action
-- [ ] Verification in the backendendendend
+- [ ] Verification in the backend
 - [ ] UI adapta-se to the permissions
 
 ---
@@ -104,7 +104,7 @@ Implement syshas withplete of authentication and authorization including:
 
 **Como** administrador  
 **I want to** create, editar and desactiver users  
-**Para** gerenciar quem acessa o syshas
+**Para** gerenciar quem acessa o system
 
 **Acceptance Criteria:**
 
@@ -249,7 +249,7 @@ Implement syshas withplete of authentication and authorization including:
 
 ---
 
-#### TASK-002-007: Syshas RBAC
+#### TASK-002-007: System RBAC
 
 **Estimate:** 6h
 
@@ -333,7 +333,7 @@ const PERMISSIONS = {
 
 **Definition of Done:**
 
-- [ ] Logs registrados in the datebase
+- [ ] Logs registrados in the database
 - [ ] IP and ube agent capturados
 - [ ] Endpoint of query
 - [ ] Tests
@@ -358,7 +358,7 @@ const PERMISSIONS = {
 
 - [ ] UI implementada
 - [ ] Validation working
-- [ ] Integration with backendendendend
+- [ ] Integration with backend
 - [ ] Tests with Testing Library
 
 ---
@@ -376,7 +376,7 @@ const PERMISSIONS = {
 **Definition of Done:**
 
 - [ ] UI implementada
-- [ ] Fluxo withplete working
+- [ ] Complete flow working
 - [ ] Tests
 
 ---
@@ -444,7 +444,7 @@ const PERMISSIONS = {
 **Scope:**
 
 - Listagem with DataTable
-- Filhaves and busca
+- Filters and busca
 - Modal of create/editar
 - Activeção/deactivation
 
@@ -494,7 +494,7 @@ const PERMISSIONS = {
 ### RBAC
 
 - [ ] 6 perfis pre-definidos working
-- [ ] Permissions verifieachs in the backendendendend
+- [ ] Permissions verifieachs in the backend
 - [ ] UI adapta-se to the permissions
 - [ ] Super Admin has full access
 
@@ -515,7 +515,7 @@ const PERMISSIONS = {
 
 - [ ] Unit tests ≥80%
 - [ ] Integration tests for entires endpoints
-- [ ] Documentation Swagger withpleta
+- [ ] Documentation Swagger complete
 
 ---
 
@@ -532,7 +532,7 @@ const PERMISSIONS = {
 
 ## 📎 References
 
-- [ADR-004: Authentication and Authorization](../architecture/adrs/ADR-004-autenticacto-autorizacto.md)
+- [ADR-004: Authentication and Authorization](../architecture/adrs/ADR-004-autenticacao-autorizacao.md)
 - [OWASP Authentication Cheatsheet](https://cheatsheetbeies.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
 
 ---

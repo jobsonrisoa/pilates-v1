@@ -1,6 +1,6 @@
 # EPIC-012: Reports Financials
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                                       |
 | ---------------- | ------------------------------------------- |
@@ -16,7 +16,7 @@
 
 ##  Description
 
-Implement reports financial withpletes:
+Implement reports financial completes:
 
 - Revenue by period, modality, payment method
 - Delinquency
@@ -120,7 +120,7 @@ Implement reports financial withpletes:
 - [ ] Exportar in PDF
 - [ ] Exportar in Excel
 - [ ] Layout profissional
-- [ ] Givens withpletes
+- [ ] Givens completes
 
 ---
 
@@ -192,7 +192,7 @@ Implement reports financial withpletes:
 
 **Estimate:** 4h
 
-- Filhaves
+- Filters
 - Tabelas
 - Charts
 - Export
@@ -213,11 +213,11 @@ Implement reports financial withpletes:
 
 ##  Acceptance Criteria of the Epic
 
-- [ ] Todos os reports working
+- [ ] All reports working
 - [ ] Charts informctives
 - [ ] Export PDF/Excel
 - [ ] Performnce adequada
-- [ ] Filhaves funcionais
+- [ ] Filters funcionais
 - [ ] Tests ≥80%
 
 ---

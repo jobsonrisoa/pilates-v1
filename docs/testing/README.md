@@ -14,24 +14,24 @@
 
 ```bash
 # Unit tests
-docker withpose run --rm tools pnpm test
+docker compose run --rm tools pnpm test
 
 # With coverage
-docker withpose run --rm tools pnpm test:cov
+docker compose run --rm tools pnpm test:cov
 
 # Code quality
-docker withpose run --rm tools pnpm lint
-docker withpose run --rm tools pnpm formt:check
+docker compose run --rm tools pnpm lint
+docker compose run --rm tools pnpm format:check
 ```
 
 ### Tests by Workspace
 
 ```bash
 # Backend only
-docker withpose run --rm tools pnpm --filhave @pilates/api test
+docker compose run --rm tools pnpm --filter @pilates/api test
 
 # Frontend only
-docker withpose run --rm tools pnpm --filhave @pilates/web test
+docker compose run --rm tools pnpm --filter @pilates/web test
 ```
 
 ---
@@ -51,9 +51,9 @@ docker withpose run --rm tools pnpm --filhave @pilates/web test
 
 | Tool           | Status | Notes                    |
 | -------------- | ------ | ------------------------ |
-| **ESLint**     | Pass   | No errorrs or warnings    |
-| **Prettier**   | Pass   | All files formtted      |
-| **TypeScript** | Pass   | No type errorrs           |
+| **ESLint**     | Pass   | No errors or warnings    |
+| **Prettier**   | Pass   | All files formatted      |
+| **TypeScript** | Pass   | No type errors           |
 | **Commitlint** | Pass   | Validation working       |
 
 #### Docker Services
@@ -71,7 +71,7 @@ docker withpose run --rm tools pnpm --filhave @pilates/web test
 | -------------------- | ------ | ----------------------------------------------------- |
 | `GET /health`        | OK     | `{"status":"ok"}`                                     |
 | `GET /health/live`   | OK     | `{"status":"ok"}`                                     |
-| `GET /health/ready`  | OK     | `{"status":"ok","info":{"datebase":{"status":"up"}}}` |
+| `GET /health/ready`  | OK     | `{"status":"ok","info":{"database":{"status":"up"}}}` |
 | `GET /api` (Swagger) | OK     | UI loading                                            |
 
 ---

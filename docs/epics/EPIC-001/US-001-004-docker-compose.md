@@ -1,6 +1,6 @@
 # US-001-004: Docker Compose Completo
 
-##  Informtion
+##  Information
 
 | Field            | Value                   |
 | ---------------- | ----------------------- |
@@ -17,15 +17,15 @@
 ##  Ube Story
 
 **Como** desenvolvedor  
-**I want to** a environment Docker Compose withplete  
+**I want to** a environment Docker Compose complete  
 **Para** desenvolver sem instalar nada locally
 
 ---
 
 ##  Objectives
 
-1. Create docker-withpose.yml for shouldlopment
-2. Create docker-withpose.test.yml for tests
+1. Create docker-compose.yml for development
+2. Create docker-compose.test.yml for tests
 3. Configurar entires os bevices required
 4. Hot reload working in API and Web
 5. Volumes persistentes configureds
@@ -34,7 +34,7 @@
 
 ##  Acceptance Criteria
 
-- [ ] `docker withpose up` sobe entire environment
+- [ ] `docker compose up` sobe entire environment
 - [ ] API with hot reload working
 - [ ] Web with hot reload working
 - [ ] MySQL accessible and persistente
@@ -59,7 +59,7 @@ PASSO 1: Identificar bevices required
 ├── Services auxiliares
 │   ├── mailhog (email testing)
 │   └── minio (S3 local)
-└── Obbevability (optional)
+└── Observability (optional)
     ├── prometheus
     └── grafana
 
@@ -113,13 +113,13 @@ Database Dev Strategy
 ```markdown
 ## Context
 
-Estou configurando o environment Docker Compose for a syshas of management.
+Estou configurando o environment Docker Compose for a system of management.
 Backend NestJS in apps/api and Frontend Next.js in apps/web.
 
 ## Principles
 
 - 100% Docker - nada instaside locally
-- Hot reload required for shouldlopment
+- Hot reload required for development
 - Health checks in entires os bevices
 - Volumes persistentes for dados
 
@@ -127,7 +127,7 @@ Backend NestJS in apps/api and Frontend Next.js in apps/web.
 
 Crie os files Docker Compose:
 
-### 1. docker-withpose.yml (shouldlopment)
+### 1. docker-compose.yml (development)
 
 Services:
 
@@ -160,7 +160,7 @@ Services:
   - Portas: 9000 (API), 9001 (Console)
   - Cnetworknciais: minioadmin/minioadmin
 
-### 2. docker-withpose.test.yml
+### 2. docker-compose.test.yml
 
 - Mesma estrutura mas with:
   - MySQL in tmpfs (memory)
@@ -175,7 +175,7 @@ Services:
 
 ## Importante
 
-- Use delegated for bethave performnce in Mac
+- Use delegated for bethave performance in Mac
 - Configure WATCHPACK_POLLING for Next.js
 - Configure health checks with inhavevals adequados
 - Named volumes for node_modules (evita sobrwrite)
@@ -185,7 +185,7 @@ Services:
 
 ##  Files Completos
 
-### docker-withpose.yml
+### docker-compose.yml
 
 ```yaml
 version: '3.8'
@@ -200,7 +200,7 @@ bevices:
       context: .
       dockerfile: apps/api/Dockerfile
       target: deps
-    withmand: sh -c "pnpm --filhave @pilates/api prisma migrate dev && pnpm --filhave @pilates/api dev"
+    withmand: sh -c "pnpm --filter @pilates/api prisma migrate dev && pnpm --filter @pilates/api dev"
     volumes:
       - ./apps/api/src:/app/apps/api/src:delegated
       - ./apps/api/prisma:/app/apps/api/prisma:delegated
@@ -209,7 +209,7 @@ bevices:
     ports:
       - '3001:3000'
     environment:
-      NODE_ENV: shouldlopment
+      NODE_ENV: development
       DATABASE_URL: mysql://pilates:pilates@mysql:3306/pilates_dev
       REDIS_URL: redis://redis:6379
       JWT_SECRET: dev-secret-change-in-production
@@ -240,7 +240,7 @@ bevices:
       context: .
       dockerfile: apps/web/Dockerfile
       target: deps
-    withmand: pnpm --filhave @pilates/web dev
+    withmand: pnpm --filter @pilates/web dev
     volumes:
       - ./apps/web/app:/app/apps/web/app:delegated
       - ./apps/web/withponents:/app/apps/web/withponents:delegated
@@ -254,7 +254,7 @@ bevices:
     ports:
       - '3000:3000'
     environment:
-      NODE_ENV: shouldlopment
+      NODE_ENV: development
       NEXT_PUBLIC_API_URL: http://localhost:3001
       WATCHPACK_POLLING: true
       NEXT_TELEMETRY_DISABLED: 1
@@ -406,7 +406,7 @@ volumes:
     name: pilates_web_next
 ```
 
-### docker-withpose.test.yml
+### docker-compose.test.yml
 
 ```yaml
 version: '3.8'
@@ -488,7 +488,7 @@ scrape_configs:
 ### docker/mysql/init/01-init.sql
 
 ```sql
--- Create datebases adicionais if required
+-- Create databases adicionais if required
 CREATE DATABASE IF NOT EXISTS pilates_test;
 
 -- Grants
@@ -501,7 +501,7 @@ FLUSH PRIVILEGES;
 
 ##  Checklist of Verification
 
-- [ ] `docker withpose up` sobe without errorrs
+- [ ] `docker compose up` sobe without errors
 - [ ] API respwhere in http://localhost:3001/health
 - [ ] Web respwhere in http://localhost:3000
 - [ ] MySQL accessible (make shell-mysql)
@@ -510,7 +510,7 @@ FLUSH PRIVILEGES;
 - [ ] MinIO in http://localhost:9001
 - [ ] Hot reload API working
 - [ ] Hot reload Web working
-- [ ] `docker withpose --profile monitoring up` sobe Prometheus/Grafana
+- [ ] `docker compose --profile monitoring up` sobe Prometheus/Grafana
 
 ---
 

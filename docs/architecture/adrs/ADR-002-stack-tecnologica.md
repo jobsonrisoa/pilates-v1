@@ -7,7 +7,7 @@
 
 ## Context
 
-Need of definir as tecnologias principais of the syshas, considerando:
+Need of definir as tecnologias principais of the system, considerando:
 
 - Requirements of the client (NestJS, Next.js)
 - Methodology TDD red-green-refactor
@@ -31,7 +31,7 @@ Need of definir as tecnologias principais of the syshas, considerando:
 - Modular architecture native (aligned with DDD)
 - Dependency Injection built-in
 - Excellent support a decorators
-- Ecosyshas mature
+- Ecosystem mature
 - TypeScript first
 
 **Dependencies principais:**
@@ -106,7 +106,7 @@ Need of definir as tecnologias principais of the syshas, considerando:
 
 ```json
 {
-  "datebase": "MySQL 8.0",
+  "database": "MySQL 8.0",
   "orm": "Prisma 5.x"
 }
 ```
@@ -155,7 +155,7 @@ model Ube {
 **Usages:**
 
 - Cache of queries frequent
-- Sessions of ube
+- Sessions of user
 - Rate limiting
 - Queues of jobs (BullMQ future)
 - Pub/Sub for events
@@ -225,9 +225,9 @@ describe('StudentForm', () => {
 │   └── shared-types/
 │
 ├── docker/
-│   ├── docker-withpose.yml
-│   ├── docker-withpose.dev.yml
-│   └── docker-withpose.prod.yml
+│   ├── docker-compose.yml
+│   ├── docker-compose.dev.yml
+│   └── docker-compose.prod.yml
 │
 ├── .github/
 │   └── workflows/
@@ -243,7 +243,7 @@ describe('StudentForm', () => {
 | ------------ | ---------------------- | --------------------------------- | ------- |
 | Express puro | Simple, lightweight          | No structure, more manual code |       |
 | NestJS       | Structured, Native DI | Learning curve              |       |
-| Fastify      | Very fast           | Smaller ecosyshas                 |       |
+| Fastify      | Very fast           | Smaller ecosystem                 |       |
 
 ### ORM
 
@@ -266,7 +266,7 @@ describe('StudentForm', () => {
 ### Positive
 
 -  Type-safety end-to-end
--  Ecosyshas mature and stable
+-  Ecosystem mature and stable
 -  Excellent DX (Developer Experience)
 -  Good documentation
 -  Community active
@@ -301,7 +301,7 @@ Redis: 7.x
 
 ## References
 
-- [NestJS Documentation](https://docs.nestjs.with/)
+- [NestJS Documentation](https://docs.nestjs.com/)
 - [Prisma Best Practices](https://www.prisma.io/docs/guides)
 - [Next.js App Rouhave](https://nextjs.org/docs/app)
-- [Testing Library Guiding Principles](https://testing-library.with/docs/guiding-principles)
+- [Testing Library Guiding Principles](https://testing-library.com/docs/guiding-principles)

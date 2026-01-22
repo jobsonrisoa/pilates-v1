@@ -1,6 +1,6 @@
 # EPIC-022: Documentation and Deploy Production
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                          |
 | ---------------- | ------------------------------ |
@@ -18,8 +18,8 @@
 
 Finalizar documentation and preparar deploy in production:
 
-- Documentation technique withpleta
-- Manual of the ube
+- Technical documentation complete
+- Manual of the user
 - Configuration of production
 - Deploy automated
 - Monitoramento and alerts
@@ -28,7 +28,7 @@ Finalizar documentation and preparar deploy in production:
 
 ##  Objectives
 
-1. Documentation withpleta
+1. Complete documentation
 2. Production environment seguro
 3. Deploy automated
 4. Monitoramento active
@@ -40,8 +40,8 @@ Finalizar documentation and preparar deploy in production:
 ### US-022-001: Documentation Technical
 
 **Como** desenvolvedor  
-**I want to** documentation technique withpleta  
-**Para** maintain o syshas
+**I want to** documentation technique complete  
+**Para** maintain o system
 
 **Acceptance Criteria:**
 
@@ -56,7 +56,7 @@ Finalizar documentation and preparar deploy in production:
 
 **Como** ube  
 **I want to** manual of usage  
-**Para** aprender o syshas
+**Para** aprender o system
 
 **Acceptance Criteria:**
 
@@ -71,7 +71,7 @@ Finalizar documentation and preparar deploy in production:
 
 **Como** DevOps  
 **I want to** environment of production configured  
-**Para** hospedar o syshas
+**Para** hospedar o system
 
 **Acceptance Criteria:**
 
@@ -92,7 +92,7 @@ Finalizar documentation and preparar deploy in production:
 **Acceptance Criteria:**
 
 - [ ] Push in main → deploy prod
-- [ ] Push in shouldlop → deploy staging
+- [ ] Push in develop → deploy staging
 - [ ] Rollbackendendend easy
 - [ ] Zero downtime
 
@@ -116,7 +116,7 @@ Finalizar documentation and preparar deploy in production:
 ### US-022-006: Checklist of Go-Live
 
 **Como** gerente  
-**I want to** checklist withplete  
+**I want to** checklist complete  
 **Para** garantir that is tudo pronto
 
 **Acceptance Criteria:**
@@ -147,7 +147,7 @@ Finalizar documentation and preparar deploy in production:
 
 **Estimate:** 2h
 
-- Swagger withplete
+- Swagger complete
 - Examples of usage
 - Erros documentados
 
@@ -189,7 +189,7 @@ Finalizar documentation and preparar deploy in production:
 
 **Estimate:** 3h
 
-- docker-withpose.prod.yml
+- docker-compose.prod.yml
 - Secrets management
 - Volumes persistentes
 
@@ -302,14 +302,14 @@ Finalizar documentation and preparar deploy in production:
 
 ##  Acceptance Criteria of the Epic
 
-- [ ] Documentation withpleta
+- [ ] Complete documentation
 - [ ] Production configurada
 - [ ] SSL working
 - [ ] Deploy automated
 - [ ] Backups working
 - [ ] Monitoramento active
 - [ ] Checklist aprovado
-- [ ] Syshas in production
+- [ ] System in production
 
 ---
 
@@ -334,7 +334,7 @@ Semana 1:
 
 - [ ] Todos os tests passando
 - [ ] Coverage ≥80%
-- [ ] Code review withplete
+- [ ] Code review complete
 - [ ] Documentation currentizada
 - [ ] Variables of environment configuradas
 - [ ] Secrets seguros

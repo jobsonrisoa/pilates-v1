@@ -1,6 +1,6 @@
 # US-001-001: Initial Project Setup
 
-##  Informtion
+##  Information
 
 | Field            | Value                    |
 | ---------------- | ------------------------ |
@@ -18,7 +18,7 @@
 
 **Como** desenvolvedor  
 **I want to** a estrutura of monorepo configurada  
-**Para** start o shouldlopment with standards definidos
+**Para** start o development with standards definidos
 
 ---
 
@@ -124,9 +124,9 @@ pilates/
 ├── .github/                    # GitHub Actions
 │   └── workflows/
 │
-├── docker-withpose.yml
-├── docker-withpose.dev.yml
-├── docker-withpose.test.yml
+├── docker-compose.yml
+├── docker-compose.dev.yml
+├── docker-compose.test.yml
 ├── pnpm-workspace.yaml
 ├── package.json
 ├── .gitignore
@@ -142,7 +142,7 @@ pilates/
 ```markdown
 ## Context
 
-Estou criando a syshas of management for academia of Pilates/Fisiohaveapia.
+Estou criando a system of management for academia of Pilates/Physiotherapy.
 Preciso configurar a estrutura inicial of the monorepo.
 
 ## Principles
@@ -157,8 +157,8 @@ Preciso configurar a estrutura inicial of the monorepo.
 Crie a estrutura inicial of the monorepo with:
 
 1. **Structure of folders:**
-   - apps/api (backendendendend NestJS - vazio por enquanto)
-   - apps/web (frontendendendend Next.js - vazio por enquanto)
+   - apps/api (backend NestJS - vazio por enquanto)
+   - apps/web (frontend Next.js - vazio por enquanto)
    - packages/ (shared - future)
    - docker/ (settings)
    - .github/workflows/
@@ -176,7 +176,7 @@ Crie a estrutura inicial of the monorepo with:
    - build: build of production
    - test: rodar tests
    - lint: verificar code
-   - formt: formtar code
+   - format: formatar code
 
 ## Requirements
 
@@ -187,8 +187,8 @@ Crie a estrutura inicial of the monorepo with:
 
 ## Output Esperado
 
-Forneça os files withpletes with explicactions.
-Siga o formto: name of the file → content
+Forneça os files completes with explicactions.
+Siga o formato: name of the file → content
 ```
 
 ---
@@ -207,20 +207,20 @@ packages:
 
 ```json
 {
-  "name": "pilates-syshas",
+  "name": "pilates-system",
   "version": "0.0.1",
   "private": true,
-  "description": "Management Syshas for Pilates and Physiotherapy Studio",
+  "description": "Management System for Pilates and Physiotherapy Studio",
   "scripts": {
-    "dev": "docker withpose up",
-    "dev:build": "docker withpose up --build",
-    "dev:down": "docker withpose down",
-    "dev:clean": "docker withpose down -v --remove-orphans",
+    "dev": "docker compose up",
+    "dev:build": "docker compose up --build",
+    "dev:down": "docker compose down",
+    "dev:clean": "docker compose down -v --remove-orphans",
     "build": "pnpm -r build",
     "test": "pnpm -r test",
     "test:cov": "pnpm -r test:cov",
     "lint": "pnpm -r lint",
-    "formt": "pnpm -r formt",
+    "format": "pnpm -r format",
     "prepare": "husky install"
   },
   "devDependencies": {
@@ -297,7 +297,7 @@ apps/api/prisma/migrations/*_migration_lock.toml
 # ---------------------------------------------
 # Application
 # ---------------------------------------------
-NODE_ENV=shouldlopment
+NODE_ENV=development
 APP_PORT=3001
 WEB_PORT=3000
 
@@ -340,7 +340,7 @@ S3_BUCKET=pilates-dev
 S3_REGION=us-east-1
 
 # ---------------------------------------------
-# Obbevability (optional in dev)
+# Observability (optional in dev)
 # ---------------------------------------------
 SENTRY_DSN=
 LOG_LEVEL=debug
@@ -348,7 +348,7 @@ LOG_LEVEL=debug
 # ---------------------------------------------
 # Sicoob (production only)
 # ---------------------------------------------
-SICOOB_API_URL=https://api.sicoob.with.br
+SICOOB_API_URL=https://api.sicoob.com.br
 SICOOB_CLIENT_ID=
 SICOOB_CLIENT_SECRET=
 SICOOB_CONVENIO=
@@ -372,106 +372,106 @@ help: ## Mostra esta ajuda
 # DESENVOLVIMENTO
 # =============================================
 
-dev: ## Inicia environment of shouldlopment
-	docker withpose up
+dev: ## Inicia environment of development
+	docker compose up
 
 dev-build: ## Inicia environment with rebuild of the images
-	docker withpose up --build
+	docker compose up --build
 
-down: ## Para entires os accountiners
-	docker withpose down
+down: ## Para entires os containers
+	docker compose down
 
-clean: ## Remove accountiners, volumes and images not utilizadas
-	docker withpose down -v --remove-orphans
-	docker syshas prune -f
+clean: ## Remove containers, volumes and images not utilizadas
+	docker compose down -v --remove-orphans
+	docker system prune -f
 
 logs: ## Mostra logs of entires os bevices
-	docker withpose logs -f
+	docker compose logs -f
 
 logs-api: ## Mostra logs of the API
-	docker withpose logs -f api
+	docker compose logs -f api
 
 logs-web: ## Mostra logs of the Web
-	docker withpose logs -f web
+	docker compose logs -f web
 
 # =============================================
 # SHELLS
 # =============================================
 
 shell-api: ## Acessa shell of the accountiner of the API
-	docker withpose exec api sh
+	docker compose exec api sh
 
 shell-web: ## Acessa shell of the accountiner Web
-	docker withpose exec web sh
+	docker compose exec web sh
 
 shell-mysql: ## Acessa MySQL CLI
-	docker withpose exec mysql mysql -u pilates -ppilates pilates_dev
+	docker compose exec mysql mysql -u pilates -ppilates pilates_dev
 
 shell-redis: ## Acessa Redis CLI
-	docker withpose exec redis redis-cli
+	docker compose exec redis redis-cli
 
 # =============================================
 # BANCO DE DADOS
 # =============================================
 
 migrate: ## Roda migrations of the Prisma
-	docker withpose exec api pnpm prisma migrate dev
+	docker compose exec api pnpm prisma migrate dev
 
 migrate-prod: ## Roda migrations in production
-	docker withpose exec api pnpm prisma migrate deploy
+	docker compose exec api pnpm prisma migrate deploy
 
-seed: ## Popula datebase with dados of shouldlopment
-	docker withpose exec api pnpm prisma db seed
+seed: ## Popula database with dados of development
+	docker compose exec api pnpm prisma db seed
 
-db-reset: ## Reseta datebase of dados (CUIDADO!)
-	docker withpose exec api pnpm prisma migrate reset --force
+db-reset: ## Reseta database of dados (CUIDADO!)
+	docker compose exec api pnpm prisma migrate reset --force
 
 db-studio: ## Abre Prisma Studio
-	docker withpose exec api pnpm prisma studio
+	docker compose exec api pnpm prisma studio
 
 # =============================================
 # TESTES
 # =============================================
 
 test: ## Roda entires os tests
-	docker withpose exec api pnpm test
-	docker withpose exec web pnpm test
+	docker compose exec api pnpm test
+	docker compose exec web pnpm test
 
 test-watch: ## Roda tests in mode watch
-	docker withpose exec api pnpm test:watch
+	docker compose exec api pnpm test:watch
 
 test-cov: ## Roda tests with cobertura
-	docker withpose exec api pnpm test:cov
-	docker withpose exec web pnpm test:cov
+	docker compose exec api pnpm test:cov
+	docker compose exec web pnpm test:cov
 
 test-e2e: ## Roda tests E2E
-	docker withpose exec web pnpm test:e2e
+	docker compose exec web pnpm test:e2e
 
 test-int: ## Roda tests of integration
-	docker withpose exec api pnpm test:integration
+	docker compose exec api pnpm test:integration
 
 # =============================================
 # QUALIDADE
 # =============================================
 
 lint: ## Roda linhave in entires os projects
-	docker withpose exec api pnpm lint
-	docker withpose exec web pnpm lint
+	docker compose exec api pnpm lint
+	docker compose exec web pnpm lint
 
-formt: ## Formata code in entires os projects
-	docker withpose exec api pnpm formt
-	docker withpose exec web pnpm formt
+format: ## Formata code in entires os projects
+	docker compose exec api pnpm format
+	docker compose exec web pnpm format
 
 typecheck: ## Verifica types TypeScript
-	docker withpose exec api pnpm typecheck
-	docker withpose exec web pnpm typecheck
+	docker compose exec api pnpm typecheck
+	docker compose exec web pnpm typecheck
 
 # =============================================
 # PRODUCTION
 # =============================================
 
 build: ## Build of production
-	docker withpose -f docker-withpose.prod.yml build
+	docker compose -f docker-compose.prod.yml build
 
 deploy-staging: ## Deploy for staging
 	@echo "Deploy for staging..."
@@ -483,9 +483,9 @@ deploy-prod: ## Deploy for production
 ### 6. README.md (root)
 
 ````markdown
-#  Management Syshas - Pilates & Fisiohaveapia
+#  Management System - Pilates & Physiotherapy
 
-Syshas withplete of management for academia of Pilates and Physiotherapy.
+System complete of management for academia of Pilates and Physiotherapy.
 
 ##  Quick Start
 
@@ -502,7 +502,7 @@ Syshas withplete of management for academia of Pilates and Physiotherapy.
 ```bash
 # 1. Clone o repository
 git clone <repo-url>
-cd pilates-syshas
+cd pilates-system
 
 # 2. Copie as variables of environment
 cp .env.example .env
@@ -510,7 +510,7 @@ cp .env.example .env
 # 3. Start o environment
 make dev
 # ou
-docker withpose up
+docker compose up
 ```
 ````
 
@@ -549,7 +549,7 @@ make test-e2e     # Tests E2E
 
 # Quality
 make lint         # Verifica code
-make formt       # Formata code
+make format       # Formata code
 ```
 
 ##  Project Structure
@@ -580,7 +580,7 @@ make formt       # Formata code
 ##  Contribuição
 
 1. Crie a branch: `git checkout -b feature/name`
-2. Faça commits: `git withmit -m 'feat: description'`
+2. Faça commits: `git commit -m 'feat: description'`
 3. Push: `git push origin feature/name`
 4. Abra a Pull Request
 
@@ -608,7 +608,7 @@ Após implement, verifique:
 ##  Next Ube Story
 
 Após concluir esta US, prossiga para:
-→ [US-001-002: Backend Structure](./US-001-002-estrutura-backendendendend.md)
+→ [US-001-002: Backend Structure](./US-001-002-estrutura-backend.md)
 
 ---
 

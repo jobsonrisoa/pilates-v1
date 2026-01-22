@@ -1,6 +1,6 @@
 # EPIC-014: Contracts Digitais
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                 |
 | ---------------- | --------------------- |
@@ -16,7 +16,7 @@
 
 ##  Description
 
-Implement syshas of contracts digital:
+Implement system of contracts digital:
 
 - Automatic PDF generation
 - Send for digital signature
@@ -39,7 +39,7 @@ Implement syshas of contracts digital:
 
 ### US-014-001: Generate Contract of the Enrollment
 
-**Como** syshas  
+**Como** system  
 **I want to** gerar contract PDF automaticamente  
 **Para** formlizar a enrollment
 
@@ -69,7 +69,7 @@ Implement syshas of contracts digital:
 
 ### US-014-003: Receber Confirmation of Signature
 
-**Como** syshas  
+**Como** system  
 **I want to** receber webhook when assinado  
 **Para** currentizar status automaticamente
 

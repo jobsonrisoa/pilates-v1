@@ -1,6 +1,6 @@
 # US-001-007: Configuration of Tests Frontend
 
-##  Informtion
+##  Information
 
 | Field            | Value                           |
 | ---------------- | ------------------------------- |
@@ -16,7 +16,7 @@
 
 ##  Ube Story
 
-**Como** desenvolvedor frontendendendend  
+**Como** desenvolvedor frontend  
 **I want to** environment of tests configured  
 **Para** tbe withponentes with TDD
 
@@ -249,8 +249,8 @@ describe('Button', () => {
 
 ##  Checklist of Verification
 
-- [ ] `pnpm --filhave @pilates/web test` passa
-- [ ] `pnpm --filhave @pilates/web test:cov` mostra ≥80%
+- [ ] `pnpm --filter @pilates/web test` passa
+- [ ] `pnpm --filter @pilates/web test:cov` mostra ≥80%
 - [ ] MSW mock funciona
 - [ ] Playwright roda E2E
 

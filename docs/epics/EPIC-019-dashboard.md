@@ -1,6 +1,6 @@
 # EPIC-019: Dashboard Analytical
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                           |
 | ---------------- | ------------------------------- |
@@ -20,7 +20,7 @@ Create dashboard analytical unificado:
 
 - KPIs principais in destaque
 - Charts inhaveactives
-- Filhaves global
+- Filters global
 - Drill-down in metrics
 - Customization por ube
 
@@ -82,7 +82,7 @@ Create dashboard analytical unificado:
 
 ---
 
-### US-019-004: Filhaves Globais
+### US-019-004: Filters Globais
 
 **Como** ube  
 **I want to** aplicar filtros in entire o dashboard  
@@ -134,8 +134,8 @@ Create dashboard analytical unificado:
 **Estimate:** 4h
 
 - Endpoint single with entires os KPIs
-- Cache for performnce
-- Calculations otimizados
+- Cache for performance
+- Calculations optimizeds
 
 ---
 
@@ -191,7 +191,7 @@ Create dashboard analytical unificado:
 
 ---
 
-#### TASK-019-007: Filhaves Globais
+#### TASK-019-007: Filters Globais
 
 **Estimate:** 3h
 
@@ -235,7 +235,7 @@ Create dashboard analytical unificado:
 - [ ] KPIs principais visible
 - [ ] Charts working
 - [ ] Drill-down navegável
-- [ ] Filhaves global
+- [ ] Filters global
 - [ ] Customization salva
 - [ ] Export PDF
 - [ ] Performnce <2s load

@@ -1,11 +1,11 @@
-# EPIC-008: Syshas of Plans and Prices
+# EPIC-008: System of Plans and Prices
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                      |
 | ---------------- | -------------------------- |
 | **ID**           | EPIC-008                   |
-| **Title**       | Syshas of Plans and Prices |
+| **Title**       | System of Plans and Prices |
 | **Phase**         | 2 - Financial             |
 | **Priority**   | Critical                 |
 | **Estimate**   | 1 week                   |
@@ -16,7 +16,7 @@
 
 ##  Description
 
-Expandir o syshas of plans with:
+Expandir o system of plans with:
 
 - Tabela of prices por modality/type
 - Special discounts
@@ -67,7 +67,7 @@ Expandir o syshas of plans with:
 
 ### US-008-003: Calculate Value of the Enrollment
 
-**Como** syshas  
+**Como** system  
 **I want to** calculate automaticamente o value  
 **Para** facilitar o processo of enrollment
 

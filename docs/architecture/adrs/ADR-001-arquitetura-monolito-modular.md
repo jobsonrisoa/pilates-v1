@@ -7,7 +7,7 @@
 
 ## Context
 
-O syshas of management for academia of Pilates and Physiotherapy needs suportar multiple modules of business (authentication, students, instructores, classs, financial, inventory) with requisitos de:
+The system of management for academia of Pilates and Physiotherapy needs suportar multiple modules of business (authentication, students, instructores, classs, financial, inventory) with requisitos de:
 
 - Custo inicial baixo
 - Small team
@@ -54,7 +54,7 @@ src/
 │   │   ├── domain-event.ts
 │   │   └── value-object.ts
 │   ├── infrastructure/
-│   │   ├── datebase/
+│   │   ├── database/
 │   │   ├── events/
 │   │   └── http/
 │   └── application/
@@ -145,13 +145,13 @@ async handlePaymentConfirmed(event: PaymentConfirmedEvent) {
 -  **Low cost**: Deploy on simple VPS (~$20/month)
 -  **Simple operation**: One accountiner, one deploy
 -  **Easy debugging**: Unified stack traces
--  **ACID transactions**: Single datebase
+-  **ACID transactions**: Single database
 -  **Easier TDD**: Less network mocks
 -  **Ready to evolve**: Modules extractable
 
 ### Negative
 
--  Single deploy (entire syshas together)
+-  Single deploy (entire system together)
 -  Vertical before horizontal scaling
 -  Discipline required to maintain isolation
 
@@ -165,11 +165,11 @@ async handlePaymentConfirmed(event: PaymentConfirmedEvent) {
 
 ## Migration Criteria
 
-Consider migration to microbevices when:
+Consider migration to microservices when:
 
-- [ ] Equipe > 10 shouldlopers
+- [ ] Team > 10 developers
 - [ ] Deploys > 5x per day required
-- [ ] A module needs to scale 10x more than others
+- [ ] A module needs to scale 10x more than other
 - [ ] Failure tolerance requirement per module
 
 ## Metrics of Success
@@ -181,6 +181,6 @@ Consider migration to microbevices when:
 
 ## References
 
-- [Martin Fowler - Monolith First](https://martinfowler.with/bliki/MonolithFirst.html)
+- [Martin Fowler - Monolith First](https://martinfowler.com/bliki/MonolithFirst.html)
 - [Sam Newman - Building Microbevices](https://samnewman.io/books/building_microbevices_2nd_edition/)
-- [Modular Monolith with DDD](https://github.with/kgrzybek/modular-monolith-with-ddd)
+- [Modular Monolith with DDD](https://github.com/kgrzybek/modular-monolith-with-ddd)

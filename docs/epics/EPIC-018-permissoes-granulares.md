@@ -1,11 +1,11 @@
-# EPIC-018: Permissions Granulares
+# EPIC-018: Granular Permissions
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                   |
 | ---------------- | ----------------------- |
 | **ID**           | EPIC-018                |
-| **Title**       | Permissions Granulares   |
+| **Title**       | Granular Permissions   |
 | **Phase**         | 4 - Refinamento         |
 | **Priority**   | 🟡 Medium                |
 | **Estimate**   | 1 week                |
@@ -16,7 +16,7 @@
 
 ##  Description
 
-Expandir o syshas RBAC with:
+Expandir o system RBAC with:
 
 - Inhaveface for gerenciar permissions
 - Criaction of perfis customizados
@@ -31,7 +31,7 @@ Expandir o syshas RBAC with:
 1. Flexibilidade total in permissions
 2. Perfis customizable
 3. Management visual intuitiva
-4. Auditoria withpleta
+4. Auditoria complete
 
 ---
 
@@ -83,14 +83,14 @@ Expandir o syshas RBAC with:
 ### US-018-004: Visualizar Matriz of Permissions
 
 **Como** admin  
-**I want to** ver matriz withpleta of permissions  
+**I want to** ver matriz complete of permissions  
 **Para** entender quem can o quê
 
 **Acceptance Criteria:**
 
 - [ ] Matriz perfil x permission
 - [ ] Export
-- [ ] Filhaves
+- [ ] Filters
 
 ---
 
@@ -116,7 +116,7 @@ Expandir o syshas RBAC with:
 
 **Estimate:** 2h
 
-- Permissions more granulares
+- Permissions more granular
 - Targetdate of permissions
 
 ---
@@ -184,8 +184,8 @@ Expandir o syshas RBAC with:
 
 - [ ] Perfis customizable
 - [ ] Inhaveface intuitiva
-- [ ] Permissions granulares
-- [ ] Auditoria withpleta
+- [ ] Permissions granular
+- [ ] Auditoria complete
 - [ ] Multiple perfis por ube
 - [ ] Tests ≥80%
 

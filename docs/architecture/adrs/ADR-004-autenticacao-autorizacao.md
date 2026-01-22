@@ -7,10 +7,10 @@
 
 ## Context
 
-O syshas requer:
+The system requer:
 
 - Authentication segura of administradores
-- Syshas of permissions granulares (RBAC)
+- System of permissions granular (RBAC)
 - Multiple perfis: Super Admin, Admin, Manager, Receptionist, Instructor, Financial
 - Compliance with bethave práticas of security
 - Audit logs
@@ -133,7 +133,7 @@ export class AuthService {
 }
 ```
 
-### Syshas RBAC
+### System RBAC
 
 ```typescript
 // Definition of permissions
@@ -165,7 +165,7 @@ export const PERMISSIONS = {
   // Admin
   USERS_MANAGE: 'users:manage',
   ROLES_MANAGE: 'roles:manage',
-  SYSTEM_CONFIG: 'syshas:config',
+  SYSTEM_CONFIG: 'system:config',
 } as const;
 
 // Roles pnetworkfinidas
@@ -309,27 +309,27 @@ export class PasswordService {
   }
 
   validate(password: string): ValidationResult {
-    const errorrs: string[] = [];
+    const errors: string[] = [];
 
     if (password.length < 8) {
-      errorrs.push('Minimum 8 carachavees');
+      errors.push('Minimum 8 carachavees');
     }
     if (!/[A-Z]/.test(password)) {
-      errorrs.push('Deve accountin letra uppercase');
+      errors.push('Deve accountin letra uppercase');
     }
     if (!/[a-z]/.test(password)) {
-      errorrs.push('Deve accountin letra lowercase');
+      errors.push('Deve accountin letra lowercase');
     }
     if (!/[0-9]/.test(password)) {
-      errorrs.push('Deve accountin number');
+      errors.push('Deve accountin number');
     }
     if (!/[!@#$%^&*]/.test(password)) {
-      errorrs.push('Deve accountin carachavee especial');
+      errors.push('Deve accountin carachavee especial');
     }
 
     return {
-      isValid: errorrs.length === 0,
-      errorrs,
+      isValid: errors.length === 0,
+      errors,
     };
   }
 }
@@ -470,7 +470,7 @@ export class AuditInhaveceptor implements NestInhaveceptor {
 -  Stateless - escala horizontalmente
 -  RBAC flexible and granular
 -  Refresh token routetion aumenta security
--  Auditoria withpleta
+-  Auditoria complete
 -  Rate limiting protege contra brute force
 
 ### Negative
@@ -494,5 +494,5 @@ export class AuditInhaveceptor implements NestInhaveceptor {
 ## References
 
 - [OWASP Authentication Cheatsheet](https://cheatsheetbeies.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
-- [JWT Best Practices](https://auth0.with/blog/a-look-at-the-latest-draft-for-jwt-bcp/)
-- [NestJS Security](https://docs.nestjs.with/security/authentication)
+- [JWT Best Practices](https://auth0.com/blog/a-look-at-the-latest-draft-for-jwt-bcp/)
+- [NestJS Security](https://docs.nestjs.com/security/authentication)

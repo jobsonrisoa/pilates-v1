@@ -3,7 +3,7 @@
 >  **Ube Stories detailed:** [EPIC-001/](./EPIC-001/)  
 > Each US has AI-powered prompts with Chain of Thought and TDD workflow
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                                |
 | ---------------- | ------------------------------------ |
@@ -19,7 +19,7 @@
 
 ##  Description
 
-Configurar all a infrastructure of shouldlopment of the project, including:
+Configurar all a infrastructure of development of the project, including:
 
 - Monorepo structure with workspaces
 - Backend NestJS with DDD architecture
@@ -37,11 +37,11 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 ##  Objectives
 
 1. Create base structure of the project following standards of DDD
-2. Configure environment Docker withplete for shouldlopment
+2. Configure environment Docker complete for development
 3. Establish pipeline of CI/CD functional
 4. Configurar tools of quality of code
 5. Create estrutura of tests with coverage minimum of 80%
-6. Document setup and onboarding of shouldlopers
+6. Document setup and onboarding of developers
 
 ---
 
@@ -55,16 +55,16 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 
 **Acceptance Criteria:**
 
-- [ ] `docker withpose up` inicia entire o environment
-- [ ] Hot reload working for backendendendend and frontendendendend
+- [ ] `docker compose up` inicia entire o environment
+- [ ] Hot reload working for backend and frontend
 - [ ] Database accessible and with migrations aplieachs
-- [ ] Documentation of onboarding withpleta
+- [ ] Documentation of onboarding complete
 
 ---
 
 ### US-001-002: Backend Structure
 
-**Como** desenvolvedor backendendendend  
+**Como** desenvolvedor backend  
 **I want to** a estrutura of project NestJS organizada with DDD  
 **Para** maintain the code organized and scalable
 
@@ -80,7 +80,7 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 
 ### US-001-003: Frontend Structure
 
-**Como** desenvolvedor frontendendendend  
+**Como** desenvolvedor frontend  
 **I want to** a estrutura Next.js 14 with withponentes base  
 **Para** desenvolver inhavefaces consistentes
 
@@ -119,7 +119,7 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 
 **Acceptance Criteria:**
 
-- [ ] Jest configured for backendendendend and frontendendendend
+- [ ] Jest configured for backend and frontend
 - [ ] Coverage thresholds configureds (80%)
 - [ ] Containers of test isosides
 - [ ] Watch mode working
@@ -144,9 +144,9 @@ Configurar all a infrastructure of shouldlopment of the project, including:
 ├── docker/            # Settings Docker
 ├── docs/              # Documentation
 ├── .github/           # GitHub Actions
-├── docker-withpose.yml
-├── docker-withpose.dev.yml
-├── docker-withpose.test.yml
+├── docker-compose.yml
+├── docker-compose.dev.yml
+├── docker-compose.test.yml
 ├── pnpm-workspace.yaml
 ├── package.json
 └── README.md
@@ -187,7 +187,7 @@ apps/api/
 │   │   │   └── domain-event.base.ts
 │   │   ├── application/
 │   │   └── infrastructure/
-│   │       ├── datebase/
+│   │       ├── database/
 │   │       │   └── prisma.bevice.ts
 │   │       └── http/
 │   ├── config/
@@ -271,8 +271,8 @@ apps/web/
 
 **Files a create:**
 
-1. `docker-withpose.yml` - Development environment main
-2. `docker-withpose.test.yml` - Ambiente of tests isoside
+1. `docker-compose.yml` - Development environment main
+2. `docker-compose.test.yml` - Ambiente of tests isoside
 3. `docker/` - Settings auxiliares
 
 **Services:**
@@ -286,7 +286,7 @@ apps/web/
 
 **Definition of Done:**
 
-- [ ] `docker withpose up` sobe entire environment
+- [ ] `docker compose up` sobe entire environment
 - [ ] Volumes persistentes configureds
 - [ ] Health checks in entires os bevices
 - [ ] Network isolated
@@ -302,7 +302,7 @@ apps/web/
 **Scope:**
 
 - ESLint with rules for TypeScript
-- Prettier for formtting
+- Prettier for formatting
 - Integration ESLint + Prettier
 - Regras specific for NestJS and React
 - EditorConfig
@@ -311,8 +311,8 @@ apps/web/
 
 ```
 /.eslintrc.js          # Config raiz
-/apps/api/.eslintrc.js # Config backendendendend
-/apps/web/.eslintrc.js # Config frontendendendend
+/apps/api/.eslintrc.js # Config backend
+/apps/web/.eslintrc.js # Config frontend
 /.prettierrc
 /.editorconfig
 ```
@@ -320,7 +320,7 @@ apps/web/
 **Definition of Done:**
 
 - [ ] `pnpm lint` funciona in entire project
-- [ ] `pnpm formt` formta code
+- [ ] `pnpm format` formata code
 - [ ] Sem conflitos ESLint/Prettier
 - [ ] VS Code settings configureds
 
@@ -333,18 +333,18 @@ apps/web/
 **Scope:**
 
 - Husky for git hooks
-- lint-staged for validation pre-withmit
-- Commitlint for messages of withmit
+- lint-staged for validation pre-commit
+- Commitlint for messages of commit
 - Conventional commits
 
 **Hooks:**
 
 ```
-pre-withmit:
-  - lint-staged (lint + formt + typecheck)
+pre-commit:
+  - lint-staged (lint + format + typecheck)
 
-withmit-msg:
-  - withmitlint (conventional commits)
+commit-msg:
+  - commitlint (conventional commits)
 
 pre-push:
   - pnpm test (only tests unit fasts)
@@ -353,7 +353,7 @@ pre-push:
 **Definition of Done:**
 
 - [ ] Commits seguem conventional commits
-- [ ] Lint roda before of each withmit
+- [ ] Lint roda before of each commit
 - [ ] Tests rodam before of push
 
 ---
@@ -399,7 +399,7 @@ apps/api/
 
 **Definition of Done:**
 
-- [ ] `pnpm --filhave api test` funciona
+- [ ] `pnpm --filter api test` funciona
 - [ ] Coverage report gerado
 - [ ] Threshold of 80% configured
 - [ ] Watch mode working
@@ -433,7 +433,7 @@ apps/web/
 
 **Definition of Done:**
 
-- [ ] `pnpm --filhave web test` funciona
+- [ ] `pnpm --filter web test` funciona
 - [ ] Testing Library configured
 - [ ] MSW configured
 - [ ] Teste of example passando
@@ -463,7 +463,7 @@ apps/web/
 
 **Definition of Done:**
 
-- [ ] `pnpm --filhave web test:e2e` funciona
+- [ ] `pnpm --filter web test:e2e` funciona
 - [ ] Multiple browbes configureds
 - [ ] Screenshots in failures
 - [ ] Report HTML gerado
@@ -498,7 +498,7 @@ apps/web/
 
 ---
 
-#### TASK-001-011: Configurar docker-withpose.test.yml
+#### TASK-001-011: Configurar docker-compose.test.yml
 
 **Estimate:** 2h
 
@@ -525,19 +525,19 @@ apps/web/
 **Comandos:**
 
 ```makefile
-dev          # docker withpose up
-dev-build    # docker withpose up --build
-down         # docker withpose down
-clean        # docker withpose down -v
-logs         # docker withpose logs -f
-shell-api    # docker withpose exec api sh
-shell-web    # docker withpose exec web sh
+dev          # docker compose up
+dev-build    # docker compose up --build
+down         # docker compose down
+clean        # docker compose down -v
+logs         # docker compose logs -f
+shell-api    # docker compose exec api sh
+shell-web    # docker compose exec web sh
 shell-mysql  # access to MySQL CLI
 test         # rodar entires os tests
 test-watch   # tests in watch mode
 lint         # rodar linhave
 migrate      # rodar migrations
-seed         # popular datebase
+seed         # popular database
 ```
 
 **Definition of Done:**
@@ -559,12 +559,12 @@ seed         # popular datebase
 - Quick start
 - Arquitetura overview
 - Conventions of code
-- Fluxo of shouldlopment
+- Fluxo of development
 - Troubleshooting
 
 **Definition of Done:**
 
-- [ ] README withplete
+- [ ] README complete
 - [ ] Quick start in less of 5 commands
 - [ ] Screenshots of the inhavefaces
 - [ ] FAQ with problemas withuns
@@ -584,7 +584,7 @@ seed         # popular datebase
 
 **Definition of Done:**
 
-- [ ] `pnpm --filhave api prisma db seed` funciona
+- [ ] `pnpm --filter api prisma db seed` funciona
 - [ ] Admin ube criado (admin@test.with / password123)
 - [ ] Givens of example variados
 - [ ] Idempotente (can rodar multiple times)
@@ -633,7 +633,7 @@ seed         # popular datebase
 
 ### Development Environment
 
-- [ ] `docker withpose up` inicia entire environment in < 5 min
+- [ ] `docker compose up` inicia entire environment in < 5 min
 - [ ] Hot reload funciona for API and Web
 - [ ] Database accessible and with migrations
 - [ ] Swagger accessible in `/api`
@@ -648,9 +648,9 @@ seed         # popular datebase
 
 ### Tests
 
-- [ ] Unit tests configureds (backendendendend and frontendendendend)
+- [ ] Unit tests configureds (backend and frontend)
 - [ ] Coverage threshold of 80%
-- [ ] Integration tests with accountiners isosides
+- [ ] Integration tests with containers isosides
 - [ ] Playwright configured for E2E
 
 ### CI/CD
@@ -671,11 +671,11 @@ seed         # popular datebase
 ##  Definition of Done of the Epic
 
 - [ ] Todas as tasks completed
-- [ ] Zero errorrs of lint
+- [ ] Zero errors of lint
 - [ ] Tests passando
 - [ ] Coverage ≥ 80%
 - [ ] Code review aprovado
-- [ ] Documentation withpleta
+- [ ] Complete documentation
 - [ ] Ambiente functional for next epic
 
 ---
@@ -684,7 +684,7 @@ seed         # popular datebase
 
 - [ADR-002: Technology Stack](../architecture/adrs/ADR-002-stack-tecnologica.md)
 - [ADR-006: CI/CD](../architecture/adrs/ADR-006-ci-cd.md)
-- [ADR-007: Containerization](../architecture/adrs/ADR-007-accountinerizacto.md)
+- [ADR-007: Containerization](../architecture/adrs/ADR-007-containerizacao.md)
 - [ADR-009: Testing Strategy](../architecture/adrs/ADR-009-estrategia-tests.md)
 
 ---
@@ -706,7 +706,7 @@ Semana 2:
 ├── TASK-001-008: Jest Frontend (3h)
 ├── TASK-001-009: Playwright (2h)
 ├── TASK-001-010: GitHub Actions (4h)
-├── TASK-001-011: docker-withpose.test (2h)
+├── TASK-001-011: docker-compose.test (2h)
 ├── TASK-001-013: Documentation (2h)
 ├── TASK-001-014: Seed (2h)
 ├── TASK-001-015: Logging (2h)

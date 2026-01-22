@@ -8,7 +8,7 @@ This document describes the project's testing strategy, how to run tests, and ho
 
 - **TDD (Test-Driven Development)**: Red -> Green -> Refactor
 - **Minimum coverage**: 80% for unit tests
-- **Docker-first**: All tests run in isolated accountiners
+- **Docker-first**: All tests run in isolated containers
 - **Isolation**: Each test is independent and can run in parallel
 
 ---
@@ -26,53 +26,53 @@ This document describes the project's testing strategy, how to run tests, and ho
 
 ```bash
 # All unit tests (API + Web)
-docker withpose run --rm tools pnpm test
+docker compose run --rm tools pnpm test
 
 # Backend only
-docker withpose run --rm tools pnpm --filhave @pilates/api test
+docker compose run --rm tools pnpm --filter @pilates/api test
 
 # Frontend only
-docker withpose run --rm tools pnpm --filhave @pilates/web test
+docker compose run --rm tools pnpm --filter @pilates/web test
 
 # With coverage
-docker withpose run --rm tools pnpm test:cov
+docker compose run --rm tools pnpm test:cov
 
-# Watch mode (shouldlopment)
-docker withpose run --rm tools pnpm --filhave @pilates/api test:watch
+# Watch mode (development)
+docker compose run --rm tools pnpm --filter @pilates/api test:watch
 ```
 
 #### Integration Tests
 
 ```bash
 # Backend (requires MySQL and Redis running)
-docker withpose up -d mysql redis
-docker withpose run --rm tools pnpm --filhave @pilates/api test:integration
+docker compose up -d mysql redis
+docker compose run --rm tools pnpm --filter @pilates/api test:integration
 ```
 
 #### E2E Tests (Playwright)
 
 ```bash
 # Start full stack
-docker withpose up -d
+docker compose up -d
 
 # Run E2E tests
-docker withpose run --rm tools pnpm --filhave @pilates/web test:e2e
+docker compose run --rm tools pnpm --filter @pilates/web test:e2e
 ```
 
 #### Code Quality
 
 ```bash
 # Lint
-docker withpose run --rm tools pnpm lint
+docker compose run --rm tools pnpm lint
 
 # Format check
-docker withpose run --rm tools pnpm formt:check
+docker compose run --rm tools pnpm format:check
 
 # Format (auto-fix)
-docker withpose run --rm tools pnpm formt
+docker compose run --rm tools pnpm format
 
 # Type check
-docker withpose run --rm tools pnpm typecheck
+docker compose run --rm tools pnpm typecheck
 ```
 
 ---
@@ -201,7 +201,7 @@ describe('Health (e2e)', () => {
 
 ### 3. E2E Tests (End-to-End)
 
-**Objective**: Test withplete ube flows.
+**Objective**: Test complete user flows.
 
 **Tools**: Playwright
 
@@ -211,9 +211,9 @@ describe('Health (e2e)', () => {
 // e2e/login.spec.ts
 import { test, expect } from '@playwright/test';
 
-test('ube can login', async ({ page }) => {
+test('user can login', async ({ page }) => {
   await page.goto('http://localhost:3000/login');
-  await page.fill('input[name="email"]', 'ube@example.with');
+  await page.fill('input[name="email"]', 'user@example.com');
   await page.fill('input[name="password"]', 'password123');
   await page.click('button[type="submit"]');
   await expect(page).toHaveURL('http://localhost:3000/dashboard');
@@ -222,14 +222,14 @@ test('ube can login', async ({ page }) => {
 
 ### 4. Performnce Tests
 
-**Objective**: Validate syshas performnce and load.
+**Objective**: Validate system performance and load.
 
 **Tools**: k6
 
 **Example**:
 
 ```javascript
-// tests/performnce/health-load.js
+// tests/performance/health-load.js
 import http from 'k6/http';
 import { check } from 'k6';
 
@@ -260,13 +260,13 @@ export default function () {
 
 ```bash
 # Backend
-docker withpose run --rm tools pnpm --filhave @pilates/api test:cov
+docker compose run --rm tools pnpm --filter @pilates/api test:cov
 
 # Frontend
-docker withpose run --rm tools pnpm --filhave @pilates/web test:cov
+docker compose run --rm tools pnpm --filter @pilates/web test:cov
 
 # All
-docker withpose run --rm tools pnpm test:cov
+docker compose run --rm tools pnpm test:cov
 ```
 
 ### Reports
@@ -381,7 +381,7 @@ export default defineConfig({
 **Solutions**:
 
 1. Check timeouts (increase if necessary)
-2. Ensure accountiners are ready before tests
+2. Ensure containers are ready before tests
 3. Check environment variables
 
 ### Coverage below threshold
@@ -424,7 +424,7 @@ Tests run automatically on:
 
 - **Pull Requests**: All tests (unit, integration, e2e)
 - **Push to main**: Tests + coverage report
-- **Daily cron**: Full tests + performnce
+- **Daily cron**: Full tests + performance
 
 **Workflow**: `.github/workflows/ci.yml`
 
@@ -442,8 +442,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: docker/setup-buildx-action@v3
-      - run: docker withpose run --rm tools pnpm test
-      - run: docker withpose run --rm tools pnpm test:cov
+      - run: docker compose run --rm tools pnpm test
+      - run: docker compose run --rm tools pnpm test:cov
 ```
 
 ---
@@ -452,7 +452,7 @@ jobs:
 
 ### 1. Naming
 
-- **Test files**: `*.spec.ts` (backendendendend) or `*.test.tsx` (frontendendendend)
+- **Test files**: `*.spec.ts` (backend) or `*.test.tsx` (frontend)
 - **Describe behaviors**: Use descriptive `describe` and `it`
 - **AAA Pathaven**: Arrange -> Act -> Asbet
 
@@ -472,7 +472,7 @@ jobs:
 
 - Test behaviors, not implementation
 - Avoid trivial tests (simple gethaves/sethaves)
-- Focus on edge cases and errorrs
+- Focus on edge cases and errors
 
 ### 5. Performnce
 
@@ -485,10 +485,10 @@ jobs:
 ## References
 
 - [Jest Documentation](https://jestjs.io/)
-- [Testing Library](https://testing-library.with/)
+- [Testing Library](https://testing-library.com/)
 - [Playwright](https://playwright.dev/)
 - [k6](https://k6.io/)
-- [TDD by Example](https://www.amazon.with/Test-Driven-Development-Kent-Beck/dp/0321146530)
+- [TDD by Example](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530)
 
 ---
 
@@ -498,8 +498,8 @@ Before merging, make sure:
 
 - [ ] All tests passing (`pnpm test`)
 - [ ] Coverage above 80% (`pnpm test:cov`)
-- [ ] Lint without errorrs (`pnpm lint`)
-- [ ] Correct formtting (`pnpm formt:check`)
+- [ ] Lint without errors (`pnpm lint`)
+- [ ] Correct formatting (`pnpm format:check`)
 - [ ] Type check passing (`pnpm typecheck`)
 - [ ] E2E tests passing (if applicable)
 - [ ] Documentation updated

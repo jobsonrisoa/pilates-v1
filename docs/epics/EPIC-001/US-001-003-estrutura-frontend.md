@@ -1,6 +1,6 @@
 # US-001-003: Frontend Structure (Next.js)
 
-##  Informtion
+##  Information
 
 | Field            | Value                           |
 | ---------------- | ------------------------------- |
@@ -16,7 +16,7 @@
 
 ##  Ube Story
 
-**Como** desenvolvedor frontendendendend  
+**Como** desenvolvedor frontend  
 **I want to** a estrutura Next.js 14 with App Rouhave  
 **Para** desenvolver inhavefaces modernas and performáticas
 
@@ -30,7 +30,7 @@
 4. Setup React Query for date fetching
 5. Setup Zustand for estado global
 6. Create withponentes base
-7. Create Dockerfile otimizado
+7. Create Dockerfile optimized
 
 ---
 
@@ -192,8 +192,8 @@ apps/web/
 ```markdown
 ## Context
 
-Estou criando o frontendendendend of a syshas of management for academia of Pilates.
-O backendendendend NestJS already existe. Preciso create o Next.js in apps/web.
+Estou criando o frontend of a system of management for academia of Pilates.
+O backend NestJS already existe. Preciso create o Next.js in apps/web.
 
 ## Principles Obrigatórios
 
@@ -204,7 +204,7 @@ O backendendendend NestJS already existe. Preciso create o Next.js in apps/web.
 
 ## Tarefa
 
-Crie a estrutura of the frontendendendend Next.js in apps/web:
+Crie a estrutura of the frontend Next.js in apps/web:
 
 ### 1. Inicializaction
 
@@ -249,8 +249,8 @@ Crie a estrutura of the frontendendendend Next.js in apps/web:
 
 ### 6. API Client
 
-- Fetch wrapper with inhaveceptors
-- Tratamento of errorrs
+- Fetch wrapper with interceptors
+- Tratamento of errors
 - Types of the responses
 
 ### 7. Stores Zustand
@@ -280,8 +280,8 @@ Crie a estrutura of the frontendendendend Next.js in apps/web:
 
 Para each file, mostre:
 
-1. Path withplete
-2. Content withplete
+1. Path complete
+2. Content complete
 3. Explicaction breve
 
 ## Importante
@@ -353,7 +353,7 @@ module.exports = {
   content: ['./app/**/*.{ts,tsx}', './withponents/**/*.{ts,tsx}'],
   theme: {
     accountiner: {
-      cenhave: true,
+      center: true,
       padding: '2rem',
       screens: {
         '2xl': '1400px',
@@ -447,8 +447,8 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider
         attribute="class"
-        defaultTheme="syshas"
-        enableSyshas
+        defaultTheme="system"
+        enableSystem
         disableTransitionOnChange
       >
         {children}
@@ -619,7 +619,7 @@ WORKDIR /app
 
 ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN pnpm --filhave @pilates/web build
+RUN pnpm --filter @pilates/web build
 
 # =============================================
 # STAGE 3: Production
@@ -631,8 +631,8 @@ WORKDIR /app
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 
-RUN addgroup --syshas --gid 1001 nodejs && \
-    addube --syshas --uid 1001 nextjs
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/apps/web/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/apps/web/.next/standalone ./
@@ -706,13 +706,13 @@ describe('Button', () => {
 
 ##  Next Ube Story
 
-→ [US-001-004: Docker Compose Completo](./US-001-004-docker-withpose.md)
+→ [US-001-004: Docker Compose Completo](./US-001-004-docker-compose.md)
 
 ---
 
 ## 📎 References
 
 - [Next.js App Rouhave](https://nextjs.org/docs/app)
-- [shadcn/ui](https://ui.shadcn.with/)
-- [TanStack Query](https://tanstack.with/query)
+- [shadcn/ui](https://ui.shadcn.com/)
+- [TanStack Query](https://tanstack.com/query)
 - [Zustand](https://zustand-demo.pmnd.rs/)

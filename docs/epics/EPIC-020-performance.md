@@ -1,6 +1,6 @@
 # EPIC-020: Optimizations of Performnce
 
-##  General Informtion
+##  General Information
 
 | Field            | Value                      |
 | ---------------- | -------------------------- |
@@ -16,11 +16,11 @@
 
 ##  Description
 
-Optimize performnce of the syshas:
+Optimize performance of the system:
 
 - Query optimization (N+1, indexes)
 - Caching strategic
-- Lazy loading in the frontendendendend
+- Lazy loading in the frontend
 - Bundle optimization
 - Database tuning
 
@@ -29,7 +29,7 @@ Optimize performnce of the syshas:
 ##  Objectives
 
 1. P95 < 500ms for all as routes
-2. Reduce load time of the frontendendendend
+2. Reduce load time of the frontend
 3. Optimize queries pesadas
 4. Cache inteligente
 
@@ -67,9 +67,9 @@ Optimize performnce of the syshas:
 
 ### US-020-003: Implement Cache
 
-**Como** syshas  
+**Como** system  
 **I want to** cachear dados frequent  
-**Para** reduzir carga in the datebase
+**Para** reduzir carga in the database
 
 **Acceptance Criteria:**
 
@@ -181,7 +181,7 @@ Optimize performnce of the syshas:
 **Estimate:** 2h
 
 - Adicionar latency metrics
-- Dashboards of performnce
+- Dashboards of performance
 - Alerts
 
 ---
@@ -192,7 +192,7 @@ Optimize performnce of the syshas:
 - [ ] Core Web Vitals green
 - [ ] Cache working
 - [ ] Bundle < 200KB initial
-- [ ] Metrics of performnce
+- [ ] Metrics of performance
 - [ ] Documentation of optimizations
 
 ---

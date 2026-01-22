@@ -1,6 +1,6 @@
 # US-001-005: Quality of Code (Lint, Format, Hooks)
 
-##  Informtion
+##  Information
 
 | Field            | Value                  |
 | ---------------- | ---------------------- |
@@ -18,7 +18,7 @@
 
 **Como** desenvolvedor  
 **I want to** tools of quality of code configuradas  
-**Para** maintain consistência and evitar errorrs
+**Para** maintain consistência and evitar errors
 
 ---
 
@@ -28,19 +28,19 @@
 2. Configurar Prettier
 3. Configurar Husky for git hooks
 4. Configurar lint-staged
-5. Configurar withmitlint (conventional commits)
+5. Configurar commitlint (conventional commits)
 
 ---
 
 ##  Acceptance Criteria
 
-- [ ] ESLint configured in the backendendendend and frontendendendend
-- [ ] Prettier formtando code
+- [ ] ESLint configured in the backend and frontend
+- [ ] Prettier formatando code
 - [ ] Husky rodando hooks in the git
-- [ ] lint-staged validando before of the withmit
-- [ ] withmitlint validando messages of withmit
+- [ ] lint-staged validando before of the commit
+- [ ] commitlint validando messages of commit
 - [ ] `pnpm lint` funciona in entire project
-- [ ] `pnpm formt` formta code
+- [ ] `pnpm format` formata code
 
 ---
 
@@ -59,8 +59,8 @@ Configure as tools of quality:
 ### 1. ESLint
 
 - Config withpartilhada in the root
-- Extend for NestJS in the backendendendend
-- Extend for Next.js in the frontendendendend
+- Extend for NestJS in the backend
+- Extend for Next.js in the frontend
 - TypeScript strict rules
 - Import ordering
 
@@ -74,8 +74,8 @@ Configure as tools of quality:
 
 ### 3. Husky + lint-staged
 
-- pre-withmit: lint-staged
-- withmit-msg: withmitlint
+- pre-commit: lint-staged
+- commit-msg: commitlint
 - lint-staged roda only in the files modificados
 
 ### 4. Commitlint
@@ -87,8 +87,8 @@ Configure as tools of quality:
 ### 5. Scripts
 
 - lint: ESLint in entires
-- formt: Prettier write
-- formt:check: Prettier check
+- format: Prettier write
+- format:check: Prettier check
 - typecheck: tsc --noEmit
 
 ## Files required
@@ -98,10 +98,10 @@ Configure as tools of quality:
 - apps/web/.eslintrc.js
 - .prettierrc
 - .prettierignore
-- .husky/pre-withmit
-- .husky/withmit-msg
+- .husky/pre-commit
+- .husky/commit-msg
 - .lintstagedrc.js
-- withmitlint.config.js
+- commitlint.config.js
 ```
 
 ---
@@ -124,8 +124,8 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'import'],
   extends: [
-    'eslint:rewithmended',
-    'plugin:@typescript-eslint/rewithmended',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:import/typescript',
     'prettier',
   ],
@@ -172,11 +172,11 @@ module.exports = {
 };
 ```
 
-### withmitlint.config.js
+### commitlint.config.js
 
 ```javascript
 module.exports = {
-  extends: ['@withmitlint/config-conventional'],
+  extends: ['@commitlint/config-conventional'],
   rules: {
     'type-enum': [
       2,
@@ -200,7 +200,7 @@ module.exports = {
 };
 ```
 
-### .husky/pre-withmit
+### .husky/pre-commit
 
 ```bash
 #!/usr/bin/env sh
@@ -209,13 +209,13 @@ module.exports = {
 npx lint-staged
 ```
 
-### .husky/withmit-msg
+### .husky/commit-msg
 
 ```bash
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx --no -- withmitlint --edit ${1}
+npx --no -- commitlint --edit ${1}
 ```
 
 ---
@@ -223,13 +223,13 @@ npx --no -- withmitlint --edit ${1}
 ##  Checklist of Verification
 
 - [ ] `pnpm lint` funciona
-- [ ] `pnpm formt` formta
+- [ ] `pnpm format` formata
 - [ ] Commit with msg invalid falha
 - [ ] Commit with msg valid passa
-- [ ] Code not formtado is bloqueado
+- [ ] Code not formatado is bloqueado
 
 ---
 
 ##  Next Ube Story
 
-→ [US-001-006: Configuration of Tests Backend](./US-001-006-tests-backendendendend.md)
+→ [US-001-006: Configuration of Tests Backend](./US-001-006-tests-backend.md)

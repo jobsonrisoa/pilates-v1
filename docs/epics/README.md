@@ -1,9 +1,9 @@
 # Epics of the Projeto
 
->  **AI-Powered Development:** Cada epic possui Ube Stories with prompts otimizados  
-> for shouldlopment assistido por AI usando **Chain of Thought** and **Tree of Thought**
+>  **AI-Powered Development:** Cada epic possui Ube Stories with prompts optimizeds  
+> for development assistido por AI usando **Chain of Thought** and **Tree of Thought**
 
-## Management Syshas for Pilates and Physiotherapy Studio
+## Management System for Pilates and Physiotherapy Studio
 
 ---
 
@@ -27,7 +27,7 @@
 │                                                                     │
 │  FASE 2 - FINANCEIRO (6-8 weeks)                                  │
 │  ┌─────────────────────────────────────────────────────────────┐   │
-│  │ EPIC-008: Syshas of Plans and Prices                         │   │
+│  │ EPIC-008: System of Plans and Prices                         │   │
 │  │ EPIC-009: Banking Integration Sicoob                         │   │
 │  │ EPIC-010: Payment Control                             │   │
 │  │ EPIC-011: Commissions of Instructores                           │   │
@@ -36,7 +36,7 @@
 │                                                                     │
 │  FASE 3 - OPERACIONAL (6-8 weeks)                                 │
 │  ┌─────────────────────────────────────────────────────────────┐   │
-│  │ EPIC-013: Syshas of Reschedulings                              │   │
+│  │ EPIC-013: System of Reschedulings                              │   │
 │  │ EPIC-014: Contracts Digitais                                 │   │
 │  │ EPIC-015: Management of Inventory                                  │   │
 │  │ EPIC-016: Reports Operacionais                            │   │
@@ -45,7 +45,7 @@
 │                                                                     │
 │  FASE 4 - REFINAMENTO (4-6 weeks)                                 │
 │  ┌─────────────────────────────────────────────────────────────┐   │
-│  │ EPIC-018: Permissions Granulares                              │   │
+│  │ EPIC-018: Granular Permissions                              │   │
 │  │ EPIC-019: Dashboard Analytical                                │   │
 │  │ EPIC-020: Optimizations of Performnce                         │   │
 │  │ EPIC-021: Tests E2E and Performnce                           │   │
@@ -64,7 +64,7 @@
 | ID                                           | Epic                                                     | Priority | Estimate  | Status     |
 | -------------------------------------------- | --------------------------------------------------------- | ---------- | ----------- | ---------- |
 | [EPIC-001](./EPIC-001-setup-environment.md)     | Setup Development Environment [(10 USs)](./EPIC-001/) | Critical | 2 weeks   | Backlog |
-| [EPIC-002](./EPIC-002-autenticacto.md)       | Authentication and Authorization                                | Critical | 2 weeks   | Backlog |
+| [EPIC-002](./EPIC-002-autenticacao.md)       | Authentication and Authorization                                | Critical | 2 weeks   | Backlog |
 | [EPIC-003](./EPIC-003-gestto-students.md)      | Management of Students                                          | Critical | 1.5 weeks | Backlog |
 | [EPIC-004](./EPIC-004-gestto-instructores.md) | Management of Instructores                                     | High    | 1 week    | Backlog |
 | [EPIC-005](./EPIC-005-gestto-classs.md)       | Management of Classes and Schedules                                | High    | 1.5 weeks | Backlog |
@@ -75,8 +75,8 @@
 
 | ID                                               | Epic                      | Priority | Estimate  | Status     |
 | ------------------------------------------------ | -------------------------- | ---------- | ----------- | ---------- |
-| [EPIC-008](./EPIC-008-plans-precos.md)          | Syshas of Plans and Prices | Critical | 1 week    | Backlog |
-| [EPIC-009](./EPIC-009-integracto-sicoob.md)      | Banking Integration Sicoob | Critical | 2 weeks   | Backlog |
+| [EPIC-008](./EPIC-008-plans-precos.md)          | System of Plans and Prices | Critical | 1 week    | Backlog |
+| [EPIC-009](./EPIC-009-integracao-sicoob.md)      | Banking Integration Sicoob | Critical | 2 weeks   | Backlog |
 | [EPIC-010](./EPIC-010-payments.md)             | Payment Control     | Critical | 1.5 weeks | Backlog |
 | [EPIC-011](./EPIC-011-withissoes.md)              | Commissions of Instructores   | 🟡 Medium   | 1 week    | Backlog |
 | [EPIC-012](./EPIC-012-relatorios-financial.md) | Reports Financials     | High    | 1 week    | Backlog |
@@ -85,7 +85,7 @@
 
 | ID                                                | Epic                   | Priority | Estimate  | Status     |
 | ------------------------------------------------- | ----------------------- | ---------- | ----------- | ---------- |
-| [EPIC-013](./EPIC-013-reposicoes.md)              | Syshas of Reschedulings   | High    | 1.5 weeks | Backlog |
+| [EPIC-013](./EPIC-013-reposicoes.md)              | System of Reschedulings   | High    | 1.5 weeks | Backlog |
 | [EPIC-014](./EPIC-014-contracts.md)               | Contracts Digitais      | High    | 1.5 weeks | Backlog |
 | [EPIC-015](./EPIC-015-inventory.md)                 | Management of Inventory       | 🟡 Medium   | 1.5 weeks | Backlog |
 | [EPIC-016](./EPIC-016-relatorios-operacionais.md) | Reports Operacionais | 🟡 Medium   | 1 week    | Backlog |
@@ -95,9 +95,9 @@
 
 | ID                                              | Epic                          | Priority | Estimate  | Status     |
 | ----------------------------------------------- | ------------------------------ | ---------- | ----------- | ---------- |
-| [EPIC-018](./EPIC-018-permissoes-granulares.md) | Permissions Granulares          | 🟡 Medium   | 1 week    | Backlog |
+| [EPIC-018](./EPIC-018-permissions-granular.md) | Granular Permissions          | 🟡 Medium   | 1 week    | Backlog |
 | [EPIC-019](./EPIC-019-dashboard.md)             | Dashboard Analytical            | 🟡 Medium   | 1.5 weeks | Backlog |
-| [EPIC-020](./EPIC-020-performnce.md)           | Optimizations of Performnce     | 🟡 Medium   | 1 week    | Backlog |
+| [EPIC-020](./EPIC-020-performance.md)           | Optimizations of Performnce     | 🟡 Medium   | 1 week    | Backlog |
 | [EPIC-021](./EPIC-021-tests-e2e.md)            | Tests E2E and Performnce       | High    | 1 week    | Backlog |
 | [EPIC-022](./EPIC-022-deploy-producto.md)       | Documentation and Deploy Production | Critical | 1 week    | Backlog |
 
@@ -192,7 +192,7 @@ Cada epic segue o hasplate:
 ```markdown
 # EPIC-XXX: Title of the Epic
 
-## General Informtion
+## General Information
 
 - **ID:** EPIC-XXX
 - **Phase:** X
