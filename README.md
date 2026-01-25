@@ -76,4 +76,28 @@ docker compose --profile monitoring up
 - **Minimum coverage**: 80% (frontend and backend)
 - **Docker-first**: fully containerized local environment
 
-# Test
+## Best Practices
+
+This project follows official NestJS and Next.js best practices:
+
+### NestJS Best Practices ✅
+
+- ✅ Global exception filter for consistent error handling
+- ✅ Validation pipe with class-validator
+- ✅ Environment variable validation with Zod
+- ✅ Logging interceptor for request/response logging
+- ✅ Secure CORS configuration
+- ✅ DTOs with Swagger documentation
+- ✅ Health checks with Terminus
+
+### Next.js Best Practices ✅
+
+- ✅ Error boundaries (root and route-specific)
+- ✅ Loading states for all routes
+- ✅ Custom not-found pages
+- ✅ Middleware for route protection
+- ✅ Environment variable validation
+- ✅ Page metadata for SEO
+- ✅ Font optimization (Inter)
+
+See [BEST_PRACTICES_REVIEW.md](./BEST_PRACTICES_REVIEW.md) for detailed analysis and [IMPLEMENTATION_SUMMARY.md](./IMPLEMENTATION_SUMMARY.md) for implementation details.

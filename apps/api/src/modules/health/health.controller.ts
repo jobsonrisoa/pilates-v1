@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import {
   DiskHealthIndicator,
   HealthCheck,
@@ -7,6 +7,7 @@ import {
   MemoryHealthIndicator,
 } from '@nestjs/terminus';
 
+import { HealthResponseDto } from '@/modules/health/dto/health-response.dto';
 import { PrismaHealthIndicator } from '@/modules/health/prisma.health-indicator';
 
 @ApiTags('Health')
@@ -22,6 +23,7 @@ export class HealthController {
   @Get()
   @HealthCheck()
   @ApiOperation({ summary: 'Full health check' })
+  @ApiResponse({ status: 200, type: HealthResponseDto })
   check() {
     return this.health.check([
       () => this.prisma.isHealthy('database'),
@@ -32,6 +34,7 @@ export class HealthController {
 
   @Get('live')
   @ApiOperation({ summary: 'Liveness probe - is server running?' })
+  @ApiResponse({ status: 200, type: HealthResponseDto })
   live() {
     return { status: 'ok' };
   }
@@ -39,6 +42,7 @@ export class HealthController {
   @Get('ready')
   @HealthCheck()
   @ApiOperation({ summary: 'Readiness probe - ready to receive traffic?' })
+  @ApiResponse({ status: 200, type: HealthResponseDto })
   ready() {
     return this.health.check([() => this.prisma.isHealthy('database')]);
   }
