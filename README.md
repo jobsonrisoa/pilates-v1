@@ -118,7 +118,9 @@ This project follows official NestJS and Next.js best practices:
 - ✅ Global exception filter for consistent error handling
 - ✅ Validation pipe with class-validator
 - ✅ Environment variable validation with Zod
-- ✅ Logging interceptor for request/response logging
+- ✅ Structured logging (Pino) - JSON in prod, pretty in dev
+- ✅ Prometheus metrics endpoint (`/metrics`)
+- ✅ Sentry error tracking (production only)
 - ✅ Secure CORS configuration
 - ✅ DTOs with Swagger documentation
 - ✅ Health checks with Terminus
@@ -142,5 +144,12 @@ This project follows official NestJS and Next.js best practices:
 - ✅ Staging auto-deploy on `develop`, Production manual approval on `main`
 - ✅ PR size validation and required label checks
 - ✅ Codecov integration for coverage tracking
+
+### Observability ✅
+
+- ✅ Structured logging with Pino (JSON in production, pretty in development)
+- ✅ Prometheus metrics endpoint at `/metrics`
+- ✅ Sentry error tracking (production only, filters 4xx errors)
+- ✅ Sensitive data redaction in logs (passwords, tokens, CPF)
 
 See [BEST_PRACTICES_REVIEW.md](./BEST_PRACTICES_REVIEW.md) for detailed analysis and [IMPLEMENTATION_SUMMARY.md](./IMPLEMENTATION_SUMMARY.md) for implementation details.
