@@ -6,7 +6,7 @@ import { nodeProfilingIntegration } from '@sentry/profiling-node';
 @Global()
 @Module({})
 export class SentryModule {
-  static forRoot() {
+  static forRoot(): { module: typeof SentryModule } {
     const configService = new ConfigService();
     const nodeEnv = configService.get<string>('NODE_ENV');
     const sentryDsn = configService.get<string>('SENTRY_DSN');
