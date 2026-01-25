@@ -1,0 +1,31 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build outputs
+.next
+out
+dist
+*.tsbuildinfo
+
+# Testing
+coverage
+__tests__
+*.spec.ts
+*.test.ts
+
+# Environment
+.env
+.env.local
+
+# IDE
+.idea
+.vscode
+
+# Git
+.git
+
+# Documentation
+*.md
+!README.md
+
