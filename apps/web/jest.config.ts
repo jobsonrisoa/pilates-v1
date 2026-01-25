@@ -42,6 +42,10 @@ const config: Config = {
     },
   },
   transformIgnorePatterns: ['node_modules/(?!(msw|@mswjs)/)'],
+  clearMocks: true,
+  restoreMocks: true,
+  testTimeout: 10000,
+  coverageProvider: 'v8',
 };
 
 export default createJestConfig(config);

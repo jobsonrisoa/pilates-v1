@@ -9,7 +9,7 @@ import { AppModule } from '@/app.module';
 import { HttpExceptionFilter } from '@/shared/filters/http-exception.filter';
 import { LoggingInterceptor } from '@/shared/interceptors/logging.interceptor';
 
-async function bootstrap() {
+async function bootstrap(): Promise<void> {
   const app = await NestFactory.create(AppModule, {
     bufferLogs: true,
   });
@@ -66,4 +66,4 @@ async function bootstrap() {
   logger.log(`📚 Swagger documentation: http://0.0.0.0:${port}/api`);
 }
 
-bootstrap();
+void bootstrap();

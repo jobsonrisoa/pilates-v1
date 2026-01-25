@@ -32,6 +32,11 @@ import {
       help: 'Number of HTTP requests currently in flight',
       labelNames: ['method', 'route'],
     }),
+    makeCounterProvider({
+      name: 'http_errors_total',
+      help: 'Total number of HTTP errors',
+      labelNames: ['method', 'route', 'status', 'error_type'],
+    }),
   ],
   exports: [PrometheusModule],
 })

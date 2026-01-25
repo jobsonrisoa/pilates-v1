@@ -77,22 +77,38 @@ db-studio: ## Open Prisma Studio
 # TESTS
 # =============================================
 
-test: ## Run all tests
-	docker compose exec api pnpm test
-	docker compose exec web pnpm test
+test: ## Run all tests (unit + integration)
+	@echo "$(CYAN)Running all tests...$(RESET)"
+	docker compose run --rm tools pnpm --filter @pilates/api test
+	docker compose run --rm tools pnpm --filter @pilates/web test
+
+test-api: ## Run API unit tests
+	docker compose run --rm tools pnpm --filter @pilates/api test
+
+test-web: ## Run Web unit tests
+	docker compose run --rm tools pnpm --filter @pilates/web test
 
 test-watch: ## Run tests in watch mode (api)
 	docker compose exec api pnpm test:watch
 
-test-cov: ## Run tests with coverage
-	docker compose exec api pnpm test:cov
-	docker compose exec web pnpm test:cov
+test-cov: ## Run all tests with coverage
+	@echo "$(CYAN)Running tests with coverage...$(RESET)"
+	docker compose run --rm tools pnpm --filter @pilates/api test:cov
+	docker compose run --rm tools pnpm --filter @pilates/web test:cov
+
+test-cov-api: ## Run API tests with coverage
+	docker compose run --rm tools pnpm --filter @pilates/api test:cov
+
+test-cov-web: ## Run Web tests with coverage
+	docker compose run --rm tools pnpm --filter @pilates/web test:cov
 
 test-e2e: ## Run E2E tests (web)
 	docker compose exec web pnpm test:e2e
 
 test-int: ## Run integration tests (api)
-	docker compose exec api pnpm test:integration
+	docker compose run --rm tools pnpm --filter @pilates/api test:integration
+
+test-all: test test-int test-cov ## Run all tests including integration and coverage
 
 # =============================================
 # QUALITY

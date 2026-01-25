@@ -37,6 +37,10 @@ const config: Config = {
   setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
   maxWorkers: '50%',
   verbose: true,
+  clearMocks: true,
+  restoreMocks: true,
+  testTimeout: 10000,
+  coverageProvider: 'v8',
 };
 
 export default config;

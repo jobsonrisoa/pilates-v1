@@ -1,4 +1,5 @@
 import { Module, Global } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import * as Sentry from '@sentry/node';
 import { nodeProfilingIntegration } from '@sentry/profiling-node';
 
@@ -6,17 +7,25 @@ import { nodeProfilingIntegration } from '@sentry/profiling-node';
 @Module({})
 export class SentryModule {
   static forRoot() {
-    if (process.env.NODE_ENV === 'production' && process.env.SENTRY_DSN) {
+    const configService = new ConfigService();
+    const nodeEnv = configService.get<string>('NODE_ENV');
+    const sentryDsn = configService.get<string>('SENTRY_DSN');
+    const appVersion = configService.get<string>('APP_VERSION') || 'unknown';
+
+    if (nodeEnv === 'production' && sentryDsn) {
       Sentry.init({
-        dsn: process.env.SENTRY_DSN,
-        environment: process.env.NODE_ENV,
+        dsn: sentryDsn,
+        environment: nodeEnv,
+        release: appVersion,
+        serverName: configService.get<string>('SERVER_NAME') || 'pilates-api',
         integrations: [nodeProfilingIntegration()],
-        tracesSampleRate: process.env.SENTRY_TRACES_SAMPLE_RATE
-          ? parseFloat(process.env.SENTRY_TRACES_SAMPLE_RATE)
+        tracesSampleRate: configService.get<string>('SENTRY_TRACES_SAMPLE_RATE')
+          ? parseFloat(configService.get<string>('SENTRY_TRACES_SAMPLE_RATE')!)
           : 0.1,
-        profilesSampleRate: process.env.SENTRY_PROFILES_SAMPLE_RATE
-          ? parseFloat(process.env.SENTRY_PROFILES_SAMPLE_RATE)
+        profilesSampleRate: configService.get<string>('SENTRY_PROFILES_SAMPLE_RATE')
+          ? parseFloat(configService.get<string>('SENTRY_PROFILES_SAMPLE_RATE')!)
           : 0.1,
+        maxBreadcrumbs: 50,
         beforeSend(event, hint) {
           // Filter out 4xx errors (client errors)
           if (event.exception) {
@@ -29,6 +38,13 @@ export class SentryModule {
             }
           }
           return event;
+        },
+        beforeBreadcrumb(breadcrumb) {
+          // Filter out sensitive breadcrumbs
+          if (breadcrumb.category === 'console' && breadcrumb.level === 'debug') {
+            return null;
+          }
+          return breadcrumb;
         },
       });
     }

@@ -24,18 +24,18 @@ export class HealthController {
   @HealthCheck()
   @ApiOperation({ summary: 'Full health check' })
   @ApiResponse({ status: 200, type: HealthResponseDto })
-  check() {
+  check(): Promise<any> {
     return this.health.check([
-      () => this.prisma.isHealthy('database'),
-      () => this.memory.checkHeap('memory_heap', 300 * 1024 * 1024),
-      () => this.disk.checkStorage('storage', { path: '/', thresholdPercent: 0.9 }),
+      (): Promise<any> => this.prisma.isHealthy('database'),
+      (): Promise<any> => this.memory.checkHeap('memory_heap', 300 * 1024 * 1024),
+      (): Promise<any> => this.disk.checkStorage('storage', { path: '/', thresholdPercent: 0.9 }),
     ]);
   }
 
   @Get('live')
   @ApiOperation({ summary: 'Liveness probe - is server running?' })
   @ApiResponse({ status: 200, type: HealthResponseDto })
-  live() {
+  live(): { status: string } {
     return { status: 'ok' };
   }
 
@@ -43,7 +43,7 @@ export class HealthController {
   @HealthCheck()
   @ApiOperation({ summary: 'Readiness probe - ready to receive traffic?' })
   @ApiResponse({ status: 200, type: HealthResponseDto })
-  ready() {
-    return this.health.check([() => this.prisma.isHealthy('database')]);
+  ready(): Promise<any> {
+    return this.health.check([(): Promise<any> => this.prisma.isHealthy('database')]);
   }
 }

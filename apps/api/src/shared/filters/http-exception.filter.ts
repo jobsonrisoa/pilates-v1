@@ -6,6 +6,7 @@ import {
   HttpStatus,
   Logger,
 } from '@nestjs/common';
+import * as Sentry from '@sentry/node';
 
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {
@@ -33,12 +34,26 @@ export class HttpExceptionFilter implements ExceptionFilter {
           : (message as { message: string | string[] }).message || 'An error occurred',
     };
 
+    // Set Sentry user context if available
+    if (request.user && process.env.NODE_ENV === 'production') {
+      Sentry.setUser({
+        id: request.user.id,
+        email: request.user.email,
+        username: request.user.email,
+      });
+    }
+
     // Log error
     if (status >= 500) {
       this.logger.error(
         `${request.method} ${request.url} - ${status}`,
         exception instanceof Error ? exception.stack : JSON.stringify(exception),
       );
+
+      // Capture error in Sentry (only for 5xx errors)
+      if (process.env.NODE_ENV === 'production') {
+        Sentry.captureException(exception);
+      }
     } else {
       this.logger.warn(`${request.method} ${request.url} - ${status} - ${errorResponse.message}`);
     }

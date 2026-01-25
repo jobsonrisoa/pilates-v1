@@ -74,11 +74,29 @@ make seed
 
 ## Useful Commands
 
+### Development
 ```bash
-make help
-make dev
-make down
-make clean
+make help          # Show all available commands
+make dev           # Start development environment
+make down          # Stop all containers
+make clean         # Remove containers and volumes
+```
+
+### Testing
+```bash
+make test          # Run all tests (unit + integration)
+make test-api      # Run API unit tests only
+make test-web      # Run Web unit tests only
+make test-int      # Run integration tests only
+make test-cov      # Run all tests with coverage
+make test-all      # Run all tests + integration + coverage
+```
+
+### Code Quality
+```bash
+make lint          # Run linter on all projects
+make format        # Format code in all projects
+make typecheck     # Check TypeScript types
 ```
 
 ## Monitoring (optional)
@@ -148,8 +166,10 @@ This project follows official NestJS and Next.js best practices:
 ### Observability ✅
 
 - ✅ Structured logging with Pino (JSON in production, pretty in development)
-- ✅ Prometheus metrics endpoint at `/metrics`
+- ✅ Prometheus metrics endpoint at `/metrics` with active recording
+- ✅ HTTP metrics: request counters, duration histograms, in-flight gauge, error counter
 - ✅ Sentry error tracking (production only, filters 4xx errors)
+- ✅ Sentry release tracking, user context, and breadcrumbs
 - ✅ Sensitive data redaction in logs (passwords, tokens, CPF)
 
 See [BEST_PRACTICES_REVIEW.md](./BEST_PRACTICES_REVIEW.md) for detailed analysis and [IMPLEMENTATION_SUMMARY.md](./IMPLEMENTATION_SUMMARY.md) for implementation details.
