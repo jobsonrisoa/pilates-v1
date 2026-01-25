@@ -1,0 +1,83 @@
+name: Deploy
+
+on:
+  push:
+    branches: [develop, main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy'
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'staging')
+    environment:
+      name: staging
+      url: ${{ secrets.STAGING_URL || 'https://staging.example.com' }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.STAGING_SSH_KEY }}
+
+      - name: Deploy to staging
+        run: |
+          echo "🚀 Deploying to staging..."
+          ssh -o StrictHostKeyChecking=no ${{ secrets.STAGING_USER }}@${{ secrets.STAGING_HOST }} << 'EOF'
+            cd /app/pilates
+            docker compose pull
+            docker compose up -d
+            docker compose exec -T api pnpm --filter @pilates/api exec prisma migrate deploy
+          EOF
+
+      - name: Health check
+        run: |
+          echo "🏥 Checking staging health..."
+          sleep 10
+          curl -f ${{ secrets.STAGING_URL || 'https://staging.example.com' }}/health/live || exit 1
+
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch'
+    environment:
+      name: production
+      url: ${{ secrets.PROD_URL || 'https://example.com' }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.PROD_SSH_KEY }}
+
+      - name: Deploy to production
+        run: |
+          echo "🚀 Deploying to production..."
+          ssh -o StrictHostKeyChecking=no ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }} << 'EOF'
+            cd /app/pilates
+            docker compose pull
+            docker compose up -d
+            docker compose exec -T api pnpm --filter @pilates/api exec prisma migrate deploy
+          EOF
+
+      - name: Health check
+        run: |
+          echo "🏥 Checking production health..."
+          sleep 10
+          curl -f ${{ secrets.PROD_URL || 'https://example.com' }}/health/live || exit 1

@@ -1,0 +1,114 @@
+name: PR Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+jobs:
+  pr-size:
+    name: Check PR Size
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check PR size
+        id: pr-size
+        run: |
+          ADDED=$(git diff --numstat origin/${{ github.base_ref }}...HEAD | awk '{sum+=$1} END {print sum}')
+          DELETED=$(git diff --numstat origin/${{ github.base_ref }}...HEAD | awk '{sum+=$2} END {print sum}')
+          TOTAL=$((ADDED + DELETED))
+
+          echo "Added lines: $ADDED"
+          echo "Deleted lines: $DELETED"
+          echo "Total changes: $TOTAL"
+
+          if [ $TOTAL -gt 1000 ]; then
+            echo "⚠️ Large PR detected: $TOTAL lines changed"
+            echo "Consider breaking this into smaller PRs"
+            echo "large=true" >> $GITHUB_OUTPUT
+          else
+            echo "✅ PR size acceptable: $TOTAL lines changed"
+            echo "large=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Comment on large PR
+        if: steps.pr-size.outputs.large == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '⚠️ **Large PR Detected**\n\nThis PR has significant changes. Consider breaking it into smaller, more focused PRs for easier review.'
+            })
+
+  pr-labels:
+    name: Check Required Labels
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for required labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const labels = context.payload.pull_request.labels.map(l => l.name);
+            const requiredLabels = ['bug', 'feature', 'enhancement', 'documentation', 'refactor', 'chore'];
+            const hasRequiredLabel = labels.some(l => requiredLabels.includes(l));
+
+            if (!hasRequiredLabel) {
+              core.setFailed('❌ PR must have at least one of these labels: bug, feature, enhancement, documentation, refactor, chore');
+              
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: '❌ **Missing Label**\n\nThis PR must have at least one of the following labels:\n- `bug`\n- `feature`\n- `enhancement`\n- `documentation`\n- `refactor`\n- `chore`'
+              });
+            } else {
+              console.log('✅ PR has required label');
+            }
+
+  coverage-diff:
+    name: Check Coverage Diff
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8.15.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run tests with coverage
+        run: |
+          pnpm --filter @pilates/api test:cov
+          pnpm --filter @pilates/web test:cov
+
+      - name: Check coverage diff
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./apps/api/coverage/lcov.info,./apps/web/coverage/lcov.info
+          flags: api,web
+          fail_ci_if_error: false
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Comment coverage diff
+        uses: actions/github-script@v7
+        if: always()
+        with:
+          script: |
+            // Coverage diff will be handled by Codecov bot
+            console.log('Coverage check completed');
