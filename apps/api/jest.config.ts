@@ -35,12 +35,14 @@ const config: Config = {
     },
   },
   setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
-  maxWorkers: '50%',
-  verbose: true,
+  maxWorkers: process.env.CI ? '50%' : '100%', // Use all CPUs in development
+  verbose: false, // Disable verbose output for faster execution
   clearMocks: true,
   restoreMocks: true,
   testTimeout: 10000,
   coverageProvider: 'v8',
+  cache: true, // Enable Jest cache for faster subsequent runs
+  cacheDirectory: '<rootDir>/.jest-cache',
 };
 
 export default config;

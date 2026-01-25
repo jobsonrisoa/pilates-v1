@@ -79,34 +79,70 @@ db-studio: ## Open Prisma Studio
 
 test: ## Run all tests (unit + integration)
 	@echo "$(CYAN)Running all tests...$(RESET)"
-	docker compose run --rm tools pnpm --filter @pilates/api test
-	docker compose run --rm tools pnpm --filter @pilates/web test
+	@if docker compose ps api --format json 2>/dev/null | grep -q '"State":"running"'; then \
+		docker compose exec api pnpm test; \
+	else \
+		docker compose run --rm tools pnpm --filter @pilates/api test; \
+	fi
+	@if docker compose ps web --format json 2>/dev/null | grep -q '"State":"running"'; then \
+		docker compose exec web pnpm test; \
+	else \
+		docker compose run --rm tools pnpm --filter @pilates/web test; \
+	fi
 
 test-api: ## Run API unit tests
-	docker compose run --rm tools pnpm --filter @pilates/api test
+	@if docker compose ps api --format json 2>/dev/null | grep -q '"State":"running"'; then \
+		docker compose exec api pnpm test; \
+	else \
+		docker compose run --rm tools pnpm --filter @pilates/api test; \
+	fi
 
 test-web: ## Run Web unit tests
-	docker compose run --rm tools pnpm --filter @pilates/web test
+	@if docker compose ps web --format json 2>/dev/null | grep -q '"State":"running"'; then \
+		docker compose exec web pnpm test; \
+	else \
+		docker compose run --rm tools pnpm --filter @pilates/web test; \
+	fi
 
 test-watch: ## Run tests in watch mode (api)
 	docker compose exec api pnpm test:watch
 
 test-cov: ## Run all tests with coverage
 	@echo "$(CYAN)Running tests with coverage...$(RESET)"
-	docker compose run --rm tools pnpm --filter @pilates/api test:cov
-	docker compose run --rm tools pnpm --filter @pilates/web test:cov
+	@if docker compose ps api --format json 2>/dev/null | grep -q '"State":"running"'; then \
+		docker compose exec api pnpm test:cov; \
+	else \
+		docker compose run --rm tools pnpm --filter @pilates/api test:cov; \
+	fi
+	@if docker compose ps web --format json 2>/dev/null | grep -q '"State":"running"'; then \
+		docker compose exec web pnpm test:cov; \
+	else \
+		docker compose run --rm tools pnpm --filter @pilates/web test:cov; \
+	fi
 
 test-cov-api: ## Run API tests with coverage
-	docker compose run --rm tools pnpm --filter @pilates/api test:cov
+	@if docker compose ps api --format json 2>/dev/null | grep -q '"State":"running"'; then \
+		docker compose exec api pnpm test:cov; \
+	else \
+		docker compose run --rm tools pnpm --filter @pilates/api test:cov; \
+	fi
 
 test-cov-web: ## Run Web tests with coverage
-	docker compose run --rm tools pnpm --filter @pilates/web test:cov
+	@if docker compose ps web --format json 2>/dev/null | grep -q '"State":"running"'; then \
+		docker compose exec web pnpm test:cov; \
+	else \
+		docker compose run --rm tools pnpm --filter @pilates/web test:cov; \
+	fi
 
 test-e2e: ## Run E2E tests (web)
 	docker compose exec web pnpm test:e2e
 
 test-int: ## Run integration tests (api)
-	docker compose run --rm tools pnpm --filter @pilates/api test:integration
+	@if docker compose ps api --format json 2>/dev/null | grep -q '"State":"running"'; then \
+		docker compose exec api pnpm test:integration; \
+	else \
+		docker compose run --rm tools pnpm --filter @pilates/api test:integration; \
+	fi
 
 test-all: test test-int test-cov ## Run all tests including integration and coverage
 

@@ -42,10 +42,13 @@ const config: Config = {
     },
   },
   transformIgnorePatterns: ['node_modules/(?!(msw|@mswjs)/)'],
+  maxWorkers: process.env.CI ? '50%' : '100%', // Use all CPUs in development
   clearMocks: true,
   restoreMocks: true,
   testTimeout: 10000,
   coverageProvider: 'v8',
+  cache: true, // Enable Jest cache for faster subsequent runs
+  cacheDirectory: '<rootDir>/.jest-cache',
 };
 
 export default createJestConfig(config);

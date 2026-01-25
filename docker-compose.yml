@@ -9,11 +9,14 @@ services:
       context: .
       dockerfile: docker/tools/Dockerfile
     working_dir: /repo
+    command: sleep infinity
     volumes:
       - ./:/repo:delegated
       - pnpm_store:/pnpm-store
     networks:
       - pilates-network
+    profiles:
+      - tools
 
   api:
     build:

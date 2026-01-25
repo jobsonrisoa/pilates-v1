@@ -50,3 +50,5 @@ apps/api/prisma/migrations/*_migration_lock.toml
 *.tgz
 .cache/
 
+.jest-cache/
+apps/*/.jest-cache/
