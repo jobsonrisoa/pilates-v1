@@ -1,21 +1,34 @@
-import { PrismaService } from '@/shared/infrastructure/database/prisma.service';
 import { Test, TestingModule } from '@nestjs/testing';
+
 import { PrismaModule } from '@/shared/infrastructure/database/prisma.module';
+import { PrismaService } from '@/shared/infrastructure/database/prisma.service';
 
 let prisma: PrismaService;
-let module: TestingModule;
+let testingModule: TestingModule;
 
 beforeAll(async () => {
-  module = await Test.createTestingModule({
+  // Set test database URL if not already set
+  if (!process.env.DATABASE_URL) {
+    process.env.DATABASE_URL = 'mysql://root:test@localhost:3307/pilates_test';
+  }
+
+  testingModule = await Test.createTestingModule({
     imports: [PrismaModule],
   }).compile();
 
-  prisma = module.get<PrismaService>(PrismaService);
+  prisma = testingModule.get<PrismaService>(PrismaService);
+  
+  // Ensure connection is ready
+  await prisma.$connect();
 });
 
 afterAll(async () => {
-  await prisma.$disconnect();
-  await module.close();
+  if (prisma) {
+    await prisma.$disconnect();
+  }
+  if (testingModule) {
+    await testingModule.close();
+  }
 });
 
 beforeEach(async () => {
@@ -25,5 +38,5 @@ beforeEach(async () => {
   await prisma.$connect();
 });
 
-export { prisma, module };
+export { prisma, testingModule };
 

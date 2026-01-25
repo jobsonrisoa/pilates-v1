@@ -1,11 +1,40 @@
+import { execSync } from 'child_process';
+import { existsSync } from 'fs';
+import { join } from 'path';
+
 export default async function globalTeardown() {
-  // This runs once after all integration tests
-  // In a real scenario, you might want to:
-  // 1. Stop test containers
-  // 2. Clean up test data
-  
-  // For now, we'll just log that teardown is complete
-  // The actual containers should be managed by docker-compose.test.yml
-  console.log('Integration test teardown complete');
+  console.log('\n🧹 Cleaning up test environment...');
+
+  // Find project root (go up from apps/api to root)
+  const projectRoot = join(__dirname, '../../../../');
+  const dockerComposeTestFile = join(projectRoot, 'docker-compose.test.yml');
+
+  // Check if we can access Docker
+  let canUseDocker = false;
+  try {
+    execSync('docker --version', { stdio: 'ignore' });
+    canUseDocker = true;
+  } catch {
+    console.log('💡 Docker not available, skipping container cleanup');
+    return;
+  }
+
+  if (!existsSync(dockerComposeTestFile)) {
+    console.log('⚠️  docker-compose.test.yml not found, skipping container cleanup');
+    return;
+  }
+
+  try {
+    // Stop and remove test containers (with volumes)
+    execSync('docker compose -f docker-compose.test.yml down -v', {
+      stdio: 'inherit',
+      cwd: projectRoot,
+    });
+
+    console.log('✅ Test containers cleaned up!\n');
+  } catch (error) {
+    console.warn('⚠️  Failed to cleanup test containers:', error);
+    // Don't throw - teardown should not fail the test suite
+  }
 }
 

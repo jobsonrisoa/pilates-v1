@@ -1,6 +1,11 @@
 FROM node:20-alpine
 
-RUN apk add --no-cache git
+# Install dependencies for Prisma and Git
+RUN apk add --no-cache \
+    git \
+    openssl \
+    libc6-compat
+
 RUN corepack enable
 
 WORKDIR /repo

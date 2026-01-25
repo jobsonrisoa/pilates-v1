@@ -22,4 +22,22 @@ describe('Button', () => {
 
     expect(screen.getByRole('button')).toBeDisabled();
   });
+
+  it('applies destructive variant styles', () => {
+    render(<Button variant="destructive">Delete</Button>);
+    const button = screen.getByRole('button');
+    expect(button).toHaveClass('bg-red-600');
+  });
+
+  it('applies outline variant styles', () => {
+    render(<Button variant="outline">Outline</Button>);
+    const button = screen.getByRole('button');
+    expect(button).toHaveClass('border');
+  });
+
+  it('applies default variant styles', () => {
+    render(<Button variant="default">Default</Button>);
+    const button = screen.getByRole('button');
+    expect(button).toHaveClass('bg-black');
+  });
 });

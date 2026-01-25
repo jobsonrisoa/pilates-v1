@@ -12,7 +12,7 @@ services:
       DATABASE_URL: mysql://root:test@mysql-test:3306/pilates_test
       REDIS_URL: redis://redis-test:6379
       JWT_SECRET: test-secret
-    command: sh -c "pnpm --filter @pilates/api prisma:generate && pnpm --filter @pilates/api test"
+    command: sh -c "pnpm --filter @pilates/api prisma:generate && pnpm --filter @pilates/api test:integration"
     depends_on:
       mysql-test:
         condition: service_healthy
@@ -20,6 +20,8 @@ services:
         condition: service_healthy
     networks:
       - test-network
+    volumes:
+      - ./:/repo:delegated
 
   mysql-test:
     image: mysql:8.0

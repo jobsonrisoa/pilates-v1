@@ -1,6 +1,7 @@
-import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
+import { Test, TestingModule } from '@nestjs/testing';
 import request from 'supertest';
+
 import { HealthModule } from '@/modules/health/health.module';
 import { PrismaModule } from '@/shared/infrastructure/database/prisma.module';
 
@@ -17,7 +18,9 @@ describe('HealthController (integration)', () => {
   });
 
   afterAll(async () => {
-    await app.close();
+    if (app) {
+      await app.close();
+    }
   });
 
   describe('GET /health', () => {

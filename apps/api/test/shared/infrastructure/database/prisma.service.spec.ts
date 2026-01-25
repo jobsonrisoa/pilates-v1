@@ -22,8 +22,8 @@ describe('PrismaService', () => {
   });
 
   it('onModuleInit should call $connect', async () => {
-    const { PrismaService } = await import('@/shared/infrastructure/database/prisma.service');
-    const service = new PrismaService();
+    const { PrismaService: PrismaServiceClass } = await import('@/shared/infrastructure/database/prisma.service');
+    const service = new PrismaServiceClass();
 
     await service.onModuleInit();
 
@@ -31,8 +31,8 @@ describe('PrismaService', () => {
   });
 
   it('onModuleDestroy should call $disconnect', async () => {
-    const { PrismaService } = await import('@/shared/infrastructure/database/prisma.service');
-    const service = new PrismaService();
+    const { PrismaService: PrismaServiceClass } = await import('@/shared/infrastructure/database/prisma.service');
+    const service = new PrismaServiceClass();
 
     await service.onModuleDestroy();
 
