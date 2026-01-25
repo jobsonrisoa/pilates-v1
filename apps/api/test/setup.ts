@@ -1,5 +1,6 @@
-import { PrismaService } from '@/shared/infrastructure/database/prisma.service';
 import { mockDeep, mockReset, DeepMockProxy } from 'jest-mock-extended';
+
+import { PrismaService } from '@/shared/infrastructure/database/prisma.service';
 
 // Create a mock PrismaService
 export const prismaMock: DeepMockProxy<PrismaService> = mockDeep<PrismaService>();
