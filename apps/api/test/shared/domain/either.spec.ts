@@ -19,6 +19,3 @@ describe('Either', () => {
     expect(result.value).toBe(123);
   });
 });
-
-
-

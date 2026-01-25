@@ -27,4 +27,3 @@ export default async function globalTeardown() {
     // Don't throw - teardown should not fail the test suite
   }
 }
-

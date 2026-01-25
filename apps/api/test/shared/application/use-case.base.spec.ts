@@ -15,6 +15,3 @@ describe('UseCase Base', () => {
     await expect(useCase.execute({ value: 42 })).resolves.toBe(42);
   });
 });
-
-
-

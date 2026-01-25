@@ -35,9 +35,7 @@ const config: Config = {
       statements: 80,
     },
   },
-  transformIgnorePatterns: [
-    'node_modules/(?!(msw|@mswjs)/)',
-  ],
+  transformIgnorePatterns: ['node_modules/(?!(msw|@mswjs)/)'],
 };
 
 export default createJestConfig(config);

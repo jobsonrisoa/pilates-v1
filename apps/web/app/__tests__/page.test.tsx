@@ -25,7 +25,9 @@ describe('HomePage', () => {
   it('renders navigation links', () => {
     render(<HomePage />);
     expect(screen.getByRole('link', { name: /go to login/i })).toHaveAttribute('href', '/login');
-    expect(screen.getByRole('link', { name: /go to dashboard/i })).toHaveAttribute('href', '/dashboard');
+    expect(screen.getByRole('link', { name: /go to dashboard/i })).toHaveAttribute(
+      'href',
+      '/dashboard',
+    );
   });
 });
-

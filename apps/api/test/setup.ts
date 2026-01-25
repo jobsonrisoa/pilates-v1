@@ -13,4 +13,3 @@ jest.mock('@/shared/infrastructure/database/prisma.service', () => ({
 beforeEach(() => {
   mockReset(prismaMock);
 });
-

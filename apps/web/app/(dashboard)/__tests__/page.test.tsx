@@ -13,4 +13,3 @@ describe('DashboardPage', () => {
     expect(screen.getByText(/dashboard placeholder/i)).toBeInTheDocument();
   });
 });
-

@@ -23,6 +23,3 @@ describe('DomainEvent Base', () => {
     expect(event.occurredAt).toBe(occurredAt);
   });
 });
-
-
-

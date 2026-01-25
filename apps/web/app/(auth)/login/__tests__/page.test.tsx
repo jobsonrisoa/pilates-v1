@@ -13,4 +13,3 @@ describe('LoginPage', () => {
     expect(screen.getByText(/login page placeholder/i)).toBeInTheDocument();
   });
 });
-

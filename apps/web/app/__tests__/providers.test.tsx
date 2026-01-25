@@ -30,4 +30,3 @@ describe('Providers', () => {
     expect(getByTestId('theme-provider')).toBeInTheDocument();
   });
 });
-

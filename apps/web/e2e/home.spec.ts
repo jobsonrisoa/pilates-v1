@@ -15,4 +15,3 @@ test.describe('Home Page', () => {
     await expect(loginLink).toBeVisible();
   });
 });
-

@@ -75,4 +75,5 @@ docker compose --profile monitoring up
 - **TDD** (Red -> Green -> Refactor)
 - **Minimum coverage**: 80% (frontend and backend)
 - **Docker-first**: fully containerized local environment
+
 # Test

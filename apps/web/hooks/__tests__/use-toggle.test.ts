@@ -48,4 +48,3 @@ describe('useToggle', () => {
     expect(result.current[0]).toBe(false);
   });
 });
-

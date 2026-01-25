@@ -7,4 +7,3 @@ export type MockPrismaService = DeepMockProxy<PrismaService>;
 export const createMockPrismaService = (): MockPrismaService => {
   return mockDeep<PrismaService>();
 };
-

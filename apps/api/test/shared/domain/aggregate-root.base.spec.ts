@@ -35,6 +35,3 @@ describe('AggregateRoot Base', () => {
     expect(eventsSecondPull).toHaveLength(0);
   });
 });
-
-
-
