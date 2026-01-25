@@ -100,4 +100,13 @@ This project follows official NestJS and Next.js best practices:
 - ✅ Page metadata for SEO
 - ✅ Font optimization (Inter)
 
+### CI/CD Pipeline ✅
+- ✅ Automated CI on every PR and push to `main`/`develop`
+- ✅ Coverage threshold enforcement (≥80% required)
+- ✅ Docker image builds and push to GitHub Container Registry
+- ✅ Integration tests with MySQL/Redis services
+- ✅ Staging auto-deploy on `develop`, Production manual approval on `main`
+- ✅ PR size validation and required label checks
+- ✅ Codecov integration for coverage tracking
+
 See [BEST_PRACTICES_REVIEW.md](./BEST_PRACTICES_REVIEW.md) for detailed analysis and [IMPLEMENTATION_SUMMARY.md](./IMPLEMENTATION_SUMMARY.md) for implementation details.
