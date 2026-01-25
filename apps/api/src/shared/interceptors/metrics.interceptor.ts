@@ -1,31 +1,21 @@
 import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from '@nestjs/common';
-import { Counter, Histogram, Gauge, register } from 'prom-client';
+import { Counter, Histogram, Gauge } from 'prom-client';
+import { InjectMetric } from '@willsoto/nestjs-prometheus';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 @Injectable()
 export class MetricsInterceptor implements NestInterceptor {
-  private readonly httpRequestsTotal: Counter<string> | null;
-  private readonly httpRequestDuration: Histogram<string> | null;
-  private readonly httpRequestsInFlight: Gauge<string> | null;
-  private readonly httpErrorsTotal: Counter<string> | null;
-
-  constructor() {
-    // Get metrics from default registry (created by MetricsModule)
-    // Use null if metrics are not available (graceful degradation)
-    try {
-      this.httpRequestsTotal = (register.getSingleMetric('http_requests_total') as Counter<string>) || null;
-      this.httpRequestDuration = (register.getSingleMetric('http_request_duration_seconds') as Histogram<string>) || null;
-      this.httpRequestsInFlight = (register.getSingleMetric('http_requests_in_flight') as Gauge<string>) || null;
-      this.httpErrorsTotal = (register.getSingleMetric('http_errors_total') as Counter<string>) || null;
-    } catch {
-      // If metrics are not available, set all to null
-      this.httpRequestsTotal = null;
-      this.httpRequestDuration = null;
-      this.httpRequestsInFlight = null;
-      this.httpErrorsTotal = null;
-    }
-  }
+  constructor(
+    @InjectMetric('http_requests_total')
+    private readonly httpRequestsTotal: Counter<string>,
+    @InjectMetric('http_request_duration_seconds')
+    private readonly httpRequestDuration: Histogram<string>,
+    @InjectMetric('http_requests_in_flight')
+    private readonly httpRequestsInFlight: Gauge<string>,
+    @InjectMetric('http_errors_total')
+    private readonly httpErrorsTotal: Counter<string>,
+  ) {}
 
   intercept(context: ExecutionContext, next: CallHandler): Observable<unknown> {
     const request = context.switchToHttp().getRequest();
@@ -88,4 +78,3 @@ export class MetricsInterceptor implements NestInterceptor {
       .replace(/\/$/, '') || '/';
   }
 }
-
