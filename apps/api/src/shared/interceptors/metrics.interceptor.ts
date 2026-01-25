@@ -5,17 +5,26 @@ import { tap } from 'rxjs/operators';
 
 @Injectable()
 export class MetricsInterceptor implements NestInterceptor {
-  private readonly httpRequestsTotal: Counter<string>;
-  private readonly httpRequestDuration: Histogram<string>;
-  private readonly httpRequestsInFlight: Gauge<string>;
-  private readonly httpErrorsTotal: Counter<string>;
+  private readonly httpRequestsTotal: Counter<string> | null;
+  private readonly httpRequestDuration: Histogram<string> | null;
+  private readonly httpRequestsInFlight: Gauge<string> | null;
+  private readonly httpErrorsTotal: Counter<string> | null;
 
   constructor() {
     // Get metrics from default registry (created by MetricsModule)
-    this.httpRequestsTotal = register.getSingleMetric('http_requests_total') as Counter<string>;
-    this.httpRequestDuration = register.getSingleMetric('http_request_duration_seconds') as Histogram<string>;
-    this.httpRequestsInFlight = register.getSingleMetric('http_requests_in_flight') as Gauge<string>;
-    this.httpErrorsTotal = register.getSingleMetric('http_errors_total') as Counter<string>;
+    // Use null if metrics are not available (graceful degradation)
+    try {
+      this.httpRequestsTotal = (register.getSingleMetric('http_requests_total') as Counter<string>) || null;
+      this.httpRequestDuration = (register.getSingleMetric('http_request_duration_seconds') as Histogram<string>) || null;
+      this.httpRequestsInFlight = (register.getSingleMetric('http_requests_in_flight') as Gauge<string>) || null;
+      this.httpErrorsTotal = (register.getSingleMetric('http_errors_total') as Counter<string>) || null;
+    } catch {
+      // If metrics are not available, set all to null
+      this.httpRequestsTotal = null;
+      this.httpRequestDuration = null;
+      this.httpRequestsInFlight = null;
+      this.httpErrorsTotal = null;
+    }
   }
 
   intercept(context: ExecutionContext, next: CallHandler): Observable<unknown> {

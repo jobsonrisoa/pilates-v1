@@ -24,6 +24,7 @@ import { MetricsInterceptor } from '@/shared/interceptors/metrics.interceptor';
     HealthModule,
   ],
   providers: [
+    MetricsInterceptor,
     {
       provide: APP_INTERCEPTOR,
       useClass: MetricsInterceptor,
