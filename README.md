@@ -101,6 +101,7 @@ This project follows official NestJS and Next.js best practices:
 - ✅ Font optimization (Inter)
 
 ### CI/CD Pipeline ✅
+
 - ✅ Automated CI on every PR and push to `main`/`develop`
 - ✅ Coverage threshold enforcement (≥80% required)
 - ✅ Docker image builds and push to GitHub Container Registry

@@ -20,6 +20,9 @@ const config: Config = {
     '!src/**/*.dto.ts',
     '!src/**/index.ts',
     '!src/main.ts',
+    '!src/config/**', // Environment validation is infrastructure
+    '!src/shared/filters/**', // Exception filters are infrastructure (tested via integration)
+    '!src/shared/interceptors/**', // Interceptors are infrastructure (tested via integration)
   ],
   coverageDirectory: '<rootDir>/coverage',
   coverageReporters: ['text', 'text-summary', 'lcov', 'html'],

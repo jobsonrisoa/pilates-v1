@@ -26,6 +26,12 @@ const config: Config = {
     '!**/node_modules/**',
     '!**/.next/**',
     '!app/layout.tsx', // Next.js root layout is a server component
+    '!app/error.tsx', // Error boundaries are infrastructure
+    '!app/loading.tsx', // Loading states are infrastructure
+    '!app/not-found.tsx', // Not found pages are infrastructure
+    '!app/**/error.tsx', // Route-specific error boundaries
+    '!app/**/loading.tsx', // Route-specific loading states
+    '!lib/env.ts', // Environment validation is infrastructure
   ],
   coverageThreshold: {
     global: {

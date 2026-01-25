@@ -308,6 +308,7 @@ Users see friendly error messages instead of crashes.
 ## ✅ CI/CD Pipeline Implementation (US-001-008)
 
 ### CI Workflow (`.github/workflows/ci.yml`)
+
 - ✅ **Lint & Type Check** - ESLint, Prettier, TypeScript validation
 - ✅ **API Unit Tests** - Jest with coverage threshold check (≥80%)
 - ✅ **Web Unit Tests** - Jest with coverage threshold check (≥80%)
@@ -317,17 +318,20 @@ Users see friendly error messages instead of crashes.
 - ✅ **Parallel Execution** - Tests run in parallel for faster CI
 
 ### Deploy Workflow (`.github/workflows/deploy.yml`)
+
 - ✅ **Staging Deployment** - Automatic on `develop` branch
 - ✅ **Production Deployment** - Manual approval on `main` branch
 - ✅ **Health Checks** - Post-deployment health verification
 - ✅ **Database Migrations** - Automatic Prisma migrations on deploy
 
 ### PR Check Workflow (`.github/workflows/pr-check.yml`)
+
 - ✅ **PR Size Check** - Warns on large PRs (>1000 lines)
 - ✅ **Label Validation** - Requires appropriate labels (bug, feature, etc.)
 - ✅ **Coverage Diff** - Tracks coverage changes via Codecov
 
 ### Features
+
 - ✅ Coverage threshold enforcement (≥80%)
 - ✅ Docker image caching for faster builds
 - ✅ GitHub Container Registry integration

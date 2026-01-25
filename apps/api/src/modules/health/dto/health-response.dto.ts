@@ -13,7 +13,7 @@ export class HealthResponseDto {
     description: 'Health check details',
     required: false,
   })
-  info?: Record<string, any>;
+  info?: Record<string, { status: string; [key: string]: unknown }>;
 
   @ApiProperty({
     example: {
@@ -22,5 +22,5 @@ export class HealthResponseDto {
     description: 'Health check errors',
     required: false,
   })
-  error?: Record<string, any>;
+  error?: Record<string, { status: string; error?: string; [key: string]: unknown }>;
 }
