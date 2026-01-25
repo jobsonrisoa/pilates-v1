@@ -15,11 +15,41 @@ Management system for Pilates and Physiotherapy studios.
 ### Installation
 
 ```bash
+# 1. Clone the repository
 git clone <repo-url>
 cd pilates
+
+# 2. Copy environment variables
 cp .env.example .env
+
+# 3. Start the development environment
 make dev
+
+# 4. (Optional) Seed the database with initial data
+make seed
 ```
+
+### Quick Start (3 Steps)
+
+1. **Clone and setup**
+   ```bash
+   git clone <repo-url> && cd pilates
+   cp .env.example .env
+   ```
+
+2. **Start services**
+   ```bash
+   make dev
+   ```
+
+3. **Seed database (optional)**
+   ```bash
+   make seed
+   ```
+
+**Default Admin Credentials:**
+- Email: `admin@pilates.with`
+- Password: `Admin@123`
 
 ## Project Structure
 
@@ -61,13 +91,16 @@ docker compose --profile monitoring up
 
 ### Access URLs (dev)
 
-- Web: `http://localhost:3000`
-- API: `http://localhost:3001`
-- Swagger: `http://localhost:3001/api`
-- MailHog: `http://localhost:8025`
-- MinIO Console: `http://localhost:9001`
-- Prometheus (monitoring profile): `http://localhost:9090`
-- Grafana (monitoring profile): `http://localhost:3002` (admin/admin)
+| Service | URL | Description |
+|---------|-----|-------------|
+| **Web** | http://localhost:3000 | Frontend application |
+| **API** | http://localhost:3001 | Backend API |
+| **Swagger** | http://localhost:3001/api | API documentation |
+| **Metrics** | http://localhost:3001/metrics | Prometheus metrics |
+| **MailHog** | http://localhost:8025 | Email testing |
+| **MinIO Console** | http://localhost:9001 | File storage |
+| **Prometheus** | http://localhost:9090 | Metrics (monitoring profile) |
+| **Grafana** | http://localhost:3002 | Dashboards (monitoring profile) |
 
 ## Project Principles
 

@@ -1,19 +1,22 @@
-import { Logger, ValidationPipe } from '@nestjs/common';
+import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import compression from 'compression';
 import helmet from 'helmet';
+import { Logger } from 'nestjs-pino';
 
 import { AppModule } from '@/app.module';
 import { HttpExceptionFilter } from '@/shared/filters/http-exception.filter';
 import { LoggingInterceptor } from '@/shared/interceptors/logging.interceptor';
 
 async function bootstrap() {
-  const logger = new Logger('Bootstrap');
-
   const app = await NestFactory.create(AppModule, {
-    logger: ['error', 'warn', 'log', 'debug', 'verbose'],
+    bufferLogs: true,
   });
+
+  // Use Pino logger
+  app.useLogger(app.get(Logger));
+  const logger = app.get(Logger);
 
   // Security
   app.use(helmet());

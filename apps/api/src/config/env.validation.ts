@@ -17,6 +17,17 @@ const envSchema = z.object({
 
   // CORS
   ALLOWED_ORIGINS: z.string().optional(),
+
+  // Logging
+  LOG_LEVEL: z
+    .enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace'])
+    .default('info')
+    .optional(),
+
+  // Sentry (optional, production only)
+  SENTRY_DSN: z.string().url().optional(),
+  SENTRY_TRACES_SAMPLE_RATE: z.coerce.number().min(0).max(1).default(0.1).optional(),
+  SENTRY_PROFILES_SAMPLE_RATE: z.coerce.number().min(0).max(1).default(0.1).optional(),
 });
 
 export type Env = z.infer<typeof envSchema>;
