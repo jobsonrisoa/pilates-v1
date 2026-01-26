@@ -11,9 +11,9 @@ const envSchema = z.object({
   // Optional Redis (if used)
   REDIS_URL: z.string().url().optional(),
 
-  // Optional JWT (if used)
-  JWT_SECRET: z.string().min(32).optional(),
-  JWT_EXPIRES_IN: z.string().default('7d').optional(),
+  // JWT (required for auth)
+  JWT_SECRET: z.string().min(32),
+  JWT_REFRESH_SECRET: z.string().min(32).optional(),
 
   // CORS
   ALLOWED_ORIGINS: z.string().optional(),

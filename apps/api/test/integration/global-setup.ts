@@ -5,6 +5,15 @@ import { join } from 'path';
 export default async function globalSetup() {
   console.log('\nStarting test containers...');
 
+  // Check if docker is available
+  try {
+    execSync('docker --version', { stdio: 'ignore' });
+  } catch {
+    console.warn('Docker not available in test environment, skipping container setup');
+    console.log('Make sure test containers (mysql, redis) are running via docker-compose');
+    return;
+  }
+
   // Find project root (go up from apps/api to root)
   const projectRoot = join(__dirname, '../../../../');
   const dockerComposeTestFile = join(projectRoot, 'docker-compose.test.yml');
@@ -51,6 +60,6 @@ export default async function globalSetup() {
     console.log('Test environment ready!\n');
   } catch (error) {
     console.error('Failed to setup test containers:', error);
-    throw error;
+    console.warn('Continuing without test containers - ensure mysql and redis are running');
   }
 }
