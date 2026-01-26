@@ -122,8 +122,8 @@ test-e2e: ## Run E2E tests (web)
 	docker compose exec web pnpm test:e2e
 
 test-int: ## Run integration tests (api)
-	@echo "$(CYAN)Running API integration tests from host...$(RESET)"
-	@cd apps/api && pnpm test:integration
+	@echo "$(CYAN)Running API integration tests...$(RESET)"
+	@docker compose run --rm tools pnpm --filter @pilates/api test:integration
 
 test-all: test test-int test-cov ## Run all tests including integration and coverage
 
