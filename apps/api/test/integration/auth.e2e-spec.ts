@@ -74,26 +74,26 @@ describe('Auth (e2e)', () => {
       }
 
       // Act: Make login request
-      await request(app.getHttpServer())
+      const response = await request(app.getHttpServer())
         .post('/auth/login')
         .send({
           email: 'test@example.com',
           password: 'Password123!',
         })
-        .expect(200)
-        .expect((res: request.Response) => {
-          expect(res.body).toHaveProperty('accessToken');
-          expect(res.body).toHaveProperty('user');
-          expect(res.body.user.email).toBe('test@example.com');
-          expect(res.body.user.roles).toContain('ADMIN');
-          const setCookie = res.headers['set-cookie'];
-          expect(setCookie).toBeDefined();
-          if (Array.isArray(setCookie)) {
-            expect(
-              setCookie.some((cookie: string) => cookie.startsWith('refreshToken=')),
-            ).toBe(true);
-          }
-        });
+        .expect(200);
+
+      // Assert: Check response
+      expect(response.body).toHaveProperty('accessToken');
+      expect(response.body).toHaveProperty('user');
+      expect(response.body.user.email).toBe('test@example.com');
+      expect(response.body.user.roles).toContain('ADMIN');
+      const setCookie = response.headers['set-cookie'];
+      expect(setCookie).toBeDefined();
+      if (Array.isArray(setCookie)) {
+        expect(
+          setCookie.some((cookie: string) => cookie.startsWith('refreshToken=')),
+        ).toBe(true);
+      }
 
     });
 
@@ -164,7 +164,10 @@ describe('Auth (e2e)', () => {
           email: 'invalid-email',
           password: 'Password123!',
         })
-        .expect(400);
+        .expect(400)
+        .expect(() => {
+          // Test passes if status is 400
+        });
     });
 
     it('should return 400 for missing fields', async () => {
@@ -174,7 +177,10 @@ describe('Auth (e2e)', () => {
         .send({
           email: 'test@example.com',
         })
-        .expect(400);
+        .expect(400)
+        .expect(() => {
+          // Test passes if status is 400
+        });
     });
 
     it('should enforce rate limiting (5 requests per minute)', async () => {
@@ -195,13 +201,14 @@ describe('Auth (e2e)', () => {
           .send({
             email: 'ratelimit@example.com',
             password: 'WrongPassword123!', // Wrong password to avoid success
-          }),
+          })
+          .then((res) => res),
       );
 
       const responses = await Promise.all(requests);
 
       // Assert: 6th request should be rate limited (429)
-      const rateLimitedResponse = responses.find((res: request.Response) => res.status === 429);
+      const rateLimitedResponse = responses.find((res) => res.status === 429);
       expect(rateLimitedResponse).toBeDefined();
     }, 30000); // Increased timeout for rate limiting test
   });
