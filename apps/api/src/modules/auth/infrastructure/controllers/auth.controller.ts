@@ -22,7 +22,7 @@ export class AuthController {
 
   @Post('login')
   @HttpCode(HttpStatus.OK)
-  @Throttle({ limit: 5, ttl: 60000 }) // 5 requests per minute
+  @Throttle({ default: { limit: 5, ttl: 60000 } }) // 5 requests per minute
   @ApiOperation({ summary: 'User login' })
   @ApiResponse({ status: 200, type: LoginResponseDto, description: 'Login successful' })
   @ApiResponse({ status: 401, description: 'Invalid credentials' })
