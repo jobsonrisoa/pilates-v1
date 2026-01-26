@@ -2,23 +2,20 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  // Get token from cookies (adjust based on your auth implementation)
-  const token = request.cookies.get('auth-token');
-  const { pathname } = request.nextUrl;
+  const token = request.cookies.get('refreshToken');
+  const accessToken = request.headers.get('authorization');
+  const isAuthPage = request.nextUrl.pathname.startsWith('/login');
+  const isProtectedRoute = request.nextUrl.pathname.startsWith('/dashboard');
 
-  // Protected routes that require authentication
-  const protectedRoutes = ['/dashboard'];
-  const isProtectedRoute = protectedRoutes.some((route) => pathname.startsWith(route));
-
-  // If accessing protected route without token, redirect to login
-  if (isProtectedRoute && !token) {
+  // Redirect to login if accessing protected route without authentication
+  if (isProtectedRoute && !token && !accessToken) {
     const loginUrl = new URL('/login', request.url);
-    loginUrl.searchParams.set('redirect', pathname);
+    loginUrl.searchParams.set('redirect', request.nextUrl.pathname);
     return NextResponse.redirect(loginUrl);
   }
 
-  // If accessing login page with token, redirect to dashboard
-  if (pathname === '/login' && token) {
+  // Redirect to dashboard if accessing login page while authenticated
+  if (isAuthPage && (token || accessToken)) {
     return NextResponse.redirect(new URL('/dashboard', request.url));
   }
 
@@ -26,15 +23,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * - public files (public folder)
-     */
-    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
-  ],
+  matcher: ['/dashboard/:path*', '/login'],
 };

@@ -9,18 +9,25 @@ import { PrismaUserRepository } from './infrastructure/repositories/prisma-user.
 import { UserRepository } from './domain/repositories/user.repository';
 import { PasswordService } from './infrastructure/services/password.service';
 import { JwtService } from './infrastructure/services/jwt.service';
+import { JwtStrategy } from './infrastructure/strategies/jwt.strategy';
 import { PrismaModule } from '@/shared/infrastructure/database/prisma.module';
 
 @Module({
   imports: [
     PrismaModule,
-    PassportModule,
+    PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.registerAsync({
       imports: [ConfigModule],
-      useFactory: (config: ConfigService) => ({
-        secret: config.get<string>('JWT_SECRET') || 'default-secret-change-in-production',
-        signOptions: { expiresIn: '15m' },
-      }),
+      useFactory: (config: ConfigService) => {
+        const jwtSecret = config.get<string>('JWT_SECRET');
+        if (!jwtSecret) {
+          throw new Error('JWT_SECRET is required but not configured');
+        }
+        return {
+          secret: jwtSecret,
+          signOptions: { expiresIn: '15m' },
+        };
+      },
       inject: [ConfigService],
     }),
   ],
@@ -30,6 +37,7 @@ import { PrismaModule } from '@/shared/infrastructure/database/prisma.module';
     LoginUseCase,
     PasswordService,
     JwtService,
+    JwtStrategy,
     {
       provide: UserRepository,
       useClass: PrismaUserRepository,

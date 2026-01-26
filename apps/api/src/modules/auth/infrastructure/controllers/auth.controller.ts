@@ -13,6 +13,7 @@ import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { LoginDto } from '@/modules/auth/application/dto/login.dto';
 import { LoginResponseDto } from '@/modules/auth/application/dto/login-response.dto';
 import { AuthService } from '@/modules/auth/application/services/auth.service';
+import { isHttpException } from '@/shared/utils/type-guards';
 
 @ApiTags('Auth')
 @Controller('auth')
@@ -30,7 +31,7 @@ export class AuthController {
     const result = await this.authService.login(loginDto.email, loginDto.password);
 
     if (result.isLeft()) {
-      throw result.value instanceof HttpException
+      throw isHttpException(result.value)
         ? result.value
         : new HttpException(result.value.message, HttpStatus.UNAUTHORIZED);
     }

@@ -22,9 +22,14 @@ export class JwtService {
   }
 
   async signRefreshToken(payload: JwtPayload): Promise<string> {
+    const refreshSecret =
+      this.configService.get<string>('JWT_REFRESH_SECRET') || this.configService.get<string>('JWT_SECRET');
+    if (!refreshSecret) {
+      throw new Error('JWT_SECRET or JWT_REFRESH_SECRET is required but not configured');
+    }
     return this.jwtService.signAsync(payload, {
       expiresIn: '7d',
-      secret: this.configService.get<string>('JWT_REFRESH_SECRET') || this.configService.get<string>('JWT_SECRET'),
+      secret: refreshSecret,
     });
   }
 
@@ -33,8 +38,13 @@ export class JwtService {
   }
 
   async verifyRefreshToken(token: string): Promise<JwtPayload> {
+    const refreshSecret =
+      this.configService.get<string>('JWT_REFRESH_SECRET') || this.configService.get<string>('JWT_SECRET');
+    if (!refreshSecret) {
+      throw new Error('JWT_SECRET or JWT_REFRESH_SECRET is required but not configured');
+    }
     return this.jwtService.verifyAsync<JwtPayload>(token, {
-      secret: this.configService.get<string>('JWT_REFRESH_SECRET') || this.configService.get<string>('JWT_SECRET'),
+      secret: refreshSecret,
     });
   }
 }
