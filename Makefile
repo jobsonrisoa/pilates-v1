@@ -77,43 +77,30 @@ db-studio: ## Open Prisma Studio
 # TESTS
 # =============================================
 
-test: ## Run all tests (unit + integration)
-	@echo "$(CYAN)Running all tests...$(RESET)"
-	@if docker compose ps api --format json 2>/dev/null | grep -q '"State":"running"'; then \
-		docker compose exec api pnpm test; \
-	else \
-		docker compose run --rm tools pnpm --filter @pilates/api test; \
-	fi
-	@if docker compose ps web --format json 2>/dev/null | grep -q '"State":"running"'; then \
-		docker compose exec web pnpm test; \
-	else \
-		docker compose run --rm tools pnpm --filter @pilates/web test; \
-	fi
+test: ## Run all unit tests (API & Web)
+	@echo "$(CYAN)Running all unit tests...$(RESET)"
+	@$(MAKE) test-api
+	@$(MAKE) test-web
 
 test-api: ## Run API unit tests
+	@echo "$(CYAN)Running API tests...$(RESET)"
 	@if docker compose ps api --format json 2>/dev/null | grep -q '"State":"running"'; then \
-		docker compose exec api pnpm test; \
+		docker compose exec api pnpm --filter @pilates/api test; \
 	else \
 		docker compose run --rm tools pnpm --filter @pilates/api test; \
 	fi
 
 test-web: ## Run Web unit tests
-	@if docker compose ps web --format json 2>/dev/null | grep -q '"State":"running"'; then \
-		docker compose exec web pnpm test; \
-	else \
-		docker compose run --rm tools pnpm --filter @pilates/web test; \
-	fi
+	@echo "$(CYAN)Running Web tests using tools container...$(RESET)"
+	@docker compose run --rm tools pnpm --filter @pilates/web test
 
 test-watch: ## Run tests in watch mode (api)
 	docker compose exec api pnpm test:watch
 
 test-cov: ## Run all tests with coverage
 	@echo "$(CYAN)Running tests with coverage...$(RESET)"
-	@if docker compose ps api --format json 2>/dev/null | grep -q '"State":"running"'; then \
-		docker compose exec api pnpm test:cov; \
-	else \
-		docker compose run --rm tools pnpm --filter @pilates/api test:cov; \
-	fi
+	@$(MAKE) test-cov-api
+	@$(MAKE) test-cov-web
 	@if docker compose ps web --format json 2>/dev/null | grep -q '"State":"running"'; then \
 		docker compose exec web pnpm test:cov; \
 	else \
@@ -128,21 +115,15 @@ test-cov-api: ## Run API tests with coverage
 	fi
 
 test-cov-web: ## Run Web tests with coverage
-	@if docker compose ps web --format json 2>/dev/null | grep -q '"State":"running"'; then \
-		docker compose exec web pnpm test:cov; \
-	else \
-		docker compose run --rm tools pnpm --filter @pilates/web test:cov; \
-	fi
+	@echo "$(CYAN)Running Web coverage using tools container...$(RESET)"
+	@docker compose run --rm tools pnpm --filter @pilates/web test:cov
 
 test-e2e: ## Run E2E tests (web)
 	docker compose exec web pnpm test:e2e
 
 test-int: ## Run integration tests (api)
-	@if docker compose ps api --format json 2>/dev/null | grep -q '"State":"running"'; then \
-		docker compose exec api pnpm test:integration; \
-	else \
-		docker compose run --rm tools pnpm --filter @pilates/api test:integration; \
-	fi
+	@echo "$(CYAN)Running API integration tests from host...$(RESET)"
+	@cd apps/api && pnpm test:integration
 
 test-all: test test-int test-cov ## Run all tests including integration and coverage
 
@@ -151,13 +132,23 @@ test-all: test test-int test-cov ## Run all tests including integration and cove
 # =============================================
 
 lint: ## Run linter on all projects
-	docker compose exec api pnpm lint
-	docker compose exec web pnpm lint
+	@echo "$(CYAN)Running linter...$(RESET)"
+	@if docker compose ps api --format json 2>/dev/null | grep -q '"State":"running"'; then \
+		docker compose exec api pnpm --filter @pilates/api lint; \
+	else \
+		docker compose run --rm tools pnpm --filter @pilates/api lint; \
+	fi
+	@docker compose run --rm tools pnpm --filter @pilates/web lint
 
 format: ## Format code in all projects
 	docker compose exec api pnpm format
 	docker compose exec web pnpm format
 
 typecheck: ## Check TypeScript types
-	docker compose exec api pnpm typecheck
-	docker compose exec web pnpm typecheck
+	@echo "$(CYAN)Running typecheck...$(RESET)"
+	@if docker compose ps api --format json 2>/dev/null | grep -q '"State":"running"'; then \
+		docker compose exec api pnpm --filter @pilates/api typecheck; \
+	else \
+		docker compose run --rm tools pnpm --filter @pilates/api typecheck; \
+	fi
+	@docker compose run --rm tools pnpm --filter @pilates/web typecheck

@@ -49,7 +49,6 @@ Dockerfile*
 # Misc
 *.md
 .editorconfig
-.eslintrc*
 .prettierrc*
 tsconfig*.json
 jest.config.*

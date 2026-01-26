@@ -10,6 +10,7 @@ WORKDIR /app
 
 # Copy package files first for better layer caching
 COPY pnpm-workspace.yaml package.json pnpm-lock.yaml ./
+COPY .eslintrc.cjs ./
 COPY apps/web/package.json ./apps/web/package.json
 
 # Install dependencies
