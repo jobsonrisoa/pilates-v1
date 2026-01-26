@@ -138,6 +138,9 @@ importers:
       '@types/compression':
         specifier: ^1.7.5
         version: 1.8.1
+      '@types/express':
+        specifier: ^5.0.6
+        version: 5.0.6
       '@types/jest':
         specifier: ^29.5.14
         version: 29.5.14

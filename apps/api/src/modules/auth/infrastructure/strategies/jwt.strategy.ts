@@ -14,7 +14,7 @@ export interface UserPayload {
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
   constructor(
-    private readonly configService: ConfigService,
+    configService: ConfigService,
     private readonly userRepository: UserRepository,
   ) {
     const jwtSecret = configService.get<string>('JWT_SECRET');

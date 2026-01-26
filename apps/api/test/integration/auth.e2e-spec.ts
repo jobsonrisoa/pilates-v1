@@ -74,39 +74,40 @@ describe('Auth (e2e)', () => {
       }
 
       // Act: Make login request
-      const response = await request(app.getHttpServer())
+      await request(app.getHttpServer())
         .post('/auth/login')
         .send({
           email: 'test@example.com',
           password: 'Password123!',
         })
-        .expect(200);
+        .expect(200)
+        .expect((res: request.Response) => {
+          expect(res.body).toHaveProperty('accessToken');
+          expect(res.body).toHaveProperty('user');
+          expect(res.body.user.email).toBe('test@example.com');
+          expect(res.body.user.roles).toContain('ADMIN');
+          const setCookie = res.headers['set-cookie'];
+          expect(setCookie).toBeDefined();
+          if (Array.isArray(setCookie)) {
+            expect(
+              setCookie.some((cookie: string) => cookie.startsWith('refreshToken=')),
+            ).toBe(true);
+          }
+        });
 
-      // Assert: Check response
-      expect(response.body).toHaveProperty('accessToken');
-      expect(response.body).toHaveProperty('user');
-      expect(response.body.user.email).toBe('test@example.com');
-      expect(response.body.user.roles).toContain('ADMIN');
-      expect(response.headers['set-cookie']).toBeDefined();
-      expect(
-        response.headers['set-cookie']?.some((cookie: string) =>
-          cookie.startsWith('refreshToken='),
-        ),
-      ).toBe(true);
     });
 
     it('should return 401 for invalid email', async () => {
       // Act & Assert
-      await request(app.getHttpServer())
+      const response = await request(app.getHttpServer())
         .post('/auth/login')
         .send({
           email: 'nonexistent@example.com',
           password: 'Password123!',
         })
-        .expect(401)
-        .expect((res) => {
-          expect(res.body.message).toContain('Invalid credentials');
-        });
+        .expect(401);
+
+      expect(response.body.message).toContain('Invalid credentials');
     });
 
     it('should return 401 for invalid password', async () => {
@@ -121,16 +122,15 @@ describe('Auth (e2e)', () => {
       });
 
       // Act & Assert
-      await request(app.getHttpServer())
+      const response = await request(app.getHttpServer())
         .post('/auth/login')
         .send({
           email: 'test@example.com',
           password: 'WrongPassword123!',
         })
-        .expect(401)
-        .expect((res) => {
-          expect(res.body.message).toContain('Invalid credentials');
-        });
+        .expect(401);
+
+      expect(response.body.message).toContain('Invalid credentials');
     });
 
     it('should return 401 for inactive user', async () => {
@@ -145,16 +145,15 @@ describe('Auth (e2e)', () => {
       });
 
       // Act & Assert
-      await request(app.getHttpServer())
+      const response = await request(app.getHttpServer())
         .post('/auth/login')
         .send({
           email: 'inactive@example.com',
           password: 'Password123!',
         })
-        .expect(401)
-        .expect((res) => {
-          expect(res.body.message).toContain('Invalid credentials');
-        });
+        .expect(401);
+
+      expect(response.body.message).toContain('Invalid credentials');
     });
 
     it('should return 400 for invalid email format', async () => {
@@ -202,7 +201,7 @@ describe('Auth (e2e)', () => {
       const responses = await Promise.all(requests);
 
       // Assert: 6th request should be rate limited (429)
-      const rateLimitedResponse = responses.find((res) => res.status === 429);
+      const rateLimitedResponse = responses.find((res: request.Response) => res.status === 429);
       expect(rateLimitedResponse).toBeDefined();
     }, 30000); // Increased timeout for rate limiting test
   });
