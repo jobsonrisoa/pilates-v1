@@ -22,7 +22,7 @@ export class AuthController {
 
   @Post('login')
   @HttpCode(HttpStatus.OK)
-  @Throttle({ default: { limit: 5, ttl: 60000 } }) // 5 requests per minute
+  @Throttle({ strict: { limit: 5, ttl: 60000 } }) // 5 requests per minute (using strict throttle)
   @ApiOperation({ summary: 'User login' })
   @ApiResponse({ status: 200, type: LoginResponseDto, description: 'Login successful' })
   @ApiResponse({ status: 401, description: 'Invalid credentials' })
@@ -47,8 +47,17 @@ export class AuthController {
       path: '/',
     });
 
+    // Set access token in httpOnly cookie (more secure than localStorage)
+    res.cookie('accessToken', accessToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'strict',
+      maxAge: 15 * 60 * 1000, // 15 minutes (matches token expiration)
+      path: '/',
+    });
+
     return {
-      accessToken,
+      accessToken, // Still return for backward compatibility, but prefer cookie
       user,
     };
   }

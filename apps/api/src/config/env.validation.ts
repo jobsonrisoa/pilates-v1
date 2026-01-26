@@ -13,7 +13,7 @@ const envSchema = z.object({
 
   // JWT (required for auth)
   JWT_SECRET: z.string().min(32),
-  JWT_REFRESH_SECRET: z.string().min(32).optional(),
+  JWT_REFRESH_SECRET: z.string().min(32),
 
   // CORS
   ALLOWED_ORIGINS: z.string().optional(),

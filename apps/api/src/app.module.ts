@@ -21,8 +21,14 @@ import { MetricsInterceptor } from '@/shared/interceptors/metrics.interceptor';
     }),
     ThrottlerModule.forRoot([
       {
+        name: 'default',
         ttl: 60000, // 1 minute
-        limit: 5, // 5 requests
+        limit: 100, // 100 requests per minute (default for most endpoints)
+      },
+      {
+        name: 'strict',
+        ttl: 60000, // 1 minute
+        limit: 5, // 5 requests per minute (for sensitive endpoints like login)
       },
     ]),
     SentryModule.forRoot(),

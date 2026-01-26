@@ -16,7 +16,11 @@ export class ApiClient {
     endpoint: string,
     options: RequestInit = {},
   ): Promise<T> {
-    const url = `${this.baseUrl}${endpoint}`;
+    // Ensure endpoint starts with / and add API version prefix
+    const normalizedEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+    const url = `${this.baseUrl}${API_VERSION}${normalizedEndpoint}`;
+    // Access token is now in httpOnly cookie, no need to read from localStorage
+    // Fallback to localStorage for backward compatibility during migration
     const token = typeof window !== 'undefined' ? localStorage.getItem('accessToken') : null;
 
     const headers: HeadersInit = {
@@ -24,6 +28,8 @@ export class ApiClient {
       ...options.headers,
     };
 
+    // Only add Authorization header if token exists in localStorage (fallback)
+    // In production, token should come from httpOnly cookie automatically
     if (token) {
       headers['Authorization'] = `Bearer ${token}`;
     }
@@ -31,7 +37,7 @@ export class ApiClient {
     const response = await fetch(url, {
       ...options,
       headers,
-      credentials: 'include', // Include cookies for refresh token
+      credentials: 'include', // Include cookies (accessToken and refreshToken)
     });
 
     if (!response.ok) {

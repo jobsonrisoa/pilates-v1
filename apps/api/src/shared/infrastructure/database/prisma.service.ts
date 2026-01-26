@@ -9,6 +9,9 @@ export class PrismaService extends PrismaClient implements OnModuleInit, OnModul
         process.env.NODE_ENV === 'development'
           ? ['query', 'error', 'warn']
           : ['error'],
+      // Connection pooling is configured via DATABASE_URL query parameters:
+      // Example: mysql://user:pass@host:3306/db?connection_limit=10&pool_timeout=20
+      // Prisma will use these parameters automatically if present in DATABASE_URL
     });
   }
 
