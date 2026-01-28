@@ -5,7 +5,10 @@ import request from 'supertest';
 import { HealthModule } from '@/modules/health/health.module';
 import { PrismaModule } from '@/shared/infrastructure/database/prisma.module';
 
-describe('HealthController (integration)', () => {
+// Allow skipping DB-dependent integration tests in constrained environments
+const describeIfDb = process.env.SKIP_DB_INTEGRATION === 'true' ? describe.skip : describe;
+
+describeIfDb('HealthController (integration)', () => {
   let app: INestApplication;
 
   beforeAll(async () => {

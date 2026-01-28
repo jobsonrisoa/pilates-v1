@@ -1,5 +1,10 @@
 import type { Config } from 'jest';
 
+// Ensure JWT secrets are always set during tests, without affecting production
+process.env.JWT_SECRET = process.env.JWT_SECRET || 'test_jwt_secret_32_chars_minimum_123456';
+process.env.JWT_REFRESH_SECRET =
+  process.env.JWT_REFRESH_SECRET || 'test_jwt_refresh_secret_32_chars_minimum_ABCDEF';
+
 const config: Config = {
   testEnvironment: 'node',
   rootDir: '.',

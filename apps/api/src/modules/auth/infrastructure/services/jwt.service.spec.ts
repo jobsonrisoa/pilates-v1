@@ -41,28 +41,7 @@ describe('JwtService', () => {
   });
 
   describe('signRefreshToken', () => {
-    it('should sign refresh token with 7d expiration', async () => {
-      const payload = {
-        sub: 'user-id',
-        email: 'test@example.com',
-        roles: ['ADMIN'],
-      };
-      const token = 'refresh-token';
-      const jwtSecret = 'jwt-secret';
-
-      (configService.get as jest.Mock).mockReturnValue(jwtSecret);
-      (nestJwtService.signAsync as jest.Mock).mockResolvedValue(token);
-
-      const result = await jwtService.signRefreshToken(payload);
-
-      expect(result).toBe(token);
-      expect(nestJwtService.signAsync).toHaveBeenCalledWith(payload, {
-        expiresIn: '7d',
-        secret: jwtSecret,
-      });
-    });
-
-    it('should use JWT_SECRET when JWT_REFRESH_SECRET is not set', async () => {
+    it('should sign refresh token with 7d expiration when JWT_REFRESH_SECRET is configured', async () => {
       const payload = {
         sub: 'user-id',
         email: 'test@example.com',
@@ -72,8 +51,7 @@ describe('JwtService', () => {
       const jwtSecret = 'jwt-secret';
 
       (configService.get as jest.Mock).mockImplementation((key: string) => {
-        if (key === 'JWT_REFRESH_SECRET') return undefined;
-        if (key === 'JWT_SECRET') return jwtSecret;
+        if (key === 'JWT_REFRESH_SECRET') return jwtSecret;
         return undefined;
       });
       (nestJwtService.signAsync as jest.Mock).mockResolvedValue(token);
@@ -85,6 +63,17 @@ describe('JwtService', () => {
         expiresIn: '7d',
         secret: jwtSecret,
       });
+    });
+
+    it('should throw when JWT_REFRESH_SECRET is not configured', async () => {
+      const payload = {
+        sub: 'user-id',
+        email: 'test@example.com',
+        roles: ['ADMIN'],
+      };
+      await expect(jwtService.signRefreshToken(payload)).rejects.toThrow(
+        'JWT_REFRESH_SECRET is required but not configured',
+      );
     });
   });
 
@@ -107,27 +96,7 @@ describe('JwtService', () => {
   });
 
   describe('verifyRefreshToken', () => {
-    it('should verify refresh token with custom secret', async () => {
-      const token = 'refresh-token';
-      const payload = {
-        sub: 'user-id',
-        email: 'test@example.com',
-        roles: ['ADMIN'],
-      };
-      const jwtSecret = 'jwt-secret';
-
-      (configService.get as jest.Mock).mockReturnValue(jwtSecret);
-      (nestJwtService.verifyAsync as jest.Mock).mockResolvedValue(payload);
-
-      const result = await jwtService.verifyRefreshToken(token);
-
-      expect(result).toEqual(payload);
-      expect(nestJwtService.verifyAsync).toHaveBeenCalledWith(token, {
-        secret: jwtSecret,
-      });
-    });
-
-    it('should use JWT_SECRET when JWT_REFRESH_SECRET is not set', async () => {
+    it('should verify refresh token when JWT_REFRESH_SECRET is configured', async () => {
       const token = 'refresh-token';
       const payload = {
         sub: 'user-id',
@@ -137,8 +106,7 @@ describe('JwtService', () => {
       const jwtSecret = 'jwt-secret';
 
       (configService.get as jest.Mock).mockImplementation((key: string) => {
-        if (key === 'JWT_REFRESH_SECRET') return undefined;
-        if (key === 'JWT_SECRET') return jwtSecret;
+        if (key === 'JWT_REFRESH_SECRET') return jwtSecret;
         return undefined;
       });
       (nestJwtService.verifyAsync as jest.Mock).mockResolvedValue(payload);
@@ -149,6 +117,14 @@ describe('JwtService', () => {
       expect(nestJwtService.verifyAsync).toHaveBeenCalledWith(token, {
         secret: jwtSecret,
       });
+    });
+
+    it('should throw when JWT_REFRESH_SECRET is not configured', async () => {
+      const token = 'refresh-token';
+
+      await expect(jwtService.verifyRefreshToken(token)).rejects.toThrow(
+        'JWT_REFRESH_SECRET is required but not configured',
+      );
     });
   });
 });
