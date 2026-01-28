@@ -16,7 +16,9 @@ export class PasswordResetService {
   ) {}
 
   async requestPasswordReset(email: string): Promise<void> {
-    const user = await this.prisma.user.findUnique({
+    const prisma = this.prisma as any;
+
+    const user = await prisma.user.findUnique({
       where: { email },
     });
 
@@ -38,7 +40,7 @@ export class PasswordResetService {
       },
     );
 
-    await this.prisma.passwordResetToken.create({
+    await prisma.passwordResetToken.create({
       data: {
         token,
         userId: user.id,
@@ -53,6 +55,8 @@ export class PasswordResetService {
   }
 
   async resetPassword(token: string, newPassword: string): Promise<void> {
+    const prisma = this.prisma as any;
+
     const secret = this.configService.get<string>('JWT_RESET_SECRET');
     if (!secret) {
       throw new Error('JWT_RESET_SECRET is required but not configured');
@@ -67,7 +71,7 @@ export class PasswordResetService {
       throw new BadRequestException('Invalid or expired token');
     }
 
-    const resetToken = await this.prisma.passwordResetToken.findUnique({
+    const resetToken = await prisma.passwordResetToken.findUnique({
       where: { token },
     });
 
@@ -77,12 +81,12 @@ export class PasswordResetService {
 
     const passwordHash = await this.passwordService.hash(newPassword);
 
-    await this.prisma.user.update({
+    await prisma.user.update({
       where: { id: payload.sub },
       data: { passwordHash },
     });
 
-    await this.prisma.passwordResetToken.update({
+    await prisma.passwordResetToken.update({
       where: { token },
       data: { used: true },
     });

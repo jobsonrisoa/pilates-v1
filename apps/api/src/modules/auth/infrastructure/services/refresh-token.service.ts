@@ -13,13 +13,18 @@ export class RefreshTokenService {
    * Generate and persist a new refresh token for a user.
    */
   async generateRefreshToken(userId: string): Promise<string> {
+    const prisma = this.prisma as any;
     const payload = await this.buildPayload(userId);
 
     const token = await this.jwtService.signRefreshToken(payload);
 
     const decoded = await this.jwtService.verifyRefreshToken(token);
 
-    await this.prisma.refreshToken.create({
+    if (!decoded.exp) {
+      throw new Error('Refresh token payload is missing exp claim');
+    }
+
+    await prisma.refreshToken.create({
       data: {
         token,
         userId,
@@ -35,10 +40,11 @@ export class RefreshTokenService {
    * Throws UnauthorizedException when invalid.
    */
   async validateRefreshToken(token: string): Promise<string> {
+    const prisma = this.prisma as any;
     try {
       const decoded = await this.jwtService.verifyRefreshToken(token);
 
-      const storedToken = await this.prisma.refreshToken.findUnique({
+      const storedToken = await prisma.refreshToken.findUnique({
         where: { token },
       });
 
@@ -53,7 +59,9 @@ export class RefreshTokenService {
   }
 
   async revokeRefreshToken(token: string): Promise<void> {
-    await this.prisma.refreshToken.updateMany({
+    const prisma = this.prisma as any;
+
+    await prisma.refreshToken.updateMany({
       where: { token, revoked: false },
       data: { revoked: true },
     });

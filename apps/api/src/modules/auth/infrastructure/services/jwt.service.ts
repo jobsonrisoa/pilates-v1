@@ -6,6 +6,8 @@ export interface JwtPayload {
   sub: string; // user id
   email: string;
   roles: string[];
+  exp?: number; // expiration timestamp (seconds since epoch)
+  iat?: number; // issued-at timestamp
 }
 
 @Injectable()

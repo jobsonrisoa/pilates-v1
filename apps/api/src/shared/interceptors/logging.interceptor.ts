@@ -7,7 +7,9 @@ export class LoggingInterceptor implements NestInterceptor {
   private readonly logger = new Logger(LoggingInterceptor.name);
 
   intercept(context: ExecutionContext, next: CallHandler): Observable<unknown> {
-    const request = context.switchToHttp().getRequest<{ method?: string; url?: string; ip?: string }>();
+    const request = context
+      .switchToHttp()
+      .getRequest<{ method?: string; url?: string; ip?: string; get?: (name: string) => string | undefined }>();
     const { method = 'UNKNOWN', url, ip = 'unknown' } = request ?? {};
     const userAgent = request?.get?.('user-agent') || '';
     const now = Date.now();
@@ -56,8 +58,8 @@ export class LoggingInterceptor implements NestInterceptor {
 
       return urlObj.pathname + urlObj.search;
     } catch {
-      // If URL parsing fails, return original URL without query string
-      return url.split('?')[0];
+      // If URL parsing fails, avoid throwing and return a safe fallback
+      return 'unknown';
     }
   }
 }
