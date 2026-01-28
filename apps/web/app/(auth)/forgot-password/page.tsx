@@ -1,25 +1,21 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useAuthStore } from '@/stores/auth.store';
+import { apiClient } from '@/lib/api-client';
 
-const loginSchema = z.object({
+const forgotPasswordSchema = z.object({
   email: z.string().email('Email inválido'),
-  password: z.string().min(8, 'Senha deve ter no mínimo 8 caracteres'),
 });
 
-type LoginForm = z.infer<typeof loginSchema>;
+type ForgotPasswordForm = z.infer<typeof forgotPasswordSchema>;
 
-export default function LoginPage() {
-  const router = useRouter();
-  const login = useAuthStore((state) => state.login);
+export default function ForgotPasswordPage() {
+  const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -27,22 +23,23 @@ export default function LoginPage() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginForm>({
-    resolver: zodResolver(loginSchema),
+  } = useForm<ForgotPasswordForm>({
+    resolver: zodResolver(forgotPasswordSchema),
   });
 
-  const onSubmit = async (data: LoginForm) => {
+  const onSubmit = async (data: ForgotPasswordForm) => {
     setIsLoading(true);
     setError(null);
+    setSuccess(null);
 
     try {
-      await login(data.email, data.password);
-      router.push('/dashboard');
+      await apiClient.post('/auth/forgot-password', { email: data.email });
+      setSuccess('Se o email existir, um link de recuperação foi enviado.');
     } catch (err) {
       const message =
-        err instanceof Error
-          ? err.message
-          : 'Erro ao fazer login. Verifique suas credenciais.';
+        err && typeof err === 'object' && 'message' in (err as any)
+          ? (err as any).message
+          : 'Erro ao solicitar recuperação de senha.';
       setError(message);
     } finally {
       setIsLoading(false);
@@ -54,13 +51,18 @@ export default function LoginPage() {
       <div className="w-full max-w-md space-y-8">
         <div>
           <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-            Faça login em sua conta
+            Esqueceu sua senha?
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Sistema de Gestão de Pilates
+            Informe seu email e, se existir uma conta, enviaremos um link para redefinir sua senha.
           </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
+          {success && (
+            <div className="rounded-md bg-green-50 p-4">
+              <p className="text-sm text-green-800">{success}</p>
+            </div>
+          )}
           {error && (
             <div className="rounded-md bg-red-50 p-4">
               <p className="text-sm text-red-800">{error}</p>
@@ -83,41 +85,11 @@ export default function LoginPage() {
                 <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
               )}
             </div>
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Senha
-              </label>
-              <Input
-                id="password"
-                type="password"
-                autoComplete="current-password"
-                placeholder="••••••••"
-                className="mt-1"
-                {...register('password')}
-              />
-              {errors.password && (
-                <p className="mt-1 text-sm text-red-600">{errors.password.message}</p>
-              )}
-            </div>
-          </div>
-
-          <div className="flex items-center justify-end">
-            <Link
-              href="/forgot-password"
-              className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
-            >
-              Esqueceu a senha?
-            </Link>
           </div>
 
           <div>
-            <Button
-              type="submit"
-              variant="default"
-              className="w-full"
-              disabled={isLoading}
-            >
-              {isLoading ? 'Entrando...' : 'Entrar'}
+            <Button type="submit" variant="default" className="w-full" disabled={isLoading}>
+              {isLoading ? 'Enviando...' : 'Enviar link de recuperação'}
             </Button>
           </div>
         </form>
@@ -125,3 +97,5 @@ export default function LoginPage() {
     </div>
   );
 }
+
+

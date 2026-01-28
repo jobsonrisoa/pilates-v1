@@ -2,7 +2,9 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import compression from 'compression';
+import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
+import type { NextFunction, Request, Response } from 'express';
 import { Logger } from 'nestjs-pino';
 
 import { AppModule } from '@/app.module';
@@ -19,10 +21,13 @@ async function bootstrap(): Promise<void> {
   const logger = app.get(Logger);
 
   // Request timeout (prevent long-running requests from tying up resources)
-  app.use((req, res, next) => {
-    // Express request/response types are available at runtime but we don't depend on them here
-    (req as any).setTimeout?.(30000); // 30 seconds
-    (res as any).setTimeout?.(30000);
+  app.use((req: Request, res: Response, next: NextFunction) => {
+    if (typeof req.setTimeout === 'function') {
+      req.setTimeout(30000); // 30 seconds
+    }
+    if (typeof res.setTimeout === 'function') {
+      res.setTimeout(30000);
+    }
     next();
   });
 
@@ -50,6 +55,9 @@ async function bootstrap(): Promise<void> {
       crossOriginEmbedderPolicy: false, // Allow embedding if needed
     }),
   );
+
+  // Cookie parser for httpOnly auth cookies (accessToken, refreshToken)
+  app.use(cookieParser());
 
   // Compression with optimization
   app.use(

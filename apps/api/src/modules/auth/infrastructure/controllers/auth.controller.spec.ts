@@ -4,7 +4,7 @@ import { AuthController } from './auth.controller';
 import { AuthService } from '@/modules/auth/application/services/auth.service';
 import { UnauthorizedException } from '@nestjs/common';
 import { left, right } from '@/shared/domain/either';
-import { Response } from 'express';
+import type { Response } from 'express';
 
 describe('AuthController', () => {
   let controller: AuthController;

@@ -49,7 +49,8 @@ const config: Config = {
   testTimeout: 10000,
   coverageProvider: 'v8',
   cache: true, // Enable Jest cache for faster subsequent runs
-  cacheDirectory: '<rootDir>/.jest-cache',
+  // Use a temporary directory for Jest cache to avoid permission issues in read-only environments
+  cacheDirectory: process.env.JEST_CACHE_DIR || '/tmp/pilates-web-jest-cache',
 };
 
 export default createJestConfig(config);

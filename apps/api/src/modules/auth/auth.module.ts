@@ -11,6 +11,9 @@ import { PasswordService } from './infrastructure/services/password.service';
 import { JwtService } from './infrastructure/services/jwt.service';
 import { JwtStrategy } from './infrastructure/strategies/jwt.strategy';
 import { PrismaModule } from '@/shared/infrastructure/database/prisma.module';
+import { RefreshTokenService } from './infrastructure/services/refresh-token.service';
+import { RefreshTokenUseCase } from './application/use-cases/refresh-token.use-case';
+import { PasswordResetService } from './infrastructure/services/password-reset.service';
 
 @Module({
   imports: [
@@ -35,8 +38,11 @@ import { PrismaModule } from '@/shared/infrastructure/database/prisma.module';
   providers: [
     AuthService,
     LoginUseCase,
+    RefreshTokenUseCase,
     PasswordService,
     JwtService,
+    RefreshTokenService,
+    PasswordResetService,
     JwtStrategy,
     {
       provide: UserRepository,

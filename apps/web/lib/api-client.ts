@@ -16,6 +16,7 @@ export class ApiClient {
   private async request<T>(
     endpoint: string,
     options: RequestInit = {},
+    retryOn401 = true,
   ): Promise<T> {
     // Ensure endpoint starts with / and add API version prefix
     const normalizedEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
@@ -46,15 +47,42 @@ export class ApiClient {
       credentials: 'include', // Include cookies (accessToken and refreshToken)
     });
 
-    if (!response.ok) {
+    if (response.ok) {
+      return response.json() as Promise<T>;
+    }
+
+    // Try automatic refresh on 401 (except when already calling refresh)
+    if (response.status === 401 && retryOn401 && !normalizedEndpoint.startsWith('/auth/refresh')) {
+      try {
+        const refreshResult = await this.request<{ accessToken: string }>(
+          '/auth/refresh',
+          { method: 'POST' },
+          false,
+        );
+
+        if (typeof window !== 'undefined' && refreshResult?.accessToken) {
+          localStorage.setItem('accessToken', refreshResult.accessToken);
+        }
+
+        const retryResponse = await this.request<T>(endpoint, options, false);
+        return retryResponse;
+      } catch (refreshError) {
+        const error: ApiError =
+          refreshError && typeof refreshError === 'object' && 'statusCode' in (refreshError as any)
+            ? (refreshError as ApiError)
+            : {
+                message: 'Unauthorized',
+                statusCode: 401,
+              };
+        throw error;
+      }
+    }
+
       const error: ApiError = await response.json().catch(() => ({
         message: 'An error occurred',
         statusCode: response.status,
       }));
       throw error;
-    }
-
-    return response.json() as Promise<T>;
   }
 
   async get<T>(endpoint: string): Promise<T> {
