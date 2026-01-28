@@ -1,4 +1,5 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+const API_VERSION = '/api/v1';
 
 export interface ApiError {
   message: string;
@@ -23,15 +24,20 @@ export class ApiClient {
     // Fallback to localStorage for backward compatibility during migration
     const token = typeof window !== 'undefined' ? localStorage.getItem('accessToken') : null;
 
-    const headers: HeadersInit = {
+    // Use a mutable headers object so we can safely add Authorization
+    const baseHeaders: Record<string, string> = {
       'Content-Type': 'application/json',
-      ...options.headers,
+    };
+
+    const headers: HeadersInit = {
+      ...baseHeaders,
+      ...(options.headers ?? {}),
     };
 
     // Only add Authorization header if token exists in localStorage (fallback)
     // In production, token should come from httpOnly cookie automatically
     if (token) {
-      headers['Authorization'] = `Bearer ${token}`;
+      (headers as Record<string, string>)['Authorization'] = `Bearer ${token}`;
     }
 
     const response = await fetch(url, {
@@ -48,21 +54,21 @@ export class ApiClient {
       throw error;
     }
 
-    return response.json();
+    return response.json() as Promise<T>;
   }
 
   async get<T>(endpoint: string): Promise<T> {
     return this.request<T>(endpoint, { method: 'GET' });
   }
 
-  async post<T>(endpoint: string, data?: unknown): Promise<T> {
+  async post<T, TBody = unknown>(endpoint: string, data?: TBody): Promise<T> {
     return this.request<T>(endpoint, {
       method: 'POST',
       body: data ? JSON.stringify(data) : undefined,
     });
   }
 
-  async put<T>(endpoint: string, data?: unknown): Promise<T> {
+  async put<T, TBody = unknown>(endpoint: string, data?: TBody): Promise<T> {
     return this.request<T>(endpoint, {
       method: 'PUT',
       body: data ? JSON.stringify(data) : undefined,

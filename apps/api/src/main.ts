@@ -18,14 +18,11 @@ async function bootstrap(): Promise<void> {
   app.useLogger(app.get(Logger));
   const logger = app.get(Logger);
 
-  // Request size limits (prevent DoS via large payloads)
-  app.use(express.json({ limit: '10mb' }));
-  app.use(express.urlencoded({ limit: '10mb', extended: true }));
-
   // Request timeout (prevent long-running requests from tying up resources)
   app.use((req, res, next) => {
-    req.setTimeout(30000); // 30 seconds
-    res.setTimeout(30000);
+    // Express request/response types are available at runtime but we don't depend on them here
+    (req as any).setTimeout?.(30000); // 30 seconds
+    (res as any).setTimeout?.(30000);
     next();
   });
 
@@ -102,7 +99,7 @@ async function bootstrap(): Promise<void> {
   // Swagger documentation - Only in non-production or with authentication
   const nodeEnv = process.env.NODE_ENV || 'development';
   const port = process.env.APP_PORT ? Number(process.env.APP_PORT) : 3000;
-  
+
   if (nodeEnv !== 'production') {
     const swaggerConfig = new DocumentBuilder()
       .setTitle('Pilates System API')
