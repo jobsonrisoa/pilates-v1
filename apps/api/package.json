@@ -16,6 +16,7 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:integration": "SKIP_DB_INTEGRATION=true jest --config jest.integration.config.ts",
+    "test:integration:db": "SKIP_DB_INTEGRATION= jest --config jest.integration.config.ts",
     "prisma:generate": "prisma generate",
     "prisma:studio": "prisma studio",
     "prisma:seed": "ts-node prisma/seed.ts"

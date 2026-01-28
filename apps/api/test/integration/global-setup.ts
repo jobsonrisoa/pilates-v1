@@ -57,6 +57,17 @@ export default async function globalSetup() {
       cwd: projectRoot,
     });
 
+    // Seed test database with auth data and baseline fixtures
+    console.log('Seeding test database with auth data...');
+    execSync('pnpm --filter @pilates/api prisma:seed', {
+      stdio: 'inherit',
+      env: {
+        ...process.env,
+        DATABASE_URL: 'mysql://root:test@localhost:3307/pilates_test',
+      },
+      cwd: projectRoot,
+    });
+
     console.log('Test environment ready!\n');
   } catch (error) {
     console.error('Failed to setup test containers:', error);
