@@ -40,6 +40,7 @@ export class AuthController {
     }
 
     const { accessToken, refreshToken, user } = result.value;
+    const permissions = await this.authService.getUserPermissions(user.id);
 
     // Set refresh token in httpOnly cookie
     res.cookie('refreshToken', refreshToken, {
@@ -61,7 +62,7 @@ export class AuthController {
 
     return {
       accessToken, // Still return for backward compatibility, but prefer cookie
-      user,
+      user: { ...user, permissions },
     };
   }
 
@@ -86,6 +87,7 @@ export class AuthController {
     }
 
     const { accessToken, refreshToken: newRefreshToken, user } = result.value;
+    const permissions = await this.authService.getUserPermissions(user.id);
 
     res.cookie('refreshToken', newRefreshToken, {
       httpOnly: true,
@@ -105,7 +107,7 @@ export class AuthController {
 
     return {
       accessToken,
-      user,
+      user: { ...user, permissions },
     };
   }
 

@@ -14,6 +14,7 @@ import { PasswordResetService } from './infrastructure/services/password-reset.s
 import { PasswordService } from './infrastructure/services/password.service';
 import { RefreshTokenService } from './infrastructure/services/refresh-token.service';
 import { JwtStrategy } from './infrastructure/strategies/jwt.strategy';
+import { PermissionsGuard } from './infrastructure/guards/permissions.guard';
 
 import { PrismaModule } from '@/shared/infrastructure/database/prisma.module';
 import { MailModule } from '@/shared/infrastructure/mail/mail.module';
@@ -49,11 +50,12 @@ import { MailModule } from '@/shared/infrastructure/mail/mail.module';
     RefreshTokenService,
     PasswordResetService,
     JwtStrategy,
+    PermissionsGuard,
     {
       provide: UserRepository,
       useClass: PrismaUserRepository,
     },
   ],
-  exports: [AuthService, JwtService],
+  exports: [AuthService, JwtService, PermissionsGuard],
 })
 export class AuthModule {}

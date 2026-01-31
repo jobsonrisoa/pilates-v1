@@ -9,6 +9,9 @@ export class UserResponseDto {
 
   @ApiProperty({ example: ['SUPER_ADMIN'] })
   roles!: string[];
+
+  @ApiProperty({ example: ['students:read', 'users:create'], required: false })
+  permissions?: string[];
 }
 
 export class LoginResponseDto {

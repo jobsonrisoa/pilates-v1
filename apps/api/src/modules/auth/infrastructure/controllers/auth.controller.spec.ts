@@ -16,6 +16,7 @@ describe('AuthController', () => {
       refresh: jest.fn(),
       requestPasswordReset: jest.fn(),
       resetPassword: jest.fn(),
+      getUserPermissions: jest.fn().mockResolvedValue([]),
     } as unknown as jest.Mocked<AuthService>;
 
     const module: TestingModule = await Test.createTestingModule({
@@ -54,10 +55,11 @@ describe('AuthController', () => {
         cookie: jest.fn(),
       } as unknown as Response;
 
+      authService.getUserPermissions.mockResolvedValue(['users:read']);
       const result = await controller.login(loginDto, mockResponse);
 
       expect(result.accessToken).toBe('access-token');
-      expect(result.user).toEqual(loginResult.user);
+      expect(result.user).toEqual({ ...loginResult.user, permissions: ['users:read'] });
       expect(mockResponse.cookie).toHaveBeenCalledWith(
         'refreshToken',
         'refresh-token',
