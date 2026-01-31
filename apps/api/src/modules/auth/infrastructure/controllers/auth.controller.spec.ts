@@ -13,6 +13,9 @@ describe('AuthController', () => {
   beforeEach(async () => {
     authService = {
       login: jest.fn(),
+      refresh: jest.fn(),
+      requestPasswordReset: jest.fn(),
+      resetPassword: jest.fn(),
     } as unknown as jest.Mocked<AuthService>;
 
     const module: TestingModule = await Test.createTestingModule({
@@ -142,6 +145,32 @@ describe('AuthController', () => {
         HttpException,
       );
       expect(mockResponse.cookie).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('forgotPassword', () => {
+    it('should return success message without revealing if email exists', async () => {
+      authService.requestPasswordReset.mockResolvedValue(undefined);
+
+      const dto = { email: 'user@example.com' };
+      const result = await controller.forgotPassword(dto);
+
+      expect(result).toEqual({
+        message: 'If the email exists, a reset link has been sent',
+      });
+      expect(authService.requestPasswordReset).toHaveBeenCalledWith('user@example.com');
+    });
+  });
+
+  describe('resetPassword', () => {
+    it('should return success message on valid token and password', async () => {
+      authService.resetPassword.mockResolvedValue(undefined);
+
+      const dto = { token: 'valid-reset-token', password: 'NewPass123!' };
+      const result = await controller.resetPassword(dto);
+
+      expect(result).toEqual({ message: 'Password reset successfully' });
+      expect(authService.resetPassword).toHaveBeenCalledWith('valid-reset-token', 'NewPass123!');
     });
   });
 });

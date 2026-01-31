@@ -14,6 +14,10 @@ const envSchema = z.object({
   // JWT (required for auth)
   JWT_SECRET: z.string().min(32),
   JWT_REFRESH_SECRET: z.string().min(32),
+  JWT_RESET_SECRET: z.string().min(32),
+
+  // Frontend URL (for password reset links, etc.)
+  FRONTEND_URL: z.string().url().default('http://localhost:3000'),
 
   // CORS
   ALLOWED_ORIGINS: z.string().optional(),
