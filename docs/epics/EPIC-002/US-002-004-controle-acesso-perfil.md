@@ -10,7 +10,7 @@
 | **Estimate**     | 6 hours                      |
 | **Priority**     | 🔴 Critical                  |
 | **Dependencies** | US-002-001                   |
-| **Status**       | Backlog                      |
+| **Status**       | Implemented                  |
 
 ---
 
@@ -35,12 +35,12 @@
 
 ## Acceptance Criteria
 
-- [ ] 6 perfis pre-definidos
-- [ ] Permissões por resource e action
-- [ ] Verificação no backend
-- [ ] UI adapta-se às permissões
-- [ ] Super Admin tem acesso total
-- [ ] Guards funcionando corretamente
+- [x] 6 perfis pre-definidos
+- [x] Permissões por resource e action
+- [x] Verificação no backend
+- [x] UI adapta-se às permissões
+- [x] Super Admin tem acesso total
+- [x] Guards funcionando corretamente
 
 ---
 
@@ -465,18 +465,18 @@ export default function UsersPage() {
 
 ## Checklist of Verification
 
-- [ ] Schema Prisma com Permission e RolePermission
-- [ ] 6 perfis criados no seed
-- [ ] Permissões definidas e seedadas
-- [ ] PermissionsGuard implementado
-- [ ] @RequirePermissions decorator funcionando
-- [ ] Super Admin tem acesso total
-- [ ] Frontend usePermissions hook
-- [ ] Frontend CanAccess component
-- [ ] UI adapta-se às permissões
-- [ ] Testes unitários (≥80%)
-- [ ] Testes de integração
-- [ ] Documentação Swagger
+- [x] Schema Prisma com Permission e RolePermission
+- [x] 6 perfis criados no seed
+- [x] Permissões definidas e seedadas
+- [x] PermissionsGuard implementado
+- [x] @RequirePermissions decorator funcionando
+- [x] Super Admin tem acesso total
+- [x] Frontend usePermissions hook
+- [x] Frontend CanAccess component
+- [x] UI adapta-se às permissões
+- [x] Testes unitários (≥80%)
+- [ ] Testes de integração (pendente)
+- [x] Documentação Swagger
 
 ---
 

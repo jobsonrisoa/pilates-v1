@@ -84,12 +84,13 @@ make clean         # Remove containers and volumes
 
 ### Testing
 ```bash
-make test          # Run all tests (unit + integration)
+make test          # Run all unit tests (API + Web)
 make test-api      # Run API unit tests only
 make test-web      # Run Web unit tests only
 make test-int      # Run integration tests only
 make test-cov      # Run all tests with coverage
 make test-all      # Run all tests + integration + coverage
+./scripts/smoke-test.sh   # Smoke test (API health, auth, Web) — requires containers up
 ```
 
 ### Code Quality

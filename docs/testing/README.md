@@ -38,14 +38,14 @@ docker compose run --rm tools pnpm --filter @pilates/web test
 
 ## Test Status
 
-### Last Run: 2026-01-22
+### Last Run: 2026-01-31
 
 #### Unit Tests
 
 | Workspace | Status | Tests | Coverage |
 | --------- | ------ | ----- | -------- |
-| **API**   | Pass   | 4/4   | ~85%     |
-| **Web**   | Pass   | 3/3   | ~80%     |
+| **API**   | Pass   | 69    | See `make test-cov` |
+| **Web**   | Pass   | 27    | See `make test-cov` |
 
 #### Code Quality
 
@@ -69,10 +69,11 @@ docker compose run --rm tools pnpm --filter @pilates/web test
 
 | Endpoint             | Status | Response                                              |
 | -------------------- | ------ | ----------------------------------------------------- |
-| `GET /health`        | OK     | `{"status":"ok"}`                                     |
-| `GET /health/live`   | OK     | `{"status":"ok"}`                                     |
-| `GET /health/ready`  | OK     | `{"status":"ok","info":{"database":{"status":"up"}}}` |
-| `GET /api` (Swagger) | OK     | UI loading                                            |
+| `GET /api/v1/health`        | OK     | Full health check                                     |
+| `GET /api/v1/health/live`   | OK     | `{"status":"ok"}`                                     |
+| `GET /api/v1/health/ready`  | OK     | `{"status":"ok","info":{"database":{"status":"up"}}}` |
+| `GET /api` (Swagger)        | OK     | UI loading                                            |
+| `POST /api/v1/auth/login`   | OK     | Returns user with roles and permissions               |
 
 ---
 
