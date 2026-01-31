@@ -23,6 +23,7 @@ services:
       context: .
       dockerfile: apps/api/Dockerfile
       target: deps
+    env_file: .env
     command: sh -c "pnpm --filter @pilates/api prisma:generate && pnpm --filter @pilates/api dev"
     environment:
       NODE_ENV: development
@@ -40,7 +41,7 @@ services:
     networks:
       - pilates-network
     healthcheck:
-      test: ['CMD', 'curl', '-fsS', 'http://localhost:3000/health/live']
+      test: ['CMD', 'curl', '-fsS', 'http://localhost:3000/api/v1/health/live']
       interval: 30s
       timeout: 10s
       retries: 3
@@ -87,7 +88,7 @@ services:
       MYSQL_USER: pilates
       MYSQL_PASSWORD: pilates
     ports:
-      - '3306:3306'
+      - '3307:3306' # 3307 on host to avoid conflict with local MySQL
     volumes:
       - mysql_data:/var/lib/mysql
       - ./docker/mysql/init:/docker-entrypoint-initdb.d:ro

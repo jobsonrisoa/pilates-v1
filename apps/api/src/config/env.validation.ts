@@ -24,8 +24,8 @@ const envSchema = z.object({
     .default('info')
     .optional(),
 
-  // Sentry (optional, production only)
-  SENTRY_DSN: z.string().url().optional(),
+  // Sentry (optional, production only; empty string = disabled)
+  SENTRY_DSN: z.union([z.string().url(), z.literal('')]).optional(),
   SENTRY_TRACES_SAMPLE_RATE: z.coerce.number().min(0).max(1).default(0.1).optional(),
   SENTRY_PROFILES_SAMPLE_RATE: z.coerce.number().min(0).max(1).default(0.1).optional(),
 
